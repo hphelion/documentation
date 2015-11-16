@@ -1,0 +1,449 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Horizon is the OpenStack service that serves as the basis for the HPE Helion OpenStack dashboards. The dashboards provide a web-based user interface to HPE Helion OpenStack services including Compute, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Horizon Service Overview"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic1564"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Horizon Service Overview</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic1564">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Horizon Service Overview</h1>
+
+  <div class="body">
+    <p class="p">Horizon is the OpenStack service that serves as the basis for the HPE Helion OpenStack
+      dashboards.</p>
+
+    <p class="p">The dashboards provide a web-based user interface to HPE Helion OpenStack services including
+      Compute, Volume Operations, Networking, and Identity.</p>
+
+    <p class="p">Note that for Ceilometer metering, only a limited set of meters are selectable from the
+      Metric option. This option does not currently provide access to all available meters.</p>
+
+ 
+    <div class="section">
+      <p class="p"></p>
+
+      <p class="p">The left side of the UI displays Project, Admin, and Settings sections. They expand and
+        contract to show available tasks grouped into <strong class="ph b">panels</strong>.</p>
+
+      <p class="p">Across the top are menus to switch between projects and menus where you can access user
+        settings.</p>
+
+      <p class="p"></p>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Accessing Horizon</h2>
+      <p class="p">If your administrator set a hostname value for <samp class="ph codeph">external_name</samp> in your
+          <samp class="ph codeph">network_groups.yml</samp> file during the configuration process for your cloud
+        then Horizon will be accessed over port 80 on that hostname.</p>
+
+      <p class="p">If your administrator did not set a hostname value then in order to determine which IP
+        address to use to access Horizon you can use this command from your lifecycle-manager
+        node:</p>
+
+      <pre class="pre codeblock">grep vip-HZN-WEB /etc/hosts</pre>
+
+      <p class="p">The output of that command will show you the virtual IP address for Horizon that you should
+        use.</p>
+
+      <p class="p">The default username for the Administrator user is <samp class="ph codeph">admin</samp>. In order to find
+        the randomized password that is created for this user you will need to look into the
+          <samp class="ph codeph">~/service.osrc</samp> file on the lifecycle-manager node. You can do that with
+        this command:</p>
+
+      <pre class="pre codeblock">cat ~/service.osrc</pre>
+
+      
+    </div>
+
+    
+
+    <div class="section"><h2 class="title sectiontitle">Browser support for Horizon</h2> According to OpenStack.org, Horizon is
+      tested and supported on the latest versions of Firefox and Chrome, and IE9+. Below is a smmary
+      of browser support for Horizon <dl class="dl">
+        
+          <dt class="dt dlterm">Very good</dt>
+
+          <dd class="dd">Very well tested; should work as expected</dd>
+
+        
+        
+          <dt class="dt dlterm"> Good</dt>
+
+          <dd class="dd">Moderately tested; should look nice and work fine, may have a few visual issues</dd>
+
+        
+        
+          <dt class="dt dlterm">Poor</dt>
+
+          <dd class="dd">Visually inferior</dd>
+
+        
+        
+          <dt class="dt dlterm">Broken</dt>
+
+          <dd class="dd">Essential functionality not working</dd>
+
+        
+        
+          <dt class="dt dlterm">No</dt>
+
+          <dd class="dd">Not supported</dd>
+
+        
+      </dl>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="topic1564__table_svx_qfm_vt" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="33.33333333333333%" id="d24049e161">Browser</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d24049e164">Status</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d24049e167">Versions </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Chrome</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">very good</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 ">43.0.2357.81</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Firefox </td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">very good</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 ">31+ Earlier versions ?</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Firefox ESR</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">very good</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 ">31+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Internet Explorer 11</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">good</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Internet Explorer 10</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">good</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Internet Explorer 9</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">?</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Internet Explorer 8 and below</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">Not supported</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Safari</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">?</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e161 ">Opera</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e164 ">?</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d24049e167 "> </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section">
+      <p class="p">At the bottom of this page, you can see some of the services you can manage right from the
+        dashboard. Remember that Horizon runs over TLS so you will need to use the HTTPS protocol
+        with your Horizon IP address.</p>
+
+    </div>
+
+    <div class="section" id="topic1564__DashProject"><h2 class="title sectiontitle">Project dashboard</h2>
+      
+      <p class="p">Use the <strong class="ph b">Project</strong> dashboard to implement and build out your cloud. This dashboard
+        contains tools to create virtual server instances, create and configure your network,
+        configure access tools (such as key pairs and security groups) and cloud resource templates
+        (stacks).</p>
+
+    </div>
+
+    
+    <div class="section" id="topic1564__DashAdmin"><h2 class="title sectiontitle">Admin dashboard</h2>
+      
+      <p class="p">Use the <strong class="ph b">Admin</strong> dashboard to view, allocate, and manage all resources within the
+        cloud.</p>
+
+      <p class="p">The Admin dashboard allows you to manage instances, define flavors, create and configure
+        images, manage networks, view system resources, manage projects, and manage users.</p>
+
+    </div>
+
+    <div class="section" id="topic1564__DashSettings"><h2 class="title sectiontitle">Settings dashboard</h2>
+      
+      <p class="p">Use the <strong class="ph b">Settings</strong> dashboard to change your display language and settings, your time
+        zone, and your password.</p>
+
+      <p class="p">Click <strong class="ph b">Settings</strong> in the user menu to display the Settings dashboard.</p>
+
+    
+    </div>
+
+    
+    <div class="section">
+      <ol class="ol">
+        <li class="li">Open a web browser that has both JavaScript and cookies enabled.</li>
+
+        <li class="li">In the address bar, enter the host name or IP address for the dashboard.<div class="note note"><span class="notetitle">Note:</span>  If a
+            certificate warning appears when you try to access the URL for the first time, a
+            self-signed certificate is in use. These certificates are not considered trustworthy by
+            default. Verify the certificate or add an exception in the browser to bypass the
+            warning. You can manage certificates by visiting the topic <a class="xref" href="../security/tls.html#topic_yym_nps_4t">Enabling TLS</a></div>
+</li>
+
+        <li class="li">On the <strong class="ph b">Log In</strong> page, enter your user name and password and then click <strong class="ph b">Sign
+            In</strong>.<p class="p">
+            <img class="image" src="../../media/horizon/HelionLogin.png" alt=""></img>
+          </p>
+</li>
+
+      <li class="li">The UserID with the <samp class="ph codeph">admin</samp> role is provided with a special tab called
+          Admin. The menu options underneath this tab are similar to the non-admin user views but
+          cover all projects as well as some additional panels not available to general users.
+            <p class="p">The Overview page provides a summary by project of the current utilization of major
+            OpenStack resources. The information on this screen is drawn directly from the Compute
+            or Nova service API and provides the ability to filter the query by date range and an
+            option to download results into a CSV file that is compatible with Microsoft Excel or
+            can be imported into a database.</p>
+</li>
+
+        <li class="li">If you are a non-admin user, you will only be able to select a Project from the list at
+          the top of the screen.</li>
+
+      </ol>
+
+    </div>
+
+
+    <div class="section" id="topic1564__horizon-dashboard-examples"><h2 class="title sectiontitle">Horizon Dashboard Examples</h2><p class="p">The following screen shots illustrate some of the services you can manage in the Horizon
+        dashboard. </p>
+
+          
+      <p class="p"><strong class="ph b">Viewing System Info</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_avw_nb3_ps" src="../../media/horizon/sysinfo.png"></img></p>
+
+      <p class="p">The System Info panel provides a list of all currently installed OpenStack services
+        and their operation status.</p>
+<p class="p"></p>
+<p class="p">Additional panels on the System Info display sub service status for services like Compute, Block
+        Storage, and Network services. This is a view of the Compute Services tab. There is also a
+        Block Storage Services tab and a tab for Network Agents.</p>
+
+      
+      <p class="p"><strong class="ph b">Managing Quotas</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_lnv_rb3_ps" src="../../media/horizon/quotas2.png"></img></p>
+
+      <p class="p">The Managing Quotas panel provides a list of system quotas that you can view and edit,
+        such as VCPU's, RAM and Storage.</p>
+
+      
+      <p class="p"><strong class="ph b">Managing Routers</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_kl5_5b3_ps" src="../../media/horizon/routers.png"></img></p>
+
+      <p class="p">Routers are created to connect end user networks together as well as to provide 
+        external connectivity.  This panel provides a list of all currently deployed routers 
+        and associated metadata and enables the system administrator the ability to create, 
+        edit, and delete routers.</p>
+
+          
+      <p class="p"><strong class="ph b">Managing Availability Zones</strong>
+      </p>
+<p class="p"><img class="image" id="topic1564__image_slz_wb3_ps" src="../../media/horizon/AZ.png"></img></p>
+
+      
+      <p class="p"><strong class="ph b">Getting Hypervisor Status</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_jt2_zb3_ps" src="../../media/horizon/hypervisors.png"></img></p>
+
+      <p class="p">The first tab option on the Hypervisors panel provides a
+        view of the different hypervisors currently running, which physical server each hypervisor
+        instance is running on, the type of hypervisor, and the infrastructure resources consumed by
+        the hypervisor. </p>
+<p class="p">The Compute Host tab lists all of the currently configured physical
+        hosts, which Availability Zone each host is configured for, the status, and total consumed
+        resources.</p>
+<p class="p">The Compute Host tab lists all of the currently configured physical hosts,
+        which Availability Zone each host is configured for, the status, and total consumed
+        resources.</p>
+
+      
+      <p class="p"><strong class="ph b">Creating a DNS Record</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_zfd_cc3_ps" src="../../media/horizon/create_a_record.png"></img></p>
+
+      
+      <p class="p"><strong class="ph b">Managing Services</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_d5m_2c3_ps" src="../../media/horizon/services.png"></img></p>
+
+      
+      <p class="p"><strong class="ph b">Viewing Stacks</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_lgf_gc3_ps" src="../../media/horizon/stacks.png"></img></p>
+
+      
+      <p class="p"><strong class="ph b">Creating a Domain</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_pdf_3c3_ps" src="../../media/horizon/create_domain.png"></img></p>
+
+      
+      <p class="p"><strong class="ph b">Viewing Network Topology</strong></p>
+
+      <p class="p"><img class="image" id="topic1564__image_xdh_gf3_ps" src="../../media/horizon/HelionDashboardMenusnew1.png"></img></p>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Other Panels</h2>
+      
+        <ul class="ul">
+          <li class="li">The <strong class="ph b">Updates and Extensions </strong>panel provides a list of available files that can be
+            downloaded and installed. This view is also only available to UserIDs with the <samp class="ph codeph">admin</samp> 
+            role. <div class="note note"><span class="notetitle">Note:</span> Administrators should be cautious
+              to ensure that Horizon Extensions they install come from a trusted source and/or have undergone appropriate review and testing.
+              Administrators should be aware of the risk of spear phishing, by which they may receive an offer to install an apparently 
+              useful application which also performs malicious actions.</div>
+</li>
+
+          <li class="li">
+            <strong class="ph b">Host aggregates </strong>are a grouping of physical servers or hosts with associated
+            metadata. A host can belong to multiple aggregates.</li>
+
+         <li class="li">Common use cases for host aggregates include supporting the scheduling of instances to a
+            subset of hosts that have a specific capability or flavor such as a specific type of
+            storage, lots of RAM, and/or large numbers of processors. 
+           <p class="p">Another use case of host
+            aggregates is to support the arrangement of hosts into logical groups for load balancing
+            and instance distribution. Host aggregates are configured and only viewable by system
+            admins. The end user view of a host aggregate is called an Availability Zone. Availability
+            zones are created via the Nova API and the host aggregates function. End users can use
+            availability zones for similar use cases. For example, an application could be deployed on
+            hosts in multiple availability zones. A load balancer can then be configured and the
+            instances running each deployment of the application in each availability zone can be
+            assigned to the load balancer thus providing a measure of failover and high availability
+            support.</p>
+
+           <p class="p">Additional information on host aggregates and availability zones is available at <a class="xref" href="http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/" target="_blank">http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/</a>
+            and <a class="xref" href="http://docs.openstack.org/openstack-ops/content/scaling.html" target="_blank">http://docs.openstack.org/openstack-ops/content/scaling.html</a>.</p>
+</li>
+
+        <li class="li"><strong class="ph b">The Instances panel</strong> provides a view of all deployed end user instances across all
+          projects, the images applied to those instances, the status of each instance, flavor type,
+          and network information. This information is also supplied by the Nova API.</li>
+
+        <li class="li"><strong class="ph b">The Volumes panel</strong> is displayed if the OpenStack Cinder service is available.
+            Cinder provides block storage infrastructure. Block storage provides the ability for end
+            users to attach storage as discrete drives to a compute instance. These drives are
+            persistent and can be reassigned to a different instance. The Volumes tab on this view
+            shows all currently created volumes and associated metadata and status, which physical
+            host the volume is hosted on, and the ability for the admin to manage each volume.</li>
+
+        <li class="li"><strong class="ph b">Flavors</strong> are virtual hardware templates. Flavors are used to define a virtual
+          compute host. Flavors are assigned during the creation of a new instance. This panel
+          displays all of the current flavor types and provides the ability for the admin to create,
+          edit or delete flavors. Hosting organizations often use flavors as a form of billing unit;
+          flavors with more resources are charged at a higher rate than flavors with fewer
+            resources.</li>
+   
+        <li class="li"><strong class="ph b">Images</strong> are discrete software builds that can be loaded onto an instance. An
+          image can be a standalone operating system implementation or a bundle of operating system
+          and other pre-configured applications. This panel displays all currently available images
+          and associated metadata and enables the system administrator to create, edit and delete
+          images.</li>
+
+        <li class="li"><strong class="ph b">Networks</strong> are used by end users to provide connectivity to and between their
+          deployed instances. This panel provides a list of all currently deployed networks and
+          associated metadata and enables the system administrator the ability to created, edit, and
+          delete networks.</li>
+
+        <li class="li"><strong class="ph b">Quotas</strong> provide the means to limit resource usage. Quotas are assigned per
+          project. This panel provides a view of all current quotas and enables a system
+          administrator with the ability to edit quota line items.</li>
+
+        <li class="li"><strong class="ph b">The Identity panel</strong> has two major panels. The Projects panel provides a list of all
+          current projects and enables a system administrator the ability to create, modify, and
+          delete panels and panel membership.</li>
+
+        <li class="li"><strong class="ph b">The Users panel</strong> is available only to system administrators and provides the ability
+          to create, modify, and delete users. These users are considered "local" to Keystone and
+          are authenticated by Keystone.</li>
+
+        </ul>
+
+      </div>
+
+        
+     
+        
+      
+     
+ 
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

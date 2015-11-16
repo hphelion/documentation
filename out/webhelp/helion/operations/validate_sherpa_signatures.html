@@ -1,0 +1,102 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The Sherpa service provides a link to the remote web catalog providing a repository of software and patches that can be purchased and downloaded into the Helion environment. Users will make their ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Validating Download Signatures"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_n1v_3hs_5t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Validating Download Signatures</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_n1v_3hs_5t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Validating Download Signatures</h1>
+
+  <div class="body">
+    <div class="section">The Sherpa service provides a link to the remote web catalog providing a repository of
+      software and patches that can be purchased and downloaded into the Helion environment. Users
+      will make their purchases using a self-service account on the public web server. Once a
+      purchase is made,  you can use the Sherpa UI and back end service to download the content from
+      the web catalog using their (web-catalog) self-service account. Content may include patches,
+      plugins, images, templates, models, etc. that may be used to update or provide content to the
+      cloud. Manual validation of package signatures is required in some use cases To verify the
+      signature of packages you download, follow these instructions:</div>
+
+    
+    <div class="section" id="topic_n1v_3hs_5t__verify"><h2 class="title sectiontitle">Verify the downloaded signature</h2>
+      
+     <ul class="ul"><li class="li">Log into one of the controller nodes
+     </li>
+<li class="li">Download the CSU file from the Swift to the controller node
+     </li>
+<li class="li">Download the signature file of the CSU file from Helion Download Network(HDN) 
+     </li>
+<li class="li">Check all public keys are already delivered in /etc/sherpa
+      <pre class="pre codeblock">ls -l /etc/sherpa
+      total 44
+      -r--r--r-- 1 sherpa sherpa  647 Oct 21 08:10 gpg_2048_hpPublicKey.pub
+      -r--r--r-- 1 sherpa sherpa 1712 Oct 21 08:10 gpg-hpPublicKey.pub
+      -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-1.pub
+      -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-2.pub
+      -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-3.pub
+      -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-4.pub
+      -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-5.pub</pre>
+
+      
+     </li>
+<li class="li">Execute the following command to import the keys:
+      
+      <pre class="pre codeblock">gpg --import "</pre>
+
+        
+        where &lt;filename&gt; is the name of the public key.
+          The keys are then imported into the gpgp key share:
+          
+          <pre class="pre codeblock">gpg --import gpg-hpPublicKey.pub
+          gpg --import gpg_2048_hpPublicKey.pub
+          gpg --import HP-RPM-GPG-2048-KEY-1.pub
+          gpg --import HP-RPM-GPG-2048-KEY-2.pub
+          gpg --import HP-RPM-GPG-2048-KEY-3.pub
+          gpg --import HP-RPM-GPG-2048-KEY-4.pub
+          gpg --import HP-RPM-GPG-2048-KEY-5.pub</pre>
+
+          
+     </li>
+<li class="li">Use the following command to view the keys in the key store:
+          
+          <pre class="pre codeblock">gpg --list-keys
+          /home/stack/.gnupg/pubring.gpg
+          ------------------------------
+          pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
+          uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
+          pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)
+          pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
+          pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
+          pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
+          pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
+          pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
+          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5</pre>
+
+          
+     </li>
+<li class="li">Use the following command to verify the signature:
+          
+          <pre class="pre codeblock">gpg --verify &lt;filename&gt;.sig &lt;filename&gt;.csu</pre>
+
+            
+     </li>
+<li class="li">Perform this verification for each file you downloaded. </li>
+</ul>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

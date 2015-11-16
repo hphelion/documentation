@@ -1,0 +1,256 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The HPE Helion OpenStack 2.0 input model comes with one cluster and three VSA nodes. This is the default configuration available in the input model, but the input model allows you to create multiple ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Creating Multiple VSA Clusters"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="creating_multiple_vsa_clusters"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Creating Multiple VSA Clusters</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="creating_multiple_vsa_clusters">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Creating Multiple VSA Clusters</h1>
+
+  <div class="body">
+    
+    <p class="p">The HPE Helion OpenStack 2.0 input model comes with one cluster and three VSA nodes. This is
+      the default configuration available in the input model, but the input model allows you to
+      create multiple VSA clusters of same or different types by modifying the YAML file. </p>
+
+    <div class="p">
+      <div class="note tip"><span class="tiptitle">Tip:</span> The term <strong class="ph b">add</strong> and <strong class="ph b">update</strong> in the document means editing the
+        respective YAML files to add or update the
+          configurations/values.<p class="p"><strong class="ph b">Prerequisites</strong></p>
+<p class="p">You must have a minimum of three nodes
+          per VSA cluster.</p>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Cloud Configuration Changes to Create More Than One Cluster </h2>
+      
+      <p class="p">In this cloud configuration, you can modify the YAML files for a same set of disks:</p>
+
+      <div class="p">
+        <ol class="ol" id="creating_multiple_vsa_clusters__ol_szq_ltq_jt">
+          <li class="li">Add new nodes in the <samp class="ph codeph">servers.yml</samp> file with a unique name and
+              <samp class="ph codeph">node_id</samp> for each cluster. <p class="p">Example: In the following example we are
+              adding one more cluster. Similarly, you can keep adding clusters based on your
+              requirements. </p>
+<p class="p">The following <samp class="ph codeph">servers.yml</samp> file lists six nodes
+              for two
+            clusters:</p>
+<pre class="pre codeblock">- id: vsa1
+      ip-addr: 192.168.61.15
+      role: VSA-ROLE
+      server-group: RACK1
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.232
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:8C:B0
+
+    - id: vsa2
+      ip-addr: 192.168.61.16
+      role: VSA-ROLE
+      server-group: RACK2
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.233
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:0E:30
+
+    - id: vsa3
+      ip-addr: 192.168.61.17
+      role: VSA-ROLE
+      server-group: RACK3
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.234
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:2D:00
+
+- id: vsa4
+      ip-addr: 192.168.62.18
+      role: VSA-ROLE-1
+      server-group: RACK1
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.193.232
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:8C:B0
+
+    - id: vsa5
+      ip-addr: 192.168.63.19
+      role: VSA-ROLE-1
+      server-group: RACK2
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.194.233
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:0E:30
+
+    - id: vsa6
+      ip-addr: 192.168.64.20
+      role: VSA-ROLE-1
+      server-group: RACK3
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.195.234
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:2D:00
+</pre>
+</li>
+
+          <li class="li">Add a new resource in the <samp class="ph codeph">control_plane.yml</samp> file with the name,
+            resource-prefix, and server-role. <p class="p">Example: The following
+                <samp class="ph codeph">control_plane.yml</samp> file contains the information of the newly added
+              resource
+              nodes:</p>
+<pre class="pre codeblock">resources:
+     - name: vsa
+       resource-prefix: vsa
+       server-role: ROLE-VSA
+       allocation-policy: strict
+       min-count: 0
+       service-components:
+          - ntp-client
+          - vsa
+
+      - name: vsa1
+        resource-prefix: vsa1
+        server-role: ROLE-VSA-1
+        allocation-policy: strict
+        min-count: 0
+        service-components:
+           - ntp-client
+           - vsa</pre>
+<p class="p">The
+              control plane has the following fields:</p>
+<div class="p">
+              <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+                  <td valign="top" class="stentry"><samp class="ph codeph">name</samp></td>
+
+                  <td valign="top" class="stentry">The name assigned for the cluster. In the above example <strong class="ph b">vsa</strong> and
+                      <strong class="ph b">vsa1</strong>.</td>
+
+                </tr>
+<tr class="strow">
+                  <td valign="top" class="stentry"><samp class="ph codeph">resource-prefix</samp></td>
+
+                  <td valign="top" class="stentry">The prefix of that resource cluster.</td>
+
+                </tr>
+<tr class="strow">
+                  <td valign="top" class="stentry"><samp class="ph codeph">server-role</samp></td>
+
+                  <td valign="top" class="stentry">The role must be unique for each cluster.</td>
+
+                </tr>
+</table>
+
+            </div>
+</li>
+
+          <li class="li">Update <samp class="ph codeph">server_roles.yml</samp> with new VSA nodes.<div class="p">Example: In the
+              following <samp class="ph codeph">server_roles.yml</samp> file, new VSA nodes are
+              added/updated:<pre class="pre codeblock">server-roles:
+
+    - name: ROLE-VSA
+      interface-model: INTERFACE_SET_VSA
+      disk-model: DISK_SET_VSA
+
+    - name: ROLE-VSA-1
+      interface-model: INTERFACE_SET_VSA
+      disk-model: DISK_SET_VSA</pre>
+</div>
+<p class="p">The
+              server roles have the following fields:</p>
+<div class="p">
+              <table cellpadding="4" cellspacing="0" summary="" id="creating_multiple_vsa_clusters__simpletable_ofj_mgz_jt" border="1" class="simpletable"><tr class="strow">
+                  <td valign="top" class="stentry"><samp class="ph codeph">name</samp></td>
+
+                  <td valign="top" class="stentry">The name assigned to the cluster. In the above example <strong class="ph b">vsa</strong> and
+                      <strong class="ph b">vsa1</strong>.</td>
+
+                </tr>
+<tr class="strow">
+                  <td valign="top" class="stentry"><samp class="ph codeph">disk-model</samp></td>
+
+                  <td valign="top" class="stentry">The type of disk available for the clusters. It can be the same set of
+                    disks or a different set of disks. In the above example, only one set of disk
+                    models is shown (for example:<strong class="ph b">DISK_SET_VSA</strong>).</td>
+
+                </tr>
+</table>
+
+            </div>
+</li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Cloud Configuration Changes to Create Two Cluster with Different Set of Disks</h2>
+      
+      <p class="p">You must edit the YAML files to create more than one cluster. In this cloud configuration,
+        you can add or update the YAML files for a different set of disks, i.e., one with adoptive
+        optimization (AO) enabled and another without adoptive optimization.</p>
+
+      <ol class="ol" id="creating_multiple_vsa_clusters__ol_ugh_z2x_jt">
+        <li class="li">Add new nodes in <samp class="ph codeph">severs.yml</samp> with a unique name.</li>
+
+        <li class="li">Add a new resource node under  <strong class="ph b">resources</strong> in <samp class="ph codeph">control_plane.yml</samp>
+          with  a unique name, resource-prefix, and server-role.</li>
+
+        <li class="li">Modify the <samp class="ph codeph">disk_set</samp> for AO and without AO. Ensure that you use
+          different files and different <samp class="ph codeph">disk_set</samp>. <div class="note note"><span class="notetitle">Note:</span> In the HPE Helion OpenStack
+            2.0 input model you will find only a <samp class="ph codeph">disks_vsa.yml</samp> file, which contains
+            the information for AO and without AO. You must create a separate YAML file and enter
+            the configuration information of AO in that file. For creating non AO disk, refer to
+              <a class="xref" href="../../installation/configure_vsa.html#config_vsa__deploy-vsa-with-ao-without-ao">VSA with AO or without AO</a>.</div>
+</li>
+
+        <li class="li">Update <samp class="ph codeph">server_roles.yml</samp> with new VSA nodes and appropriate
+            <samp class="ph codeph">disk_set</samp> used for that node.<p class="p">Example: In the following
+              <samp class="ph codeph">servers_roles.yml</samp> file you can see both AO and without AO assigned
+            for the
+            node:</p>
+<pre class="pre codeblock">---
+  product:
+    version: 2
+
+  server-roles:
+
+    - name: ROLE-CONTROLLER
+      interface-model: INTERFACE_SET_CONTROLLER
+      disk-model: DISK_SET_CONTROLLER
+
+    - name: ROLE-COMPUTE
+      interface-model: INTERFACE_SET_COMPUTE
+      disk-model: DISK_SET_COMPUTE
+
+    - name: ROLE-VSA
+      interface-model: INTERFACE_SET_VSA
+      disk-model: DISK_SET_VSA
+
+    - name: ROLE-VSA-1
+      interface-model: INTERFACE_SET_VSA
+      disk-model: DISK_SET_VSA_AO</pre>
+<div class="note note"><span class="notetitle">Note:</span> If
+            you have configured your cloud to have more than one cluster or n-clusters, remember to
+            note down all the cluster IPs.</div>
+</li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

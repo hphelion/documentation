@@ -1,0 +1,66 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The ring building process tries to distribute data evenly among the available disk drives. The data is stored in partitions. (For more information, see HPE Helion OpenStack 2.0: Understanding Ring ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Rebalancing Object Storage Rings"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_izw_1mz_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Rebalancing Object Storage Rings</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_izw_1mz_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Rebalancing Object Storage Rings</h1>
+
+  <div class="body">
+    <p class="p">The ring building process tries to distribute data evenly among the available disk drives.
+      The data is stored in partitions. (For more information, see <a class="xref" href="ring_specifications.html#ring-specification">HPE Helion OpenStack 2.0: Understanding Ring Specifications</a>.) If you, for example, double the
+      number of disk drives in a ring, you need to move 50 percent of the partitions to the new
+      drives so that all drives contain the same number of partitions (and hence same amount of
+      data). But it is not possible to move the partitions in a single step. It can take minutes to
+      hours to move partitions from the original drives to their new drives (this process is called
+      the replication process). If you move all partitions at once, there would be a period where
+      Swift would expect to find partitions on the new drives, but the data had not yet replicated
+      there so that Swift could not return the data to the user. Therefore, Swift will not be able
+      to find all the data in the middle of replication because some data has finished replication
+      while other bits of data are still in the old locations and have not yet been moved. Instead,
+      move only one replica at a time. If the replica count is 3, you could first move 16.6 percent
+      of the partitions and then wait until all data has replicated. Then move a further 16.6
+      percent of partitions. Wait again and then finally move the remaining 16.6 percent of
+      partitions. For any given object, only one of the replicas is moved at a time.</p>
+
+    <p class="p"></p>
+
+    <div class="section"><div class="sectiondiv"><strong class="ph b">Reason to move partition gradually</strong></div><p class="p">Due to the
+        following factors, you must move the partition gradually: </p>
+<ul class="ul" id="topic_izw_1mz_4t__ul_jrz_q3s_4t">
+        <li class="li">Not all devices are of the same size. HPE Helion OpenStack 2.0 automatically assigns
+          different weights to drives so that smaller drives store fewer partitions than larger
+          drives.</li>
+
+        <li class="li">The process attempts to keep replicas of the same partition in different servers.</li>
+
+        <li class="li">
+          <p class="p">Making a large change in one step (for example, doubling the number of drives in the
+            ring), would result in a lot of network traffic due to the replication process and the
+            system performance suffers. There are two ways to mitigate this:</p>
+
+          <ul class="ul" id="topic_izw_1mz_4t__ul_msz_tjs_4t">
+            <li class="li">Add servers in smaller groups</li>
+
+            <li class="li">Set the weight-step attribute in the ring specification. (For more information,
+                see<a class="xref" href="setting_up_weight_attributes_ring_changes.html#topic_t1y_vjs_4t">HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</a>
+              .)</li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

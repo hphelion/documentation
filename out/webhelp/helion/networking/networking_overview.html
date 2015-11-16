@@ -1,0 +1,71 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack Networking is a virtual networking service that leverages the OpenStack Neutron service to provide network connectivity and addressing to HPE Helion OpenStack Compute service ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Networking Service Overview"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="neutron_overview"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Networking Service Overview</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="neutron_overview">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Networking Service Overview</h1>
+
+  <div class="body">
+    <p class="p">HPE Helion OpenStack Networking is a virtual networking service that leverages the OpenStack
+      Neutron service to provide network connectivity and addressing to HPE Helion OpenStack Compute
+      service devices.</p>
+
+    <p class="p">The Networking service also provides an API to configure and manage a variety of network
+      services.</p>
+
+    <p class="p">You can use the Networking service to connect guest servers or you can define and configure
+      your own virtual network topology.</p>
+
+    
+    <div class="section" id="neutron_overview__installing-the-networking-service"><h2 class="title sectiontitle">Installing the Networking service</h2>
+      
+      <p class="p">Helion Network Administrators are responsible for planning for the Neutron networking
+        service, and once installed, to configure the service to meet the needs of their cloud
+        network users.</p>
+
+      
+    </div>
+
+    <div class="section" id="neutron_overview__working-with-the-networking-service"><h2 class="title sectiontitle">Working with the Networking service</h2>
+      
+      <p class="p">To perform tasks using the Networking service, you can use the dashboard, API or CLI.</p>
+
+    </div>
+
+    
+    <div class="section" id="neutron_overview__restarting"><h2 class="title sectiontitle">Reconfiguring the Networking service</h2>
+      
+      <p class="p">If you change any of the network configuration after installation, it is recommended that
+        you reconfigure the Networking service by running the neutron-reconfigure playbook.</p>
+
+      <p class="p">On the deployer/lifecycle-manager node:</p>
+
+      <pre class="pre codeblock">cd ~/helion/hlm/ansible
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</pre>
+
+
+    </div>
+
+  
+    <div class="section" id="neutron_overview__for-more-information"><h2 class="title sectiontitle">For more information</h2>
+      
+      <p class="p">For information on how to operate your cloud we suggest you read the <a class="xref" href="http://docs.openstack.org/ops/" target="_blank">OpenStack Operations
+          Guide</a>. The <em class="ph i">Architecture</em> section contains useful information about how an
+        OpenStack Cloud is put together. However, the HPE Helion OpenStack takes care of these
+        details for you. The <em class="ph i">Operations</em> section contains information on how to manage the
+        system.</p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page describes how to add an additional storage policy to an existing system. For an overview of storage policies, see HPE Helion OpenStack 2.0: Designing Storage Policies . To Add a Storage ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Adding a New Swift Storage Policy"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_evl_wln_pt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Adding a New Swift Storage Policy</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_evl_wln_pt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Adding a New Swift Storage Policy</h1>
+
+  <div class="body">
+    <p class="p">This page describes how to add an additional storage policy to an existing system. For an
+      overview of storage policies, see <a class="xref" href="storage_policies.html">HPE Helion OpenStack 2.0: Designing Storage Policies</a>. </p>
+
+    <p class="p"><strong class="ph b">To Add a Storage Policy</strong></p>
+
+    <p class="p">Perform the following steps to add the storage policy to an existing system.</p>
+
+    <div class="p">
+      <ol class="ol" id="topic_evl_wln_pt__ol_rxn_3qn_pt">
+        <li class="li">Select a storage policy index and ring name. <p class="p">For example, if you already have
+            object-0 and object-1 rings in your ring-specifications (usually in the
+              <samp class="ph codeph">data/swift/rings.yml</samp> file), the next index is 2 and the ring name is
+            object-2.</p>
+</li>
+
+        <li class="li">Select a user-visible name so that you can see when you examine container metadata or
+          when you want to specify the storage policy used when you create a container. The name
+          should be a single word (hyphen and dashes are allowed).</li>
+
+        <li class="li">Decide if this new policy will be the default for all new containers.</li>
+
+        <li class="li">Decide on other attributes such as <samp class="ph codeph">partition-power</samp> and
+            <samp class="ph codeph">replica-count</samp>. For more details on the required attributes, see <a class="xref" href="ring_specifications.html#ring-specification">HPE Helion OpenStack 2.0: Understanding Ring Specifications</a>.</li>
+
+        <li class="li">Edit the <samp class="ph codeph">ring-specifications</samp> attribute (usually in the
+            <samp class="ph codeph">data/swift/rings.yml</samp> file) and add the new ring specification. If this
+          policy is to be the default storage policy for new containers, set the
+            <samp class="ph codeph">default</samp> attribute to <strong class="ph b">yes</strong>.<div class="note note"><span class="notetitle">Note:</span> 
+            <ul class="ul" id="topic_evl_wln_pt__ul_fgw_xqn_pt">
+              <li class="li">Ensure that only one object ring has the <samp class="ph codeph">default</samp> attribute set to
+                  <strong class="ph b">yes</strong>. If you set two rings as default, Swift processes will not start.</li>
+
+              <li class="li">Do not specify the <samp class="ph codeph">weight-step</samp> attribute for the new object ring.
+                Since this is a new ring there is no need to gradually increase device weights.</li>
+
+            </ul>
+
+          </div>
+</li>
+
+        <li class="li">Update the appropriate disk model to use the new storage policy (for example, the
+            <samp class="ph codeph">data/disks_swobj.yml</samp> file). The following sample shows that the
+            <strong class="ph b">object-2</strong> has been added to the list of existing rings that use the drives:<pre class="pre codeblock">disk-models:
+- name: SWOBJ-DISKS
+  ...
+  device-groups:
+  - name: swobj
+    devices:
+       ...
+    consumer:
+        name: swift
+        attrs:
+            rings:
+            - object-0
+            - object-1
+            - <strong class="ph b">object-2</strong>
+  ...</pre>
+<div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">You must use the new object ring on at least one node that runs the
+                <samp class="ph codeph">swift-object</samp> service. If you skip this step and continue to run the
+                <samp class="ph codeph">_swift-validate-input-model.yml</samp> or
+                <samp class="ph codeph">swift-deploy.yml</samp> playbooks, they will fail with an error <strong class="ph b">There
+                are no devices in this ring, or all devices have been deleted</strong>, as shown
+              below:</p>
+
+            <pre class="pre codeblock">TASK: [swiftlm-ring-supervisor | build-rings | Build ring (make-delta, rebalance)] *** 
+failed: [padawan-ccp-c1-m1-mgmt] =&gt; {"changed": true, "cmd": ["swiftlm-ring-supervisor", "--make-delta", "--rebalance"], "delta": "0:00:03.511929", "end": "2015-10-07 14:02:03.610226", "rc": 2, "start": "2015-10-07 14:02:00.098297", "warnings": []}
+...
+Running: swift-ring-builder /etc/swiftlm/builder_dir/region-region1/object-2.builder rebalance 999
+ERROR: -------------------------------------------------------------------------------
+An error has occurred during ring validation. Common
+causes of failure are rings that are empty or do not
+have enough devices to accommodate the replica count.
+Original exception message:
+There are no devices in this ring, or all devices have been deleted
+-------------------------------------------------------------------------------</pre>
+
+          </div>
+</li>
+
+        <li class="li">Commit your
+            configuration:<pre class="pre codeblock">git add -A
+git commit -m "commit message"</pre>
+<div class="p">For
+            example:<pre class="pre codeblock">cd ~/helion
+git commit -a -m "added object-2 Storage Policy and updated SWOBJ disk model"</pre>
+</div>
+</li>
+
+        <li class="li">Re-run the configuration
+          processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Create a deployment
+          directory:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Validate the changes by running the <samp class="ph codeph">_swift-validate-input-model.yml</samp>
+          playbook:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</pre>
+If
+          any errors occur, correct them. For instructions, see <a class="xref" href="interpreting_swift_validate_input_model.html">HPE Helion OpenStack 2.0: Interpreting Swift Input Model Validation Errors</a>. Then, re-run steps <strong class="ph b">5 -
+          10</strong>.</li>
+
+        <li class="li">Create the new ring (for example, object-2), and reconfigure the Swift node to use a new
+          storage policy, by running the <samp class="ph codeph">swift-deploy.yml</samp> playbook: <div class="note note"><span class="notetitle">Note:</span> Before
+            using <samp class="ph codeph">swift-deploy.yml</samp>, check that Swift is running
+          normally.</div>
+<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-status.yml
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+    <p class="p">After adding a storage policy, there is no need to rebalance the ring.</p>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

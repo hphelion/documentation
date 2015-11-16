@@ -1,0 +1,430 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Overview of Ring Management In Swift, the ring is responsible for mapping data on particular disks. There is a separate ring for account databases, container databases, and each object storage policy, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Understanding Ring Specifications"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="ring-specification"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Understanding Ring Specifications</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ring-specification">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Understanding Ring Specifications</h1>
+
+  <div class="body">
+    <p class="p"><strong class="ph b">Overview of Ring Management</strong></p>
+
+    <p class="p">In Swift, the ring is responsible for mapping data on particular disks. There is a separate
+      ring for account databases, container databases, and  each object storage policy, but each
+      ring works similarly. The <samp class="ph codeph">swift-ring-builder</samp> utility is used to build and
+      manage rings. This utility uses a builder file to contain ring information and additional data
+      required to build future rings. In HPE Helion OpenStack 2.0, you can use the cloud model to
+      specify how the rings are configured and used. This model is used to automatically invoke the
+      swift-ring-builder utility as part of the deploy process. (Normally, you will not run the
+      swift-ring-builder utility directly.)</p>
+
+    <p class="p">The rings are specified in the input model using the <strong class="ph b">ring-specifications</strong> key. There is
+      an entry for each distinct Swift system – hence the Keystone region name is specified in the
+        <strong class="ph b">region-name</strong> key of the example cloud model.</p>
+
+    <p class="p"><strong class="ph b">Ring Specifications in the Input Model</strong></p>
+
+    <p class="p">In the cloud model, a ring-specification is mentioned in the
+        <samp class="ph codeph">data/swift/rings.yml</samp> file. For example:</p>
+
+    <div class="p">
+      <pre class="pre codeblock">ring-specifications:
+    - region-name: region1
+      rings:
+        - name: account
+          display-name: Account Ring
+          min-part-time: 16
+          partition-power: 12
+          replication-policy:
+            replica-count: 3
+        - name: container
+          display-name: Container Ring
+          min-part-time: 16
+          partition-power: 12
+          replication-policy:
+            replica-count: 3
+        - name: object-0
+          display-name: General
+          default: yes
+          min-part-time: 16
+          partition-power: 12
+          replication-policy:
+            replica-count: 3</pre>
+
+    </div>
+
+    <p class="p">The above sample file shows that the <strong class="ph b">region1</strong> has three rings as follows: </p>
+
+    <div class="p">
+      <ul class="ul" id="ring-specification__ul_hl3_q55_dt">
+        <li class="li"><strong class="ph b">Account ring</strong>: You must always specify a ring called <strong class="ph b">account</strong>. The account
+          ring is used by Swift to store metadata about the projects in your system. In Swift, a
+          Keystone project maps to a Swift account. The <samp class="ph codeph">display-name</samp> is
+          informational and not used. </li>
+
+        <li class="li"><strong class="ph b">Container ring</strong>:You must always specify a ring called <strong class="ph b">container</strong>. The
+            <samp class="ph codeph">display-name</samp> is informational and not used.</li>
+
+        <li class="li"><strong class="ph b">Object ring</strong>: This ring is also known as a storage policy. You must always specify
+          a ring called <strong class="ph b">object-0</strong>. It is possible to have multiple object rings, which is
+          known as <em class="ph i">storage policies</em>. The <samp class="ph codeph">display-name</samp> is the name of the
+          storage policy and can be used by users of the Swift system when they create containers.
+          It allows them to specify the storage policy that the container uses. In the example, the
+          storage policy is called <strong class="ph b">General</strong>.</li>
+
+        <li class="li">
+          <p class="p"><strong class="ph b">Min-part-time, partition-power, replication-policy</strong> and <strong class="ph b">replica-count</strong> are
+            described in the following section. </p>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><strong class="ph b">Ring Parameters</strong></div>
+
+    <div class="section">The ring parameters are defined as follows:<table cellpadding="4" cellspacing="0" summary="" id="ring-specification__simpletable_qyp_lnj_2t" border="1" class="simpletable"><tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">replica-count</samp></td>
+
+          <td valign="top" class="stentry"><p class="p">Defines the number of copies of object created.</p>
+Use this to control the
+            degree of resiliency or availability. The <samp class="ph codeph">replica-count</samp> is normally set
+            to <strong class="ph b">3</strong> (i.e., Swift will keep three copies of accounts, containers, or objects). As
+            a best practice, you should not decrease the value to lower than 3. And, if you want a
+            higher resiliency, you can increase the value.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">min-part-time</samp></td>
+
+          <td valign="top" class="stentry"><p class="p">Changes the value used to decide a given partition can be moved.</p>
+This is
+            the number of hours that the <samp class="ph codeph">swift-ring-builder</samp> tool will enforce
+            between ring rebuilds. On a small system, this can be as low as <strong class="ph b">1</strong> (one hour). The
+            value can be different for each ring. <p class="p">In the example above, the
+                <samp class="ph codeph">swift-ring-builder</samp> will enforce a minimum of 16 hours between ring
+              rebuilds. However, this time is system-dependent so you will be unable to determine
+              the appropriate value for <samp class="ph codeph">min-part-time</samp> until you have more
+              experience with your system.</p>
+</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">partition-power</samp></td>
+
+          <td valign="top" class="stentry">The optimal value for this parameter is related to the number of disk drives that
+            you allocate to Swift storage. As a best practice, you should use the same drives for
+            both the account and container rings. In this case, the <samp class="ph codeph">partition-power</samp>
+            value should be the same. For more information, see <a class="xref" href="#ring-specification__selecting-partition-power">Selecting a
+              Partition Power</a>.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">replication-policy</samp></td>
+
+          <td valign="top" class="stentry">Specifies that a ring uses replicated storage. The duplicate copies of the object
+            are created and stored on different disk drives. All replicas are identical. If one is
+            lost or corrupted, the system automatically copies one of the remaining replicas to
+            restore the missing replica.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">default</samp></td>
+
+          <td valign="top" class="stentry">The default value in the above sample file of ring-specification is set to
+              <strong class="ph b">yes</strong>, which means that the storage policy is enabled to store objects. For more
+            information, see <a class="xref" href="storage_policies.html">HPE Helion OpenStack 2.0: Designing Storage Policies</a>.</td>
+
+        </tr>
+</table>
+</div>
+
+    
+    <div class="section" id="ring-specification__selecting-partition-power"><h2 class="title sectiontitle">Selecting a Partition Power</h2>
+      
+      <p class="p">When storing an object, the object storage system hashes the name. This hash results in a
+        hit on a partition (so a number of different object names result in the same partition
+        number). Generally, the partition is mapped to available disk drives. With a replica count
+        of 3, each partition is mapped to three different disk drives. The hashing algorithm used
+        hashes over a fixed number of partitions. The partition-power attribute determines the
+        number of partitions you have. </p>
+
+      <p class="p">Partition power is used to distribute the data uniformly across drives in a Swift nodes. It
+        also defines the storage cluster capacity. You must set the part partition power value based
+        on the total amount of storage you expect your entire ring to use. </p>
+
+    </div>
+
+    <p class="p">You should select a partition power for a given ring that is appropriate to the number of
+      disk drives you allocate to the ring for the following reasons: </p>
+
+    <ul class="ul" id="ring-specification__ul_i4b_gv5_dt">
+      <li class="li">If you use a high partition power and have a few disk drives, each disk drive will have
+        thousands of partitions. With too many partitions, audit and other processes in the Object
+        Storage system cannot walk the partitions in a reasonable time and updates will not occur in
+        a timely manner.</li>
+
+      <li class="li">If you use a low partition power and have many disk drives, you will have tens (or maybe
+        only one) partition on a drive. The Object Storage system does not use size when hashing to
+        a partition – it hashes the name.
+          <p class="p">With
+          many partitions on a drive, a large partition is cancelled out by a smaller partition so
+          the overall drive usage is similar. However, with very small numbers of partitions, the
+          uneven distribution of sizes can be reflected in uneven disk drive usage (so one drive
+          becomes full while a neighboring drive is empty).</p>
+</li>
+
+    </ul>
+
+    <p class="p">An ideal number of partitions per drive is 100. If you know the number of drives, select a
+      partition power that will give you approximately 100 partitions per drive. Usually, you
+      install a system with a specific number of drives and add drives as needed. However, you
+      cannot change the value of the partition power. Hence you must select a value that is a
+      compromise between current and planned capacity. </p>
+
+    <div class="p">
+      <div class="note important"><span class="importanttitle">Important:</span> If you are installing a small capacity system and you need to grow to a
+        very large capacity but you cannot fit within any of the ranges in the table, please seek
+        help from Professional Services to plan your system.</div>
+
+    </div>
+
+    <p class="p">There are additional factors that can help mitigate the fixed nature of the partition
+      power:</p>
+
+    <ul class="ul">
+      <li class="li">Account and container storage represents a small fraction (typically 1 percent) of your
+        object storage needs. Hence, you can select a smaller partition power (relative to object
+        ring partition power) for the account and container rings. </li>
+
+    </ul>
+
+    <div class="p">
+      <ul class="ul">
+        <li class="li">For object storage, you can add additional storage policies (i.e., another object ring).
+          When you have reached capacity in an existing storage policy, you can add a new storage
+          policy with a higher partition power (because you now have more disk drives in your
+          system). This means that you can install your system using a small partition power
+          appropriate to a small number of initial disk drives. Later, when you have many disk
+          drives, the new storage policy can have a higher value appropriate to the larger number of
+          drives.</li>
+
+      </ul>
+
+    </div>
+
+    <p class="p"> However, when you continue to add storage capacity, existing containers will continue to use
+      their original storage policy. Hence, the additional objects must be added to new containers
+      to take advantage of the new storage policy.</p>
+
+    <p class="p">Use the following table to select an appropriate partition power for each ring. The partition
+      power of a ring cannot be changed, so it is important to select an appropriate value. This
+      table is based on a replica count of 3. If your replica count is different, or you are unable
+      to find your system in the table, then see <a class="xref" href="#ring-specification__calculating-number">Calculating Numbers of Partitions</a> for information of selecting a
+      partition power. </p>
+
+    <p class="p"> The table assumes that when you first deploy Swift, you have a small number of drives (the
+      minimum column in the table), and later you add drives. </p>
+
+    <div class="p">
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <ul class="ul">
+          <li class="li">Use the total number of drives. For example, if you have three servers, each with two
+            drives, the total number of drives is six.</li>
+
+          <li class="li">The lookup should be done separately for each of the account, container and object
+            rings. Since account and containers represent approximately 1 to 2 percent of object
+            storage, you will probably use fewer drives for the account and container rings (i.e.,
+            you will have fewer proxy, account, and container (PAC) servers) so that your object
+            rings may have a higher partition power.</li>
+
+          <li class="li">The largest anticipated number of drives imposes a limit in the minimum drives you can
+            have. (For more information, see <a class="xref" href="#ring-specification__calculating-number">Calculating Numbers of Partitions</a>.) This means that, if you
+            anticipate significant growth, your initial system can be small, but under a certain
+            limit. For example, if you determine that the maximum number of drives the system will
+            grow to is 40,000, then use a partition power of 17 as listed in the table below. In
+            addition, a minimum of 36 drives is required to build the smallest system with this
+            partition power.</li>
+
+          <li class="li">The table assumes that disk drives are the same size. The actual size of a drive is
+            not significant.</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="ring-specification__partition-power"><strong class="ph b">Partition Power Matrix</strong>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="ring-specification__table_fz3_2hg_dt" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="33.33333333333333%" id="d82327e339">Number of drives during deployment (minimum)</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d82327e342">Number of drives in largest anticipated system (maximum)</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d82327e345">Recommended partition power</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">6</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">5,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">14</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">12</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">10,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">15</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">36</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">40,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">17</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">72</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">80,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">18</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">128</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">160,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">19</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">256</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">300,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">20</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">512</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">600,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">21</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">1024</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">1,200,00</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">22</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">2048</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">2,500,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">23</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e339 ">5120</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e342 ">5,000,000</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d82327e345 ">24</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+</div>
+
+    <div class="section" id="ring-specification__calculating-number"><strong class="ph b">Calculating Numbers of Partitions</strong><div class="p">The Object Storage
+        system hashes a given name into a specific partition. For each partition, for a replica
+        count of 3, there are three partition directories. The partition directories are then evenly
+        scattered over all drives. You can calculate the number of partition directories as
+        follows:<pre class="pre codeblock">number-partition-directories-per-drive = ( (2 ** partition-power) * replica-count ) / number-of-drives</pre>
+</div>
+</div>
+
+    <p class="p">An ideal number of partition directories per drive is 100. However, the system can operate
+      normally with a wide range of number of partition directories per drive. The table  <a class="xref" href="#ring-specification__partition-power">Partition Power Matrix</a> is
+      based on the following: </p>
+
+    <ul class="ul">
+      <li class="li">A replica count of 3.</li>
+
+      <li class="li">For a given partition power, the minimum number of drives results in approximately 10,000
+        partition directories per drive. More directories on a drive results in performance
+        issues.</li>
+
+      <li class="li">For a given partition power, using the maximum number of drives results in approximately
+        10 partition directories per drive. Using fewer directories per drive results in an uneven
+        distribution of space usage.</li>
+
+    </ul>
+
+    <p class="p"> It is easy to select an appropriate partition power if your system is a fixed size. Select a
+      value that gives the closest value to 100 partition directories per drive. If your system
+      starts smaller and then grows, the issue is more complicated. The following two techniques may
+      help:</p>
+
+    <div class="p">
+      <ul class="ul">
+        <li class="li">Start with a system that is closer to your final anticipated system size – this means
+          that you can use a high partition power that suits your final system.</li>
+
+      </ul>
+
+    </div>
+
+    <ul class="ul">
+      <li class="li">You can add additional storage policies as the system grows. These storage policies can
+        have a higher partition power because there will be more drives in a larger system. Note
+        that this does not help account and container rings – storage policies are only applicable
+        to object rings.</li>
+
+    </ul>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

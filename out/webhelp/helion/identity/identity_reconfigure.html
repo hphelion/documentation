@@ -1,0 +1,204 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Updating the Keystone Identity Service HPE Helion OpenStack ® allows you to perform updates on the following parts of the Identity service configuration:: Any content in main keystone configuration ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Reconfiguring the Identity Service"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_m43_2j3_bt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Reconfiguring the Identity Service</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_m43_2j3_bt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Reconfiguring the Identity Service</h1>
+
+  <div class="body">
+
+    <div class="section"><h2 class="title sectiontitle">Updating the Keystone Identity Service</h2>
+      
+      <p class="p">HPE Helion OpenStack<sup>®</sup> allows you to perform updates on 
+      the following parts of the Identity service configuration::</p>
+
+    </div>
+
+      
+    <div class="section">
+      
+      <ul class="ul">
+      <li class="li"> Any content in main keystone configuration file:<strong class="ph b"> /etc/keystone/keystone.conf</strong>. This
+          allows to manipulate Keystone configuration parameters. Please refer to the <a class="xref" href="#topic_m43_2j3_bt__updating">Updating the main Identity Service
+            configuration file</a> section next. </li>
+<li class="li">Updating certain configuration options and enabling features, such as:
+      
+      
+      <ul class="ul"><li class="li">Verbosity of logs being written to keystone log files.
+      </li>
+<li class="li">Process counts for Apache2 WSGI module, separately for admin and public Keystone interfaces
+      </li>
+<li class="li">Enabling/disabling auditing.
+      </li>
+<li class="li">Enabling/disabling Fernet Tokens.</li>
+</ul>
+
+      
+      Please refer to Enabling Keystone Features section below.</li>
+
+      <li class="li">Creating and updating domain-specific configuration files:
+            <strong class="ph b">/etc/keystone/domains/keystone.&lt;domain_name&gt;.conf</strong>. This allows to integrate
+          Keystone with one or more external authentication sources, such as LDAP server. Please
+          refer to Integrating with an external LDAP server section below. </li>
+
+      </ul>
+
+    </div>
+
+    
+    <div class="section" id="topic_m43_2j3_bt__updating"><h2 class="title sectiontitle">Updating the main Identity Service configuration file</h2>
+      
+      
+     <ol class="ol"><li class="li">The main Keystone Identity Service configuration file (<strong class="ph b">/etc/keystone/keystone.conf</strong>),
+          located on each control plane server is generated from the following template file located
+          on a deployer: <strong class="ph b">/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</strong>
+          <p class="p">Modify this template file as appropriate. Please refer to <a class="xref" href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html" target="_blank">Keystone Kilo documentation</a> for full
+            descriptions of all settings: This is a Jinja2 template, which expects certain template
+            variables to be set. Do not change values inside double curly braces: {{ }}. </p>
+
+          <div class="note note"><span class="notetitle">Note:</span> HPE Helion OpenStack 2.0 has the token expiration setting as below, which is
+            different from the upstream value "3600":
+            <pre class="pre codeblock">[token] 
+expiration = 14400</pre>
+</div>
+
+        </li>
+
+    <li class="li">Once the template is modified, commit the change to the local git repository, and rerun the
+          configuration processor / deployment area preparation playbooks (as suggested at <a class="xref" href="../installation/using_git.html">Using Git for Configuration Management</a>):
+          <pre class="pre codeblock">$ cd ~/helion
+$ git checkout site
+$ git add my_cloud/config/keystone/keystone.conf.j2
+$ git commit -m "Adjusting some parameters in keystone.conf"
+$ cd ~/helion/hos/ansible
+$ ansible-playbook -i hosts/localhost config-processor-run.yml
+$ ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+       <li class="li">Run reconfiguration playbook in deployment area:
+          <pre class="pre codeblock">$ cd ~/scratch/ansible/next/hos/ansible
+$ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</pre>
+
+        </li>
+</ol>
+
+    </div>
+
+    
+    <div class="section" id="topic_m43_2j3_bt__enable_features"><h2 class="title sectiontitle">Enabling Identity Service features</h2> To enable or
+      disable Keystone features like Fernet Tokens, do the following: <ol class="ol">
+        <li class="li">Adjust respective parameters in
+            <strong class="ph b">/home/stack/helion/my_cloud/config/keystone/keystone_deploy_config.ym</strong>l. </li>
+
+        <li class="li">Commit the change into local git repository, and rerun configuration processor /
+          deployment area preparation playbooks (as suggested at <a class="xref" href="../installation/using_git.html">Using Git for Configuration Management</a>):
+          <pre class="pre codeblock">$ cd ~/helion
+$ git checkout site
+$ git add my_cloud/config/keystone/keystone_deploy_config.yml
+$ git commit -m "Adjusting some WSGI or logging parameters for keystone"
+$ cd ~/helion/hos/ansible
+$ ansible-playbook -i hosts/localhost config-processor-run.yml
+$ ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+
+    <li class="li">Run reconfiguration playbook in deployment area:
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+$ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Fernet Token</h2>
+      
+      
+      <p class="p">HPE Helion OpenStack 2.0 supports UUID tokens by default. Fernet Tokens are available as an
+        experimental feature. You can switch to using Fernet tokens instead of UUID tokens by
+        following the above steps. The benefit of using Fernet tokens is that tokens are not
+        persisted in a database, which is helpful if you want to deploy Keystone Identity service as
+        one master and multiple slaves: only roles, projects, etc. will need to be replicated from
+        master to slaves, not the token table. The tradeoff is the cost of token validation.
+        According to our performance testing, although Fernet tokens perform slightly better than
+        UUID on token creation, the degradation is about 400% on token validation when compared to
+        UUID tokens. The performance degradation is caused mainly by database operations; there are
+        39 queries per fernet token validation, while UUID causes only 2 queries per token
+        validation.</p>
+
+      
+      <div class="note note"><span class="notetitle">Note:</span> Tempest doesn't work with Fernet Tokens in HPE Helion OpenStack 2.0. If Fernet tokens are
+        enabled, please don't run token tests in Tempest.</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Keystone Identity Auditing</h2>Identity Service auditing can be enabled as
+      described in "Enabling Keystone Features". Keystone creates an exchange with the name
+      "keystone" of type "topic" and sends a message to that exchange with the binding_key
+      "notification.info". Keystone also creates a queue with the name "notification.info" and
+      attaches to this exchange. You should not connect to this queue as this queue is used by
+      ceilometer. If some other clients connects to this queue, then ceilometer will no longer have
+      exclusive access to the messages in this queue. So a typical client which likes to consume the
+      audit message should create an exclusive queue for itself, attach the queue to the exchange
+      "keystone" and look for the messages with the binding key "notification.info". Given below is
+      the sample code for a typical client consuming audit messages.<p class="p">Keystone auditing was
+        implemented for Ceilometer. Ceilometer is focused on metrics that support
+        showback/chargeback/billing. There's no product plan for Keystone metrics to be part of the
+        Ceilometer collection.
+      </p>
+<pre class="pre codeblock">###Sample Audit Client code
+
+ #!/usr/bin/env python
+import pika
+ 
+# Call back message for processing audit messges
+def callback(ch, method, properties, body):
+    print " [x] %r:%r" % (method.routing_key, body,)
+ 
+# Sample code to connect and consume audit messages
+ 
+# Username/Password for rabbit
+credentials = pika.PlainCredentials("guest", "guest")
+connection = pika.BlockingConnection(pika.ConnectionParameters(
+        host='192.168.245.3', port=5672, credentials=credentials))
+channel = connection.channel()
+ 
+# Keystone sends the message to the exchange=keystone
+channel.exchange_declare(exchange='keystone',
+                         type='topic')
+ 
+# Create a random queue and connect to the exchange
+# Make sure this queue is exclusive to auditclient and non persistent.
+# If you make the queue to be persistent, you have to make sure that queue doesn't get saturated with 
+# too many messages
+result = channel.queue_declare(exclusive=True)
+queue_name = result.method.queue
+ 
+# Binding keys used by keystone
+binding_keys = ["notifications.info"]
+for binding_key in binding_keys:
+    channel.queue_bind(exchange='keystone',
+                       queue=queue_name,
+                       routing_key=binding_key)
+ 
+print ' [*] Waiting for audit messages. To exit press CTRL+C'
+ 
+channel.basic_consume(callback,
+                      queue=queue_name,
+                      no_ack=True)
+channel.start_consuming()</pre>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

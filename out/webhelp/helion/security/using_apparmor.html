@@ -1,0 +1,83 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionary access control system. It is a kernel-level security module for Linux that controls access to low-level resources ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Refining Access Control with AppArmor"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_rmq_j1v_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Refining Access Control with AppArmor</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_rmq_j1v_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Refining Access Control with AppArmor</h1>
+
+  <div class="body">
+   <div class="section" id="topic_rmq_j1v_4t__intro">
+      <p class="p"> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionary access
+        control system. It is a kernel-level security module for Linux that controls access to
+        low-level resources based on rights granted via policies to a program rather than to a user
+        role. It enforces rules at the lowest software layer&#x97;the kernel level&#x97;preventing
+        software from circumventing resource restrictions that reside at levels above the kernel.
+        With AppArmor, the final gatekeeper is closest to the hardware.</p>
+
+      <p class="p">Controlling resource access per application versus per user role allows you to enforce
+        rules based on specifically what a program can do versus trying to create user roles that
+        are broad enough yet specific enough to apply to a group of users. In addition, it prevents
+        the trap of having to predict all possible vulnerabilities in order to be secure.</p>
+
+      <p class="p">AppArmor uses a hybrid of whitelisting and blacklisting rules, and its security policies
+        are/can be cascading, permitting inheritance from different or more general policies. Policies
+        are enforced on a per-process basis.</p>
+
+      <p class="p">AppArmor also lets you tie a process to a CPU core if you want, and set process
+        priority.</p>
+
+      <p class="p"> AppArmor profiles are loaded into the kernel, typically on boot. They can run in either
+        enforcement or complain modes. In enforcement mode, the policy is enforced and policy
+        violation attempts are reported. In complain mode, policy violation attempts are reported but
+        not prevented. </p>
+
+    </div>
+
+    
+    <div class="section" id="topic_rmq_j1v_4t__apparmor_helion"><h2 class="title sectiontitle">AppArmor in HPE Helion OpenStack 2.0</h2>
+      <p class="p"> AppArmor in HPE Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
+        default. It runs in enforce mode. It enforces mandatory access control policies for the
+        libvirt process. Customers can run 'systemctl status apparmor' command on the compute nodes
+        to check that the service is active.</p>
+ In this implementation it is designed to mitigate
+      three threat scenarios: <ul class="ul">
+        <li class="li">Hypervisor breakout followed by compromise of hosting qemu/kvm process. </li>
+
+        <li class="li">Malicious manipulation of qemu APIs via Nova compute. </li>
+
+        <li class="li">Malicious manipulation of libvirt APIs via Nova compute.</li>
+
+      </ul>
+ The AppArmor profiles here: <ul class="ul">
+        <li class="li"> Use the sVirt mechanism to deliver a very locked down profile for KVM / QEMU processes
+          that guests run under. This enforces strict isolation of the guest VMs, which is
+          significantly more useful than just securing libvirt. </li>
+
+        <li class="li">Contains important improvements over stock Debian profiles: including<ul class="ul">
+            <li class="li">Preventing libvirt from writing to any system config. </li>
+
+            <li class="li">Preventing Libivirt from accessing any hardware and device nodes that are not
+              required for Helion-based solutions. While the stock AppArmor profiles are more
+              permissive, as libvirt supports a larger set of functionality than is exposed via Nova
+              compute, the profiles included here only allow access to features exposed through
+              Nova. </li>
+
+          </ul>
+</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Perform the following steps to remove an existing cluster from the compute resource pool. Run the following command to check for the instances launched in that cluster: # nova list --host &lt;hostname&gt; ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Removing a Cluster from the Compute Resource Pool"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_lfq_3wf_rt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Removing a Cluster from the Compute Resource Pool</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_lfq_3wf_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Removing a Cluster from the Compute Resource
+    Pool</h1>
+
+  <div class="body">
+    <div class="p">Perform the following steps to remove an existing cluster from the compute resource pool.<ol class="ol" id="topic_lfq_3wf_rt__ol_dq1_pwf_rt">
+        <li class="li">Run the following command to check for the instances launched in that
+              cluster:<pre class="pre codeblock"># nova list --host &lt;hostname&gt;
++--------------------------------------+---------+--------+------------+-------------+------------------+
+| ID                                   | Name    | Status | Task State | Power State | Networks         |
++--------------------------------------+---------+--------+------------+-------------+------------------+
+| 80e54965-758b-425e-901b-9ea756576331 | HLM-VM1 | ACTIVE | -          | Running     | private=10.0.0.2 |
++--------------------------------------+---------+--------+------------+-------------+------------------+</pre>
+<div class="p">where:<ul class="ul" id="topic_lfq_3wf_rt__ul_zr4_tqh_rt">
+              <li class="li">
+                <p class="p"><strong class="ph b">hostname</strong>: Specifies hostname of the compute proxy present in that cluster.
+                  </p>
+
+              </li>
+
+            </ul>
+</div>
+</li>
+
+        <li class="li">Delete all instances spawned in that
+              cluster:<pre class="pre codeblock"># nova delete &lt;server&gt; [&lt;server ...&gt;]</pre>
+<div class="p">where:<ul class="ul" id="topic_lfq_3wf_rt__ul_ckw_crh_rt">
+              <li class="li"><strong class="ph b">server</strong>: Specifies the name or ID of server (s)</li>
+
+            </ul>
+</div>
+<p class="p">OR</p>
+<div class="p">Migrate all instances spawned in that
+            cluster.<pre class="pre codeblock"># nova migrate &lt;server&gt;</pre>
+</div>
+</li>
+
+        <li class="li">Run the following command to deactivate a
+            cluster:<pre class="pre codeblock"># eon cluster-deactivate --vcenter-id &lt;vCenter ID&gt; --cluster-moid &lt;Cluster Moid&gt; </pre>
+<div class="p">where:
+              <ul class="ul" id="topic_lfq_3wf_rt__ul_hll_qrh_rt">
+              <li class="li">
+                <p class="p"><strong class="ph b">vCenter ID</strong>: Specifies the ID of the vCenter containing the cluster.</p>
+
+              </li>
+
+            </ul>
+</div>
+</li>
+
+        <li class="li">Commit your
+          configuration:<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+        <li class="li">Run the configuration
+          processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y" -e free_unused_addresses="y"</pre>
+</li>
+
+        <li class="li">Run the following command to create a deployment
+          directory:<pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Execute the following command to unimport the cluster on the respective cluster:<pre class="pre codeblock"># eon cluster-unimport --vcenter-id &lt;vCenter ID&gt; --cluster-moid &lt;Cluster Moid&gt;</pre>
+<div class="p">
+            <div class="note note"><span class="notetitle">Note:</span>  Do not run the <samp class="ph codeph">osconfig-run.yml</samp> or
+                <samp class="ph codeph">hlm-deploy.yml</samp> playbooks.</div>
+
+          </div>
+</li>
+
+      </ol>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="To create a Compute instance, you need to obtain an image that you can use. The HPE Helion OpenStack lifecycle-manager provides an Ansible playbook that will download a CirrOS Linux image, and then ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Uploading an Image for Use"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="upload_image"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Uploading an Image for Use</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="upload_image">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Uploading an Image for Use</h1>
+
+  <div class="body">
+    <div class="section" id="upload_image__about">
+      <p class="p">To create a Compute instance, you need to obtain an image that you can use. The HPE Helion
+        OpenStack lifecycle-manager provides an Ansible playbook that will download a CirrOS Linux
+        image, and then upload it as a public image to your image repository for use across your
+        projects.</p>
+
+    </div>
+
+    <div class="section" id="upload_image__playbook"><h2 class="title sectiontitle">Running the Playbook</h2>
+      <p class="p">Use the following command to run this playbook:</p>
+
+      <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&lt;PROXY&gt;</pre>
+
+      <p class="p">The table below shows the optional switch that you can use as part of this playbook to
+        specify environment-specific information:</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="upload_image__ansible2" class="table" frame="border" border="1" rules="all">
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="50%" id="d6414e67">Switch</th>
+
+                <th class="entry" valign="top" width="50%" id="d6414e70">Description</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="50%" headers="d6414e67 ">
+                  <p class="p"><samp class="ph codeph">-e proxy="&lt;proxy_address:port&gt;"</samp></p>
+
+                </td>
+
+                <td class="entry" valign="top" width="50%" headers="d6414e70 ">
+                  <p class="p">Optional. If your environment requires a proxy for the internet, use this
+                    switch to specify the proxy information.</p>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="upload_image__custom_image"><h2 class="title sectiontitle">How to Curate Your Own Images</h2>
+      <p class="p">OpenStack has created a guide to show you how to obtain, create, and modify images that
+        will be compatible with your cloud:</p>
+
+      <p class="p"><a class="xref" href="http://docs.openstack.org/image-guide/content/" target="_blank">OpenStack Virtual Machine Image Guide</a></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

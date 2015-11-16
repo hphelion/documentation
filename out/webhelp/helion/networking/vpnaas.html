@@ -1,0 +1,282 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 VPNaaS Configuration This document describes the configuration process and requirements for the HPE Helion OpenStack 2.0 Virtual Private Network (VPN) as a Service module. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Using VPN as a Service (VPNaaS)"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="HP2.0VPNaaS"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Using VPN as a Service (VPNaaS)</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="HP2.0VPNaaS">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Using VPN as a Service (VPNaaS)</h1>
+
+  <div class="body">
+    <p class="p"><strong class="ph b">HPE Helion OpenStack 2.0 VPNaaS Configuration</strong></p>
+
+    <p class="p">This document describes the configuration process and requirements for the HPE Helion
+      OpenStack 2.0 Virtual Private Network (VPN) as a Service module.</p>
+
+    <div class="p">
+      <ul class="ul" id="HP2.0VPNaaS__LBaaSlist">
+        <li class="li"><a class="xref" href="vpnaas.html#HP2.0VPNaaS__Prerequisites">Prerequisites</a></li>
+
+        <li class="li"><a class="xref" href="vpnaas.html#HP2.0VPNaaS__Considerations">Considerations</a></li>
+
+        <li class="li"><a class="xref" href="vpnaas.html#HP2.0VPNaaS__Configuration">Configuration</a></li>
+
+        <li class="li"><a class="xref" href="vpnaas.html#HP2.0VPNaaS__MoreInfo">More Information</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="HP2.0VPNaaS__Prerequisites"><h2 class="title sectiontitle">Prerequisites</h2>
+      
+      <ol class="ol">
+        <li class="li">HPE Helion OpenStack must be installed. </li>
+
+        <li class="li">Before setting up VPNaaS, you will need to have created an external network and a subnet
+          with access to the internet. Information on how to create the external network and subnet
+          can be found in the <a class="xref" href="vpnaas.html#HP2.0VPNaaS__MoreInfo"> More Information</a>
+          section of this document.</li>
+
+        <li class="li">You should assume 172.16.0.0/16 as the ext-net CIDR in this document.</li>
+
+      </ol>
+
+    </div>
+
+    
+    <div class="section" id="HP2.0VPNaaS__Considerations"><h2 class="title sectiontitle">Considerations</h2>
+      
+      <p class="p">Using the Neutron plugin-based VPNaaS causes additional processes to be run on the Network
+        Service Nodes. One of these processes, the ipsec pluto process from OpenSwan, runs as root
+        and listens on an external network. A vulnerability in that process can lead to remote root
+        compromise of the Network Service Nodes. If this is a concern customers should consider
+        using a VPN solution other than the Neutron plugin-based VPNaaS and/or deploying additional
+        protection mechanisms.</p>
+
+    </div>
+
+    
+    <div class="section" id="HP2.0VPNaaS__Configuration"><h2 class="title sectiontitle">Configuration</h2>
+      
+      <div class="sectiondiv">
+        <strong class="ph b">Setup Networks</strong>
+        <p class="p">You can setup VPN as a Service (VPNaaS) by first creating
+          networks, subnets and routers using the <samp class="ph codeph">neutron</samp> command line. </p>
+
+        <div class="note note"><span class="notetitle">Note:</span> You can execute the included commands from any shell with access to the service APIs.
+          In the included examples, the commands are executed from the deployer, however you could
+          execute the commands from the controller node or any other shell with aforementioned
+          service API access. </div>
+
+        <ol class="ol">
+          <li class="li">From the deployer, create first private network, subnet and router assuming that
+              <em class="ph i">ext-net</em> is created by
+            admin.<pre class="pre codeblock">neutron net-create privateA
+neutron subnet-create --name subA privateA 10.1.0.0/24 --gateway 10.1.0.1
+neutron router-create router1
+neutron router-interface-add router1 subA
+neutron router-gateway-set router1 ext-net</pre>
+</li>
+
+          <li class="li">Create second private network, subnet and router.
+            <pre class="pre codeblock">neutron net-create privateB
+neutron subnet-create --name subB privateB 10.2.0.0/24 --gateway 10.2.0.1
+neutron router-create router2
+neutron router-interface-add router2 subB
+neutron router-gateway-set router2 ext-net</pre>
+</li>
+
+        </ol>
+
+      </div>
+      
+      
+      <div class="sectiondiv">
+        <strong class="ph b">Start Virtual Machines</strong>
+        <ol class="ol">
+          <li class="li">From the deployer run the following to start the virtual machines. Begin with adding
+            secgroup rules for SSH and ICMP.
+            <pre class="pre codeblock">neutron security-group-rule-create default --protocol icmp
+neutron security-group-rule-create default --protocol tcp --port-range-min 22 --port-range-max 22</pre>
+</li>
+
+        <li class="li">Start the virtual machine in the privateA subnet. Using <em class="ph i">nova images-list</em>, use the
+            image id to boot image instead of the image name.  After executing this step, it is
+            recommended that you wait approximately 10 seconds to allow the virtual machine to
+            become active.
+            <pre class="pre codeblock">NETA=$(neutron net-list | awk '/privateA/ {print $2}')
+nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETA vm1</pre>
+</li>
+
+          <li class="li">Start the virtual machine in the privateB subnet. <pre class="pre codeblock">NETB=$(neutron net-list | awk '/privateB/ {print $2}')
+nova boot --flavor 1 --image &lt;id&gt; --nic net-id=$NETB vm2</pre>
+
+            <div class="note note"><span class="notetitle">Note:</span> The use of floating IP's is not possible with the current version of VPNaaS when
+              DVR is enabled.  However Non-DVR routers will work with or without floating
+              IPs.</div>
+</li>
+
+          <li class="li">Verify private IP's are allocated to the respective vms. Take note of IP's for later
+            use. <pre class="pre codeblock">nova show vm1
+nova show vm2</pre>
+</li>
+
+        </ol>
+
+      </div>
+      
+      
+       <div class="sectiondiv">
+         <strong class="ph b">Create VPN</strong>
+         <ol class="ol">
+          <li class="li">You can set up the VPN by executing the below commands from the deployer or any shell
+            with access to the service APIs. Begin with creating the policies with
+              <samp class="ph codeph">vpn-ikepolicy-create</samp> and <samp class="ph codeph">vpn-ipsecpolicy-create </samp>.
+            <pre class="pre codeblock">neutron vpn-ikepolicy-create ikepolicy
+neutron vpn-ipsecpolicy-create ipsecpolicy</pre>
+</li>
+
+          <li class="li">Create the VPN service at router1.
+            <pre class="pre codeblock">neutron vpn-service-create --name myvpnA --description "My vpn service" router1 subA</pre>
+</li>
+
+          <li class="li">Wait at least 5 seconds and then run <samp class="ph codeph">ipsec-site-connection-create</samp> to
+            create a ipsec-site connection.
+            <pre class="pre codeblock">neutron ipsec-site-connection-create --name vpnconnection1 --vpnservice-id myvpnA \
+--ikepolicy-id ikepolicy --ipsecpolicy-id ipsecpolicy --peer-address 172.16.0.3 \
+--peer-id 172.16.0.3 --peer-cidr 10.2.0.0/24 --psk secret</pre>
+</li>
+
+          <li class="li">Create the VPN service at router2.
+            <pre class="pre codeblock">neutron vpn-service-create --name myvpnB --description "My vpn serviceB" router2 subB </pre>
+</li>
+
+          <li class="li">Wait at least 5 seconds and then run <samp class="ph codeph">ipsec-site-connection-create</samp>
+            again to create the second ipsec-site connection.
+            <pre class="pre codeblock">neutron ipsec-site-connection-create --name vpnconnection2 --vpnservice-id myvpnB \
+--ikepolicy-id ikepolicy --ipsecpolicy-id ipsecpolicy --peer-address 172.16.0.2 \
+--peer-id 172.16.0.2 --peer-cidr 10.1.0.0/24 --psk secret</pre>
+</li>
+
+          <li class="li">On the deployer, run the <samp class="ph codeph">ipsec-site-connection-list</samp> command to see
+            the active connections. Be sure to check that the vpn_services are ACTIVE. You can check
+            this by running <samp class="ph codeph">vpn-service-list</samp> and then checking
+            ipsec-site-connections status. You should expect that the time for both vpn-services and
+            ipsec-site-connections to become ACTIVE could take as long as 30 to 50 seconds.
+            <pre class="pre codeblock">neutron ipsec-site-connection-list
++--------------------------------------+----------------+--------------+---------------+------------+-----------+--------+
+| id                                   | name           | peer_address | peer_cidrs    | route_mode | auth_mode | status |
++--------------------------------------+----------------+--------------+---------------+------------+-----------+--------+
+| 1e8763e3-fc6a-444c-a00e-426a4e5b737c | vpnconnection2 | 172.16.0.2   | "10.1.0.0/24" | static     | psk       | ACTIVE |
+| 4a97118e-6d1d-4d8c-b449-b63b41e1eb23 | vpnconnection1 | 172.16.0.3   | "10.2.0.0/24" | static     | psk       | ACTIVE |
++--------------------------------------+----------------+--------------+---------------+------------+-----------+--------+</pre>
+</li>
+
+        </ol>
+
+      </div>
+      
+      
+      
+      
+      <div class="sectiondiv">
+        <strong class="ph b">Verify VPN</strong>
+        <p class="p">In the case of non-admin users, you can verify the VPN connection by pinging the virtual
+          machines.</p>
+
+        <ol class="ol">
+          <li class="li">Check the VPN connections. <div class="note note"><span class="notetitle">Note:</span> vm1-ip and vm2-ip denotes private IP's for vm1 and
+              vm2 respectively. The private IP's are obtained from step 4 under <a class="xref" href="vpnaas.html#HP2.0VPNaaS__StartVirtualMachines">Start Virtual Machines</a>
+              section.  If you are unable to SSH to the private network due to a lack of direct
+              access, the VM console can be accessed through Horizon.</div>
+
+            <pre class="pre codeblock">ssh cirros@vm1-ip
+password: &lt;password&gt;
+            
+# ping the private IP address of vm2
+ping ###.###.###.###</pre>
+</li>
+
+          <li class="li">In another terminal.
+            <pre class="pre codeblock">ssh cirros@vm2-ip
+password: &lt;password&gt;
+              
+# ping the private IP address of vm1
+ping ###.###.###.###</pre>
+</li>
+
+          <li class="li">You should see ping responses from both virtual machines.</li>
+
+        </ol>
+
+        <p class="p">As the admin user, you should check to make sure that a route exists between the router
+          gateways. Once the gateways have been checked, packet encryption can be verified by using
+          traffic analyzer (tcpdump) by tapping on the respective namespace (qrouter-* in case of
+          non-DVR and snat-* in case of DVR) and tapping the right interface (qg-***). </p>
+
+        <div class="note note"><span class="notetitle">Note:</span> When using DVR namespaces, all the occurrences of qrouter-xxxxxx in the following
+          commands should be replaced with respective snat-xxxxxx.</div>
+
+        <ol class="ol">
+          <li class="li">Check the if the route exists between two router gateways. You can get the right
+            qrouter namespace id by executing <em class="ph i">sudo ip netns</em>. Once you have the qrouter
+            namespace id, you can get the interface by executing <em class="ph i">sudo ip netns qrouter-xxxxxxxx
+              ip addr</em> and from the result the interface can be
+            found.<pre class="pre codeblock">sudo ip netns
+sudo ip netns exec qrouter-&lt;router1 UUID&gt; ping &lt;router2 gateway&gt;
+sudo ip netns exec qrouter-&lt;router2 UUID&gt; ping &lt;router1 gateway&gt;</pre>
+</li>
+
+          <li class="li">Initiate a tcpdump on the interface.
+            <pre class="pre codeblock">sudo ip netns exec qrouter-xxxxxxxx tcpdump -i qg-xxxxxx</pre>
+</li>
+
+          <li class="li">Check the VPN connection.
+            <pre class="pre codeblock">ssh cirros@vm1-ip
+password: &lt;password&gt;
+              
+# ping the private IP address of vm2
+ping ###.###.###.###</pre>
+</li>
+
+          <li class="li">Repeat for other namespace and right tap interface.
+            <pre class="pre codeblock">sudo ip netns exec qrouter-xxxxxxxx tcpdump -i qg-xxxxxx</pre>
+</li>
+
+          <li class="li">In another terminal.
+            <pre class="pre codeblock">ssh cirros@vm2-ip
+password: &lt;password&gt;
+              
+# ping the private IP address of vm1
+ping ###.###.###.###</pre>
+</li>
+
+          <li class="li">You will find encrypted packets containing ‘ESP’ in the tcpdump trace.</li>
+
+        </ol>
+
+      </div>
+    </div>
+
+
+    <div class="section" id="HP2.0VPNaaS__MoreInfo"><h2 class="title sectiontitle">More Information</h2>
+      
+      <p class="p">For more information on the neutron command-line interface (CLI) and VPN as a Service
+        (VPNaaS), see the OpenStack networking command-line client reference: <a class="xref" href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" target="_blank">http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</a></p>
+
+      <p class="p">For information on how to create an external network and subnet, see the OpenStack manual:
+          <a class="xref" href="http://docs.openstack.org/kilo/install-guide/install/apt/content/neutron_initial-external-network.html" target="_blank">http://docs.openstack.org/kilo/install-guide/install/apt/content/neutron_initial-external-network.html</a>
+      </p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

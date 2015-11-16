@@ -1,0 +1,117 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="In HPE Helion OpenStack 2.0, the Ceph monitor service is installed on the controller nodes by default. But you can install the service on one or more dedicated resource nodes by modifying the cloud ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Deploying Ceph Monitor Services on Dedicated Resource Nodes"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_ah5_4yx_qt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Deploying Ceph Monitor Services on Dedicated Resource Nodes</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_ah5_4yx_qt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Deploying Ceph Monitor Services on Dedicated
+        Resource Nodes</h1>
+
+  <div class="body">
+    <div class="p">In HPE Helion OpenStack 2.0, the Ceph monitor service is installed on the controller nodes by
+            default. But you can install the service on one or more dedicated resource nodes by
+            modifying the cloud input model. <div class="note attention"><span class="attentiontitle">Attention:</span> If you want to deploy the
+                monitor service as a dedicated resource node, then you must decide prior to the
+                deployment of Ceph. HPE Helion OpenStack 2.0 does not support deployment transition.
+                Once Ceph is deployed, you cannot migrate the monitor service from controller to
+                dedicated resource nodes. </div>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">Prerequisite</h2>
+            
+            <p class="p">The Deployer/lifecycle-manager node must be set up before starting Ceph deployment.
+                For more details on the installation of the Deployer/lifecycle-manager node, see
+                    <a class="xref" href="../../installation/install_entryscale_kvm.html#install_kvm">HPE Helion OpenStack 2.0: Installation for Helion Entry-scale Cloud with KVM</a>.</p>
+
+        </div>
+
+    <p class="p"><strong class="ph b">To Install the Ceph Monitor Service on Dedicated Resource Nodes</strong></p>
+
+    <div class="p">Perform the following procedure to install the Ceph monitor on dedicated nodes:<ol class="ol" id="topic_ah5_4yx_qt__ol_thh_pxn_rt">
+                <li class="li">Login to the Deployer/lifecycle-manager node.</li>
+
+                <li class="li">Ensure that your cloud definition
+                        (<samp class="ph codeph">~/helion/examples/entry-scale-kvm-ceph/*</samp>) is placed in the
+                        <samp class="ph codeph">~/helion/my_cloud/definition/</samp> directory . </li>
+
+                <li class="li">Remove the line <samp class="ph codeph">- ceph-monitor</samp> from <strong class="ph b">server-role:
+                        CONTROLLER-ROLE</strong> in the
+                        <samp class="ph codeph">~/helion/my_cloud/definition/data/control_plane.yml</samp>
+                    file.</li>
+
+                <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/control_plane.yml</samp>
+                    file to add monitor
+                        nodes:<pre class="pre codeblock">- name: mon
+  resource-prefix: ceph
+  server-role: MON-ROLE
+  allocation-policy: strict
+  mint-count:3
+  service-components:
+  - ntp-client
+  - ceph-monitor</pre>
+<div class="note note"><span class="notetitle">Note:</span> Ensure
+                        that the section is correctly indented.</div>
+</li>
+
+                <li class="li">Define the monitor resource. For instructions, see <a class="xref" href="defining_monitor_resource.html#topic_owr_kf4_rt">HPE Helion OpenStack 2.0: Defining a Ceph Monitor Resource</a>.</li>
+
+                <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/servers.yml</samp> file to
+                    define all the monitor nodes in the cloud. You must repeat this for each monitor
+                        node:<pre class="pre codeblock">- id: mon4
+  ip-addr: 192.168.10.11
+  role: MON-ROLE
+  server-group: RACK3
+  nic-mapping: MY-2PORT-SERVER
+  mac-addr: 8b:f6:9e:ca:3b:7a
+  ilo-ip: 192.168.9.11
+  ilo-password: password
+  ilo-user: admin</pre>
+<div class="note note"><span class="notetitle">Note:</span> 
+                        Substitute the values in above sample, as per your environment, for each of
+                        the monitor nodes being added.</div>
+</li>
+
+                <li class="li">Commit your
+                    configuration:<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+                <li class="li">Run the following
+                    command:<pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre>
+</li>
+
+                <li class="li">To reimage all the nodes using PXE, run the following
+                    command:<pre class="pre codeblock">ansible-playbook -i hosts/localhost bm-reimage.yml</pre>
+</li>
+
+                <li class="li">Run the configuration
+                    processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+                <li class="li">Use the playbook below to create a deployment directory:
+                    <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+                <li class="li">Run the following playbook: <div class="p">
+                        <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</pre>
+
+                    </div>
+</li>
+
+            </ol>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

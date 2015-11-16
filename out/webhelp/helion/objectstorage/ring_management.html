@@ -1,0 +1,70 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The rings are a machine-readable description of which disk drives are used by Swift (for example, a drive is used to store account or object data). Rings also specify the policy for data storage (for ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Managing Object Storage Rings"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_d3l_svr_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Managing Object Storage Rings</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_d3l_svr_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Managing Object Storage Rings</h1>
+
+  <div class="body">
+    <p class="p">The rings are a machine-readable description of which disk drives are used by Swift (for
+      example, a drive is used to store account or object data). Rings also specify the policy for
+      data storage (for example, defining the number of replicas). The rings are automatically built
+      during the initial deployment of the system, with the configuration provided during setup of
+      the HPE Helion OpenStack Input Model. (For more information, see <a class="xref" href="../input_model.html#input_model">HPE Helion OpenStack 2.0: Input Model</a>.) </p>
+
+    <p class="p">After successful deployment of your cloud, you may want to change or modify the configuration
+      for Swift. For example, you may want to add or remove Swift nodes, add additional storage
+      policies, or upgrade the size of disk drives. For instructions, see <a class="xref" href="input_model_change_existing_rings.html#topic_vyp_cft_4t">Applying Input Model Changes
+        to Existing Rings</a> and <a class="xref" href="add_new_storage_policy.html#topic_evl_wln_pt">Adding a New Storage Policy - Swift.</a></p>
+
+    <div class="p">
+      <div class="note note"><span class="notetitle">Note:</span> The process of modifying or adding a configuration is similar to other configuration or
+        topology change in the cloud. Generally, you make the changes to the input model files at
+          <samp class="ph codeph">~/helion/my_cloud/definition/</samp> and run Ansible playbooks to reconfigure
+        the system.</div>
+
+    </div>
+
+    <p class="p">Changes to the rings require several phases to complete the process of
+      deployment.
+      Therefore, you may need to run the playbooks several times over several days. </p>
+
+    <p class="p">The following topics cover ring management:</p>
+
+    <div class="p">
+      
+      <ul class="ul" id="topic_d3l_svr_4t__ul_pgc_plz_4t">
+        <li class="li"><a class="xref" href="rebalanced_explained.html">Rebalance Explained</a></li>
+
+        <li class="li"><a class="xref" href="setting_up_weight_attributes_ring_changes.html">Using the Weight-Step Attributes to Prepare for
+            Ring Changes</a></li>
+
+        <li class="li"><a class="xref" href="playbook_linked_ring_management.html">Swift Playbooks Linked to Ring
+            Management</a></li>
+
+        <li class="li"><a class="xref" href="safe_rebalance_deploy_ring.html">Determining When it is Safe to Rebalance
+            and Deploy a New Ring</a></li>
+
+        <li class="li"><a class="xref" href="input_model_change_existing_rings.html">Applying Input Model Changes to
+            Existing Rings</a></li>
+
+        <li class="li"><a class="xref" href="add_new_storage_policy.html#topic_evl_wln_pt">HPE Helion OpenStack 2.0: Adding a New Swift Storage Policy</a></li>
+
+        <li class="li"><a class="xref" href="how_to_change_min_part_time.html#topic_ybt_mhb_kt">HPE Helion OpenStack 2.0: Changing min-part-time in Swift</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

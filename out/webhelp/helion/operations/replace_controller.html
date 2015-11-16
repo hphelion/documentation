@@ -1,0 +1,121 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="For HPE Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore, adding or removing nodes is not an option. However, if you need to repair or replace a controller node, you may ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Replacing a Controller Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_ijj_45j_nt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Replacing a Controller Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_ijj_45j_nt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Replacing a Controller Node</h1>
+
+  <div class="body">
+    <div class="section">
+      <p class="p">For HPE Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
+        adding or removing nodes is not an option. However, if you need to repair or replace a
+        controller node, you may do so by following the steps outlined here. Note that to run any
+        playbooks whatsoever for cloud maintenance, you will always run from the
+        deployer/lifecycle-manager node.</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> Do not add entries for a new server; instead, just update the entries for the broken
+        one. Also note that if you are replacing a control plane node that also happens to be
+        running the deployer, that process is different. You’ll need to restore you deployer data
+        first. </div>
+<div class="note note"><span class="notetitle">Note:</span> Be aware that all management commands are run on the node where the
+        deployer is running. </div>
+
+      <strong class="ph b">Update your model with replacement server information</strong>
+      <ol class="ol">
+        <li class="li"> Update your cloud model (<strong class="ph b">servers.yml </strong>) Update your cloud model (servers.yml )
+          with new mac-addr, ilo-ip, ilo-password, ilo-user fields where these have changed. Do not
+          change the id, ip-addr, role, server-group settings. (Please follow the procedure for
+          updating your cloud model/ git repo)</li>
+
+        <li class="li"> Get the <strong class="ph b">servers.yml</strong> file stored in git:
+          <pre class="pre codeblock">cd ~/helion/my_cloud/definition/data
+git checkout site</pre>
+ then change,
+          as necessary, the mac-addr, ilo-ip, ilo-password, and ilo-user fields of this existing
+          controller node. Save and commit the change
+          <pre class="pre codeblock">git commit -a -m "repaired node X"</pre>
+</li>
+
+        <li class="li">Run the configuration processor as follows:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+
+          Then run ready-deployment:
+          <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+
+        </li>
+
+      </ol>
+
+      <strong class="ph b">Image the new node</strong>
+      <ol class="ol">
+        <li class="li">Log onto the node that is running the deployer. Remove the broken control plane node
+          from cobbler by running sudo cobbler system remove --name &lt;server-id&gt;. Here's an
+          example:<pre class="pre codeblock"> sudo cobbler system remove --name controller2</pre>
+
+        </li>
+
+        <li class="li">Remove the ssh key of the old controller node from the known hosts file. Here's an
+          example:
+          <pre class="pre codeblock">ssh-keygen -f "/home/stack/.ssh/known_hosts" -R 10.123.12.3</pre>
+</li>
+
+        <li class="li">Run the cobbler deploy playbook to add the replacement node
+          <pre class="pre codeblock">ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre>
+
+        </li>
+
+        <li class="li"> Re-image the new nodes by running <strong class="ph b">bm-reimage.yml</strong>: ansible-playbook -i
+          hosts/localhost bm-reimage.yml -e nodelist=&lt;node-name&gt;. Note: Note: you must ensure
+          that the old controller node is powered off before completing this step. This is because
+          the new controller node will re-use the original IP address.
+          <pre class="pre codeblock">ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=controller2</pre>
+</li>
+
+        <li class="li">Configure the necessary keys used for the database etc:
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-rebuild-pretasks.yml</pre>
+</li>
+
+        <li class="li">Log into the 2 original controller nodes as "dbadmin" and run the following command:
+          <pre class="pre codeblock">ssh-keygen -f "/home/dbadmin/.ssh/known_hosts" -R {{ip_of_node_to_replace}}</pre>
+</li>
+
+        <li class="li">Run osconfig on the replacement controller node. For example:
+          <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts osconfig-run.yml  -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</pre>
+
+        </li>
+
+        <li class="li"> If the controller being replaced is the first server running the swift-proxy service
+          (see <a class="xref" href="../objectstorage/first_proxy_server.html">Identifying the First Proxy
+            Server</a>) you need to restore the Swift Ring Builder files to the
+          /etc/swiftlm/builder_dir directory. See <a class="xref" href="../objectstorage/recovering_builder_file.html#topic_gbz_13t_mt">Recovering Builder
+            Files</a> for details. <p class="p"></p>
+</li>
+
+        <li class="li">Run swift-deploy across all controllers using:
+          <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre>
+</li>
+
+        <li class="li"> Run hlm-deploy on the replacement controller
+          <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</pre>
+
+        </li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The swift utility (or CLI) is installed on the deployer/lifecycle-manager node and also on all other nodes running the Swift proxy service. To use this utility, set the following environment ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Using the Swift Command-line Client (CLI)"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_m13_dgp_nt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Using the Swift Command-line Client (CLI)</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_m13_dgp_nt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Using the Swift Command-line Client
+    (CLI)</h1>
+
+  <div class="body">
+    <p class="p">The <samp class="ph codeph">swift</samp> utility (or CLI) is installed on the deployer/lifecycle-manager
+      node and also on all other nodes running the Swift proxy service. To use this utility, set the
+      following environment variables:</p>
+
+    <div class="note note"><span class="notetitle">Note:</span> You do not need to be the root user.</div>
+
+    <pre class="pre codeblock">OS_USERNAME=demo
+OS_PASSWORD=&lt;redacted&gt;
+OS_TENANT_NAME=demo
+OS_AUTH_URL=http://&lt;cluster-name&gt;-vip-admin-KEY-API-mgmt:35357/v2.0
+OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre>
+
+    <div class="p">You must enter the appropriate password for the demo user and select the correct endpoint for
+      the <strong class="ph b">OS_AUTH_URL</strong> value. You can then examine the following account
+      data:<pre class="pre codeblock">$ swift stat
+        Account: AUTH_205804d000a242d385b8124188284998
+     Containers: 0
+        Objects: 0
+          Bytes: 0
+X-Put-Timestamp: 1442249536.31989
+     Connection: keep-alive
+    X-Timestamp: 1442249536.31989
+     X-Trans-Id: tx5493faa15be44efeac2e6-0055f6fb3f
+   Content-Type: text/plain; charset=utf-8</pre>
+</div>
+
+    <div class="p">In the above example, there are no containers. Execute the following command and create a
+      container:<pre class="pre codeblock">swift post documents</pre>
+</div>
+
+    <div class="p">The newly created container appears. But there are no
+      objects:<pre class="pre codeblock">$ swift stat documents
+         Account: AUTH_205804d000a242d385b8124188284998
+       Container: documents
+         Objects: 0
+           Bytes: 0
+        Read ACL:
+       Write ACL:
+         Sync To:
+        Sync Key:
+   Accept-Ranges: bytes
+X-Storage-Policy: General
+      Connection: keep-alive
+     X-Timestamp: 1442249637.69486
+      X-Trans-Id: tx1f59d5f7750f4ae8a3929-0055f6fbcc
+    Content-Type: text/plain; charset=utf-8</pre>
+</div>
+
+    <div class="p">Upload a document:<pre class="pre codeblock">$ swift upload documents mydocument
+mydocument</pre>
+</div>
+
+    <div class="p">List objects in the container:<pre class="pre codeblock">$ swift list documents
+mydocument</pre>
+</div>
+
+    <div class="p">
+      <div class="note note"><span class="notetitle">Note:</span> This is a brief introduction to the <samp class="ph codeph">swift</samp> CLI. Use
+          <samp class="ph codeph">--help</samp> command for more information.</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

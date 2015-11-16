@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Perform the following steps to remove the object storage daemon (OSD) node: Login to the Deployer/lifecycle-manager node. Make a note of the OSD numbers on the OSD node to be removed. A sample of OSD ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Removing Object Storage Daemon (OSD) Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_ipm_gnt_rt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Removing Object Storage Daemon (OSD) Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_ipm_gnt_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Removing Object Storage Daemon (OSD) Node </h1>
+
+  <div class="body">
+    <div class="p">Perform the following steps to remove the object storage daemon (OSD) node:<ol class="ol" id="topic_ipm_gnt_rt__ol_v3t_4nt_rt">
+        <li class="li"> Login to the Deployer/lifecycle-manager node.</li>
+
+        <li class="li">Make a note of the OSD numbers on the OSD node to be removed. A sample of OSD node is as
+            follows:<pre class="pre codeblock">$ ceph osd tree
+# id    weight  type name       up/down reweight
+-1      6       root default
+-2      3               host padawan-ceph-ccp-ceph0003-mgmt
+0       1                       osd.0   up      1
+3       1                       osd.3   up      1
+6       1                       osd.6   up      1
+<strong class="ph b">-4      3               host padawan-ceph-ccp-ceph0001-mgmt
+1       1                       osd.1   up      1
+4       1                       osd.4   up      1
+7       1                       osd.7   up      1</strong>
+-3      3               host padawan-ceph-ccp-ceph0002-mgmt
+2       1                       osd.2   up      1
+5       1                       osd.5   up      1
+8       1                       osd.8   up      1</pre>
+<p class="p">For
+            example, to remove the OSD node <samp class="ph codeph">padawan-ceph-ccp-ceph0001-mgmt</samp>, the OSD
+            numbers 1, 4, and 7 are relevant.</p>
+</li>
+
+        <li class="li">Run the following command to stop the OSDs running on the specific
+            host:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit &lt;osd-node-to-remove&gt;</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+            the string (<samp class="ph codeph">osd-node-to-remove</samp>) in above command with the OSD host to
+            be removed from the cluster (for example,
+              <samp class="ph codeph">stratushelion-ccp-ceph0001-mgmt</samp>).</div>
+</li>
+
+        <li class="li"> Run the following command for each OSD number (obtained from step #2
+            above):<pre class="pre codeblock">ceph osd out &lt;osd-number&gt; --cluster &lt;ceph_cluster&gt;
+ceph auth del osd.&lt;osd-number&gt; --cluster &lt;ceph_cluster&gt;
+ceph osd crush remove osd.&lt;osd-number&gt; --cluster &lt;ceph_cluster&gt; 
+ceph osd rm &lt;osd-number&gt; --cluster &lt;ceph_cluster&gt;</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+            the string <samp class="ph codeph">&lt;ceph_cluster&gt;</samp> with the name of your Ceph cluster
+            (default cluster name is <strong class="ph b">ceph</strong>).</div>
+</li>
+
+        <li class="li">To remove the OSD host from the Ceph CRUSH map, run the following
+            command:<pre class="pre codeblock">ceph osd crush remove &lt;host-name&gt;</pre>
+<div class="note note"><span class="notetitle">Note:</span>  Replace the
+            string <samp class="ph codeph">&lt;host-name&gt;</samp> in the above command.</div>
+</li>
+
+        <li class="li">Remove the section for the OSD host from the
+            <samp class="ph codeph">~/helion/my_cloud/definition/data/servers.yml</samp> file.</li>
+
+        <li class="li">Commit your
+          configuration:<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "Remove OSD node &lt;host-name&gt;"</pre>
+</li>
+
+        <li class="li">Run the configuration
+          processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Use the playbook below to create a deployment directory:
+            <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+            the string <samp class="ph codeph">&lt;host-name&gt;</samp> in the above commit message with the actual
+            host name (e.g., <samp class="ph codeph">padawan-ceph-ccp-ceph0001-mgmt</samp> as mentioned in the
+            above example).</div>
+</li>
+
+        <li class="li">Log in to the OSD node and un-mount the data and journal disks. Also, remove the mount
+          instructions for the same disks from the <em class="ph i">/etc/fstab</em> file. <p class="p"> </p>
+</li>
+
+      </ol>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

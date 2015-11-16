@@ -1,0 +1,148 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Many of the HPE Helion Developer Platform services require the creation of a VM service network in order to access the cloud control plane. This service network is a VLAN-encapsulated provider network ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Creating the HPE Helion Development Platform Service Net"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="hdp_servicenet"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Creating the HPE Helion Development Platform Service Net</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hdp_servicenet">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Creating the HPE Helion Development Platform Service Net</h1>
+
+  <div class="body">
+    <div class="section">Many of the HPE Helion Developer Platform services require the creation of a VM service
+      network in order to access the cloud control plane. This service network is a
+      VLAN-encapsulated provider network which is fully routable to the HPE Helion OpenStack MGMT
+      network. <div class="note important"><span class="importanttitle">Important:</span> Create this network before attempting to install the HPE Helion
+        Developer Platform. </div>
+<ol class="ol">
+        <li class="li">SSH to the deployer/lifecycle-manager node using admin credentials.</li>
+
+        <li class="li">Source the admin credentials: <pre class="pre codeblock">source ~/service.osrc</pre>
+</li>
+
+        <li class="li">Configure a Neutron network that will map to an external network for the service net. <ul class="ul">
+            <li class="li">For simple configurations, a lifecycle-manager playbook has been provided for this purpose.</li>
+
+            <li class="li">For non-trivial network configurations, any additional routes should be added to
+              the subnet definition using the <samp class="ph codeph">--host-route</samp> option of the neutron
+              subnet-create command. The <samp class="ph codeph">--host-route</samp> option can be specified
+              multiple times if necessary.
+              <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
+    -e PROV_NET_TYPE=&lt;provider_network_type&gt; \
+    -e PROV_PHYS_NET=&lt;physical_network_name&gt; \
+    -e PROV_NET_VLAN_ID=&lt;vlan_id&gt; \
+    -e SVC_NET_CIDR=&lt;provider_network_cidr&gt; \
+    -e SVC_NET_DEST=&lt;svc_net_destination&gt; \
+    -e SVC_NET_GATEWAY="gateway_used_by_the_network"           </pre>
+Example:
+              Given a management network with the following attributes: <ul class="sl simple">
+                <li class="sli">MGMT Net = 192.168.245.1/32</li>
+
+                <li class="sli">SVC Net = 10.55.66.0/24</li>
+
+                <li class="sli">SVC gateway to MGMT = 10.55.66.3</li>
+
+                <li class="sli">SVC Net VLAN = 100</li>
+
+              </ul>
+ the playbook command for creating the service network would be:
+              <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_TYPE=vlan -e PROV_PHYS_NET=physnet1 -e PROV_NET_VLAN_ID=100 -e SVC_NET_CIDR=10.55.66.0/24 -e SVC_NET_DEST=192.168.245.1/32 -e SVC_NET_GATEWAY=10.55.66.3</pre>
+</li>
+
+          </ul>
+<div class="note note"><span class="notetitle">Note:</span> To configure a service network for flat encapsulation, modify the service
+            network creation statement: <samp class="ph codeph">-e PROV_NET_TYPE flat</samp> The subnet creation
+            statement does not change.</div>
+</li>
+<li class="li">Configure your <samp class="ph codeph">my_cloud </samp>definition to include the service network. This is used
+          to provide routing from management (and potentially other networks) back to the newly
+          created service net. <ol class="ol" type="a">
+            <li class="li">Ensure that the service network is routable from the management network and that the
+              service network is defined in
+                <samp class="ph codeph">~/helion/my_cloud/definition/data/network_groups.yml</samp>:
+              <pre class="pre codeblock"># Management 
+# 
+# This is the network group that will be used for 
+# management traffic within the cloud. 
+# 
+# The interface used by this group will be presented 
+# to Neutron as physnet1, and used by provider VLANS 
+# 
+# In this example this group is also used for ISCSI 
+# traffic between VMs and the VSA block storage 
+# 
+- name: MANAGEMENT 
+  # removed items 
+  routes:
+    - SERVICE 
+  # removed items 
+# Service 
+# 
+# This is the network group that will be used for in-cloud 
+# service traffic to control plane 
+# 
+- name: SERVICE</pre>
+</li>
+
+            <li class="li">Ensure that there is a valid definition for the service network in
+                <samp class="ph codeph">~/helion/my_cloud/definition/data/networks.yml</samp>
+              <div class="note note"><span class="notetitle">Note:</span> The <samp class="ph codeph">cidr</samp> and <samp class="ph codeph">gateway</samp> given must match the
+                values provided when the network was
+              created.</div>
+<pre class="pre codeblock">- name: SERVICE-NET
+  vlanid: 306 
+tagged-vlan: true 
+  cidr: 10.1.6.0/24 
+  gateway-ip: 10.1.6.1 
+  network-group: SERVICE</pre>
+</li>
+
+            <li class="li">Ensure that this network is a member of the server-group listed in
+              ~/helion/my_cloud/definition/data/server_groups.yml:
+              <pre class="pre codeblock">server-groups: 
+- name: CLOUD 
+  server-groups: 
+    - AZ1
+    - AZ2
+    - AZ3
+  networks: 
+    - EXTERNAL-NET
+    - GUEST-NET 
+    - MANAGEMENT-NET
+    - PXE-NET 
+    - SERVICE-NET 
+# 
+# Create a group for each availability zone 
+#
+- name: AZ1 
+  server-groups: 
+    - RACK1 
+- name: AZ2 
+  server-groups: 
+    - RACK2 
+- name: AZ3
+  server-groups: </pre>
+</li>
+
+            <li class="li">Once these changes have been made, the normal mechanisms should be used
+              (configuration-processor-run.yml, ready-deployment.yml, site.yml) to push this change
+              to production. </li>
+
+          </ol>
+</li>
+
+    </ol>
+ </div>
+
+    
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

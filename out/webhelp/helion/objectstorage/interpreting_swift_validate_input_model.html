@@ -1,0 +1,142 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The following examples provide an error message, description, and resolution. Note: To resolve an error, you must first modify the input model and re-run the configuration processor. (For ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Interpreting Swift Input Model Validation Errors"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_avw_22b_kt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Interpreting Swift Input Model Validation Errors</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_avw_22b_kt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Interpreting Swift Input Model Validation
+    Errors</h1>
+
+  <div class="body">
+    <div class="p">The following examples provide an error message, description, and resolution.<div class="note note"><span class="notetitle">Note:</span> To resolve
+        an error, you must first modify the input model and re-run the configuration processor. (For
+        instructions, see <a class="xref" href="../installation/using_git.html#using_git__updating-configuration-including-default-config">Updating any configuration, including the default configuration</a>.) Then, continue with the deployment.</div>
+</div>
+
+    <div class="p">
+      <ol class="ol" id="topic_avw_22b_kt__ol_vnh_g2b_kt">
+        <li class="li"><strong class="ph b">Example Message - Model Mismatch: Cannot find drive /dev/sdt on padawan-ccp-c1-m2
+            (192.168.245.3))</strong><table cellpadding="4" cellspacing="0" summary="" id="topic_avw_22b_kt__simpletable_crn_x2j_2t" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Description</strong>
+              </td>
+
+              <td valign="top" class="stentry">The disk model used for node <strong class="ph b">padawan-ccp-c1-m2</strong> has drive
+                  <samp class="ph codeph">/dev/sdt</samp> listed in the devices list of a device-group where Swift
+                is the consumer. However, the <samp class="ph codeph">dev/sdt</samp> device does not exist on that
+                node.</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Resolution</strong></td>
+
+              <td valign="top" class="stentry">If a drive or controller is failed on a node, the operating system does not
+                see the drive and so the corresponding block device may not exist. Sometimes this is
+                transitory and a reboot may resolve the problem. The problem may not be with
+                  <samp class="ph codeph">/dev/sdt</samp>, but with another drive. For example, if
+                  <samp class="ph codeph">/dev/sds</samp> is failed, when you boot the node, the drive that you
+                expect to be called <samp class="ph codeph">/dev/sdt</samp> is actually called
+                  <samp class="ph codeph">/dev/sds</samp>. <p class="p">Alternatively, there may not be enough drives
+                  installed in the server. You can add drives. Another option is to remove
+                    <samp class="ph codeph">/dev/sdt</samp> from the appropriate disk model. However, this removes
+                  the drive for all servers using the disk model.</p>
+</td>
+
+            </tr>
+</table>
+</li>
+
+        <li class="li"><strong class="ph b">Example Message - Model Mismatch: Cannot find drive /dev/sdd2 on padawan-ccp-c1-m2
+            (192.168.245.3)</strong><table cellpadding="4" cellspacing="0" summary="" id="topic_avw_22b_kt__simpletable_wz4_jgj_2t" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Description</strong>
+              </td>
+
+              <td valign="top" class="stentry">The disk model used for node<strong class="ph b"> padawan-ccp-c1-m2</strong> has drive
+                  <samp class="ph codeph">/dev/sdt</samp> listed in the devices list of a device-group where Swift
+                is the consumer. However, the partition number (2) has been specified in the model.
+                This is not supported – only specify the block device name (for example
+                  <samp class="ph codeph">/dev/sdd</samp>), not partition names in disk models.</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Resolution</strong></td>
+
+              <td valign="top" class="stentry">Remove the partition number from the disk model.</td>
+
+            </tr>
+</table>
+</li>
+
+        <li class="li"><strong class="ph b">Example Message - Cannot find IP address of padawan-ccp-c1-m3-swift for ring: account
+            host: padawan-ccp-c1-m3-mgmt</strong><table cellpadding="4" cellspacing="0" summary="" id="topic_avw_22b_kt__simpletable_j3n_lfj_2t" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Description</strong></td>
+
+              <td valign="top" class="stentry">The service (in this example, swift-account) is running on the node
+                  <strong class="ph b">padawan-ccp-c1-m3</strong>. However, this node does not have a connection to the
+                network designated for the <samp class="ph codeph">swift-account</samp> service (i.e., the SWIFT
+                network).</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Resolution</strong></td>
+
+              <td valign="top" class="stentry">Check the input model for which networks are configured for each node
+                type.</td>
+
+            </tr>
+</table>
+</li>
+
+        <li class="li">
+          <strong class="ph b">Example Message - Ring: object-2 has specified replication_policy and
+            erasure_coding_policy. Only one may be specified. </strong><table cellpadding="4" cellspacing="0" summary="" id="topic_avw_22b_kt__simpletable_jxv_lfj_2t" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Description</strong>
+              </td>
+
+              <td valign="top" class="stentry">Only either <samp class="ph codeph">replication-policy</samp> or
+                  <samp class="ph codeph">erasure-coding-policy</samp> may be used in
+                  <samp class="ph codeph">ring-specifications</samp>.</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Resolution</strong></td>
+
+              <td valign="top" class="stentry">Remove one of the policy types.</td>
+
+            </tr>
+</table>
+</li>
+
+        <li class="li"><strong class="ph b">Example Message - Ring: object-3 is missing a policy type (replication-policy or
+            erasure-coding-policy) </strong><table cellpadding="4" cellspacing="0" summary="" id="topic_avw_22b_kt__simpletable_e3b_mfj_2t" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Description</strong>
+              </td>
+
+              <td valign="top" class="stentry">There is no <samp class="ph codeph">replication-policy</samp> or
+                  <samp class="ph codeph">erasure-coding-policy</samp> section in
+                  <samp class="ph codeph">ring-specifications</samp> for the object-0 ring.</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry"><strong class="ph b">Resolution</strong></td>
+
+              <td valign="top" class="stentry">Add a policy type to the input model file. </td>
+
+            </tr>
+</table>
+</li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

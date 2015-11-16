@@ -1,0 +1,46 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page allows you to define notification methods that are used by the alarms. By default, notification methods are sorted by name and in a table format. Search and Sort The search bar allows you to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Notification Methods"></meta><meta name="abstract" content="This page allows you to define notification methods that are used by the alarms. By default, notification methods are sorted by name and in a table format."></meta><meta name="description" content="This page allows you to define notification methods that are used by the alarms. By default, notification methods are sorted by name and in a table format."></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="notification_methods"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Notification Methods</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="notification_methods">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Notification Methods</h1>
+      <div class="body conbody"><p class="shortdesc">This page allows you to define notification methods that are used by the alarms. By     default, notification methods are sorted by name and in a table format.</p>
+     <div class="section"><h2 class="title sectiontitle">Search and Sort</h2>              <p class="p">The search bar allows you to filter the notification methods you want to view. </p>
+       <p class="p">The checkbox allows you to select (or deselect) a group of notification methods to         delete:</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">Select Visible</span> allows you to delete the selected notification           methods from the table.</li>
+         <li class="li"><span class="ph uicontrol">Select All</span> allows you to delete all the notification methods from           the table.</li>
+         <li class="li"><span class="ph uicontrol">Clear Selection</span> allows you to clear all the selections currently           selected from the table.</li>
+       </ul>
+       <p class="p">You can display the notification methods by grid, list or table views by selecting the         corresponding icons next to the <span class="ph uicontrol">Sort By</span> control.</p>
+       <p class="p">The <span class="ph uicontrol">Sort By</span> control contains a drop-down list of ways by which you         can sort the alarm definitions. Alternatively, you can also sort using the column headers in         the table.</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">Sort by Status</span> displays the notification methods by their           status.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Metric</span> displays the descriptive details of the alarm           definitions.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Severity</span> displays the alarm definitions' notification           criteria, such as whether enabled for certain types of alarms and how the notification is           disseminated (by Email, Web, etc.)</li>
+       </ul>
+     </div>
+     <div class="section"><h2 class="title sectiontitle">Create Notification Methods</h2>              <p class="p">The <span class="ph uicontrol">Create Notification Methods</span> button beside the search bar allows         you to create a new notification method.</p>
+       <p class="p">To create a new notification method:</p>
+       <ol class="ol">         <li class="li">Click the <span class="ph uicontrol">Create Notification Method</span> button to open a separate           window that allows you to configure a new notification method.</li>
+         <li class="li">In the Create Notification Method window, type a name for the notification in the             <span class="ph uicontrol">Name</span> text field. The name is required and may be up to 255           characters in length consisting of letters, numbers, or special characters.</li>
+         <li class="li">Select a <span class="ph uicontrol">Type</span> in the drop down. Choices are:. <ul class="ul">             <li class="li"><span class="ph uicontrol">URL</span> allows you to enter in an internet address Also referred               to as a <span class="ph uicontrol">Web Hook</span>.</li>
+             <li class="li"><span class="ph uicontrol">Email</span> allows you to enter in an email address.  See Note Below.</li>
+             <li class="li"><span class="ph uicontrol">PagerDuty</span> allows you to enter in a PagerDuty address.</li>
+           </ul>
+</li>
+         <li class="li">In the <span class="ph uicontrol">Address/Key</span> text field, enter in a valid value based on           the type you chose.</li>
+         <li class="li">When done creating the notification method, click <span class="ph uicontrol">Create Notification             Method</span>. </li>
+       </ol>
+       <div class="note note"><span class="notetitle">Note:</span> For this method to work you need to have a SMTP server specified.</div>
+     </div>
+     <div class="section">       <p class="p">After the notification method saves, the Notification Methods window refreshes with the new         notification method populated in the table.</p>
+     </div>
+   </div>
+ <div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

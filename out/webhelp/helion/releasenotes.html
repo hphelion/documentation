@@ -1,0 +1,917 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This document provides an overview of the features contained within HPE Helion OpenStack ® 2.0, including known issues and workarounds for this release: New GUI Installer HPE Helion OpenStack 2.0 ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Release Notes"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="release_notes"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Release Notes</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../index.html";
+          
+          --></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="release_notes">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Release Notes</h1>
+
+  <div class="body">
+    
+    <p class="p">This document provides an overview of the features contained within HPE Helion OpenStack<sup>®</sup> 2.0, including known issues and workarounds for this
+      release:</p>
+
+
+    <div class="section" id="release_notes__Features">
+      <p class="p"><strong class="ph b">New GUI Installer</strong></p>
+
+      <p class="p">HPE Helion OpenStack 2.0 introduces a GUI installer for configuring and installing the
+        operating system, the cloud, and OpenStack services. It provides an easy way to populate the
+        configuration files needed to define the <a class="xref" href="input_model.html">Input Model</a>,
+        and uses them to configure and install your cloud. For help using the installer, see the
+        page <a class="xref" href="gui_installer.html">HPE Helion OpenStack 2.0: Installing via the GUI</a>.</p>
+
+      <p class="p"><strong class="ph b">Transport Layer Security (TLS) Support</strong>
+      </p>
+<p class="p">TLS is now supported for public endpoints. See <a class="xref" href="security/tls.html#topic_yym_nps_4t">Enabling TLS for Public Endpoints</a> for
+        more information.</p>
+
+      <p class="p"><strong class="ph b">Encryption of sensitive data</strong></p>
+
+      <p class="p">In this release, connection details and passwords are encrypted and or protected. See <a class="xref" href="security/encrypted_storage.html">Encryption of Passwords and Sensitive Data
+        </a>for more information.</p>
+
+      <p class="p"><strong class="ph b">AppArmor enabled</strong></p>
+
+      <p class="p">AppArmor in HPE Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
+        default. It runs in enforce mode. It enforces mandatory access control policies for the
+        libvirt process. See <a class="xref" href="security/using_apparmor.html#topic_rmq_j1v_4t">AppArmor in
+          HPE Helion OpenStack 2.0</a> for more information.</p>
+
+      <p class="p"><strong class="ph b">The lifecycle manager only supports American English language</strong></p>
+
+      <p class="p">The lifecycle-manager installation process prompts you to select a language. The only
+        supported language at this time is American English.</p>
+
+      <p class="p"><strong class="ph b">Local Git repository for config tracking</strong></p>
+
+      <div class="p">In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes
+        as well as acting as a repository for the Configuration Processor to gather configuration
+        settings from. The operations work as explained below: <ul class="ul">
+          <li class="li">Operations under <samp class="ph codeph">~/helion</samp> are under the aegis of git. You’ll need to
+            commit any config into git (on the "site" branch) before the Configuration Processor can
+            run it. The script that runs the config processor now guards against uncommitted
+            changes.</li>
+
+          <li class="li">Deployment operations are run from a scratch directory that's assembled from various
+            parts (the ansible output of the Configuration Processor and the playbooks). The
+            directory is created using <samp class="ph codeph">ready-deployment.yml</samp>.</li>
+
+          <li class="li">All deployment operations should be run from
+              <samp class="ph codeph">~/scratch/ansible/next/hos/ansible</samp>.</li>
+
+        </ul>
+
+      </div>
+
+      <p class="p">The Configuration Processor uses the config files stored in the repo to apply configuration
+        settings. An explanation can be found <a class="xref" href="installation/using_git.html">in this
+          topic</a>.</p>
+
+      <p class="p"><strong class="ph b">New UEFI support</strong></p>
+
+      <p class="p">HPE Helion OpenStack 2.0 includes support for UEFI (which replaces the BIOS on newer
+        servers), while continuing to support Legacy BIOS. Select the required mode on each node
+        through its BIOS settings before beginning the install process. The installer will detect
+        and use the mode you have selected for each node.</p>
+
+      <p class="p"><strong class="ph b">Updated HPE Helion OpenStack Services</strong></p>
+
+      <p class="p">We have included the core set of OpenStack services from the <a class="xref" href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" target="_blank">Kilo release</a> with the exception of limitations notated in this document.</p>
+
+      <p class="p"><strong class="ph b">More Block Storage Backend Options Available</strong></p>
+
+      <p class="p">You can now choose between Ceph, VSA, and 3PAR for Block Storage backends.</p>
+
+      <p class="p">See: <a class="xref" href="blockstorage/blockstorage_overview.html">Block Storage Overview</a> for
+        more details</p>
+
+      <p class="p"><strong class="ph b">Neutron FWaaS, LBaaS and VPNaaS Extensions</strong></p>
+
+      <div class="p">We have implemented networking extensions firewall, load balancing, and virtual private
+        networks. Here is a description of each of these: <ul class="ul">
+          <li class="li">
+            <p class="p">LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
+              balancing feature set. HPE Helion OpenStack 2.0 installs by default LBaaS version 2
+              which uses an implementation of haproxy but third-party load balancers can be deployed
+              as well. If a third-party driver doesn’t support LBaaS V2, then installing LBaaS V1
+              instead of V2 is possible.</p>
+
+            <ul class="ul">
+              <li class="li">For more information, see: <a class="xref" href="networking/lbaas_admin.html">Load Balancer
+                  (LBaaS) Configuration</a></li>
+
+            </ul>
+
+          </li>
+
+          <li class="li">
+            <p class="p">FWaaS (Firewall-as-a-Service) is a Neutron extension that introduces a firewall
+              feature set. The included reference implementation is using iptables to filter traffic
+              but third-party firewalls can be deployed with this extension into HPE Helion
+              OpenStack as well.</p>
+
+            <ul class="ul">
+              <li class="li">For more information, see: <a class="xref" href="networking/fwaas.html">Firewall (FWaaS)
+                  Configuration</a></li>
+
+            </ul>
+
+          </li>
+
+          <li class="li">
+            <p class="p">VPNaaS (Virtual-Private-Network-as-a-Service) is a Neutron extension that introduces
+              a VPN feature set. It allows for point-to-point traffic between two routers in
+              (potentially) different datacenters with configurable encryption hence supporting
+              secure multi Availability Zone architectures for customers.</p>
+
+            <ul class="ul">
+              <li class="li">For more information, see: <a class="xref" href="networking/vpnaas.html">VPNaaS
+                  Configuration</a></li>
+
+            </ul>
+
+          </li>
+
+          <li class="li">
+            <p class="p">Multiple networks is a feature in HPE Helion OpenStack 2.0 that enables bridging of
+              multiple external physical networks to a Neutron network. Using this functionality a
+              tenant can dictate the path taken by the data in the physical network outside the
+              cloud. It can also be used for multi-homing to two physical networks.</p>
+
+            <ul class="ul">
+              <li class="li">For more information, see: <a class="xref" href="networking/multinetwork.html">Multiple
+                  External Network Configuration</a></li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+      <p class="p"><strong class="ph b">New Network Configuration Options</strong></p>
+<ul class="ul">
+        <li class="li">Network interface (NIC) bonding with multiple modes will allow you to set up a highly
+          available and performant network infrastructure.</li>
+
+        <li class="li">Multi-network support will allow you to bridge multiple external physical networks to a
+          Neutron network. This will enable you to dictate the path taken by the data in the
+          physical network outside of your cloud deployment.</li>
+
+        <li class="li">Network separation (both physical and VLAN) will allow you to segregate traffic by type.
+          For example, traffic can be separated into management, tenant, external, and service
+          networks.</li>
+
+      </ul>
+
+      <p class="p"><strong class="ph b">NIC Mapping Feature</strong></p>
+ The new NIC mappings feature in HPE Helion OpenStack allows
+      the cloud administrator to map network interface names to PCI bus addresses. This is important
+      because for well-understood reasons, Linux can sometimes name the network interfaces in a
+      pseudo-random order. So in a cluster of identical machines, the <strong class="ph b">eth3</strong> device can appear
+      as <strong class="ph b">eth4</strong> on one or more machines in the cluster. Once this erroneous name is determined
+      by the operating system, it will use persistence rules to ensure that the NIC device is called
+        <strong class="ph b">eth4</strong> thereafter. This makes cluster configuration using Helion quite difficult if not
+      impossible, if most machines understand the Management Network to be <strong class="ph b">eth3</strong>, but some
+      subset of machines understand that network to be on <strong class="ph b">eth4</strong> ( and whatever was on eth4 is
+      similarly swapped to <strong class="ph b">eth3</strong>). <p class="p">To resolve this, and to ensure that all NIC devices have
+        consistent naming across the entire cloud, HPE Helion OpenStack 2.0 includes NIC Mapping
+        facilities. This is a mechanism in the Input Model to define a specific NIC interface for a
+        given PCI address for a given class of machine. Generally, when all of the network
+        interfaces are defined in the <a class="xref" href="input_model.html#input_model__co_nicmappings">Input Model</a>, it is advisable to use the traditional naming, ie
+          <strong class="ph b">ethN</strong>. However, if one or more interfaces are not defined in the Input Model
+        (perhaps because the Ansible network is not defined, or because there is a customer-specific
+        network which is outside the scope of Helion), then it is recommended that a different
+        naming convention is used, to prevent the definitions from colliding with existing
+        configuration data. For example, the NIC mapping definitions could use <strong class="ph b">hos0</strong> through
+          <strong class="ph b">hosN</strong> rather than <strong class="ph b">eth0</strong> through <strong class="ph b">ethN</strong>, bearing in mind that the new
+        naming must be consistent across the entire Input Model.</p>
+
+      <p class="p"><strong class="ph b">Monasca-based Monitoring</strong></p>
+<p class="p">Monasca is a multi-tenant, scalable, fault-tolerant,
+        monitoring service. It uses a REST API for high-speed metrics processing and querying, and
+        has a streaming alarm and notification engine. In the HPE Helion OpenStack 2.0 release, the
+        OpenStack monitoring standard, Monasca, is supported as the HPE Helion OpenStack monitoring
+        solution with the following exceptions (which are not implemented):</p>
+
+      <ul class="ul">
+        <li class="li">Transform Engine</li>
+
+        <li class="li">Events Engine </li>
+
+        <li class="li">Anomaly and Prediction Engine</li>
+
+      </ul>
+
+      <p class="p">Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
+        Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HPE Linux for HP
+        Helion OpenStack.</p>
+<p class="p">Learn more about Monasca here: <a class="xref" href="operations/monitoring_service.html">Monasca Overview</a></p>
+
+      <p class="p"><strong class="ph b">Monitoring Configuration Options Available for Metrics Database</strong></p>
+<p class="p">In this
+        release you will have the option to specify which database platform you want to use for the
+        metrics database. The default option with the installation is Vertica. The opensource
+        alternative is InfluxDB.</p>
+ Learn more about these options here: <a class="xref" href="administration/configure_monitoring.html">Configuring the Monitoring Service</a>
+      <p class="p"><strong class="ph b">Centralized Logging</strong></p>
+ Logging for the services below is enabled in the default
+      configuration. You will have the ability to disable per-service logging as needed. <p class="p">Logging
+        is integrated for the following services: Nova, Glance, Swift, Neutron, Ceilometer, Monasca,
+        Horizon, Keystone, Cinder, Heat, OpsConsole, DNSaaS, LBaaS, FWaaS, and Trove.</p>
+<p class="p">Learn
+        more about Centralized Logging here: <a class="xref" href="operations/centralized_logging.html">Centralized Logging Overview</a></p>
+
+      <p class="p"><strong class="ph b">Core Features in HPE Helion OpenStack 2.0</strong></p>
+
+      
+      <p class="p">Core features in the OpenStack<sup>®</sup> Foundation’s Kilo release (as
+        identified below) are enabled in the HPE Helion OpenStack 2.0 standard settings and are
+        included in Helion standard product support. </p>
+
+      <p class="p">Non-core services (listed in the Features tables below) are provided as-is. Some non-core
+        services are included in this release to provide early access to features that HPE may
+        support fully in future releases, but HPE cannot guarantee that support will be provided or
+        issues resolved in a future release. Other non-core features are provided in this release
+        for a limited time and may be deprecated in future releases. HPE will attempt to provide
+        guidance and telephone support for these features at its discretion. If you need additional
+        support on any of these features for a specific use case, please contact the Helion
+        professional services team. </p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="void" border="1" rules="all">
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d111416e370">Service</th>
+
+              <th class="entry" valign="top" id="d111416e373">Status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Ceilometer</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Cinder</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Glance</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Heat</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Horizon</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Keystone</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Monasca</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Neutron</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Nova</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Swift</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Tempest</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Neutron LBaaS v1</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Non-core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Neutron LBaaS v2</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Neutron FWaaS</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Non-core</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Neutron VPNaaS</td>
+
+              <td class="entry" valign="top" headers="d111416e370 d111416e373 ">Non-core</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+    </div>
+
+
+
+    <div class="section" id="release_notes__KnownIssues"><h2 class="title sectiontitle">Limitations in this Release</h2>
+      
+      
+      <p class="p"><strong class="ph b">Installing Swift</strong></p>
+
+      <p class="p">Swift installs with the following limitations:</p>
+
+      <ul class="ul">
+        <li class="li">Only one Swift zone is supported.</li>
+
+      </ul>
+
+      
+      
+      <p class="p"><strong class="ph b">Monitoring (Monasca) Limitations</strong></p>
+ The monitoring service has the following
+      limitations: <ul class="ul" id="release_notes__ul_fn1_d45_tt">
+        <li class="li">Vertica is the default metrics database option in the install. If you want to use
+          InfluxDB then read <a class="xref" href="administration/configure_monitoring.html#configure_monitoring__config">Configuring Monasca</a> for more details.</li>
+
+        <li class="li">InfluxDB is not configured behind a VIP. It must directly access one node in the
+          cluster.</li>
+
+        <li class="li">Backup/restore of Monasca configuration and metrics data is not available.</li>
+
+      </ul>
+
+      <p class="p"><strong class="ph b">Issue: Monasca Command-line Client (CLI) Redirect Fails</strong></p>
+
+      <p class="p">If you are using the Monasca CLI and you receive the error below, we have included a
+        workaround:</p>
+
+      <div class="p">Error:
+        <pre class="pre codeblock">$ monasca metric-list|grep hostname
+'ascii' codec can't encode characters in position 1058218-1058219: ordinal not in range(128)</pre>
+</div>
+
+      <div class="p">Workaround:
+        <pre class="pre codeblock">PYTHONIOENCODING=utf-8 monasca metric-list | grep hostname</pre>
+</div>
+
+      <p class="p"><strong class="ph b">Monasca Forwarder Log Reporting False Errors</strong></p>
+
+      <p class="p">There is an issue where the <samp class="ph codeph">/var/log/monasca/agent/forwarder.log</samp> log file
+        will contain many lines containing text like this:</p>
+
+      <pre class="pre codeblock">2015-09-23 17:33:34 UTC | ERROR | forwarder |
+monascaclient.exc(exc.py:60) | exception: Authentication failed.</pre>
+
+      <p class="p">This is due to an issue where the monasca-agent is attempting to authenticate when it's
+        token has expired. These can be ignored.</p>
+
+      <p class="p"><strong class="ph b">Issue: The 'Cinderlm diagnostics monitor' alarm alerts with an 'UNDETERMINED'
+        state</strong></p>
+
+      <p class="p">This alert is not always reported but may occur after the system has been running for some
+        time.</p>
+
+      <p class="p">Check if any other Cinder related alarms are alerting. If no other other Cinder related
+        alarms are alerting then this alert for the Cinderlm diagnostics monitor alarm can be
+        ignored. If other Cinder related alarms are alerting then follow the mitigation steps
+        described in the Service Alarm Definitions section.</p>
+
+      <p class="p"><strong class="ph b">Issue: The 'Swiftlm-scan' alarm sticks</strong></p>
+
+      <p class="p">The <samp class="ph codeph">swiftlm-scan</samp> monitor alarm may be triggered. However, once triggered,
+        the alarm does not automatically return to the normal state even if the condition that
+        caused it has been resolved. To confirm this, run the following command:</p>
+
+      <pre class="pre codeblock">monasca measurement-list swiftlm.swift.swift_services -3 --merge_metrics --dimensions hostname=&lt;hostname&gt;</pre>
+
+      <div class="p">
+        <div class="note note"><span class="notetitle">Note:</span> The <samp class="ph codeph">hostname</samp> value is the host reporting the 'swiftlm-scan' monitor
+          alarm.</div>
+
+      </div>
+
+      <p class="p">If the command output reports that the metrics are being reported then the system is fine
+        and the alarm can be ignored.</p>
+
+      
+      <p class="p"><strong class="ph b">Operations Console (Ops Console)</strong></p>
+ The Operations Console has the following
+      limitations (listed below by menu option in the console): <ul class="ul" id="release_notes__ul_wv1_d45_tt">
+        <li class="li">Dashboard <ul class="ul" id="release_notes__ul_s2b_d45_tt">
+            <li class="li">There are two notification sections for the Storage services. The one in the upper
+              left is the Compute service mislabeled as Storage.</li>
+
+            <li class="li">The New Alarms section uses the UTC timezone to determine timeframes regardless of
+              what timezone is in the settings.</li>
+
+            <li class="li">The New Alarms section will only display alarms that have a service dimension
+              defined.</li>
+
+            <li class="li">Platform Services (HDP Summary) alarm panels will only contain data if the Helion
+              Development Platform services are installed.</li>
+
+          </ul>
+
+        </li>
+
+        <li class="li">Logging Dashboard <ul class="ul" id="release_notes__ul_jfb_d45_tt">
+            <li class="li">There is no auto-logon function, users must use the credentials in the <a class="xref" href="operations/centralized_logging.html#logging__interface">Logging Overview</a>
+              to access the UI.</li>
+
+            <li class="li">The Kibana console intermittently will not function correctly if Kibana is on a
+              different network than the Operations Console. If both Kibana and the Operations
+              Console are on the same network then this issue should not present itself.</li>
+
+          </ul>
+</li>
+
+        <li class="li">Alarms <ul class="ul" id="release_notes__ul_egb_d45_tt">
+            <li class="li">The tile view of alarms with lengthy dimensions does not render cleanly.</li>
+
+          </ul>
+</li>
+
+        <li class="li">Compute Instances <ul class="ul" id="release_notes__ul_rgb_d45_tt">
+            <li class="li">Compute instance utilization metrics are not available.</li>
+
+          </ul>
+
+        </li>
+
+        <li class="li">Networking - Alarm Summary <ul class="ul" id="release_notes__ul_dhb_d45_tt">
+            <li class="li">Alarms may be limited to only those with the dimension "service=networking".</li>
+
+          </ul>
+</li>
+
+        <li class="li">Storage - Alarm Summary <ul class="ul" id="release_notes__ul_shb_d45_tt">
+            <li class="li">Alarms with the dimension "service=compute" sometimes appear in this list in
+              addition to the "service=block-storage" and "service=object-storage" ones.</li>
+
+          </ul>
+</li>
+
+        <li class="li">HDP - Alarm Summary <ul class="ul" id="release_notes__ul_h3b_d45_tt">
+            <li class="li">This section will only contain data if the Helion Development Platform services are
+              installed.</li>
+
+          </ul>
+</li>
+
+        <li class="li">Masthead Items <ul class="ul" id="release_notes__ul_v3b_d45_tt">
+            <li class="li">The Help and EULA links will not work properly. You can view the Help files here:
+                <a class="xref" href="operations/opsconsole_overview.html">Operations Console
+              Overview</a></li>
+
+            <li class="li">User information panel fails to load making it so a user cannot update their email
+              address or password.</li>
+
+          </ul>
+</li>
+
+      </ul>
+
+      <p class="p"><strong class="ph b">Issue: The Operations Console does not support alarm pagination</strong></p>
+
+      <p class="p">The Operations Console UI does not support &gt;10,000 simultaneous alarm instances.
+        Configuring alarm definitions such that the number of alarms instances exceeeds the 10,000
+        mark may cause some alarms to not show in the UI. The workaround for this issue is to access
+        those alarms via either the API or the command-line clients.</p>
+
+      
+      <p class="p" id="release_notes__logging"><strong class="ph b">Centralized Logging Limitations</strong></p>
+
+      <p class="p">The Centralized Logging service has the following limitations:</p>
+
+      <ul class="ul">
+        <li class="li">Alarm definition and generation for Kibana and curator are not integrated.</li>
+
+        <li class="li">Logging-monitor 'stop' playbook is not integrated.</li>
+
+      </ul>
+
+      <p class="p"><strong class="ph b">Issue: The Elasticsearch Cluster Name Must Be Unique</strong></p>
+
+      <p class="p">The default Elasticsearch cluster name is set to <samp class="ph codeph">elasticsearch</samp> in the
+        logging configuration files. It is necessary during installation to change this value to a
+        unique name. This step is included in our installation documentation.</p>
+
+      <p class="p"><strong class="ph b">The Elasticsearch high/low watermark alarms will show up in "Undefined"</strong></p>
+
+      <p class="p">In the Operations Console, the Elasticsearch high/low watermark alarms will show up in the
+        “Undefined” section instead of in the "Logging" section.</p>
+
+      <p class="p"><strong class="ph b">Issue: The Heap parameters for Elasticsearch and Logstash are auto-tuned
+        incorrectly</strong></p>
+
+      <p class="p">There is an issue where the Heap parameters for Elasticsearch and Logstash are incorrectly
+        auto-tuned. The default values are listed in <a class="xref" href="administration/configure_logging.html#configure_logging__general_config">Configuring
+          the Centralized Logging Service</a>. There is a bug where Ansible is reporting the
+        memory values incorrectly as values that are slightly less than what they actually are. So,
+        for example, if you have 32GB of RAM you should fall into the "Small" auto-tuning category
+        but because of this incorrectly reported value you are actually falling into the "Demo"
+        category. We recommend that you manually modify the heap values on the lifecycle-manager
+        node for systems with the specified amount of RAM in the table below to the values listed.
+        You will edit these values in the <samp class="ph codeph">logging_possible_tunings</samp> section of the
+        file below:</p>
+
+      <pre class="pre codeblock">~/helion/my_cloud/config/logging/main.yml</pre>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="release_notes__table_pbd_k2y_5t" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d111416e802">RAM</th>
+
+              <th class="entry" valign="top" id="d111416e805">Key</th>
+
+              <th class="entry" valign="top" id="d111416e808">elasticsearch_heap_size</th>
+
+              <th class="entry" valign="top" id="d111416e811">logstash_heap_size</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e802 ">32GB</td>
+
+              <td class="entry" valign="top" headers="d111416e805 ">demo</td>
+
+              <td class="entry" valign="top" headers="d111416e808 ">from 256m to 8g</td>
+
+              <td class="entry" valign="top" headers="d111416e811 ">from 256m to 2g</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e802 ">64GB</td>
+
+              <td class="entry" valign="top" headers="d111416e805 ">small</td>
+
+              <td class="entry" valign="top" headers="d111416e808 ">from 8g to 16g</td>
+
+              <td class="entry" valign="top" headers="d111416e811 ">from 2g to 4g</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d111416e802 ">128GB</td>
+
+              <td class="entry" valign="top" headers="d111416e805 ">medium</td>
+
+              <td class="entry" valign="top" headers="d111416e808 ">from 16g to 32g</td>
+
+              <td class="entry" valign="top" headers="d111416e811 ">from 4g to 8g</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p class="p"><strong class="ph b">Issue: Logrotate Settings for MySQL, keepalived, and RabbitMQ are Invalid</strong></p>
+
+      <p class="p">There is currently a workaround needed on the controller nodes to fix the logrotate
+        settings for the MySQL, keepalived, and RabbitMQ services.</p>
+ The logrotate for MySQL,
+      keepalived and RabbitMQ is being overwritten by an invalid logrotate configuration supplied in
+      the logging-server component. A valid logrotate configuration for these services is supplied
+      in the following files on the deployer:
+        <pre class="pre codeblock">/home/stack/scratch/ansible/next/hos/ansible</pre>
+<p class="p">The files in that
+        directory are:</p>
+<pre class="pre codeblock">
+mysql: ./roles/FND-MDB/templates/etc/logrotate.d/mysql
+keepalived: ./roles/keepalived/templates/keepalived.logrotate.j2
+rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</pre>
+
+      <p class="p">To correct this problem if the above configuration is copied manually into
+          <samp class="ph codeph">/etc/logrotate.d</samp> on the controller nodes to replace the existing
+        configuration then this should correct the logrotate configuration for these
+        services.</p>
+<p class="p">Note any variables such as <samp class="ph codeph">{{ }}</samp> need to be replaced
+        correctly.</p>
+ In the case of RabbitMQ and keepalived this can be achieved by editing the
+        <samp class="ph codeph">logrotate.j2</samp> with a comment and running a reconfigure
+      (rabbitmq-reconfigure.yml and FND-CLU-reconfigure.yml on the deployer) <div class="p">In the case of MySQL
+        this needs to be corrected manually as below: <pre class="pre codeblock">File ./roles/FND-MDB/templates/etc/logrotate.d/mysql</pre>
+
+        <pre class="pre codeblock">
+{ log_dir }}/*.log {
+        daily
+        rotate 7
+        missingok
+        create 640 mysql adm
+        notifempty
+        compress
+        delaycompress
+        sharedscripts
+        postrotate
+               if test -x /usr/bin/mysqladmin &amp;&amp; \
+                   /usr/bin/mysqladmin ping &amp;&gt;/dev/null
+               then
+                   roothome=~root
+                  /usr/bin/mysqladmin --defaults-file=${roothome}/.my.cnf --socket="{{ server_socket}}" flush-logs
+               fi
+        endscript
+}</pre>
+</div>
+
+      <p class="p">should be copied into /etc/logrotate.d/mysql on the controller nodes and variables replaced
+        to result in this config:</p>
+
+      <pre class="pre codeblock">
+/var/log/mysql/*.log {
+          daily
+          rotate 7
+          missingok
+          create 640 mysql adm
+          notifempty
+          compress
+          delaycompress
+          sharedscripts
+          postrotate
+                  if test -x /usr/bin/mysqladmin &amp;&amp; \
+                     /usr/bin/mysqladmin ping &amp;&gt;/dev/null
+                  then
+                     roothome="$(realpath ~root)"
+                     /usr/bin/mysqladmin --defaults-file=${roothome}/.my.cnf --socket="/var/run/mysqld/mysqld.sock" flush-logs
+                  fi
+          endscript
+}</pre>
+
+      
+      <p class="p"><strong class="ph b">Issue: Kilo functionality not supported by the Kilo version of
+        python-cinderclient</strong></p>
+
+      <p class="p">The version of the python-cinderclient available in HPE Helion OpenStack 2.0 does not
+        support some functionality available from the cinder services, including incremental backup
+        and private volume types.</p>
+ If you install a new version of python-cinderclient, and if
+      you have OS_ENDPOINT_TYPE defined, you must also define CINDER_ENDPOINT_TYPE. For example: <pre class="pre codeblock">export CINDER_ENDPOINT_TYPE=${OS_ENDPOINT_TYPE}</pre>
+
+      <p class="p">The workaround for this is the following:</p>
+
+      <ol class="ol">
+        <li class="li">Create a new virtual environment in a suitable directory:
+          <pre class="pre codeblock">cd &lt;dir&gt;
+virtualenv cinder_venv</pre>
+</li>
+
+        <li class="li">Activate the new virtual environment:
+          <pre class="pre codeblock">source ./cinder_venv/bin/activate</pre>
+</li>
+
+        <li class="li">Use pip to install the python-cinderclient: <pre class="pre codeblock">pip install python-cinderclient</pre>
+
+          <p class="p">or if the machine is behind a proxy, use:</p>
+
+          <pre class="pre codeblock">pip install --proxy [user:passwd@]proxy.server:port python-cinderclient</pre>
+</li>
+
+        <li class="li">Verify the version you have installed is version 1.4.0 or newer:
+          <pre class="pre codeblock">cinder --version</pre>
+</li>
+
+        <li class="li">To use this virtual environment at a later time, or from a different shell session, you
+          must activate the virtual environment as stated in step #2 above:
+          <pre class="pre codeblock">source &lt;some-dir&gt;/cinder_venv/bin/activate
+cinder --version</pre>
+</li>
+
+      </ol>
+
+      <p class="p"><strong class="ph b">In the Cinder CLI no more than 1000 Cinder volumes can be displayed</strong></p>
+
+      <p class="p">Due to a known issue with the version of the OpenStack python-cinderclient in HPE Helion
+        OpenStack 2.0 (1.1.3), the maximum number of volumes that can be displayed is 1000. The
+        fixed client is 1.3.1. The workaround is to use python-cinderclient 1.3.1.</p>
+
+      
+      <p class="p"><strong class="ph b">Cannot open Launch Instance from Volume on Horizon Dashboard</strong></p>
+
+      <p class="p">User cannot open the Launch Instance wizard from a newly created bootable volume’s actions
+        dropdown on the Volumes Page. </p>
+<p class="p">The workaround is to refresh the page.</p>
+
+      <p class="p"><strong class="ph b">Launch Instance form in Horizon not populated when choosing volumes</strong></p>
+
+      <p class="p">When using the Launch Instance action in the Volumes table, the Launch Instance Wizard form
+        doesn't get pre-populated with the Volumes option selected, nor does it select the given
+        Volume. The workaround is to select an available bootable volume by selecting the Volume
+        option from the Select Boot Source dropdown on Launch Instance wizard.</p>
+
+      <p class="p"><strong class="ph b">Start Instances in Horizon enabled</strong></p>
+
+      <p class="p">Note that for Start Instances at Instances table level in Horizon, the More Actions
+        dropdown is enabled even if an instance status is Active.</p>
+<p class="p"><strong class="ph b">Issue: The <samp class="ph codeph">Start
+            Instances</samp> Option is Available In Horizon for Instances that are Already
+          Started</strong></p>
+
+      <p class="p">There is currently an OpenStack bug where the <samp class="ph codeph">Start Instances</samp> option is
+        available in the instance action drop-down even if your instances are already in an Active
+        state.</p>
+
+      <p class="p"><strong class="ph b">A Horizon create a 'bootable volume' fails UI task</strong></p>
+
+      <p class="p">When you navigate to 'volumes' and choose to create a 'bootable volume,' if you do not
+        navigate elsewhere, the attempt to launch an instance from that volume will fail. That is,
+        nothing will happen.</p>
+<p class="p"> To work around this issue, after choosing to create a 'bootable
+        volume,' refresh the page in the browser and then proceed.</p>
+
+      <p class="p"><strong class="ph b">Horizon throws an error when Nova compute is not present</strong></p>
+
+      <p class="p">If using the Entry-scale with Swift example, Horizon displays the error "Invalid Service
+        Catalog service: compute."</p>
+
+      <p class="p">To avoid this error, you may alter the default panel (this changes the default for both
+        admins and normal users to the object storage page and doesn't raise an error, although the
+        problematic pages are still available to be chosen).</p>
+
+      <p class="p">To alter the default, on each controller node perform the following steps:</p>
+
+      <ol class="ol">
+        <li class="li">Edit the file below:
+          <pre class="pre codeblock">/opt/stack/service/horizon/etc/local_settings.py</pre>
+</li>
+
+        <li class="li">Below line 37, add the following line:
+          <pre class="pre codeblock">HORIZON_CONFIG['user_home'] = "/project/containers"</pre>
+</li>
+
+        <li class="li">Then run the following command to restart Apache to have Horizon pick up the change
+          (again, on each controller): <pre class="pre codeblock">sudo service apache2 reload</pre>
+
+        </li>
+
+      </ol>
+
+      <p class="p">These steps will need to be performed after reinstall or upgrade.</p>
+
+      
+      <p class="p"><strong class="ph b">Heat autoscaling not supported</strong></p>
+
+      <p class="p">In HPE Helion OpenStack 2.0, the auto-scaling in Heat is not supported because the alarm
+        creation in Ceilometer is disabled.</p>
+
+      
+      <p class="p"><strong class="ph b">Restarting lifecycle-manager node leaves Apache2 down</strong></p>
+
+      <p class="p">If you restart your lifecycle management node, note that Apache2 will not restart on its
+        own. You will need to restart it manually.</p>
+
+      <p class="p"><strong class="ph b">Moonshot remote console goes blank after operating system install</strong></p>
+
+      <p class="p">If you are using Moonshot compute nodes you may find that their remote console is blank or
+        garbled after the OS install. If affected, you need to make the following change to
+        /etc/default/grub on each affected node, run update-grub and reboot:</p>
+<ol class="ol" id="release_notes__ol_p1c_d45_tt">
+        <li class="li">Find the line starting with GRUB_CMDLINE_LINUX= </li>
+
+        <li class="li">Add the following at the end of the value i.e. inside the double quotes:
+          <pre class="pre codeblock">vga=788 console=ttyS0,9600 earlyprint=serial,ttyS0,9600</pre>
+
+        </li>
+
+      </ol>
+
+      <p class="p"><strong class="ph b">Softlockup is observed when attempting to remove many LUNs simultaneously</strong></p>
+
+      <p class="p">If many multipath LUNs are detached from a compute host in rapid succession a softlockup
+        and RCU (read-copy-update) stall may be observed in the kernel log file as follows:</p>
+
+      <pre class="pre codeblock">Oct  7 12:48:52 hlm kernel: [31164.262063]  rport-0:0-2: blocked FC remote port time out: removing target and saving binding
+Oct  7 12:48:52 hlm kernel: [31164.262859]  rport-0:0-0: blocked FC remote port time out: removing target and saving binding
+Oct  7 12:49:09 hlm kernel: [31181.132369] BUG: soft lockup - CPU#23 stuck for 22s! [systemd-udevd:554]
+Oct  7 12:49:09 hlm kernel: [31181.133060] Modules linked in: dm_service_time xt_mac xt_physdev xt_set iptable_mangle xt_comment 
+     iptable_nat nf_nat_ipv4 nf_nat iptable_raw ip_set_hash_net ip_set nfnetlink vhost_net vhost macvtap macvlan tun veth bridge 
+     ib_iser rdma_cm iw_cm ib_cm ib_sa ib_mad ib_core ib_addr iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi md_mod 
+     fuse binfmt_misc xt_tcpudp xt_multiport xt_LOG xt_limit xt_conntrack xt_pkttype ip6table_filter ip6_tables iptable_filter 
+     ip_tables x_tables 8021q garp stp mrp llc bonding openvswitch gre libcrc32c nf_conntrack_ipv6 nf_defrag_ipv6 nf_conntrack_ipv4 
+     nf_defrag_ipv4 nf_conntrack dm_multipath scsi_dh evdev iTCO_wdt iTCO_vendor_support x86_pkg_temp_thermal intel_powerclamp 
+     coretemp kvm_intel kvm crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel psmouse aes_x86_64 lrw gf128mul glue_helper 
+     ablk_helper cryptd pcspkr serio_raw ioatdma mgag200 dca ttm ipmi_si drm_kms_helper ipmi_msghandler hpilo drm lpc_ich wmi mfd_core 
+     agpgart i2c_algo_bit syscopyarea sysfillrect sysimgblt processor i2c_core thermal_sys acpi_power_meter hpwdt button autofs4 ext4 
+     crc16 mbcache jbd2 dm_mod sd_mod sg lpfc qla2xxx crc_t10dif uhci_hcd ehci_pci crct10dif_generic xhci_hcd ehci_hcd scsi_transport_fc 
+     hpsa usbcore usb_common scsi_mod be2net crct10dif_common
+Oct  7 12:49:09 hlm kernel: [31181.133114] CPU: 23 PID: 554 Comm: systemd-udevd Not tainted 3.14.51-1-amd64-hlinux #hlinux1
+Oct  7 12:49:09 hlm kernel: [31181.133115] Hardware name: HPE ProLiant BL460c Gen9, BIOS I36 05/06/2015
+Oct  7 12:49:09 hlm kernel: [31181.133117] task: ffff883fcf0262c0 ti: ffff883f979ca000 task.ti: ffff883f979ca000
+Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b&gt;]  [&lt;ffffffff81514f5b&gt;] _raw_spin_trylock+0xb/0x40</pre>
+
+      <p class="p">The associated stack from the softlockup will show the instruction point either holding or
+        attempting to acquire a spinlock. After all the LUNs have successfully detached and the
+        devices have been flushed, the messages will subside. It is recommended that you include a
+        delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</p>
+
+      
+      <p class="p"><strong class="ph b">IPv6 Traffic Not Supported</strong></p>
+
+      <p class="p">The HPE Helion OpenStack 2.0 release includes firewall rules to prevent non-essential
+        traffic from accessing the physical systems. However, these rules are limited to IPv4
+        traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will need to
+        block IPv6 at your router, or within the infrastructure.</p>
+<div class="p"> You can disable IPv6 on your
+        operating systems by adding the following lines to <strong class="ph b">/etc/sysctl.conf</strong>:
+        <pre class="pre codeblock">net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1</pre>
+
+        Once these have been added, you can either reboot the node or run the following command (as
+        root): <pre class="pre codeblock"># sysctl -p</pre>
+ Please refer to your router documentation to block
+        IPv6 traffic from reaching your network at the router.</div>
+
+      
+      <p class="p"><strong class="ph b">Error: Failed to consume message from queue</strong></p>
+
+      <p class="p">If RabbitMQ or QPID is chosen as the messaging service backend, OpenStack services might
+        display an error-level log message when an application exits, stating: “Failed to consume
+        message from queue.” Since this log mesage is benign and since the fix depends on other
+        changes including new features, any attempt to fix the issue will cause instability. For
+        these reasons, the OpenStack community has decided not to backport the fix from
+        stable/liberty into stable/kilo release.</p>
+
+      <p class="p">The solution is to ignore the following error message in the log for both Nova and
+        Ceilometer:</p>
+
+      <pre class="pre codeblock">(oslo_messaging._drivers.impl_rabbit): 2015-08-20 01:18:21,280 ERROR impl_rabbit _error_callback Failed 
+      to consume message from queue:(amqp): 2015-08-20 01:18:21,282 DEBUG channel _do_close Closed channel #1</pre>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

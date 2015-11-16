@@ -1,0 +1,142 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Deployment HPE Helion OpenStack 2.0 automatically deploys Ceilometer to use the shared MySQL database along with other OpenStack services such as Keystone. Ceilometer is configured to use a common ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Ceilometer Metering Service Config and Upgrade"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reconfig_metering"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Ceilometer Metering Service Config and Upgrade</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reconfig_metering">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Ceilometer Metering Service Config and
+    Upgrade</h1>
+
+  <div class="body">
+
+    <div class="section" id="reconfig_metering__deploy"><h2 class="title sectiontitle">Deployment</h2> HPE Helion OpenStack 2.0 automatically deploys
+      Ceilometer to use the shared MySQL database along with other OpenStack services such as
+      Keystone. Ceilometer is configured to use a common MySQL database and deployed on the same
+      control plane nodes along with other OpenStack services such as Keystone, Nova, Neutron,
+      Glance, Swift etc. </div>
+
+
+    <div class="section" id="reconfig_metering__apache"><h2 class="title sectiontitle">Configure Apache2 for the Ceilometer API</h2> The first step to
+      execute is to add the <strong class="ph b">ceilometer_modwsgi.conf </strong>file in the /etc/apache2/sites-available
+      folder. The <strong class="ph b">ceilometer_modwsgi.conf</strong> should have added the
+      following:<pre class="pre codeblock">Listen &lt;ipaddress&gt;:8777 
+&lt;VirtualHost *:8777&gt;
+  WSGIScriptAlias / /opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages/ceilometer/api/app.wsgi
+  WSGIDaemonProcess ceilometer user=ceilometer group=ceilometer processes=4 threads=5 socket-timeout=600 python-path=/opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../:/opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages
+  WSGIApplicationGroup ceilometer
+  WSGIProcessGroup ceilometer
+  ErrorLog /var/log/ceilometer/ceilometer_modwsgi.log
+  LogLevel INFO
+  CustomLog /var/log/ceilometer/ceilometer_access.log combined
+  &lt;Directory /opt/stack/service/ceilometer-api-20151021T030442Z/venv/bin/../lib/python2.7/site-packages/ceilometer&gt;
+    Options Indexes FollowSymLinks MultiViews
+    Require all granted
+    AllowOverride None
+    Order allow,deny
+    allow from all
+    LimitRequestBody 102400
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;&lt;/ipaddress&gt;</pre>
+
+      The Ceilometer APIs are running as WSGI processes. Each process can have a certain number of
+      threads taking care of the filters and applications comprising the processing pipeline. This
+      file is configured during HPE Helion OpeStack deployment and preferably should be changed by
+      running the <strong class="ph b">ceilometer-reconfigure.yml</strong> playbook (see the <a class="xref" href="#reconfig_metering__reconfig">Reconfigure</a> section below). This
+      configuration refers to the installed Ceilometer API version and needs to be referenced
+      appropriately based on the version installed and needs to be used. The main parameters that
+      can be altered to increase the responsiveness is processes and threads in the above mentioned
+      config file. <div class="note note"><span class="notetitle">Note:</span> WSGIDaemon Recommended Settings The best, and hence, recommended
+        configuration is to have four processes running in parallel: Recommended number of processes
+        to be set in <strong class="ph b">ceilometer.conf </strong><pre class="pre codeblock">processes=4</pre>
+ and for each process,
+        a maximum of 5 threads: Recommended number of threads per process
+        <pre class="pre codeblock">threads=5</pre>
+</div>
+
+    </div>
+
+
+
+    <div class="section" id="reconfig_metering__softlink"><h2 class="title sectiontitle">Add softlink for config file</h2> Next, create/add a softlink
+      for the <strong class="ph b">ceilometer_modwsgi.conf</strong> in the<strong class="ph b"> /etc/apache2/sites-enabled</strong> folder. Add
+      softlink to celiometer.conf
+      <pre class="pre codeblock">ln -s /etc/apache2/sites-available/ceilometer_modwsgi.conf /etc/apache2/sites-enabled</pre>
+
+      or alternatively you can run <pre class="pre codeblock">a2ensite ceilometer_modwsgi.conf  </pre>
+
+    </div>
+
+
+
+    <div class="section" id="reconfig_metering__apachereload"><h2 class="title sectiontitle">Reload Apache2</h2>
+      <p class="p"> For the changes to take effect, the apache2 service needs to be reloaded. This ensures
+        that all the configuration changes are considered and the service has applied them. The
+        system administrator can change the configuration of processes and threads and experiment if
+        alternative settings if necessary.</p>
+ The command to reload the apache2 service is the
+      following: <pre class="pre codeblock">sudo service apache2 reload</pre>
+
+    </div>
+
+
+    <div class="section" id="reconfig_metering__verify"><h2 class="title sectiontitle">Verification</h2> Once the Apache2 service has been reloaded it
+      will be possible to test that the Ceilometer APIs are running and able to receive incoming
+      traffic. The Ceilometer APIs listen on port 8777. Verification can be performed using the
+      following command to get Apache2 with Ceilometer running instances :
+      <pre class="pre codeblock">ps -ef | grep apache </pre>
+ This should generate an output similar to the one
+      below if everything is in order:
+      <pre class="pre codeblock">ceilome+ 31430 31427 10 16:29 ? 00:02:40 /usr/sbin/apache2 -k start
+ceilome+ 31431 31427 10 16:29 ? 00:02:41 /usr/sbin/apache2 -k start
+ceilome+ 31432 31427 10 16:29 ? 00:02:42 /usr/sbin/apache2 -k start
+ceilome+ 31433 31427 10 16:29 ? 00:02:43 /usr/sbin/apache2 -k start </pre>
+
+      The list of entries in the above output SHOULD match the number of processors set in the
+      configuration file, in the recommended case 4. Also it is possible to verify that Apache2 is
+      accepting incoming traffic on port 8777: <pre class="pre codeblock">netstat -tulpn | grep 8777 </pre>
+
+      This should produce the following output:
+      <pre class="pre codeblock">tcp6 0 0 :::8777 :::* LISTEN 8959/apache2 </pre>
+ If Ceilometer fails to
+      deploy, check the proxy setting, and unset https_proxy http_proxy HTTP_PROXY HTTPS_PROXY </div>
+
+
+    <div class="section" id="reconfig_metering__metering_services"><h2 class="title sectiontitle">Enabling Services for Messaging Notifications</h2>
+      Nova, Cinder, Glance, Neutron and Swift are already enabled to send notifications out of the
+      box in HPE Helion OpenStack 2.0. The list of meters supported out of the box for these services
+      are listed in the Notification Agent or Central Agent's pipeline coniguration. </div>
+
+
+    <div class="section" id="reconfig_metering__upgrade"><h2 class="title sectiontitle">Upgrade</h2>
+       Follow Standard Service upgrade mechanism available in the
+      lifecycle-manager distribution. For Ceilometer, the playbook included with HPE Helion OpenStack
+      is ceilometer-upgrade.yml </div>
+
+
+
+    <div class="section" id="reconfig_metering__reconfig"><h2 class="title sectiontitle">Reconfigure</h2> Make changes in the Ceilometer available
+      configuration files at on deployer machine. Make changes in the target configuration file
+      found is these directories. <p class="p">For a temporary change go
+      to:</p>
+<pre class="pre codeblock">cd /home/stack/scratch/ansible/next/my_cloud/config/ceilometer/</pre>
+
+      For a persistent change, go to
+      <pre class="pre codeblock">cd /home/stack/helion/my_cloud/config/ceilometer/</pre>
+ After making your
+      changes, run the <strong class="ph b">ceilometer-reconfigure.yml
+      </strong>playbook<pre class="pre codeblock">cd /home/stack/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</pre>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

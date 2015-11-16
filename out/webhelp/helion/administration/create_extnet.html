@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You must have an external network set up, for your Compute instances to reach the internet. The HPE Helion OpenStack installer provides an Ansible playbook that will create this network for use across ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Creating an External Network"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="create_extnet"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Creating an External Network</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="create_extnet">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Creating an External Network</h1>
+
+  <div class="body">
+    <div class="section" id="create_extnet__about">
+      <p class="p">You must have an external network set up, for your Compute instances to reach the internet.
+        The HPE Helion OpenStack installer provides an Ansible playbook that will create this network
+        for use across your projects.</p>
+
+    </div>
+
+    <div class="section" id="create_extnet__playbook"><h2 class="title sectiontitle">Run the Playbook</h2>
+      <p class="p">This playbook will query the Networking service for an existing external network, and then
+        create a new one if you do not already have one:</p>
+
+      <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-cloud-configure.yml -e EXT_NET_CIDR=&lt;CIDR&gt;</pre>
+
+      <p class="p">The table below shows the optional switch that you can use as part of this playbook to
+        specify environment-specific information:</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="create_extnet__ansible" class="table" frame="border" border="1" rules="all">
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="50%" id="d6033e67">Switch</th>
+
+                <th class="entry" valign="top" width="50%" id="d6033e70">Description</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="50%" headers="d6033e67 ">
+                  <p class="p"><samp class="ph codeph">-e EXT_NET_CIDR=&lt;CIDR&gt;</samp></p>
+
+                </td>
+
+                <td class="entry" valign="top" width="50%" headers="d6033e70 ">
+                  <p class="p">Optional. You can use this switch to specify the external network CIDR. If you
+                    choose not to this switch, or use a wrong value, the VMs will not be accessible
+                    over the network.</p>
+
+                  <p class="p">This CIDR will be from the EXTERNAL VM network.</p>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="create_extnet__next"><h2 class="title sectiontitle">Next Steps</h2>
+      <p class="p">Once the external network is created, users can create a Private Network to complete their
+        networking setup. For instructions, see <a class="xref" href="../userguide/create_network.html#create_network">HPE Helion OpenStack 2.0: Creating a Private Network</a>.</p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

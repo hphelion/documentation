@@ -1,0 +1,177 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="What is the Object Storage (Swift)? The HPE Helion OpenStack Object Storage leverages Swift from OpenStack ® . Swift uses software-defined storage (SDS) layered on top of industry-standard servers ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Object Storage Overview"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="object-storage"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Object Storage Overview</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="object-storage">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Object Storage Overview</h1>
+
+  <div class="body">
+    <div class="section"><strong class="ph b">What is the Object Storage (Swift)?</strong><p class="p">The HPE Helion OpenStack Object Storage
+        leverages Swift from OpenStack<sup>®</sup>. Swift uses software-defined storage
+        (SDS) layered on top of industry-standard servers using native storage devices. Swift
+        presents an object paradigm, using an underlying set of disk drives. The disk drives are
+        managed by a data structure called a "ring." And you can store, retrieve, and delete objects
+        in containers using RESTful APIs.</p>
+HPE Helion OpenStack Object Storage provides a
+      highly-available, resilient, and scalable storage pool for unstructured data. It has a
+      highly-durable architecture, with no single point of failure. In addition, this version of HP
+      Helion OpenStack introduces the concept of cloud models, where the user can modify the cloud
+      input model to provide the configuration required for their environment.</div>
+
+    <div class="section"><strong class="ph b">Object Storage (Swift) Services</strong><p class="p">A Swift system is comprised of a number of
+        services: </p>
+<div class="p">
+        <ul class="ul">
+          <li class="li">Swift-proxy provides the API for all requests to the Swift system.</li>
+
+          <li class="li">Account and container services provide storage management of the accounts and
+            containers.</li>
+
+          <li class="li">Object services provide storage management for object storage.</li>
+
+        </ul>
+
+      </div>
+<p class="p">These services can be co-located in a number of ways. The following general pattern
+        exists in the example cloud models distributed in HPE Helion OpenStack:</p>
+<div class="p">
+        <ul class="ul">
+          <li class="li">The swift-proxy, account, container, and object services run on the same (PACO) node
+            type in the control plane. This is used for smaller clouds or where Swift is a minor
+            element in a larger cloud.</li>
+
+          <li class="li">The swift-proxy, account, and container services run on one (PAC) node type in a
+            cluster in a control plane and the object services run on another (OBJ) node type in a
+            resource pool. This is used for in larger clouds or where a larger Swift system is in
+            use or planned.</li>
+
+        </ul>
+
+      </div>
+<p class="p">Each of these node types can be scaled independently to meet workload and redundancy
+        requirements. The storage service can be scaled up as necessary. It can also be scaled
+        horizontally to handle an increased number of simultaneous connections and a larger number
+        of objects.</p>
+</div>
+
+    <p class="p">Swift is configured through a number of YAML files in the HPE Helion implementation of the
+      OpenStack Object Storage (Swift) service. For more details on the configuration of the YAML
+      files, see <a class="xref" href="input_cloud_model.html#modify-input-model">HPE Helion OpenStack 2.0: Modifying Example Configurations for Object Storage</a>.</p>
+
+    
+    <div class="p">You can implement the input model and perform the following Swift tasks: <ul class="ul" id="object-storage__ul_vsp_33r_qt">
+        <li class="li"><a class="xref" href="input_cloud_model.html#modify-input-model">HPE Helion OpenStack 2.0: Modifying Example Configurations for Object Storage</a><ul class="ul" id="object-storage__ul_fc4_j3r_qt">
+            <li class="li"><a class="xref" href="allocate_pac.html">HPE Helion OpenStack 2.0: Allocating Proxy, Account, and Container (PAC) Servers for Object Storage</a></li>
+
+            <li class="li"><a class="xref" href="allocating_server.html">HPE Helion OpenStack 2.0: Allocating Object Servers</a></li>
+
+            <li class="li"><a class="xref" href="creating_roles_swift_nodes.html#topic_uh2_td1_kt">HPE Helion OpenStack 2.0: Creating Roles for Swift Nodes</a></li>
+
+            <li class="li"><a class="xref" href="allocating_network.html#topic_pcj_hzv_dt">HPE Helion OpenStack 2.0: Understanding Swift Network and Service Requirements</a></li>
+
+          </ul>
+</li>
+
+      </ul>
+<ul class="ul" id="object-storage__ul_e34_l3r_qt">
+        <li class="li"><a class="xref" href="allocating_disk_drives.html#allocating-disk-drives">HPE Helion OpenStack 2.0: Allocating Disk Drives for Object Storage</a><ul class="ul" id="object-storage__ul_zjl_t3r_qt">
+            <li class="li"><a class="xref" href="label_on_partition.html#verify-partition-label">HPE Helion OpenStack 2.0: Verifying a Swift Partition Label</a></li>
+
+            <li class="li"><a class="xref" href="filesystem_label.html#verify-the-filesystem-label">HPE Helion OpenStack 2.0: Verifying a Swift File System Label</a></li>
+
+          </ul>
+</li>
+
+      </ul>
+<ul class="ul" id="object-storage__ul_ep5_bjr_qt">
+        <li class="li"><a class="xref" href="creating_pac_cluster.html">HPE Helion OpenStack 2.0: Creating a Proxy, Account, and Container (PAC) Cluster for Object Storage</a></li>
+
+        <li class="li"><a class="xref" href="creating_object_server_resource.html">HPE Helion OpenStack 2.0: Creating Object Server Resource Nodes</a></li>
+
+        <li class="li"><a class="xref" href="ring_specifications.html">HPE Helion OpenStack 2.0: Understanding Ring Specifications</a></li>
+
+        <li class="li"><a class="xref" href="storage_policies.html">HPE Helion OpenStack 2.0: Designing Storage Policies</a></li>
+
+        <li class="li"><a class="xref" href="ring_management.html">HPE Helion OpenStack 2.0: Managing Object Storage Rings</a><ul class="ul" id="object-storage__ul_yd4_g44_tt">
+            <li class="li"><a class="xref" href="rebalanced_explained.html">HPE Helion OpenStack 2.0: Rebalancing Object Storage Rings</a></li>
+
+            <li class="li"><a class="xref" href="setting_up_weight_attributes_ring_changes.html">HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</a></li>
+
+            <li class="li"><a class="xref" href="playbook_linked_ring_management.html">HPE Helion OpenStack 2.0: Managing Rings Using Swift Playbooks</a></li>
+
+            <li class="li"><a class="xref" href="safe_rebalance_deploy_ring.html">HPE Helion OpenStack 2.0: Determining When to Rebalance and Deploy a New Ring</a></li>
+
+            <li class="li"><a class="xref" href="input_model_change_existing_rings.html">HPE Helion OpenStack 2.0: Applying Input Model Changes to Existing Rings</a></li>
+
+            <li class="li"><a class="xref" href="add_new_storage_policy.html">HPE Helion OpenStack 2.0: Adding a New Swift Storage Policy</a></li>
+
+            <li class="li"><a class="xref" href="how_to_change_min_part_time.html#topic_ybt_mhb_kt">HPE Helion OpenStack 2.0: Changing min-part-time in Swift</a></li>
+
+          </ul>
+</li>
+
+        <li class="li"><a class="xref" href="modify_swift_service_config_files.html#topic_rdf_hkp_rt">HPE Helion OpenStack 2.0: Customizing Swift Service Configuration Files</a></li>
+
+      </ul>
+</div>
+
+    <ul class="ul" id="object-storage__ul_f1l_xjr_qt">
+      <li class="li">Swift Operations<ul class="ul" id="object-storage__ul_dzk_njr_qt">
+          <li class="li"><a class="xref" href="add_new_node.html">HPE Helion OpenStack 2.0: Adding a Swift Object Node</a></li>
+
+          <li class="li"><a class="xref" href="replacing_swift_node.html">HPE Helion OpenStack 2.0: Replacing a Swift Node</a></li>
+
+          <li class="li"><a class="xref" href="removing_node.html">HPE Helion OpenStack 2.0: Removing a Swift Node</a></li>
+
+          <li class="li"><a class="xref" href="replacing_drives_swift_node.html">HPE Helion OpenStack 2.0: Replacing Drives in a Swift Node</a></li>
+
+        </ul>
+</li>
+
+      <li class="li"><a class="xref" href="check_objectstorage_operation.html">HPE Helion OpenStack 2.0: Checking Object Storage Status</a><ul class="ul" id="object-storage__ul_b1x_clr_qt">
+          <li class="li"><a class="xref" href="validating_swift_recon.html">HPE Helion OpenStack 2.0: Gathering Swift Data</a></li>
+
+          <li class="li"><a class="xref" href="lm_scan_metering.html">HPE Helion OpenStack 2.0: Gathering Swift Monitoring Metrics</a></li>
+
+          <li class="li"><a class="xref" href="utility.html">HPE Helion OpenStack 2.0: Using the Swift Command-line Client (CLI)</a></li>
+
+        </ul>
+</li>
+
+    </ul>
+
+    <ul class="ul" id="object-storage__ul_knx_1js_qt">
+      <li class="li"><a class="xref" href="troubleshooting.html">HPE Helion OpenStack 2.0: Swift Troubleshooting</a><ul class="ul" id="object-storage__ul_lh5_fjs_qt">
+          <li class="li"><a class="xref" href="deploy_fails_with_msdos_disks.html">HPE Helion OpenStack 2.0: Deployment Fails With - MSDOS Disks Labels Do Not Support Partition Names</a></li>
+
+          <li class="li"><a class="xref" href="examine_details_planned_ring_changes_prior_deploy.html">HPE Helion OpenStack 2.0: Examining Planned Ring Changes</a></li>
+
+          <li class="li"><a class="xref" href="interpreting_swift_validate_input_model.html">HPE Helion OpenStack 2.0: Interpreting Swift Input Model Validation Errors</a></li>
+
+          <li class="li"><a class="xref" href="first_proxy_server.html">HPE Helion OpenStack 2.0: Identifying the First Swift Proxy Server</a></li>
+
+          <li class="li"><a class="xref" href="label_on_partition.html">HPE Helion OpenStack 2.0: Verifying a Swift Partition Label</a></li>
+
+          <li class="li"><a class="xref" href="filesystem_label.html">HPE Helion OpenStack 2.0: Verifying a Swift File System Label</a></li>
+
+          <li class="li"><a class="xref" href="recovering_builder_file.html">HPE Helion OpenStack 2.0: Recovering Swift Builder Files</a></li>
+
+          <li class="li"><a class="xref" href="restart_deploy_from_scratch.html">HPE Helion OpenStack 2.0: Restarting the Object Storage Deployment</a></li>
+
+        </ul>
+</li>
+
+    </ul>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

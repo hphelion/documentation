@@ -1,0 +1,150 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="To provide the network as a service for tenant VM's hosted on ESXi Hypervisor, a service VM named OVSvApp VM is deployed on each ESXi Hypervisor within a cluster managed by OpenStack Nova, as shown in ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Networking for ESXi Hypervisor (OVSvApp)"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_odg_33x_rt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Networking for ESXi Hypervisor (OVSvApp)</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_odg_33x_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Networking for ESXi Hypervisor
+    (OVSvApp)</h1>
+
+  <div class="body">
+    <p class="p">To provide the network as a service for tenant VM's hosted on ESXi Hypervisor, a service VM
+      named OVSvApp VM is deployed on each ESXi Hypervisor within a cluster managed by OpenStack
+      Nova, as shown in the following figure. </p>
+
+    <p class="p"><img class="image" id="topic_odg_33x_rt__image_a4n_t3x_rt" src="../../media/esx/esx_ovsvapp.png"></img></p>
+
+    <p class="p"> The OVSvApp VM runs hlinux as a guest operating system, and has Open vSwitch 2.1.0 or above
+      installed. It also runs an agent called OVSvApp agent, which is responsible for dynamically
+      creating the port groups for the tenant VMs and manages OVS bridges, which contain the flows
+      related to security groups and L2 networking.</p>
+
+    <p class="p">The OVSvApp VM is orchestrated using EON. For more information on the EON service, see <a class="xref" href="eon_service.html#topic_x2x_vy4_lt">HPE Helion OpenStack 2.0: ESX ON-Boarding Service (EON)</a>.</p>
+
+    <p class="p">To facilitate fault tolerance and mitigation of data path loss for tenant VMs, run the
+        <strong class="ph b">neutron-ovsvapp-agent-monitor</strong> process as part of the <strong class="ph b">neutron-ovsvapp-agent
+        service</strong>, responsible for monitoring the Open vSwitch module within the OVSvApp VM. It
+      also uses a <samp class="ph codeph">nginx</samp> server to provide the health status of the Open vSwitch
+      module to the Neutron server for mitigation actions. There is a mechanism to keep the
+        <strong class="ph b">neutron-ovsvapp-agent service</strong> alive through a <samp class="ph codeph">systemd</samp> script.</p>
+
+    <p class="p">When a OVSvApp Service VM crashes, an agent monitoring mechanism starts a cluster mitigation
+      process. You can mitigate data path traffic loss for VMs on the failed ESX host in that
+      cluster by putting the failed ESX host in the maintenance mode. This, in turn, triggers the
+      vCenter DRS migrates tenant VMs to other ESX hosts within the same cluster. This ensures data
+      path continuity of tenant VMs traffic. </p>
+
+    <div class="section"><strong class="ph b">To View Cluster Mitigation</strong></div>
+
+    <div class="p">An administrator can view the cluster mitigation status using the following commands.<ol class="ol" id="topic_odg_33x_rt__ol_cmz_fjx_rt">
+        <li class="li"><samp class="ph codeph">neutron ovsvapp-mitigated-cluster-list</samp><p class="p">Lists all the clusters where
+            at least one round of host mitigation has happened.</p>
+<p class="p">Example:</p>
+<div class="p">
+            <pre class="pre codeblock">neutron ovsvapp-mitigated-cluster-list
++----------------+--------------+-----------------------+---------------------------+
+| vcenter_id     | cluster_id   | being_mitigated       | threshold_reached         |
++----------------+--------------+-----------------------+---------------------------+
+| vcenter1       | cluster1     | True                  | False                     |
+| vcenter2       | cluster2     | False                 | True                      |
++---------------+------------+-----------------+------------------------------------+</pre>
+
+          </div>
+</li>
+
+        <li class="li"><samp class="ph codeph">neutron ovsvapp-mitigated-cluster-show --vcenter-id &lt;VCENTER_ID&gt; --cluster-id
+            &lt;CLUSTER_ID&gt;</samp>
+          <p class="p"> Shows the status of a particular cluster. </p>
+<div class="p">Example
+            :<pre class="pre codeblock">neutron ovsvapp-mitigated-cluster-show --vcenter-id vcenter1 --cluster-id cluster1
++---------------------------+-------------+
+| Field                     | Value       |
++---------------------------+-------------+
+| being_mitigated           | True        |
+| cluster_id                | cluster1    |
+| threshold_reached         | False       |
+| vcenter_id                | vcenter1    |
++---------------------------+-------------+</pre>
+</div>
+<p class="p">There
+            can be instances where a triggered mitigation may not succeed and the neutron server is
+            not informed of such failure (for example, if the selected agent which had to mitigate
+            the host, goes down before finishing the task). In this case, the cluster will be
+            locked. To unlock the cluster for further mitigations, use the update command.</p>
+</li>
+
+        <li class="li"><samp class="ph codeph">neutron ovsvapp-mitigated-cluster-update --vcenter-id &lt;VCENTER_ID&gt;
+            --cluster-id &lt;CLUSTER_ID&gt;</samp><ul class="ul" id="topic_odg_33x_rt__ul_kyn_qlp_st">
+            <li class="li">Update the status of a mitigated cluster:<p class="p">Modify the values of
+                  <strong class="ph b">being-mitigated</strong> from <strong class="ph b">True</strong> to <strong class="ph b">False</strong> to unlock the
+                cluster.</p>
+<div class="p">Example:
+                <pre class="pre codeblock">neutron ovsvapp-mitigated-cluster-update --vcenter-id vcenter1 --cluster-id cluster1 --being-mitigated False</pre>
+</div>
+</li>
+
+            <li class="li">Update the threshold value:<p class="p">Update the threshold-reached value to <strong class="ph b">True</strong>, if
+                no further migration is required in the selected cluster.</p>
+<div class="p">Example :
+                <pre class="pre codeblock">neutron ovsvapp-mitigated-cluster-update --vcenter-id vcenter1 --cluster-id cluster1 --being-mitigated False --threshold-reached True</pre>
+</div>
+</li>
+
+          </ul>
+<p class="p"><strong class="ph b">Rest API</strong></p>
+<ul class="ul" id="topic_odg_33x_rt__ul_rkp_4kx_rt">
+            <li class="li">curl -i -X GET <a class="xref" href="http://%3cip%3e:9696/v2.0/ovsvapp_mitigated_clusters" target="_blank">http://&lt;ip&gt;:9696/v2.0/ovsvapp_mitigated_clusters</a> -H "User-Agent:
+              python-neutronclient" -H "Accept: application/json" -H "X-Auth-Token:
+              &lt;token_id&gt;"</li>
+
+          </ul>
+</li>
+
+      </ol>
+</div>
+
+    <div class="section"><strong class="ph b">More Information</strong><div class="p">For more information on the Networking for ESXi Hypervisor
+        (OVSvApp), see the following references:<ul class="ul" id="topic_odg_33x_rt__ul_b2c_n2c_vt">
+          <li class="li">
+            <p class="p">VBrownBag session in Vancouver OpenStack Liberty Summit:</p>
+
+            <p class="p"><a class="xref" href="https://www.youtube.com/watch?v=icYA_ixhwsM&amp;feature=youtu.be" target="_blank">https://www.youtube.com/watch?v=icYA_ixhwsM&amp;feature=youtu.be</a></p>
+
+          </li>
+
+          <li class="li">
+            <p class="p">Wiki Link:</p>
+
+            <p class="p"><a class="xref" href="https://wiki.openstack.org/wiki/Neutron/Networking-vSphere" target="_blank">https://wiki.openstack.org/wiki/Neutron/Networking-vSphere</a></p>
+
+          </li>
+
+          <li class="li">
+            <p class="p">Codebase:</p>
+
+            <p class="p"><a class="xref" href="https://github.com/openstack/networking-vsphere/" target="_blank">https://github.com/openstack/networking-vsphere/</a></p>
+
+          </li>
+
+          <li class="li">
+            <p class="p">Whitepaper:</p>
+
+            <p class="p"><a class="xref" href="https://github.com/hp-networking/ovsvapp/blob/master/OVSvApp_Solution.pdf" target="_blank">https://github.com/hp-networking/ovsvapp/blob/master/OVSvApp_Solution.pdf</a></p>
+
+          </li>
+
+        </ul>
+</div>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

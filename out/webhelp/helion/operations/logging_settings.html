@@ -1,0 +1,1060 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The table below describes the default logging policies for each service. The columns are as follows: Service - The name of the service the logs belong to. Rotated Log Files - These files are kept ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Default Logging Settings"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_bkr_qjh_ht"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Default Logging Settings</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_bkr_qjh_ht">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Default Logging Settings</h1>
+
+  <div class="body">
+    <p class="p">The table below describes the default logging policies for each service. The columns are as
+      follows:</p>
+
+    <div class="p">
+      <ul class="ul">
+        <li class="li"><strong class="ph b">Service</strong> - The name of the service the logs belong to.</li>
+
+        <li class="li"><strong class="ph b">Rotated Log Files</strong> - These files are kept locally on the server and will be
+          rotated out, but will only be centrally logged if notated in the last column.</li>
+
+        <li class="li"><strong class="ph b">Frequency</strong> - The timing of when the logs are rotated.</li>
+
+        <li class="li"><strong class="ph b">Max Size</strong> - The maximum file size the log can be before it is rotated out.</li>
+
+        <li class="li"><strong class="ph b">Rotation</strong> - The number of log files that are rotated.</li>
+
+        <li class="li"><strong class="ph b">Centrally Logged Files</strong> - These files will be indexed by Elasticsearch and will be
+          available for searching in the Kibana user interface.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="p">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="topic_bkr_qjh_ht__table_itd_tjh_ht" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="9.269893355209186%" id="d100684e99">Service</th>
+
+              <th class="entry" valign="top" width="8.44954881050041%" id="d100684e102">Plane</th>
+
+              <th class="entry" valign="top" width="25.430680885972105%" id="d100684e105">Rotated Log Files</th>
+
+              <th class="entry" valign="top" width="11.402789171452007%" id="d100684e108">Frequency</th>
+
+              <th class="entry" valign="top" width="8.203445447087777%" id="d100684e111">Max Size</th>
+
+              <th class="entry" valign="top" width="10.910582444626742%" id="d100684e115">Rotation</th>
+
+              <th class="entry" valign="top" width="26.333059885151762%" id="d100684e118">Centrally Logged Files</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">BURA (Backup and Restore)</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/freezer-agent/freezer-scheduler.log</p>
+
+                <p class="p">/var/log/freezer-agent/freezer-agent.log</p>
+
+                <p class="p">/var/log/freezer-api/freezer-api.log</p>
+
+                <p class="p">/var/log/freezer-api/freezer-api-access.log</p>
+
+                <p class="p">/var/log/freezer-api/freezer-api-modwsgi.log</p>
+
+                <p class="p">/var/log/freezer-api/freezer-api-json.log</p>
+
+                <p class="p">/var/log/freezer-agent/freezer-agent-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 ">
+                <p class="p">Daily</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 ">
+                <p class="p">32 M</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 ">
+                <p class="p">7</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/freezer-api/freezer-api-json.log</p>
+
+                <p class="p">/var/log/freezer-agent/freezer-agent-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Ceilometer</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/ceilometer/ceilometer.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-collector.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-collector-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-api.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-api-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-alarm-notifier.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-alarm-notifier-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-alarm-evaluator.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-alarm-evaluator-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-notification.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-notification-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-compute.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-compute-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-central.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-central-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-preparation.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-preparation-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-expirer.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-expirer-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer_modwsgi.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/ceilometer/ceilometer-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-collector-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-api-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-alarm-notifier-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-notification-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-compute-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-agent-central-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-preparation-json.log</p>
+
+                <p class="p">/var/log/ceilometer/ceilometer-expirer-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">Ceph</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control, Resource</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/ceph/ceph.log</p>
+
+                <p class="p">/var/log/ceph/ceph-osd.{num}.log</p>
+
+                <p class="p">/var/log/ceph/ceph-mon.{hosthname}.log</p>
+
+                <p class="p">/var/log/ceph/ceph.audit.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 ">
+                <p class="p">Daily</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 ">
+                <p class="p">1 G</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 ">
+                <p class="p">7</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/ceph/ceph.log</p>
+
+                <p class="p">/var/log/ceph/ceph-osd-{num}.log</p>
+
+                <p class="p">/var/log/ceph/ceph-mon.{hosthname}.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Cinder</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/cinder/cinder-api.log</p>
+
+                <p class="p">/var/log/cinder/cinder-api-json.log</p>
+
+                <p class="p">/var/log/cinder/cinder-backup.log</p>
+
+                <p class="p">/var/log/cinder/cinder-backup-json.log</p>
+
+                <p class="p">/var/log/cinder/cinder-scheduler.log</p>
+
+                <p class="p">/var/log/cinder/cinder-scheduler-json.log</p>
+
+                <p class="p">/var/log/cinder/cinder-volume.log</p>
+
+                <p class="p">/var/log/cinder/cinder-volume-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/cinder/cinder-api-json.log</p>
+
+                <p class="p">/var/log/cinder/cinder-backup-json.log</p>
+
+                <p class="p">/var/log/cinder/cinder-scheduler-json.log</p>
+
+                <p class="p">/var/log/cinder/cinder-volume-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">DNSaaS</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 "> </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">FWaaS</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/neutron/neutron-l3-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-l3-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-vpn-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-vpn-agent-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/neutron/neutron-l3-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-vpn-agent-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Glance</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/glance/api.log</p>
+
+                <p class="p">/var/log/glance/registry.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">1 G</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">14</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/glance/glance-api-json.log</p>
+
+                <p class="p">/var/log/glance/glance-registry-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">heat-api</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/heat/heat-api.log</p>
+
+                <p class="p">/var/log/heat/heat-api-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cfn.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cfn-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cloudwatch.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cloudwatch-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/heat/heat-api-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cfn-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cloudwatch-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">heat-engine</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/heat/heat-engine.log</p>
+
+                <p class="p">/var/log/heat/heat-engine-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api.log</p>
+
+                <p class="p">/var/log/heat/heat-api-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cfn.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cfn-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cloudwatch.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cloudwatch-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/heat/heat-engine-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cfn-json.log</p>
+
+                <p class="p">/var/log/heat/heat-api-cloudwatch-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Horizon</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/horizon/horizon_access.log</p>
+
+                <p class="p">/var/log/horizon/horizon_error.log</p>
+
+                <p class="p">/var/log/horizon/horizon-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/horizon/horizon-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Keepalived</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 "><p class="p">/var/log/keepalived/keepalived.log</p>
+</td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Keystone</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/keystone/keystone.log</p>
+
+                <p class="p">/var/log/keystone/keystone-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/keystone/keystone-json.log</p>
+
+              </td>
+
+              
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">LBaaS</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/neutron/neutron-lbaas-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-lbaas-agent-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/neutron/neutron-lbaas-agent-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Monasca</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control, Resource</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 "> </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/monasca/notification/notification.log</p>
+
+                <p class="p">/var/log/monasca/agent/collector.log</p>
+
+                <p class="p">/var/log/monasca/agent/forwarder.log</p>
+
+                <p class="p">/var/log/monasca/agent/statsd.log</p>
+
+                <p class="p">/var/log/monasca/agent/supervisord.log</p>
+
+                <p class="p">/var/log/monasca/api/monasca-api.log</p>
+
+                <p class="p">/var/log/monasca/persister/monasca-persister.log</p>
+
+                <p class="p">/var/log/kafka/controller.log</p>
+
+                <p class="p">/var/log/kafka/server/log</p>
+
+                <p class="p">/var/log/zookeeper/zookeeper.log</p>
+
+                <p class="p">/var/log/storm/nimbus.log</p>
+
+                <p class="p">/var/log/storm/supervisor.log</p>
+
+                <p class="p">/var/log/storm/worker*.log</p>
+
+                <p class="p">/var/log/influxdb/influxd.log</p>
+
+                <p class="p">/opt/vertica/log/adminTools-dbadmin.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">MySQL</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/mysql/*.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 "> </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Neutron</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/neutron/neutron-server.log</p>
+
+                <p class="p">/var/log/neutron/neutron-server-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-dhcp-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-dhcp-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-l3-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-l3-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-openvswitch-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-openvswitch-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-metadata-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-metadata-agent-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/neutron/neutron-server-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-dhcp-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-openvswitch-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-metadata-agent-json.log</p>
+
+                <p class="p">/var/log/neutron/neutron-l3-agent-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Nova</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control, Resource</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/nova/nova-api.log</p>
+
+                <p class="p">/var/log/nova/nova-api-json.log</p>
+
+                <p class="p">/var/log/nova/nova-compute.log</p>
+
+                <p class="p">/var/log/nova/nova-compute-json.log</p>
+
+                <p class="p">/var/log/nova/nova-cert.log</p>
+
+                <p class="p">/var/log/nova/nova-cert-json.log</p>
+
+                <p class="p">/var/log/nova/nova-consoleauth.log</p>
+
+                <p class="p">/var/log/nova/nova-consoleauth-json.log</p>
+
+                <p class="p">/var/log/nova/nova-conductor.log</p>
+
+                <p class="p">/var/log/nova/nova-conductor-json.log</p>
+
+                <p class="p">/var/log/nova/nova-scheduler.log</p>
+
+                <p class="p">/var/log/nova/nova-scheduler-json.log</p>
+
+                <p class="p">/var/log/nova/nova-novncproxy.log</p>
+
+                <p class="p">/var/log/nova/nova-novncproxy-json.log</p>
+
+                <p class="p">/var/log/nova/nova-baremetal-deploy-helper.log</p>
+
+                <p class="p">/var/log/nova/nova-baremetal-deploy-helper-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/nova/nova-api-json.log</p>
+
+                <p class="p">/var/log/nova/nova-compute-json.log</p>
+
+                <p class="p">/var/log/nova/nova-cert-json.log</p>
+
+                <p class="p">/var/log/nova/nova-consoleauth-json.log</p>
+
+                <p class="p">/var/log/nova/nova-conductor-json.log</p>
+
+                <p class="p">/var/log/nova/nova-scheduler-json.log</p>
+
+                <p class="p">/var/log/nova/nova-novncproxy-json.log</p>
+
+                <p class="p">/var/log/nova/nova-baremetal-deploy-helper-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">Operations Console (Ops Console)</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/ops-console/access.log</p>
+
+                <p class="p">/var/log/ops-console/error.log</p>
+
+                <p class="p">/var/log/ops-console/monitor.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 ">
+                <p class="p">Weekly</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 ">
+                <p class="p">5 M</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">TBD</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">rsyslog</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control, Resource</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/syslog</p>
+
+                <p class="p">/var/log/os-collect-config.log</p>
+
+                <p class="p">/var/log/mail.info</p>
+
+                <p class="p">/var/log/mail.warn</p>
+
+                <p class="p">/var/log/mail.err</p>
+
+                <p class="p">/var/log/mail.log</p>
+
+                <p class="p">/var/log/daemon.log</p>
+
+                <p class="p">/var/log/kern.log</p>
+
+                <p class="p">/var/log/auth.log</p>
+
+                <p class="p">/var/log/user.log</p>
+
+                <p class="p">/var/log/lpr.log</p>
+
+                <p class="p">/var/log/cron.log</p>
+
+                <p class="p">/var/log/debug</p>
+
+                <p class="p">/var/log/messages</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/syslog</p>
+
+                <p class="p">/var/log/os-collect-config.log</p>
+
+                <p class="p">/var/log/mail.info</p>
+
+                <p class="p">/var/log/mail.warn</p>
+
+                <p class="p">/var/log/mail.err</p>
+
+                <p class="p">/var/log/mail.log</p>
+
+                <p class="p">/var/log/daemon.log</p>
+
+                <p class="p">/var/log/kern.log</p>
+
+                <p class="p">/var/log/auth.log</p>
+
+                <p class="p">/var/log/user.log</p>
+
+                <p class="p">/var/log/lpr.log</p>
+
+                <p class="p">/var/log/cron.log</p>
+
+                <p class="p">/var/log/debug</p>
+
+                <p class="p">/var/log/messages</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">Sherpa</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/sherpa/sherpa.log</p>
+
+                <p class="p">/var/log/sherpa/sherpa-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/sherpa/sherpa-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 "><p class="p">Swift</p>
+</td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 "><p class="p">Control, Resource</p>
+</td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/swift/swift.log</p>
+
+                <p class="p">/var/log/swift/swift-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "><p class="p">Daily</p>
+</td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "><p class="p">45 M</p>
+</td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "><p class="p">7</p>
+</td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/swift/swift-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">VPNaaS</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Control</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/neutron/neutron-vpn-agent.log</p>
+
+                <p class="p">/var/log/neutron/neutron-vpn-agent-json.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 "> </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 "> </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 "> </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/neutron/neutron-vpn-agent-json.log</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="9.269893355209186%" headers="d100684e99 ">
+                <p class="p">VSA</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.44954881050041%" headers="d100684e102 ">
+                <p class="p">Resource</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25.430680885972105%" headers="d100684e105 ">
+                <p class="p">/var/log/storevirtual-installer.log</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="11.402789171452007%" headers="d100684e108 ">
+                <p class="p">Daily</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="8.203445447087777%" headers="d100684e111 ">
+                <p class="p">10 M</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="10.910582444626742%" headers="d100684e115 ">
+                <p class="p">7</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="26.333059885151762%" headers="d100684e118 ">
+                <p class="p">/var/log/storevirtual-installer.log</p>
+
+              </td>
+
+            </tr>
+
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

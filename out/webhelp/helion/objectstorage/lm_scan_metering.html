@@ -1,0 +1,178 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The swiftlm-scan command is the mechanism used to gather metrics for the Monasca system. These metrics are used to derive alarms. For a list of alarms that can be generated from this data, see Swift . ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Gathering Swift Monitoring Metrics"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_pcv_fy4_nt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Gathering Swift Monitoring Metrics</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_pcv_fy4_nt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Gathering Swift Monitoring Metrics</h1>
+
+  <div class="body">
+    <p class="p">The <samp class="ph codeph">swiftlm-scan</samp> command is the mechanism used to gather metrics for the
+      Monasca system. These metrics are used to derive alarms. For a list of alarms that can be
+      generated from this data, see <a class="xref" href="../operations/alarms.html#alarmdefinitions__objectstorage">Swift</a>.</p>
+
+    <div class="p">To view the metrics, use the <samp class="ph codeph">swiftlm-scan</samp> command directly. Log on to the
+      Swift node as the root user. The following example shows the command and a snippet of the
+        output:<pre class="pre codeblock">$ sudo swiftlm-scan --pretty
+. . .
+  {
+    "dimensions": {
+      "device": "sdc", 
+      "hostname": "padawan-ccp-c1-m2-mgmt", 
+      "service": "object-storage"
+    }, 
+    "metric": "swiftlm.swift.drive_audit", 
+    "timestamp": 1442248083, 
+    "value": 0, 
+    "value_meta": {
+      "msg": "No errors found on device: sdc"
+    }
+  }, 
+. . .</pre>
+<div class="note note"><span class="notetitle">Note:</span> To
+        make the JSON file easier to read, use the <samp class="ph codeph">--pretty</samp> option.</div>
+</div>
+
+    <p class="p">The fields are as follows:</p>
+
+    <div class="p">
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">metric</samp></td>
+
+          <td valign="top" class="stentry">Specifies the name of the metric.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">dimensions</samp></td>
+
+          <td valign="top" class="stentry">Provides information about the source or location of the metric. The dimensions
+            differ depending on the metric in question. The following dimensions are used by
+              <samp class="ph codeph">swiftlm-scan</samp>:<ul class="ul" id="topic_pcv_fy4_nt__ul_vdp_km2_jt">
+              <li class="li"><strong class="ph b">service</strong>: This is always <strong class="ph b">object-storage</strong>.</li>
+
+              <li class="li"><strong class="ph b">component</strong>: This identifies the component. For example,
+                  <strong class="ph b">swift-object-server</strong> indicates that the metric is about the
+                swift-object-server process.</li>
+
+              <li class="li"><strong class="ph b">hostname</strong>: This is the name of the node the metric relates to. This is not
+                necessarily the name of the current node.</li>
+
+              <li class="li"><strong class="ph b">url</strong>: If the metric is associated with a URL, this is the URL.</li>
+
+              <li class="li"><strong class="ph b">port</strong>: If the metric relates to connectivity to a node, this is the port
+                used.</li>
+
+              <li class="li"><strong class="ph b">device</strong>: This is the block device a metric relates to.</li>
+
+            </ul>
+</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">value</samp></td>
+
+          <td valign="top" class="stentry">The value of the metric. For many metrics, this is simply the value of the
+            metric. However, if the value indicates a status. If <samp class="ph codeph">value_meta</samp>
+            contains a <strong class="ph b">msg</strong> field, the value is a status. The following status values are
+              used:<ul class="ul" id="topic_pcv_fy4_nt__ul_rjy_hm2_jt">
+              <li class="li">0 - no error</li>
+
+              <li class="li">1 - warning</li>
+
+              <li class="li">2 - failure</li>
+
+            </ul>
+</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><samp class="ph codeph">value_meta</samp></td>
+
+          <td valign="top" class="stentry">Additional information. The <strong class="ph b">msg</strong> field is the most useful of this
+            information. </td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Optional Parameters</h2>
+      
+      <p class="p">You can focus on specific sets of metrics by using one of the following optional
+        parameters: </p>
+
+      <div class="p">
+        <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--replication</samp></td>
+
+            <td valign="top" class="stentry">Checks replication and health status.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--file-ownership</samp></td>
+
+            <td valign="top" class="stentry">Checks that Swift owns its relevant files and directories.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--drive-audit</samp></td>
+
+            <td valign="top" class="stentry">Checks for logged events about corrupted sectors (unrecoverable read errors) on
+              drives.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--connectivity</samp></td>
+
+            <td valign="top" class="stentry">Checks connectivity to various servers used by the Swift system, including:<ul class="ul" id="topic_pcv_fy4_nt__ul_owk_pp2_jt">
+                <li class="li">Checks this node can connect to all memcachd servers</li>
+
+                <li class="li">Checks that this node can connect to the Keystone service (only applicable if
+                  this is a proxy server node)</li>
+
+              </ul>
+</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--swift-services</samp></td>
+
+            <td valign="top" class="stentry">Check that the relevant Swift processes are running.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--network-interface</samp></td>
+
+            <td valign="top" class="stentry">Checks NIC speed and reports statistics for each interface.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--check-mounts</samp></td>
+
+            <td valign="top" class="stentry">Checks that the node has correctly mounted drives used by Swift.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry"><samp class="ph codeph">--hpssacli</samp></td>
+
+            <td valign="top" class="stentry">If this server uses a Smart Array Controller, this checks the operation of the
+              controller and disk drives.</td>
+
+          </tr>
+</table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

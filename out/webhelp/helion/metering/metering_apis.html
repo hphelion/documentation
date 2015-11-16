@@ -1,0 +1,285 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Separate pipeline.yml for Ceilometer Post Samples API The Post Sample API is disabled by default in HPE Helion OpenStack 2.0 and its configured with a pipeline configuration different than the agents. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack® 2.0: Ceilometer Metering APIs"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_icq_hvc_5t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack® 2.0: Ceilometer Metering APIs</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_icq_hvc_5t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack® 2.0: Ceilometer Metering APIs</h1>
+
+  <div class="body">
+    <div class="section" id="topic_icq_hvc_5t__pipeline"><h2 class="title sectiontitle">Separate pipeline.yml for Ceilometer Post Samples API</h2> The
+      Post Sample API is disabled by default in HPE Helion OpenStack 2.0 and its configured with a
+      pipeline configuration different than the agents. The API pipeline has no meters enabled, so
+      it needs to be configured with meters when the Post Samples API is enabled. Exercise caution
+      when adding meters to the API pipeline. Ensure that only those meters are added to this
+      pipeline which are already present in the notification agent and the central agent pipeline.
+        <p class="p">Ceilometer API (ceilometer-api) pipeline.yml is located at
+          /<strong class="ph b">opt/stack/service/ceilometer-api/etc/pipeline-api.yml</strong></p>
+ Here is a sample of the
+      API pipeline:
+      <pre class="pre codeblock">---
+sources:
+    - name: meter_source
+      interval: 30
+      meters:
+          - "instance"
+          - "ip.floating"
+          - "network"
+          - "network.create"
+          - "network.update"
+      sinks:
+          - meter_sink
+    - name: image_source
+      interval: 30
+      meters:
+          - "image"
+          - "image.size"
+          - "image.upload"
+          - "image.delete"
+      sinks:
+          - meter_sink
+    - name: volume_source
+      interval: 30
+      meters:
+          - "volume"
+          - "volume.size"
+          - "snapshot"
+          - "snapshot.size"
+      sinks:
+          - meter_sink
+    - name: swift_source
+      interval: 3600
+      meters:
+          - "storage.objects"
+          - "storage.objects.size"
+          - "storage.objects.containers"
+      sinks:
+          - meter_sink
+sinks:
+    - name: meter_sink
+      transformers:
+      publishers:
+         - notifier://</pre>
+
+    </div>
+
+
+    <div class="section" id="topic_icq_hvc_5t__sampleAPI"><h2 class="title sectiontitle">Ceilometer Sample API</h2>
+      <div class="p">Ceilometer Sample has two APIs: <ul class="ul">
+          <li class="li">ceilometer sample-list(/v2/samples) </li>
+
+          <li class="li">ceilometer query-sample (/v2/query/samples)</li>
+
+        </ul>
+ ceilometer sample-list allows querying based on <ul class="ul">
+          <li class="li">meter name</li>
+
+          <li class="li">user_id</li>
+
+          <li class="li">project_id</li>
+
+          <li class="li">sample source</li>
+
+          <li class="li">resource_id</li>
+
+          <li class="li">sample timestamp (range)</li>
+
+          <li class="li">sample message_id</li>
+
+          <li class="li">resource metadata attributes</li>
+
+        </ul>
+ ceilometer sample-list uses AND implicitly. However, query-sample allows finer control
+        over the filter expression by allowing the use of AND, OR, and NOT operators over any of the
+        sample, meter or resource attributes.</div>
+
+      <strong class="ph b">Limitations:</strong>
+      <p class="p"> Its been observed that ceilometer query-sample API uses anonymous/alias table to cache the
+        JOIN query results and concurrent requests to this API can use up the disk space and can
+        cause service interruptions; hence it has been disabled for stability of the system.
+        </p>
+<p class="p">Although sample list allows you to query the sample data as well, the limitation here
+        is that it uses the AND operator for all the passed query arguments implicitly; however it
+        allows you to query on resource metadata field of samples as well.</p>
+ The standard format
+      for queries via the CLI:
+      <pre class="pre codeblock">ceilometer sample-list -m METER_NAME -q '&lt;field1&gt;&lt;operator1&gt;&lt;value1&gt;;...;&lt;field_n&gt;&lt;operator_n&gt;&lt;value_n&gt;'</pre>
+
+      where operators can be:<strong class="ph b"> &lt;, &lt;=, =, !=, &gt;= &gt;</strong>
+      <p class="p">All the key value pairs will be combined with implicit AND operator. Some example usage for
+        the sample list API are</p>
+
+      <pre class="pre codeblock">ceilometer sample-list --meter image.serve -q 'resource_id=a1ec2585' </pre>
+
+      <pre class="pre codeblock">ceilometer sample-list --meter instance -q 'resource_id=&lt;ResourceID&gt;;metadata.event_type=&lt;eventType&gt;'</pre>
+
+    </div>
+
+
+    <div class="section" id="topic_icq_hvc_5t__statAPI"><h2 class="title sectiontitle">Ceilometer Statistics API</h2>
+      <p class="p">Ceilometer Statistics is an open-ended query API and thus can put a significant load on the
+        database leading to unexpected results and or failures. Ceilometer Statistics API performs
+        queries on the sample table and obtains the minimum and maximum timestamp for the meter that
+        is being queried.</p>
+ Based on the minimum and maximum timestamp it returns a few statistics <ul class="ul">
+        <li class="li"> If a period parameter is not supplied it simply returns few statistics like min, max,
+          avg and sum</li>
+
+        <li class="li"> If a period parameter is supplied then it divides the range into equal periods and
+          finds the count,min, max, avg and sum for each of the periods</li>
+
+      </ul>
+ It is recommended that you always provide a query parameter with
+      <pre class="pre codeblock">timestamp&gt;={$start-timestamp} and timestamp&lt;{$end-timestamp} </pre>
+ to
+      cover a time period of at most 1 day (24 hours) irrespective of whether you provide a period
+      or or not. Here is an example using the period parameter
+      <pre class="pre codeblock">ceilometer statistics -q "timestamp&gt;=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance" -p 3600</pre>
+
+      Without period parameter:
+      <pre class="pre codeblock">ceilometer statistics -q "timestamp&gt;=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00" -m "instance"</pre>
+
+      The recommended values for query (-q) parameter and period (-p) parameters are: <dl class="dl">
+        
+          <dt class="dt dlterm">-q</dt>
+
+          <dd class="dd">Always provide a timestamp range, which restricts the query to one day (24 hours). It
+            is not recmmended that you set the timestamp range to greater than a day or provide no
+            time stamp range. An acceptable range looks like
+            this:<pre class="pre codeblock">            -q "timestamp&gt;=2014-12-11T00:00:10;timestamp&lt;2014-12-11T23:00:00"</pre>
+
+            If the query parameter and timestamp are not provided, all the records in the database
+            will be queried. This is not recommended.</dd>
+
+        
+        
+          <dt class="dt dlterm">-p</dt>
+
+          <dd class="dd">Provide a fairly large number for period; the recommended value is 3600 or more (1
+            hour or more). Providing a period of less than 3600 is not recommended. e.g. -p 3600
+            Period parameter (value in seconds) is used to divide the overall time range into
+            intervals. A small period value will translate into huge number of queries against the
+            database, which is not recommended.</dd>
+
+        
+
+
+      </dl>
+
+    </div>
+
+    <div class="section" id="topic_icq_hvc_5t__disabled"><h2 class="title sectiontitle">Disabled APIs</h2> The Ceilometer metering APIs disabled in
+      this release are: <ul class="ul">
+        <li class="li">Ceilometer Alarms API</li>
+
+        <li class="li">Post Samples API</li>
+
+        <li class="li">Query Sample API</li>
+
+      </ul>
+ They are disabled via a custom rule, hp_disabled_rule:not_implemented, which is added to
+      each of those APIs in Ceilometer's policy.json. (<strong class="ph b">/etc/ceilometer/policy.json</strong> on
+      controller nodes). Attempts to access any of the Alarm APIs, Post Meter API or Query-sample
+      API will result in an HTTP response 501 Not Implemented.<p class="p">To manually enable any of the APIs, remove the corresponding rule and restart Apache</p>
+
+      <pre class="pre codeblock">{
+	"context_is_admin": "role:admin",
+	"context_is_project": "project_id:%(target.project_id)s",
+	"context_is_owner": "user_id:%(target.user_id)s",
+	"segregation": "rule:context_is_admin",
+	 
+	"telemetry:create_samples": "hp_disabled_rule:not_implemented",
+	 
+	"telemetry:get_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:change_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:delete_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:alarm_history": "hp_disabled_rule:not_implemented",
+	"telemetry:change_alarm_state": "hp_disabled_rule:not_implemented",
+	"telemetry:get_alarm_state": "hp_disabled_rule:not_implemented",
+	"telemetry:create_alarm": "hp_disabled_rule:not_implemented",
+	"telemetry:get_alarms": "hp_disabled_rule:not_implemented",
+	"telemetry:query_sample":"hp_disabled_rule:not_implemented",
+	"default": ""
+}</pre>
+
+      The following Alarm APIs are disabled <ul class="ul">
+        <li class="li">POST /v2/alarms </li>
+
+        <li class="li">GET /v2/alarms </li>
+
+        <li class="li">GET /v2/alarms/(alarm_id) </li>
+
+        <li class="li">PUT /v2/alarms/(alarm_id) </li>
+
+        <li class="li">DELETE /v2/alarms/(alarm_id) </li>
+
+        <li class="li">GET /v2/alarms/(alarm_id)/history </li>
+
+        <li class="li">PUT /v2/alarms/(alarm_id)/state </li>
+
+        <li class="li">GET /v2/alarms/(alarm_id)/state </li>
+
+        <li class="li">POST /v2/query/alarms </li>
+
+        <li class="li">POST /v2/query/alarms/history</li>
+</ul>
+
+      In addition, these APIs are disabled:
+      <ul class="ul">
+        <li class="li">Post Sampes API: POST /v2/meters/(meter_name)</li>
+
+        <li class="li">Query Sample API: POST /v2/query/samples</li>
+
+      </ul>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Data Access API</h2>
+    
+    
+    
+    Ceilometer only provides a data access API.  It does not by itself provide a data visualization or aggregation function.
+    These functions are provided by external, downstream applications that support various use cases like usage billing and 
+    software license policy adherence. Each application calls the specific Ceilometer API needed for their use case.  
+    The resultant data is then aggregated and visualized based on the unique functions provided by each application.  More information
+    about the Ceilometer API can be found at http://docs.openstack.org/developer/ceilometer/webapi/v2.html.
+    
+    
+    
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Improving Reporting API responsiveness</h2> Reporting APIs are the main
+      access to the Metering data stored in Ceilometer. These APIs are accessed by Horizon to
+      provide basic usage data and information. However, Horizon Resources Usage Overview / Stats
+      panel shows usage metrics with the following limitations: <ul class="ul">
+        <li class="li">No metric option is available until you actually create a resource (such as an instance,
+          Swift container, etc). </li>
+
+        <li class="li">Only specific meters are displayed for a selection after resources have been created.
+          For example, only the Cinder volume and volume.size meters are displayed if only a Cinder
+          volume has been created (for example, if no compute instance or Swift containers were
+          created yet) </li>
+
+        <li class="li">Only the top 20 meters associated with the sample query results are displayed. </li>
+
+        <li class="li">Period duration selection should be much less than the default retention period
+          (currently 7 days), to get statistics for multiple groups. </li>
+
+      </ul>
+ HPE Helion uses the Apache2 Web Server to provide API access. It is possible to tune
+      performance to optimize the front end as well as the back-end database. Experience indicates
+      that an excessive increase of concurrent access to the front-end tends to put a strain in the
+      database. </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

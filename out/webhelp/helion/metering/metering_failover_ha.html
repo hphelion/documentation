@@ -1,0 +1,69 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="In the HPE Helion OpenStack environment, the Ceilometer metering service supports native Active-Active high-availability (HA) for notification agent and central agent. Agent HA support includes ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Ceilometer Metering Failover HA Support"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_zx2_mmd_5t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Ceilometer Metering Failover HA Support</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_zx2_mmd_5t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Ceilometer Metering Failover HA
+    Support</h1>
+
+  <div class="body">
+    <div class="section"> In the HPE Helion OpenStack environment, the Ceilometer metering service supports
+      native Active-Active high-availability (HA) for notification agent and central agent. Agent HA
+      support includes workload-balancing/distribution and failover. <p class="p"> Tooz is the coordination
+        engine that is used to coordinate workload among multiple active agent instances and
+        maintain the knowledge of active instance to handle failover and group membership using
+        hearbeats(pings).</p>
+
+      <p class="p">Zookeeper is the coordination backend used but the internals of that is encapsulated using
+        Tooz which exposes APIs to manage group membership and retrieve workload specific to each
+        agent.</p>
+
+      <p class="p">The following section in conf is used to configure high-availability (HA):</p>
+
+      <pre class="pre codeblock">[coordination]
+      
+backend_url = &lt;IP address of Zookeeper host: port&gt; (port is usually 2181 as a zookeeper default)
+        
+heartbeat = 1.0
+        
+check_watchers = 10.0</pre>
+
+      <p class="p">For the notification agent to be configured in HA mode, additional configuration is
+        needed:</p>
+
+      <pre class="pre codeblock">[notification]
+        
+workload_partitioning = true</pre>
+
+      <p class="p">The notification agent HA distributes workload among multiple queues that are created based
+        on the number of unique source:sink combinations in the notification agent pipeline
+        configuration file. If there are additional services to be metered using notifications, then
+        the recommendation is to use a separate source for those events, especially if the expected
+        load of data from that source is considered high. This should lead to better workload
+        balancing among multiple active notification agents.</p>
+
+      <p class="p">Ceilometer-expirer is also Active-Active HA, but it is critical that you ensure that a
+        single expirer process runs when multiple processes are scheduled to run at the same time
+        (using cron-based scheduling) on multiple controller nodes. Tooz is used to pick an expirer
+        process that acquires a lock when there are multiple contenders and the winning process
+        runs. There is no failover support, as expirer is not a daemon anyway and is scheduled to
+        run at pre-determined intervals. The following configuration is needed to enable expirer
+        HA:</p>
+
+      <pre class="pre codeblock">[database] expirer_ha = true 
+expirer_ha_backend_url = &lt;IP address of coordination backend url&gt;</pre>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

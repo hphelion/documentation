@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="In HPE Helion OpenStack 2.0, you have the option to configure the Centralized Logging service for your specific needs. This topic covers the following: Main Configuration Files General Configuration ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring the Centralized Logging Service"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="configure_logging"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring the Centralized Logging Service</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="configure_logging">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring the Centralized Logging
+    Service</h1>
+
+  <div class="body">
+    
+    <div class="section" id="configure_logging__config">
+      <p class="p">In HPE Helion OpenStack 2.0, you have the option to configure the Centralized Logging
+        service for your specific needs. This topic covers the following:</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="#configure_logging__config_files">Main Configuration Files</a></li>
+
+        <li class="li"><a class="xref" href="#configure_logging__general_config">General Configuration</a></li>
+
+        <li class="li"><a class="xref" href="#configure_logging__kibana_config">Kibana Configuration</a></li>
+
+        <li class="li"><a class="xref" href="#configure_logging__elasticsearch_config">Elasticsearch
+          Configuration</a></li>
+
+        <li class="li"><a class="xref" href="#configure_logging__service_config">Service Logging Level
+            Configuration</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="configure_logging__config_files"><h2 class="title sectiontitle">Main Configuration Files</h2>
+      <p class="p">Centralized Logging can be configured via the configuration files in the
+          <samp class="ph codeph">~/helion/my_cloud/config/logging/</samp> directory on the lifecycle-manager.
+        These files and their use are described below:</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="configure_logging__table_wtv_rc5_st" class="table" frame="border" border="1" rules="all">
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d522e90">File</th>
+
+              <th class="entry" valign="top" id="d522e93">Description</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">main.yml</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Main configuration file for all centralized logging components.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">elasticsearch.yml.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Main configuration file for Elasticsearch.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">elasticsearch-default.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Default overrides for the Elasticsearch init script.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">kibana.yml.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Main configuration file for Kibana.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">kibana-apache2.conf.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Apache configuration file for Kibana.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">logstash.conf.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Logstash inputs/outputs configuration.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">logstash-default.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Default overrides for the Logstash init script.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">beaver.conf.j2</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Main configuration file for Beaver.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e90 ">vars</td>
+
+              <td class="entry" valign="top" headers="d522e93 ">Path to logrotate configuration files.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="configure_logging__general_config"><h2 class="title sectiontitle">General Configuration</h2>
+      <p class="p">The Centralized Logging service needs to have enough resources available to it to perform
+        adequately for different scale environments. The base logging levels are tuned during
+        installation according to the amount of RAM allocated to your control plane nodes to ensure
+        optimum performance.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="configure_logging__table_grx_2f5_st" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="1" id="d522e216">Component</th>
+
+              <th class="entry" valign="top" width="1" id="d522e219">Ansible Variable</th>
+
+              <th class="entry" valign="top" width="1" id="d522e222">Demo (&lt;32 GB)</th>
+
+              <th class="entry" valign="top" width="1" id="d522e225">Small (&lt;64 GB)</th>
+
+              <th class="entry" valign="top" width="1" id="d522e228">Medium (&lt;128 GB)</th>
+
+              <th class="entry" valign="top" width="1" id="d522e232">Large (&gt;= 128 GB)</th>
+
+              <th class="entry" valign="top" width="14.285714285714285%" id="d522e235">Description</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="1" headers="d522e216 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e219 ">elasticsearch_heap_size</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e222 ">256 MB</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e225 ">8 GB</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e228 ">16 GB</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e232 ">32 GB</td>
+
+              <td class="entry" valign="top" width="14.285714285714285%" headers="d522e235 ">Amount of heap allocated to Elasticsearch.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="1" headers="d522e216 ">Logstash</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e219 ">logstash_heap_size</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e222 ">256 MB</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e225 ">2 GB</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e228 ">4 GB</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e232 ">8 GB</td>
+
+              <td class="entry" valign="top" width="14.285714285714285%" headers="d522e235 ">Amount of heap allocated to Logstash.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="1" headers="d522e216 ">Logstash</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e219 ">logstash_num_workers</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e222 ">10 threads</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e225 ">10 threads</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e228 ">20 threads</td>
+
+              <td class="entry" valign="top" width="1" headers="d522e232 ">30 threads</td>
+
+              <td class="entry" valign="top" width="14.285714285714285%" headers="d522e235 ">Number of Logstash threads to spawn.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p class="p">These values can be viewed and changed in the
+          <samp class="ph codeph">~/helion/my_cloud/config/logging/main.yml</samp> file, but you will need to run
+        a reconfigure of the Centralized Logging service if changes are made.</p>
+
+      <div class="note warning"><span class="warningtitle">Warning:</span> The total process memory consumption for Elasticsearch will be the above
+        allocated heap value plus any Java Virtual Machine (JVM) overhead.</div>
+
+    </div>
+
+    <div class="section" id="configure_logging__kibana_config"><h2 class="title sectiontitle">Kibana Configuration</h2>
+      
+      <p class="p">The access information for Kibana is defined in the
+          <samp class="ph codeph">~/helion/my_cloud/config/logging/main.yml</samp> file and implemented in the
+        Kibana configuration file
+          <samp class="ph codeph">~/helion/my_cloud/config/logging/kibana-apache2.conf.j2</samp>.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="configure_logging__table_spl_rg5_st" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d522e358">Ansible Variable</th>
+
+              <th class="entry" valign="top" id="d522e361">Default Value</th>
+
+              <th class="entry" valign="top" id="d522e364">Description</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e358 ">kibana_user</td>
+
+              <td class="entry" valign="top" headers="d522e361 ">kibana</td>
+
+              <td class="entry" valign="top" headers="d522e364 ">Username that will be required for logging into the Kibana UI.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e358 ">kibana_pass</td>
+
+              <td class="entry" valign="top" headers="d522e361 ">random password is generated</td>
+
+              <td class="entry" valign="top" headers="d522e364 ">Password generated during installation that is used to login to the Kibana
+                UI.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="configure_logging__elasticsearch_config"><h2 class="title sectiontitle">Elasticsearch Configuration</h2>
+      
+      <p class="p">Elasticsearch has a number of tunable options exposed in its configuration that we have
+        utilized to tune Elasticsearch in HPE Helion OpenStack so that we favor indexing speed over
+        search speed. We have also tuned it for optimal performance in low RAM environments. The
+        options that we have modified are listed below along with an explanation as to why they were
+        modified.</p>
+
+      <p class="p">These configurations are defined in the
+          <samp class="ph codeph">~/helion/my_cloud/config/logging/main.yml</samp> file and are implemented in the
+        Elasticsearch configuration file
+          <samp class="ph codeph">~/helion/my_cloud/config/logging/elasticsearch.yml.j2</samp>.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="configure_logging__table_qsd_3h5_st" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d522e435">Ansible Variable</th>
+
+              <th class="entry" valign="top" id="d522e438">Configuration Parameter</th>
+
+              <th class="entry" valign="top" id="d522e441">Default HPE Helion OpenStack Value</th>
+
+              <th class="entry" valign="top" id="d522e444">Elasticsearch Default Value</th>
+
+              <th class="entry" valign="top" id="d522e447">Comments</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_cluster_name</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">cluster name</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Name of the Elasticsearch cluster. This variable cannot be changed after the
+                initial deployment. Doing so will reset all Elasticsearch indices.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_fielddata_cache_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.fielddata.cache.size</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">15%</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">unbounded</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">By default, this setting is <strong class="ph b">unbounded</strong>—Elasticsearch will never evict
+                data from fielddata, which is less than ideal when trying to conserve on memory
+                usage.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_breaker_fielddata_limit</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.breaker.fielddata.limit</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">25%</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">60%</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">The field data circuit breaker enables Elasticsearch to estimate the amount of
+                memory a field will require to be loaded into memory. This value must be greater
+                than <strong class="ph b">cache.size</strong> to evict data properly.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_ttl_bulk_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.ttl.bulk_size</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">100000</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">10000</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">The number of expired docs to delete at once.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_cache_filter_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.cache.filter.expire</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">6h</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">-1</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">By default, this setting is -1 (i.e., never expires).</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_memory_index_buffer_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.memory.index_buffer_size</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">50%</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">10%</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Slanting performance in favor of heavier indexing usage over search
+                usage.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_memory_min_index_buffer_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.memory.min_index_buffer_size</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">200 MB</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">48 MB</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Slanting performance in favor of heavier indexing usage over search
+                usage.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_memory_min_shard_index_buffer_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.memory.min_shard_index_buffer_size</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">12 MB</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">4 MB</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Slanting performance in favor of heavier indexing usage over search
+                usage.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_store_throttle_type</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.store.throttle.type</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">merge</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">merge</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Configures store module throttle for merges.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_indices_store_throttle_max_bytes_per_sec</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">indices.store.throttle.max_bytes_per_sec</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">80 MB</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">20 MB</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Slanting performance in favor of heavier indexing usage over search
+                usage.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_index_refresh_interval</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">index.refresh_interval</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">30s</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">1s</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Increasing refresh interval reduces overhead.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_index_merge_scheduler_max_thread_count</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">index.merge.scheduler.max_thread_count</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">1</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">cores/2</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Elasticsearch recommends 1 if using spinning disks.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_index_translog_flush_threashhold_ops</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">index.translog.flush_threshhold_ops</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">150000</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">unlimited</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Each shard has a transaction log or write ahead log associated with it. This
+                setting controls when commits occur.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d522e435 ">elasticsearch_index_translog_flush_threashhold_size</td>
+
+              <td class="entry" valign="top" headers="d522e438 ">index.translog.flush_threshhold_size</td>
+
+              <td class="entry" valign="top" headers="d522e441 ">1 GB</td>
+
+              <td class="entry" valign="top" headers="d522e444 ">512 MB</td>
+
+              <td class="entry" valign="top" headers="d522e447 ">Increasing this setting decreases fsync.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="configure_logging__service_config"><h2 class="title sectiontitle">Service Logging Level Configuration</h2>
+      <p class="p">To configure the logging level for a specific service follow these steps:</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="configure_logging__loglevel_config" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" id="d522e744">Service</th>
+
+                <th class="entry" valign="top" id="d522e747">Sub-component</th>
+
+                <th class="entry" valign="top" id="d522e750">Expected Default Logging Level</th>
+
+                <th class="entry" valign="top" id="d522e753">Steps to Change Log Level</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" rowspan="6" valign="top" headers="d522e744 "><p class="p">Ceilometer</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceilometer-api</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">You can change the <samp class="ph codeph">ceilometer_loglevel</samp> in the file below for all components
+                    during deployment or after deployment:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</pre>
+
+                  <p class="p">You can also change the log level for <samp class="ph codeph">ceilometer-api</samp> only by
+                    changing the file below:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/CEI-API/templates/api-logging.conf.j2</pre>
+
+                  <div class="p">For post-deployment log level changes, commit your changes to Git and
+                    re-run the following from the lifecycle-manager node:
+                    <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</pre>
+</div>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceilometer-collector</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">You can change the <samp class="ph codeph">ceilometer_loglevel</samp> in the file below for all components
+                    during deployment or after deployment:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</pre>
+
+                  <p class="p">You can also change the log level for <samp class="ph codeph">ceilometer-collector</samp>
+                    only by changing the file below:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/CEI-COL/templates/collector-logging.conf.j2</pre>
+
+                  <div class="p">For post-deployment log level changes, commit your changes to Git and
+                    re-run the following from the lifecycle-manager node:
+                    <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</pre>
+</div>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceilometer-alarm-evaluator-json</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">This alarm functionality has been disabled.</p>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceilometer-agent-notification</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">You can change the <samp class="ph codeph">ceilometer_loglevel</samp> in the file below for all components
+                    during deployment or after deployment:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</pre>
+
+                  <p class="p">You can also change the log level for
+                      <samp class="ph codeph">ceilometer-agent-notification</samp> only by changing the file
+                    below:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/CEI-NAG/templates/agent-notification-logging.conf.j2</pre>
+
+                  <div class="p">For post-deployment log level changes, commit your changes to Git and
+                    re-run the following from the lifecycle-manager node:
+                    <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</pre>
+</div>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceilometer-agent-central</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">You can change the <samp class="ph codeph">ceilometer_loglevel</samp> in the file below for all components
+                    during deployment or after deployment:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</pre>
+
+                  <p class="p">You can also change the log level for <samp class="ph codeph">ceilometer-agent-central</samp>
+                    only by changing the file below:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/CEI-CAG/templates/agent-central-logging.conf.j2</pre>
+
+                  <div class="p">For post-deployment log level changes, commit your changes to Git and
+                    re-run the following from the lifecycle-manager node:
+                    <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</pre>
+</div>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceilometer-expirer</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">You can change the <samp class="ph codeph">ceilometer_loglevel</samp> in the file below for
+                    all components during deployment or after deployment:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/_CEI-CMN/defaults/main.yml</pre>
+
+                  <p class="p">You can also change the log level for <samp class="ph codeph">ceilometer-expirer</samp> only
+                    by changing the file below:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/CEI-EXP/templates/expirer-logging.conf.j2</pre>
+
+                  <div class="p">For post-deployment log level changes, commit your changes to Git and
+                    re-run the following from the lifecycle-manager node:
+                    <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceilometer-reconfigure.yml</pre>
+</div>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Ceph</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ceph-mon</p>
+
+                  <p class="p">ceph-osd</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">You can change the Ceph logging levels using the Ansible playbook, specifically
+                    the switches, below for all components during deployment or after
+                    deployment:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts site.yml -e "ceph_mon_log_level=DEBUG, ceph_osd_log_level=DEBUG"</pre>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Cinder</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "> </td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">To set the local logging level for Cinder services, run the following
+                    command:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_loglevel=DEBUG</pre>
+
+                  <p class="p">To set the centralized logging level for Cinder services, run the following
+                    command:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible/
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml -e cinder_logstash_loglevel=DEBUG</pre>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">EON</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "> </td>
+
+                <td class="entry" valign="top" headers="d522e750 "> </td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">See <a class="xref" href="../esx/logging.html">EON Logging</a> for more
+                    details.</p>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="3" valign="top" headers="d522e744 "><p class="p">Freezer</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">freezer-agent</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">Currently the <samp class="ph codeph">freezer-agent</samp> does not support debug logs. INFO level is the
+                    default one used for this component.</p>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">freezer-api</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">Currently the <samp class="ph codeph">freezer-api </samp>does not support debug logs. INFO level is the default
+                    one used for this component.</p>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">freezer-scheduler</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">Currently the <samp class="ph codeph">freezer-scheduler</samp> does not support debug logs. INFO level is the
+                    default one used for this component.</p>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Glance</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">glance-api</p>
+<p class="p">glance-registry</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">Glance exposes the logging configuration templates on the lifecycle-manager in
+                    the following file:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/glance/ glance-[api,registry]-logging.conf</pre>
+.
+                    <p class="p">After the needed changes are done (for example logging level changes to local
+                    or centralized logging), run the <samp class="ph codeph">glance-reconfigure.yml</samp>
+                    playbook, targeting relevant nodes to deploy the configuration change:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Heat</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">api-cfn</p>
+<p class="p">api-cloudwatch</p>
+<p class="p">api-logging</p>
+<p class="p">engine</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">The Heat logging configuration files in the following locations:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/heat/api-cfn-logging.conf.j2
+~/helion/my_cloud/config/heat/api-cloudwatch-logging.conf.j2 
+~/helion/my_cloud/config/heat/api-logging.conf.j2
+~/helion/my_cloud/config/heat/engine-logging.conf.j2</pre>
+
+                  <p class="p">Users can edit these files and set the desired log level for both local as well
+                    as centralized logging. After making the changes, run the
+                      <samp class="ph codeph">heat-reconfigure</samp> playbook from the lifecycle-manager to apply
+                    the changes:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml</pre>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Keystone</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">key-api</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">To configure logging levels, see <a class="xref" href="../identity/identity_reconfigure.html">Identity Service
+                      Reconfigure</a></p>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Monasca</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">monasca-persister</p>
+<p class="p">zookeeper</p>
+<p class="p">storm</p>
+<p class="p">monasca-notification</p>
+<p class="p">monasca-api</p>
+<p class="p">kafka</p>
+<p class="p">monasca-agent</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">WARN</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">All of the Monasca logging is defaulted to WARN. To change the level for all of
+                    the services run:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
+ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</pre>
+
+                  <p class="p">If you want to change the logging level per service, each of the following
+                    files have the variable that you can set to the desired level:</p>
+
+                  <pre class="pre codeblock">~/helion/hos/ansible/roles/monasca-persister/defaults/main.yml
+~/helion/hos/ansible/roles/zookeeper/defaults/main.yml
+~/helion/hos/ansible/roles/storm/defaults/main.yml
+~/helion/hos/ansible/roles/monasca-notification/defaults/main.yml
+~/helion/hos/ansible/roles/monasca-api/defaults/main.yml
+~/helion/hos/ansible/roles/kafka/defaults/main.yml
+~/helion/hos/ansible/roles/monasca-agent/defaults/main.yml (For this file, you will need to add the variable)</pre>
+
+                  <p class="p">Then run:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml -e "monasca_log_level=DEBUG"
+ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_log_level=DEBUG"</pre>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Neutron</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">neutron-server</p>
+<p class="p">dhcp-agent</p>
+<p class="p">l3-agent</p>
+<p class="p">lbaas-agent</p>
+<p class="p">metadata-agent</p>
+<p class="p">openvswitch-agent</p>
+<p class="p">vpn-agent</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">Neutron-server component logging can be changed by modifying the following
+                    file:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/neutron/logging.conf.j2</pre>
+
+                  <p class="p">All other Neutron service component log levels are configurable in the
+                    following files:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/neutron/&lt;component_name&gt;-logging.conf.j2</pre>
+
+                  <p class="p">If you make edits to these files, you will need to run the
+                      <samp class="ph codeph">neutron-reconfigure.yml</samp> playbook:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</pre>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" headers="d522e744 "><p class="p">Nova</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">nova-api</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">Nova service log levels are configurable in the following file:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/nova/*-logging.conf.j2</pre>
+
+                  <p class="p">If you make edits to this file, then run the
+                      <samp class="ph codeph">nova-reconfigure.yml</samp> playbook:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">nova-compute</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">Nova service log levels are configurable in the following file:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/nova/*-logging.conf.j2</pre>
+
+                  <p class="p">If you make edits to this file, then run the
+                      <samp class="ph codeph">nova-reconfigure.yml</samp> playbook:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Operations Console</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">ops-web</p>
+
+                  <p class="p">ops-mon</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">You can change the Operations Console logging levels using the playbook below
+                    during deployment or after deployment:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</pre>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Sherpa</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "> </td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">The logging level is set in the file below:</p>
+
+                  <pre class="pre codeblock">/etc/sherpa/sherpa.conf</pre>
+
+                  <p class="p">To change the logging level, change from INFO to DEBUG in the following line in
+                      <samp class="ph codeph">sherpa.conf</samp>:</p>
+
+                  <pre class="pre codeblock">'sherpa': {'level': 'INFO', 'handlers': ['file', 'json']}</pre>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">Swift</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "> </td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 "><p class="p">The Swift service log levels are configurable in the file below:</p>
+
+                  <pre class="pre codeblock">~/helion/my_cloud/config/swift/account-server.conf.j2</pre>
+
+                  <p class="p">If you make edits to this file, then run the
+                      <samp class="ph codeph">swift-reconfigure.yml</samp> playbook to commit them to the
+                    environment:</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d522e744 "><p class="p">VSA</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e747 "><p class="p">vsa-installer</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e750 "><p class="p">INFO</p>
+</td>
+
+                <td class="entry" valign="top" headers="d522e753 ">
+                  <p class="p">The VSA logging levels are configurable for the <samp class="ph codeph">vsa-installer</samp>
+                    module. Use the following variables (default is INFO, case-sensitive):</p>
+
+                  <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml -e "vsa_installer_log_level=DEBUG"</pre>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

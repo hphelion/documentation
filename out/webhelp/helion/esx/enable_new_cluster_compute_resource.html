@@ -1,0 +1,608 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="When a new cluster is created in vCenter, EON's periodic pooling task fetches the new cluster information and updates the inventory. Currently, the state of a new cluster is not_imported . To Enable a ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Enabling a New Cluster as a Compute Resource"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_l5t_w5f_rt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Enabling a New Cluster as a Compute Resource</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_l5t_w5f_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Enabling a New Cluster as a Compute Resource </h1>
+
+  <div class="body">
+    <p class="p">When a new cluster is created in vCenter, EON's periodic pooling task fetches the new cluster
+      information and updates the inventory. Currently, the state of a new cluster is
+        <strong class="ph b">not_imported</strong>.</p>
+
+    <div class="section"><strong class="ph b">To Enable a New Cluster</strong><div class="p">Perform the following to enable a new cluster as a
+        compute resource.<ol class="ol" id="topic_l5t_w5f_rt__ol_ipn_jvf_rt">
+          <li class="li">List the
+              clusters:<pre class="pre codeblock"># eon cluster-list --vcenter-id &lt;vCenter ID&gt;</pre>
+<div class="p">For
+              example:<pre class="pre codeblock"># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c21 | Cluster1 | DC1        | activated     |
+| domain-c24 | Cluster2 | DC1        | not_imported  |
+| domain-c25 | Cluster3 | DC2        | not_imported  |
++------------+----------+------------+---------------+</pre>
+</div>
+<p class="p">Once
+              the newly-added cluster appears after running <samp class="ph codeph">cluster-list</samp> command,
+              do the following:</p>
+</li>
+
+        </ol>
+</div>
+</div>
+
+    <div class="section"><strong class="ph b">Import Cluster </strong><p class="p">You can use one or more ESX clusters for
+        ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
+        OVSvApp nodes are deployed.</p>
+<p class="p">vCenter can have multiple clusters, but the current
+        release of HPE Helion OpenStack supports only sequential import of clusters (one-by-one).
+        Therefore, you can import only one cluster at a time using the <samp class="ph codeph">eon
+          cluster-import</samp> command.</p>
+<div class="p">
+        <ol class="ol">
+          <li class="li"> Import the cluster for the EON database under the given vCenter. <pre class="pre codeblock"><samp class="ph codeph"># eon cluster-import --vcenter-id &lt;vCenter ID&gt; --cluster-name &lt;Cluster Name&gt; --cluster-moid &lt;Cluster Moid&gt;</samp></pre>
+where:<div class="p">
+              <ul class="ul" id="topic_l5t_w5f_rt__d22e512">
+                <li class="li">vCenter ID - ID of the vcenter containing the cluster.</li>
+
+                <li class="li">Cluster Name - the name of the cluster that needs to be imported.</li>
+
+                <li class="li">Cluster Moid - Moid of the cluster that needs to be imported.</li>
+
+              </ul>
+
+            </div>
+<div class="p"><strong class="ph b">Sample
+              Output</strong><pre class="pre codeblock"># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
++--------------+-----------+
+| Property     | Value     |
++--------------+-----------+
+| cpu_free     | 83071.73  |
+| cpu_total    | 83072     |
+| cpu_used     | 0.27      |
+| datacenter   | DC1       |
+| disk_free    | 1022.79   |
+| disk_total   | 1023.75   |
+| errors       | []        |
+| memory_free  | 496.82    |
+| memory_total | 511.76    |
+| memory_used  | 14.94     |
+| name         | Cluster1  |
+| state        | importing |
+| switches     | []        |
++--------------+-----------+</pre>
+</div>
+<p class="p">One
+              vCenter can have multiple clusters. But it allows you to import only one cluster at a
+              time.</p>
+</li>
+
+          <li class="li"> Execute the following command to view the list of clusters for the given
+              vCenter.<pre class="pre codeblock"><samp class="ph codeph"># eon cluster-list --vcenter-id &lt;vCenter ID&gt;</samp></pre>
+<strong class="ph b">Sample
+              Output</strong><pre class="pre codeblock"># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c22 | Cluster2 | DC1        | imported      |
++------------+----------+------------+---------------+</pre>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Activate Clusters</strong><div class="note note"><span class="notetitle">Note:</span> You can activate the cluster only
+        after the import status of the cluster is changed to <strong class="ph b">imported</strong>.</div>
+
+      <p class="p">When you execute the active cluster command, the <samp class="ph codeph">server.yml</samp> of the input
+        model is updated with IP Addresses of compute proxy and OVSvApp.
+        </p>
+
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Activate the cluster for the selected
+                vCenter.<pre class="pre codeblock"><samp class="ph codeph"># eon cluster-activate --vcenter-id &lt;vCenter ID&gt; --cluster-moid &lt;Cluster Moid&gt; </samp></pre>
+<p class="p"><strong class="ph b">Sample
+                Output</strong></p>
+<div class="p">
+              <pre class="pre codeblock"># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| node_info     | {u'computeproxy': {u'pxe-mac-addr': u'00:50:56:b6:ce:1b', u'pxe-ip-addr': u'172.170.2.4', u'name': u'COMPUTEPROXY_Cluster1', u'cluster-moid': u'domain-c21'}, u'network_driver': {u'cluster_dvs_mapping': u'DC1/host/Cluster1:hlm-Trunk', u'Cluster1': [{u'host-moid': u'host-29', u'pxe-ip-addr': u'172.170.2.3', u'esx_hostname': u'10.1.200.33', u'ovsvapp_node': u'ovsvapp-10-1-200-33', u'pxe-mac-addr': u'00:50:56:b6:5e:9a'}, {u'host-moid': u'host-25', u'pxe-ip-addr': u'172.170.2.2', u'esx_hostname': u'10.1.200.66', u'ovsvapp_node': u'ovsvapp-10-1-200-66', u'pxe-mac-addr': u'00:50:56:b6:56:e6'}]}} |
+| resource_moid | domain-c21                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</pre>
+
+            </div>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Modify the Volume Configuration File</strong>
+      <p class="p">Once the cluster is activated you must configure the volume.</p>
+<p class="p">Perform the following
+        steps to modify the volume configuration files:</p>
+<ol class="ol" id="topic_l5t_w5f_rt__d22e588">
+        <li class="li">Change the directory. The <samp class="ph codeph">cinder.conf.j2</samp> is present in following
+          directories
+            :<pre class="pre codeblock">cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</pre>
+<div class="p">OR<pre class="pre codeblock">cd /home/stack/helion/my_cloud/config/cinder</pre>
+</div>
+<p class="p">It
+            is recommended to modify the <samp class="ph codeph">cinder.conf.j2</samp> present in
+              <samp class="ph codeph">/home/stack/helion/my_cloud/config/cinder</samp></p>
+</li>
+
+        <li class="li">Modify the <samp class="ph codeph">cinder.conf.j2</samp> as follows:
+          <pre class="pre codeblock"># Configure the enabled backends
+enabled_backends=&lt;unique-section-name&gt;
+
+# Start of section for VMDK block storage
+#
+# If you have configured VMDK Block storage for cinder you must
+# uncomment this section, and replace all strings in angle brackets
+# with the correct values for vCenter you have configured. You
+# must also add the section name to the list of values in the
+# 'enabled_backends' variable above. You must provide unique section
+# each time you configure a new backend.
+
+#[&lt;unique-section-name&gt;]
+#vmware_api_retry_count = 10
+#vmware_tmp_dir = /tmp
+#vmware_image_transfer_timeout_secs = 7200
+#vmware_task_poll_interval = 0.5
+#vmware_max_objects_retrieval = 100
+#vmware_volume_folder = cinder-volumes
+#volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
+#vmware_host_ip = &lt;ip_address_of_vcenter&gt;
+#vmware_host_username = &lt;vcenter_username&gt;
+#vmware_host_password = &lt;password&gt;
+#
+#volume_backend_name = &lt;vmdk-backend-name&gt;
+#
+# End of section for VMDK block storage</pre>
+</li>
+
+      </ol>
+</div>
+
+    <div class="section"><strong class="ph b">Commit your Cloud Definition</strong>
+      <div class="p">
+        <ol class="ol">
+          <li class="li"> Add the cloud deployment definition to git
+            :<pre class="pre codeblock">cd /home/stack/helion/hos/ansible;
+git add -A;
+git commit -m 'Adding ESX Configurations or other commit message';</pre>
+</li>
+
+          <li class="li">Prepare your environment for deployment:
+            <pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml;
+ansible-playbook -i hosts/localhost ready-deployment.yml;
+cd /home/stack/scratch/ansible/next/hos/ansible;</pre>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Deploy ESX Compute Proxy and OVSvApps</strong>
+      <div class="p">Execute the following command to deploy an esx compute and
+        OVSvApps:<pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*<strong class="ph b">esx-ovsvapp:*esx-compute</strong>' 
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NOV-ESX:NEU-OVSVAPP
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre>
+</div>
+
+      <div class="note note"><span class="notetitle">Note:</span> The variable <strong class="ph b">esx-ovsvapp</strong> and <strong class="ph b">esx-compute</strong> must be taken from the
+          <strong class="ph b">name</strong> key in the <samp class="ph codeph">resource-nodes</samp> section in the
+          <samp class="ph codeph">data/control_plane.yml</samp> file
+          (<samp class="ph codeph">/home/stack/helion/my_cloud/definition/data/control_plane.yml</samp>).
+      </div>
+</div>
+
+    <p class="p"><strong class="ph b">OR</strong></p>
+
+    <p class="p">If the newly-added cluster is in a new datacenter on which no activated clusters exist, then
+      do the following:</p>
+
+    <div class="section"><strong class="ph b">Register ESX Cloud Network Configuration</strong>
+      <p class="p">This involves getting a sample network information template. Fill the details of the
+        template and use that template to register the cloud network configuration for the vCenter.</p>
+
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Execute the following command to get the network information
+              template:<pre class="pre codeblock"><samp class="ph codeph"># eon get-network-info-template --filename &lt;<strong class="ph b">NETWORK_CONF_FILENAME</strong>&gt;</samp></pre>
+<div class="p">For
+              example:<pre class="pre codeblock"># eon get-network-info-template --filename net_conf.json</pre>
+</div>
+<div class="p">Sample
+              file of <samp class="ph codeph">net_conf.json</samp> is shown
+              below:<pre class="pre codeblock">{
+    "network": {
+        # Deployer Network details
+        # This network should be reachable from the Deployer node
+        "deployer_network": {
+            #Deployer Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
+            "deployer_pg_name": "hlm-Deployer-PG",
+
+            #VLAN id for Deployer Portgroup
+            "deployer_vlan": "33",
+
+#Enable DHCP for Deployer network ?
+            "enable_deployer_dhcp": "no",
+
+#CIDR and gateway for deployer network only when enable_deployer_dhcp is no
+            "deployer_cidr": "10.20.18.0/23",
+            "deployer_gateway_ip": "10.20.18.1",
+
+            #Deployer Node's PXE IP Address
+            "deployer_node_ip": "10.20.16.2"
+        },
+
+        #Management Network details
+        "management_network": {
+#Mgmt DVS name. If already exists then we will use it. If not #then we will create it.
+            "mgmt_dvs_name": "hlm-Mgmt",
+
+#Physical NIC name(s) for Mgmt DVS. Make sure that this Physical #NIC(s) is/are free/not used across all hosts in that cluster.
+            "mgmt_nic_name": "vmnic3",
+
+#Mgmt Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
+            "mgmt_pg_name": "hlm-Mgmt-PG",
+
+            #Interface order: Example eth1
+            "mgmt_interface_order": "eth1",
+
+#Provided physical NIC name(s) will be configured as active #uplink(s) from mgmt_dvs_name. If not provided then the first #entry in mgmt_dvs_name will be configured as active and the #remaining as standby.
+            "active_nics": "",
+
+
+
+
+
+            #Load Balancing. Please choose the corresponding number
+
+#1 -&gt; Route based on the originating virtual port (Choose an            #uplink based on the virtual port where the traffic entered the #virtual switch)
+
+#2 -&gt; Route based on IP hash (Choose an uplink based on a hash #of the source and destination IP addresses of each packet. For #non-IP packets, whatever is at those offsets is used to compute #the hash)
+
+#3 -&gt; Route based on source MAC hash (Choose an uplink based on #a hash of the source Ethernet.)
+
+#4 -&gt; Route based on physical NIC load (Choose an uplink based on #the current loads of physical NICs)
+
+#5 -&gt; Use explicit failover order (Always use the highest order    #uplink, from the list of Active adapters, which passes failover #detection criteria)
+
+	    "load_balancing": "1",
+
+#Network Failover Detection. Please choose the corresponding number
+# 1 -&gt; Link Status. Relies solely on the link status that the #network adapter provides. This option detects failures, such as #cable pulls and physical switch power failures, but not #configuration errors, such as a physical switch port being #blocked by spanning tree or that is misconfigured to the wrong #VLAN or cable pulls on the other side of a physical switch.
+
+# 2-&gt; Beacon Probing. Sends out and listens for beacon probes on all #NICs in the team and uses this information, in addition to link #status, to determine link failure. This detects many of the #failures previously mentioned that are not detected by link #status alone.
+
+            "network_failover_detection": "1",
+
+	    #Notify Switches(yes/no).
+#If you select Yes, whenever a virtual NIC is connected to the          #Switch or whenever that virtual NIC’s traffic would be routed #over a different physical NIC in the team because of a failover #event, a notification is sent out over the network to update the #lookup tables on physical switches. In almost all cases, this #process is desirable for the lowest latency of failover #occurrences and migrations with vMotion.
+
+            "notify_switches": "yes"
+        },
+
+        "data_network": {
+            #Tenant network type. Only vlan is supported for HOS 2.0
+            "tenant_network_type": "vlan",
+
+#Data/Uplink DVS name. If already exists then we will use it. If #not then we will create it.
+            "data_dvs_name": "hlm-Data",
+
+#Physical NIC name(s) for Data/Uplink DVS. Make sure that this #Physical NIC(s) is/are free/not used across all hosts in that #cluster.
+            "data_nic_name": "vmnic2, vmnic1",
+
+#Data Portgroup Name. If already exists then we will use it. If      #not then we will create it.
+            "data_pg_name": "hlm-Data-PG",
+
+            #Interface order: Example eth2
+            "data_interface_order": "eth2",
+
+#Provided physical NIC name(s) will be configured as active #uplink(s) from data_dvs_name. If not provided then the first #entry in data_dvs_name will be configured as active and the #remaining as standby.
+
+            "active_nics": "vmnic1",
+
+	    #Load Balancing. Please choose the corresponding number
+
+#1 -&gt; Route based on the originating virtual port (Choose an            #uplink based on the virtual port where the traffic entered the #virtual switch)
+
+#2 -&gt; Route based on IP hash (Choose an uplink based on a hash #of the source and destination IP addresses of each packet. For #non-IP packets, whatever is at those offsets is used to compute #the hash)
+
+#3 -&gt; Route based on source MAC hash (Choose an uplink based on #a hash of the source Ethernet.)
+
+#4 -&gt; Route based on physical NIC load (Choose an uplink based on #the current loads of physical NICs)
+
+#5 -&gt; Use explicit failover order (Always use the highest order    #uplink, from the list of Active adapters, which passes failover #detection criteria)
+            
+            "load_balancing": "1",
+
+
+#Network Failover Detection. Please choose the corresponding number
+# 1 -&gt; Link Status. Relies solely on the link status that the #network adapter provides. This option detects failures, such as #cable pulls and physical switch power failures, but not #configuration errors, such as a physical switch port being #blocked by spanning tree or that is misconfigured to the wrong #VLAN or cable pulls on the other side of a physical switch.
+
+# 2-&gt; Beacon Probing. Sends out and listens for beacon probes on all #NICs in the team and uses this information, in addition to link #status, to determine link failure. This detects many of the #failures previously mentioned that are not detected by link #status alone.
+            
+            "network_failover_detection": "1",
+
+	    #Notify Switches(yes/no).
+#If you select Yes, whenever a virtual NIC is connected to the          #Switch or whenever that virtual NIC’s traffic would be routed #over a different physical NIC in the team because of a failover #event, a notification is sent out over the network to update the #lookup tables on physical switches. In almost all cases, this #process is desirable for the lowest latency of failover #occurrences and migrations with vMotion.
+
+            “notify_switches”: “yes”
+        },
+
+        “hpvcn_trunk_network”: {
+#Trunk DVS name. If already exists then we will use it. If not #then we will create it.
+            "trunk_dvs_name": "hlm-Trunk",
+
+#Trunk portgroup name. If already exists then we will use it. If #not then we will create it.
+            "trunk_pg_name": "hlm-Trunk-PG",
+
+            #Interface order: Example eth3
+            "trunk_interface_order": "eth3"
+        },
+
+#VLAN Range for Data &amp; Trunk port group. Please provide the range #separated by a hyphen (vlan-vlan). Multiple vlan or vlan ranges should #be provided as comma separated value.
+        "vlan_range": "1-4094"
+    },
+
+    "template": {
+#Provide the template name that will be used for cloning Computeproxy #and OVSvApp VMs
+        "template_name": "hlm-template"
+    },
+
+    "vmconfig": {
+        #Number of CPUs for OVSvApp/Computeproxy VM
+        "cpu": "4",
+
+        #Amount of RAM for OVSvApp/Computeproxy VM(in Mega Byte)
+        "memory_in_mb": "4096",
+
+#SSH public key content for OVSvAPP/Computeproxy password less login. #Carefully copy the public key and paste it within the double quotes.
+        "ssh_key": "&lt;deployer-ssh-pub-key-contents&gt;"
+    }
+}</pre>
+</div>
+</li>
+
+          <li class="li">Modify the template (json file) as per your
+              environment.<pre class="pre codeblock">vi &lt;<strong class="ph b">NETWORK_CONF_FILENAME</strong>&gt;</pre>
+<div class="p">For
+              example:<pre class="pre codeblock">vi net_conf.json</pre>
+</div>
+</li>
+
+          <li class="li">Use the template to register Cloud Network Configuration. This sets the network
+            information for a vCenter which is used to deploy and configure compute proxy and
+            OVSvAPP VMs during the cluster activation.
+              <pre class="pre codeblock"><samp class="ph codeph"># eon set-network-info --vcenter-id &lt;vCenter ID&gt; --datacenter-name &lt;datacenter name&gt; --config-json &lt;NETWORK_CONF_FILENAME&gt;</samp></pre>
+<div class="p">For
+              example:
+              <pre class="pre codeblock"># eon set-network-info --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --datacenter DC1 --config-json net_conf.json</pre>
+</div>
+<div class="p">
+              <div class="note note"><span class="notetitle">Note:</span> The vcenter ID is generated when you register a vCenter.</div>
+
+            </div>
+</li>
+
+          <li class="li">Execute the following command to view the list of clusters for the given
+              vCenter.<pre class="pre codeblock"><samp class="ph codeph"># eon cluster-list --vcenter-id &lt;vCenter ID&gt;</samp></pre>
+<strong class="ph b">Sample
+              Output</strong><pre class="pre codeblock"># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c21 | Cluster1 | DC1        | not_imported  |
++------------+----------+------------+---------------+</pre>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Import Cluster </strong><p class="p">You can use one or more ESX clusters for
+        ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
+        OVSvApp nodes are deployed.</p>
+<p class="p">vCenter can have multiple clusters, but the current
+        release of HPE Helion OpenStack supports only sequential import of clusters (one-by-one).
+        Therefore, you can import only one cluster at a time using the <samp class="ph codeph">eon
+          cluster-import</samp> command.</p>
+<div class="p">
+        <ol class="ol">
+          <li class="li"> Import the cluster for the EON database under the given vCenter. <pre class="pre codeblock"><samp class="ph codeph"># eon cluster-import --vcenter-id &lt;vCenter ID&gt; --cluster-name &lt;Cluster Name&gt; --cluster-moid &lt;Cluster Moid&gt;</samp></pre>
+where:<div class="p">
+              <ul class="ul" id="topic_l5t_w5f_rt__d22e512">
+                <li class="li">vCenter ID - ID of the vcenter containing the cluster.</li>
+
+                <li class="li">Cluster Name - the name of the cluster that needs to be imported.</li>
+
+                <li class="li">Cluster Moid - Moid of the cluster that needs to be imported.</li>
+
+              </ul>
+
+            </div>
+<div class="p"><strong class="ph b">Sample
+              Output</strong><pre class="pre codeblock"># eon cluster-import --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-name Cluster1 --cluster-moid domain-c21
++--------------+-----------+
+| Property     | Value     |
++--------------+-----------+
+| cpu_free     | 83071.73  |
+| cpu_total    | 83072     |
+| cpu_used     | 0.27      |
+| datacenter   | DC1       |
+| disk_free    | 1022.79   |
+| disk_total   | 1023.75   |
+| errors       | []        |
+| memory_free  | 496.82    |
+| memory_total | 511.76    |
+| memory_used  | 14.94     |
+| name         | Cluster1  |
+| state        | importing |
+| switches     | []        |
++--------------+-----------+</pre>
+</div>
+<p class="p">One
+              vCenter can have multiple clusters. But it allows you to import only one cluster at a
+              time.</p>
+</li>
+
+          <li class="li"> Execute the following command to view the list of clusters for the given
+              vCenter.<pre class="pre codeblock"><samp class="ph codeph"># eon cluster-list --vcenter-id &lt;vCenter ID&gt;</samp></pre>
+<strong class="ph b">Sample
+              Output</strong><pre class="pre codeblock"># eon cluster-list --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674
++------------+----------+------------+---------------+
+| MOID       | Name     | Datacenter | Import Status |
++------------+----------+------------+---------------+
+| domain-c22 | Cluster2 | DC1        | imported      |
++------------+----------+------------+---------------+</pre>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Activate Clusters</strong><div class="note note"><span class="notetitle">Note:</span> You can activate the cluster only
+        after the import status of the cluster is changed to <strong class="ph b">imported</strong>.</div>
+
+      <p class="p">When you execute the active cluster command, the <samp class="ph codeph">server.yml</samp> of the input
+        model is updated with IP Addresses of compute proxy and OVSvApp.
+        </p>
+
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Activate the cluster for the selected
+                vCenter.<pre class="pre codeblock"><samp class="ph codeph"># eon cluster-activate --vcenter-id &lt;vCenter ID&gt; --cluster-moid &lt;Cluster Moid&gt; </samp></pre>
+<p class="p"><strong class="ph b">Sample
+                Output</strong></p>
+<div class="p">
+              <pre class="pre codeblock"># eon cluster-activate --vcenter-id BC9DED4E-1639-481D-B190-2B54A2BF5674 --cluster-moid domain-c22 
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Property      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| node_info     | {u'computeproxy': {u'pxe-mac-addr': u'00:50:56:b6:ce:1b', u'pxe-ip-addr': u'172.170.2.4', u'name': u'COMPUTEPROXY_Cluster1', u'cluster-moid': u'domain-c21'}, u'network_driver': {u'cluster_dvs_mapping': u'DC1/host/Cluster1:hlm-Trunk', u'Cluster1': [{u'host-moid': u'host-29', u'pxe-ip-addr': u'172.170.2.3', u'esx_hostname': u'10.1.200.33', u'ovsvapp_node': u'ovsvapp-10-1-200-33', u'pxe-mac-addr': u'00:50:56:b6:5e:9a'}, {u'host-moid': u'host-25', u'pxe-ip-addr': u'172.170.2.2', u'esx_hostname': u'10.1.200.66', u'ovsvapp_node': u'ovsvapp-10-1-200-66', u'pxe-mac-addr': u'00:50:56:b6:56:e6'}]}} |
+| resource_moid | domain-c21                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| resource_name | Cluster1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| state         | activated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</pre>
+
+            </div>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Modify the Volume Configuration File</strong>
+      <p class="p">Once the cluster is activated you must configure the volume.</p>
+<p class="p">Perform the following
+        steps to modify the volume configuration files:</p>
+<ol class="ol" id="topic_l5t_w5f_rt__d22e588">
+        <li class="li">Change the directory. The <samp class="ph codeph">cinder.conf.j2</samp> is present in following
+          directories
+            :<pre class="pre codeblock">cd /home/stack/helion/hos/ansible/roles/_CND-CMN/templates</pre>
+<div class="p">OR<pre class="pre codeblock">cd /home/stack/helion/my_cloud/config/cinder</pre>
+</div>
+<p class="p">It
+            is recommended to modify the <samp class="ph codeph">cinder.conf.j2</samp> present in
+              <samp class="ph codeph">/home/stack/helion/my_cloud/config/cinder</samp></p>
+</li>
+
+        <li class="li">Modify the <samp class="ph codeph">cinder.conf.j2</samp> as follows:
+          <pre class="pre codeblock"># Configure the enabled backends
+enabled_backends=&lt;unique-section-name&gt;
+
+# Start of section for VMDK block storage
+#
+# If you have configured VMDK Block storage for cinder you must
+# uncomment this section, and replace all strings in angle brackets
+# with the correct values for vCenter you have configured. You
+# must also add the section name to the list of values in the
+# 'enabled_backends' variable above. You must provide unique section
+# each time you configure a new backend.
+
+#[&lt;unique-section-name&gt;]
+#vmware_api_retry_count = 10
+#vmware_tmp_dir = /tmp
+#vmware_image_transfer_timeout_secs = 7200
+#vmware_task_poll_interval = 0.5
+#vmware_max_objects_retrieval = 100
+#vmware_volume_folder = cinder-volumes
+#volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
+#vmware_host_ip = &lt;ip_address_of_vcenter&gt;
+#vmware_host_username = &lt;vcenter_username&gt;
+#vmware_host_password = &lt;password&gt;
+#
+#volume_backend_name = &lt;vmdk-backend-name&gt;
+#
+# End of section for VMDK block storage</pre>
+</li>
+
+      </ol>
+</div>
+
+    <div class="section"><strong class="ph b">Commit your Cloud Definition</strong>
+      <div class="p">
+        <ol class="ol">
+          <li class="li"> Add the cloud deployment definition to git
+            :<pre class="pre codeblock">cd /home/stack/helion/hos/ansible;
+git add -A;
+git commit -m 'Adding ESX Configurations or other commit message';</pre>
+</li>
+
+          <li class="li">Prepare your environment for deployment:
+            <pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml;
+ansible-playbook -i hosts/localhost ready-deployment.yml;
+cd /home/stack/scratch/ansible/next/hos/ansible;</pre>
+</li>
+
+        </ol>
+
+      </div>
+</div>
+
+    <div class="section"><strong class="ph b">Deploy ESX Compute Proxy and OVSvApps</strong>
+      <div class="p">Execute the following command to deploy an esx compute and
+        OVSvApps:<pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit '*<strong class="ph b">esx-ovsvapp:*esx-compute</strong>' 
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit NOV-ESX:NEU-OVSVAPP
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre>
+</div>
+
+      <div class="note note"><span class="notetitle">Note:</span> The variable <strong class="ph b">esx-ovsvapp</strong> and <strong class="ph b">esx-compute</strong> must be taken from the
+          <strong class="ph b">name</strong> key in the <samp class="ph codeph">resource-nodes</samp> section in the
+          <samp class="ph codeph">data/control_plane.yml</samp> file
+          (<samp class="ph codeph">/home/stack/helion/my_cloud/definition/data/control_plane.yml</samp>).
+      </div>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

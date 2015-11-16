@@ -1,0 +1,207 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 LBaaS Configuration Load Balancing as a Service (LBaaS) is an advanced networking service that allows load balancing of multi-node environments. It provides the ability to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring Load Balancing as a Service (LBaaS)"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="HP2.0LBaaSAdmin"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring Load Balancing as a Service (LBaaS)</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="HP2.0LBaaSAdmin">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring Load Balancing as a Service
+    (LBaaS)</h1>
+
+  <div class="body">
+    <p class="p"><strong class="ph b">HPE Helion OpenStack 2.0 LBaaS Configuration</strong></p>
+
+    <p class="p"> Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
+      balancing of multi-node environments. It provides the ability to spread requests across
+      multiple servers thereby reducing the load on any single server.  This document describes the
+      installation steps for LBaaS v1 (see prerequisites) and the configuration for LBaaS v1 and
+      v2.</p>
+
+
+    <p class="p">HPE Helion OpenStack 2.0 can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
+      customer requirements. If the decision is made to utilize LBaaS v1 it is highly unlikely that
+      you will be able to perform an on-line upgrade of the service to v2 after the fact as the
+      internal data structures are significantly different. Should you wish to attempt an upgrade
+      support will be needed from Helion Professional Services and your chosen load balancer
+      partner.</p>
+
+    
+    <p class="p">Currently neither version offers a software load balancing solution that supports both a highly available 
+      control plane and data plane. However, should an external hardware load balancer be selected the cloud operation 
+      can achieve a highly available data plane.</p>
+
+    
+    <p class="p"><strong class="ph b">LBaaS v1</strong></p>
+
+    <p class="p">Reasons to select this version.</p>
+
+    <ol class="ol">
+      <li class="li">You must be able to configure LBaaS via Horizon.</li>
+
+      <li class="li">Your hardware load balancer vendor does not currently support LBaaS v2.</li>
+
+    </ol>
+
+    <p class="p">Reasons not to select this version.</p>
+
+    <ol class="ol">
+      <li class="li">No active development is being performed on this API in the OpenStack community. (Security fixes are still being worked upon).</li>
+
+      <li class="li">It does not allow for multiple ports on the same VIP (e.g. support both port 80 and 443 on a single VIP).</li>
+
+      <li class="li">It will never be able to support TLS termination/re-encryption at the load balancer.</li>
+
+      <li class="li">It will never be able to support L7 rules for load balancing.</li>
+
+      <li class="li">LBaaS v1 will likely become officially deprecated by the OpenStack community at the Tokyo
+        (October 2015) summit.</li>
+
+    </ol>
+
+    <p class="p"><strong class="ph b">LBaaS v2</strong></p>
+
+    <p class="p">Reasons to select this version.</p>
+
+    <ol class="ol">
+      <li class="li">Your vendor already has a driver that supports LBaaS v2. Many hardware load balancer
+        vendors already support LBaaS v2 and this list is growing all the time.</li>
+
+      <li class="li">You intend to script your load balancer creation and management so a UI is not important right now (Horizon support will be added in a future release).</li>
+
+      <li class="li">You intend in future releases to support TLS termination at the load balancer.</li>
+
+      <li class="li">You intend in future releases to use the Octavia software load balancer (adding HA and scalability).</li>
+
+      <li class="li">You don’t want to take your load balancers offline in order to perform subsequent LBaaS upgrades.</li>
+
+      <li class="li">You intend in future releases to need L7 load balancing.</li>
+
+    </ol>
+
+    <p class="p">Reasons not to select this version.</p>
+
+    <ol class="ol">
+      <li class="li">Your LBaaS vendor doesn’t have a v2 driver.</li>
+
+      <li class="li">You must be able to manage your load balancers from Horizon.</li>
+
+      <li class="li">You have legacy software which utilizes the LBaaS v1 API.</li>
+
+    </ol>
+
+
+    <p class="p">LBaaS v1 requires configuration changes prior to installation and is not recommended. LBaaS
+      v2 is installed by default with HPE Helion OpenStack and requires minimal configuration to
+      start the service.</p>
+
+
+
+
+    <div class="p">  
+      <ul class="ul" id="HP2.0LBaaSAdmin__LBaaSlist">
+        <li class="li"><a class="xref" href="lbaas_admin.html#HP2.0LBaaSAdmin__Prerequisites">Prerequisites</a></li>
+
+        <li class="li"><a class="xref" href="lbaas_admin.html#HP2.0LBaaSAdmin__Configuration">Configuration</a></li>
+
+      </ul>
+
+    </div>
+
+    
+    <div class="section" id="HP2.0LBaaSAdmin__Prerequisites"><h2 class="title sectiontitle">Prerequisites</h2>
+      
+      <p class="p"><strong class="ph b">HPE Helion OpenStack LBaaS v1</strong></p>
+
+       <p class="p">Installing LBaaS v1</p>
+
+        <div class="note important"><span class="importanttitle">Important:</span> It is not recommended that LBaaS v1 is used in a production
+        environment. It is recommended you use LBaaS v2. If you do deploy LBaaS v1, the upgrade to
+        LBaaS v2 is non-trivial and may require the use of professional services.</div>
+
+        <div class="note note"><span class="notetitle">Note:</span> If you need to run LBaaS v1 instead of the default LBaaS v2, you should make
+        appropriate installation preparations during HPE Helion OpenStack installation since LBaaS v2
+        is the default. If you have selected to install and use LBaaS v1 you will replace the
+        control_plane.yml directories and neutron.conf.j2 file to use version 1. </div>
+
+      
+      <p class="p">Before you modify the control_plane.yml and neutron.conf.j2 files, it is recommended that
+        you back up the original versions of those files. Once you have backed them up, modify the
+        control_plane.yml and neutron.conf.j2 files – please refer to the chapter <a class="xref" href="../installation/using_git.html#using_git">HPE Helion OpenStack®
+            2.0: Using Git for Configuration Management</a> for details on how to edit
+        those configuration files.</p>
+
+      
+      <ol class="ol">
+        <li class="li">Edit ~/helion/my_cloud/definition/data/control_plane.yml – depending on your installation the control_plane.yml file might be in a different location.</li>
+
+        <li class="li">In the section specifying the compute nodes (resources/compute) replace neutron-lbaasv2-agent with neutron-lbaas-agent – there will only be one occurrence in that file.</li>
+
+        <li class="li">Save the modified file.</li>
+
+        <li class="li">Edit the ~/helion/my_cloud/config/neutron/neutron.conf.j2  – depending on your installation the neutron.conf.j2 file might be in a different location.</li>
+
+        <li class="li">Comment out the LBaaS v2 service_plugin and service_provider lines.</li>
+
+        <li class="li">Uncomment the LBaaS v1 lines.</li>
+
+        <li class="li">Save the file.</li>
+
+        <li class="li">Follow the steps in <a class="xref" href="../installation/using_git.html#using_git">HPE Helion OpenStack® 2.0: Using Git for Configuration Management</a> to commit and apply the changes.</li>
+
+      </ol>
+
+      
+ 
+ 
+      <p class="p"><strong class="ph b">HPE Helion OpenStack LBaaS v2</strong></p>
+
+      <ol class="ol">
+        <li class="li">HPE Helion OpenStack must be installed for LBaaS v2.</li>
+
+      </ol>
+ 
+    </div>
+
+    
+    <div class="section" id="HP2.0LBaaSAdmin__Configuration"><h2 class="title sectiontitle">Configuration</h2>
+      
+      <p class="p">HPE Helion OpenStack 2.0 LBaaS Configuration</p>
+
+    
+      
+      
+      <div class="sectiondiv">
+        <p class="p"><strong class="ph b">Create External Network and Register Image</strong></p>
+
+        <p class="p">You will need to create an external network and register an image to test LBaaS functionality.  If you have already created
+          an external network and registered and image, this step can be skipped.</p>
+
+
+         <ol class="ol">
+          <li class="li">You can run commands from the deployer or from a shell with access to the API nodes.
+            Run the playbook which registers a Cirros image and creates a public network under
+            Neutron. <div class="note note"><span class="notetitle">Note:</span> Running this step configures 172.16.0.0/16 by default as the external
+              network with name <em class="ph i">ext-net</em> and registers a Cirros image.  You will need to
+              change the IP for your external network.</div>
+
+            <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts hlm-cloud-configure.yml</pre>
+</li>
+
+        </ol>
+
+      </div>
+      
+ 
+    </div>
+
+    
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

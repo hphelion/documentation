@@ -1,0 +1,138 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Warning: Please perform this operation under the supervision of the HPE support team. This topic describes how to remove the VSA node. You can remove the VSA storage system from the cloud after it is ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Removing a VSA Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_yfy_vjq_5t"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Removing a VSA Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_yfy_vjq_5t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack 2.0: Removing a VSA Node </h1>
+
+  <div class="body">
+    <div class="p">
+      <div class="note warning"><span class="warningtitle">Warning:</span> Please perform this operation under the supervision of the HPE support
+        team.</div>
+
+    </div>
+
+    <p class="p">This topic describes how to remove the VSA node.</p>
+
+    <p class="p">You can remove the VSA storage system from the cloud after it is removed from the cluster
+      management group in CMC. This is performed if you want to remove VSA permanently.</p>
+
+    <p class="p"><strong class="ph b">Prerequisite</strong>:</p>
+
+    <div class="p">You must remove the VSA cluster from CMC before removing the VSA node. To remove the CMC
+      cluster, refer to <strong class="ph b">HPE StoreVirtual Storage Online help in CMC</strong> for more details.<div class="note important"><span class="importanttitle">Important:</span> You can remove a VSA node only if you have more than three nodes in a
+        cluster.</div>
+</div>
+
+    <p class="p"><strong class="ph b">To Remove a VSA Node from a Cloud</strong></p>
+
+    <div class="p">Perform the following steps to remove the same cluster which has been removed from CMC in
+      your cloud.<ol class="ol" id="topic_yfy_vjq_5t__ol_uqx_hfv_5t">
+        <li class="li">Edit the definition of the server (usually in the
+            <samp class="ph systemoutput">data/servers.yml</samp> file), for example:
+            <pre class="pre codeblock">- id: vsa1
+      ip-addr: 192.168.61.15
+      role: VSA-ROLE
+      server-group: RACK1
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.232
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:8C:B0
+
+    - id: vsa2
+      ip-addr: 192.168.61.16
+      role: VSA-ROLE
+      server-group: RACK2
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.233
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:0E:30
+
+    - id: vsa3
+      ip-addr: 192.168.61.17
+      role: VSA-ROLE
+      server-group: RACK3
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.234
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:2D:00
+
+  - id: vsa4
+      ip-addr: 192.168.61.18
+      role: VSA-ROLE
+      server-group: RACK3
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.235
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:2D:00</pre>
+<div class="p">The
+            above example shows one cluster with four nodes. Since you have already removed the VSA
+            cluster from CMC, now you can remove one of the nodes associated with that cluster. In
+            the following example, <samp class="ph codeph">servers.yml</samp> file <strong class="ph b">vsa2</strong> has been
+            removed:<pre class="pre codeblock">- id: vsa1
+      ip-addr: 192.168.61.15
+      role: VSA-ROLE
+      server-group: RACK1
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.232
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:8C:B0
+
+    - id: vsa3
+      ip-addr: 192.168.61.17
+      role: VSA-ROLE
+      server-group: RACK3
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.234
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:2D:00
+
+  - id: vsa4
+      ip-addr: 192.168.61.18
+      role: VSA-ROLE
+      server-group: RACK3
+      nic-mapping: HP-BL460c-4PORT
+      ilo-ip: 10.1.192.235
+      ilo-password: gone2far
+      ilo-user: Administrator
+      mac-addr: 5C:B9:01:78:2D:00</pre>
+</div>
+</li>
+
+        <li class="li">Commit your
+          configuration:<pre class="pre">cd ~/helion/hos/ansible
+git add -A
+git commit -m &lt;"commit message"&gt;</pre>
+</li>
+
+        <li class="li">Run the Configuration
+          Processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Use the playbook below to create a deployment directory:
+          <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Verify that the node is removed from <samp class="ph codeph">hosts/verb_hosts</samp> file.</li>
+
+      </ol>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

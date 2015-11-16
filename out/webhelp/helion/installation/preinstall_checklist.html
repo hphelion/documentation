@@ -1,0 +1,1418 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Attention: The formatting of this page facilitates printing it out and using it to record details of your setup. This checklist is focused on the Entry-scale KVM with VSA model but you can alter it to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Pre-Installation Checklist"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="preinstall_checklist"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Pre-Installation Checklist</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="preinstall_checklist">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Pre-Installation Checklist</h1>
+
+  <div class="body">
+    <div class="note attention"><span class="attentiontitle">Attention:</span> The formatting of this page facilitates printing it out and using it to
+      record details of your setup.</div>
+
+    <p class="p">This checklist is focused on the Entry-scale KVM with VSA model but you can alter it to fit
+      the example configuration you chose for your cloud.</p>
+
+    <div class="section" id="preinstall_checklist__bios"><h2 class="title sectiontitle">BIOS and iLO Settings</h2>
+      <p class="p">Ensure that the following BIOS and iLO settings are applied to each baremetal server:</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__table_ckx_rd4_ht" class="table" frame="border" border="1" rules="all">
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e61">☐</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e64">Item</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Setup the iLO Advanced license in the iLO configuration</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Choose either UEFI or Legacy BIOS in the BIOS settings</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Verify the Date and Time settings in the BIOS</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Ensure that Wake-on-LAN is disabled in the BIOS</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Ensure that the NIC port to be used for PXE installation has PXE enabled in
+                  the BIOS</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Ensure that all other NIC ports have PXE disabled in the BIOS</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e61 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e64 ">Ensure all hardware in the server not directly used by Helion is
+                  disabled</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="preinstall_checklist__network"><h2 class="title sectiontitle">Network Setup and Configuration</h2>
+      <p class="p">Before installing HPE Helion OpenStack, the following networks must be provisioned and
+        tested. The networks are not installed or managed by the Cloud. You must install and manage
+        the networks as documented in the <a class="xref" href="../example_configurations.html">Example
+          Configurations</a>.</p>
+
+      <p class="p">Use these checklists to confirm and record your network configuration information.</p>
+
+      <p class="p"><strong class="ph b">Router</strong></p>
+
+      <p class="p">The IP router used with HPE Helion OpenStack must support the updated of its ARP table
+        through gratuitous ARP packets.</p>
+
+      <p class="p"><strong class="ph b">PXE Installation Network</strong></p>
+
+      <p class="p">When provisioning the IP range, allocate sufficient IP addresses to cover both the current
+        number of servers and any planned expansion. Use the following table to help calculate the
+        requirements:</p>
+
+      <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__pxe_net_ip" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" id="d49076e177">Instance</th>
+
+                <th class="entry" valign="top" id="d49076e180">Description</th>
+
+                <th class="entry" valign="top" id="d49076e183">IPs</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e177 ">Deployer O/S</td>
+
+                <td class="entry" valign="top" headers="d49076e180 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e183 ">1</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e177 ">Controller server O/S (x3)</td>
+
+                <td class="entry" valign="top" headers="d49076e180 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e183 ">3</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e177 ">Compute servers (2nd thru 100th)</td>
+
+                <td class="entry" valign="top" headers="d49076e180 ">single IP per server</td>
+
+                <td class="entry" valign="top" headers="d49076e183 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e177 ">VSA host servers</td>
+
+                <td class="entry" valign="top" headers="d49076e180 ">single IP per server</td>
+
+                <td class="entry" valign="top" headers="d49076e183 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+</div>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__pxe_net_checklist" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e253">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e256">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e259">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">Network is untagged</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">No DHCP servers other than Helion are on the network</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">Switch PVID used to map any "internal" VLANs to untagged</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">Routable to the IPMI network</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">IP CIDR</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">IP Range (Usable IPs)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 ">
+                  <p class="p">begin:</p>
+
+                  <p class="p">end:</p>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e253 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e256 ">Default IP Gateway</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e259 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">Management Network</strong></p>
+
+      <p class="p">The management network is the backbone used for the majority of HPE Helion OpenStack
+        management communications. Control messages are exchanged between the Controllers, Compute
+        hosts, and Cinder backends through this network. In addition to the control flows, the
+        management network is also used to transport Swift and iSCSI based Cinder block storage
+        traffic between servers. Also implemented on this network are VxLAN tunnels that are used
+        for enabling tenant networking for the instances.</p>
+
+      <p class="p">When provisioning the IP Range, allocate sufficient IP addresses to cover both the current
+        number of servers and any planned expansion. Use the following table to help calculate the
+        requirements:</p>
+
+      <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__mgmt_net_ip" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" id="d49076e374">Instance</th>
+
+                <th class="entry" valign="top" id="d49076e377">Description</th>
+
+                <th class="entry" valign="top" id="d49076e380">IPs</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e374 ">Controller server O/S (x3)</td>
+
+                <td class="entry" valign="top" headers="d49076e377 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e380 ">3</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e374 ">Controller VIP</td>
+
+                <td class="entry" valign="top" headers="d49076e377 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e380 ">1</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e374 ">Compute servers (2nd thru 100th)</td>
+
+                <td class="entry" valign="top" headers="d49076e377 ">single IP per server</td>
+
+                <td class="entry" valign="top" headers="d49076e380 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e374 ">VSA VM servers</td>
+
+                <td class="entry" valign="top" headers="d49076e377 ">single IP per server</td>
+
+                <td class="entry" valign="top" headers="d49076e380 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e374 ">VSA VIP per cluster</td>
+
+                <td class="entry" valign="top" headers="d49076e377 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e380 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+</div>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__mgmt_net_checklist" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e460">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e463">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e466">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">Network is untagged</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">No DHCP servers other than Helion are on the network</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">Switch PVID used to map any "internal" VLANs to untagged</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">IP CIDR</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">IP Range (Usable IPs)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 ">
+                  <p class="p">begin:</p>
+
+                  <p class="p">end:</p>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">Default IP Gateway</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e460 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e463 ">VLAN ID</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e466 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">IPMI Network</strong></p>
+
+      <p class="p">The IPMI network is used to connect the IPMI interfaces on the servers that are assigned
+        for use with implementing the cloud. For HPE ProLiant servers, the IPMI network connects to
+        the HPE iLO management device port for the server. This network is used by Cobbler to
+        control the state of the servers during baremetal deployments.</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__ipmi_net_checklist" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e578">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e581">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e584">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e578 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e581 ">Network is untagged</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e584 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e578 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e581 ">Routable to the Management Network</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e584 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e578 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e581 ">IP Subnet</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e584 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e578 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e581 ">Default IP Gateway</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e584 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">External API Network</strong></p>
+
+      <p class="p">The External network is used to connect OpenStack endpoints to an external public network
+        such as a company’s intranet or the public internet in the case of a public cloud
+        provider.</p>
+
+      <p class="p">When provisioning the IP Range, allocate sufficient IP addresses to cover both the current
+        number of servers and any planned expansion. Use the following table to help calculate the
+        requirements.</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__extapi_net_ip" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" id="d49076e662">Instance</th>
+
+                <th class="entry" valign="top" id="d49076e665">Description</th>
+
+                <th class="entry" valign="top" id="d49076e668">IPs</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e662 ">Controller server O/S (x3)</td>
+
+                <td class="entry" valign="top" headers="d49076e665 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e668 ">3</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d49076e662 ">Controller VIP</td>
+
+                <td class="entry" valign="top" headers="d49076e665 "> </td>
+
+                <td class="entry" valign="top" headers="d49076e668 ">1</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__extapi_net_checklist" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e717">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e720">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e723">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e717 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e720 ">VLAN Tag assigned:</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e723 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e717 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e720 ">IP CIDR</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e723 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e717 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e720 ">IP Range (Usable IPs)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e723 ">
+                  <p class="p">begin:</p>
+
+                  <p class="p">end:</p>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e717 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e720 ">Default IP Gateway</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e723 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e717 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e720 ">VLAN ID</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e723 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">External VM Network</strong></p>
+
+      <p class="p">The External VM network is used to connect cloud instances to an external public network
+        such as a company’s intranet or the public internet in the case of a public cloud provider.
+        The external network has a predefined range of Floating IPs which are assigned to individual
+        instances to enable communications to and from the instance to the assigned corporate
+        intranet/internet. There should be a route between the External VM and External API networks
+        so that instances provisioned in the cloud, may access the Cloud API endpoints, using the
+        instance floating IPs.</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__extvm_net_checklist" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e815">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e818">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e821">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e815 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e818 ">VLAN Tag assigned:</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e821 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e815 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e818 ">IP CIDR</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e821 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e815 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e818 ">IP Range (Usable IPs)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e821 ">
+                  <p class="p">begin:</p>
+
+                  <p class="p">end:</p>
+
+                </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e815 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e818 ">Default IP Gateway</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e821 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e815 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e818 ">VLAN ID</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e821 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="preinstall_checklist__deployer"><h2 class="title sectiontitle">Deployer</h2>
+      <p class="p">This server contains the HPE Helion OpenStack installer, which is based on Git, Ansible,
+        and Cobbler.</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__table_d2v_mk4_ht" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e913">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e916">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e919">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 ">Disk Requirement: Single 8GB disk needed per the <a class="xref" href="../hardware.html">Minimum Hardware Requirements</a></td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 "><a class="xref" href="install_entryscale_kvm.html#install_kvm__setup_deployer">Set up
+                    the Deployer using the hLinux ISO</a></td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 ">Ensure your local DNS nameserver is placed into your /etc/resolv.conf
+                  file</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 ">Install and configure NTP for your environment</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 ">Ensure your NTP server(s) is placed into your /etc/ntp.conf file</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 ">NTP time source:</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e913 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e916 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e919 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">VLAN Information for Troubleshooting</strong></p>
+
+      <div class="p">From your deployer, run the following command and use this information for your
+          <samp class="ph codeph">nic_mappings.yml</samp> file:
+        <pre class="pre codeblock">sudo lspci -D |grep -i eth</pre>
+</div>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__nic_mappings" class="table" frame="border" border="1" rules="all">
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="100%" id="d49076e1029">NIC Adapter PCI Bus Address Output</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="100%" headers="d49076e1029 ">
+                  <pre class="pre codeblock">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </pre>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="preinstall_checklist__control_plane"><h2 class="title sectiontitle">Control Plane</h2>
+      <p class="p">The Control Plane consists of three servers, in a highly available cluster, that host the
+        core HPE Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
+        Swift, Ceilometer, and Horizon. Additional services include mysql, ip-cluster, apache2,
+        rabbitmq, memcached, zookeeper, kafka, influxDB, storm, monasca, logging, and cmc.</p>
+
+      <p class="p"><strong class="ph b">Control Plane 1</strong></p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__cp_1" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e1078">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e1081">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e1084">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1078 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1081 ">Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1084 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1078 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1081 ">Ensure the disks are wiped</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1084 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1078 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1081 ">MAC address of first NIC</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1084 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1078 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1081 ">A second NIC, or a set of bonded NICs are required</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1084 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1078 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1081 ">iLO IP address</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1084 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1078 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1081 ">iLO Username/Password</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1084 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">Control Plane 2</strong></p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__cp_2" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e1176">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e1179">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e1182">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1176 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1179 ">Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1182 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1176 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1179 ">Ensure the disks are wiped</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1182 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1176 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1179 ">MAC address of first NIC</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1182 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1176 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1179 ">A second NIC, or a set of bonded NICs are required</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1182 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1176 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1179 ">iLO IP address</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1182 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1176 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1179 ">iLO Username/Password</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1182 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p"><strong class="ph b">Control Plane 3</strong></p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__cp_3" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e1275">☐</th>
+
+                <th class="entry" valign="top" width="600pt" id="d49076e1278">Item</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e1281">Value</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1275 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1278 ">Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1281 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1275 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1278 ">Ensure the disks are wiped</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1281 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1275 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1278 ">MAC address of first NIC</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1281 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1275 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1278 ">A second NIC, or a set of bonded NICs are required</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1281 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1275 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1278 ">iLO IP address</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1281 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1275 "> </td>
+
+                <td class="entry" valign="top" width="600pt" headers="d49076e1278 ">iLO Username/Password</td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1281 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="preinstall_checklist__compute"><h2 class="title sectiontitle">Compute Hosts</h2>
+      <p class="p">One or more KVM Compute servers will be used as the compute host targets for instances.</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__table_m3w_32p_ht" class="table" frame="border" border="1" rules="all">
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e1375">☐</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e1378">Item</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1375 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1378 ">Disk Requirement: 2x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1375 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1378 ">A NIC for PXE boot and a second NIC, or a NIC for PXE and a set of bonded
+                  NICs are required</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1375 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1378 ">Ensure the disks are wiped</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p">Table to record your Compute host details:</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__table_odl_z2p_ht" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="75pt" id="d49076e1437">ID</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1440">NIC MAC Address</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1443">iLO Username/Password</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1446">iLO IP Address</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1449">CPU/Mem/Disk</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="75pt" headers="d49076e1437 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1440 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1443 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1446 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1449 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="75pt" headers="d49076e1437 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1440 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1443 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1446 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1449 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="75pt" headers="d49076e1437 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1440 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1443 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1446 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1449 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="preinstall_checklist__vsa"><h2 class="title sectiontitle">VSA Hosts</h2>
+      <p class="p">One or more servers with local disk volumes running HPE StoreVirtual VSA to provide Cinder
+        block storage resources.</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__vsa_reqs" class="table" frame="border" border="1" rules="all">
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25pt" id="d49076e1521">☐</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e1524">Item</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1521 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1524 ">Disk Requirement: 3x 512 GB disks (or enough space to create three logical
+                  drives with that amount of space)</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1521 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1524 ">A NIC for PXE boot and a second NIC, or a NIC for PXE ad a set of bonded NICs
+                  are required</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25pt" headers="d49076e1521 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1524 ">Ensure the disks are wiped</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+      <p class="p">Table to record your VSA host details:</p>
+
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="preinstall_checklist__vsa_loc" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="75pt" id="d49076e1585">ID</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1588">NIC MAC Address</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1591">iLO Username/Password</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1594">iLO IP Address</th>
+
+                <th class="entry" valign="top" width="75pt" id="d49076e1597">CPU/Mem/Disk</th>
+
+                <th class="entry" valign="top" width="NaN%" id="d49076e1601">VSA Data Volume</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="75pt" headers="d49076e1585 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1588 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1591 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1594 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1597 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1601 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="75pt" headers="d49076e1585 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1588 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1591 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1594 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1597 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1601 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="75pt" headers="d49076e1585 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1588 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1591 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1594 "> </td>
+
+                <td class="entry" valign="top" width="75pt" headers="d49076e1597 "> </td>
+
+                <td class="entry" valign="top" width="NaN%" headers="d49076e1601 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="preinstall_checklist__comments"><h2 class="title sectiontitle">Additional Comments</h2>
+      <p class="p">This section is so you can add any additional information that you deem necessary</p>
+
+      <pre class="pre codeblock">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </pre>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

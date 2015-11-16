@@ -1,0 +1,49 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page displays the alarms for the Networking (Neutron), DNS, Firewall, and Load Balancing services. By default, alarms are sorted by most recent and in a table format. Search and Sort The search ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Networking - Alarm Summary"></meta><meta name="abstract" content="This page displays the alarms for the Networking (Neutron), DNS, Firewall, and Load Balancing services. By default, alarms are sorted by most recent and in a table format."></meta><meta name="description" content="This page displays the alarms for the Networking (Neutron), DNS, Firewall, and Load Balancing services. By default, alarms are sorted by most recent and in a table format."></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="networking_alarm_summary"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Networking - Alarm Summary</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="networking_alarm_summary">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Networking - Alarm Summary</h1>
+      <div class="body conbody"><p class="shortdesc">This page displays the alarms for the Networking (Neutron), DNS, Firewall, and Load     Balancing services. By default, alarms are sorted by most recent and in a table     format.</p>
+     <div class="section"><h2 class="title sectiontitle">Search and Sort</h2>              <p class="p">The search bar allows you to filter the alarms you want to view. Type and Status are         examples of alarm criteria that can be specified. Additionally, you can filter by typing in         text similar to searching by keywords.</p>
+       <p class="p">The checkbox allows you to select (or deselect) a group of alarms and apply a single         condition on the selected alarms:</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">Select Visible</span> allows you to set a condition on selected alarms           from the table.</li>
+         <li class="li"><span class="ph uicontrol">Select All</span> allows you to set a condition on all the alarms from           the table.</li>
+         <li class="li"><span class="ph uicontrol">Clear Selection</span> allows you to clear all the selections currently           selected from the table.</li>
+       </ul>
+       <p class="p">You can display the alarms by grid, list or table views by selecting the corresponding         icons next to the <span class="ph uicontrol">Sort By</span> control.</p>
+       <p class="p">The <span class="ph uicontrol">Sort By</span> control contains a drop-down list of ways by which you         can sort the alarms. Alternatively, you can also sort using the column headers in the         table.</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">Sort by State</span> displays the alarms by reported status of           <strong class="ph b">OK</strong>, <strong class="ph b">Warning</strong>, <strong class="ph b">Error</strong>, and <strong class="ph b">Unknown</strong></li>
+         <li class="li"><span class="ph uicontrol">Sort by Alarm</span> displays the alarms by name.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Alarm ID</span> displays the alarms UUID.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Last Check</span> displays the alarms by the date and timestamp           of the most recent occurence.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Dimension</span> displays the alarms by device, hostname and           service which they belong to.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Condition</span> displays the alarms by whether the alarm is             <strong class="ph b">Open</strong>, <strong class="ph b">Acknowledged</strong>, or <strong class="ph b">Resolved</strong>.</li>
+       </ul>
+     </div>
+     <div class="section"><h2 class="title sectiontitle">Alarm Table</h2>              <p class="p">Each row has a checkbox to allow you to select multiple alarms and set the same condition         on them.</p>
+       <p class="p">The <strong class="ph b">State</strong> column displays a graphical indicator that shows the state of each         alarm:</p>
+       <ul class="ul">         <li class="li">Green square (or green indicator): OK. Good operating state.</li>
+         <li class="li">Yellow diamond (or yellow indicator): Warning. Low severity, not requiring immediate           action.</li>
+         <li class="li">Red ball (or red indicator): Alarm. Varying severity levels and must be addressed.</li>
+         <li class="li">Gray square (or gray indicator): Undetermined.</li>
+       </ul>
+       <p class="p">The <strong class="ph b">Alarm</strong> column identifies the alarm by the name it was given when it was         originally created. </p>
+       <p class="p">The <strong class="ph b">Last Check</strong> column displays the date and time the most recent occurence of the         alarm.</p>
+       <p class="p">The <strong class="ph b">Dimension</strong> column describes the components to check in order to clear the         alarm.</p>
+       <p class="p">The <strong class="ph b">Condition</strong> column shows the current condition of each alarm. </p>
+       <p class="p">The last column, depicted by three dots, reveals an <strong class="ph b">Actions</strong> menu that allows you to         choose:</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">View Details</span>, which opens a separate window that shows all the           information from the table view and the alarm history. This window also allows you set the           condition on the alarm to another condition. Note, the condition the alarm is currently           set to is not selectable, as indicated by the grayed-out button. </li>
+         <li class="li"><span class="ph uicontrol">Set Condition</span>, which opens a separate window that allows you to           directly apply a condition (<em class="ph i">Open</em>, <em class="ph i">Acknowledged</em>, or <em class="ph i">Resolved</em>) to that           alarm, which can be used for tracking and sorting purposes.</li>
+       </ul>
+     </div>
+   </div>
+ <div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

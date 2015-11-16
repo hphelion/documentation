@@ -1,0 +1,583 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="A typical HPE Helion OpenStack cloud consists of multiple servers which makes locating a specific log from a single server difficult. The HPE Helion OpenStack Centralized Logging feature helps the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Centralized Logging Service"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="logging"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Centralized Logging Service</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="logging">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Centralized Logging Service</h1>
+
+  <div class="body">
+
+    <p class="p">A typical HPE Helion OpenStack cloud consists of multiple servers which makes locating a
+      specific log from a single server difficult. The HPE Helion OpenStack Centralized Logging
+      feature helps the administrator triage and troubleshoot the distributed cloud deployment from
+      a single location.</p>
+
+    <p class="p">The Centralized Logging feature collects logs on a central system, rather than leaving the
+      logs scattered across the network. The administrator can use a single Kibana interface to view
+      log information in charts, graphs, tables, histograms, and other forms.</p>
+
+    <p class="p">In addition to each of the HPE Helion OpenStack services, Centralized Logging also processes
+      logs for the following features:</p>
+
+    <ul class="ul">
+      <li class="li">HAProxy</li>
+
+      <li class="li">syslog</li>
+
+      <li class="li">keepalived</li>
+
+    </ul>
+
+    <p class="p">This document describes the Centralized Logging feature and contains the following
+      sections:</p>
+
+    <ul class="ul">
+      <li class="li"><a class="xref" href="#logging__install">Installation</a></li>
+
+      <li class="li"><a class="xref" href="#logging__components">Centralized Logging Components</a></li>
+
+      <li class="li"><a class="xref" href="#logging__retaining_logs">Log Retention Information</a></li>
+
+      <li class="li">
+        <a class="xref" href="#logging__types">Centralized Logging Data</a>
+      </li>
+
+      <li class="li">
+        <a class="xref" href="#logging__kibana">Kibana Configuration</a>
+        <ul class="ul">
+          <li class="li">
+            <a class="xref" href="#logging__interface">Logging into Kibana</a>
+          </li>
+
+        </ul>
+
+      </li>
+
+      <li class="li">
+        <a class="xref" href="#logging__troubleshooting">Using Centralized Logging to Troubleshoot
+          Issues</a>
+      </li>
+
+      <li class="li">
+        <a class="xref" href="#logging__monitoring">Monitoring Centralized Logging</a>
+      </li>
+
+      <li class="li">
+        <a class="xref" href="#logging__troubleshooting_issues">Troubleshooting Centralized Logging
+          Issues</a>
+      </li>
+
+      <li class="li">
+        <a class="xref" href="#logging__info">For More Information</a>
+      </li>
+
+    </ul>
+
+    <div class="section" id="logging__install"><h2 class="title sectiontitle">Installation</h2>
+      
+      <p class="p">The Centralized Logging feature is automatically installed as part of the HPE Helion
+        OpenStack installation. The base logging levels will be tuned during installation according
+        to the amount of RAM allocated to your control plane nodes to ensure optimum
+        performance.</p>
+
+      <p class="p">No specific configuration is required to use Centralized Logging. However, you can tune or
+        configure the individual components as needed for your environment as detailed in the <a class="xref" href="../administration/configure_logging.html">Configuration the Centralized Logging
+          Service</a> page.</p>
+
+    </div>
+
+    <div class="section" id="logging__components"><h2 class="title sectiontitle">Centralized Logging Components</h2>
+      
+      <p class="p">Centralized logging consists of several components, detailed below:</p>
+
+      <ul class="ul">
+        <li class="li">
+          <p class="p">
+            <strong class="ph b">Beaver</strong> is a python daemon that takes information in log files and sends the
+            content to RabbitMQ.</p>
+
+        </li>
+
+        <li class="li">
+          <p class="p">
+            <strong class="ph b">RabbitMQ</strong> is a message broker for collection of logging data across nodes.</p>
+
+        </li>
+
+        <li class="li">
+          <p class="p">
+            <strong class="ph b">logstash</strong> is a log processing system for receiving, processing and outputting
+            logs. logstash retrieves logs from RabbitMQ, processes and enriches the data, then
+            stores the data in Elasticsearch.</p>
+
+        </li>
+
+        <li class="li">
+          <p class="p">
+            <strong class="ph b">Elasticsearch</strong> is a data store offering fast indexing and querying.</p>
+
+        </li>
+
+        <li class="li">
+          <p class="p">
+            <strong class="ph b">Kibana</strong> is a client-side JavaScript application to visualize the data in
+            Elasticsearch through a web browser. Kibana enables you to create charts and graphs
+            using the log data.</p>
+
+        </li>
+
+        <li class="li"><strong class="ph b">Curator</strong> is a tool provided by Elasticsearch to manage indices.</li>
+
+      </ul>
+
+      <p class="p">These components are configured to work out-of-the-box and the admin should be able to view
+        log data using the default configurations.</p>
+
+      <p class="p">At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON
+        messages to RabbitMQ on the controller0 (management controller) node. Logstash connects to
+        RabbitMQ to read queued messages and process the messages according to the Logstash
+        configuration file. Logstash then forwards the processed log files in Elasticsearch. Users
+        can use the Kibana interface to view and analyze the information, as shown in the following
+        figure:</p>
+
+      <p class="p">
+        <br xmlns="http://www.w3.org/1999/xhtml" /><img class="image" src="../../media/centralized_logging_diagram.png"></img><br xmlns="http://www.w3.org/1999/xhtml" />
+      </p>
+
+      <div class="note note"><span class="notetitle">Note:</span> The arrows come <strong class="ph b">from</strong> the active (requesting) side <strong class="ph b">to</strong> the passive
+        (listening) side. The active side is always the one providing credentials, so the arrows may
+        also be seen as coming from the credential holder to the application requiring
+        authentication.</div>
+
+    </div>
+
+    <div class="section" id="logging__retaining_logs"><h2 class="title sectiontitle">Log Retention Information</h2>
+      <p class="p">The logs that are centrally stored are saved to persistent storage as Elasticsearch
+        indices. These indices are stored in the partition <samp class="ph codeph">/var/lib/elasticsearch</samp>
+        on each of the Elasticsearch cluster nodes. Out of the box, each days worth of logs is
+        stored in one Elasticsearch index. As days goes by, the number of indices stored in this
+        disk partition grows, eventually filling up the partition. Each of these indices takes up
+        CPU and memory if they are "open," so if they are left unattended these indices could
+        continue to consume system resources and eventually deplete them.</p>
+
+      <p class="p">Elasticsearch, by itself, doesn't prevent this from happening.</p>
+
+      <p class="p">HPE Helion OpenStack uses a tool called "curator" that is developed by the Elasticsearch
+        community to handle these situations. HPE Helion OpenStack ships with an hourly cron job that
+        uses curator in conjunction with several configurable settings. This cron job does the
+        following checks:</p>
+
+      <ul class="ul">
+        <li class="li">First Check - The hourly cron job checks if the current used Elasticsearch partition
+          size is over the <samp class="ph codeph">curator_low_watermark_percent</samp> value. If it is, then
+          curator will be run to delete old indices per the
+            <samp class="ph codeph">curator_num_of_indices_to_keep</samp> setting.</li>
+
+        <li class="li">Second Check - Another check is made to verify the partition size is below the high
+          watermark percent. If it is still too high, curator will be run again to delete all
+          indices except the current one that is over the
+            <samp class="ph codeph">curator_max_index_size_in_gb</samp> size.</li>
+
+        <li class="li">Third Check - A third check is made and if the partition size is still too high, curator
+          will be run to delete all indices except the current one.</li>
+
+        <li class="li">Final Check - A final check is made and if the partition size is still high an error
+          message is written to the log file but the current index is NOT deleted.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="logging__types"><h2 class="title sectiontitle">Centralized Logging Data</h2>
+      
+      <p class="p">The following table lists the types of logs collected by Centralized Logging and provides
+        information on how the logs are maintained.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d94755e300">Data name</th>
+
+              <th class="entry" valign="top" id="d94755e303">Confidentiality</th>
+
+              <th class="entry" valign="top" id="d94755e306">Integrity</th>
+
+              <th class="entry" valign="top" id="d94755e309">Availability</th>
+
+              <th class="entry" valign="top" id="d94755e312">Backup?</th>
+
+              <th class="entry" valign="top" id="d94755e316">Description</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Log records</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Restricted</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">Medium</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">No</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">Log records have a limited life, and are not archived. The log file on the
+                local filesystem provides a fallback source of logging data (up to 20GB or 45 days)
+                if the logging system fails.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Log metadata</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Restricted</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">Medium</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">No</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">Elasticsearch indexes logged data to allow flexible searching.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Credentials</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Confidential</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">Medium</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">No</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">Credentials for access to Elasticsearch and RabbitMQ are stored in
+                configuration files owned by root with mode 0600.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Kibana metadata</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Confidential</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">No</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">Kibana stores its search queries, visualizations and dashboards in the
+                ".kibana" index. This index will be replicated across Elasticsearch cluster nodes
+                and is highly available.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Monitoring metrics</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Restricted</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">Yes</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">Monasca Server stores the various logging metrics and alarm-definitions. These
+                are managed by Monasca.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Beaver configuration</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Restricted</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">Yes</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">These are backed up as part of deployer repo changes maintained by the
+                administrator.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Logrotate configuration</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Restricted</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">Yes</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">These are backed up as part of deployer repo changes maintained by the
+                administrator.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d94755e300 ">Curator configuration</td>
+
+              <td class="entry" valign="top" headers="d94755e303 ">Restricted</td>
+
+              <td class="entry" valign="top" headers="d94755e306 ">High</td>
+
+              <td class="entry" valign="top" headers="d94755e309 ">Medium</td>
+
+              <td class="entry" valign="top" headers="d94755e312 ">Yes</td>
+
+              <td class="entry" valign="top" headers="d94755e316 ">Cron job to periodically run and keep the old Elasticsearch indices
+                pruned/closed. These are backed up as part of deployer repos changes maintained by
+                the administrator.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="logging__kibana"><h2 class="title sectiontitle">Kibana Configuration</h2>
+      
+      <p class="p">You can use the Kibana dashboards to view log data. Kibana is a tool developed to create
+        charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash.</p>
+
+      <p class="p">While creating Kibana dashboards is beyond the scope of this document, it is important to
+        know that you can use the default Kibana dashboards or create custom dashboards. The
+        dashboards are JSON files that you can modify or create new dashboards based on existing
+        dashboards.</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> Kibana is client-side software. To operate properly, the browser must be able to access
+        port 5601 on the control plane.</div>
+
+    </div>
+
+    <div class="section" id="logging__interface"><h2 class="title sectiontitle">Logging into Kibana</h2>
+      
+      <p class="p">There are two ways to access Kibana:</p>
+
+      <ul class="ul">
+        <li class="li">Through the <strong class="ph b">Logging Dashboard</strong> option in the Operations Console</li>
+
+        <li class="li">Direct link via port 5601 on the Horizon VIP address</li>
+
+      </ul>
+
+      <p class="p">Details:</p>
+
+      <p class="p"><strong class="ph b">Operations Console method</strong> - Access the <a class="xref" href="monitoring_service.html#monitoring__working">Operations
+        Console</a>.</p>
+
+      <p class="p">Navigate to the <strong class="ph b">Logging Dashboard</strong> via the menu.</p>
+
+      <p class="p"><strong class="ph b">Direct Access method</strong></p>
+
+      <p class="p">If your administrator set a hostname value for <samp class="ph codeph">external_name</samp> in your
+          <samp class="ph codeph">network_groups.yml</samp> file during the configuration process for your cloud
+        then Kibana will be accessed over port 5061 on that hostname.</p>
+
+      <p class="p">If your administrator did not set a hostname value then in order to determine which IP
+        address to use to access Kibana you can use this command from your lifecycle-manager
+        node:</p>
+
+      <pre class="pre codeblock">grep vip-HZN-WEB /etc/hosts</pre>
+
+      <p class="p">The output of that command will show you the virtual IP address for Kibana that you should
+        use. Access to Kibana will be over port 5601 of that virtual IP address. Example:</p>
+
+      <pre class="pre codeblock">http://&lt;VIP&gt;:5601</pre>
+
+      <p class="p"><strong class="ph b">Login Credentials</strong></p>
+
+      <p class="p">The default username for Kibana is <samp class="ph codeph">kibana</samp> and the password is randomized
+        during installation. To retrieve it, look in the following directory on your
+        lifecycle-manager node:</p>
+
+      <pre class="pre codeblock">~/scratch/ansible/next/hos/ansible/group_vars/</pre>
+
+      <p class="p">In that directory you will have a file for your control plane node and you will need to
+        GREP for the <samp class="ph codeph">logging_kibana_password</samp>. For example, if you were using the
+        Entry-scale KVM with VSA model and you kept the default naming scheme in the example files
+        then your command would look similar to this:</p>
+
+      <pre class="pre codeblock">grep logging_kibana_password entry-scale-kvm-vsa-control-plane-1</pre>
+
+    </div>
+
+    <div class="section" id="logging__troubleshooting"><h2 class="title sectiontitle">Using Centralized Logging to Troubleshoot Issues</h2>
+      <p class="p">You can troubleshoot service-specific issues by reviewing the logs. After logging into
+        Kibana, follow these steps to load the logs for viewing:</p>
+
+      <ol class="ol">
+        <li class="li">Navigate to the <strong class="ph b">Settings</strong> menu to configure an index pattern to search for.</li>
+
+        <li class="li">In the <strong class="ph b">Index name or pattern</strong> field, you can enter <samp class="ph codeph">logstash-*</samp> to
+          query all elasticsearch indices.</li>
+
+        <li class="li">Click the green <strong class="ph b">Create</strong> button to create and load the index.</li>
+
+        <li class="li">Navigate to the <strong class="ph b">Discover</strong> menu to load the index and make it available to
+          search.</li>
+
+      </ol>
+
+      <div class="note note"><span class="notetitle">Note:</span> If you want to search specific elasticsearch indices, you can run <samp class="ph codeph">curl
+          localhost:9200/_cat/indices?v</samp> from the control plane to get a full list of
+        available indices.</div>
+
+      <p class="p">Once the logs load you can change the timeframe from the dropdown in the upper-righthand
+        corner of the Kibana window. You have the following options to choose from:</p>
+
+      <ul class="ul">
+        <li class="li">Quick - a variety of time frame choices will be available here</li>
+
+        <li class="li">Relative - allows you to select a start time relative to the current time to show this
+          range</li>
+
+        <li class="li">Absolute - allows you to select a date range to query</li>
+
+      </ul>
+
+      <p class="p">When searching there are common fields you will want to use, such as:</p>
+
+      <ul class="ul">
+        <li class="li">type - this will include the service name, such as <samp class="ph codeph">keystone</samp> or
+            <samp class="ph codeph">ceilometer</samp></li>
+
+        <li class="li">host - you can specify a specific host to search for in the logs</li>
+
+        <li class="li">file - you can specify a specific log file to search</li>
+
+      </ul>
+
+      <p class="p">For more details on using Kibana and Elasticsearch to query logs, see <a class="xref" href="https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html" target="_blank">https://www.elastic.co/guide/en/kibana/3.0/working-with-queries-and-filters.html</a></p>
+
+    </div>
+
+    <div class="section" id="logging__monitoring"><h2 class="title sectiontitle">Monitoring Centralized Logging</h2>
+      <p class="p">To help keep abreast of potential logging issues and resolve issues before they affect
+        logging, you may wish to monitor the Centralized Logging Alarms. To do so:</p>
+
+      <ol class="ol">
+        <li class="li">Log in to the Operations Console GUI</li>
+
+        <li class="li">Navigate to the Alarm Definitions page from the menu button in the upper left
+          corner</li>
+
+        <li class="li">Find the alarm definitions that are applied to the various hosts. See the <a class="xref" href="alarms.html#alarmdefinitions__logging">Logging Alarm Definitions List</a> for
+          the Centralized Logging Alarm Definitions.</li>
+
+        <li class="li">Navigate to the Alarms page</li>
+
+        <li class="li">Find the alarm definitions applied to the various hosts. These should match the alarm
+          definitions in the <a class="xref" href="alarms.html#alarmdefinitions__logging">Logging Alarm
+            Definitions List</a>.</li>
+
+        <li class="li">See if the alarm is green (good) or is in a bad state. If any are in a bad state, see
+          the possible actions to perform in the <a class="xref" href="alarms.html#alarmdefinitions__logging">Logging Alarms Definitions List</a>.</li>
+
+      </ol>
+
+      <p class="p">You can use this filtering technique in the "Alarms" page to look for the following:</p>
+
+      <ol class="ol">
+        <li class="li">To look for Processes that may be down, filter for "Process" then make sure the process
+          are up: <ol class="ol" type="a">
+            <li class="li">Elasticsearch</li>
+
+            <li class="li">Logstash</li>
+
+            <li class="li">RabbitMQ</li>
+
+            <li class="li">Beaver</li>
+
+            <li class="li">Apache</li>
+
+          </ol>
+</li>
+
+      </ol>
+
+      <p class="p">To look for sufficient Disk space, filter for "Disk"</p>
+
+      <p class="p">To look for sufficient RAM Memory, filter for "Memory"</p>
+
+    </div>
+
+    <div class="section" id="logging__troubleshooting_issues"><h2 class="title sectiontitle">Troubleshooting Centralized Logging Issues</h2>
+      <p class="p"><strong class="ph b">Situations In Which Logs Might Not Be Collected</strong></p>
+
+      <p class="p">Centralized logging might not collect log data under the following circumstances:</p>
+
+      <ul class="ul">
+        <li class="li">If the Beaver service is not running on one or more of the nodes (controller or
+          compute), logs from these nodes will not be collected.</li>
+
+        <li class="li">Beaver watches the log files for any additions and only pushes the incremental log
+          records for centralized logging. It does not parse all the existing log records in the log
+          files that were added <strong class="ph b">before</strong> Beaver started watching those files. Similarly, if
+          Beaver was stopped for some reason and then started again later, the logs that were added
+          during the time span that Beaver was not running will not be collected for centralized
+          logging.</li>
+
+        <li class="li">The logging service uses a RabbitMQ queue and this queue is not persistent. This means,
+          if the RabbitMQ service on the master node is restarted for some reason, all messages that
+          are not yet consumed by the logstash workers might be lost.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="logging__info"><h2 class="title sectiontitle">For More Information</h2>
+      
+      <p class="p">For information the centralized logging components, use the following links:</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="http://logstash.net/docs" target="_blank">Logstash</a></li>
+
+        <li class="li"><a class="xref" href="http://www.elasticsearch.org/guide" target="_blank">Elasticsearch</a></li>
+
+        <li class="li"><a class="xref" href="http://www.elasticsearch.org/blog/scripting-security" target="_blank">Elasticsearch Scripting and Security</a></li>
+
+        <li class="li"><a class="xref" href="http://beaver.readthedocs.org" target="_blank">Beaver</a></li>
+
+        <li class="li"><a class="xref" href="http://www.rabbitmq.com/" target="_blank">RabbitMQ</a></li>
+
+        <li class="li"><a class="xref" href="http://www.elasticsearch.org/guide/en/kibana/current/index.html" target="_blank">Kibana Dashboard</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

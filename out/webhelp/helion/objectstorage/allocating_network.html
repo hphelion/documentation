@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This topic describes Swift’s requirements for which service components must exist in the input model and how these relate to the network model. This information is useful if you are creating a cluster ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Understanding Swift Network and Service Requirements"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_pcj_hzv_dt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Understanding Swift Network and Service Requirements</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_pcj_hzv_dt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Understanding Swift Network and Service
+    Requirements</h1>
+
+  <div class="body">
+    <div class="p">This topic describes Swift’s requirements for which service components must exist in the
+      input model and how these relate to the network model. This information is useful if you are
+      creating a cluster or resource node, or when defining the networks used by Swift. The network
+      model allows many options and configurations. For smooth Swift operation, the following must
+      be <strong class="ph b">true</strong>:<ul class="ul" id="topic_pcj_hzv_dt__ul_ggm_rkc_jt">
+        <li class="li">The following services must have a <strong class="ph b">direct</strong> connection to the same network:<ul class="ul" id="topic_pcj_hzv_dt__ul_x1c_5kc_jt">
+            <li class="li"><samp class="ph codeph">swift-proxy</samp></li>
+
+            <li class="li"><samp class="ph codeph">swift-account</samp></li>
+
+            <li class="li"><samp class="ph codeph">swift-container</samp></li>
+
+            <li class="li"><samp class="ph codeph">swift-object</samp></li>
+
+            <li class="li"><samp class="ph codeph">swift-ring-builder</samp></li>
+
+          </ul>
+</li>
+
+        <li class="li">The <samp class="ph codeph">swift-proxy</samp> service must have a <strong class="ph b">direct</strong> connection to the
+          same network as the <samp class="ph codeph">cluster-ip</samp> service.</li>
+
+        <li class="li">The <samp class="ph codeph">swift-proxy</samp> service must be <strong class="ph b">co-located</strong> in the same cluster
+          as the <samp class="ph codeph">swift-proxy</samp> service.</li>
+
+        <li class="li">The memcached service must be configured on a cluster of the control plane. In small
+          deployments, it is convenient to run it on the same cluster as the horizon service. For
+          larger deployments, with many nodes running the <samp class="ph codeph">swift-proxy</samp> service, it
+          is better to <strong class="ph b">co-locate</strong> the <samp class="ph codeph">swift-proxy</samp> and
+            <samp class="ph codeph">memcached</samp> services. The <samp class="ph codeph">swift-proxy</samp> and
+            <samp class="ph codeph">swift-container</samp> services must have a <strong class="ph b">direct</strong> connection to the
+          same network as the <samp class="ph codeph">memcached</samp> service.</li>
+
+        <li class="li">The<samp class="ph codeph"> swift-proxy</samp> and <samp class="ph codeph"> swift-ring-builder</samp> service must
+          be <strong class="ph b">co-located</strong> in the same cluster of the control plane.</li>
+
+        <li class="li">The<samp class="ph codeph"> ntp-client</samp> service must be <strong class="ph b">present</strong> on all Swift nodes.</li>
+
+      </ul>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

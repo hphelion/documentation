@@ -1,0 +1,131 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 enables you to modify various Swift service configuration files. The following Swift service configuration files are located on a deployer/lifecycle-manager node in the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Customizing Swift Service Configuration Files"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_rdf_hkp_rt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Customizing Swift Service Configuration Files</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_rdf_hkp_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Customizing Swift Service Configuration Files </h1>
+
+  <div class="body">
+    <div class="p">HPE Helion OpenStack 2.0 enables you to modify various Swift service configuration files. The
+      following Swift service configuration files are located on a deployer/lifecycle-manager node
+      in the location /<samp class="ph codeph">home/stack/helion/my_cloud/config/swift/</samp>:<ul class="ul" id="topic_rdf_hkp_rt__ul_i2n_clp_rt">
+        <li class="li"><samp class="ph codeph">account-server.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">container-reconciler.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">container-server.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">container-sync-realms.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">object-expirer.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">object-server.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">proxy-server.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">rsyncd.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">swift.conf.j2</samp></li>
+
+        <li class="li"><samp class="ph codeph">swift-recon.j2</samp></li>
+
+      </ul>
+</div>
+
+    <p class="p">There are many configuration options that can be set or changed, including <strong class="ph b">container rate
+        limit</strong> or <strong class="ph b">log level</strong>.</p>
+
+    <div class="section" id="topic_rdf_hkp_rt__configuring-swift-contianer-rate-limit"><strong class="ph b">Configuring Swift Container Rate
+        Limit</strong><p class="p">The Swift container rate limit allows you to limit the number of <strong class="ph b">PUT</strong> and
+          <strong class="ph b">DELETE</strong> requests of an object based on the number of objects in a container. For
+        example, suppose the <strong class="ph b">container_ratelimit_x = r </strong>. It means that for containers of size
+          <strong class="ph b">x</strong>, limit requests per second to <strong class="ph b">r</strong>.</p>
+<p class="p">To enable container rate
+        limiting:</p>
+<ol class="ol" id="topic_rdf_hkp_rt__ol_a23_tlp_rt">
+        <li class="li">Login to the Deployer.</li>
+
+        <li class="li">Edit the <strong class="ph b">DEFAULT</strong> section of
+            <samp class="ph codeph">/home/stack/helion/my_cloud/config/swift/proxy-server.conf.j2</samp>:<pre class="pre codeblock">container_ratelimit_0 = 100
+container_ratelimit_1000000 = 100
+container_ratelimit_5000000 = 50</pre>
+This
+          will set the <strong class="ph b">PUT</strong> and <strong class="ph b">DELETE</strong> object rate limit to 100 requests per second for
+          containers with up to 1,000,000 objects. Also, the <strong class="ph b">PUT</strong> and <strong class="ph b">DELETE</strong> rate for
+          containers with between 1,000,000 and 5,000,000 objects will vary linearly from between
+          100 and 50 requests per second as the container object count increases.</li>
+
+        <li class="li">Commit your
+          changes:<pre class="pre codeblock">git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+        <li class="li">Run the configuration
+          processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Create a deployment
+          directory:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Run the <samp class="ph codeph">swift-reconfigure.yml</samp> playbook to reconfigure the Swift
+          servers:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre>
+</li>
+
+      </ol>
+</div>
+
+    <div class="section" id="topic_rdf_hkp_rt__modifying-swift-account-server-logging-level"><strong class="ph b">Customizing Swift Account Server
+        Logging Level</strong><div class="p">By default the Swift logging level is set to <strong class="ph b">INFO</strong>. <div class="note note"><span class="notetitle">Note:</span> As a best practice, do not set
+          log level for a long period.</div>
+</div>
+<div class="p">Perform the following
+        steps to set the logging level of the <samp class="ph codeph">account-server</samp> to <strong class="ph b">DEBUG</strong>:<ol class="ol" id="topic_rdf_hkp_rt__ol_ff4_mnp_rt">
+          <li class="li">Login to the Deployer.</li>
+
+          <li class="li">Edit the <strong class="ph b">DEFAULT</strong> section of <samp class="ph codeph">
+              /home/stack/helion/my_cloud/config/swift/account-server.conf.j2</samp>:<pre class="pre codeblock">[DEFAULT]
+.
+.
+log_level = DEBUG</pre>
+</li>
+
+          <li class="li">Commit your
+            changes:<pre class="pre codeblock">git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+          <li class="li">Run the configuration
+            processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+          <li class="li">Create a deployment
+            directory:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+          <li class="li">Run the <samp class="ph codeph">swift-reconfigure.yml</samp> playbook to reconfigure the Swift
+            servers:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre>
+</li>
+
+        </ol>
+</div>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

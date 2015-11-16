@@ -1,0 +1,64 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Ceph is an open source, scalable, software-defined storage (SDS) platform that provides block and object storage with unified management. The HPE Helion OpenStack 2.0 Ceph Storage Solution provides an ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Ceph Overview"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="ceph_overview"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Ceph Overview</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ceph_overview">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+    <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Ceph Overview</h1>
+
+    <div class="body">
+        <div class="section"><p class="p">Ceph is an open source, scalable, software-defined storage (SDS) platform that
+                provides block and object storage with unified management.</p>
+<p class="p">The HPE Helion
+                OpenStack 2.0 Ceph Storage Solution provides an unified, scalable, and stable
+                storage solution for the management of the HPE Helion OpenStack Volume Storage
+                (Cinder persistent Volumes) service. </p>
+For more information about installation,
+            configuration, and integration between HPE Helion OpenStack: 2.0 and Ceph Firefly 0.80.7
+            running on the hlinux kernel 3.14.44-1, see <a class="xref" href="../../installation/configure_ceph.html">HPE Helion OpenStack 2.0: Configuring for Ceph Block Storage Backend</a>.<p class="p">HPE Helion OpenStack introduces
+                the concept of cloud models, where the user can modify the YAML to provide the
+                required configuration based on their environment. To deploy Ceph, and make
+                configuration changes, you must modify the cloud input model files related to
+                Ceph.</p>
+<div class="p">You can implementing the input model and perform the following Ceph activities:<ul class="ul">
+                    <li class="li"><a class="xref" href="../../installation/configure_ceph.html">HPE Helion OpenStack 2.0: Configuring for Ceph Block Storage Backend</a></li>
+
+                    <li class="li"><a class="xref" href="adding_new_osd_node.html">HPE Helion OpenStack 2.0: Adding an Object Storage Daemon (OSD) Node</a></li>
+
+                    <li class="li"><a class="xref" href="adding_new_monitor_node.html">HPE Helion OpenStack 2.0: Adding a New Ceph Monitor Node</a></li>
+
+                    <li class="li"><a class="xref" href="deploy_monitor_stand_alone_node.html">HPE Helion OpenStack 2.0: Deploying Ceph Monitor Services on Dedicated Resource Nodes</a></li>
+
+                    <li class="li"><a class="xref" href="defining_monitor_resource.html">HPE Helion OpenStack 2.0: Defining a Ceph Monitor Resource</a></li>
+
+                    <li class="li"><a class="xref" href="reconfigure_ceph_services.html">HPE Helion OpenStack 2.0: Reconfiguring Ceph Services</a></li>
+
+                    <li class="li"><a class="xref" href="remove_osd_node.html">HPE Helion OpenStack 2.0: Removing Object Storage Daemon (OSD) Node</a></li>
+
+                    <li class="li"><a class="xref" href="remove_monitor_node.html">HPE Helion OpenStack 2.0: Removing Ceph Monitor Node</a></li>
+
+                    <li class="li"><a class="xref" href="ceph_operation.html">HPE Helion OpenStack 2.0: Starting, Stopping, and Status for Ceph</a></li>
+
+                </ul>
+</div>
+</div>
+
+        <div class="note note"><span class="notetitle">Note:</span> Ceph upgrade is a built-in, integral part of the HPE Helion Lifecycle Management
+            upgrade, and is in line with rest of the supported services. In HPE Helion OpenStack
+            2.0, the supported version of Ceph is Firefly 0.80.7. In upcoming HPE Helion OpenStack
+            releases, new versions of Ceph will be supported and the cluster can be upgraded to new
+            releases. You should not use other releases of Ceph (for example, Firefly 0.80.10) and
+            run Ceph upgrade verbs to upgrade the cluster. Doing this might cause a cluster
+            stability issue.</div>
+
+    </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

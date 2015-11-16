@@ -1,0 +1,255 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 LBaaS Configuration Load Balancing as a Service (LBaaS) is an advanced networking service that allows load balancing of multi-node environments. It provides the ability to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Using Load Balancing as a Service (LBaaS)"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="HP2.0LBaaS"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Using Load Balancing as a Service (LBaaS)</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="HP2.0LBaaS">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Using Load Balancing as a Service
+    (LBaaS)</h1>
+
+  <div class="body">
+    <p class="p"><strong class="ph b">HPE Helion OpenStack 2.0 LBaaS Configuration</strong></p>
+
+    <p class="p"> Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
+      balancing of multi-node environments. It provides the ability to spread requests across
+      multiple servers thereby reducing the load on any single server. This document describes  the
+      configuration for LBaaS v1 and v2.</p>
+
+
+    <p class="p">HPE Helion OpenStack 2.0 can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
+      customer requirements. Check with your administrator for the version that is installed before
+      starting your configuration. </p>
+
+ 
+ 
+    <div class="section" id="HP2.0LBaaS__Configuration"><h2 class="title sectiontitle">Configuration</h2>
+      
+      <p class="p">HPE Helion OpenStack 2.0 LBaaS Configuration</p>
+
+      
+      <div class="sectiondiv">
+        <p class="p"><strong class="ph b">Create Private Network for LBaaS</strong></p>
+
+          
+        <p class="p">You can create the new network and router by executing the following command from the deployer or a shell with access to the API nodes.</p>
+
+        <ol class="ol">
+          <li class="li">Run the following commands to create a private network and a router.
+            <pre class="pre codeblock">neutron net-create private
+neutron subnet-create --name sub private 10.1.0.0/24 --gateway 10.1.0.1
+neutron router-create router
+neutron router-interface-add router sub
+neutron router-gateway-set router ext-net</pre>
+</li>
+
+        </ol>
+
+      </div>
+      
+      <div class="sectiondiv">
+      <p class="p"><strong class="ph b">Start Virtual Machines</strong></p>
+
+      <ol class="ol">
+        <li class="li">Add security group rules. <div class="note note"><span class="notetitle">Note:</span> In the example below the load balancer is tested on port
+              80. If you need to test the load balancer on a different port you will need to create
+              a security group rule for your port number.</div>
+
+            <pre class="pre codeblock">neutron security-group-rule-create default --protocol icmp
+neutron security-group-rule-create default --protocol tcp --port-range-min 22 --port-range-max 22
+neutron security-group-rule-create default --protocol tcp --port-range-min 80 --port-range-max 80</pre>
+</li>
+
+        <li class="li">Start two VMs on the private network. 
+          <pre class="pre codeblock">## Start vm1
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$(neutron net-list | awk '/private/ {print $2}') vm1
+            
+## start vm2
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$(neutron net-list | awk '/private/ {print $2}') vm2</pre>
+</li>
+
+        <li class="li">Check if the VMs are active.
+          <pre class="pre codeblock">nova list</pre>
+</li>
+
+        <li class="li">You will need to assign floating IP's to the VM's so you can access them from the
+            external network. Get the port id's of the vm1 and vm2 instances.
+            <pre class="pre codeblock">fixedip_vm1=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+fixedip_vm2=$(nova list | awk '/vm2/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+            
+portuuid_vm1=$(neutron port-list | grep $fixedip_vm1 | awk '{print $2}')
+portuuid_vm2=$(neutron port-list | grep $fixedip_vm2 | awk '{print $2}')</pre>
+</li>
+
+        <li class="li">Create the associated floating IP addresses to the vm1 and vm2 instances.
+          <pre class="pre codeblock">neutron floatingip-create ext-net –-port-id $portuuid_vm1
+neutron floatingip-create ext-net –-port-id $portuuid_vm2</pre>
+</li>
+
+        <li class="li">Verify if the floating ip is assigned to the instance. Executing the following commands should show the assigned floating ips.
+          <pre class="pre codeblock">nova show vm1
+nova show vm2</pre>
+</li>
+
+      </ol>
+
+      </div>
+      
+      <div class="sectiondiv">
+      <p class="p"><strong class="ph b">Create Load Balancer v2</strong></p>
+
+      <ol class="ol">
+        <li class="li">Create the new load balancer using the <samp class="ph codeph">lbaas-loadbalancer-create</samp> command and giving the load balancer a name and subnet. 
+          <div class="note note"><span class="notetitle">Note:</span> The creation of the Load Balancer requires a tenant network and not an external network. </div>
+
+          <pre class="pre codeblock">neutron lbaas-loadbalancer-create --name lb sub</pre>
+</li>
+
+        <li class="li">Create a new listener for the load balancer using the
+              <samp class="ph codeph">lbaas-listener-create</samp> command and giving the listener the name of the
+            load balancer, the protocol, the protocol port and a name for the listener.
+            <pre class="pre codeblock">neutron lbaas-listener-create --loadbalancer lb --protocol HTTP --protocol-port=&lt;port&gt; --name listener</pre>
+</li>
+
+        <li class="li">Create a new pool for the load balancer using the <samp class="ph codeph">lbaas-pool-create</samp> command.  Creating a new pool requires
+          the load balancing algorithm, the name of the listener, the protocol and a name for the pool.
+          <pre class="pre codeblock">neutron lbaas-pool-create --lb-algorithm ROUND_ROBIN --listener listener --protocol HTTP --name pool</pre>
+</li>
+
+        <li class="li">You can add members to the load balancer pool by running the
+              <samp class="ph codeph">lbaas-member-create</samp> command. The command requires the subnet, IP
+            address, protocol port and the name of the pool for each virtual machine you'd like to
+            include into the load balancer pool.
+            <pre class="pre codeblock">neutron lbaas-member-create --subnet sub --address &lt;ip address vm1&gt; --protocol-port &lt;port&gt; pool
+neutron lbaas-member-create --subnet sub --address &lt;ip address vm2&gt; --protocol-port &lt;port&gt; pool</pre>
+</li>
+
+        <li class="li">Display the current state of the load balancer and values with <samp class="ph codeph">lbaas-loadbalancer-show</samp>.
+          <pre class="pre codeblock">neutron lbaas-loadbalancer-show lb</pre>
+</li>
+
+        <li class="li">You need to assign the floating IP to lbaas VIP so it could be accessed from external
+            network.
+            <pre class="pre codeblock">fixedip_vip=$(neutron lbaas-loadbalancer-list | awk '/lb/ {print $6}')
+portuuid_vip=$(neutron port-list | grep $fixedip_vip | awk '{print $2}')</pre>
+</li>
+
+        <li class="li">Create and associate floating IP address to lbaas VIP address.
+            <pre class="pre codeblock">neutron floatingip-create ext-net –-port-id $portuuid_vip</pre>
+</li>
+
+      </ol>
+
+      </div>
+      
+      <div class="sectiondiv">
+       <p class="p"><strong class="ph b">Create Load Balancer v1</strong></p>
+
+         <ol class="ol">
+          <li class="li">Create the load balancer pool with <samp class="ph codeph">lb-pool-create</samp> giving it a method, name, protocol and subnet.
+          <pre class="pre codeblock">neutron lb-pool-create --lb-method ROUND_ROBIN --name pool --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</pre>
+</li>
+
+          <li class="li">Create load balancing members with <samp class="ph codeph">lb-member-create</samp> providing the IP
+            address, protocol and load balancing pool name to each member.
+            <pre class="pre codeblock">neutron lb-member-create --address &lt;ip address vm1&gt; --protocol-port &lt;port&gt; pool
+neutron lb-member-create --address &lt;ip address vm2&gt; --protocol-port &lt;port&gt; pool</pre>
+</li>
+
+          <li class="li">Create the vip with <samp class="ph codeph">lb-vip-create</samp> giving it a name, protocol,
+            protocol port and a subnet.
+            <pre class="pre codeblock">neutron lb-vip-create --name vip --protocol-port &lt;port&gt; --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}') pool</pre>
+</li>
+
+          <li class="li">You can check to see if the load balancer is active with <samp class="ph codeph">lb-vip-show</samp>
+          <pre class="pre codeblock">neutron lb-vip-show vip</pre>
+</li>
+
+        </ol>
+
+      </div>
+      
+      <div class="sectiondiv">
+      <p class="p"><strong class="ph b">Validate LBaaS Functionality</strong></p>
+
+        <div class="note note"><span class="notetitle">Note:</span> You should perform the following steps from a node that has a route to the private
+          network. Using the examples from above, 10.1.0.0/24 should be reachable. </div>
+
+        <ol class="ol">
+          <li class="li">SSH into both vm1 and vm2 in two separate windows and make them listen on your
+            configured port. </li>
+
+          <li class="li">From one
+            window.<pre class="pre codeblock">ssh cirros@&lt;ip address vm1&gt;
+pass: &lt;password&gt;</pre>
+</li>
+
+          <li class="li">From another window.
+            <pre class="pre codeblock">ssh cirros@&lt;ip address vm2&gt;
+pass: &lt;password&gt;</pre>
+</li>
+
+          <li class="li">Start running web servers on both of the virtual machines.</li>
+
+          <li class="li">Create a webserv.sh script with below contents.  In this example, the port is
+            80.<pre class="pre codeblock">$ vi webserv.sh
+              
+#!/bin/ash
+              
+MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+while true; do
+    echo -e "HTTP/1.0 200 OK\r\n\r\nWelcome to $MYIP" | sudo nc -l -p 80
+done
+              
+## Give it Exec rights
+$ chmod 755 webserv.sh
+              
+## Start webserver
+$ ./webserv.sh</pre>
+</li>
+
+          <li class="li">Open a separate window. From the respective source node in external network (in case
+            of accessing LBaaS VIP thorough its FIP) or in private network (in case of no FIP), add
+            the respective IP address to the no_proxy env variable, if required. You can get the
+              <em class="ph i">VIP</em> from the <samp class="ph codeph">neutron lbaas-loadbalancer-list</samp> for LBaaS v2 and
+              <samp class="ph codeph">neutron lb-vip-list</samp> for LBaaS v1.</li>
+
+          <li class="li">Run the following commands to test load balancing. In this example, the VIP IP address
+            is 10.1.0.7 and when executing curl against the VIP, the responses are returned from the
+            load balanced
+            services.<pre class="pre codeblock">$ export no_proxy=$no_proxy,10.1.0.7
+              
+## Curl the VIP
+$ curl 10.1.0.7
+Welcome to 10.1.0.4
+             
+$ curl 10.1.0.7
+Welcome to 10.1.0.5
+              
+$ curl 10.1.0.7
+Welcome to 10.1.0.4</pre>
+</li>
+
+        </ol>
+
+      </div>
+    </div>
+
+    
+    <div class="section" id="HP2.0LBaaS__MoreInfo"><h2 class="title sectiontitle">More Information</h2>
+      
+      <p class="p">For more information on the neutron command-line interface (CLI) and load balancing, see the OpenStack networking command-line client
+      reference: <a class="xref" href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" target="_blank">http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</a></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

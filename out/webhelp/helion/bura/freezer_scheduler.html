@@ -1,0 +1,243 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Freezer Scheduler Overview This document explains, through examples, how to setup backup and restore jobs using Freezer Scheduler. The freezer scheduler is a long running process that executes the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Understanding the Freezer Scheduler"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_mlh_wtn_rt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Understanding the Freezer Scheduler</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_mlh_wtn_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Understanding the Freezer Scheduler</h1>
+
+  <div class="body">
+        <div class="section"><h2 class="title sectiontitle">Freezer Scheduler Overview</h2>
+            
+        </div>
+
+        <p class="p">This document explains, through examples, how to setup backup and restore jobs using
+            Freezer Scheduler.</p>
+
+        <div class="p">The freezer scheduler is a long running process that executes the following:<ul class="ul">
+                <li class="li">Interact with the Freezer API</li>
+
+                <li class="li">Generate a client_id to register the client on to the API (to identify the node
+                    during the next executions)</li>
+
+                <li class="li">Execute the freezer-agent according the jobs information retrieved from the
+                    API</li>
+
+                <li class="li">Write to the freezer API the outcome of the freezer-agent execution</li>
+
+            </ul>
+</div>
+
+        <div class="note note"><span class="notetitle">Note:</span> Freezer API maintains information about jobs in Elastic Search Database.</div>
+
+        <div class="section"><h2 class="title sectiontitle">Freezer Scheduler Client-ID</h2><p class="p">In HPE Helion OpenStack 2.0, Freezer Scheduler is
+                automatically installed on the deployer/lifecycle-manager node and controller
+                nodes.</p>
+<p class="p">There is a client_id for each node and its corresponds to the hostname.
+                The client_id is created at registration time. The registration is done
+                automatically when the scheduler executes any request to the API. If you want to
+                execute the registration explicitly, you can use the --register scheduler
+                option.</p>
+The following example lists all the freezer scheduler
+            clients:<pre class="pre codeblock"> root@padawan-ccp-c0-m1-mgmt:/home/stack/scratch/ansible/next/hos/ansible# freezer-scheduler  client-list
++---------------------------+---------------------------+-------------+
+|         client_id         |          hostname         | description |
++---------------------------+---------------------------+-------------+
+| padawan-ccp-comp0001-mgmt | padawan-ccp-comp0001-mgmt |             |
+|   padawan-ccp-c0-m1-mgmt  |   padawan-ccp-c0-m1-mgmt  |             |
+|   padawan-ccp-c1-m2-mgmt  |   padawan-ccp-c1-m2-mgmt  |             |
+| padawan-ccp-comp0002-mgmt | padawan-ccp-comp0002-mgmt |             |
+|   padawan-ccp-c1-m3-mgmt  |   padawan-ccp-c1-m3-mgmt  |             |
+| padawan-ccp-comp0003-mgmt | padawan-ccp-comp0003-mgmt |             |
+|   padawan-ccp-c1-m1-mgmt  |   padawan-ccp-c1-m1-mgmt  |             |
++---------------------------+---------------------------+-------------+</pre>
+</div>
+
+        <div class="section"><h2 class="title sectiontitle">Creating a Freezer Scheduler Job</h2>
+            
+        </div>
+
+        <div class="p">
+            <ol class="ol">
+                <li class="li">Log into any machine (for example, deployer or controller) and create the
+                    job.</li>
+
+                <li class="li">Remember to source the operating system variables and use the correct client_id. (The
+                    client-id corresponds to the node where the backup files/directory/database
+                    resides.)
+                    <pre class="pre codeblock">
+# source os_variables fproject fuser  cat &gt; job-backup-mysql.conf
+ 
+ 
+    {
+        "job_actions": [
+            {
+                "freezer_action": {
+                "mode" : "mysql",
+                "mysql_conf" : "/etc/mysql/debian.cnf",
+                "path_to_backup": "/var/lib/mysql/",
+                "snapshot": true,
+                "backup_name": "freezer-db-mysql",
+                "max_level": 6,
+                "max_priority": true,
+                "remove_older_than": 90,
+                "container": "freezer_backup_devstack_1"
+            },
+            "max_retries": 5,
+            "max_retries_interval": 60,
+            "mandatory": true
+            }
+        ],
+        "job_schedule" : {
+        },
+        "description": "mysql backup"
+    }</pre>
+</li>
+
+                <li class="li">If we want the backup to be executed every day at 3am, we can specify the
+                    following scheduling properties:
+                    <pre class="pre codeblock">"job_schedule" : {
+    "schedule_interval": "1 days",
+    "schedule_start_date": "2015-06-30T03:00:00"
+},</pre>
+</li>
+
+                <li class="li">Upload it into the api using the correct client_id:
+                    <pre class="pre codeblock">
+# freezer-scheduler job-create -c client_node_1 --file job-backup-mysql.conf</pre>
+</li>
+
+                <li class="li">The status of the jobs can be checked with:
+                    <pre class="pre codeblock">
+# freezer-scheduler -c client_node_1 job-list</pre>
+</li>
+
+                <li class="li">If no scheduling information is provided, the job will be executed as soon as
+                    possible so its status will go into a "running" state, then "completed".</li>
+
+            </ol>
+
+        </div>
+
+        <p class="p">You can find information about the scheduling and backup-execution in
+            /var/log/freezer-scheduler.log and /var/log/freezer.log, respectively.</p>
+
+        <div class="note note"><span class="notetitle">Note:</span> Recurring jobs never go into a "completed" state, as they go back into "scheduled"
+            state.</div>
+
+        <div class="section"><h2 class="title sectiontitle">Restore from a Different Node</h2>
+            
+            <div class="p">The scheduler can be used to restore from a different node using restore_from_host
+                parameter:
+                <pre class="pre codeblock">
+cat &gt; job-restore-mysql.conf
+{
+    "job_actions": [
+        {
+            "freezer_action": {
+                "action": "restore",
+                "restore_abs_path": "/var/lib/mysql",
+                "restore_from_host": "test_machine_1",
+                "backup_name": "freezer-db-mysql",
+                "container": "freezer_backup_devstack_1"
+            },
+        "max_retries": 5,
+        "max_retries_interval": 60,
+        "mandatory": true
+        }
+    ],
+    "description": "mysql test restore"
+}
+ 
+ 
+freezer-scheduler job-create -c client_node_1 --file job-restore-mysql.conf</pre>
+</div>
+
+        </div>
+
+        <div class="section"><h2 class="title sectiontitle">Differential Backup and Restore</h2>
+            
+            <div class="p">The difference is in the use of the parameter "always_level": 1 We also specify a
+                different container, so it's easier to spot the files created in the Swift
+                container:<pre class="pre codeblock">swift list freezer_backup_devstack_1_alwayslevel</pre>
+</div>
+
+        </div>
+
+        <div class="section"><h2 class="title sectiontitle">Example Backup Job File</h2>
+            
+            <div class="p">
+                <pre class="pre codeblock">
+cat &gt; job-backup.conf
+ 
+ {
+     "job_actions": [
+         {
+             "freezer_action": {
+             "mode" : "mysql",
+             "mysql_conf" : "/etc/mysql/debian.cnf",
+             "path_to_backup": "/var/lib/mysql/",
+             "backup_name": "freezer-db-mysql",
+             "snapshot": true,
+             "always_level": 1,
+             "max_priority": true,
+             "remove_older_than": 90,
+             "container": "freezer_backup_devstack_1_alwayslevel"
+         },
+         "max_retries": 5,
+         "max_retries_interval": 60,
+         "mandatory": true
+         }
+     ],
+     "job_schedule" : {
+     },
+     "description": "mysql backup"
+ }
+ 
+ 
+ freezer-scheduler job-create -c client_node_1 --file job-backup.conf</pre>
+
+            </div>
+
+        </div>
+
+        <div class="section"><h2 class="title sectiontitle">Example Restore Job File</h2>
+            
+            <div class="p">The restore job is the same as "Create a restore job and push it into the api":
+                <pre class="pre codeblock">
+cat &gt; job-restore.conf
+{
+    "job_actions": [
+        {
+            "freezer_action": {
+                "action": "restore",
+                "restore_abs_path": "/var/lib/mysql",
+                "restore_from_host": "test_machine_1",
+                "backup_name": "freezer-db-mysql",
+                "container": "freezer_backup_devstack_1_alwayslevel"
+            },
+        "max_retries": 5,
+        "max_retries_interval": 60,
+        "mandatory": true
+        }
+    ],
+    "description": "mysql test restore"
+}
+ 
+ 
+freezer-scheduler job-create -c client_node_1 --file job-restore.conf</pre>
+</div>
+
+        </div>
+
+    </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

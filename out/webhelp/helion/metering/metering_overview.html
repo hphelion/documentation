@@ -1,0 +1,279 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="New Metering Functionality in HPE Helion OpenStack 2.0 The default meters and other items configured for the Ceilometer API can now be modified and additional meters can be added. It is highly ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Metering Service (Ceilometer) Overview"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="layout" content="default"></meta><meta name="product-version" content="HPE Helion Openstack"></meta><meta name="product-version" content="HPE Helion Openstack 1.1"></meta><meta name="role" content="Systems Administrator"></meta><meta name="role" content="Cloud Architect"></meta><meta name="role" content="Storage Administrator"></meta><meta name="role" content="Network Administrator"></meta><meta name="role" content="Service Developer"></meta><meta name="role" content="Cloud Administrator"></meta><meta name="role" content="Application Developer"></meta><meta name="role" content="Network Engineer"></meta><meta name="role" content="Paul F"></meta><meta name="product-version1" content="HPE Helion Openstack"></meta><meta name="product-version2" content="HPE Helion Openstack 1.1"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic3111"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Metering Service (Ceilometer) Overview</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic3111">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Metering Service (Ceilometer)
+    Overview</h1>
+
+  
+  <div class="body">
+    <div class="section" id="topic3111__newfunct"><h2 class="title sectiontitle">New Metering Functionality in HPE Helion OpenStack 2.0</h2>
+      
+      <ul class="ul">
+        <li class="li"> The default meters and other items configured for the Ceilometer API can now be
+          modified and additional meters can be added. It is highly recommended that customers test
+          overall Helion OpenStack performance prior to deploying any Ceilometer modifications to
+          ensure the addition of new notifications or polling events does not negatively affect
+          overall system performance. </li>
+
+        <li class="li">Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active) </li>
+
+        <li class="li">Notification Agent has built-in HA (Active-Active) with support for pipeline
+          transformers </li>
+
+        <li class="li">Ceilometer expirer supports native HA and the ability to expire sample data instead of
+          all data within the retention period. </li>
+
+        <li class="li">SWIFT Poll-based account level meters will be enabled by default with an hourly
+          collection cycle. </li>
+
+        <li class="li">Flexible configuration for pollster and notifications. We can list different event types
+          differently for these services. </li>
+
+        <li class="li">Integrated with centralized monitoring(Monasca) and centralized logging </li>
+
+        <li class="li">Upgrade and Reconfigure Support </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="section" id="topic3111__limitations"><h2 class="title sectiontitle">Limitations</h2>
+      
+      <ul class="ul">
+        <li class="li">Since Ceilometer is currently deployed with a shared MySQL database only a limited set
+          of metrics are configured by default to ensure overall system availability and
+          performance. </li>
+
+        <li class="li">The default Ceilometer expiry is configured for 7 days. </li>
+
+        <li class="li">The Ceilometer Meter list API is configured to return no more than 20 with an open
+          ended, query sample. </li>
+
+        <li class="li">The Ceilometer Alarms API is disabled by default. HPE Helion OpenStack 2.0 provides an
+          alternative operations monitoring service that will provide support for operations
+          monitoring, alerts, and notifications use cases. </li>
+
+        <li class="li">The Ceilometer Post Meter API is disabled by default. </li>
+
+        <li class="li">No Talligent Openbook support </li>
+
+        <li class="li">The query sample API will be disabled and sample-list API can be used as an alternate
+          solution with limited functionality </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="section"><h2 class="title sectiontitle">Meters</h2>
+      <p class="p">The basic elements of information collected by the Ceilometer API are known as meters. A
+        meter is a unique measurement of a particular OpenStack service resource usage and each
+        OpenStack service defines what type of data is exposed for metering. </p>
+Each meter is
+      defined by the supporting service and each has the following characteristics: <dl class="dl">
+        
+          <dt class="dt dlterm">Name</dt>
+
+          <dd class="dd">the textual name of the meter</dd>
+
+        
+        
+          <dt class="dt dlterm">Unit of measurement</dt>
+
+          <dd class="dd">example: storage meters are defined in Gigabytes (GB) and network bandwidth is
+            measured in Gigabits (Gb)</dd>
+
+        
+        
+          <dt class="dt dlterm">Type, which can be cumulative, delta, or gauge</dt>
+
+          <dd class="dd"></dd>
+
+        
+        
+          <dt class="dt dlterm">Cumulative</dt>
+
+          <dd class="dd">increasing over time; for example: active instance hour</dd>
+
+        
+        
+          <dt class="dt dlterm">Delta</dt>
+
+          <dd class="dd">changing over time; for example: network bandwidth consumed between two different time
+            periods</dd>
+
+        
+        
+          <dt class="dt dlterm">Gauge</dt>
+
+          <dd class="dd">a discrete value; for example: # of floating IP addresses or image uploads</dd>
+
+        
+      </dl>
+ A meter is defined for every measurable resource. A meter can exist beyond the actual
+      existence of a particular resource, like an active instance, to provision long-cycle uses
+      cases like billing. <p class="p">The most common meter submission method is via notifications. With this
+        method, each service emits their respective meters on a periodic basis to a common,
+        notifications bus. </p>
+Ceilometer in turn pulls all of the events from the bus and saves the
+      notifications in a Ceilometer-specific database. The period of time that the data is collected
+      and saved is known as the ceilometer expiry and is configured during the Ceilometer
+      installation. Each meter is collected from one or more samples (gathered from the messaging
+      queue or polled by agents), which are represented by counter objects. Each counter has the
+      following fields: <dl class="dl">
+        
+          <dt class="dt dlterm">counter_name</dt>
+
+          <dd class="dd">The name. </dd>
+
+        
+        
+          <dt class="dt dlterm">counter_type</dt>
+
+          <dd class="dd">cumulative, gauge, or delta</dd>
+
+        
+        
+          <dt class="dt dlterm">counter_volume</dt>
+
+          <dd class="dd">The volume of data measured (CPU ticks, bytes transmitted, etc.). Not used for gauge
+            counters. Set to a default value such as 1</dd>
+
+        
+        
+          <dt class="dt dlterm">counter_unit</dt>
+
+          <dd class="dd"> The counter's unit of measurement. </dd>
+
+        
+        
+          <dt class="dt dlterm">resource_id</dt>
+
+          <dd class="dd">The identifier of the resource measured (UUID)</dd>
+
+        
+        
+          <dt class="dt dlterm">project_id</dt>
+
+          <dd class="dd">The project (tenant) ID the resource belongs to.</dd>
+
+        
+        
+          <dt class="dt dlterm">user_id</dt>
+
+          <dd class="dd">The ID of the user who owns the resource.</dd>
+
+        
+        
+          <dt class="dt dlterm">resource_metadata</dt>
+
+          <dd class="dd">Other data transmitted in the metering notification payload.</dd>
+
+        
+      </dl>
+</div>
+
+
+
+    <div class="section"><h2 class="title sectiontitle">Samples</h2> Samples are discrete collections of a particular meter or the
+      actual usage data defined by a meter description. Each sample is time-stamped and includes a
+      variety of data that varies per meter but usually includes the project ID and UserID of the
+      entity that consumed the resource represented by the meter and sample. <p class="p">In a typical
+        deployment, the number of samples can be in the tens of thousands if not higher for a
+        specific collection period depending on overall activity. </p>
+
+      <p class="p">Sample collection and data storage expiry settings are Ceilometer configuration options.
+        Use cases that include collecting data for monthly billing cycles are usually stored over a
+        period of 45 days and require a large, scalable, back-end database to support the large
+        volume of samples generated by production OpenStack deployments.</p>
+
+      <strong class="ph b">Example configuration:</strong>
+      <pre class="pre codeblock">[database]
+metering_time_to_live=604800  ##(in seconds) = 7 Days</pre>
+
+      External applications such as a billing application must then collect all pertinent samples,
+      sort, summarize, and combine with the results of other types of metered samples typically
+      required for a complete billing record. <p class="p">This function is known as aggregation and is
+        external to the Ceilometer service.</p>
+ Meter data, or samples, can also be collected
+      directly from the service APIs by individual Ceilometer polling agents. These polling agents
+      directly access service usage by calling the API of each service.<p class="p">OpenStack services such as
+        Swift and Ceph currently only provide metered data via this function and some of the other
+        OpenStack services provide specific metrics only via a polling action.</p>
+
+    </div>
+
+
+
+
+    <div class="section"><h2 class="title sectiontitle">Statistics, or metering the meters</h2> The Ceilometer API also provides a
+      set of statistics functions that can perform basic aggregation functions for meter specific
+      samples over a time period-defined set of samples including: <dl class="dl">
+        
+          <dt class="dt dlterm">Count</dt>
+
+          <dd class="dd">the number of discrete samples collected in each period</dd>
+
+        
+        
+          <dt class="dt dlterm">Maximum</dt>
+
+          <dd class="dd">the sample with the maximum value in a selected time period</dd>
+
+        
+        
+          <dt class="dt dlterm">Minimum</dt>
+
+          <dd class="dd">the sample with the minimum value in a selected time period</dd>
+
+        
+        
+          <dt class="dt dlterm">Average</dt>
+
+          <dd class="dd">the average value of a samples within a selected time period</dd>
+
+        
+        
+          <dt class="dt dlterm">Sum</dt>
+
+          <dd class="dd">the sum value of all samples within a selected time perio</dd>
+
+        
+      </dl>
+</div>
+
+
+
+
+    <div class="section"><h2 class="title sectiontitle">Role Based Access Control (RBAC)</h2> A user with the admin role can access
+      all API functions across all projects by default. Ceilometer also supports the ability to
+      assign who can access specific Ceilometer API functions by project and UserID. This assignment
+      is configured via the Ceilometer policy file and enables the ability to specifically grant API
+      functions to specific users for a specific project. </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

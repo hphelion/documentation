@@ -1,0 +1,107 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="In HPE Helion OpenStack 2.0, a Ceph monitor node is installed on the Controller nodes by default. A new monitor node cannot be added to an existing Ceph cluster, if Ceph is deployed with the default ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Adding a New Ceph Monitor Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_zbc_pg4_rt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Adding a New Ceph Monitor Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_zbc_pg4_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Adding a New Ceph Monitor Node</h1>
+
+  <div class="body">
+    <p class="p">In HPE Helion OpenStack 2.0, a Ceph monitor node is installed on the Controller nodes by
+      default. A new monitor node cannot be added to an existing Ceph cluster, if Ceph is deployed
+      with the default configuration. However, if monitor nodes are added on a dedicated resource
+      node, then you can add a new monitor node.</p>
+
+    <p class="p">If a monitor resource is not already defined, you will need to first define one and then add
+      the new monitor node. For instructions, see <a class="xref" href="defining_monitor_resource.html#topic_owr_kf4_rt">HPE Helion OpenStack 2.0: Defining a Ceph Monitor Resource</a>.</p>
+
+    <p class="p"><strong class="ph b">To Add a New Monitor Node</strong></p>
+
+    <div class="p">Perform the following procedure to add a new monitor node to an existing Ceph cluster:<ol class="ol" id="topic_zbc_pg4_rt__ol_zsj_134_rt">
+        <li class="li">Login to the Deployer/lifecycle-manager node.</li>
+
+        <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/servers.yml</samp> file to define a
+          new monitor node as shown
+            below:<pre class="pre codeblock">- id: mon4
+  ip-addr: 192.168.10.11
+  role: MON-ROLE
+  server-group: RACK3
+  nic-mapping: MY-2PORT-SERVER
+  mac-addr: 8b:f6:9e:ca:3b:7a
+  ilo-ip: 192.168.9.11
+  ilo-password: password
+  ilo-user: admin</pre>
+<div class="note note"><span class="notetitle">Note:</span> Substitute
+            the values in above sample as per your environment for the server being
+          added.</div>
+</li>
+
+        <li class="li">Commit your configuration:
+            <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "Added monitor node {node-id}"</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+            the <samp class="ph codeph">{node-id}</samp> in the commit message with appropriate value (for
+            example, <strong class="ph b">mon4</strong>).</div>
+</li>
+
+        <li class="li">Run the following
+          command:<pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre>
+</li>
+
+        <li class="li">To reimage all the nodes using PXE, run the following
+          command:<pre class="pre codeblock">ansible-playbook -i hosts/localhost bm-reimage.yml</pre>
+</li>
+
+        <li class="li">Run the configuration
+          processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Use the playbook below to create a deployment directory:
+          <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Run the following commands: <div class="p">
+            <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml
+ansible-playbook -i hosts/verb_hosts site.yml</pre>
+
+          </div>
+</li>
+
+      <li class="li">If you want the new compute node to be included in the monitoring service checks, there
+          is an additional playbook that must be run to ensure this happens:
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</pre>
+</li>
+
+      </ol>
+</div>
+
+    <p class="p">The new monitor node is deployed in an existing Ceph cluster.</p>
+
+    <p class="p"><strong class="ph b">To Verify the Newly-Added Monitor Node</strong></p>
+
+    <div class="p">From the Deployer/lifecycle-manager node, run the following
+        command:<pre class="pre codeblock">ceph --cluster ceph -f json quorum_status</pre>
+<div class="note note"><span class="notetitle">Note:</span> If the Ceph
+        cluster name is different than the default (i.e. ceph), you need to modify the above command
+        accordingly.</div>
+</div>
+
+    <p class="p">The newly-added monitor's host name appears in the <samp class="ph codeph">quorum_names</samp> section of
+      the output of above command.</p>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

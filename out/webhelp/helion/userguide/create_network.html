@@ -1,0 +1,189 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Prerequisites These steps assume the following have been completed: Your Administrator has created a valid External Network for your environment. Your Administrator has provided you with the IP ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Creating a Private Network"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="create_network"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Creating a Private Network</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="create_network">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Creating a Private Network</h1>
+
+  <div class="body">
+    <div class="section" id="create_network__prereqs"><h2 class="title sectiontitle">Prerequisites</h2>
+      <p class="p">These steps assume the following have been completed:</p>
+
+      <ul class="ul">
+        <li class="li">Your Administrator has created a valid External Network for your environment.</li>
+
+        <li class="li">Your Administrator has provided you with the IP address or hostname for the Horizon
+          Dashboard.</li>
+
+      </ul>
+
+      <p class="p">These steps use the pre-setup <samp class="ph codeph">demo</samp> user account in HPE Helion OpenStack 2.0.
+        If your Administrator has setup a separate user account for you then you will use those
+        credentials to access Horizon.</p>
+
+    </div>
+
+    <div class="section" id="create_network__create_router"><h2 class="title sectiontitle">Creating a Router</h2>
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Access Horizon and log in with your credentials.  Contact your Administrator if you do
+            not know your login credentials.</li>
+
+          <li class="li">Open the Create Router wizard by following these steps: <ol class="ol" type="a">
+              <li class="li">Navigate to <strong class="ph b">Routers</strong> under the Network menu.</li>
+
+              <li class="li">Click on the <strong class="ph b">Create Router</strong> button.</li>
+
+            </ol>
+
+            <p class="p"><img class="image" src="../../media/networking/create_router.png"></img></p>
+
+          </li>
+
+          <li class="li">Give your router a name and then click the Create Router button again: <ol class="ol" type="a">
+              <li class="li">Select a <strong class="ph b">Router Name</strong>.</li>
+
+              <li class="li">Select an <strong class="ph b">External Network</strong> from the drop down menu.</li>
+
+              <li class="li">Click on the <strong class="ph b">Create Router</strong> button.</li>
+
+            </ol>
+
+            <p class="p"><img class="image" src="../../media/networking/create_router_2.png"></img></p>
+
+            <p class="p">Here is what a successful outcome looks like:</p>
+
+            <p class="p"><img class="image" src="../../media/networking/create_router_3.png"></img></p>
+
+          </li>
+
+          <li class="li">To confirm your router is setup properly you can: <ol class="ol" type="a">
+              <li class="li">Click on the <strong class="ph b">Network Topology</strong> menu option and ensure it looks like the
+                screen shot below:</li>
+
+            </ol>
+
+            <p class="p"><img class="image" src="../../media/networking/create_router_4.png"></img></p>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+    <div class="section" id="create_network__create_network"><h2 class="title sectiontitle">Creating a Network and Subnet</h2>
+      <ol class="ol">
+        <li class="li">Access Horizon and login with the following credentials:
+          <pre class="pre codeblock">Username: demo
+Password: demo</pre>
+</li>
+
+        <li class="li">Open the Create Network wizard by following these steps: <ol class="ol" type="a">
+            <li class="li">Navigate to <strong class="ph b">Networks</strong> under the Network menu.</li>
+
+            <li class="li">Click on the <strong class="ph b">Create Network</strong> button.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network.png"></img></p>
+
+        </li>
+
+        <li class="li">On the first window of the create network wizard: <ol class="ol" type="a">
+            <li class="li">Choose a <strong class="ph b">Network Name</strong>.</li>
+
+            <li class="li">Select the <strong class="ph b">Next</strong> button.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_2.png"></img></p>
+</li>
+
+        <li class="li">On the second window of the create network wizard: <ol class="ol" type="a">
+            <li class="li">Choose a <strong class="ph b">Subnet Name</strong>.</li>
+
+            <li class="li">Enter a <strong class="ph b">Network Address</strong> (CIDR) for your subnet.</li>
+
+            <li class="li">Select the <strong class="ph b">Next</strong> button.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_3.png"></img></p>
+</li>
+
+        <li class="li">On the final window of the create network wizard: <ol class="ol" type="a">
+            <li class="li">Ensure that <strong class="ph b">Enable DHCP</strong> is checked.</li>
+
+            <li class="li">For a basic network setup, leave the <strong class="ph b">Allocation Pools</strong>, <strong class="ph b">DNS Name
+                Servers</strong>, and <strong class="ph b">Host Routes</strong> fields blank.</li>
+
+            <li class="li">Select <strong class="ph b">Create</strong> when finished.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_4.png"></img></p>
+
+          <p class="p">Here is what a successful outcome looks like:</p>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_5.png"></img></p>
+
+        </li>
+
+        <li class="li">Next step is to attach your subnet to your router. <ol class="ol" type="a">
+            <li class="li">Navigate to <strong class="ph b">Routers</strong> under the Network menu.</li>
+
+            <li class="li">Click on your router name to bring up it's settings.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_6.png"></img></p>
+</li>
+
+        <li class="li">Create the interface by: <ol class="ol" type="a">
+            <li class="li">Select the <strong class="ph b">Interface</strong> tab.</li>
+
+            <li class="li">Click the <strong class="ph b">Add Interface</strong> button.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_7.png"></img></p>
+</li>
+
+        <li class="li">Complete the interface creation by: <ol class="ol" type="a">
+            <li class="li">Select your subnet from the drop down menu.</li>
+
+            <li class="li">select the <strong class="ph b">Add Interface</strong> button.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_8.png"></img></p>
+
+          <div class="cautiontitle">CAUTION:</div><div class="note caution">Do not enter a value for the <samp class="ph codeph">IP Address (Optional)</samp> field as this
+            can cause other issues.</div>
+</li>
+
+        <li class="li">To confirm your router is setup properly you can: <ol class="ol" type="a">
+            <li class="li">Click on the <strong class="ph b">Network Topology</strong> menu option and ensure it looks like the screen
+              shot below:</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/networking/create_network_9.png"></img></p>
+</li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

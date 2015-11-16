@@ -1,0 +1,241 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You can use these post-installation verification steps to confirm your installation: Verifying Your Block Storage Backend Validate Your Object Storage (Swift) Setup Pre-requisites The verification ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Verifying the Installation"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="install_verification"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Verifying the Installation</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="install_verification">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Verifying the Installation</h1>
+
+  <div class="body">
+    
+    <div class="section" id="install_verification__about">
+      <p class="p">You can use these post-installation verification steps to confirm your installation:</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="#install_verification__volume_verify">Verifying Your Block Storage
+            Backend</a></li>
+
+        <li class="li"><a class="xref" href="#install_verification__swift_verify">Validate Your Object Storage (Swift)
+            Setup</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="install_verification__prereqs"><h2 class="title sectiontitle">Pre-requisites</h2>
+      <p class="p">The verification tests rely on you having a cloud image in your image (Glance) repository.
+        There is an ansible playbook that will assist in this process by downloading a Cirros linux
+        image from the internet and upload it to your repository. See <a class="xref" href="../administration/upload_image.html">Uploading an Image for Use</a> for details
+        on how to complete this step.</p>
+
+    </div>
+
+    <div class="section" id="install_verification__volume_verify"><h2 class="title sectiontitle">Verifying Your Block Storage Backend</h2>
+      <p class="p">The sections below will show you the steps to verify that your Block Storage backend was
+        setup properly.</p>
+
+    </div>
+
+    
+    <div class="section" id="install_verification__create-volume"><h2 class="title sectiontitle">Create a Volume</h2>
+      
+      <p class="p">Perform the following steps to create a volume using Horizon dashboard.</p>
+
+      <ol class="ol">
+        <li class="li">Log into the Horizon dashboard. See <a class="xref" href="../operations/accessing_horizon.html">Accessing Horizon</a> for details.</li>
+
+        <li class="li">Under the <strong class="ph b">Project</strong> menu in the navigation pane, click on <strong class="ph b">Volumes</strong> under the
+            <strong class="ph b">Compute</strong> subheading. <p class="p"><img class="image" src="../../media/vsa/createvol1.png"></img></p>
+</li>
+
+        <li class="li">On the <strong class="ph b">Volumes</strong> tabs, click the <strong class="ph b">Create Volume</strong> button to create a volume.
+              <p class="p"><img class="image" src="../../media/vsa/createvol2.png"></img></p>
+</li>
+
+        <li class="li">In the <strong class="ph b">Create Volume</strong> options, enter the required details into the fields and then
+          click the <strong class="ph b">Create Volume</strong> button: <ol class="ol" type="a">
+            <li class="li">Volume Name - This is the name you specify for your volume.</li>
+
+            <li class="li">Description (optional) - This is an optional description for the volume.</li>
+
+            <li class="li">Type - Select the volume type you have created for your volumes from the drop
+              down.</li>
+
+            <li class="li">Size (GB) - Enter the size, in GB, you would like the volume to be.</li>
+
+            <li class="li">Availability Zone - You can either leave this at the default option of <strong class="ph b">Any
+                Availability Zone</strong> or select a specific zone from the drop down.</li>
+
+          </ol>
+
+          <p class="p"><img class="image" src="../../media/vsa/createvol3.png"></img></p>
+</li>
+
+      </ol>
+
+      <p class="p">The dashboard will then show the volume you have just created.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Attach Volume to an Instance</h2>
+      
+      <p class="p">Perform the following steps to attach a volume to an instance:</p>
+
+      <ol class="ol">
+        <li class="li">Log into the Horizon dashboard. See <a class="xref" href="../operations/accessing_horizon.html">Accessing Horizon</a> for details.</li>
+
+        <li class="li">Under the <strong class="ph b">Project</strong> menu in the navigation pane, click the <strong class="ph b">Instances</strong> under
+          the <strong class="ph b">Compute</strong> subheading.</li>
+
+        <li class="li">In the <strong class="ph b">Action</strong> column, choose the <strong class="ph b">Edit Attachments</strong> in the menu drop down
+          box next to the instance you want to attach the volume to.</li>
+
+        <li class="li">In the <strong class="ph b">Attach To Instance</strong> drop-down, select the volume that you want to
+          attach.</li>
+
+        <li class="li">Edit the <strong class="ph b">Device Name</strong> if necessary.</li>
+
+        <li class="li">Click <strong class="ph b">Attach Volume</strong> to complete the action.</li>
+
+        <li class="li">Verify that the volume you attached is displayed in the <strong class="ph b">Attached To </strong>columns on
+          the <strong class="ph b">Volumes</strong> screen.</li>
+
+      </ol>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Detach Volume from Instance</h2>
+      
+      <div class="p">Perform the following steps to detach the volume from instance: <ol class="ol">
+          <li class="li">Log into the Horizon dashboard. See <a class="xref" href="../operations/accessing_horizon.html">Accessing Horizon</a> for details.</li>
+
+          <li class="li">Under the <strong class="ph b">Project</strong> menu in the navigation pane, click the <strong class="ph b">Instances</strong> under
+            the <strong class="ph b">Compute</strong> subheading.</li>
+
+          <li class="li">Click the check box next to the name of the volume you want to detach. </li>
+
+          <li class="li">In the <strong class="ph b">Action</strong> column, choose the <strong class="ph b">Edit Attachments</strong> in the menu drop down
+            box next to the instance you want to attach the volume to.</li>
+
+          <li class="li">Click <strong class="ph b">Detach Attachment</strong>. A confirmation dialog box appears.</li>
+
+          <li class="li">Click <strong class="ph b">Detach Attachment</strong> to confirm the detachment of the volume from the
+            associated instance.</li>
+
+        </ol>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Delete Volume </h2>
+      
+      <p class="p">Perform the following steps to delete a volume using Horizon dashboard:</p>
+
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Log into the Horizon dashboard. See <a class="xref" href="../operations/accessing_horizon.html">Accessing Horizon</a> for details.</li>
+
+          <li class="li">Under the <strong class="ph b">Project</strong> menu in the navigation pane, click on <strong class="ph b">Volumes</strong> under
+            the <strong class="ph b">Compute</strong> subheading. <p class="p"><img class="image" src="../../media/vsa/createvol1.png"></img></p>
+</li>
+
+          <li class="li">In the <strong class="ph b">Actions</strong> column, click <strong class="ph b">Delete Volume</strong> next to the volume you would
+            like to delete. <p class="p"><img class="image" src="../../media/vsa/delvol1.png"></img></p>
+</li>
+
+          <li class="li">To confirm and delete the volume, click <strong class="ph b">Delete Volume</strong> again. <p class="p"><img class="image" src="../../media/vsa/delvol2.png"></img></p>
+</li>
+
+          <li class="li">Verify that the volume was removed from the <strong class="ph b">Volumes</strong> screen.</li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="install_verification__swift_verify"><h2 class="title sectiontitle">Verifying Your Object Storage (Swift)</h2>
+      <p class="p"><strong class="ph b">Validate That All Servers Have Been Added to the Swift Rings</strong></p>
+
+      <ol class="ol">
+        <li class="li">Run the _swift-validate-input-model.yml playbook as follows:
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml</pre>
+</li>
+
+        <li class="li">Search for output similar to the following. Specifically, look at the number of drives
+          that are proposed to be added.
+          <pre class="pre codeblock">TASK: [swiftlm-ring-supervisor | validate-input-model | Print report] ********* 
+ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
+    "var": {
+        "report.stdout_lines": [
+            "Need to add 0 devices", 
+            "Need to remove 0 devices", 
+            "Need to set weight on 0 devices"
+        ]
+     }
+}</pre>
+</li>
+
+        <li class="li">If the text contains "Need to add 0 devices" then the deploy was successful and no
+          further action is needed.</li>
+
+        <li class="li">If there are more drives need to be added, it indicates that the deploy failed on some
+          nodes and that you restarted the deploy to include those nodes. However, the nodes are not
+          in the Swift rings because enough time has not elapsed to allow the rings to be rebuilt.
+          You have two options to continue: <ol class="ol" type="a">
+            <li class="li">Repeat the deploy. There are two steps involved as follows: <ol class="ol" type="i">
+                <li class="li">Delete the ring builder files as described in <a class="xref" href="../objectstorage/restart_deploy_from_scratch.html">Restarting the Object Storage Deployment
+                    </a>.</li>
+
+                <li class="li">Repeat the installation process starting by running the
+                    <samp class="ph codeph">site.yml</samp> playbook as described in the <a class="xref" href="install_entryscale_kvm.html#install_kvm__deploy">Deploy the Cloud</a>
+                  section of the installation instructions.</li>
+
+              </ol>
+</li>
+
+            <li class="li">Rebalance the rings several times until all drives are incorporated in the rings.
+              This process may take several hours to complete (because you need to wait one hour
+              between each rebalance). The steps are as follows: <ol class="ol" type="i">
+                <li class="li">Change the min-part-time to 1 hour. See <a class="xref" href="../objectstorage/how_to_change_min_part_time.html">Changing
+                    min-part-time in Swift</a>.</li>
+
+                <li class="li">Use the "First phase of ring rebalance" and "Final rebalance phase" as described
+                  in <a class="xref" href="../objectstorage/input_model_change_existing_rings.html">Applying
+                    Input Model Changes to Existing Rings</a>. The "Weight change phase of ring
+                  rebalance" does not apply because you have not set the weight-step attribute at this
+                  stage.</li>
+
+                <li class="li">Set the min-part-time to the recommended 16 hours as described in <a class="xref" href="../objectstorage/how_to_change_min_part_time.html">How to Change
+                    min-part-time.</a></li>
+
+              </ol>
+</li>
+
+          </ol>
+</li>
+
+      </ol>
+
+      <p class="p">If you receive errors during the validation, read the <a class="xref" href="../objectstorage/interpreting_swift_validate_input_model.html">Interpreting the
+          Swift Validate Input Model Output</a> documentation.</p>
+
+      <p class="p"><strong class="ph b">Verify the Object Storage (Swift) Operations</strong></p>
+
+      <p class="p">Full details on how to verify the operations can be found in <a class="xref" href="../objectstorage/check_objectstorage_operation.html">Checking Object Storage
+          Status</a>.</p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

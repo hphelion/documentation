@@ -1,0 +1,90 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Rings are built during a deployment and this process sets the weights of disk drives such that smaller disk drives have a smaller weight than larger disk drives. When making changes in the ring, you ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_t1y_vjs_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_t1y_vjs_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</h1>
+
+  <div class="body">
+    <p class="p">Rings are built during a deployment and this process sets the weights of disk drives such
+      that smaller disk drives have a smaller weight than larger disk drives. When making changes in
+      the ring, you should limit the amount of change that occurs. HPE Helion OpenStack 2.0 does this
+      by limiting the weights of the new drives to a smaller value and then building new rings. Once
+      the replication process has finished, HPE Helion OpenStack 2.0 will increase the weight and
+      rebuild rings to trigger another round of replication. (For more information, see <a class="xref" href="rebalanced_explained.html#topic_izw_1mz_4t">HPE Helion OpenStack 2.0: Rebalancing Object Storage Rings</a>.)</p>
+
+    <p class="p">In addition, you should become familiar with how the replication process behaves on your
+      system during normal operation. Before making ring changes, use the
+        <samp class="ph codeph">swift-recon</samp> command to determine the typical oldest replication times for
+      your system. For instructions, see <a class="xref" href="safe_rebalance_deploy_ring.html">Determining
+        When it is Safe to Rebalance and Deploy a New Ring</a>.</p>
+
+    <p class="p">In HPE Helion OpenStack, the weight-step attribute is set in the ring specification of the
+      input model. The weight-step value specifies a maximum value for the change of the weight of a
+      drive in any single rebalance. For example, if you add a drive of 4TB, you would normally
+      assign a weight of 4096. However, if the weight-step attribute is set to 1024, when you add a
+      drive, the weight is initially set to 1024. The next time you rebalance the ring, the weight
+      is set to 2048. Yet another rebalance sets the weight to the final value of 4096.</p>
+
+    <p class="p">The value of the weight-step attribute is dependent on the size of the drives, number of the
+      servers being added, and how experienced you are with the replication process. A common
+      starting value is to use 20 percent of the size of the drives. For example, for 4TB drives a
+      value of 820 would be appropriate. As you gain more experience with your system, you may
+      increase or reduce this value.</p>
+
+    <div class="section" id="topic_t1y_vjs_4t__setting-weight-step-attribute"><div class="sectiondiv"><strong class="ph b">Setting the weight-step attribute</strong></div><div class="p">Perform the following steps to set the weight-step attribute:<ol class="ol" id="topic_t1y_vjs_4t__ol_dl2_bdy_4t">
+          <li class="li">Edit the <samp class="ph codeph">data/swift/rings.yml</samp> file containing the ring-specifications
+            in the input model.</li>
+
+          <li class="li">Search the attributes of a ring. In the following example we are setting the attribute
+            for the account ring. Repeat this procedure for the container and object
+            rings.<pre class="pre codeblock">- name: account
+  display-name: Account Ring
+  min-part-time: 16
+  ...</pre>
+</li>
+
+          <li class="li">Add the weight-step
+              attribute:<pre class="pre codeblock">- name: account
+  <strong class="ph b">weight-step: &lt;value&gt;</strong>
+  display-name: Account Ring
+  min-part-time: 16
+  ...</pre>
+<div class="p">For
+              example, to set weight-step to 820, add the
+              attribute:<pre class="pre codeblock">- name: account
+  weight-step: <strong class="ph b">820</strong>
+  display-name: Account Ring
+  min-part-time: 16
+  ...</pre>
+</div>
+</li>
+
+          <li class="li">Repeat step 3 for other rings (container, object-0, etc).</li>
+
+          <li class="li">Run the configuration processor:
+            <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+          <li class="li">Use the playbook to create a deployment directory:
+            <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        </ol>
+</div>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

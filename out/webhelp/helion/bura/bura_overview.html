@@ -1,0 +1,173 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Freezer is a Backup and Restore as a Service platform that helps you automate the backup and restore process for your data. Freezer executes backups and restores as jobs, and executes these jobs ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Backing Up and Restoring Your Data"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="bura_overview"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Backing Up and Restoring Your Data</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bura_overview">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Backing Up and Restoring Your Data</h1>
+
+  <div class="body">
+    <p class="p">Freezer is a Backup and Restore as a Service platform that helps you automate the backup and
+      restore process for your data. Freezer executes backups and restores as jobs, and executes
+      these jobs independently and/or as managed sessions (multiple jobs in multiple machines
+      sharing a state).</p>
+
+    <p class="p">HPE Helion OpenStack<sup>®</sup> 2.0 supports backup and restore of control plane
+      services. It comes with playbooks and procedures to recover the control plane from various
+      disaster scenarios.</p>
+
+    <p class="p">The following features are supported:</p>
+
+    <ul class="ul" id="bura_overview__ul_pg4_5s3_dt">
+      <li class="li">Back up your file system using point in time snapshot.</li>
+
+      <li class="li">Strong encryption: AES-256-CFB.</li>
+
+      <li class="li">Back up your MySQL database with LVM snapshot.</li>
+
+      <li class="li">Restore your data from a specific date automatically to your file system.</li>
+
+      <li class="li">Low storage consumption: the backups are uploaded as a stream. </li>
+
+      <li class="li">Flexible backup policy (both incremental and differential). </li>
+
+      <li class="li">Data is archived in GNU Tar format for file-based incremental. </li>
+
+      <li class="li">Multiple compression algorithm support (zlib, bzip2, xz). </li>
+
+      <li class="li">Remove old backup automatically according the provided parameters. </li>
+
+      <li class="li">Multiple storage media support (Swift, local file system, SSH). </li>
+
+      <li class="li">Manage multiple jobs (multiple backups on the same node).</li>
+
+      <li class="li">Synchronize backups and restore on multiple nodes.</li>
+
+      <li class="li">Execute scripts/commands before or after a job execution.</li>
+
+    </ul>
+
+    <div class="section"><h2 class="title sectiontitle">Architecture</h2>
+      
+      <p class="p">Freezer uses GNU Tar under the hood to execute incremental backup and restore. When a key
+        is provided, it uses Open SSL to encrypt data (AES-256-CFB).</p>
+
+      <p class="p">Freezer architecture consists of the following components:</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="bura_overview__table_vkv_st3_dt" class="table" frame="border" border="1" rules="all">
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" align="left" valign="top" width="123pt" id="d10582e113">Component</th>
+
+              <th class="entry" align="left" valign="top" width="372.75pt" id="d10582e116">Description</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+       
+            <tr class="row">
+              <td class="entry" align="left" valign="top" width="123pt" headers="d10582e113 ">Freezer Scheduler</td>
+
+              <td class="entry" align="left" valign="top" width="372.75pt" headers="d10582e116 ">A client side component running on the node from where the data backup is
+                executed. It consists of a daemon that retrieves the data from the freezer API and
+                executes jobs (that is, backups, restore, admin actions, info actions, and pre-
+                and/or post- job scripts) by running the Freezer Agent. The metrics and exit codes
+                returned by the Freezer Agent are captured and sent to the Freezer API. <p class="p">The
+                  scheduler manages the execution and synchronization of multiple jobs executed on a
+                  single node or multiple nodes. The status of the execution of all the nodes is
+                  saved through the API. </p>
+The Freezer scheduler takes care of uploading jobs to
+                the API by reading job files on the file system. It also has its own configuration
+                file where job sessions or other settings such as the Freezer API polling interval
+                can be configured.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" align="left" valign="top" width="123pt" headers="d10582e113 ">Freezer Agent </td>
+
+              <td class="entry" align="left" valign="top" width="372.75pt" headers="d10582e116 ">Multiprocessing Python software that runs at the client side where the data
+                backup is executed. It can be executed as a standalone or by the Freezer Scheduler.
+                The freezerc provides a flexible way to execute backup, restore, and perform other
+                actions on a running system. <p class="p">To provide flexibility in terms of data integrity,
+                  speed, performance, resources usage, and so on, the Freezer Agent offers a wide
+                  range of options to execute optimized backup according the available resources,
+                  such as: </p>
+
+                <ul class="ul" id="bura_overview__ul_o43_253_dt">
+                  <li class="li">Segments size (the amount of memory used) </li>
+
+                  <li class="li">Queues size (optimize backups where I/O, bandwidth, memory, or CPU is a
+                    constraint) </li>
+
+                  <li class="li">I/O Affinity and process priority (can be used with real time I/O and maximum
+                    user level process priority) </li>
+
+                  <li class="li">Bandwidth limitation</li>
+
+                  <li class="li">Client side Encryption (AES-256-CFB)</li>
+
+                  <li class="li">Compression (multiple algorithms supported as zlib, bzip2, xz/lzma)</li>
+
+                  <li class="li">Parallel upload to pluggable storage media (that is, upload backup to Swift
+                    and to a remote node by SSH, or upload to two or more independent Swift
+                    instances with different credentials, and so on) </li>
+
+                  <li class="li">Execute file-based incremental (such as tar), block-based incremental (such as
+                    rsync algorithm), and differential-based backup and restore</li>
+
+                  <li class="li">Multi platform: you can run it on hLinux, Windows, *BSD, and OSX </li>
+
+                  <li class="li">Automatic removal of old backups</li>
+
+                </ul>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" align="left" valign="top" width="123pt" headers="d10582e113 ">Freezer API </td>
+
+              <td class="entry" align="left" valign="top" width="372.75pt" headers="d10582e116 ">Stores and provides metadata to the  Freezer
+                Scheduler. Also stores session information for multi node backup synchronization.
+                Workload data is not stored in the API . </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" align="left" valign="top" width="123pt" headers="d10582e113 ">DB Elasticsearch </td>
+
+              <td class="entry" align="left" valign="top" width="372.75pt" headers="d10582e116 ">API uses the backend to store and retrieve metrics metadata sessions
+                information job status, and so on.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="bura_overview__diagram"><h2 class="title sectiontitle">Diagram of the Backup Service</h2>
+      
+      <p class="p"><img class="image" src="../../media/bura/bura_architecture.png"></img></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

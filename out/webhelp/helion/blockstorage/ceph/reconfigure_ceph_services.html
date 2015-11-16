@@ -1,0 +1,78 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Perform the following steps to reconfigure the Ceph services. Login to the Deployer/lifecycle-manager node Configure the following parameters in the ~/helion/my_cloud/config/ceph/settings.yml file. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Reconfiguring Ceph Services"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_bl1_bfx_qt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Reconfiguring Ceph Services</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_bl1_bfx_qt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Reconfiguring Ceph Services</h1>
+
+  <div class="body">
+    <div class="p">Perform the following steps to reconfigure the Ceph services.<ol class="ol" id="topic_bl1_bfx_qt__ol_d3k_thx_qt">
+                <li class="li">Login to the Deployer/lifecycle-manager node </li>
+
+                <li class="li">Configure the following parameters in the
+                        <samp class="ph codeph">~/helion/my_cloud/config/ceph/settings.yml</samp> file. <ul class="ul" id="topic_bl1_bfx_qt__ul_qsg_dv4_rt">
+                        <li class="li"><samp class="ph codeph">fsid</samp></li>
+
+                        <li class="li"><samp class="ph codeph">ceph clusters</samp></li>
+
+                        <li class="li"><samp class="ph codeph">osd_settle_time</samp></li>
+
+                        <li class="li"><samp class="ph codeph">OSD_journal_size</samp></li>
+
+                    </ul>
+</li>
+
+                <li class="li">Any additional configuration parameters for Ceph (beyond those listed in the
+                        <samp class="ph codeph">~/helion/my_cloud/config/ceph/settings.yml</samp> file) can be
+                    specified in the same file under the <samp class="ph codeph">extra:</samp>
+                        category:<pre class="pre codeblock">extra:
+  osd:
+    journal max write entries: 200</pre>
+<div class="p">As
+                        shown above, configures the OSDs to write a maximum of 200 entries
+                            (<samp class="ph codeph">journal max write entries: 200</samp>) to the journal at any
+                        one time.<div class="note note"><span class="notetitle">Note:</span> The Ceph log parameter <strong class="ph b">debug auth</strong> configures the
+                            verbosity of the authentication related logs, which is default
+                            configured to level of '1/5'. It is <strong class="ph b"><em class="ph i">a security risk and therefore
+                                    highly recommended not to have the 'debug auth' logging
+                                    verbosely</em></strong>, as, the module will start logging the Ceph
+                            user secret's, which will be available to users via the centralized
+                            logs. Making Ceph cluster vulnerable.</div>
+</div>
+</li>
+
+                <li class="li">Commit your
+                    configuration:<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message&gt;"</pre>
+</li>
+
+                <li class="li">Use the playbook below to create a deployment directory:
+                    <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+                <li class="li">Run the configuration processor:
+                    <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+                <li class="li">Run the playbook to reconfigure the Ceph
+                    services:<pre class="pre codeblock">$cd ~/scratch/ansible/next/hos/ansible
+$ansible-playbook -i hosts/verb_hosts ceph-reconfigure.yml</pre>
+</li>
+
+            </ol>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

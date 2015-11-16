@@ -1,0 +1,1938 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This topic contains a list of service-specific alarms and the recommended troubleshooting steps. When alarms are triggered it may be helpful for you to review the service logs. For details on how to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Service Alarm Definitions"></meta><meta name="abstract" content="This topic contains a list of service-specific alarms and the recommended troubleshooting steps."></meta><meta name="description" content="This topic contains a list of service-specific alarms and the recommended troubleshooting steps."></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="alarmdefinitions"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Service Alarm Definitions</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="alarmdefinitions">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Service Alarm Definitions</h1>
+
+  
+  <div class="body"><p class="shortdesc">This topic contains a list of service-specific alarms and the recommended
+    troubleshooting steps.</p>
+
+    <p class="p">When alarms are triggered it may be helpful for you to review the service logs. For details
+      on how to use the logging user interface built into the Operations Console, see <a class="xref" href="centralized_logging.html#logging__interface">Logging into Kibana</a>.</p>
+
+    <div class="section" id="alarmdefinitions__services"><h2 class="title sectiontitle">Services</h2>
+      <p class="p">Alarms for the following services are described below:</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="#alarmdefinitions__metering">Ceilometer</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__blockstorage">Cinder</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__cue">Cue</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__glance">Glance</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__haproxy">HAProxy</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__heat">Heat</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__horizon">Horizon</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__hlinux">Linux for HPE Helion</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__identity">Keystone</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__logging">Logging</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__monasca">Monasca</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__mysql">MySQL</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__networking">Neutron</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__nova">Nova</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__opsconsole">Operations Console</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__rabbitmq">RabbitMQ</a></li>
+
+        <li class="li"><a class="xref" href="#alarmdefinitions__objectstorage">Swift</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__metering"><h2 class="title sectiontitle">Ceilometer</h2>
+      <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__ceilometer_table" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e163">Alarm Name</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e166">Description</th>
+
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e169">Likely Cause</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e172">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e163 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e166 ">process_name=ceilometer-agent-notification</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e169 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e172 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e163 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e166 ">process_name=ceilometer-collector</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e169 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e172 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e163 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e166 ">process_name=ceilometer-agent-central</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e169 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e172 ">Restart process on the affected node. Review the associated  logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e163 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e166 ">
+                  <p class="p">service=telemetry and used with hostname of one of the controller </p>
+
+                </td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e169 ">Ceilometer API.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e172 ">Restart Apache on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e163 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e166 ">component=ceilometer-api </td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e169 ">Ceilometer API on administrator VIP.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e172 "><p class="p">If this occurs with an http_status in error on all nodes, then restart Apache on all
+                    controllers.</p>
+
+                  <p class="p">If this occurs with a specific host with http_status in non-error for
+                    telemetry, then it should be a haproxy issue and it needs to be restarted.</p>
+
+                  <p class="p">For further troubleshooting, look into the Ceilometer access log in the
+                    Ceilometer log directory for the ceilometer_modwsgi file and ceilometer-api
+                    logs.</p>
+</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__blockstorage"><h2 class="title sectiontitle">Cinder</h2>
+      <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__cinder_table" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e290">Alarm Name</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e293">Description</th>
+
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e296">Likely Cause</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e299">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e290 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e293 ">process_name=cinder-api</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e296 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e299 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e290 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e293 ">process_name=cinder-backup</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e296 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e299 ">Alert may be incorrect if the service has migrated. Validate that the service
+                  is intended to be running on this node before restarting the service. Review the
+                  associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e290 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e293 ">process_name=cinder-scheduler</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e296 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e299 ">Restart the process on affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e290 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e293 ">process_name=cinder-volume</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e296 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e299 ">Alert may be incorrect if the service has migrated. Validate that the service
+                  is intended to be running on this node before restarting the service. Review the
+                  associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e290 ">Cinder backup running &lt;HOSTNAME&gt; check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e293 ">Cinder backup singleton check.</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e296 ">
+                  <p class="p">Backup process is either:</p>
+
+                  <div class="p"><ul class="ul">
+                      <li class="li">running on a node it should not be on, or</li>
+
+                      <li class="li">not running on a node it should be on</li>
+
+                    </ul>
+</div>
+
+                </td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e299 ">Run the cinder-migrate-volume playbook to migrate the volume and backup to
+                  the correct node.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e290 ">Cinder volume running &lt;HOSTNAME&gt; check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e293 ">Cinder volume singleton check.</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e296 ">
+                  <p class="p">Volume process is either:</p>
+
+                  <div class="p"><ul class="ul">
+                      <li class="li">running on a node it should not be on, or</li>
+
+                      <li class="li">not running on a node it should be on</li>
+
+                    </ul>
+</div>
+
+                </td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e299 ">Run the cinder-migrate-volume playbook to migrate the volume and backup to
+                  correct node.</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__cue"><h2 class="title sectiontitle">Cue</h2>
+      <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__cue_table" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e449">Alarm Name</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e452">Description</th>
+
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e455">Likely Cause</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e458">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e449 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e452 ">component=cue-api</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e455 ">API is unresponsive.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e458 ">Restart Apache.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e449 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e452 ">process_name=cue-worker</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e455 ">Supervisor stopped.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e458 ">Use supervisor to start all workers.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e449 ">Process Check</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e452 ">process_name=cue-monitor</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e455 ">cue-monitor process crashed.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e458 ">Restart the cue-monitor service.</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__glance"><h2 class="title sectiontitle">Glance</h2>
+      <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__glance_table" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e537">Alarm Name</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e540">Description</th>
+
+                <th class="entry" valign="top" width="16.666666666666664%" id="d84835e543">Likely Cause</th>
+
+                <th class="entry" valign="top" width="33.33333333333333%" id="d84835e546">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e537 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e540 ">component=glance-api</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e543 ">API is unresponsive.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e546 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e537 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e540 ">component=glance-registry</td>
+
+                <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e543 ">Glance registry is unresponsive.</td>
+
+                <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e546 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__haproxy"><h2 class="title sectiontitle">HAProxy</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_flj_2tl_zs" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" align="left" valign="top" width="16.666666666666664%" id="d84835e609">Alarm Name</th>
+
+              <th class="entry" align="left" valign="top" width="33.33333333333333%" id="d84835e612">Description</th>
+
+              <th class="entry" align="left" valign="top" width="16.666666666666664%" id="d84835e615">Likely Cause</th>
+
+              <th class="entry" align="left" valign="top" width="33.33333333333333%" id="d84835e618">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d84835e609 ">Process Check</td>
+
+              <td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d84835e612 ">process_name=haproxy</td>
+
+              <td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d84835e615 ">HA Proxy is not running on this machine.</td>
+
+              <td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d84835e618 ">Restart haproxy on the alarming host.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__heat"><h2 class="title sectiontitle">Heat</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_k33_xcq_bt" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="16.666666666666664%" id="d84835e666">Alarm Name</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d84835e669">Description</th>
+
+              <th class="entry" valign="top" width="16.666666666666664%" id="d84835e672">Likely Cause</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d84835e675">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">Process Check</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api process check on each node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">Process Check</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api-cfn process check on each node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">Process Check</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api-cloudwatch process check on each node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">Process Check</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-engine process check on each node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api local http status check on each node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process hung or crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api-cfn local http status check on each node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process hung or crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api remote http status check only on one node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process hung or crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e666 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e669 ">heat-api-cfn remote http status check only on one node</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e672 ">Process hung or crashed.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e675 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__horizon"><h2 class="title sectiontitle">Horizon</h2>
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_vtf_3md_3t" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d84835e830">Alarm Name</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e833">Description</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e836">Likely Cause</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e839">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e830 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e833 ">Alerts when Horizon's login page is not returned.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e836 ">Apache is not running or there is a misconfiguration.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e839 ">Check that Apache is running; investigate Horizon logs.</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__hlinux"><h2 class="title sectiontitle">Linux for HPE Helion</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_ik5_3km_zs" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="16.666666666666664%" id="d84835e888">Alarm Name</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d84835e891">Description</th>
+
+              <th class="entry" valign="top" width="16.666666666666664%" id="d84835e894">Likely Cause</th>
+
+              <th class="entry" valign="top" width="33.33333333333333%" id="d84835e897">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e888 ">CPU Usage</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e891 ">Alarms on high CPU usage.</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e894 ">Heavy load or runaway processes.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e897 ">Log onto the system and diagnose the heavy CPU usage.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e888 ">Disk Inode Usage</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e891 ">Nearly out of inodes for a partition.</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e894 ">Many files on the disk.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e897 ">Investigate cleanup of data or migration to other partitions.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e888 ">Disk Usage</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e891 ">High Disk usage.</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e894 ">Large files on the disk.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e897 ">Investigate cleanup of data or migration to other partitions.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e888 ">Host Status</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e891 ">Alerts when a host is unreachable.</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e894 ">Host or network is down.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e897 ">If a single host, attempt to restart the system. If multiple hosts, investigate
+                network issues.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e888 ">Memory Usage</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e891 ">High memory usage.</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e894 ">Overloaded system or services with memory leaks.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e897 ">Log onto the system to investigate high memory users.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e888 ">Network Errors</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e891 ">Alarms on a high network error rate.</td>
+
+              <td class="entry" valign="top" width="16.666666666666664%" headers="d84835e894 ">Bad network or cabling.</td>
+
+              <td class="entry" valign="top" width="33.33333333333333%" headers="d84835e897 ">Take this system out of service until the network can be fixed.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__identity"><h2 class="title sectiontitle">Keystone</h2>
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_bw1_jmd_3t" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d84835e1022">Alarm Name</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e1025">Description</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e1028">Likely Cause</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e1031">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e1022 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1025 ">component=keystone-api,api_endpoint=public</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1028 ">API is unresponsive.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1031 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e1022 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1025 ">component=keystone-api,api_endpoint=admin</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1028 ">API is unresponsive.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1031 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e1022 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1025 ">component=keystone-api,monitored_host_type=vip</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1028 ">API is unresponsive on each node.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1031 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e1022 ">Process Check</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1025 ">process_name=keystone-main</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1028 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1031 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e1022 ">Process Check</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1025 ">process_name=keystone-admin</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1028 ">Process crashed.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e1031 ">Restart the process on the affected node. Review the associated logs.</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__logging"><h2 class="title sectiontitle">Logging</h2>
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__logging_table" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d84835e1143">Alarm Name</th>
+
+              <th class="entry" valign="top" id="d84835e1146">Component</th>
+
+              <th class="entry" valign="top" id="d84835e1149">Description</th>
+
+              <th class="entry" valign="top" id="d84835e1152">Likely Cause</th>
+
+              <th class="entry" valign="top" id="d84835e1155">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Unassigned Shards</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch unassigned shards count is greater than 0.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Environment could be misconfigured.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">
+                <p class="p">To find the unassigned shards, run the following command on the lifecycle-manager node
+                  from the <samp class="ph codeph">~/scratch/ansible/next/hos/ansible</samp> directory:</p>
+
+                <pre class="pre codeblock">ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_cat/shards?pretty -s" | grep UNASSIGNED</pre>
+
+                <p class="p">This should show which shards are unassigned, like this:</p>
+
+                <pre class="pre codeblock">logstash-2015.10.21 4 p UNASSIGNED 11412371  3.2gb 10.241.67.11 Keith Kilham</pre>
+
+                <p class="p">The last column shows the name that Elasticsearch uses for the node that the
+                  unassigned shards are on. To find the actual hostname, run:</p>
+
+                <pre class="pre codeblock">ansible -i hosts/verb_hosts LOG-SVR[0] -m shell -a "curl localhost:9200/_nodes/_all/name?pretty -s"</pre>
+
+                <p class="p">Once you find the hostname, you can try the following:</p>
+
+                <ol class="ol">
+                  <li class="li">Make sure the node is not out of disk space, and free up space if needed.</li>
+
+                  <li class="li">Restart the node (use caution, as this may affect other services as
+                    well).</li>
+
+                  <li class="li">Check to make sure all versions of Elasticsearch are the same with this:
+                    <pre class="pre codeblock">ansible -i hosts/verb_hosts LOG-SVR -m shell -a "curl localhost:9200/_nodes/_local/name?pretty -s" | grep version</pre>
+</li>
+
+                  <li class="li">Contact customer support.</li>
+
+                </ol>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Max Total Indices Size</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Total Indices size is greater than
+                elasticsearch_max_total_indices_size_in_bytes defined by user.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">elasticsearch_max_total_indices_size_in_bytes may be set too low, or you may
+                have insufficient resources.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">If the total size of all the indices exceeds the size of the
+                elasticsearch_max_total_indices_size_in_bytes as you have defined it, you can adjust
+                the value if you want to give more space and you have the resources. If not, you may
+                need to adjust the Curator to remove indices sooner.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Number of Log Entries</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Number of Log Entries.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">The number of log entries may get too large.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">Older versions of Kibana (version 3 and earlier) may hang if the number of log
+                entries is too large (e.g. above 40,000), and the page size would need to be small
+                enough (about 20,000 results), because if it is larger (e.g. 200,000), it may hang
+                the browser, but Kibana 4 should not have this issue.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Field Data Evictions</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Field Data Evictions count is greater than 0.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Field Data Evictions may be found even though it is nowhere near the limit
+                set.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">The elasticsearch_indices_fielddata_cache_size is tuned out-of-the box, but if
+                it is insufficient, you may need to increase this configuration parameter and run a
+                reconfigure.</td>
+
+            </tr>
+
+            
+            
+            
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Low Watermark alarm definition</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Disk LOW Watermark. Backup indices. If high watermark is reached,
+                indices will be deleted. Adjust curator_low_watermark_percent,
+                curator_high_watermark_percent, and elasticsearch_max_total_indices_size_in_bytes if
+                needed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Running out of disk space for /var/lib/elasticsearch.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">Free up space by removing indices (backing them up first if desired).
+                Alternatively, adjust curator_low_watermark_percent, curator_high_watermark_percent,
+                and/or elasticsearch_max_total_indices_size_in_bytes if needed.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch High Watermark alarm definition</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Disk HIGH Watermark. Attempting to delete indices to free disk
+                space. Adjust curator_low_watermark_percent, curator_high_watermark_percent, and
+                elasticsearch_max_total_indices_size_in_bytes if needed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Running out of disk space for /var/lib/elasticsearch.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">Verify that disk space was freed up by the curator. If needed, free up
+                additional space by removing indices (backing them up first if desired).
+                Alternatively, adjust curator_low_watermark_percent, curator_high_watermark_percent,
+                and/or elasticsearch_max_total_indices_size_in_bytes if needed.</td>
+
+            </tr>
+
+            
+            
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Bulk Pool Rejected</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Bulk Pool Rejected count is greater than 0.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Thread pool size could be too small.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">You may need to increase the threadpool.bulk.queue_size (from 50 to 100, or
+                even 3000, for example). This is found in the config/logging/elasticsearch.yml.j2
+                file.</td>
+
+            </tr>
+
+            
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Elasticsearch Open File Descriptors </td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Elasticsearch Open File Descriptors is greater than 90%.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Configured to allow too many file descriptors to be opened.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">Close some old indices. This can be performed by setting the
+                curator_close_indices_after_days value from the default of 0, which does not close
+                indices, to a specific number of days. This is located in the
+                config/logging-common/main.yml file.</td>
+
+            </tr>
+
+            
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Process Check</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Elasticsearch</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Process not running.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Process crashed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">If the Elasticsearch process goes down, try restarting it with: <samp class="ph codeph">sudo
+                  systemctl restart elasticsearch</samp></td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Process Check</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Logstash</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Process not running.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Process crashed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">If the Logstash process goes down, try restarting it with: <samp class="ph codeph">sudo
+                  systemctl restart logstash</samp>.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Process Check</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Beaver</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Process not running.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Process crashed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">If the Beaver process goes down, try restarting it with: <samp class="ph codeph">sudo systemctl
+                  restart beaver</samp></td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Process Check</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Apache</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Process not running.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Process crashed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">If the Apache process goes down, try restarting it with: <samp class="ph codeph">sudo systemctl
+                  restart apache2</samp></td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d84835e1143 ">Process Check</td>
+
+              <td class="entry" valign="top" headers="d84835e1146 ">Kibana</td>
+
+              <td class="entry" valign="top" headers="d84835e1149 ">Process not running.</td>
+
+              <td class="entry" valign="top" headers="d84835e1152 ">Process crashed.</td>
+
+              <td class="entry" valign="top" headers="d84835e1155 ">If the Kibana process goes down, try restarting it with: <samp class="ph codeph">sudo systemctl
+                  restart kibana</samp></td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__monasca"><h2 class="title sectiontitle">Monasca</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_dry_245_zs" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="20%" id="d84835e1479">Alarm Name</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1482">Component</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1485">Description</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1488">Likely Cause</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1491">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">persister</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Persister Health Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">The process has crashed or a dependency is out.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">If the process has crashed, restart. If a dependent service is down, address
+                that issue.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">api</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">API Health Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">The process has crashed or a dependency is out.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">If the process has crashed, restart. If a dependent service is down, address
+                that issue.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Kafka Consumer Lag</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">Kafka</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Consumers are falling behind for a particular Kafka topic.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">There is a slow down in the system or heavy load.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Look for high load in the various systems. This alert can fire for multiple
+                topics or on multiple hosts. Which alarms are firing can help diagnose likely
+                causes, i.e., if all are on one machine it could be the machine. If one topic across
+                multiple machines it is likely the consumers of that topic, etc.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Monasca Agent Collection Time</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">monasca-agent</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">The time the agent took to collect metrics.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">Heavy load on the box or a stuck agent plug-in.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Address the load issue on the machine. If needed, restart the agent.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Monasca Agent Emit Time</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">monasca-agent</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">The time the agent took to send metrics to the Monasca API.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">API or the network is slow.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Check the network graphs and look for indication of network issues. If coming
+                from most boxes, it is possibly API problems.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">Kafka</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Process not running.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">notification</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Process not running.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">storm</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Process not running.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">zookeeper</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Process not running.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1479 ">Zookeeper Latency</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1482 ">zookeeper</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1485 ">Zookeeper is experiencing high latency.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1488 ">Heavy system load.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1491 ">Check the individual system as well as activity across the entire
+                service.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__mysql"><h2 class="title sectiontitle">MySQL</h2>
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_ft3_bp5_zs" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="25%" id="d84835e1703">Alarm Name</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e1706">Description</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e1709">Likely Cause</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e1712">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e1703 ">MySQL Slow Query Rate</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e1706 ">MySQL is reporting many slow queries.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e1709 ">System load.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e1712 ">This could be an indication of near capacity limits or an exposed bad query.
+                First, check overall system load and then investigate MySQL details.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e1703 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e1706 ">Alarms when MySQL process is not found.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e1709 ">MySQL crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e1712 ">Restart MySQL on the affected node.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__networking"><h2 class="title sectiontitle">Neutron</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_bcj_5p4_1t" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="20%" id="d84835e1778">Alarm Name</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1781">Description</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1784">Monitor Location</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1787">Likely Cause</th>
+
+              <th class="entry" valign="top" width="20%" id="d84835e1790">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-openvswitch-agent pid check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-l3-agent pid check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-dhcp-agent pid check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-metadata-agent pid check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-rootwrap pid check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Currently neutron-rootwrap is only used to run ovsdb-client. To restart this,
+                restart neutron-openvswitch-agent on the affected node. Review the associated
+                logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-lbaas-agent</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Processed crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-lbaasv2-agent</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Processed crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-vpn-agent</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Processed crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">Process Check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron-server pid check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron api health check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">local node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Process stuck if neutron-server Process Check OK</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="20%" headers="d84835e1778 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1781 ">neutron api health check</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1784 ">remote node</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1787 ">Node crashed or connectivity lost if local node HTTP Status OK or
+                UNKNOWN</td>
+
+              <td class="entry" valign="top" width="20%" headers="d84835e1790 ">Reboot the node or repair the network. Review the associated logs.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__nova"><h2 class="title sectiontitle">Nova</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_bv5_q2h_1t" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="25%" id="d84835e2021">Alarm Name</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2024">Description</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2027">Likely Cause</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2030">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-api check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart the process on the affected node. Review the nova-api log
+                files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-api health check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart the process on the affected node. Review the nova-api log files. Try to
+                connect locally to the http port to see if the connection is accepted.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-cert check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart process on the affected node. Review the nova-cert.log files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-compute check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart process on the affected node. Review the nova-compute.log
+                files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-conductor check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart the process on the affected node. Review the nova-conductor.log
+                files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-consoleauth check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart the process on the affected node. Review the nova-consoleauth log
+                files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-novncproxy check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart the process on the affected node. Review the nova-novncproxy log
+                files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">nova-scheduler check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Restart the process on the affected node. Review the nova-scheduler.log
+                files.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2021 ">Process Bound Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2024 ">process_name=nova-api. Check that the number of processes found is in a
+                predefined range</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2027 ">Process crashed or too many processes running</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2030 ">Stop all the processes and restart the nova-api process. Review the system and
+                nova-api logs.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__opsconsole"><h2 class="title sectiontitle">Operations Console</h2>
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_fdn_hpd_3t" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d84835e2200">Alarm Name</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e2203">Description</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e2206">Likely Cause</th>
+
+                <th class="entry" valign="top" width="25%" id="d84835e2209">Mitigation Tasks to Perform</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e2200 ">HTTP Status</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e2203 ">service=ops-console</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e2206 ">The Operations Console is unresponsive</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e2209 "><p class="p">Review logs in <samp class="ph codeph">/var/log/ops-console</samp> and logs in
+                      <samp class="ph codeph">/var/log/apache2</samp>. Restart ops-console by running the
+                    following commands on the lifecycle-manager:</p>
+
+                  <pre class="pre codeblock">
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ops-console-stop.yml 
+ansible-playbook -i hosts/verb_hosts ops-console-start.yml</pre>
+</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d84835e2200 ">Process Check</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e2203 ">process_name=leia-leia_monitor</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e2206 ">Process crashed or unresponsive.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d84835e2209 "><p class="p">Review logs in <samp class="ph codeph">/var/log/ops-console</samp>. Restart ops-console by running the
+                    following commands on the lifecycle-manager:</p>
+
+                  <pre class="pre codeblock">
+cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ops-console-stop.yml 
+ansible-playbook -i hosts/verb_hosts ops-console-start.yml</pre>
+</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+</div>
+
+    <div class="section" id="alarmdefinitions__rabbitmq"><h2 class="title sectiontitle">RabbitMQ</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_rsb_mp5_zs" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="25%" id="d84835e2290">Alarm Name</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2293">Description</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2296">Likely Cause</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2299">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2290 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2293 ">rabbitmq-server process not running.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2296 ">Process crashed.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2299 ">Restart the process on the affected node. Review the associated logs.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="alarmdefinitions__objectstorage"><h2 class="title sectiontitle">Swift</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="alarmdefinitions__table_zn3_2pb_bt" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="25%" id="d84835e2347">Alarm Name</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2350">Description</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2353">Likely Cause</th>
+
+              <th class="entry" valign="top" width="25%" id="d84835e2356">Mitigation Tasks to Perform</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">swiftlm-scan monitor</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if swiftlm-scan cannot execute a monitoring task.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">The swiftlm-scan program is used to monitor/measure a number of metrics. If it
+                is unable to monitor or measure something, it raises this alarm.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">Examine the <samp class="ph codeph">Details</samp> field and look for a <samp class="ph codeph">msg</samp>
+                field. The text may explain the error problem. To view/confirm this, you can also
+                log into the host specified by the <samp class="ph codeph">hostname</samp> dimension, and then run
+                this command: <samp class="ph codeph">sudo swiftlm-scan | python -mjson.tool</samp>. The
+                  <samp class="ph codeph">msg</samp> field is contained in the <samp class="ph codeph">value_meta</samp>
+                item.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Swift file ownership</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if files/directories in /srv/node/ or /etc/swift are not owned by
+                Swift.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">
+                <p class="p">For files in /etc/swift, somebody may have manually edited or created a file.</p>
+
+                <p class="p">For directories in /srv/node/*, it may happen that root partition was reimaged or
+                  reinstalled and the UID assigned to the Swift user changes. The directories and
+                  files are then not owned by the UID assigned to the Swift user.</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">
+                <p class="p">For files in <samp class="ph codeph">/etc/swift</samp>, use this command: <samp class="ph codeph">sudo chown
+                    swift.swift /etc/swift/, /etc/swift/*</samp>.</p>
+
+                <p class="p">For directories and files in <samp class="ph codeph">/srv/node/*</samp>, compare the swift UID
+                  of this system and other systems and the UID of the owner of
+                    <samp class="ph codeph">/srv/node/*</samp>. If possible, make the UID of the Swift user match
+                  the directories/files. Otherwise, change the ownership of all files and
+                  directories under the <samp class="ph codeph">/srv/node</samp> path.</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Drive URE errors</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if swift-drive-audit reports a unrecoverable read error on a drive used
+                by Swift.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">An unrecoverable read error has occurred when Swift attempted to access a
+                directory.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">
+                <p class="p">The UREs reported only apply to file system metadata (i.e., directory
+                  structures). For UREs in object files, the Swift system automatically deletes the
+                  file and replicates a fresh copy from one of the other replicas.</p>
+
+                <p class="p">UREs are a normal feature of large disk drives. It does not mean that the drive
+                  has failed. However, if you get regular UREs on a specific drive, then this may
+                  indicate that the drive is indeed failed and should be replaced.</p>
+
+                <p class="p">You can use standard XFS repair actions to correct the UREs in the file
+                  system.</p>
+
+                <p class="p">If the XFS repair fails, you should wipe the GPT table as follows (where LETTER
+                  is replaced by the actual drive name):</p>
+
+                <pre class="pre codeblock">sudo dd if=/dev/zero of=/dev/sd&lt;LETTER&gt; bs=$((1024*1024)) count=1</pre>
+
+                <p class="p">Then, on the deployer, run the <samp class="ph codeph">_swift-configure.yml</samp> playbook.
+                  This will reformat the drive, remount it, and restart Swift services.</p>
+
+                <p class="p">It is safe to reformat drives containing Swift data because Swift maintains other
+                  copies of the data (usually, Swift is configured to have three replicas of all
+                  data).</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Swift services</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if a Swift process is not running.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">A daemon specified by the <samp class="ph codeph">component</samp> dimension on the host
+                specified by the <samp class="ph codeph">hostname</samp> dimension has stopped running.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">
+                <p class="p">Examine the <samp class="ph codeph">/var/log/swift/swift.log</samp> file for possible error
+                  messages related the Swift process. The process in question is listed in the alarm
+                  dimensions in the <samp class="ph codeph">component</samp> dimension.</p>
+
+                <p class="p">Restart Swift processes by running the <samp class="ph codeph">swift-start.yml</samp>
+                  playbook.</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Swift filesystem mount status</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if a file system/drive used by Swift is not correctly mounted.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">
+                <p class="p">The device specified by the <samp class="ph codeph">device</samp> dimension is not correctly
+                  mounted at the mountpoint specified by the <samp class="ph codeph">mount</samp> dimension.</p>
+
+                <p class="p">The most probable cause is that the drive has failed or that it had a temporary
+                  failure during the boot process and remained unmounted.</p>
+
+                <p class="p">Other possible causes are a file system corruption that prevents the device from
+                  being mounted.</p>
+
+              </td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">
+                <p class="p">Reboot the node and see if the file system remains unmounted.</p>
+
+                <p class="p">If the file system is corrupt, see the process used for the "Drive URE errors"
+                  alarm to wipe and reformat the drive.</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Swift host socket connect</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if a socket cannot be opened to th eKeystone token validation
+                API.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">The Keystone server may be down. Another possible cause is that the network
+                between the host reporting the problem and the Keystone server or that the haproxy
+                process is not forwarding requests to Keystone.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">The <samp class="ph codeph">URL</samp> dimension contains the name of the VIP. Use cURL or a
+                similar program to confirm that a connection can or cannot be made to the VIP. Check
+                that haproxy is running. Check that the Keystone service is working.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Swift memcache connect</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms if a socket cannot be opened to the specified target memcached
+                server.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">The server may be down. The memcached deamon running the server may have
+                stopped.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">
+                <p class="p">If the server is down, restart it.</p>
+
+                <p class="p">If memcached has stopped, you can restart it by using the
+                    <samp class="ph codeph">memcached-start.yml</samp> playbook. if this fails, rebooting the node
+                  will restart the process.</p>
+
+                <p class="p">If the server is running and memcached is running, there may be a network problem
+                  blocking port 11211.</p>
+
+                <p class="p">If you see sporadic alarms on different servers, the system may be running out of
+                  resources. Contact HPE Support for advice.</p>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">Process Check</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms when the specified process is not running.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">If the <samp class="ph codeph">service</samp> dimension is <samp class="ph codeph">object-store</samp>, see
+                the description of the "Swift Services" alarm for possible causes.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">If the <samp class="ph codeph">service</samp> dimension is <samp class="ph codeph">object-store</samp>, see
+                the description of the "Swift Services" alarm for possible mitigation tasks.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="25%" headers="d84835e2347 ">HTTP Status</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2350 ">Alarms when the specified HTTP endpoint is down or not reachable.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2353 ">If the <samp class="ph codeph">service</samp> dimension is <samp class="ph codeph">object-store</samp>, see
+                the description of the "Swift host socket connect" alarm for possible
+                causes.</td>
+
+              <td class="entry" valign="top" width="25%" headers="d84835e2356 ">If the <samp class="ph codeph">service</samp> dimension is <samp class="ph codeph">object-store</samp>, see
+                the description of the "Swift host socket connect" alarm for possible mitigation
+                tasks.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

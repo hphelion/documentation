@@ -1,0 +1,173 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page describes the procedure to assign a separate iSCSI network to use with VSA nodes. You must configure controller and compute nodes along with VSA to use a separate iSCSI network. Perform the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring a Separate iSCSI Network to use with VSA"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_jv4_q1t_tt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring a Separate iSCSI Network to use with VSA</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_jv4_q1t_tt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring a Separate iSCSI Network to use
+    with VSA</h1>
+
+  <div class="body">
+    <p class="p">This page describes the procedure to assign a separate iSCSI network to use with VSA nodes.
+      You must configure controller and compute nodes along with VSA to use a separate iSCSI
+      network.</p>
+
+    <p class="p">Perform the following procedure to assign a separate iSCSI network:</p>
+
+    <div class="section">
+      <div class="p">
+        <ol class="ol" id="topic_jv4_q1t_tt__ol_g4m_wyn_5t">
+          <li class="li">Log in to the deployer/lifecycle-manager node.</li>
+
+          <li class="li">Edit the following files at <samp class="ph codeph">~/helion/my_cloud/definition/data</samp> to
+            assign a separate iSCSI network to controller nodes, compute nodes, and VSA
+              nodes:<div class="note note"><span class="notetitle">Note:</span> The input YAML files need to be changed during the cloud
+              deployment.</div>
+<ol class="ol" type="a" id="topic_jv4_q1t_tt__ol_pz5_214_5t">
+              <li class="li"><samp class="ph codeph">networks.yml</samp>: Enter the name of the network-group as shown in the
+                example below. In the following example, the name of the network-group is "ISCSI"
+                and this name should remain consistent in other files
+                too.<pre class="pre codeblock">- name: NET_ISCSI
+  vlanid: 3287
+  tagged-vlan: true
+  cidr: 172.16.13.0/24 
+  gateway-ip: 172.16.13.1 
+  network-group: <strong class="ph b">ISCSI</strong> </pre>
+</li>
+
+              <li class="li"><samp class="ph codeph">net_interfaces.yml</samp>: A new field (forced-network-groups) is added
+                in this file, as shown in the sample
+                below.<pre class="pre codeblock"> Interface-models
+    - name: INTERFACE_SET_CONTROLLER
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+             options:
+                 mode: "802.3ad"
+                 miinon: 200
+             provider: linux
+             devices:
+               - name: Port0_10G1
+               - name: Port1_10G1
+          network-groups:
+            - MGMT
+            - TENANT
+          <strong class="ph b">forced-network-groups:
+            - ISCSI</strong>
+
+    - name: INTERFACE_SET_COMPUTE
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+             options:
+                 mode: "802.3ad"
+                 miinon: 200
+             provider: linux
+             devices:
+               - name: Port0_10G1
+               - name: Port1_10G1
+          network-groups:
+            - MGMT
+            - TENANT
+          <strong class="ph b">forced-network-groups:
+            - ISCSI</strong>
+
+    - name: INTERFACE_SET_VSA
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+             options:
+                 mode: "802.3ad"
+                 miinon: 200
+             provider: linux
+             devices:
+               - name: Port0_10G1
+               - name: Port1_10G1
+          network-groups:
+            - MGMT
+            - TENANT
+          <strong class="ph b">forced-network-groups:
+            - ISCSI</strong></pre>
+</li>
+
+              <li class="li"><samp class="ph codeph">firewall_rules.yml</samp><pre class="pre codeblock">firewall-rules
+    - name: PING 
+      network-groups:
+      - MGMT
+      - TENANT
+      - EXTERNAL_API
+      - <strong class="ph b">ISCSI</strong>
+      - SWIFT</pre>
+</li>
+
+              <li class="li"><samp class="ph codeph">network_groups.yml</samp><pre class="pre codeblock">network-groups:
+    - name: ISCSI
+      hostname-suffix: iscsi
+      component-endpoints:
+        - vsa</pre>
+</li>
+
+              <li class="li"><samp class="ph codeph">server_groups.yml</samp><pre class="pre codeblock">server_groups.yml
+      networks:
+     #Define the Global networks shared across all the Racks
+        - NET_EXTERNAL_API
+        - NET_EXTERNAL_VM
+        - NET_TENANT
+        - NET_MGMT
+        - NET_SWIFT
+        <strong class="ph b">- NET_ISCSI</strong></pre>
+</li>
+
+            </ol>
+</li>
+
+          <li class="li">Commit your
+            changes.<pre class="pre codeblock">git add -A
+git commit -m "Add Node &lt;name&gt;"</pre>
+</li>
+
+          <li class="li">Run the Configuration
+            Processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+          <li class="li">Run the following command to create a deployment
+            directory.<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+          <li class="li">Run the <samp class="ph codeph">site.yml</samp> playbook using the command below. The <samp class="ph codeph">-e
+              elasticsearch_cluster_name</samp> switch is used to set a unique name for your
+            elasticsearch cluster. This should be set to a value other than
+              <samp class="ph codeph">elasticsearch</samp>.
+              <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&lt;name&gt;
+ansible-playbook -i hosts/verb_hosts site.yml -e</pre>
+<div class="note note"><span class="notetitle">Note:</span> If
+              the iSCSI network is not explicitly configured on the controller nodes then boot from
+              cinder volumes would fail.</div>
+</li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

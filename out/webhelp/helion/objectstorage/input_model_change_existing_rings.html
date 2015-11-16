@@ -1,0 +1,303 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This section describes a general approach for making changes to the existing rings. This approach applies to actions such as adding and removing a server and replacing and upgrading disk drives, and ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Applying Input Model Changes to Existing Rings"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_vyp_cft_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Applying Input Model Changes to Existing Rings</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_vyp_cft_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Applying Input Model Changes to Existing
+    Rings</h1>
+
+  <div class="body">
+    <p class="p">This section describes a general approach for making changes to the existing rings. This
+      approach applies to actions such as adding and removing a server and replacing and upgrading
+      disk drives, and must be performed as a series of phases, as shown below:</p>
+
+    <div class="p">
+      <ul class="ul" id="topic_vyp_cft_4t__ul_sqz_jft_4t">
+        <li class="li"><strong class="ph b">Changing the Input Model Phase</strong><div class="p">Do the following:<ol class="ol" id="topic_vyp_cft_4t__ol_jv2_zf5_pt">
+              <li class="li">If not already done, set the weight-step attribute. (For instructions, see <a class="xref" href="setting_up_weight_attributes_ring_changes.html#topic_t1y_vjs_4t">HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</a>). </li>
+
+              <li class="li">Edit the Input Model as appropriate. You must edit the YAML file as per your
+                requirement. (For more information, see <a class="xref" href="../input_model.html#input_model">HPE Helion OpenStack 2.0: Input Model</a></li>
+
+              <li class="li">Commit your configuration to the local Git repository. (For more information,
+                  see<a class="xref" href="../installation/using_git.html#using_git">HPE Helion OpenStack 2.0: Using Git for Configuration Management</a>.)
+                :<pre class="pre codeblock">git add -A
+git commit -m "commit message"</pre>
+</li>
+
+              <li class="li">Run the configuration
+                processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+              <li class="li">Create a deployment
+                directory:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+              <li class="li">Run the
+                playbook:<pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</pre>
+</li>
+
+              <li class="li">Validate that the number of drives proposed to be added or deleted, or the weight
+                change, is correct. Fix any errors in your input model. At this stage, no changes
+                have been made to rings. </li>
+
+            </ol>
+</div>
+</li>
+
+        <li class="li"><strong class="ph b">First phase of Ring Rebalance:</strong><div class="p">Do the following:<ol class="ol" id="topic_vyp_cft_4t__ol_f5m_dg5_pt">
+              <li class="li">Apply the input model changes to the rings, rebalance the rings, and then deploy
+                them to all Swift nodes by running the
+                playbook:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml </pre>
+</li>
+
+              <li class="li">Wait until replication has finished or <samp class="ph codeph">min-part-time</samp> has elapsed
+                (whichever is longer). For more information, see <a class="xref" href="safe_rebalance_deploy_ring.html#topic_ohx_j1t_4t">HPE Helion OpenStack 2.0: Determining When to Rebalance and Deploy a New Ring</a></li>
+
+            </ol>
+</div>
+</li>
+
+        <li class="li"><strong class="ph b">Weight Change Phase of Ring Rebalance:</strong><p class="p">At this stage, no changes have been made
+            to the input model. However, when you set the <samp class="ph codeph">weight-step</samp> attribute,
+            the rings that were rebuilt in the previous rebalance phase have weights that are
+            different than their target/final value. You gradually move to the target/final weight
+            by rebalancing a number of times as described in this page. For more information about
+            the weight-step attribute, see <a class="xref" href="setting_up_weight_attributes_ring_changes.html#topic_t1y_vjs_4t">HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</a>.</p>
+<div class="p">Do the
+              following:<ol class="ol" id="topic_vyp_cft_4t__ol_vyc_gg5_pt">
+              <li class="li">Rebalance the rings by running the
+                playbook:<pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml</pre>
+</li>
+
+              <li class="li">Run the
+                reconfiguration:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre>
+</li>
+
+              <li class="li">Wait until replication has finished or <samp class="ph codeph">min-part-time</samp> has elapsed
+                (whichever is longer). For more information, see <a class="xref" href="safe_rebalance_deploy_ring.html#topic_ohx_j1t_4t">HPE Helion OpenStack 2.0: Determining When to Rebalance and Deploy a New Ring</a></li>
+
+              <li class="li">Run the following command and review the
+                  report:<pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-validate-input-model.yml</pre>
+<div class="p">The
+                  following is an example of the output after executing the above command. In the
+                  example <strong class="ph b">no</strong> weight changes are
+                  proposed:<pre class="pre codeblock">TASK: [swiftlm-ring-supervisor | validate-input-model | Print report] ********* 
+ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
+    "var": {
+        "report.stdout_lines": [
+            "Need to add 0 devices", 
+            "Need to remove 0 devices", 
+            "<strong class="ph b">Need to set weight on 0 devices</strong>"
+        ]
+    }
+}</pre>
+</div>
+</li>
+
+              <li class="li">When there are no proposed weight changes, you proceed to the final phase.</li>
+
+              <li class="li">If there are proposed weight changes repeat this phase again. </li>
+
+            </ol>
+</div>
+</li>
+
+        <li class="li"><strong class="ph b">Final Rebalance Phase:</strong><div class="p">The final rebalance phase moves all replicas to their
+            final destination.<ol class="ol" id="topic_vyp_cft_4t__ol_nlx_3g5_pt">
+              <li class="li">Rebalance the rings by running the playbook:
+                  <pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost _swift-make-delta-rebalance.yml | tee /tmp/rebalance.log</pre>
+<div class="note note"><span class="notetitle">Note:</span> The
+                  output is saved for later reference.</div>
+</li>
+
+              <li class="li">Review the output from the previous step. If the output for all rings is similar
+                to the following, the rebalance had no effect. That is, the rings are balanced and
+                no further changes are needed. In addition, the ring files were not changed so you
+                do not need to deploy them to the Swift
+                  nodes:<pre class="pre codeblock">"Running: swift-ring-builder /etc/swiftlm/builder_dir/region-region1/account.builder rebalance 999", 
+      "NOTE: No partitions could be reassigned.", 
+      "Either none need to be or none can be due to min_part_hours [16]."</pre>
+<div class="p">The
+                  text <strong class="ph b">No partitions could be reassigned</strong> indicates that no further rebalances
+                  are necessary. If this is true for all the rings, you have completed the final
+                    phase.<div class="note note"><span class="notetitle">Note:</span> You must have allowed enough time to elapse since the last
+                    rebalance. As mentioned in the above example, <samp class="ph codeph">min_part_hours
+                      [16]</samp> means that you must wait at least 16 hours since the last
+                    rebalance. If not, you should wait until enough time has elapsed and repeat this
+                    phase.</div>
+</div>
+</li>
+
+              <li class="li">Run the <samp class="ph codeph">swift-reconfigure.yml</samp>
+                playbook:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre>
+</li>
+
+              <li class="li">Wait until replication has finished or <samp class="ph codeph">min-part-time</samp> has elapsed
+                (whichever is longer). For more information see <a class="xref" href="safe_rebalance_deploy_ring.html#topic_ohx_j1t_4t">HPE Helion OpenStack 2.0: Determining When to Rebalance and Deploy a New Ring</a></li>
+
+              <li class="li">Repeat the above steps until the ring is rebalanced.</li>
+
+            </ol>
+</div>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="topic_vyp_cft_4t__system-cahnge-existing-rings"><h2 class="title sectiontitle">System Changes that Change Existing Rings</h2>
+      
+      <p class="p">There are many system changes ranging from adding servers to replacing drives, which might
+        require you to rebuild and rebalance your rings.</p>
+
+      <p class="p"></p>
+
+      <div class="p">
+        <table cellpadding="4" cellspacing="0" summary="" id="topic_vyp_cft_4t__simpletable_mtc_yb1_kt" border="1" class="simpletable"><tr class="strow">
+            <td valign="top" class="stentry"><strong class="ph b">Actions</strong></td>
+
+            <td valign="top" class="stentry"><strong class="ph b">Process</strong></td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">Adding Servers(s)</td>
+
+            <td valign="top" class="stentry">
+              <div class="p">
+                <ul class="ul" id="topic_vyp_cft_4t__ul_tn1_vj5_pt">
+                  <li class="li">If not already done, set the weight change attribute. For instructions, see
+                      <a class="xref" href="setting_up_weight_attributes_ring_changes.html#topic_t1y_vjs_4t">HPE Helion OpenStack 2.0: Using the Weight-Step Attributes to Prepare for Ring Changes</a></li>
+
+                  <li class="li">Add servers in phases:<ul class="ul" id="topic_vyp_cft_4t__ul_dcb_wbd_st">
+                      <li class="li">This reduces the impact of the changes on your system.</li>
+
+                      <li class="li">If your rings use Swift zones, ensure that you remove the same number of
+                        servers to each zone at each phase.</li>
+
+                    </ul>
+</li>
+
+                </ul>
+
+                <ul class="ul" id="topic_vyp_cft_4t__ul_hs5_yj5_pt">
+                  <li class="li">To add a server, see <a class="xref" href="add_new_node.html#topic_j2p_d1r_4t">HPE Helion OpenStack 2.0: Adding a Swift Object Node</a>.</li>
+
+                  <li class="li">Incrementally change the weights and perform the final rebalance. For
+                    instructions, see <a class="xref" href="#topic_vyp_cft_4t">HPE Helion OpenStack 2.0: Applying Input Model Changes to Existing Rings</a>.</li>
+
+                </ul>
+
+              </div>
+
+            </td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">Removing Server(s)</td>
+
+            <td valign="top" class="stentry">
+              <div class="p">In HPE Helion OpenStack 2.0, when you remove servers from the input model, the disk
+                drives are removed from the ring – the weight is not gradually reduced using the
+                  <samp class="ph codeph">weight-step</samp> attribute. <ul class="ul" id="topic_vyp_cft_4t__ul_dwn_nk5_pt">
+                  <li class="li">Remove servers in phases:<ul class="ul" id="topic_vyp_cft_4t__ul_wqy_nk5_pt">
+                      <li class="li">This reduces the impact of the changes on your system.</li>
+
+                      <li class="li">
+                        <p class="p">If your rings use Swift zones, ensure you remove the same number of
+                          servers for each zone at each phase.</p>
+
+                      </li>
+
+                    </ul>
+</li>
+
+                </ul>
+</div>
+
+              <ul class="ul" id="topic_vyp_cft_4t__ul_wdk_rk5_pt">
+                <li class="li">To remove a server, see <a class="xref" href="removing_node.html#topic_ndn_4bg_pt">HPE Helion OpenStack 2.0: Removing a Swift Node</a>. </li>
+
+                <li class="li">To performance the final rebalance, see <a class="xref" href="#topic_vyp_cft_4t">HPE Helion OpenStack 2.0: Applying Input Model Changes to Existing Rings</a>.</li>
+
+              </ul>
+
+            </td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">Replacing Disk Drive(s)</td>
+
+            <td valign="top" class="stentry"><p class="p">When a drive fails, replace it as soon as possible. Do not attempt to remove
+                it from the ring – this creates operator overhead. Swift will continue to store the
+                correct number of replicas by handing off objects to other drives instead of the
+                failed drive.</p>
+If the disk drives are of the same size as the original when the
+              drive is replaced, no ring changes are required. You can confirm this by running the
+                <samp class="ph codeph">_swift-make-delta-rebalance.yml</samp> playbook. It should report that no
+              weight changes are needed. <p class="p">For a single drive replacement, even if the drive is
+                significantly larger than the original drives, you do not need to rebalance the ring
+                (however, the extra space on the drive will not be used).</p>
+</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">Upgrading Disk Drives</td>
+
+            <td valign="top" class="stentry">
+              <p class="p">If the drives are different size (for example, you are upgrading your system), you
+                can proceed as follows:</p>
+
+              <ul class="ul" id="topic_vyp_cft_4t__ul_smv_pfz_4t">
+                <li class="li">If not already done, set the weight-step attribute</li>
+
+                <li class="li">Replace drives in phases:<ul class="ul" id="topic_vyp_cft_4t__ul_gvy_5fz_4t">
+                    <li class="li">Avoid replacing too many drives at once.</li>
+
+                    <li class="li">If your rings use swift zones, upgrade a number of drives in the same zone
+                      at the same time – not drives in several zones.</li>
+
+                    <li class="li">It is also safer to upgrade one server instead of drives in several servers
+                      at the same time.</li>
+
+                    <li class="li">Remember that the final size of all Swift zones must be the same, so you may
+                      need to replace a small number of drives in one zone, then a small number in
+                      second zone, then return to the first zone and replace more drives, etc. </li>
+
+                  </ul>
+</li>
+
+                <li class="li">For instructions, see <a class="xref" href="#topic_vyp_cft_4t">HPE Helion OpenStack 2.0: Applying Input Model Changes to Existing Rings</a>.</li>
+
+              </ul>
+
+            </td>
+
+          </tr>
+</table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

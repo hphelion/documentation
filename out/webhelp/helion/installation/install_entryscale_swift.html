@@ -1,0 +1,478 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page describes the installation step requirements for the HPE Helion Entry-scale Cloud with Swift Only model. Important Notes If you are looking for information about when to use the GUI ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Installation for HPE Helion Entry-scale Cloud with Swift Only"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="install_swift"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Installation for HPE Helion Entry-scale Cloud with Swift Only</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="install_swift">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Installation for HPE Helion Entry-scale Cloud
+    with Swift Only</h1>
+
+  <div class="body">
+    <div class="section" id="install_swift__about">
+      <p class="p">This page describes the installation step requirements for the HPE Helion Entry-scale Cloud
+        with Swift Only model.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Important Notes</h2>
+      <ul class="ul">
+        <li class="li">If you are looking for information about when to use the GUI installer and when to use
+          the CLI, see the <a class="xref" href="installation_overview.html#install_overview">Installation
+            Overview</a>.</li>
+
+        <li class="li">Review the <a class="xref" href="../hardware.html">recommended minimum hardware
+            requirements</a> that we have listed.</li>
+
+        <li class="li">The installation process can occur in different phases. For example, you can install the
+          control plane only and then add Compute nodes afterwards if you would like.</li>
+
+        
+        <li class="li">If you run into issues during installation, we have put together a list of <a class="xref" href="installation_troubleshooting.html">Installation Troubleshooting Steps</a> you
+          can reference.</li>
+
+        <li class="li">Make sure all disks on the system(s) are wiped before you begin the install. (For Swift,
+          refer to <a class="xref" href="../objectstorage/swift_device_groups.html">Swift Requirements for
+            Device Group Drives</a>)</li>
+
+        <li class="li">There is no requirement to have a dedicated network for OS-install and system
+          deployment, this can be shared with the management network. More information can be found
+          on the <a class="xref" href="../example_configurations.html">Example Configuration</a> page.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Before You Start</h2>
+      
+      <p class="p">We have put together a <a class="xref" href="preinstall_checklist.html">Pre-Installation
+          Checklist</a> that should help with the recommended pre-installation tasks.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Set up the Lifecycle-manager</h2>
+      
+      <p class="p"><strong class="ph b">Installing the Lifecycle-manager</strong></p>
+
+      <p class="p">The lifecycle-manager will contain the installation scripts and configuration files to
+        deploy your cloud. You can set up the lifecycle-manager on a dedicated node or you do so on
+        your first controller node. The default choice is to use the first controller node as the
+        lifecycle-manager.</p>
+
+      <ol class="ol">
+        <li class="li">Download the HPE Helion OpenStack 2.0.0 product from the <a class="xref" href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show" target="_blank">Helion Downloads</a> page after signing in.</li>
+
+        <li class="li">Boot your deployer from the ISO contained in the download.</li>
+
+        <li class="li">Enter "install" to start installation. <div class="note note"><span class="notetitle">Note:</span> "install" is all lower case</div>
+</li>
+
+        <li class="li">Select the language. Note that only the English language selection is currently
+          supported.</li>
+
+        <li class="li">Select the location.</li>
+
+        <li class="li">Select the keyboard layout.</li>
+
+        <li class="li">Select the primary network interface, if prompted:<ul class="ul">
+            <li class="li">Assign IP address, subnet mask, and default gateway</li>
+
+          </ul>
+</li>
+
+        <li class="li">Create new account:<ul class="ul">
+            <li class="li">Enter a username.</li>
+
+            <li class="li">Enter a password.</li>
+
+            <li class="li">Enter time zone.</li>
+
+          </ul>
+
+        </li>
+
+      </ol>
+
+      <p class="p">Once the initial installation is finished, complete the lifecycle-manager setup with these
+        steps:</p>
+
+      <ol class="ol">
+        <li class="li">Ensure your lifecycle-manager node has a valid DNS nameserver specified in
+            <samp class="ph codeph">/etc/resolv.conf</samp>.</li>
+
+        <li class="li">Set the environment variable LC_ALL: <samp class="ph codeph">export LC_ALL=C</samp>
+          <div class="note note"><span class="notetitle">Note:</span> This can be added to <samp class="ph codeph">~stack/.bashrc</samp> or
+              <samp class="ph codeph">/etc/bash.bashrc</samp>.</div>
+</li>
+
+      </ol>
+
+      <p class="p">At the end of this section you should have a node set up with Linux for HPE Helion on
+        it.</p>
+
+      <p class="p"><strong class="ph b">Configure and Run the Lifecycle-manager</strong></p>
+
+      <div class="note important"><span class="importanttitle">Important:</span> It is critical that you don't run any of the commands below as the
+          <samp class="ph codeph">root</samp> user or use <samp class="ph codeph">sudo</samp>, unless it is stated explicitly in
+        the steps. Run then as the user you just created (or <samp class="ph codeph">stack</samp> if you left the
+        default of "stack").</div>
+
+      <ol class="ol">
+        <li class="li">Log into your lifecycle-manager node as the user you created and mount the install media
+          at <samp class="ph codeph">/media/cdrom</samp>. It may be necessary to use <samp class="ph codeph">wget</samp> or
+          another file transfer method to transfer the install media to the deployer before
+          completing this step. Here is the command to mount the media:
+          <pre class="pre codeblock">sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</pre>
+</li>
+
+        <li class="li">Unpack the tarball that is in the <samp class="ph codeph">/media/cdrom/hos2.0.0/</samp> directory:
+          <pre class="pre codeblock">tar xvf /media/cdrom/hos/hos-2.0.0-20151022T082820Z.tar</pre>
+</li>
+
+        <li class="li">Run the following included script: <pre class="pre codeblock">~/hos-2.0.0/hos-init.bash</pre>
+
+          <p class="p">You will be prompted to enter an optional SSH passphrase when running
+              <samp class="ph codeph">hos-init.bash</samp>. This passphrase is used to protect the key used by
+            Ansible when connecting to its client nodes. If you do not want to use a passphrase then
+            just press return at the prompt.</p>
+
+          <p class="p">For automated installation (e.g. CI) it is possible to disable SSH passphrase prompting
+            by setting the <samp class="ph codeph">HOS_INIT_AUTO</samp> environment variable before running
+              <samp class="ph codeph">hos-init.bash</samp>, like this:</p>
+
+          <pre class="pre codeblock">export HOST_INIT_AUTO=y</pre>
+</li>
+
+      </ol>
+
+      <p class="p">If you have protected the SSH key with a passphrase then execute the following commands to
+        avoid having to enter the passphrase on every attempt by Ansible to connect to its client
+        nodes:</p>
+
+      <pre class="pre codeblock">eval $(ssh-agent)
+ssh-add ~/.ssh/id_rsa</pre>
+
+      <p class="p">At the end of this section you should have a local directory structure, as described
+        below:</p>
+
+      <pre class="pre codeblock">helion/                        Top level directory
+helion/examples/               Directory contains the config input files of the example clouds
+helion/my_cloud/definition/    Directory contains the config input files
+helion/my_cloud/config/        Directory contains .j2 files which are symlinks to the /hos/ansible directory
+helion/hos/                    Directory contains files used by the installer
+helion/tech-preview            Directory contains the config input files of the tech-preview clouds</pre>
+
+      <p class="p">For any troubleshooting information regarding these steps, see <a class="xref" href="installation_troubleshooting.html#troubleshooting_installation__deployer_setup">Troubleshooting Your Installation</a></p>
+
+    </div>
+
+    <div class="section" id="install_swift__configuration"><h2 class="title sectiontitle">Configure Your Environment</h2>
+      
+      <p class="p">This part of the install is going to depend on the specific cloud configuration you are
+        going to use.</p>
+
+      <ol class="ol">
+        <li class="li">Setup your configuration files, as follows: <ol class="ol" type="a">
+            <li class="li">See the sample sets of configuration files in the
+                <samp class="ph codeph">~/helion/examples/</samp> directory. Each set will have an accompanying
+              README.md file that explains the contents of each of the configuration files.</li>
+
+            <li class="li">Copy the example configuration files into the required setup directory and edit them
+              to contain the details of your environment:
+              <pre class="pre codeblock">cp -r ~/helion/examples/entry-scale-swift/* ~/helion/my_cloud/definition/</pre>
+</li>
+
+            <li class="li">Update the <samp class="ph codeph">~/helion/my_cloud/definition/data/network_groups.yml</samp>
+              file and add the <samp class="ph codeph">swift-rsync</samp> service to the component-endpoints for
+              the SWIFT network group. For
+              example:<pre class="pre codeblock">    #
+    # SWIFT
+    #
+    # This is the network group that will be used to for
+    # Swift back-end traffic between proxy, container, account
+    # and object servers
+    #
+    - name: SWIFT
+      hostname-suffix: swift
+
+      component-endpoints:
+        - swift-container
+        - swift-account
+        - swift-object
+        - swift-rsync</pre>
+</li>
+
+            <li class="li">Begin inputting your environment information into the configuration files in the
+                <samp class="ph codeph">~/helion/my_cloud/definition</samp> directory. <p class="p">Full details of how to
+                do this can be found here: <a class="xref" href="../input_model.html">Helion OpenStack 2.0 Input
+                  Model</a>.</p>
+
+              <p class="p">In many cases, the example models provide most of the data you need to create a
+                valid input model. However, there are two important aspects you must plan and
+                configure before starting a deploy as follows:</p>
+
+              <ul class="ul">
+                <li class="li">Check the disk model used by your nodes. Specifically, check that all disk
+                  drives are correctly named and used as described in <a class="xref" href="../objectstorage/swift_device_groups.html#topic_d1s_hht_tt">Swift
+                    Requirements for Device Group Drives</a>.</li>
+
+                <li class="li">Select an appropriate partition power for your rings. Detailed information about
+                  this is provided at <a class="xref" href="../objectstorage/ring_specifications.html">Swift Ring
+                    Specifications</a>.</li>
+
+              </ul>
+
+            </li>
+
+          </ol>
+
+          
+          <p class="p">Optionally, you can use the <samp class="ph codeph">hosencrypt.py</samp> script to encrypt your iLo
+            passwords. This script uses OpenSSL.</p>
+
+          <ol class="ol" type="a">
+            <li class="li">Change to the Ansible directory: <pre class="pre codeblock">cd ~/helion/hos/ansible</pre>
+</li>
+
+            <li class="li">Put the encryption key into the following environment variable:
+              <pre class="pre codeblock">export HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key&gt;</pre>
+</li>
+
+            <li class="li">Run the python script below and follow the instructions. Enter a password that you
+              want to encrypt. <pre class="pre codeblock">hosencrypt.py</pre>
+</li>
+
+            <li class="li">Take the string generated and place it in the <samp class="ph codeph">"ilo_password"</samp> field
+              in your <samp class="ph codeph">~/helion/my_cloud/definition/data/servers.yml</samp> file,
+              remembering to enclose it in quotes.</li>
+
+            <li class="li">Repeat the above for each server.</li>
+
+          </ol>
+
+          <div class="note note"><span class="notetitle">Note:</span> Before you run any playbooks, remember that you need to export the encryption key in
+            the following environment variable: <samp class="ph codeph">export
+              HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key&gt;</samp></div>
+</li>
+
+      </ol>
+
+      <div class="p">Commit your configuration to the <a class="xref" href="using_git.html">local git repo</a>, as
+        follows: <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</pre>
+
+        <div class="note important"><span class="importanttitle">Important:</span> This step needs to be repeated any time you make changes to your
+          configuration files before you move onto the following steps. See <a class="xref" href="using_git.html">Using Git for Configuration Management</a> for more
+          information.</div>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Run the Configuration Processor</h2>
+      <p class="p">Once you have your configuration files setup you need to run the configuration processor to
+        complete your configuration.</p>
+
+      <p class="p" id="install_swift__d283e561">When you run the configuration processor you will be prompted for two
+        passwords. Enter the first password to make the configuration processor encrypt its
+        sensitive data, which is comprised of the random inter-service passwords that it generates
+        and the ansible <samp class="ph codeph">group_vars</samp> and <samp class="ph codeph">host_vars</samp> that it produces
+        for subsequent deploy runs. You will need this key for subsequent ansible deploy and
+        configuration processor runs. If you wish to change an encryption password that you have
+        already used when running the configuration processor then enter the new password at the
+        second prompt, otherwise just press carriage return to bypass this.</p>
+
+      <p class="p">Run the configuration processor with this command:</p>
+
+      <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+
+      <div class="p">For automated installation (e.g. CI) you can specify the required passwords on the ansible
+        command line. For example, the command below will disable encryption by the configuration
+        processor
+        <pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</pre>
+
+      </div>
+
+      <p class="p">If you receive an error during this step then there is probably an issue with one or more
+        of your configuration files. We recommend that you verify that all of the information in
+        each of your configuration files is correct for your environment and then commit those
+        changes to git using the instructions in the previous section before re-running the
+        configuration processor again.</p>
+
+      <p class="p">For any troubleshooting information regarding these steps, see <a class="xref" href="installation_troubleshooting.html#troubleshooting_installation__config_processor">Troubleshooting Your Installation</a></p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Provision Your Baremetal Nodes</h2>
+      <p class="p">To provision the baremetal nodes in your cloud deployment you can either use the automated
+        operating system installation process provided by HPE Helion OpenStack or you can use the 3rd
+        party installation tooling of your choice. We will outline both methods below:</p>
+
+      <p class="p" id="install_swift__d283e403"><strong class="ph b">Using 3rd Party Baremetal Installers</strong></p>
+
+      <p class="p">If you do not wish to use the automated operating system installation tooling included with
+        HPE Helion OpenStack 2.0 then the requirements that have to be met using the installation
+        tooling of your choice are:</p>
+
+      <ul class="ul">
+        <li class="li">The operating system must be installed via the HPE Linux for HPE Helion OpenStack ISO
+          provided on the <a class="xref" href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show" target="_blank">Helion Downloads</a> page.</li>
+
+        <li class="li">Each node must have SSH keys in place that allow the user who will be doing the
+          deployment to SSH to each node without a password.</li>
+
+        <li class="li">Passwordless sudo needs to be enabled for the user.</li>
+
+        <li class="li">There should be a LVM logical volume as <samp class="ph codeph">/root</samp> on each node.</li>
+
+        <li class="li">If the LVM volume group name for the volume group holding the "root" LVM logical volume
+          is hlm-vg then it will align with the disk input models in the examples.</li>
+
+        <li class="li">Ensure that <samp class="ph codeph">openssh-server</samp>, <samp class="ph codeph">python</samp>, and
+            <samp class="ph codeph">rsync</samp> are installed.</li>
+
+      </ul>
+
+      <p class="p">If you chose this method for installing your baremetal hardware, skip forward to the <a class="xref" href="install_entryscale_kvm.html#install_kvm__config_processor">Run the Configuration
+          Processor</a> step.</p>
+
+      <p class="p">If you would like to use the automated operating system installation tools provided by HP
+        Helion OpenStack 2.0 then complete all of the steps below.</p>
+
+      <p class="p"><strong class="ph b">Using the Automated Operating System Installation Provided by HPE Helion
+        OpenStack</strong></p>
+
+      <p class="p"><strong class="ph b">Part One: Deploy Cobbler</strong></p>
+
+      <p class="p">This phase of the install process takes the baremetal information that was provided in
+          <samp class="ph codeph">servers.yml</samp> and installs the Cobbler provisioning tool and loads this
+        information into Cobbler. This sets each node to <samp class="ph codeph">netboot-enabled: true</samp> in
+        Cobbler. Each node will be automatically marked as <samp class="ph codeph">netboot-enabled: false</samp>
+        when it completes its operating system install successfully. Even if the node tries to PXE
+        boot subsequently, Cobbler will not serve it. This is deliberate so that you can't reimage a
+        live node by accident.</p>
+
+      <p class="p">The <samp class="ph codeph">cobbler-deploy.yml</samp> playbook prompts for a password - this is the
+        password that will be encrypted and stored in Cobbler, which is associated with the user
+        running the command on the deployer, that you will use to log in to the nodes via their
+        consoles after install. The username is the same as the user set up in the initial dialogue
+        when installing the deployer from the iso, and is the same user that is running the
+        cobbler-deploy play.</p>
+
+      <ol class="ol">
+        <li class="li">Run the following playbook which confirms that there is iLo connectivity for each of
+          your nodes so that they are accessible to be re-imaged in a later step:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-power-status.yml</pre>
+</li>
+
+        <li class="li">Run the following playbook to deploy Cobbler:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre>
+</li>
+
+      </ol>
+
+      <p class="p"><strong class="ph b">Part Two: Image the Nodes</strong></p>
+
+      <div class="p">This phase of the install process goes through a number of distinct steps: <ol class="ol">
+          <li class="li">Powers down the nodes to be installed</li>
+
+          <li class="li">Sets the nodes hardware boot order so that the first option is a network boot.</li>
+
+          <li class="li">Powers on the nodes. (The nodes will then boot from the network and be installed using
+            infrastructure set up in the previous phase)</li>
+
+          <li class="li">Waits for the nodes to power themselves down (this indicates a success install). This
+            can take some time.</li>
+
+          <li class="li">Sets the boot order to hard disk and powers on the nodes.</li>
+
+          <li class="li">Waits for the nodes to be ssh-able and verifies that they have the signature
+            expected.</li>
+
+        </ol>
+
+      </div>
+
+      <p class="p">The reimage command is:</p>
+
+      <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node3]</pre>
+
+      <p class="p">If a nodelist is not specified then the set of nodes in cobbler with
+          <samp class="ph codeph">netboot-enabled: True</samp> is selected. The playbook pauses at the start to
+        give you a chance to review the set of nodes that it is targeting and to confirm that it's
+        correct.</p>
+
+      <p class="p">You can use the command below which will list all of your nodes with the
+          <samp class="ph codeph">netboot-enabled: True</samp> flag set:</p>
+
+      <pre class="pre codeblock">sudo cobbler system find --netboot-enabled=1</pre>
+
+      <p class="p">For any troubleshooting information regarding these steps, see <a class="xref" href="installation_troubleshooting.html#troubleshooting_installation__deploy_cobbler">Troubleshooting Your Installation</a></p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Deploy the Cloud</h2>
+      <ol class="ol">
+        <li class="li">Use the playbook below to create a deployment directory:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">[OPTIONAL] - Run the <samp class="ph codeph">wipe_disks.yml</samp> playbook to ensure all of your
+          partitions on your nodes are completely wiped before continuing with the installation. If
+          you are using fresh machines this step may not be necessary.
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts wipe_disks.yml</pre>
+</li>
+
+        <li class="li">Run the <samp class="ph codeph">site.yml</samp> playbook using the command below. The <samp class="ph codeph">-e
+            elasticsearch_cluster_name</samp> switch is used to set a unique name for your
+          elasticsearch cluster. This should be set to a value other than
+            <samp class="ph codeph">elasticsearch</samp>. <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&lt;name&gt;</pre>
+
+          <div class="p">If you have used an encryption password when running the configuration processor use
+            the command below and enter the encryption password when prompted: 
+            <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</pre>
+
+          </div>
+
+          <div class="note note"><span class="notetitle">Note:</span> The step above runs <samp class="ph codeph">osconfig</samp> to configure the cloud and
+              <samp class="ph codeph">hlm-deploy</samp> to deploy the cloud. Therefore, this step may run for a
+            while, perhaps 45 minutes or more, depending on the number of nodes in your
+            environment.</div>
+
+        </li>
+
+        <li class="li">Verify that the network is working correctly. Ping each IP in the
+            <samp class="ph codeph">/etc/hosts</samp> file from one of the controller nodes.</li>
+
+      </ol>
+
+      <p class="p">For any troubleshooting information regarding these steps, see <a class="xref" href="installation_troubleshooting.html#troubleshooting_installation__deploy_cloud">Troubleshooting Your Installation</a></p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Post-Installation Verification and Administration</h2>
+      <p class="p">We recommend verifying the installation using the <a class="xref" href="installation_verification.html">post-installation verification steps</a>
+        page.</p>
+
+      <p class="p">There are also a list of other common post-installation administrative tasks listed in the
+          <a class="xref" href="postinstall_checklist.html">Common Post-Installation Tasks</a> list.</p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

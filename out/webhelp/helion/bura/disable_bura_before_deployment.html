@@ -1,0 +1,352 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Disable backup/restore jobs creation completely: To disable Freezer's deployment, comment out the following lines in the following files: Note: This action is required even if you already removed ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Disabling Backup/Restore before Deployment"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_i4l_xhn_tt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Disabling Backup/Restore before Deployment</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_i4l_xhn_tt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack 2.0: Disabling Backup/Restore before Deployment</h1>
+
+  <div class="body">
+    
+    <div class="section"><h2 class="title sectiontitle">Disable backup/restore jobs creation completely:</h2>
+      <div class="p">To disable Freezer's deployment, comment out the following lines in the following files:
+          <div class="note note"><span class="notetitle">Note:</span> This action is required even if you already removed Freezer lines from your model
+          (control_plane.yml).</div>
+</div>
+
+      <div class="p">In hlm-deploy.ym:<pre class="pre codeblock"># - include: freezer-deploy.yml</pre>
+</div>
+
+      <div class="p">In hlm-status.ym:<pre class="pre codeblock"># - include: freezer-status.yml</pre>
+</div>
+
+      <div class="p">In hlm-stop.ym:<pre class="pre codeblock"># - include: freezer-stop.yml</pre>
+</div>
+
+      <div class="p">In hlm-start.ym:<pre class="pre codeblock"># - include: freezer-start.yml</pre>
+</div>
+
+      <div class="p">In hlm-upgrade.ym:<pre class="pre codeblock"># - include: freezer-upgrade.yml</pre>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Disable backup/restore jobs creation completely:</h2><p class="p">It is possible to
+        continue deploying Freezer and prevent the lifecycle-manager from creating automatic backup
+        jobs.</p>
+<div class="p">By default, the lifecycle-manager deployment automatically creates jobs for the
+        backup and restore of the following:<ul class="ul">
+          <li class="li">Deployer/Lifecycle-manager node</li>
+
+          <li class="li">MySQL database</li>
+
+          <li class="li">Swift rings</li>
+
+        </ul>
+</div>
+You can disable the creation of those jobs while launching the deployment process,
+      as
+        follows:<pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts site.yml -e '{ "freezer_backup_jobs_upload": false }' -e '{ "freezer_restore_jobs_upload": false }'</pre>
+<p class="p">When
+        using those options, the Freezer infrastructure will still be deployed but will not execute
+        any backups.</p>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">Disable the backup/restore jobs of a specific service:</h2>
+      <div class="p">If some fine tuning is required, you can edit the following file before running the
+        configuration processor and ready deployment scripts:
+        <pre class="pre codeblock">~/helion/hos/ansible/_freezer_manage_jobs.yml</pre>
+</div>
+
+      <div class="p">You can combine the following instructions to disable the creation of multiple service
+        jobs. <ul class="ul">
+          <li class="li">To disable the deployer's jobs, comment-out all localhost paragraphs, as follows:
+            <pre class="pre codeblock">---
+ 
+- hosts: FRE-AGN
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - freezer-jobs
+#  tasks:
+#    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+#      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+ 
+- hosts: FND-MDB
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_mysql_credentials.yml
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_swift.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_swift.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: SWF-PRX[0]
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_swift.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_swift.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - freezer-jobs
+#  tasks:
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready</pre>
+</li>
+
+          <li class="li">To disable MySQL's jobs, comment-out the FND-MDB paragraph, as follows:
+            <pre class="pre codeblock">---
+ 
+- hosts: FRE-AGN
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: localhost
+  connection: local
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+ 
+#- hosts: FND-MDB
+#  roles:
+#    - freezer-jobs
+#  tasks:
+#    - include: roles/freezer-jobs/tasks/_mysql_credentials.yml
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_swift.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_swift.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_ssh.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_ssh.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+#  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: SWF-PRX[0]
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_swift.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_swift.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: localhost
+  connection: local
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready</pre>
+</li>
+
+          <li class="li">To disable the Swift Ring's job, comment-out the SWF-PRX[0] paragraph, as follows:
+            <pre class="pre codeblock">---
+ 
+- hosts: FRE-AGN
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: localhost
+  connection: local
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+ 
+- hosts: FND-MDB
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_mysql_credentials.yml
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_swift.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_swift.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+#- hosts: SWF-PRX[0]
+#  roles:
+#    - freezer-jobs
+#  tasks:
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_swift.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_swift.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_ssh.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_ssh.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+#  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: localhost
+  connection: local
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready</pre>
+</li>
+
+        </ul>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Disable the creation of one specific job:</h2>
+      <div class="p">If some fine tuning is required, you can edit the following file before running the
+        configuration processor and ready deployment
+        scripts:<pre class="pre codeblock">~/helion/hos/ansible/_freezer_manage_jobs.yml</pre>
+</div>
+
+      <div class="p">The following example shows how to disable Swift jobs only. You can do this, for example,
+        to ensure no space is used in Swift to store backups (in that case, be sure to have some SSH
+        backups
+        configured).<pre class="pre codeblock">---
+ 
+- hosts: FRE-AGN
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: localhost
+  connection: local
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_pre_manage_jobs.yml
+      when: freezer_backup_jobs_upload or freezer_restore_jobs_upload
+    - include: roles/freezer-jobs/tasks/_deploy_ssh_key.yml
+ 
+- hosts: FND-MDB
+  roles:
+    - freezer-jobs
+  tasks:
+    - include: roles/freezer-jobs/tasks/_mysql_credentials.yml
+      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_swift.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_swift.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=mysql_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: SWF-PRX[0]
+  roles:
+    - freezer-jobs
+  tasks:
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_swift.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_swift.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=swift_ring_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready
+  serial: "{{ freezer_serialization | default(3) | int }}"
+ 
+- hosts: localhost
+  connection: local
+  roles:
+    - freezer-jobs
+  tasks:
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_swift.json.j2
+#      when: ready_to_upload and freezer_backup_jobs_upload
+#    - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_swift.json.j2
+#      when: ready_to_upload and freezer_restore_jobs_upload
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_backup_ssh.json.j2
+      when: ready_to_upload and freezer_backup_jobs_upload and freezer_ssh_ready
+     - include: roles/freezer-jobs/tasks/_manage_job.yml template_name=deployer_restore_ssh.json.j2
+      when: ready_to_upload and freezer_restore_jobs_upload and freezer_ssh_ready</pre>
+</div>
+</div>
+
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

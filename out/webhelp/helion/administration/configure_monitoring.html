@@ -1,0 +1,271 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="In HPE Helion OpenStack 2.0 you will have the option to specify a SMTP server for email notifications and a database platform you want to use for the Metrics Database. These steps will assist in this ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring the Monitoring Service"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="configure_monitoring"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring the Monitoring Service</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="configure_monitoring">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring the Monitoring Service</h1>
+
+  <div class="body">
+    <div class="section" id="configure_monitoring__config">
+      <p class="p">In HPE Helion OpenStack 2.0 you will have the option to specify a SMTP server for email
+        notifications and a database platform you want to use for the Metrics Database. These steps
+        will assist in this process.</p>
+
+    </div>
+
+    <div class="section" id="configure_monitoring__email"><h2 class="title sectiontitle">Specifying a SMTP Server for Email Notifications</h2>
+      <p class="p">In order for the Monitoring service to be able to send email notifications about alarms, it
+        needs to be configured with an email server. The email server is not provided by HPE Helion
+        OpenStack, but must be specified in the configuration file described below. The email server
+        must support SMTP.</p>
+
+      <p class="p">To configure the SMTP server, edit the <samp class="ph codeph">cloudConfig.yml</samp> file during
+        installation. There should be a section at the bottom for <samp class="ph codeph">smtp-settings</samp>
+        that looks like this below. If it doesn't exist, you can add it:</p>
+
+      <pre class="pre codeblock">smtp-settings:
+  #  server: mailserver.examplecloud.com
+  #  port: 25
+  #  timeout: 15
+  # These are only needed if your server requires authentication
+  #  user:
+  #  password:</pre>
+
+      <div class="p">This table explains each of these values: 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="configure_monitoring__smtp_settings" class="table" frame="border" border="1" rules="all">
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="50%" id="d5517e73">Value</th>
+
+                <th class="entry" valign="top" width="50%" id="d5517e76">Description</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="50%" headers="d5517e73 ">Server (required)</td>
+
+                <td class="entry" valign="top" width="50%" headers="d5517e76 ">The server entry must be uncommented and set to a valid hostname or IP
+                  Address.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="50%" headers="d5517e73 ">Port (optional)</td>
+
+                <td class="entry" valign="top" width="50%" headers="d5517e76 ">If your SMTP server is running on a port other than the standard 25, then
+                  uncomment the port line and set it your port.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="50%" headers="d5517e73 ">Timeout (optional)</td>
+
+                <td class="entry" valign="top" width="50%" headers="d5517e76 ">If your email server is heavily loaded, the timeout parameter can be
+                  uncommented and set to a larger value. 15 seconds is the default.</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="50%" headers="d5517e73 ">User / Password (optional)</td>
+
+                <td class="entry" valign="top" width="50%" headers="d5517e76 ">If your SMTP server requires authentication, then you can configure user and
+                  password. Use double quotes around the password to avoid issues with special
+                  characters.</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="configure_monitoring__database"><h2 class="title sectiontitle">Choosing a Metrics Database Options</h2>
+      <p class="p">The Monitoring service supports two different database options. The default metrics
+        database is <strong class="ph b">Vertica</strong>, which is a highly-scalable analytics database from HP. Vertica
+        is free to use, up to 12TB, for all paid Helion customers as a Helion operational database
+        .
+        Vertica is the recommended database for HPE Helion OpenStack.</p>
+
+      <p class="p">You can learn more about Vertica here: <a class="xref" href="https://www.vertica.com/hp-vertica-documentation/" target="_blank">Vertica Documentation</a></p>
+
+      <p class="p">The alternative open source database option is <strong class="ph b">InfluxDB</strong>. InfluxDB is an emerging
+        open source monitoring database, however the current release contains the following
+        limitation:</p>
+
+      <ul class="ul">
+        <li class="li">InfluxDB cluster does not recover upon node failure.</li>
+
+      </ul>
+
+      <div class="sectiondiv">
+        <p class="p">In order to replace the default database option with InfluxDB as the metrics database,
+          you need to follow these steps:</p>
+
+        <p class="p">During the <a class="xref" href="../installation/install_entryscale_kvm.html#install_kvm__configuration">Configure Your Environment</a> portion of the installation, ensure you make these
+          configuration file edits:</p>
+
+        <ol class="ol">
+          <li class="li">On your deployer, edit the following two files: <ol class="ol" type="a">
+              <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/control_plane.yml</samp> file
+                and under your control plane cluster <samp class="ph codeph">service-clusters</samp> section, edit
+                the entry for <samp class="ph codeph">vertica</samp> to read <samp class="ph codeph">influxdb</samp>.</li>
+
+              <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/disks_controller.yml</samp>
+                and either replace the existing <samp class="ph codeph">vertica</samp> information or insert the
+                information for InfluxDB as seen below in the section labeled for
+                  <samp class="ph codeph">logical-volumes</samp> on the <samp class="ph codeph">DISK_SET_CONTROLLER</samp>:
+                <pre class="pre codeblock">
+  - name: influxdb
+    size: 5%
+    mount: /var/opt/influxdb
+    fstype: ext4
+    mkfs-opts: -O large_file
+    consumer:
+        name: influxdb</pre>
+</li>
+
+            </ol>
+</li>
+
+        </ol>
+
+        <p class="p">Then, before you run the <samp class="ph codeph">site.yml</samp> playbook as part of the <a class="xref" href="../installation/install_entryscale_kvm.html#install_kvm__deploy">Deploy the Cloud</a>
+          installation step, make these changes:</p>
+
+        <ol class="ol">
+          <li class="li">Edit the
+              <samp class="ph codeph">~/helion/hos/ansible/roles/monasca-api/templates/api-config.yml.j2</samp>
+            file to remove information referencing Vertica: <p class="p">Section to remove or comment out:</p>
+
+            <pre class="pre codeblock">
+{% set vertica_api_user = [] %}
+{% if vertica_users is defined %}
+{% for item in vertica_users %}
+{% if item.role == 'monasca_api'%}
+{% if vertica_api_user.append(item) %}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}</pre>
+
+            <p class="p">Replace a portion of this text in this file with the replacement text below:</p>
+
+            <pre class="pre codeblock">
+vertica:
+  driverClass: com.vertica.jdbc.Driver
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon')}}"
+{% if vertica_api_user|count == 0%}
+  user: mon_api
+  password: password
+{% else %}
+  user: "{{ vertica_api_user[0].username }}"
+  password: "{{ vertica_api_user[0].password }}"
+{% endif %}</pre>
+
+            <p class="p">Replace the above with the text with this:</p>
+
+            <pre class="pre codeblock">
+vertica:
+  driverClass: com.vertica.jdbc.Driver
+{% if database_type == 'vertica' %}
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon')}}"
+  user: "{{ vertica_api_user }}"
+  password: "{{ vertica_api_password }}"
+{% else %}
+  url:
+  user:
+  password:
+  {% endif %}</pre>
+
+          </li>
+
+          <li class="li">Edit the
+              <samp class="ph codeph">~/helion/hos/ansible/roles/monasca-persister/templates/persister-config.yml.j2</samp>
+            file to remove information referencing Vertica: <p class="p">Section to remove or comment out:</p>
+
+            <pre class="pre codeblock">
+{% set vertica_api_user = [] %}
+{% if vertica_users is defined %}
+{% for item in vertica_users %}
+{% if item.role == 'monasca_api'%}
+{% if vertica_api_user.append(item) %}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}</pre>
+
+            <p class="p">Replace a portion of this text in this file with the replacement text below:</p>
+
+            <pre class="pre codeblock">
+dataSourceFactory:
+  driverClass: com.vertica.jdbc.Driver
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon') }}"
+{% if vertica_persister_user|count == 0%}
+  user: mon_persister
+  password: password
+{% else %}
+  user: "{{ vertica_persister_user[0].username }}"
+  password: "{{ vertica_persister_user[0].password }}"
+{% endif %}</pre>
+
+            <p class="p">Replace the above with the text with this:</p>
+
+            <pre class="pre codeblock">
+dataSourceFactory:
+  driverClass: com.vertica.jdbc.Driver
+{% if database_type == 'vertica' %}
+  url: "{{ vertica_url | default('jdbc:vertica://localhost:5433/mon') }}"
+  user: "{{ vertica_persister_user }}"
+  password: "{{ vertica_persister_password }}"
+{% else %}
+  url:
+  user:
+  password:
+{% endif %}</pre>
+
+          </li>
+
+          <li class="li">Edit the
+              <samp class="ph codeph">~/helion/hos/ansible/roles/monasca-variables/defaults/main.yml</samp> file
+            and add the lines below between the <samp class="ph codeph">vertica_users</samp> and
+              <samp class="ph codeph">vertica_resource_pools_limits</samp> entries near the bottom of the file:
+            <pre class="pre codeblock">
+vertica_api_user: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_user }}"
+vertica_api_password: "{{ MON_API.consumes_FND_VDB.vars.vertica_monasca_api_password }}"
+vertica_persister_user: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_user }}"
+vertica_persister_password: "{{ MON_PST.consumes_FND_VDB.vars.vertica_monasca_persister_password }}"</pre>
+</li>
+
+        </ol>
+
+        <p class="p">Then, when running your <samp class="ph codeph">site.yml</samp> playbook as part of the <a class="xref" href="../installation/install_entryscale_kvm.html#install_kvm__deploy">Deploy the Cloud</a>
+          installation step, ensure that you use the <samp class="ph codeph">-e database_type=influxdb</samp>
+          switch. For example:</p>
+
+        <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts site.yml -e database_type=influxdb</pre>
+
+        <div class="note important"><span class="importanttitle">Important:</span> Ensure you use any other necessary switches based on your setup that
+          may be included in other parts of the installation documentation.</div>
+
+      </div>
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="About the Operations Console The Operations Console (Ops Console) for HPE Helion OpenStack 2.0 is designed for HPE Helion OpenStack Administrators to have a web-based UI they can use to view data ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Operations Console"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="opsconsole"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Operations Console</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="opsconsole">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Operations Console</h1>
+
+  <div class="body">
+    
+    <div class="section"><h2 class="title sectiontitle">About the Operations Console</h2></div>
+
+    <div class="section" id="opsconsole__about">
+      <p class="p">The Operations Console (Ops Console) for HPE Helion OpenStack 2.0 is designed for HPE
+        Helion OpenStack Administrators to have a web-based UI they can use to view data about their
+        cloud infrastructure. The Ops Console is a web-based GUI that offers the user access to data
+        such as monitoring alarms data by service, performance data, compute nodes and instances
+        lists, and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
+        middleware component that serves as a single point of contact for the UI to communicate with
+        OpenStack services such as Monasca, Nova, and others.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Connecting to the Operations Console</h2></div>
+
+    <div class="section" id="opsconsole__connecting">
+      <p class="p">If your administrator set a hostname value for <samp class="ph codeph">external_name</samp> in your
+          <samp class="ph codeph">network_groups.yml</samp> file during the configuration process for your cloud
+        then the Operations Console will be accessed over port 9095 on that hostname.</p>
+
+      <div class="p">If your administrator did not set a hostname value then in order to determine which IP
+        address to use to access Horizon you can use this command from your lifecycle-manager node:
+        <pre class="pre codeblock">grep vip-HZN-WEB /etc/hosts</pre>
+</div>
+
+      <div class="p">The output of that command will show you the virtual IP address you should use. It is
+        listening over port 9095 on that virtual IP address, so you can use the following syntax to
+        access it:<pre class="pre codeblock">http://VIP:9095</pre>
+</div>
+
+      <p class="p">The default username for the Administrator user is <samp class="ph codeph">admin</samp>. In order to find
+        the randomized password that is created for this user you will need to look into the
+          <samp class="ph codeph">~/service.osrc</samp> file on the deployer/lifecycle-manager node. You can do
+        that with this command:</p>
+
+      <pre class="pre codeblock">cat ~/service.osrc</pre>
+
+      
+      
+    </div>
+
+    <div class="section" id="opsconsole__help"><h2 class="title sectiontitle">Getting Help</h2>
+      <p class="p">On each of the Operations Console pages there is a help menu that you can click on to take
+        you to a help page specific to the console you are currently viewing.</p>
+
+      <p class="p">To reach the help page:</p>
+
+      <ol class="ol">
+        <li class="li">Click the help menu option in the upper-right corner of the page, depicted by the
+          question mark seen in the screenshot below.</li>
+
+        <li class="li">Click on the <span class="ph uicontrol">Get Help For This Page</span> link which will open the help
+          page in a new tab in your browser.</li>
+
+      </ol>
+
+      <p class="p"><img class="image" src="../../media/opsconsole/help.png"></img></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

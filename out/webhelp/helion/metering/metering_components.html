@@ -1,0 +1,133 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The Metering service is installed during the HPE Helion OpenStack installation process. During installation, the Metering service is automatically configured to collect data from the Nova, Cinder, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Ceilometer Metering Service Components"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="layout" content="default"></meta><meta name="product-version" content="HPE Helion Openstack"></meta><meta name="product-version" content="HPE Helion Openstack 1.1"></meta><meta name="product-version1" content="HPE Helion Openstack"></meta><meta name="product-version2" content="HPE Helion Openstack 1.1"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic4362"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Ceilometer Metering Service Components</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic4362">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Ceilometer Metering Service
+    Components</h1>
+
+  
+  <div class="body">
+    <p class="p">
+      
+      
+      </p>
+
+    <p class="p">The Metering service is installed during the HPE Helion OpenStack installation process. During
+      installation, the Metering service is automatically configured to collect data from the Nova,
+      Cinder, Glance and Neutron services.</p>
+
+    <p class="p">Each of the metering processes has a configuration file.</p>
+
+    <p class="p">The installation creates several management nodes running different metering components.</p>
+
+   
+    <div class="section" id="topic4362__controller1_components"><h2 class="title sectiontitle">Ceilometer Components on Controller nodes</h2>
+      
+      <p class="p">This controller node is the first of the High Available (HA) cluster. In this node there is
+        an instance of the Ceilometer API running under the HA Proxy Virtual IP address. </p>
+
+      <p class="p">
+        <strong class="ph b">Note</strong>: When a configuration change is made to an API running under the HA Proxy, that
+        change needs to be replicated in <strong class="ph b">all</strong> controllers.</p>
+
+      <p class="p">The ceilometer-api are now running as part of the Apache2 service together with Horizon and
+        Keystone. To remove them from the active list so that changes can be made and then
+        re-instate them, use the following commands.</p>
+
+      <ol class="ol">
+        <li class="li">Disable the Ceilometer API on the active
+          sites.<pre class="pre codeblock">sudo a2dissite ceilometer.conf</pre>
+</li>
+
+        <li class="li">Perform all necessary changes. The Ceilometer API will not be served until it is
+          re-enabled.</li>
+
+        <li class="li">Re-enable the Ceilometer API on the active
+          sites.<pre class="pre codeblock">sudo a2ensite ceilometer.conf</pre>
+</li>
+
+        <li class="li">The new changes need to be picked up by Apache2. If possible, force a reload rather than
+          a restart. Unlike a restart, the reload waits for currently active sessions to gracefully
+          terminate or complete.<pre class="pre codeblock">sudo  /etc/init.d/apache2 force-reload</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="topic4362__ceilometer-sample-polling"><h2 class="title sectiontitle">Ceilometer Sample Polling</h2>
+      
+      <p class="p">The Sample Polling is part of the Central Agent. Once sent to the RabbitMQ service, they
+        are consumed by the Collector and stored in the database. The Collector is also responsible
+        for consuming and storing notifications. Here there is a high level picture of the overall
+        polling/collecting cycle.</p>
+
+     
+    </div>
+
+    <div class="section" id="topic4362__centralagent"><h2 class="title sectiontitle">Ceilometer Central Agent</h2>
+      
+      <p class="p">The Central Agent is responsible for coordinating the polling activity. It parses the
+          <strong class="ph b">pipeline.yml</strong> configuration file and identifies all the sources that need to be
+        polled from. The sources are then evaluated using a discovery mechanism and all the sources
+        are translated to resources where a dedicated pollster can retrieve and publish data. At
+        each identified interval the discovery mechanism is triggered, the resource list is
+        composed, and the data is polled and sent to the queue.</p>
+
+      <p class="p">Metering processes should normally be operating at all times. Upstart will continually
+        attempt to restart stopped processes even if the process was deliberately stopped manually.
+        In order to avoid this conflict, stop or start processes using the following commands.</p>
+
+      <ol class="ol">
+        <li class="li">Determine whether the process is
+          running:<pre class="pre codeblock">sudo service ceilometer-agent-central status 
+ceilometer-agent-central start/running, process 27989</pre>
+</li>
+
+        <li class="li">Start or stop the process as
+          needed:<pre class="pre codeblock">sudo service ceilometer-agent-central stop</pre>
+or<pre class="pre codeblock">sudo service ceilometer-agent-central start</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="topic4362__collector"><h2 class="title sectiontitle">Ceilometer Collector</h2>
+      
+      <p class="p">The collector is responsible for getting the samples/events from the RabbitMQ service and
+        storing it in the main database.</p>
+
+      <p class="p">Metering processes should normally be operating at all times. Upstart will continually
+        attempt to restart stopped processes even if the process was deliberately stopped manually.
+        In order to avoid this conflict, stop or start processes using the following commands.</p>
+
+      <ol class="ol">
+        <li class="li">Determine whether the process is
+          running:<pre class="pre codeblock">sudo service ceilometer-collector status 
+ceilometer-collector start/running, process 27455</pre>
+</li>
+
+        <li class="li">Start or stop the process as
+          needed:<pre class="pre codeblock">sudo service ceilometer-collector stop</pre>
+or
+          <pre class="pre codeblock">sudo service ceilometer-collector start</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

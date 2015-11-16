@@ -1,0 +1,139 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 Multiple External Network Configuration This document describes the configuration process and requirements for the HPE Helion OpenStack 2.0 Multiple External Network. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring Multiple External Networks"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="HP2.0multinetwork"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring Multiple External Networks</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="HP2.0multinetwork">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring Multiple External
+    Networks</h1>
+
+  <div class="body">
+    <p class="p">HPE Helion OpenStack 2.0 Multiple External Network Configuration</p>
+
+    <p class="p">This document describes the configuration process and requirements for the HPE Helion
+      OpenStack 2.0 Multiple External Network.</p>
+
+    <div class="p">
+      <ul class="ul" id="HP2.0multinetwork__LBaaSlist">
+        <li class="li"><a class="xref" href="multinetwork.html#HP2.0multinetwork__Prerequisites">Prerequisites</a></li>
+
+        <li class="li"><a class="xref" href="multinetwork.html#HP2.0multinetwork__Configuration">Configuration</a></li>
+
+        <li class="li"><a class="xref" href="multinetwork.html#HP2.0multinetwork__MoreInfo">More Information</a></li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="section" id="HP2.0multinetwork__Prerequisites"><h2 class="title sectiontitle">Prerequisites</h2>
+      
+      <p class="p">HPE Helion OpenStack must be installed. </p>
+
+    </div>
+
+
+
+    <div class="section" id="HP2.0multinetwork__Configuration"><h2 class="title sectiontitle">Configuration</h2>
+      
+      <p class="p">HPE Helion OpenStack 2.0 Multiple External Network Configuration</p>
+
+      <p class="p">Neutron provider VLANs are Neutron networks that map directly to an 802.1Q VLAN in the
+        cloud provider’s physical network infrastructure. There are four aspects to provider VLAN
+        configuration:</p>
+
+      <ul class="ul">
+        <li class="li">Network infrastructure configuration (e.g. the top-of-rack switch)</li>
+
+        <li class="li">Server networking configuration (for compute nodes and neutron network nodes)</li>
+
+        <li class="li">Neutron configuration file settings</li>
+
+        <li class="li">Create the corresponding network objects in Neutron</li>
+
+      </ul>
+
+      <p class="p">The physical network infrastructure must be configured to convey the provider VLAN traffic
+        as tagged VLANs to the cloud compute nodes and neutron network nodes. Configuration of the
+        physical network infrastructure is outside the scope of the HPE Helion OpenStack 2.0
+        software.</p>
+
+      <p class="p">HPE Helion OpenStack 2.0 automates the server networking configuration and the Neutron
+        configuration based on information in the cloud definition. To configure the system for
+        provider VLANs, specify the<em class="ph i"> neutron.networks.vlan</em> tag with a
+          <em class="ph i">provider-physical-network</em> attribute on one or more network groups. For example
+        (some attributes omitted for brevity):</p>
+
+      <pre class="pre codeblock">network-groups:
+        
+  - name: NET_GROUP_A
+  tags:
+  - neutron.networks.vlan:
+     provider-physical-network: physnet1
+        
+  - name: NET_GROUP_B
+  tags:
+  - neutron.networks.vlan:
+     provider-physical-network: physnet2</pre>
+
+      <p class="p">A network group is associated with a server network interface via an interface model. For
+        example (some attributes omitted for brevity):</p>
+
+      <pre class="pre codeblock">interface-models:
+  - name: INTERFACE_SET_X
+    network-interfaces:
+      - device:
+        name: bond0
+    network-groups:
+      - NET_GROUP_A
+    - device:
+      name: eth3
+    network-groups:
+      - NET_GROUP_B
+      </pre>
+
+      <p class="p">A network group used for provider VLANs may contain only a single HPE Helion OpenStack
+        network, because that VLAN must span all compute nodes and any neutron network
+        nodes/controllers (i.e. it is a single L2 segment). The HPE Helion OpenStack network must be
+        defined with tagged-vlan false, otherwise a linux vlan network interface will be created.
+        For example:</p>
+
+      <pre class="pre codeblock">networks:
+        
+  - name: NET_A
+    tagged-vlan: false
+    network-group: NET_GROUP_A
+        
+  - name: NET_B
+    tagged-vlan: false
+    network-group: NET_GROUP_B</pre>
+
+      <p class="p">When the cloud is deployed, HPE Helion OpenStack 2.0 will create the appropriate bridges on
+        the servers, and set the appropriate attributes in the Neutron configuration files (e.g.
+        bridge_mappings).</p>
+
+      <p class="p">After the cloud has been deployed, create Neutron network objects for each provider VLAN.
+        For example, using the Neutron CLI:</p>
+
+      <pre class="pre codeblock">neutron net-create --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 101 mynet101
+neutron net-create --provider:network_type vlan --provider:physical_network physnet2 --provider:segmentation_id 234 mynet234</pre>
+
+    </div>
+
+
+
+    <div class="section" id="HP2.0multinetwork__MoreInfo"><h2 class="title sectiontitle">More Information</h2>
+      For more information on the Neutron command-line interface
+      (CLI), see the OpenStack networking command-line client reference: <a class="xref" href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" target="_blank">http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</a></div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

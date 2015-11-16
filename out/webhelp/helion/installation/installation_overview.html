@@ -1,0 +1,135 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Before jumping into your installation, we recommend taking the time to read through our Example Configurations documentation to get an overview of the sample configurations HPE Helion OpenStack 2.0 ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Installation Overview"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="install_overview"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Installation Overview</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="install_overview">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Installation Overview</h1>
+
+  <div class="body">
+    <div class="section" id="install_overview__overview">
+      <p class="p">Before jumping into your installation, we recommend taking the time to read through our
+          <a class="xref" href="../example_configurations.html">Example Configurations</a> documentation to
+        get an overview of the sample configurations HPE Helion OpenStack 2.0 offers. We have highly
+        tuned example configurations for each of these Cloud models:</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="../example_configurations.html#example_configurations__entryscale_kvm_vsa">Entry-scale KVM with VSA model</a></li>
+
+        <li class="li"><a class="xref" href="../example_configurations.html#example_configurations__entryscale_esx">Entry-scale ESX model</a></li>
+
+        <li class="li"><a class="xref" href="../example_configurations.html#example_configurations__entryscale_swift">Entry-scale Swift model</a></li>
+
+        <li class="li"><a class="xref" href="../example_configurations.html#example_configurations__entryscale_ceph">Entry-scale KVM with Ceph model</a></li>
+
+        <li class="li"><a class="xref" href="../example_configurations.html#example_configurations__midscale_kvm_vsa">Mid-scale KVM with VSA model (Tech-preview)</a></li>
+
+      </ul>
+
+      <p class="p">We also have a <a class="xref" href="preinstall_checklist.html">Pre-Installation Checklist</a> we
+        recommend going through to ensure your environment meets the requirements of the Cloud model
+        you choose.</p>
+
+    </div>
+
+    <div class="section" id="install_overview__about"><h2 class="title sectiontitle">Helion OpenStack 2.0 Installation</h2>
+      <p class="p">Once you have an idea of the configuration you want to choose for your cloud and you have
+        gone through the pre-installation steps, you have two options for installation. You can use
+        a GUI that runs in your web browser or you can install via the command-line that exposes the
+        full power and flexibility of HPE Helion OpenStack 2.0.</p>
+
+      <p class="p"><strong class="ph b">Using the GUI</strong></p>
+
+      <div class="p">You should use the GUI if: <ul class="ul">
+          <li class="li">You are installing a simple demo or proof-of-concept cloud. </li>
+
+          <li class="li">You have less than 15 nodes (it will work for larger numbers but entering all that
+            data in the GUI will get tiresome). </li>
+
+          <li class="li">You are not planning to deploy availability zones or use L3 segmentation in your
+            initial deployment. </li>
+
+          <li class="li">You are happy with the tuned HPE default OpenStack configuration.</li>
+
+        </ul>
+
+      </div>
+
+      <p class="p">Instructions for installing via the GUI are here.</p>
+
+    </div>
+
+    <ul class="ul">
+      <li class="li"><a class="xref" href="../gui_installer.html#install_gui">Installing via the GUI</a></li>
+
+    </ul>
+
+    <div class="section">Note that reconfiguration of your cloud, at the moment, can only be done via the
+      command-line. The GUI installer is for initial installation only. </div>
+
+    <div class="section">
+      <p class="p"><strong class="ph b">Using the Command-line</strong></p>
+
+      <p class="p">You should use the command-line if:</p>
+
+      <ul class="ul" id="install_overview__ul_wbl_2lw_kt">
+        <li class="li">You are installing a more complex or large-scale cloud. </li>
+
+        <li class="li">You have more than 15 nodes. </li>
+
+        <li class="li">You need to use availability zones or the server groups functionality of the cloud
+          model. See the <a class="xref" href="../input_model.html#input_model">Input Model page</a> for
+          more information. </li>
+
+        <li class="li">You want to customize the cloud configuration beyond the tuned defaults that HPE provides
+          out of the box. </li>
+
+        <li class="li">You need deeper customizations than are possible to express using the GUI.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section">
+      <p class="p">Instructions for installing via the command-line are here:</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="install_entryscale_kvm.html">Installation for Helion Entry-scale KVM
+            Cloud</a></li>
+
+        <li class="li"><a class="xref" href="install_entryscale_esx.html">Installation for Helion Entry-scale ESX
+            Cloud</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="install_overview__moreinfo"><h2 class="title sectiontitle">For More Information</h2>
+      <p class="p">Other useful documents that will help you understand, plan, configure, and install your
+        cloud are listed below.</p>
+
+      <ul class="ul">
+        <li class="li"><a class="xref" href="using_git.html">Using Git for Configuration Management</a></li>
+
+        <li class="li"><a class="xref" href="installation_troubleshooting.html">Troubleshooting Your
+          Installation</a></li>
+
+        <li class="li"><a class="xref" href="installation_verification.html">Verifying Your Installation</a></li>
+
+        <li class="li"><a class="xref" href="postinstall_checklist.html">Common Post-Installation Steps</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

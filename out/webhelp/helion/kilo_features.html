@@ -1,0 +1,2122 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 Kilo Features Core features in the OpenStack ® Foundation’s Kilo release (as identified below) are enabled in the HPE Helion OpenStack 2.0 standard settings and are included ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: OpenStack Kilo Features"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="HP2.0KiloFeatures"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: OpenStack Kilo Features</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../index.html";
+          
+          --></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="HP2.0KiloFeatures">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: OpenStack Kilo Features</h1>
+
+  <div class="body">
+    <div class="section" id="HP2.0KiloFeatures__KiloFeatures"><h2 class="title sectiontitle">HPE Helion OpenStack 2.0 Kilo Features</h2>
+      
+      
+      
+      
+      <p class="p">Core features in the OpenStack<sup>®</sup> Foundation’s Kilo release (as identified below) 
+        are enabled in the HPE Helion OpenStack 2.0 standard settings and are included 
+        in Helion standard product support.
+      </p>
+
+      
+      <p class="p">Non-core services (listed in the Features tables below) are provided as-is.  
+        Some non-core services are included in this release to provide early access to 
+        features that HPE may support fully in future releases, but HPE cannot guarantee 
+        that support will be provided or issues resolved in a future release.  Other 
+        non-core features are provided in this release for a limited time and may be 
+        deprecated in future releases.  HPE will attempt to provide guidance and telephone 
+        support for these features at its discretion. If you need additional support on 
+        any of these features for a specific use case, please contact the Helion 
+        professional services team.
+      </p>
+
+      
+        <ul class="ul" id="HP2.0KiloFeatures__KiloFeatureJumplist">
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__NovaFeatures">Nova
+            Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__NeutronFeatures">Neutron
+              Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__GlanceFeatures">Glance
+              Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__SwiftFeatures">Swift
+            Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__CinderFeatures">Cinder
+              Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__KeystoneFeatures">Keystone and
+            Barbican Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__CeilometerFeatures">Ceilometer
+              Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__HeatFeatures">Heat
+            Features</a></li>
+
+          
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__HorizonFeatures">Horizon
+              Features</a></li>
+
+          <li class="li"><a class="xref" href="kilo_features.html#HP2.0KiloFeatures__MonascaFeatures">Monasca
+              Features</a></li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__NovaFeatures"><h2 class="title sectiontitle">Nova Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__NovaTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" id="d55069e126">Category</th>
+
+                <th class="entry" valign="top" id="d55069e129">Core (Included)</th>
+
+                <th class="entry" valign="top" id="d55069e132">Non-core (Included)</th>
+
+                <th class="entry" valign="top" id="d55069e135">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 ">Networking</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Neutron</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 ">Volumes</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Cinder</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Local Ephemeral Disk</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="5" valign="top" headers="d55069e126 ">Libvirt KVM (x86)Hypervisor Features</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">NUMA topology</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">CPU Pinning</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">Large pages</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">PCI Pass-Through</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">SR-IOV</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" headers="d55069e126 ">Server Groups</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Affinity</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">Anti-Affinity</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Aggregates</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 ">Quotas</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Tenant &amp; User</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="5" valign="top" headers="d55069e126 ">Live Migration</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Ephemeral Disks</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">Cinder Volumes</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">Config Drive (ISO9660)</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">Migration to Specified Host</td>
+
+                <td class="entry" valign="top" headers="d55069e132 ">Paused &amp; Rescued States</td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 ">CPU Pinning with NUMA</td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Rescue</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Evacuate</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Shelve</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Consoles</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Live Interface Update</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Live Volume Update</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="6" valign="top" headers="d55069e126 ">Hypervisors</td>
+
+                <td class="entry" valign="top" headers="d55069e129 ">Libvirt KVM (x86) - Host Linux Only</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Ironic</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 ">VMWare vCenter/ESXi</td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Libvirt KVM (ppc64/s390x)</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Libvirt LXC</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Libvirt QEMU (x86)</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Libvirt Virtuozzo (CT/VM)</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Xen (Libvirt/XenServer)</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 ">Delayed Delete</td>
+
+                <td class="entry" valign="top" headers="d55069e135 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Resize</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Hyper-V</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" headers="d55069e126 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e129 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e132 "> </td>
+
+                <td class="entry" valign="top" headers="d55069e135 ">Cells</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__NeutronFeatures"><h2 class="title sectiontitle">Neutron Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__NeutronTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e554">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e557">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e560">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e563">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e554 ">Networking v2 API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Network, Subnet, Port</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="11" valign="top" width="25%" headers="d55069e554 ">Networking v2 Extensions</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Quotas</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">Metering</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Routers</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">Networks Multiple Provider Extension</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Floating IPs</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">MTU</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Security groups and rules</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Port Binding</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Provider Networks</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Allowed address pairs</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Extra DHCP opt</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Subnet allocation</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">VLAN transparency</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="3" valign="top" width="25%" headers="d55069e554 ">Service</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">LBaaS v2.0</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">LBaaS v1.0</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">FWaaS</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">VPNaaS</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e554 ">Hypervisor</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">ESX Support</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e554 ">Tenant Network Types</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">VxLAN</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">GRE</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">VLAN</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e554 ">Provider Networks</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">flat</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">VxLAN</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">VLAN</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e554 ">Tenant Router Default</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Distributed routers (DVR)</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">Centralized routers</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="5" valign="top" width="25%" headers="d55069e554 ">Functional Components</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">ML2 Plugin</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">Metering Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">OVS Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">DHCP Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">L3 Agent with DVR</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e557 ">Metadata Proxy/Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e554 ">Tenant Networks</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">IPv6</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e554 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">SR-IOV</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e554 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e557 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e560 ">L2 Gateway</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e563 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__GlanceFeatures"><h2 class="title sectiontitle">Glance Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__GlanceTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e932">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e935">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e938">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e941">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 ">Authentication</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 ">Keystone</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 ">Notifications</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 ">Rabbit</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">qpid</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 ">Backend</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 ">Swift</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">All Backend Stores except Swift</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 ">Images API v1 &amp; v2</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 ">Registry v1 &amp; v2</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Healthcheck</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Delayed delete</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Replication</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Image Direct URL</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Storage Quotas</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Images API v2 - Direct Access to Database</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">OSProfiler</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 ">Image Cache</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 ">Catalog and Index Service Experimental API</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e932 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e935 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e938 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e941 ">Tasks</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__SwiftFeatures"><h2 class="title sectiontitle">Swift Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__SwiftTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e1164">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1167">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1170">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1173">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" rowspan="3" valign="top" width="25%" headers="d55069e1164 ">API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Container API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Object API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Static &amp; Dynamic Large Objects API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Bulk Upload</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Bulk Delete</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Crossdomain Filter</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Temporary URL's</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">FormPOST</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Static Web</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Access Control List on Containers</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e1164 ">Quotas</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Container</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Account</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">CORS</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Proxy Logging Filter</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 ">Recon</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Container to Container Synchronization</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Erasure Coding</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Ratelimit</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Dispersion Report</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Ssync replication</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Separate/Dedicated Replication Network</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 ">Geographically Distributed Clusters</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 ">Composite Tokens</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 ">Cname Filter</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 ">Domain Remap Filter</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 ">List Endpoint Filter</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1164 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1167 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1170 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1173 ">Local Disk File</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__CinderFeatures"><h2 class="title sectiontitle">Cinder Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__CinderTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e1534">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1537">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1540">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1543">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" rowspan="3" valign="top" width="25%" headers="d55069e1534 ">Volumes</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 ">Encrypted</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 ">Add/Remove Volumes from an existing consistency group</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 ">Private</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 ">Volume Descriptions</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 ">Configuration</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 ">Local lvm.conf</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 ">New database schema upgrades will not require restarting Cinder services
+                  right away.</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 ">Backup</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 ">Incremental Backup</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 ">NFS Export Filesystem</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 ">Thin Provisioning</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 ">Oversubscription Configurable</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 ">Consistency Group</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 ">Create a Consistency Group from an existing Consistency Group
+                  snapshot</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 ">iSCSI</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 ">Return multiple iSCSI path information</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1534 ">Filters/Weighers</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1537 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1540 ">Fine tuned how the scheduler will choose a volume backend</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1543 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__KeystoneFeatures"><h2 class="title sectiontitle">Keystone and Barbican Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__KeystoneTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e1705">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1708">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1711">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1714">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 ">Domains</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 ">Fernet Token</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 ">LDAP Integration</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 ">SSO IdP Support</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 ">Keystone Modifications</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 ">Multi-factor Authentication (MFA)</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 ">Keystone-to-Keystone (K2K) Federation</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">LDAP Administration with DB backend via new Domain admin API</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 ">Heirarchical Multitenancy</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">Endpoint Filtering</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">Endpoint Policy</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">OATH 1.0a</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">Revocation Events</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">OS CERT</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">PKI Token</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">Driver Level Caching</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1705 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1708 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1711 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1714 ">Barbican</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__CeilometerFeatures"><h2 class="title sectiontitle">Ceilometer Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__CeilometerTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e1956">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1959">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1962">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e1965">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e1956 ">Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Ceilometer Central Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Notification Agent</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1956 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Ceilometer Expirer</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1956 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Poll-based Account Level Meters</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1956 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Flexible Configuration</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1956 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Centralized Monitoring &amp; Logging</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1956 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Flexible Deployment</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1956 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 ">Upgrade &amp; Patch Support</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e1956 ">API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 ">Alarms API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e1959 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1962 ">Post Meter API</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e1965 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__HeatFeatures"><h2 class="title sectiontitle">Heat Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__HeatTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e2120">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2123">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2126">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2129">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e2120 ">Cloud Infrastructure</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Stack create/update/restore</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Stack snapshot/restore</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="3" valign="top" width="25%" headers="d55069e2120 ">Cloud Application</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Deployment</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Configuration Management</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Auto-scaling with Ceilometer</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e2120 ">Template</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">HOT &amp; CFN</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Validate &amp; Preview Stack</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2120 ">Heat Engine</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Monitor the Deployed Heat Engine Status</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e2120 ">Stack</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Hidden</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 ">Multi-Region Stack</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Keystone Based Stack</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 ">Abandon &amp; Adopt</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2120 ">Resource</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 ">Nova, Cinder, Neutron, etc</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2120 ">Scheduler</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2123 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2126 ">Hints</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2129 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    
+
+    <div class="section" id="HP2.0KiloFeatures__HorizonFeatures"><h2 class="title sectiontitle">Horizon Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__HorizonTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e2310">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2313">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2316">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2319">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2310 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2313 ">Keystone v2 for Horizon enabled by default</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2316 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2319 ">Keystone v3 for Horizon</td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2310 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2313 ">Angular-based Launch Instance Wizard</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2316 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2319 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2310 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2313 ">Logging set to INFO</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2316 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2319 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2310 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2313 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2316 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2319 ">Lock and Unlock Nova Instances</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__MonascaFeatures"><h2 class="title sectiontitle">Monasca Features</h2>
+      
+      <div class="p">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="HP2.0KiloFeatures__MonascaTable" class="table" frame="border" border="1" rules="all">
+            
+            
+            
+            
+            <thead class="thead" align="left">
+              <tr class="row">
+                <th class="entry" valign="top" width="25%" id="d55069e2404">Category</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2407">Core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2410">Non-core (Included)</th>
+
+                <th class="entry" valign="top" width="25%" id="d55069e2413">Excluded</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2404 ">Metrics</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2407 ">Store and Query</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2410 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2413 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2404 ">Statistics</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2407 ">Query</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2410 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2413 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" rowspan="2" valign="top" width="25%" headers="d55069e2404 ">Alarm</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2407 ">Alarm Definitions</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2410 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2413 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2407 ">Alarm Evaluate</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2410 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2413 "> </td>
+
+              </tr>
+
+              <tr class="row">
+                <td class="entry" valign="top" width="25%" headers="d55069e2404 ">Notifications</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2407 ">Send Notifications</td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2410 "> </td>
+
+                <td class="entry" valign="top" width="25%" headers="d55069e2413 "> </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section" id="HP2.0KiloFeatures__MoreInfo"><h2 class="title sectiontitle">More Information</h2>
+      
+      <p class="p">For more information on OpenStack Kilo, see the OpenStack Kilo release page: <a class="xref" href="https://www.openstack.org/software/kilo/" target="_blank">https://www.openstack.org/software/kilo/</a></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

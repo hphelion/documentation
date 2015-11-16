@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="A Swift object server is a node that runs the swift-object service ( only ) and is used to store object data. It does not run the swift-proxy, swift-account, or swift-container services. This section ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Allocating Object Servers"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_tq1_xt5_dt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Allocating Object Servers</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_tq1_xt5_dt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Allocating Object Servers</h1>
+
+  <div class="body">
+    <p class="p">A Swift object server is a node that runs the swift-object service (<strong class="ph b">only</strong>) and is used
+      to store object data. It does not run the swift-proxy, swift-account, or swift-container
+      services. </p>
+
+    <p class="p">This section describes the procedure to allocate a Swift object server during the
+        <strong class="ph b">initial</strong> deployment of the system. </p>
+
+    <div class="section" id="topic_tq1_xt5_dt__procedure"><h2 class="title sectiontitle">To Allocate a Swift Object Server</h2>
+      
+      <div class="p">Perform the following steps to allocate one or more Swift object servers:<ul class="ul" id="topic_tq1_xt5_dt__ul_fbk_fj3_kt">
+          <li class="li">Verify if the example input model already contains a suitable server role. The server
+            roles are usually described in the <samp class="ph codeph">data/server_roles.yml</samp> file. If the
+            server role is not described, you must add a suitable server role. For instructions, see
+              <a class="xref" href="creating_roles_swift_nodes.html">Creating Roles for Swift Nodes</a>.
+            While adding a server role for the Swift object server, you will also allocate drives to
+            store object data. For instructions, see <a class="xref" href="allocating_disk_drives.html">Allocating Disk Drives</a>.</li>
+
+          <li class="li">Verify if the example input model has a resource node assigned to Swift object
+            servers. The resource nodes are usually assigned in the
+              <samp class="ph codeph">data/control_plane.yml</samp> file. If it is not assigned, you must add a
+            suitable resource node. For instructions, see <a class="xref" href="creating_object_server_resource.html">Creating  Object Server Resource
+              Nodes</a>.</li>
+
+          <li class="li">Identify the physical servers and their IP address and other detailed information. Add
+            the details for the servers in either of the following YAML files and verify the
+            server-groups information:<ul class="ul" id="topic_tq1_xt5_dt__ul_gmj_ng3_kt">
+              <li class="li">Add  details in the servers list (usually in the <samp class="ph codeph">data/servers.yml</samp>
+                file).</li>
+
+              <li class="li">As with all servers, you must also verify and/or modify the server-groups
+                information (usually in the <samp class="ph codeph">data/server_groups.yml</samp> file).</li>
+
+            </ul>
+The only part of this process that is unique to Swift is the allocation of disk
+            drives for use by the object ring. For instructions, see <a class="xref" href="allocating_disk_drives.html#allocating-disk-drives">Allocating Disk
+              Drives</a>.</li>
+
+        </ul>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

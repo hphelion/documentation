@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="To create a cluster for Swift proxy, account, and container (PAC) servers, you must identify the control plane and node type/role: In the data/control_plane.yml file, identify the control plane that ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Creating a Proxy, Account, and Container (PAC) Cluster for Object Storage"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_rvj_21c_jt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Creating a Proxy, Account, and Container (PAC) Cluster for Object Storage</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_rvj_21c_jt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Creating a Proxy, Account, and Container
+    (PAC) Cluster for Object Storage</h1>
+
+  <div class="body">
+    <p class="p">To create a cluster for Swift proxy, account, and container (PAC) servers, you must identify
+      the control plane and node type/role: </p>
+
+    <ul class="ul" id="topic_rvj_21c_jt__ul_r4r_r1c_jt">
+      <li class="li">In the <samp class="ph codeph">data/control_plane.yml</samp> file, identify the control plane that the
+        PAC servers are associated with. </li>
+
+      <li class="li">Next, identify the node type/role used by the Swift PAC servers. In the following example,
+          <samp class="ph codeph">server-role</samp> is set to <strong class="ph b">SWPAC-ROLE</strong>.<div class="p">Add an entry to the
+            <strong class="ph b">clusters</strong> item in the
+          <strong class="ph b">control-plane</strong>:<pre class="pre codeblock">control-planes:
+    - name: control-plane-1
+      control-plane-prefix: cp1
+
+  . . .
+  clusters:
+  . . .
+     - name: swpac
+       cluster-prefix: c2
+       server-role: SWPAC-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - ntp-client
+         - swift-ring-builder
+         - swift-proxy
+         - swift-account
+         - swift-container
+         - swift-client</pre>
+</div>
+</li>
+
+    </ul>
+
+    <ul class="ul" id="topic_rvj_21c_jt__ul_s5v_rmg_rt">
+      <li class="li">
+        <p class="p">If you have more than three servers available that have the <strong class="ph b">SWPAC-ROLE</strong>  assigned
+          to them, you must change <strong class="ph b">member-count</strong> to match the number of servers. For example,
+          if you have four servers with a role of <strong class="ph b">SWPAC-ROLE</strong>, then the <strong class="ph b">member-count</strong>
+          should be 4.</p>
+
+      </li>
+
+    </ul>
+
+    <p class="p"><strong class="ph b">Service Components</strong></p>
+
+    <p class="p">A Swift PAC server requires the following service components:</p>
+
+    <ul class="ul" id="topic_rvj_21c_jt__ul_etg_k1c_jt">
+      <li class="li">ntp-client</li>
+
+      <li class="li">swift-proxy</li>
+
+      <li class="li">swift-account</li>
+
+      <li class="li">swift-container</li>
+
+      <li class="li">swift-ring-builder</li>
+
+      <li class="li">swift-client</li>
+
+    </ul>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page describes how to configure your 3PAR backend for the Helion Entry-scale Cloud with KVM model. Prerequisites Your HPE Helion Entry-scale KVM Cloud should be up and running. Installation steps ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring for 3PAR Block Storage Backend"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="config_3par"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring for 3PAR Block Storage Backend</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="config_3par">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring for 3PAR Block Storage
+    Backend</h1>
+
+  <div class="body">
+    <p class="p">This page describes how to configure your 3PAR backend for the Helion Entry-scale Cloud with
+      KVM model.</p>
+
+    <div class="section"><h2 class="title sectiontitle">Prerequisites</h2>
+      
+      <div class="p">
+        <ul class="ul">
+          <li class="li">Your HPE Helion Entry-scale KVM Cloud should be up and running. Installation steps can
+            be found <a class="xref" href="install_entryscale_kvm.html">here</a>.</li>
+
+          <li class="li">Your 3PAR Storage Array should be available in the cloud management network or routed
+            to the cloud management network and the 3PAR FC and iSCSI ports configured.</li>
+
+          <li class="li">The 3PAR management IP and iSCSI port IPs must have connectivity from the controller
+            and compute nodes.</li>
+
+          <li class="li">Please refer to the system requirements for 3PAR in the OpenStack configuration
+              guide.<div class="note note"><span class="notetitle">Note:</span> If you want to enable multipath for Cinder volumes carved from 3PAR
+              FC/iSCSI storage system, please go through the
+                <samp class="ph codeph">/home/stack/helion/hos/ansible/roles/multipath/README.md </samp> file on
+              the lifecycle-manager node. The README.md file contains detailed procedures for
+              configuring multipath for 3PAR FC/iSCSI Cinder volumes.</div>
+</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="config_3par__configure-3par-fc"><h2 class="title sectiontitle">Configure 3PAR FC as a Cinder Backend</h2>
+      
+      <p class="p">You must modify the <samp class="ph codeph">cinder.conf.j2</samp> to configure the FC details.</p>
+
+      <div class="p">Perform the following steps to configure 3PAR FC as Cinder backend:<ol class="ol" id="config_3par__ol_dj2_qcz_ht">
+          <li class="li">Log in to lifecycle-manager node.</li>
+
+          <li class="li">Make the following changes to the
+              <samp class="ph codeph">~/helion/my_cloud/config/cinder/cinder.conf.j2</samp> file: <ol class="ol" type="a">
+              <li class="li">Add your 3PAR backend to the <samp class="ph codeph">enabled_backends</samp> section:
+                <pre class="pre codeblock"># Configure the enabled backends
+enabled_backends=3par_FC</pre>
+</li>
+
+              <li class="li">Uncomment the <samp class="ph codeph">StoreServ (3par) iscsi cluster</samp> section and fill the
+                values per your cluster information. Here is an example:
+                <pre class="pre codeblock">[3par_FC]
+san_ip: &lt;3par-san-ipaddr&gt;
+san_login: &lt;3par-san-username&gt;
+san_password: &lt;3par-san-password&gt;
+hp3par_username: &lt;3par-username&gt;
+hp3par_password: &lt;hp3par_password&gt;
+hp3par_api_url: https://&lt;3par-san-ipaddr&gt;:8080/api/v1
+hp3par_cpg: &lt;3par-cpg-name-1&gt;[,&lt;3par-cpg-name-2&gt;, ...]
+volume_backend_name: &lt;3par-backend-name&gt;
+volume_driver: cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver</pre>
+</li>
+
+            </ol>
+</li>
+
+          <li class="li">Commit your configuration your local git repositiory:
+            <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+          <li class="li">Run the configuration processor: <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+
+            <p class="p">When you run the Configuration Processor you will be prompted for two passwords.
+              Enter the first password to make the Configuration Processor encrypt its sensitive
+              data, which is comprised of the random inter-service passwords that it generates and
+              the Ansible group_vars and host_vars that it produces for subsequent deploy runs. You
+              will need this key for subsequent Ansible deploy runs and subsequent Configuration
+              Processor runs. If you wish to change an encryption password that you have already
+              used when running the Configuration Processor then enter the new password at the
+              second prompt, otherwise just press carriage return.</p>
+<div class="p">For CI purposes you can
+              specify the required passwords on the ansible command line. For example, the command
+              below will disable encryption by the configuration processor
+              <pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</pre>
+
+              If you receive an error during either of these steps then there is an issue with one
+              or more of your configuration files. We recommend that you verify that all of the
+              information in each of your configuration files is correct for your environment and
+              then commit those changes to git using the instructions above.</div>
+</li>
+
+          <li class="li">Run the following command to create a deployment directory.
+            <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+          <li class="li">Run the following command to complete the configuration:
+            <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Configure 3PAR iSCSI as Cinder backend</h2>
+      
+      <p class="p">You must modify the <samp class="ph codeph">cinder.conf.j2</samp> to configure the iSCSI details.</p>
+
+      <p class="p">Perform the following steps to configure 3PAR iSCSI as Cinder backend:</p>
+
+      <ol class="ol" id="config_3par__iSCSI">
+        <li class="li">Log in to lifecycle-manager node.</li>
+
+        <li class="li">Make the following changes to the
+            <samp class="ph codeph">~/helion/my_cloud/config/cinder/cinder.conf.j2</samp> file: <ol class="ol" type="a">
+            <li class="li">Add your 3PAR backend to the <samp class="ph codeph">enabled_backends</samp> section:
+              <pre class="pre codeblock"># Configure the enabled backends
+enabled_backends=3par_iSCSI</pre>
+</li>
+
+            <li class="li">Uncomment the <samp class="ph codeph">StoreServ (3par) iscsi cluster</samp> section and fill the
+              values per your cluster information. Here is an example:
+              <pre class="pre codeblock" id="config_3par__3par-iscsi">[3par_iSCSI]
+san_ip: &lt;3par-san-ipaddr&gt;
+san_login: &lt;3par-san-username&gt;
+san_password: &lt;3par-san-password&gt;
+hp3par_username: &lt;3par-username&gt;
+hp3par_password: &lt;hp3par_password&gt;
+hp3par_api_url: https://&lt;3par-san-ipaddr&gt;:8080/api/v1
+hp3par_cpg: &lt;3par-cpg-name-1&gt;[,&lt;3par-cpg-name-2&gt;, ...]
+volume_backend_name: &lt;3par-backend-name&gt;
+volume_driver: cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
+hp3par_iscsi_ips: &lt;3par-ip-address-1&gt;[,&lt;3par-ip-address-2&gt;,&lt;3par-ip-address-3&gt;, ...]
+hp3par_iscsi_chap_enabled=true</pre>
+</li>
+
+          </ol>
+</li>
+
+        <li class="li">Commit your configuration your local git repositiory:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+            git add -A
+            git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+        <li class="li">Run the configuration processor: <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+
+          <p class="p">When you run the Configuration Processor you will be prompted for two passwords. Enter
+            the first password to make the Configuration Processor encrypt its sensitive data, which
+            is comprised of the random inter-service passwords that it generates and the Ansible
+            group_vars and host_vars that it produces for subsequent deploy runs. You will need this
+            key for subsequent Ansible deploy runs and subsequent Configuration Processor runs. If
+            you wish to change an encryption password that you have already used when running the
+            Configuration Processor then enter the new password at the second prompt, otherwise just
+            press carriage return.</p>
+<div class="p">For CI purposes you can specify the required passwords on
+            the ansible command line. For example, the command below will disable encryption by the
+            configuration processor
+            <pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</pre>
+
+            If you receive an error during either of these steps then there is an issue with one or
+            more of your configuration files. We recommend that you verify that all of the
+            information in each of your configuration files is correct for your environment and then
+            commit those changes to git using the instructions above.</div>
+</li>
+
+        <li class="li">Run the following command to create a deployment directory.
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Run the following command to complete the configuration:
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+    <p class="p">To verify the 3PAR FC and iSCSI backends are configured successfully, please refer to <a class="xref" href="installation_verification.html#install_verification__volume_verify">Verify Backend
+        Configuration</a>.</p>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 FWaaS Configuration Firewall as a Service (FWaaS) is an advance networking service that introduces firewall feature set. This document describes the configuration process and ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Using Firewall as a Service (FWaaS)"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="HP2.0FWaaS"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Using Firewall as a Service (FWaaS)</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="HP2.0FWaaS">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Using Firewall as a Service (FWaaS)</h1>
+
+  <div class="body">
+    <p class="p">HPE Helion OpenStack 2.0 FWaaS Configuration</p>
+
+    <p class="p">Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
+      feature set. This document describes the configuration process and requirements for the 
+      HPE Helion OpenStack 2.0 Firewall as a Service module. </p>
+
+
+    <p class="p">FWaaS is implemented directly in the L3 agent (<em class="ph i">neutron-l3-agent</em>), however if VPNaaS is
+      enabled, FWaaS is implemented in the VPNaaS agent (<em class="ph i">neutron-vpn-agent</em>). Because FWaaS
+      does not use a separate agent process or start a specific service, there currently are no
+      Monasca alarms for it. </p>
+
+    <div class="p">
+      <ul class="ul" id="HP2.0FWaaS__LBaaSlist">
+        <li class="li"><a class="xref" href="fwaas.html#HP2.0FWaaS__Prerequisites">Prerequisites</a></li>
+
+        <li class="li"><a class="xref" href="fwaas.html#HP2.0FWaaS__Configuration">Configuration</a></li>
+
+        <li class="li"><a class="xref" href="fwaas.html#HP2.0FWaaS__MoreInfo">More Information</a></li>
+
+      </ul>
+
+    </div>
+
+    
+    <div class="section" id="HP2.0FWaaS__Prerequisites"><h2 class="title sectiontitle">Prerequisites</h2>
+      
+      <p class="p">HPE Helion OpenStack must be installed. </p>
+
+      
+    </div>
+
+    <div class="section" id="HP2.0FWaaS__Configuration"><h2 class="title sectiontitle">HPE Helion OpenStack 2.0 FWaaS Configuration</h2>
+      
+      
+      <p class="p"><strong class="ph b">Check for an enabled firewall.</strong></p>
+
+      <ol class="ol">
+        <li class="li">You should check to determine if the firewall is enabled.  The output of the <em class="ph i">neutron
+            ext-list</em> should contain a firewall
+          entry.<pre class="pre codeblock">neutron ext-list</pre>
+</li>
+
+        <li class="li">Assuming the external network is already created by the admin, this command will show
+          the external network. <pre class="pre codeblock">neutron net-list</pre>
+</li>
+
+      </ol>
+
+      
+      <p class="p"><strong class="ph b">Create required assets.</strong></p>
+
+      <p class="p">Before creating firewalls, you will need to create a network, subnet, router, security
+        group rules, start an instance and assign it a floating IP address.</p>
+
+      <ol class="ol">
+        <li class="li">Create the network, subnet and router.
+          <pre class="pre codeblock">neutron net-create private
+neutron subnet-create --name sub private 10.0.0.0/24 --gateway 10.0.0.1
+neutron router-create router
+neutron router-interface-add router sub
+neutron router-gateway-set router ext-net</pre>
+</li>
+
+        <li class="li">Create security group rules. Security group rules filter traffic at VM level.
+          <pre class="pre codeblock">neutron security-group-rule-create default --protocol icmp
+neutron security-group-rule-create default --protocol tcp --port-range-min 22 --port-range-max 22
+neutron security-group-rule-create default --protocol tcp --port-range-min 80 --port-range-max 80</pre>
+</li>
+
+        <li class="li">Boot a VM.
+          <pre class="pre codeblock">NET=$(neutron net-list | awk '/private/ {print $2}')
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$NET vm1 --poll</pre>
+</li>
+
+        <li class="li">Verify if the instance is ACTIVE and is assigned an IP address.
+          <pre class="pre codeblock">nova list</pre>
+</li>
+
+        <li class="li">Get the port id of the vm1 instance.
+          <pre class="pre codeblock">fixedip=$(nova list | awk '/vm1/ {print $12}' | awk -F '=' '{print $2}' | awk -F ',' '{print $1}')
+vmportuuid=$(neutron port-list | grep $fixedip | awk '{print $2}')</pre>
+</li>
+
+        <li class="li">Create and associate a floating IP address to the vm1 instance.
+          <pre class="pre codeblock">neutron floatingip-create ext-net –-port-id $vmportuuid</pre>
+</li>
+
+        <li class="li">Verify if the floating IP is assigned to the instance. The following command should show
+          an assigned floating IP address from the external network
+          range.<pre class="pre codeblock">nova show vm1</pre>
+</li>
+
+        <li class="li">Verify if the instance is reachable from the external network. SSH into the instance
+          from a node in (or has route to) the external network.
+          <pre class="pre codeblock">ssh cirros@FIP-VM1
+password: &lt;password&gt;</pre>
+</li>
+
+       </ol>
+
+      
+      <p class="p"><strong class="ph b">Create and attach the firewall.</strong></p>
+
+      <div class="note note"><span class="notetitle">Note:</span> By default, an internal "drop all" rule is enabled in IP tables if none of the defined
+        rules match the real-time data packets.</div>
+
+      <ol class="ol">
+        <li class="li">Create new firewall rules using <samp class="ph codeph">firewall-rule-create</samp> command and
+          providing the protocol, action (allow, deny) and name for the new rule. This example
+          allows icmp and ssh while denying access to http. See the <samp class="ph codeph">neutron</samp>
+          command-line reference under <a class="xref" href="fwaas.html#HP2.0FWaaS__MoreInfo">more
+            information</a> on additional options such as source IP, destination IP, source port
+          and destination
+          port.
+          <div class="note note"><span class="notetitle">Note:</span> You can create a firewall rule with an identical name and each instance will have 
+          a unique id associated with the created rule, however for clarity purposes this is not recommended.</div>
+
+          <pre class="pre codeblock">neutron firewall-rule-create --protocol icmp --action allow --name allow-icmp
+neutron firewall-rule-create --protocol tcp --destination-port 80 --action deny --name deny-http
+neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow --name allow-ssh</pre>
+</li>
+
+        <li class="li">Once the rules are created, create the firewall policy by using the <samp class="ph codeph">firewall-policy-create</samp> command with the 
+          <samp class="ph codeph">--firewall-rules</samp> option and rules to include in quotes, followed by the name of the new policy.  The order of the 
+          rules is important.
+          <pre class="pre codeblock">neutron firewall-policy-create --firewall-rules "allow-icmp deny-http allow-ssh" policy-fw</pre>
+</li>
+
+        <li class="li">Finish the firewall creation by using the <samp class="ph codeph">firewall-create</samp> command, the policy name and the new name you want to
+          give to your new firewall.
+          <pre class="pre codeblock">neutron firewall-create policy-fw --name user-fw</pre>
+</li>
+
+        <li class="li">You can view the details of your new firewall by using the
+            <samp class="ph codeph">firewall-show</samp> command and the name of your firewall. This will verify
+          that the status of the firewall is
+          ACTIVE.<pre class="pre codeblock">neutron firewall-show user-fw</pre>
+</li>
+
+      </ol>
+
+      
+      <p class="p"><strong class="ph b">Verify the FWaaS is functional.</strong></p>
+
+      <ol class="ol">
+        <li class="li">Since allow-icmp firewall rule is set you can ping the floating IP address of the
+          instance from the external network.<pre class="pre codeblock">ping &lt;FIP-VM1&gt;</pre>
+</li>
+
+        <li class="li">Similarly, you can connect via ssh to the instance due to the allow-ssh firewall
+          rule.<pre class="pre codeblock">ssh cirros@&lt;FIP-VM1&gt;
+password: &lt;password&gt;</pre>
+</li>
+
+        <li class="li">Run a web server on vm1 instance that listens over port 80, accepts requests and sends a WELCOME response.
+          <pre class="pre codeblock">$ vi webserv.sh
+            
+#!/bin/ash
+            
+MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+while true; do
+  echo -e "HTTP/1.0 200 OK\r\n\r\nWelcome to $MYIP" | sudo nc -l -p 80
+done
+            
+# Give it Exec rights
+$ chmod 755 webserv.sh
+            
+# Execute the script
+$ ./webserv.sh</pre>
+</li>
+
+        <li class="li">You should expect to see curl fail over port 80 because of the deny-http firewall rule.
+          If curl succeeds, the firewall is not blocking incoming http requests.
+          <pre class="pre codeblock">curl -vvv &lt;FIP-VM1&gt;</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+    
+    
+    <div class="section">
+      <div class="note warning"><span class="warningtitle">Warning:</span> When using reference implementation, new networks, FIPs and routers
+        created after the Firewall creation will not be automatically updated with firewall rules.
+        Thus, execute the firewall-update command by passing the current and new router Ids such
+        that the rules are reconfigured across all the routers (both current and new). <p class="p">For
+          example if router-1 is created before and router-2 is created after the firewall
+          creation</p>
+
+        <pre class="pre codeblock">$ neutron firewall-update —router &lt;router-1-id&gt; —router &lt;router-2-id&gt; &lt;firewall-name&gt;</pre>
+
+      </div>
+
+      
+           
+     </div>
+
+    <div class="section" id="HP2.0FWaaS__MoreInfo"><h2 class="title sectiontitle">More Information</h2>
+      
+      <p class="p">For more information on the neutron command-line interface (CLI) and firewalls, see the OpenStack networking command-line client
+        reference: <a class="xref" href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" target="_blank">http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</a></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

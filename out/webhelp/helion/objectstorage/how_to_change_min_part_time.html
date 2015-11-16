@@ -1,0 +1,67 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The following procedure enables you to change the min-part-time attribute. Description In the cloud model ring-specifications, the min-part-time attribute specifies how many hours you must wait ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Changing min-part-time in Swift"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_ybt_mhb_kt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Changing min-part-time in Swift</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_ybt_mhb_kt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Changing min-part-time in Swift</h1>
+
+  <div class="body">
+    <p class="p">The following procedure enables you to change the <samp class="ph codeph">min-part-time</samp>
+      attribute.</p>
+
+    <div class="p">
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+          <td valign="top" class="stentry"><strong class="ph b">Description</strong>
+          </td>
+
+          <td valign="top" class="stentry">In the cloud model ring-specifications, the <samp class="ph codeph">min-part-time</samp>
+            attribute specifies how many hours you must wait between ring rebuilds. If you change
+            this attribute, this is not reflected in the ring files and it only applies at the time
+            the rings are created. </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><strong class="ph b">Resolution</strong></td>
+
+          <td valign="top" class="stentry">You can change the values as follows:<ol class="ol" id="topic_ybt_mhb_kt__ol_qzp_zhb_kt">
+              <li class="li">Log into the first server running the swift-proxy service.</li>
+
+              <li class="li">Go to the <samp class="ph codeph">/etc/swiftlm/builder_dir/region-&lt;region-name&gt;</samp>
+                directory, where &lt;region-name&gt; is the <samp class="ph codeph">region-name</samp> field in your
+                cloud model (for example, region1 in most example files). </li>
+
+              <li class="li">Search for files with a <samp class="ph codeph">.builder</samp> extension. </li>
+
+              <li class="li"> Run the <samp class="ph codeph">swift-ring-builder</samp> command against each builder file.
+                For example, to change the value to 16 hours for the account builder file, use the
+                following:
+                <pre class="pre codeblock">sudo swift-ring-builder account.builder set_min_part_hours 16</pre>
+</li>
+
+              <li class="li"> You should also update the <samp class="ph codeph">ring-specifications</samp> (usually in the
+                  <samp class="ph codeph">data/swift/rings.yml</samp> file) to contain the same value for the
+                min-part-time.
+                </li>
+
+            </ol>
+</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <p class="p">For more details about the <samp class="ph codeph">min-part-power</samp> attribute, see <a class="xref" href="ring_specifications.html#ring-specification">HPE Helion OpenStack 2.0: Understanding Ring Specifications</a>.</p>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

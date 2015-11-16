@@ -1,0 +1,264 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the HPE ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring TLS for Public Endpoints"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_yym_nps_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring TLS for Public Endpoints</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_yym_nps_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring TLS for Public Endpoints</h1>
+
+  <div class="body">
+
+    <div class="section" id="topic_yym_nps_4t__intro">
+      
+      <p class="p aTest">The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to
+        ensure authentication, non-repudiation, confidentiality, and integrity of user
+        communications to the HPE Helion OpenStack services from public endpoints.</p>
+
+      <p class="p">OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
+        management network. All traffic to OpenStack services coming in on the public endpoints are
+        secured using TLS connections.</p>
+
+      <p class="p">All of the HPE Helion OpenStack 2.0 example cloud models ship with TLS enabled on the public
+        API. Note that because TLS is enabled by default, a test certificate is bundled with the
+        release. Having this default cert allows you to bring up a cloud without having to worry
+        about certificates. It will not match your IP address, but you can ignore the warnings.
+        Later, when you require a trusted certificate, you can add your own certificate and
+        redeploy.</p>
+ 
+      
+    </div>
+
+    <div class="section"> When logging into the deployer to run the configuration processor and the requisite
+      playbooks, you must decide if you want to configure TLS or if you want to disable it. This
+      can't be changed after deployment. Therefore, you will have to make one of the following
+        changes:<ul class="ul" id="topic_yym_nps_4t__ul_sdj_qfq_rt">
+        <li class="li">Comment out the "external-name:" line in
+          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
+          used) </li>
+
+        <li class="li">Assign a name to "external-name:" line in
+          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
+          used)</li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="section"><h2 class="title sectiontitle">Creating a self-signed certificate</h2>
+      
+      If you want to install a
+      self-signed certificate that meets the needs of  HPE Helion OpenStack and HPE Helion Development
+      Platform, follow these steps to create the cert, and then install it by following the
+      installation steps.<ol class="ol" id="topic_yym_nps_4t__ol_wmt_wsp_tt">
+        <li class="li">Create a Certificate Signing Request (CSR) with a defined subject:
+          <pre class="pre codeblock">openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
+        -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</pre>
+
+        </li>
+
+        <li class="li">Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
+          above and provide your IP
+          <pre class="pre codeblock">cat &gt; v3_ext.cnf &lt;&lt; *EOF*
+[ v3_req ]
+subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
+*EOF*</pre>
+
+        </li>
+
+        <li class="li">Self-sign your certificate
+          <pre class="pre codeblock">openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req –text -out my-public-cert.crt</pre>
+
+          Note that the domain name in the certificate signing request in step 1 and the DNS entry
+          in step 2 must match, although the domain do not have to exist. <p class="p">In step 2 you need the
+            same IP address listed for both the DNS and the IP entries. The IP address is what is
+            used by HPE Helion Development Platform and the DNS is used by HPE Helion OpenStack. Note
+            that is you examine the output certificate, the issuer will match the subject because
+            the cert is self-signed. The requirement for the DNS entry stems from a low-level Python
+            bug.</p>
+
+        </li>
+
+      </ol>
+
+      
+      <p class="p"><strong class="ph b">Installing the Certificate</strong></p>
+ Follow the steps below to install the certificate in
+      the cloud.</div>
+
+    <div class="section"><strong class="ph b">If you are using a FQDN:</strong>
+      <ol class="ol" id="topic_yym_nps_4t__ol_ngj_qfq_rt">
+        <li class="li"> Create or obtain a certificate to match the domain name you are going to use. </li>
+
+        <li class="li"> Copy it to <strong class="ph b">helion/my_cloud/config/tls/certs/</strong>
+        </li>
+
+        <li class="li" id="topic_yym_nps_4t__private1">Replace the contents of
+            <strong class="ph b">~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</strong> with
+          the new CA certificate chain file (if applicable)</li>
+
+        <li class="li">Edit <strong class="ph b">network_groups.yml </strong>(as part of the general set of edits they have to make to
+          the example) to set the values for "external-name" and "cert-file" </li>
+
+        <li class="li">Commit your changes to git:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</pre>
+</li>
+
+        <li class="li">Run the config
+          processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Now, in order for the certificate to be enabled, you must take one of the following
+          actions. Run: <ul class="ul">
+            <li class="li">A site deploy play</li>
+
+            <li class="li">An upgrade play</li>
+
+            <li class="li">or redeploy FND_CLU like so:
+              <pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</pre>
+
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="li">Continue with the deployment as usual.</li>
+
+      </ol>
+
+      <strong class="ph b">If you are using IP addresses for external ULRs: </strong><ol class="ol" id="topic_yym_nps_4t__ol_y3j_qfq_rt">
+        <li class="li">Edit <strong class="ph b">network_groups.yml</strong> to comment out the "external-name" line </li>
+
+        <li class="li">Commit your changes to git and run the configuration processor as in steps 4 and 5
+          above</li>
+
+        <li class="li">Note the IP address used for the public URLs (from
+          <strong class="ph b">my_cloud/info/address_info.ym</strong>l) </li>
+
+        <li class="li">Create or obtain a certificate tied to this address </li>
+
+        <li class="li">Copy the certificate (containing both public and private keys) to
+            <strong class="ph b">helion/my_cloud/config/tls/certs/ </strong></li>
+
+        <li class="li" id="topic_yym_nps_4t__private2">Replace the contents of<strong class="ph b">
+            ~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</strong> with
+          the new CA certificate chain file (if applicable) </li>
+
+        <li class="li">Edit <strong class="ph b">network_groups.yml </strong>to set the value for the name of the "cert-file"</li>
+
+        <li class="li">Again, commit your changes to git and run the configuration processor as in steps 4 and
+          5 above</li>
+
+        <li class="li">Continue with the deployment as usual</li>
+
+      </ol>
+ Note that the certificate that is installed by default, "my-public-cert", is linked to
+      the name "myhelion.test". It is possible to deploy the system without generating or
+      configuring a new certificate and come back and change it later, but access to the public URLS
+      will have to use the "--insecure" flag to avoid "certificate mismatch" errors.</div>
+
+    <div class="section"> Here is the relevant section of
+      <strong class="ph b">network_groups.yml</strong>.<pre class="pre codeblock"> load-balancers: 
+   - provider: ip-cluster
+     name: extlb   # This is the external load balancer.
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address.
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+
+         external-name:
+
+     tls-components:
+        - default
+     roles:
+        - public
+          cert-file: my-public-cert   # this cert should match the FQDN for authenticated TLS to work. 
+                                      # The bundled test certificate is for myhelion.test</pre>
+</div>
+
+    <div class="section" id="topic_yym_nps_4t__TLS_termination"><h2 class="title sectiontitle">Definitions</h2>
+      
+      <dl class="dl">
+        
+          <dt class="dt dlterm">name: extlb</dt>
+
+          <dd class="dd">The external load balancer</dd>
+
+        
+        
+          <dt class="dt dlterm">external-name:</dt>
+
+          <dd class="dd">This name will be used in place of the external VIP address. This name can be an FQDN.
+            This will be registered in the public endpoints of the services. As noted above,
+            myhelion.test should be changed to your FQDN.</dd>
+
+        
+        
+          <dt class="dt dlterm">tls-components:</dt>
+
+          <dd class="dd">This list of services will be put behind TLS. Note this is only being done for the
+            load balancer in question, which is the external load balancer. The components in
+            'default' are those services defined under service-components in data/control_plane.yml.
+            If you want to have a finer granularity, you can replace default with a list of
+            individual components, such as: <pre class="pre codeblock">tls-components: - 'horizon' </pre>
+</dd>
+
+        
+        
+          <dt class="dt dlterm">cert-file:</dt>
+
+          <dd class="dd"> the default my-public-cert is already part of the playbook but you can specify your
+            own name. When you specify your own you also need to have the certificate copied in
+              <strong class="ph b">~/helion/my_cloud/config/tls/certs</strong> on the deployer, as noted above. </dd>
+
+        
+      </dl>
+
+      <div class="note note"><span class="notetitle">Note:</span> Do not enable TLS to the internal load balancer. </div>
+
+    </div>
+
+    
+    
+
+    <div class="section"><h2 class="title sectiontitle">Disabling TLS</h2>If you don't want to use TLS, then you should change "tls-components" to "components"
+      in <strong class="ph b">network_groups.yml</strong>. Additionally, if you have a <strong class="ph b">network_groups.yml</strong> file from
+      a previous installation, you won't have TLS enabled unless you change "components" to
+      "tls-components" in that file. </div>
+
+    <div class="section" id="topic_yym_nps_4t__configure_cipher"><h2 class="title sectiontitle">Configuring the cipher suite for public endpoints</h2>
+       We have set the default
+      cipher suite to be: <samp class="ph codeph">HIGH:!aNULL:!eNULL:!DES:!3DES</samp>. This is a recommended
+      setting from the <a class="xref" href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html" target="_blank">OpenStack documentation site</a>. You may override this.
+      To do so, open <strong class="ph b">config/haproxy/defaults.yml</strong> and edit it. The parameters can be found
+      under haproxy_globals list.
+      <pre class="pre codeblock">- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
+- "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</pre>
+
+      Make the changes as needed. It's best to keep the two options identical. </div>
+
+    
+    
+    
+    
+  
+    
+    
+    
+     
+ 
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

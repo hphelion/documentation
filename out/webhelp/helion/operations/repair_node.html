@@ -1,0 +1,123 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="There are a number of routine operations you must perform in the ongoing running and maintenance of your cloud, including the repair of a node when, for example, you need to replace part of the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Repairing a Compute Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_gcv_r4y_lt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Repairing a Compute Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_gcv_r4y_lt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Repairing a Compute Node</h1>
+
+  <div class="body">
+    <div class="section">
+      <p class="p">There are a number of routine operations you must perform in the ongoing running and
+        maintenance of your cloud, including the repair of a node when, for example, you need to
+        replace part of the server, such as a disk. Note that to run any playbooks whatsoever for
+        cloud maintenance, you will always run from the deployer/lifecycle-manager node.</p>
+ Typical
+      scenarios in which you will need to repair a node include: <ul class="ul">
+        <li class="li">The node has already failed; i.e., it is down. </li>
+
+        <li class="li">The node is working but the Nova compute process is not responding, so instances are
+          working but you can't manage them, for example to delete, reboot, attach/detach volumes. </li>
+
+        <li class="li">The node is fully operational but monitoring indicates a potential issue (such as disk
+          errors) that require down time to fix. </li>
+
+      </ul>
+
+      <p class="p"> In the first case all you can do is try and power it up and then use
+          <samp class="ph codeph">hlm-start</samp>. </p>
+ If a disk has failed you will need to
+        <samp class="ph codeph">bm-reimage</samp> and <samp class="ph codeph">hlm-deploy</samp>. <p class="p">In the second case you can't
+        stop or migrate the instances so all you can do is schedule a maintenance window and reboot
+        the node. </p>
+ In the third case you have a choice: <ul class="ul">
+        <li class="li">Stop the instances, repair the node, restart the node and instances or </li>
+
+        <li class="li">Live migrate the instances off the node before actioning the repairs.</li>
+
+      </ul>
+ However, the live migration approach is really the primary course of action. The
+      stop/start instances approach is an alternative where appropriate. <p class="p">To repair a node, you
+        will have to take it offline, repair it, and restart it. To do so, follow these steps.</p>
+
+      If the node is being taken offline for maintenance, you will need to disable provisioning to
+      prevent new instances from being created on this node. <ol class="ol">
+        <li class="li">Disable provisioning:
+          <pre class="pre codeblock">nova service-disable --reason "&lt;describe reason&gt;" &lt;node name&gt; nova-compute</pre>
+If
+          the node has existing instances running on it and the nature of the maintenance will
+          impact these instances, the recommended approach is to stop these instances prior to the
+          maintenance activity or migrate them to other compute nodes if possible: </li>
+
+        <li class="li">Stop nova:<pre class="pre codeblock">nova stop &lt;instance uuid&gt;</pre>
+</li>
+
+        <li class="li"> Then start them again after the repair:
+          <pre class="pre codeblock">nova start &lt;instance uuid&gt;</pre>
+ If 'nova start' fails, try
+          <pre class="pre codeblock">nova reboot --hard &lt;instance uuid&gt;</pre>
+
+        </li>
+
+        <li class="li">Re-enable provisioning when the node is fixed
+          <pre class="pre codeblock">nova service-enable &lt;node name&gt;</pre>
+ If the maintenance includes disk
+          replacements that would cause loss of data in <strong class="ph b">/var/lib/nova</strong>, then moving or
+          deleting the instances will be necessary. It may be possible to migrate instances to a
+          different compute node. </li>
+
+        <li class="li">Migrate the
+          node:<pre class="pre codeblock">nova live-migration --block-migrate [&lt;target compute host&gt;]</pre>
+</li>
+
+        <li class="li">When the node is ready to be restored, the process for re-introducing it will depend on
+          the actions performed to repair it. If it was simply rebooted to introduce new software,
+          etc. then running the <strong class="ph b">hlm-start.yml</strong> playbook will suffice. If needed, use
+            <strong class="ph b">bm-power-up.yml </strong>playbook to restart the node. Specify just the node(s) you want
+          to start in the 'nodelist' parameter arguments, i.e.
+          nodelist=&lt;node1&gt;[,&lt;node2&gt;][,&lt;node3&gt;]
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-up.yml -e nodelist=cpn-0004</pre>
+
+        </li>
+
+        <li class="li">Execute the <strong class="ph b">hlm-start.yml </strong>playbook. Specifying the node(s) you want to start in
+          the 'limit' parameter arguments. This parameter accepts wildcard arguments and also
+          '@&lt;filename&gt;' to process all hosts listed in the file.
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit hlm004-ccp-comp0004-mgmt</pre>
+
+        </li>
+
+        <li class="li">If the node has undergone repairs that impact disk contents, then running the
+            <strong class="ph b">bm-reimage.yml</strong> and <strong class="ph b">hlm-deploy.yml </strong>playbooks will be required.
+          Run:<pre class="pre codeblock">cd ~/helion/hos/ansible
+~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0004</pre>
+
+        </li>
+
+        <li class="li">Then execute the <strong class="ph b">site.yml</strong> playbook.
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0004-mgmt</pre>
+
+        </li>
+
+        <li class="li">Finally, re-enable provisioning.
+          <pre class="pre codeblock">nova service-enable &lt;node name&gt; nova-compute</pre>
+</li>
+
+      </ol>
+
+    </div>
+          
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

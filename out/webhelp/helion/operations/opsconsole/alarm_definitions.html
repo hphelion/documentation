@@ -1,0 +1,50 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page allows you to define alarms that are useful in generating notifications and metrics required by your organization. By default, alarm definitions are sorted by name and in a table format. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Alarm Creation"></meta><meta name="abstract" content="This page allows you to define alarms that are useful in generating notifications and metrics required by your organization. By default, alarm definitions are sorted by name and in a table format."></meta><meta name="description" content="This page allows you to define alarms that are useful in generating notifications and metrics required by your organization. By default, alarm definitions are sorted by name and in a table format."></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="alarm_definitions"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Alarm Creation</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="alarm_definitions">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Alarm Creation</h1>
+      <div class="body conbody"><p class="shortdesc">This page allows you to define alarms that are useful in generating notifications and     metrics required by your organization. By default, alarm definitions are sorted by name and in a     table format.</p>
+     <div class="section"><h2 class="title sectiontitle">Search and Sort</h2>              <p class="p">The search bar allows you to filter the alarm definitions you want to view. Type and Status         are examples of alarm criteria that can be specified. Additionally, you can filter by typing         in text similar to searching by keywords.</p>
+       <p class="p">The checkbox allows you to select (or deselect) a group of alarm definitions to delete:</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">Select Visible</span> allows you to delete the selected alarm           definitions from the table.</li>
+         <li class="li"><span class="ph uicontrol">Select All</span> allows you to delete all the alarms from the           table.</li>
+         <li class="li"><span class="ph uicontrol">Clear Selection</span> allows you to clear all the selections currently           selected from the table.</li>
+       </ul>
+       <p class="p">You can display the alarm definitions by grid, list or table views by selecting the         corresponding icons next to the <span class="ph uicontrol">Sort By</span> control.</p>
+       <p class="p">The <span class="ph uicontrol">Sort By</span> control contains a drop-down list of ways by which you         can sort the alarm definitions. Alternatively, you can also sort using the column headers in         the table.</p>
+       <ul class="ul">         <li class="li"><span class="ph uicontrol">Sort by Name</span> displays the alarm definitions by the name assigned           to it when it was created.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Description</span> displays the descriptive details of the alarm           definitions.</li>
+         <li class="li"><span class="ph uicontrol">Sort by Notifications Enabled</span> displays the alarm definitions'           notification criteria, such as whether enabled for certain types of alarms and how the           notification is disseminated (by Email, Web, etc.)</li>
+       </ul>
+     </div>
+     <div class="section"><h2 class="title sectiontitle">Create Alarm Definitions</h2>              <p class="p">The <span class="ph uicontrol">Create Alarm Definition</span> button beside the search bar allows you         to create a new alarm definition.</p>
+       <p class="p">To create a new alarm definition:</p>
+       <ol class="ol">         <li class="li">Click the <span class="ph uicontrol">Create Alarm Definitions</span> button to open a separate           window that allows you to configure a new alarm.</li>
+         <li class="li">In the Create Alarm Definition window, type a name for the alarm in the             <span class="ph uicontrol">Name</span> text field. The name is required and may be up to 255           characters in length consisting of letters, numbers, or special characters.</li>
+         <li class="li">Provide some useful details about the alarm in the <span class="ph uicontrol">Description</span>           text field (optional).</li>
+         <li class="li">Set the severity level for the alarm in the <span class="ph uicontrol">Severity</span> drop-down           menu. The severity level is optional but subjective, so choose the level appropriate for           prioritizing the handling of alarms when they occur.</li>
+         <li class="li">Although not required, in order to specify how to receive notifications, you must be           able to select the method(s) of notification (Email, Web, API, etc.) from the list of           options in the Alarm Notifications area. If none are available to choose from, you must           first configure them in the Notifications Methods window. Refer to the Notification           Methods help page for further instructions.</li>
+         <li class="li">To turn the notifications on for the alarm, click to select <span class="ph uicontrol">Enable             Notifications</span>. </li>
+         <li class="li">Apply the following rules to your alarm by using the Alarm Expression form: <ul class="ul">             <li class="li"><span class="ph uicontrol">Function</span>: determines the output value from a supplied input               value. </li>
+             <li class="li"><span class="ph uicontrol">Metric</span>: applies a pre-defined means of measuring whatever               aspect of the alarm.</li>
+             <li class="li"><span class="ph uicontrol">Dimension(s)</span>: identifies which aspect (Hostname, Region, and               Service) of the alarm you want to monitor.</li>
+             <li class="li"><span class="ph uicontrol">Relational Operator</span>: specifies the operator for how you want               the alarm to trigger.</li>
+             <li class="li"><span class="ph uicontrol">Value</span>: determines the numeric threshold associated with the               operator you specified.</li>
+           </ul>
+</li>
+         <li class="li">Select whether you want to apply the expressions <span class="ph uicontrol">Individually</span> or             <span class="ph uicontrol">As a group</span> to the previously selected dimension(s).</li>
+         <li class="li">When done creating the alarm, click <span class="ph uicontrol">Create Alarm</span>.           </li>
+       </ol>
+       <p class="p">After the alarm definition saves, it can take roughly one minute for the alarm definition         to appear in the chart.</p>
+     </div>
+        </div>
+ <div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

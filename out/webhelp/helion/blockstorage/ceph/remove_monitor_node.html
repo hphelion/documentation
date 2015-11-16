@@ -1,0 +1,92 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The process to remove Ceph monitor nodes, depends on how they have been deployed - either on the controller node or on a separate/dedicated resource node. To Remove Monitor Nodes from the Controller ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Removing Ceph Monitor Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_a3t_ptt_rt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Removing Ceph Monitor Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_a3t_ptt_rt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Removing Ceph Monitor Node </h1>
+
+
+  <div class="body">
+    <p class="p">The process to remove Ceph monitor nodes, depends on how they have been deployed - either on
+      the controller node or on a separate/dedicated resource node. </p>
+
+    <div class="section" id="topic_a3t_ptt_rt__remove-monitor-contorller"><h2 class="title sectiontitle">To Remove Monitor Nodes from the Controller Node</h2>
+      
+      <div class="p">Permanent removal of a monitor is not supported when the monitor service is installed on
+        the controller node. However, to temporarily bring down the service on the controller node
+        (for maintenance purposes), perform the following steps:<ol class="ol" id="topic_a3t_ptt_rt__ol_gkx_h5t_rt">
+          <li class="li">Login to the Deployer/lifecycle-manager node.</li>
+
+          <li class="li">Stop the monitor service running on the specific host by running the following
+              commands:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-stop.yml --limit &lt;mon-node-to-remove&gt;</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+              the string &lt;<samp class="ph codeph">mon-node-to-remove</samp>&gt; in above command with the monitor
+              host to be removed from cluster (for example,
+                <samp class="ph codeph">stratushelion-ccp-c1-m1-mgmt</samp>).</div>
+</li>
+
+          <li class="li">Remove the monitor service from the
+            cluster:<pre class="pre codeblock">ceph mon remove &lt;ceph-mon-host&gt;</pre>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+    <div class="section" id="topic_a3t_ptt_rt__remove-monitor-separate"><h2 class="title sectiontitle">Remove Monitor Nodes from a Separate/Dedicated Node</h2>
+      
+      <div class="p">Perform the following steps to remove a monitor node from a separate/dedicated node.<ol class="ol" id="topic_a3t_ptt_rt__ol_ypw_55t_rt">
+          <li class="li">Login to the monitor node to be removed.</li>
+
+          <li class="li">Stop the monitor service running on the specific host by running the following
+            commands :<pre class="pre codeblock">service ceph-mon@&lt;ceph-mon-host&gt; stop</pre>
+</li>
+
+          <li class="li">Remove the monitor
+            service:<pre class="pre codeblock">ceph mon remove &lt;ceph-mon-host&gt;</pre>
+</li>
+
+          <li class="li">Login to the deployer/lifecycle-manager node.</li>
+
+          <li class="li">Edit the <samp class="ph codeph">servers.yml</samp> file and remove the host section from the
+            file.<pre class="pre codeblock">vim  ~/helion/my_cloud/definition/data/servers.yml</pre>
+</li>
+
+          <li class="li">Commit your
+              configuration:<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "Remove monitor node &lt;host-name&gt;"</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+              the string <samp class="ph codeph">&lt;host-name&gt;</samp> in the above commit message with the actual
+              host name.</div>
+</li>
+
+          <li class="li">Run the configuration
+            processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+          <li class="li">Use the playbook below to create a deployment directory:
+            <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

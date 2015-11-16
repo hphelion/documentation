@@ -1,0 +1,242 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="HPE Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your cloud. Rather than searching through and editing a number of YAML files to input your specific configuration data, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Installing via the GUI"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="install_gui"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Installing via the GUI</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../index.html";
+          
+          --></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="install_gui">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Installing via the GUI </h1>
+
+  <div class="body">
+    
+    <div class="section"> HPE Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your
+      cloud. Rather than searching through and editing a number of YAML files to input your specific
+      configuration data, finding the correct location, and maintaining the format of the files, the
+      UI presents fields in which you may enter your information. </div>
+
+    <div class="section">In addition, rather than having to run a series of commands to execute the cobbler and
+      Ansible scripts that initiate the installation of HPE Helion OpenStack, the UI application runs
+      them behind the scenes. </div>
+
+    <div class="section">While the UI app does more than simply populate the configuration files that the
+      configuration processor uses as input to its processes, it does populate them. Therefore you
+      can inspect the files whenever you like, or before reconfiguring your cloud. </div>
+
+    <div class="section">Note, however, that if you decide to look at or try to modify configuration files
+      during the process, none of your values are actually written to the configuration files until
+      you click the Deploy button at the end of the process. That would mean too that if you were to
+      try to change anything in the files themselves mid process, the values would get overwritten
+      by values you have entered in the GUI before clicking the Deploy button.</div>
+
+
+
+    <div class="section">These YAML configuration files are now stored in a local git repository as well, as
+      explained in <a class="xref" href="installation/using_git.html">Using git for Configuration
+        Management</a>. <p class="p">When installing via the GUI, you are starting with a model (example
+        cloud configuration) and can and must edit the underlying example to reflect your
+        environment.</p>
+ However, the full range of customizations is not possible via the GUI as
+      some configuration items are not exposed. Below is the list of what can and cannot be changed: </div>
+
+    <div class="section"><strong class="ph b">Changes to the following items may be made:</strong><ul class="ul" id="install_gui__ul_hsd_bym_tt">
+        <li class="li">servers (including Linux for HPE Helion installation configuration) </li>
+
+        <li class="li">networks </li>
+
+        <li class="li">disk models </li>
+
+        <li class="li">interface models </li>
+
+        <li class="li">NIC mappings </li>
+
+        <li class="li">NTP servers (cloudConfig.yml) </li>
+
+        <li class="li">tags in network groups</li>
+
+      </ul>
+
+      <strong class="ph b">Changes to the following items cannot be made: </strong><ul class="ul" id="install_gui__ul_b5d_bym_tt">
+        <li class="li">server groups</li>
+
+        <li class="li">server roles</li>
+
+        <li class="li">network groups</li>
+
+        <li class="li">firewall rules</li>
+
+        <li class="li">cloudConfig.yml (i.e. DNS, SMTP, firewall settings)</li>
+
+        <li class="li">control planes</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Before you begin</h2> Before you run the GUI installer to install your cloud,
+      there are a number of things you need to do to prepare. <ol class="ol">
+        <li class="li">Prepare your servers</li>
+
+        <li class="li">Gather your information <ul class="ul">
+            <li class="li">Server names </li>
+
+            <li class="li">IP addresses </li>
+
+            <li class="li">Server Roles </li>
+
+            <li class="li">PXE MAC addresses </li>
+
+            <li class="li">PXE IP addresses </li>
+
+            <li class="li">PXE interfaces </li>
+
+            <li class="li">IPMI/iLO IP address, username, password </li>
+
+          </ul>
+</li>
+
+        <li class="li">Choose your <a class="xref" href="example_configurations.html">cloud model/example</a>
+          template. No action other than an understanding of your needs is necessary at this point.
+          You will indicate which model you wish to deploy in a GUI screen. Note, however,  that the
+          only VSA options for the <em class="ph i">Entry-scale KVM with VSA</em> model is to have 0 or 3 VSA
+          nodes. Note also that you cannot run the deployer/lifecycle manager on a dedicated node
+          using the GUI installer; it can only run in the control plane using the models exposed in
+          the GUI.</li>
+
+        <li class="li">Before you use the GUI to install your cloud, you may install the operating system,
+          Linux for HPE Helion, on your nodes (servers) if you prefer. Otherwise, the installer will
+          install it for you. <p class="p">If you are installing the operating system on all your nodes
+            yourself, note that you must do so using the Linux for HPE Helion image that is included
+            in the HPE Helion OpenStack 2.0 package. You may find the instructions on the following
+            pages helpful even when using your own tools to install the operating systems:</p>
+
+          <ul class="ul">
+            <li class="li"><a class="xref" href="installation/install_entryscale_kvm.html#install_kvm">Operating system install help for KVM-based clouds</a></li>
+
+            <li class="li"><a class="xref" href="installation/install_entryscale_esx.html#install_esx">Operating system install help for ESX-based clouds</a></li>
+
+          </ul>
+
+          <div class="note note"><span class="notetitle">Note:</span> When following the guidance for operating system installation on those pages, stop
+            before the sections for <strong class="ph b">Running the Configuration Processor</strong>. The GUI installer
+            will run those steps, and in the case where you have the GUI also install the operating
+            systems, it will run all the previous steps (playbooks) as well.</div>
+</li>
+
+        
+      </ol>
+
+      
+    </div>
+
+      <div class="section" id="install_gui__gui_use"><h2 class="title sectiontitle">Get ready to run the GUI installer</h2> Two final steps you
+      must take before running the GUI installer, whether you are allowing it to install the
+      operating systems on your nodes, or you are performing that task yourself using your own
+      tools: <ol class="ol">
+        <li class="li"> For ESX installations, at this point you must modify the<strong class="ph b">
+            ~/helion/hos/ansible/hlm-deploy.yml</strong> to uncomment the line containing eon-deploy.yml.
+          You must then comment out the line containing ceph-deploy.yml, vsa-deploy.yml, and
+          cmc-deploy.yml. Then if you need to, follow the instructions in <a class="xref" href="installation/install_entryscale_esx.html#install_esx__optional-eon">Step 4
+            here</a>. They are optional steps to enable centralized logging for the EON
+          service.</li>
+
+        <li class="li"> Change the file permissions of hlm-ux-implementation/server/ansible/hosts/localhost to
+          not executable. Execute the following command to do so:
+          <pre class="pre codeblock">chmod -x ~/hlm-ux-implementation/server/ansible/hosts/localhost </pre>
+This
+          will set the correct permission on the localhost file so that the <strong class="ph b">ready-install-os.yml
+          </strong>playbook can run and install the operating system on the nodes. </li>
+
+      </ol>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Run the GUI to install your cloud</h2>
+      <p class="p">Now that the OS, HPE Linux for HPE Helion OpenStack, is installed on all your servers
+        (nodes), or the GUI will perform all deployment tasks for you, you are ready to launch
+        it.</p>
+
+      <p class="p">The GUI is found on the lifecycle manager node at: <strong class="ph b">http://&lt;lifecycle
+          manager_IP&gt;:79/dayzero</strong></p>
+
+      <p class="p">To create a secure tunnel/port forwarding into Apache from the lifecycle manager to be able
+        to use the GUI in a browser, SSH tunnel into the lifecycle manager with the
+        username/password set up when installing the lifecycle manager. Username and password should
+        be what was set in "Set up the Deployer" in the installation instructions. For example:</p>
+
+      <pre class="pre codeblock">ssh -v -N -L 8080:&lt;lifecycle manager_IP&gt;:79 &lt;Username&gt;@&lt;lifecycle manager_IP&gt;</pre>
+
+      <p class="p">Then on your local machine, point your web browser to:
+        <strong class="ph b">http://localhost:8080/dayzero</strong></p>
+ As you proceed through the GUI, you need only
+      supply your server names and IP addresses. </div>
+
+    <div class="section">In the Assign network groups: External VM network fields, <strong class="ph b">do not</strong> add entries for
+      CIDR, Gateway, or IP Range, only VLAN ID. Neutron will assign these.<p class="p">When the installation
+        is complete, the Ansible log will be displayed on the final page.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Use the installer securely</h2>
+      <p class="p"> The GUI installer is a web-based application that runs on the deployer/lifecycle manager
+        node and is implemented in node.js. Currently this application runs behind Apache 2.0 where
+        requests are proxied to the node.js Express Web Server. The node.js Express Server runs on
+        port 3000 and Apache runs on port 79. </p>
+
+      <p class="p">You should access the installer through Apache and not directly from the Express server. An
+        Example URL looks like this: http://&lt;lifecycle manager-host-ip&gt;:79/dayzero When you
+        finish installing, the Installer will be disabled via Ansible. It is also disabled once
+        deployment is completed following the CLI instructions..</p>
+
+    </div>
+
+    <div class="section">
+      <p class="p">The GUI is used only once: during the initial installation of your cloud.</p>
+<p class="p">For VSA
+        deployments, once the GUI competes its installation, you must follow the steps outlined in
+        the <a class="xref" href="installation/configure_vsa.html">VSA Configuration</a>page.</p>
+After
+      deployment, you may also continue to <a class="xref" href="installation/installation_verification.html">Verifying Your Installation</a> and <a class="xref" href="installation/postinstall_checklist.html">Post-Installation Checklist</a>.<div class="p">To understand a cloud configuration more thoroughly
+        and to learn how to make any changes later, visit these documentation pages: <ul class="ul" id="install_gui__ul_akt_fv2_lt">
+          <li class="li"><a class="xref" href="input_model.html">HPE Helion OpenStack 2.0 Input Model</a></li>
+
+          <li class="li"><a class="xref" href="installation/using_git.html">Using Git for Configuration
+            Management</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="note note"><span class="notetitle">Note:</span> Because the GUI installer is disabled after deployment is complete, whether you
+        installed your cloud via the GUI or via the command line, if you want to re-enable the GUI
+        later but are not re-installing from scratch, run these commands:
+        <pre class="pre codeblock">sudo a2ensite dayzero-apache.conf
+sudo systemctl start dayzero.service</pre>
+
+      </div>
+
+    </div>
+
+<div class="section"><h2 class="title sectiontitle">Final Steps</h2>
+
+<ul class="ul"><li class="li">The public Horizon Dashboard connection is over TLS, thus please use HTTPS:// to navigate to
+          Horizon with the IP address the installer presents once install is complete.</li>
+
+<li class="li"><a class="xref" href="installation/configure_ceph.html#config_ceph">Visit the Ceph configuration page for
+            Ceph post-install steps</a>.</li>
+
+
+</ul>
+
+
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

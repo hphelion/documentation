@@ -1,0 +1,706 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM Cloud model. It consists of the following steps: Editing your Ceph Environment Input Files Configure Ceph as ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring for Ceph Block Storage Backend"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="config_ceph"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring for Ceph Block Storage Backend</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="config_ceph">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring for Ceph Block Storage
+    Backend</h1>
+
+  <div class="body">
+    <p class="p">This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
+      Cloud model. It consists of the following steps:</p>
+
+    <ul class="ul">
+      <li class="li"><a class="xref" href="configure_ceph.html#config_ceph__config_files">Editing your Ceph Environment
+          Input Files</a></li>
+
+      <li class="li"><a class="xref" href="configure_ceph.html#config_ceph__configure_backend">Configure Ceph as the
+          Backend</a></li>
+
+      <li class="li"><a class="xref" href="configure_ceph.html#config_ceph__attach_ceph">Configure Nova to Allow
+          Attachment of Ceph Volumes to Instances</a></li>
+
+      <li class="li"><a class="xref" href="configure_ceph.html#config_ceph__post_install">Verifying your Ceph
+          backend</a></li>
+
+    </ul>
+
+    <div class="section" id="config_ceph__notes"><h2 class="title sectiontitle">Notes</h2>
+      <p class="p">The Ceph cluster expects the network group that will be used for management network traffic
+        within the cloud to be left to its default value i.e. MANAGEMENT. Altering the name will
+        lead to failures in the cloud deployment, therefore it should be avoided.</p>
+
+      <p class="p">You can deploy the Ceph monitor service on a dedicated resource. Ensure you modify your
+        environment after installing the lifecycle-manager.</p>
+
+      <p class="p">For more details, refer to <a class="xref" href="../blockstorage/ceph/deploy_monitor_stand_alone_node.html">Install a monitor service
+          on a dedicated resource node</a>.</p>
+
+      <p class="p">While executing the <samp class="ph codeph">site.yml</samp> playbook with the <samp class="ph codeph">–-limit</samp>
+        option, it is also expected to include the Ceph Monitor nodes in the list of restricted
+        nodes if the cloud is deployed with a Ceph cluster.</p>
+
+    </div>
+
+    <div class="section" id="config_ceph__config_files"><h2 class="title sectiontitle">Edit Your Ceph Environment Input Files</h2>
+      
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Log in to the deployer/lifecycle-manager node.</li>
+
+          <li class="li">Copy the example configuration files into the required setup directory and edit them
+            to contain the details of your environment: <pre class="pre codeblock">cp -r ~/helion/examples/entry-scale-kvm-ceph/* ~/helion/my_cloud/definition/</pre>
+
+            <p class="p">Begin inputting your environment information into the configuration files in the
+                <samp class="ph codeph">~/helion/my_cloud/definition</samp> directory.</p>
+
+            <p class="p">Full details of how to do this can be found here: <a class="xref" href="../input_model.html">Helion OpenStack 2.0 Input Model</a>.</p>
+</li>
+
+          <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/disks_osd.yml</samp> file and
+            enter the details for the additional disks meant for OSD data and journal filesystems.
+              <p class="p">A sample <samp class="ph codeph">disks_osd.yml</samp> is as follows:</p>
+
+            <pre class="pre codeblock">disk-models:
+  - name: OSD-DISKS
+    # Disk model to be used for Ceph OSD nodes
+    # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+    # sda_root is a templated value to align with whatever partition is really used
+    # This value is checked in os config and replaced by the partition actually used
+    # on sda e.g. sda1 or sda5
+
+    # Disks to be used by Ceph
+    # Additional disks can be added if available
+    device-groups:
+      - name: ceph-osd-data-only
+        devices:
+          - name: /dev/sdb
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+      - name: ceph-osd-data-and-journal
+        devices:
+          - name: /dev/sdc
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdd
+      - name: ceph-osd-data-and-shared-journal-set-1
+        devices:
+          - name: /dev/sde
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdg
+      - name: ceph-osd-data-and-shared-journal-set-2
+        devices:
+          - name: /dev/sdf
+        consumer:
+           name: ceph
+           attrs:
+             usage: data
+             journal_disk: /dev/sdg</pre>
+
+            <p class="p">The above sample file contains three OSD nodes and two journal disks.</p>
+
+            <p class="p">The disk model has the following fields:</p>
+
+            <div class="p">
+              
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="config_ceph__ceph1" class="table" frame="border" border="1" rules="all">
+                  
+                  
+                  <thead class="thead" align="left">
+                    <tr class="row">
+                      <th class="entry" valign="top" id="d39158e152">Value</th>
+
+                      <th class="entry" valign="top" id="d39158e155">Description</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <tbody class="tbody">
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">device-groups</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">There can be several device groups. This allows different sets of disks
+                        to be used for different purposes.</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">name</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">This is an arbitrary name for the device group. The name must be
+                        unique.</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">devices</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">This is a list of devices allocated to the device group. A
+                          <samp class="ph codeph">name</samp> field containing <samp class="ph codeph">/dev/sdb</samp>,
+                          <samp class="ph codeph">/dev/sdc</samp>, <samp class="ph codeph">/dev/sde</samp> and
+                          <samp class="ph codeph">/dev/sdf</samp> indicates that the device group is used by
+                        Ceph.</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">consumer</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">This specifies the service that uses the device group. A
+                          <samp class="ph codeph">name</samp> field containing <strong class="ph b">ceph</strong> indicates that the
+                        device group is used by Ceph.</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">attrs</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">These are the attributes associated with the consumer.</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">usage</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">There can be several uses of devices for a particular service. In the
+                        above sample, <samp class="ph codeph">usage</samp> field contains <strong class="ph b">data</strong> which
+                        indicates that the device is used for data storage.</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e152 "><strong class="ph b">journal_disk</strong></td>
+
+                      <td class="entry" valign="top" headers="d39158e155 ">Disk to be used for storing the journal data. When running multiple
+                        Ceph OSD daemons on a single node, a journal disk can be shared between OSDs
+                        of the node.</td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+</div>
+
+            </div>
+
+            <div class="p"><div class="note note"><span class="notetitle">Note:</span> Ensure that disks designated to be used for the OSD data and journal storage
+                must be in a clean state (i.e. any existing partitions must be deleted). If you do
+                not perform this step, Ceph configuration fails with errors.</div>
+</div>
+</li>
+
+          <li class="li">[OPTIONAL] There are parameters for Ceph that can be edited by the admin in the
+            locations described below. The default values will work but if you choose to change any
+            of these values, ensure that you also change them where they are referenced in your
+              <samp class="ph codeph">cinder.conf.j2</samp> file, which we cover in the next section of this guide. 
+            <ul class="ul">
+              <li class="li"><samp class="ph codeph">~/helion/my_cloud/config/ceph/settings.yml</samp>
+                <p class="p">In the <samp class="ph codeph">settings.yml</samp> file, you can edit the following
+                  parameters:</p>
+
+                <div class="p">
+                  
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="config_ceph__table_gc4_c5t_5t" class="table" frame="border" border="1" rules="all">
+                      
+                      
+                      <thead class="thead" align="left">
+                        <tr class="row">
+                          <th class="entry" valign="top" id="d39158e299">Value</th>
+
+                          <th class="entry" valign="top" id="d39158e302">Description</th>
+
+                        </tr>
+
+                      </thead>
+
+                      <tbody class="tbody">
+                        <tr class="row">
+                          <td class="entry" valign="top" headers="d39158e299 ">fsid</td>
+
+                          <td class="entry" valign="top" headers="d39158e302 ">It is a unique identifier for the Ceph cluster.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                          <td class="entry" valign="top" headers="d39158e299 ">ceph_cluster</td>
+
+                          <td class="entry" valign="top" headers="d39158e302 ">
+                            <p class="p">Ceph clusters have a cluster name. The default cluster name is ceph,
+                              but you may specify a different cluster name.</p>
+
+                          </td>
+
+                        </tr>
+
+                        <tr class="row">
+                          <td class="entry" valign="top" headers="d39158e299 ">osd_settle_time</td>
+
+                          <td class="entry" valign="top" headers="d39158e302 ">
+                            <p class="p">Time in seconds to wait for after starting/restarting the Ceph OSD
+                              services.</p>
+
+                          </td>
+
+                        </tr>
+
+                        <tr class="row">
+                          <td class="entry" valign="top" headers="d39158e299 ">osd_journal_size</td>
+
+                          <td class="entry" valign="top" headers="d39158e302 ">
+                            <p class="p">The size of the journal in megabytes.</p>
+
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+
+                    </table>
+</div>
+</div>
+</li>
+
+              <li class="li">
+                <div class="p">Add any additional configuration parameters for Ceph in the same file
+                    (<samp class="ph codeph">settings.yml</samp> file) under the 'extra:' category as
+                  follows:<pre class="pre codeblock">extra:
+  osd:
+    journal_max_write_entries: 200</pre>
+</div>
+
+              </li>
+
+              <li class="li">
+                <p class="p"><samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp></p>
+
+                <p class="p">The <samp class="ph codeph">user_model.yml</samp> has the editable values for the different
+                  pools created by HPE Helion OpenStack.</p>
+
+              </li>
+
+            </ul>
+</li>
+
+          <li class="li">Commit your
+            configuration<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+</li>
+
+        </ol>
+</div>
+
+      <p class="p">After your configuration files are setup, continue with the <a class="xref" href="install_entryscale_kvm.html#install_kvm__provision">Entry-scale KVM Cloud
+          installation steps.</a></p>
+
+    </div>
+
+
+    <div class="section" id="config_ceph__configure_backend"><h2 class="title sectiontitle">Configure Ceph as the Backend</h2>
+      
+      <p class="p">You can use Ceph as either the backend for volumes or volume backups or both. These steps
+        will show you how to do this.</p>
+
+      <p class="p">Perform the following procedure on the deployer/lifecycle-manager node to configure Ceph as
+        a volume backend:</p>
+
+      <p class="p"><strong class="ph b">Prerequisites</strong></p>
+
+      <p class="p">In order for Ceph to be used as a backend for volumes, the nodes running these services
+        should have the Ceph client installed on them. Use the
+          <samp class="ph codeph">ceph-client-prepare.yml</samp> playbook to deploy the Ceph client on these
+        nodes.</p>
+
+      <div class="p">
+        <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts ceph-client-prepare.yml</pre>
+
+      </div>
+
+      <p class="p">This will also create Ceph users and Ceph pools on the resource nodes.</p>
+
+      <p class="p"><strong class="ph b">Ceph Configuration</strong></p>
+
+      <p class="p">Continue with the Ceph configuration with the steps below:</p>
+
+      <div class="p">
+        <ol class="ol">
+          <li class="li">Log in to the lifecycle-manager node.</li>
+
+          <li class="li">Make the following changes to the
+              <samp class="ph codeph">~/helion/my_cloud/config/cinder/cinder.conf.j2</samp> file: <ol class="ol" type="a">
+              <li class="li">Add your Ceph backend to the <samp class="ph codeph">enabled_backends</samp> section:
+                <pre class="pre codeblock"># Configure the enabled backends
+enabled_backends=ceph1</pre>
+</li>
+
+              
+              <li class="li">Uncomment the <samp class="ph codeph">ceph</samp> section and fill the values as per your
+                cluster information. If you have more than one cluster, you will need to add another
+                similar section with its respective values. In the following example only one
+                cluster is added. <pre class="pre codeblock">[ceph1]
+rbd_secret_uuid = &lt;secret-uuid&gt;
+rbd_user = &lt;ceph-cinder-user&gt;
+rbd_pool = &lt;ceph-cinder-volume-pool&gt;
+rbd_ceph_conf = &lt;ceph-config-file&gt;
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+volume_backend_name = &lt;ceph-backend-name&gt;</pre>
+
+                <p class="p">where:</p>
+
+                
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="config_ceph__ceph_volume" class="table" frame="border" border="1" rules="all">
+                    
+                    
+                    <thead class="thead" align="left">
+                      <tr class="row">
+                        <th class="entry" valign="top" id="d39158e478">Value</th>
+
+                        <th class="entry" valign="top" id="d39158e481">Description</th>
+
+                      </tr>
+
+                    </thead>
+
+                    <tbody class="tbody">
+                      <tr class="row">
+                        <td class="entry" valign="top" headers="d39158e478 ">rbd_secret_uuid</td>
+
+                        <td class="entry" valign="top" headers="d39158e481 ">Use the secret_id value from the
+                            <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                          highlighted below::
+                          <pre class="pre codeblock">- user:
+    name: <strong class="ph b">cinder</strong>
+    type: openstack
+    secret_id: <strong class="ph b">457eb676-33da-42ec-9a8c-9293d545c337</strong>
+pools:
+    - name: volumes</pre>
+</td>
+
+                      </tr>
+
+                      <tr class="row">
+                        <td class="entry" valign="top" headers="d39158e478 ">rbd_user</td>
+
+                        <td class="entry" valign="top" headers="d39158e481 ">Use the username value from the
+                            <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                          highlighted below::
+                          <pre class="pre codeblock">- user:
+    name: <strong class="ph b">cinder</strong>
+    type: openstack
+    secret_id: 457eb676-33da-42ec-9a8c-9293d545c337
+pools:
+    - name: volumes</pre>
+</td>
+
+                      </tr>
+
+                      <tr class="row">
+                        <td class="entry" valign="top" headers="d39158e478 ">rbd_pool</td>
+
+                        <td class="entry" valign="top" headers="d39158e481 ">Use the pool name value from the
+                            <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                          highlighted below:
+                          <pre class="pre codeblock">- user:
+    name: cinder
+    type: openstack
+    secret_id: 457eb676-33da-42ec-9a8c-9293d545c337
+pools:
+    - name: <strong class="ph b">volumes</strong></pre>
+</td>
+
+                      </tr>
+
+                      <tr class="row">
+                        <td class="entry" valign="top" headers="d39158e478 ">rbd_ceph_conf</td>
+
+                        <td class="entry" valign="top" headers="d39158e481 ">Enter your Ceph configuration file location, usually
+                            <samp class="ph codeph">/etc/ceph/ceph.conf</samp></td>
+
+                      </tr>
+
+                      <tr class="row">
+                        <td class="entry" valign="top" headers="d39158e478 ">volume_driver</td>
+
+                        <td class="entry" valign="top" headers="d39158e481 ">Cinder volume driver. Leave this as the default value specified for
+                          Ceph.</td>
+
+                      </tr>
+
+                      <tr class="row">
+                        <td class="entry" valign="top" headers="d39158e478 ">volume_backend_name</td>
+
+                        <td class="entry" valign="top" headers="d39158e481 ">Name given to the Ceph backend.
+                          </td>
+
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+</div>
+
+              </li>
+
+              <li class="li">To enable Cinder to backup to Ceph, make the following changes to the
+                  <samp class="ph codeph">~/helion/my_cloud/config/cinder/cinder.conf.j2</samp> file: <ol class="ol" type="i">
+                  <li class="li">Uncomment the <samp class="ph codeph">ceph backup</samp> section and fill the values: <pre class="pre codeblock">[DEFAULT]
+backup_driver = cinder.backup.drivers.ceph
+backup_ceph_conf = &lt;ceph-config-file&gt;
+backup_ceph_user = &lt;ceph-backup-user&gt;
+backup_ceph_pool = &lt;ceph-backup-pool&gt;</pre>
+
+                    <p class="p">where:</p>
+
+                    
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="config_ceph__ceph_backup" class="table" frame="border" border="1" rules="all">
+                        
+                        
+                        <thead class="thead" align="left">
+                          <tr class="row">
+                            <th class="entry" valign="top" id="d39158e605">Value</th>
+
+                            <th class="entry" valign="top" id="d39158e608">Description</th>
+
+                          </tr>
+
+                        </thead>
+
+                        <tbody class="tbody">
+                          <tr class="row">
+                            <td class="entry" valign="top" headers="d39158e605 ">backup_driver</td>
+
+                            <td class="entry" valign="top" headers="d39158e608 ">Cinder volume driver. Leave this as the default value specified
+                              for Ceph.</td>
+
+                          </tr>
+
+                          <tr class="row">
+                            <td class="entry" valign="top" headers="d39158e605 ">backup_ceph_conf</td>
+
+                            <td class="entry" valign="top" headers="d39158e608 ">Enter your Ceph configuration file location, usually
+                                <samp class="ph codeph">/etc/ceph/ceph.conf</samp></td>
+
+                          </tr>
+
+                          <tr class="row">
+                            <td class="entry" valign="top" headers="d39158e605 ">backup_ceph_user</td>
+
+                            <td class="entry" valign="top" headers="d39158e608 ">Use the user name value from the
+                                <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                              highlighted below::
+                              <pre class="pre codeblock">- user:
+    name: <strong class="ph b">cinder-backup</strong>
+    type: openstack
+pools:
+    - name: backups</pre>
+</td>
+
+                          </tr>
+
+                          <tr class="row">
+                            <td class="entry" valign="top" headers="d39158e605 ">backup_ceph_pool</td>
+
+                            <td class="entry" valign="top" headers="d39158e608 ">Use the pool name value from the
+                                <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                              highlighted below::
+                              <pre class="pre codeblock">- user:
+    name: <strong class="ph b">cinder-backup</strong>
+    type: openstack
+pools:
+    - name: <strong class="ph b">backups</strong></pre>
+</td>
+
+                          </tr>
+
+                        </tbody>
+
+                      </table>
+</div>
+</li>
+
+                </ol>
+
+              </li>
+
+              <li class="li">Copy <samp class="ph codeph">ceph.client.cinder.keyring</samp> to the controller nodes: <ol class="ol" type="i">
+                  <li class="li">Log in to the controller nodes as a user with sudo access and run the
+                    following commands: <pre class="pre codeblock">sudo ceph auth get-or-create client.cinder | sudo tee /etc/ceph/ceph.client.cinder.keyring</pre>
+
+                    <pre class="pre codeblock">sudo ceph auth get-or-create client.cinder-backup | sudo tee -a /etc/ceph/ceph.client.cinder-backup.keyring</pre>
+
+                    <p class="p"><strong class="ph b">OR</strong></p>
+</li>
+
+                  <li class="li">You can copy the keyring from the deployer/lifecycle-manager node to
+                      <samp class="ph codeph">/etc/ceph</samp> folder on all the controller nodes:
+                    <pre class="pre codeblock">scp /etc/ceph/ceph.client.cinder.keyring</pre>
+</li>
+
+                </ol>
+</li>
+
+              <li class="li">Commit your configuration to a <a class="xref" href="using_git.html">local
+                repository</a>: <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message&gt;"</pre>
+
+                <div class="note note"><span class="notetitle">Note:</span> Before you run any playbooks, remember that you need to export the encryption
+                  key in the following environment variable:<samp class="ph codeph"> export
+                    HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key&gt;</samp> See <a class="xref" href="install_entryscale_kvm.html#install_kvm">HPE Helion OpenStack 2.0: Installation for Helion Entry-scale Cloud with KVM</a> for reference.</div>
+</li>
+
+              <li class="li">Run the configuration processor:
+                <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+              <li class="li">Run the following command to create a deployment directory:
+                <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+              <li class="li">Run the Cinder Reconfigure Playbook:
+                <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre>
+</li>
+
+            </ol>
+
+          </li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="config_ceph__attach_ceph"><h2 class="title sectiontitle">Configure Nova to Allow Attachment of Ceph Volumes to Instances</h2>
+      
+      <p class="p">If you want to attach a volume from a newly-added Ceph backend to an existing Nova virtual
+        machine, you must reboot your virtual machine after the new backend has been added.</p>
+
+      <p class="p">Perform the following steps to configure Nova to allow attachment of a Ceph volume to an
+        instance:</p>
+
+      <ol class="ol">
+        <li class="li">Log in to the lifecycle-manager node.</li>
+
+        <li class="li">Make the following changes to the
+            <samp class="ph codeph">~/helion/my_cloud/config/nova/kvm-hypervisor.conf.j2</samp> file: <ol class="ol" type="a">
+            <li class="li">Uncomment the Ceph backend lines and edit them as follows: <pre class="pre codeblock">[libvirt]
+rbd_user = &lt;ceph-user&gt;
+rbd_secret_uuid = &lt;secret-uuid&gt;</pre>
+
+              <p class="p">where:</p>
+
+              
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="config_ceph__nova_volume" class="table" frame="border" border="1" rules="all">
+                  
+                  
+                  <thead class="thead" align="left">
+                    <tr class="row">
+                      <th class="entry" valign="top" id="d39158e788">Value</th>
+
+                      <th class="entry" valign="top" id="d39158e791">Description</th>
+
+                    </tr>
+
+                  </thead>
+
+                  <tbody class="tbody">
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e788 ">rbd_user</td>
+
+                      <td class="entry" valign="top" headers="d39158e791 ">Use the username value from the
+                          <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                        highlighted below::
+                        <pre class="pre codeblock">- user:
+    name: <strong class="ph b">cinder</strong>
+    type: openstack
+    secret_id: 457eb676-33da-42ec-9a8c-9293d545c337</pre>
+</td>
+
+                    </tr>
+
+                    <tr class="row">
+                      <td class="entry" valign="top" headers="d39158e788 ">rbd_secret_uuid</td>
+
+                      <td class="entry" valign="top" headers="d39158e791 ">Use the secret_id value from the
+                          <samp class="ph codeph">~/helion/my_cloud/config/ceph/user_model.yml</samp> file,
+                        highlighted below::
+                        <pre class="pre codeblock">- user:
+    name: <strong class="ph b">cinder</strong>
+    type: openstack
+    secret_id: <strong class="ph b">457eb676-33da-42ec-9a8c-9293d545c337</strong></pre>
+</td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+</div>
+
+            </li>
+
+          </ol>
+</li>
+
+        <li class="li">Commit your configuration to a <a class="xref" href="using_git.html">local repository</a>:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;your commit message&gt;"</pre>
+</li>
+
+        <li class="li">Run the configuration processor:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Run the following command to create a deployment directory:
+          <pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Run the Nova Reconfigure Playbook:
+          <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre>
+</li>
+
+      </ol>
+
+    </div>
+
+
+    <div class="section" id="config_ceph__post_install"><h2 class="title sectiontitle">Verifying your Ceph backend</h2>
+      <p class="p">After you have configured Ceph as your Block Storage backend, you can verify this all
+        completed successfully by creating a new volume.</p>
+
+      <p class="p">See <a class="xref" href="installation_verification.html">Verifying your Installation</a> for more
+        details.</p>
+
+    </div>
+
+    
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

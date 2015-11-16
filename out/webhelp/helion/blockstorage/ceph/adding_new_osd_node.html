@@ -1,0 +1,96 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The page describes how to add a new object storage daemon (OSD) node to an existing Ceph cluster. To Add a New OSD Node Perform the following steps to add a new OSD node to an existing Ceph cluster: ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Adding an Object Storage Daemon (OSD) Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_drm_rm5_kt"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Adding an Object Storage Daemon (OSD) Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../../index.html";
+          
+          --></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_drm_rm5_kt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Adding an Object Storage Daemon (OSD) Node </h1>
+
+  <div class="body">
+    <p class="p">The page describes how to add a new object storage daemon (OSD) node to an existing Ceph
+      cluster.</p>
+
+    <p class="p"><strong class="ph b">To Add a New OSD Node</strong></p>
+
+    <div class="p">Perform the following steps to add a new OSD node to an existing Ceph cluster:<ol class="ol" id="topic_drm_rm5_kt__ol_v2t_xm5_kt">
+        <li class="li">Login to the Deployer/lifecycle-manager node.</li>
+
+        <li class="li">Edit the <samp class="ph codeph">~/helion/my_cloud/definition/data/servers.yml</samp> file to define a
+          new OSD
+            node:<pre class="pre codeblock">- id: osd4
+  ip-addr: 192.168.10.11
+  role: OSD-ROLE
+  server-group: RACK3
+  nic-mapping: MY-2PORT-SERVER
+  mac-addr: 8b:f6:9e:ca:3b:7a
+  ilo-ip: 192.168.9.11
+  ilo-password: password
+  ilo-user: admin</pre>
+<div class="note note"><span class="notetitle">Note:</span> Enter
+            the appropriate values in the above sample as per your environment for the server being
+            added.</div>
+</li>
+
+        <li class="li">Commit your configuration to the local Git repository (for instructions, see <a class="xref" href="../../installation/using_git.html">HPE Helion OpenStack 2.0: Using Git for Configuration Management</a>):
+            <pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "Added OSD node &lt;node-id&gt;"</pre>
+<div class="note note"><span class="notetitle">Note:</span> Replace
+            the &lt;node-id&gt; in the commit message with appropriate value (example:
+          con-004).</div>
+</li>
+
+        <li class="li">Run the following
+          command:<pre class="pre codeblock">cd ~/helion/hos/ansible/
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre>
+</li>
+
+        <li class="li">Reimage all the nodes using
+          PXE:<pre class="pre codeblock">ansible-playbook -i hosts/localhost bm-reimage.yml</pre>
+</li>
+
+        <li class="li">Run the Configuration
+          Processor:<pre class="pre codeblock">ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+</li>
+
+        <li class="li">Use the playbook below to create a deployment directory:
+          <pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+        <li class="li">Run the following commands: <div class="p">
+            <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml
+ansible-playbook -i hosts/verb_hosts ceph-deploy.yml</pre>
+
+          </div>
+<p class="p">The new OSD node is deployed in an existing Ceph cluster.</p>
+<p class="p"><strong class="ph b">To Verify the
+              Newly Added OSD Node</strong></p>
+<div class="p">From the Deployer/lifecycle-manager node, run the
+            following command:<pre class="pre codeblock">$ceph --cluster ceph  osd tree</pre>
+
+                <div class="note note"><span class="notetitle">Note:</span> <p class="p">If the Ceph
+              cluster name is different than the default (i.e. <strong class="ph b">ceph</strong>), you need to modify the
+              above command accordingly.</p>
+<p class="p">When you run the above command, if the OSD node has been
+                successfully added to the existing Ceph cluster, the hostname of the newly added OSD
+                should appear in the output.</p>
+</div>
+</div>
+</li>
+
+      </ol>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

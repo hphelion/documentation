@@ -1,0 +1,178 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Configuring Brocade Fibre Channel Zone Manager"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_msm_b1j_jt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Configuring Brocade Fibre Channel Zone Manager</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_msm_b1j_jt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Configuring Brocade Fibre Channel Zone Manager </h1>
+
+  <div class="body">
+    <p class="p">Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group
+      host and storage nodes that need to communicate. Zoning allows nodes to communicates with each
+      other if they are the member of the same zone.</p>
+
+    <p class="p">HPE Helion OpenStack 2.0 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be
+      configured to enable auto-zoning using Brocade FC Zone Manager. The following section
+      describes the procedure to add Brocade Zone Manager configuration to
+        <samp class="ph systemoutput">cinder.conf.j2.</samp></p>
+
+    <p class="p">This page describes the configuration of Brocade Fibre Channel Zone Manager for the block
+      storage.</p>
+
+    <div class="section"><h2 class="title sectiontitle">Prerequisites</h2>
+      
+      <div class="p">
+        <ul class="ul" id="topic_msm_b1j_jt__ul_pfl_bbz_ht">
+          <li class="li">HPE Helion Cloud must be successfully deployed. </li>
+
+          <li class="li">Brocade switches must be installed in SAN.</li>
+
+          <li class="li">
+            <p class="p">Block Storage should be configured to use a Fibre Channel Volume Driver that supports
+              Zone Manager. To enable Fibre Channel Zone Manager, you require the following
+                <samp class="ph codeph">cinder.conf.j2</samp> configuration options. </p>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Configure Brocade Fibre Channel Zone Manager </h2>
+      
+      <p class="p">You must modify <samp class="ph codeph">cinder.conf.j2</samp> to update Brocade Fibre Channel Zone
+        Manager Driver details.</p>
+
+      <div class="p">Perform the following steps to configure Brocade Fibre Channel Zone Manager:<ol class="ol" id="topic_msm_b1j_jt__ol_dj2_qcz_ht">
+          <li class="li">Login to deployer/lifecycle-manager node.</li>
+
+          <li class="li">Change the directory as shown below:<pre class="pre codeblock">cd ~/helion</pre>
+</li>
+
+          <li class="li">Edit <samp class="ph codeph">cinder.conf.j2</samp> file at
+              <samp class="ph codeph">my_cloud/config/cinder/cinder.conf.j2</samp> to add Brocade Fibre Channel
+            Zone Manager Driver data. <div class="note note"><span class="notetitle">Note:</span> 
+              <ul class="ul" id="topic_msm_b1j_jt__ul_ghm_zbj_jt">
+                <li class="li">The values entered in step <strong class="ph b">4</strong> is an example. You must change the value as
+                  per your requirement/environment.</li>
+
+                <li class="li"> To enable FCZM you must add <samp class="ph codeph">zoning_mode=fabric</samp> to
+                    [<strong class="ph b">DEFAULT</strong>] entry. </li>
+
+                <li class="li">Brocade driver information is a new section added to the [fc-zone-manager]
+                  section. Fabric switch [<strong class="ph b">Fabric_A</strong>] [<strong class="ph b">Fabric_B</strong>] information is added in
+                    [<strong class="ph b">device</strong>] section for each side of the fabric.</li>
+
+              </ul>
+
+            </div>
+</li>
+
+          <li class="li">Copy the following configuration. The values in FABRIC_A and FABRIC_B are an example.
+              <pre class="pre codeblock">[DEFAULT] 
+zoning_mode=fabric 
+
+[fc-zone-manager] 
+brcd_sb_connector=cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI 
+fc_san_lookup_service=cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService 
+zone_driver=cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver 
+fc_fabric_names=FABRIC_A, FABRIC_B 
+
+[FABRIC_A] 
+fc_fabric_address = 10.10.0.20 
+fc_fabric_user = admin 
+fc_fabric_password = password
+ principal_switch_wwn = 10:00:50:eb:1a:05:c5:5d 
+zoning_policy = initiator-target
+fc_fabric_port = 22
+zone_activate = true 
+zone_name_prefix = FABRIC_A_
+
+[FABRIC_B] 
+fc_fabric_address = 10.10.0.21 
+fc_fabric_user = admin 
+fc_fabric_password = password
+ principal_switch_wwn = 10:00:50:eb:1a:05:c5:5e
+zoning_policy = initiator-target
+fc_fabric_port = 22
+zone_activate = true 
+zone_name_prefix = FABRIC_B_</pre>
+<div class="note note"><span class="notetitle">Note:</span> Please
+              enter the values which are specific to your environment for FABRIC_A and FABRIC_B.
+            </div>
+</li>
+
+          <li class="li">Commit your configuration to a <a class="xref" href="../installation/using_git.html">local
+              repository</a>:<pre class="pre codeblock">cd ~/helion/hos/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre>
+<div class="note note"><span class="notetitle">Note:</span> 
+              Enter your commit message &lt;commit message&gt;</div>
+</li>
+
+          <li class="li">Run the configuration
+              processor:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre>
+<div class="note note"><span class="notetitle">Note:</span> While
+              executing the above command, you are prompted to enter the encryption key. If you
+              choose not to use one, just press Enter and proceed
+              further.</div>
+</li>
+
+          <li class="li">Run the following command to create a deployment
+            directory.<pre class="pre codeblock">ansible-playbook -i hosts/localhost ready-deployment.yml</pre>
+</li>
+
+          <li class="li">Run the following command to configure brocade zone manager.
+            <pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+    <p class="p">To verify the brocade zone manager is configured successfully, please refer to <a class="xref" href="../installation/installation_verification.html#install_verification__volume_verify">Verify Your Block Storage Backend</a>.</p>
+
+    <p class="p"> </p>
+
+    <div class="section"><h2 class="title sectiontitle">Known Limitations:</h2>
+      
+      <div class="p">Following are the known limitation for this release:<ol class="ol" id="topic_msm_b1j_jt__ol_bjg_vnj_jt">
+        
+          <li class="li"><a class="xref" href="https://bugs.launchpad.net/cinder/+bug/1486613" target="_blank">https://bugs.launchpad.net/cinder/+bug/1486613</a> - Existing volume detach fails after modifying the
+            zoning_mode=fabric from none.<div class="p"><strong class="ph b">Workaround</strong><ol class="ol" type="a" id="topic_msm_b1j_jt__ol_q32_znj_jt">
+                <li class="li"> Detach all volumes from host that were pre-zoned.</li>
+
+                <li class="li">Delete the pre-defined zone(s) from the fabric</li>
+
+                <li class="li">Enable FCZM</li>
+
+                <li class="li">Reattach all volumes</li>
+
+              </ol>
+</div>
+</li>
+
+        
+          <li class="li"><a class="xref" href="https://bugs.launchpad.net/cinder/+bug/1486606" target="_blank">https://bugs.launchpad.net/cinder/+bug/1486606</a> - Parallel volume attach to different compute host fails</li>
+
+        </ol>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

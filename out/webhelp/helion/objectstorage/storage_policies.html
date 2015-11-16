@@ -1,0 +1,134 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Storage policies enable you to differentiate the way objects are stored. Reasons to use storage policies include the following: Different types or classes of disk drive You can use different drives to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Designing Storage Policies"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_gm1_4bc_jt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Designing Storage Policies</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_gm1_4bc_jt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Designing Storage Policies</h1>
+
+  <div class="body">
+    <p class="p">Storage policies enable you to differentiate the way objects are stored. </p>
+
+    <div class="section">
+      <div class="p">Reasons to use storage policies include the following:<ul class="ul" id="topic_gm1_4bc_jt__ul_q4t_cxd_jt">
+          <li class="li">Different types or classes of disk drive <p class="p">You can use different drives to store
+              various type of data. For example, you can use 7.5K RPM high-capacity drives for one
+              type of data and fast SSD drives for another type of data.</p>
+</li>
+
+          <li class="li">Different redundancy or availability needs<p class="p">You can define the redundancy and
+              availability based on your requirement. You can use a replica count of 3 for "normal"
+              data and a replica count of 4 for "critical" data. </p>
+</li>
+
+          <li class="li">Growing of cluster capacity<p class="p">If the storage cluster capacity grows beyond the
+              recommended partition power as described in <a class="xref" href="ring_specifications.html#ring-specification__selecting-partition-power">Selecting a Partition Power</a>.</p>
+</li>
+
+          <li class="li">Erasure-coded storage (this is non-core in this release) and replicated storage <p class="p">If
+              you use erasure-coded storage for some objects and replicated storage for other
+              objects. </p>
+</li>
+
+        </ul>
+</div>
+
+    </div>
+
+
+    <p class="p">Storage policies are implemented on a per-container basis. If you want a non-default storage
+      policy to be used for a new container, you can explicitly specify the storage policy to use
+      when you create the container. You can change which storage policy is the default. However,
+      this does not affect existing containers. Once the storage policy of a container is set, the
+      policy for that container cannot be changed.</p>
+
+    <p class="p">
+    </p>
+
+    <p class="p">The disk drives used by storage policies can overlap or be distinct. If the storage policies
+      overlap (i.e., have disks in common between two storage policies), it is recommended to use
+      the same set of disk drives for both policies. But in the case where there is a partial
+      overlap in disk drives, because one storage policy receives many objects, the drives that are
+      common to both policies must store more objects than drives that are only allocated to one
+      storage policy. This can be appropriate for a situation where the overlapped disk drives are
+      larger than the non-overlapped drives.
+      </p>
+
+    <div class="section"><h2 class="title sectiontitle">Specifying Storage Policies</h2>
+      
+    </div>
+
+    <div class="p">There are two places where storage policies are specified in the input model:<ul class="ul" id="topic_gm1_4bc_jt__ul_psf_lg2_jt">
+        <li class="li">The attribute of the storage policy is specified in ring-specification in the
+            <samp class="ph codeph">data/swift/rings.yml</samp> file for a given region. </li>
+
+        <li class="li">When associating disk drives with specific rings in a disk model. This specifies which
+          drives and nodes use the storage policy. In other word words, where data associated with a
+          storage policy is stored.</li>
+
+      </ul>
+</div>
+
+    <div class="p">A storage policy is specified similar to other rings. However, the following features are
+      unique to storage policies:<ul class="ul" id="topic_gm1_4bc_jt__ul_k3j_ng2_jt">
+        <li class="li">Storage policies are applicable to object rings only. The account or container rings
+          cannot have storage policies.</li>
+
+        <li class="li">There is a format for the ring name: object-&lt;index&gt;, where index is a number in the
+          range 0 to 9 (in this release). For example: object-0.</li>
+
+        <li class="li">The object-0 ring must always be specified.</li>
+
+        <li class="li">Once a storage policy is deployed, it should never be deleted. You can remove all disk
+          drives for the storage policy, however the ring specification itself cannot be
+          deleted.</li>
+
+        <li class="li">You can use the <samp class="ph codeph">display-name</samp> attribute when creating a container to
+          indicate which storage policy you want to use for that container.</li>
+
+        <li class="li">One of the storage policies can be the default policy. If you do not specify the storage
+          policy then the object created in new container uses the default storage policy.</li>
+
+        <li class="li">If you change the default, only containers created later will have that changed default
+          policy.</li>
+
+      </ul>
+</div>
+
+    <div class="p">The following example shows three storage policies in
+      use:<pre class="pre codeblock">rings:
+. . . 
+- name: object-0
+  display-name: General
+  default: no
+  min-part-time: 16
+  partition-power: 12
+  replication-policy:
+      replica-count: 3
+- name: object-1
+  display-name: Data
+  default: yes
+  min-part-time: 16
+  partition-power: 20
+  replication-policy:
+      replica-count: 3
+- name: object-2
+  display-name: Archive
+  default: no
+  min-part-time: 16
+  partition-power: 20
+  replication-policy:
+      replica-count: 4</pre>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

@@ -1,0 +1,412 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Hardware Support Matrix For information about the supported hardware in HPE Helion OpenStack 2.0, see HPE Helion Ready Solution Catalog . Supported Hardware Configurations HPE Helion OpenStack 2.0 ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Recommended Minimum Hardware Requirements"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="min_hardware"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Recommended Minimum Hardware Requirements</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../index.html";
+          
+          --></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="min_hardware">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Recommended Minimum Hardware
+    Requirements</h1>
+
+  <div class="body">
+    
+    <div class="section" id="min_hardware__supported_hardware"><h2 class="title sectiontitle">Hardware Support Matrix</h2>
+      <p class="p">For information about the supported hardware in HPE Helion OpenStack 2.0, see <a class="xref" href="http://helionready.hpcloud.com/ihv/" target="_blank">HPE Helion Ready
+          Solution Catalog</a>.</p>
+
+    </div>
+
+    <div class="section" id="min_hardware__supported_configs"><h2 class="title sectiontitle">Supported Hardware Configurations</h2>
+      
+      <p class="p">HPE Helion OpenStack 2.0 supports the following hardware configurations for a
+        deployment.</p>
+
+      <p class="p">Storage Interconnects/Protocols</p>
+
+      <ul class="ul">
+        <li class="li">1Gb or 10Gb Ethernet.</li>
+
+        <li class="li">Software iSCSi</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="min_hardware__perf_notes"><h2 class="title sectiontitle">Notes about Performance</h2>
+      <p class="p">We have the following recommendations to ensure good performance of your cloud
+        environment:</p>
+
+      <ul class="ul">
+        <li class="li">On the control plane nodes, you will want good I/O performance. Your array controllers
+          must have cache controllers and we advise against the use of RAID-5.</li>
+
+        <li class="li">On compute nodes, the I/O performance will influence the virtual machine start-up
+          performance. We also recommend the use of cache controllers in your storage arrays.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="min_hardware__MinimumRequirements"><h2 class="title sectiontitle">Recommended Minimum Hardware Requirements</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d22108e108">Node Type</th>
+
+              <th class="entry" valign="top" id="d22108e111">Role Name</th>
+
+              <th class="entry" valign="top" id="d22108e114">Required Number</th>
+
+              <th class="entry" valign="top" id="d22108e117">Server Hardware</th>
+
+              <th class="entry" valign="top" id="d22108e120">Minimum Requirements and Recommendations</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" rowspan="4" valign="top" headers="d22108e108 ">Dedicated lifecycle-manager (optional, the default configuration
+                uses the first controller node as the lifecycle-manager)</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e111 ">Lifecycle-manager</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e114 ">1</td>
+
+              <td class="entry" valign="top" headers="d22108e117 ">Disk </td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">8 GB</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Memory</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">1 GB</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Network</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">
+                <p class="p">Options:</p>
+
+                <ul class="ul">
+                  <li class="li">1 x 1 GB with PXE Support</li>
+
+                  <li class="li">2 x 1 GB or 2 x 10 GB</li>
+
+                </ul>
+
+                <p class="p">or</p>
+
+                <ul class="ul">
+                  <li class="li">2 x 1 GB or 2 x 10 GB (with one PXE enabled NIC)</li>
+
+                </ul>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">CPU </td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">8 CPU (64-bit) cores total (can be Intel or AMD)</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" rowspan="4" valign="top" headers="d22108e108 ">Control Plane</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e111 ">Controller</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e114 ">3</td>
+
+              <td class="entry" valign="top" headers="d22108e117 ">Disk</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">
+                <ul class="ul">
+                  <li class="li">1 x 512 GB (minimum) – operating system drive</li>
+
+                  <li class="li">2 x 512 GB (minimum) – Data drive</li>
+
+                </ul>
+
+              </td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Memory</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">32 GB</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Network</td>
+
+              <td class="entry" valign="top" headers="d22108e120 "><p class="p">Options:</p>
+
+                <ul class="ul">
+                  <li class="li">1 x 1 GB with PXE Support</li>
+
+                  <li class="li">2 x 1 GB or 2 x 10 GB</li>
+
+                </ul>
+
+                <p class="p">or</p>
+
+                <ul class="ul">
+                  <li class="li">2 x 1 GB or 2 x10 GB (with one PXE enabled NIC)</li>
+
+                </ul>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">CPU </td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">8 CPU (64-bit) cores total (can be Intel or AMD)</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" rowspan="4" valign="top" headers="d22108e108 ">Compute</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e111 ">Compute</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e114 ">1-100</td>
+
+              <td class="entry" valign="top" headers="d22108e117 ">Disk</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">2 X 512 GB (minimum)</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Memory</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">32 GB (memory must be sized based on the VM instances hosted on the Compute
+                node)</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Network</td>
+
+              <td class="entry" valign="top" headers="d22108e120 "><p class="p">Options:</p>
+
+                <ul class="ul">
+                  <li class="li">1 x 1 GB with PXE Support</li>
+
+                  <li class="li">2 x 1 GB or 2 x 10 GB</li>
+
+                </ul>
+
+                <p class="p">or</p>
+
+                <ul class="ul">
+                  <li class="li">2 x 1 GB or 2 x 10 GB (with one PXE enabled NIC)</li>
+
+                </ul>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">CPU </td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">8 CPU (64-bit) cores total (can be Intel or AMD) with hardware virtualization
+                support. The CPU cores must be sized based on the VM instances hosted by the Compute
+                node.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" rowspan="4" valign="top" headers="d22108e108 ">Block Storage (Optional)</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e111 ">VSA or OSD (Ceph)</td>
+
+              <td class="entry" rowspan="4" valign="top" headers="d22108e114 ">0 or 3 (which will provide the recommended redundancy)</td>
+
+              <td class="entry" valign="top" headers="d22108e117 ">Disk</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">3 X 512 GB (minimum)</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Memory</td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">32 GB</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">Network</td>
+
+              <td class="entry" valign="top" headers="d22108e120 "><p class="p">Options:</p>
+
+                <ul class="ul">
+                  <li class="li">1 x 1 GB with PXE Support</li>
+
+                  <li class="li">2 x 1 GB or 2 x 10 GB</li>
+
+                </ul>
+
+                <p class="p">or</p>
+
+                <ul class="ul">
+                  <li class="li">2 x 1 GB or 2 x10 GB (with one PXE enabled NIC)</li>
+
+                </ul>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d22108e117 ">CPU </td>
+
+              <td class="entry" valign="top" headers="d22108e120 ">8 CPU (64-bit) cores total (can be Intel or AMD)</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p class="p">For more details about the supported network requirements, see <a class="xref" href="example_configurations.html">HPE Helion OpenStack 2.0: Example Configurations</a>.</p>
+
+    </div>
+
+    <div class="section" id="min_hardware__minimum-node-esx"><strong class="ph b">Minimum Node Requirements For ESX</strong></div>
+
+    
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="min_hardware__table_ixh_np2_dt" class="table" frame="border" border="1" rules="all">
+        
+        
+        
+        
+        
+        
+        
+        <thead class="thead" align="left">
+          <tr class="row">
+            <th class="entry" valign="top" width="12.864864864864863%" id="d22108e435">Node Type</th>
+
+            <th class="entry" valign="top" width="15.891891891891891%" id="d22108e438">Role Name</th>
+
+            <th class="entry" valign="top" width="10.81081081081081%" id="d22108e441">Required Number</th>
+
+            <th class="entry" valign="top" width="13.837837837837839%" id="d22108e444">Disk</th>
+
+            <th class="entry" valign="top" width="13.621621621621621%" id="d22108e447">Memory</th>
+
+            <th class="entry" valign="top" width="18.7027027027027%" id="d22108e451">Network</th>
+
+            <th class="entry" valign="top" width="14.270270270270272%" id="d22108e454">CPU</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+          <tr class="row">
+            <td class="entry" valign="top" width="12.864864864864863%" headers="d22108e435 ">Dedicated lifecycle-manager (optional, the default configuration uses the first
+              controller node as the lifecycle-manager)</td>
+
+            <td class="entry" valign="top" width="15.891891891891891%" headers="d22108e438 ">Lifecycle-manager</td>
+
+            <td class="entry" valign="top" width="10.81081081081081%" headers="d22108e441 ">1</td>
+
+            <td class="entry" valign="top" width="13.837837837837839%" headers="d22108e444 "> 8 GB</td>
+
+            <td class="entry" valign="top" width="13.621621621621621%" headers="d22108e447 ">1 GB</td>
+
+            <td class="entry" valign="top" width="18.7027027027027%" headers="d22108e451 ">
+              <ul class="ul" id="min_hardware__ul_ob3_np2_dt">
+                <li class="li">1 x 1 GB with PXE Support</li>
+
+                <li class="li">2 x 1 GB or 2 x 10 GB</li>
+
+              </ul>
+
+            </td>
+
+            <td class="entry" valign="top" width="14.270270270270272%" headers="d22108e454 ">8 CPU (64-bit) cores total (can be Intel or AMD)</td>
+
+          </tr>
+
+          <tr class="row">
+            <td class="entry" valign="top" width="12.864864864864863%" headers="d22108e435 ">Control Plane</td>
+
+            <td class="entry" valign="top" width="15.891891891891891%" headers="d22108e438 ">Controller</td>
+
+            <td class="entry" valign="top" width="10.81081081081081%" headers="d22108e441 ">3</td>
+
+            <td class="entry" valign="top" width="13.837837837837839%" headers="d22108e444 ">3 X 512 GB (minimum)</td>
+
+            <td class="entry" valign="top" width="13.621621621621621%" headers="d22108e447 ">32 GB</td>
+
+            <td class="entry" valign="top" width="18.7027027027027%" headers="d22108e451 ">
+              <ul class="ul" id="min_hardware__ul_sc3_np2_dt">
+                <li class="li">1 x 1 GB with PXE Support</li>
+
+                <li class="li">2 x 1 GB or 2 x 10 GB</li>
+
+              </ul>
+
+            </td>
+
+            <td class="entry" valign="top" width="14.270270270270272%" headers="d22108e454 ">8 CPU (64-bit) cores total (can be Intel or AMD)</td>
+
+          </tr>
+
+          <tr class="row">
+            <td class="entry" valign="top" width="12.864864864864863%" headers="d22108e435 ">Compute</td>
+
+            <td class="entry" valign="top" width="15.891891891891891%" headers="d22108e438 ">1 vCenter with 2 ESX nodes under one cluster</td>
+
+            <td class="entry" valign="top" width="10.81081081081081%" headers="d22108e441 ">2</td>
+
+            <td class="entry" valign="top" width="13.837837837837839%" headers="d22108e444 ">1 TB (minimum) (shared across all nodes)</td>
+
+            <td class="entry" valign="top" width="13.621621621621621%" headers="d22108e447 ">128 GB</td>
+
+            <td class="entry" valign="top" width="18.7027027027027%" headers="d22108e451 ">2 x 1 GB or 2 x10 GB</td>
+
+            <td class="entry" valign="top" width="14.270270270270272%" headers="d22108e454 ">
+              <p class="p">16 CPU (64-bit) cores total (can be Intel or AMD)</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

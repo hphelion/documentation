@@ -1,0 +1,261 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The disk model describes the configuration of disk drives and their usage. The examples include several disk models. You must always review the disk devices before making any changes to the existing ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Allocating Disk Drives for Object Storage"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="allocating-disk-drives"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Allocating Disk Drives for Object Storage</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="allocating-disk-drives">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Allocating Disk Drives for Object
+    Storage</h1>
+
+  <div class="body">
+    <p class="p">The disk model describes the configuration of disk drives
+       and their usage. The examples include
+      several disk models. 
+      You must always review the disk devices before making any changes to the existing the disk
+      model.  For more information, see <a class="xref" href="#allocating-disk-drives__making-changes-disk-model">Making Changes to a
+        Swift Disk Model</a>. </p>
+
+    <div class="p">This topic contains the following sections:<ul class="ul" id="allocating-disk-drives__ul_prc_vgc_jt">
+        <li class="li"><a class="xref" href="#allocating-disk-drives__making-changes-disk-model">Making
+            Changes to a Swift Disk Model</a></li>
+
+        <li class="li"><a class="xref" href="#allocating-disk-drives__swift-consumer-syntax">Swift Consumer
+            Syntax</a></li>
+
+        <li class="li"><a class="xref" href="#allocating-disk-drives__swift-device-groups">Swift Device
+            Groups</a></li>
+
+        <li class="li"><a class="xref" href="#allocating-disk-drives__swift-logical-vol">Swift Logical
+            Volume</a></li>
+
+      </ul>
+</div>
+
+    <div class="section" id="allocating-disk-drives__making-changes-disk-model"><h2 class="title sectiontitle">Making Changes to a Swift Disk Model</h2>
+      
+      <p class="p">There are several reasons for changing the disk model:</p>
+
+      <ul class="ul" id="allocating-disk-drives__ul_d5y_255_dt">
+        <li class="li">If you have additional drives available, you can add them to the devices list.</li>
+
+        <li class="li">If the disk devices listed in the example disk model have different names on your
+          servers. This may be due to different hardware drives. Edit the disk model
+          and change the
+          device names to the correct names.</li>
+
+        <li class="li">If you prefer a different disk drive than the one listed in the model. For example, if
+            <samp class="ph codeph">/dev/sdb</samp> and <samp class="ph codeph">/dev/sdc</samp> are slow hard drives and you
+          have SDD drives available in <samp class="ph codeph">/dev/sdd</samp> and <samp class="ph codeph">/dev/sde</samp>. In
+          this case, delete <samp class="ph codeph">/dev/sdb</samp> and <samp class="ph codeph">/dev/sdc</samp> and replace them
+          with <samp class="ph codeph">/dev/sdd</samp> and <samp class="ph codeph">/dev/sde</samp>.<div class="note note"><span class="notetitle">Note:</span> Disk drives must not
+            contain labels or file systems from a prior usage. For more information, see <a class="xref" href="swift_device_groups.html">Swift
+              Requirements for Device Group Drives</a>.</div>
+<div class="note tip"><span class="tiptitle">Tip:</span> The terms
+              <strong class="ph b">add</strong> and <strong class="ph b">delete</strong> in the document means editing the respective YAML files
+            to add or delete the configurations/values.</div>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="allocating-disk-drives__swift-consumer-syntax"><h2 class="title sectiontitle"><strong class="ph b">Swift Consumer Syntax</strong></h2>
+      
+      <div class="p">The consumer field determines the usage of a disk drive or logical volume by Swift. The
+        syntax of the consumer field is as
+        follows:<pre class="pre codeblock">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: &lt;ring-name&gt;
+        - name: &lt;ring-name&gt;
+        - etc...</pre>
+</div>
+
+    </div>
+
+    <div class="p">The fields for consumer are defined as follows:<table cellpadding="4" cellspacing="0" summary="" id="allocating-disk-drives__simpletable_c35_5rb_jt" border="1" class="simpletable"><tr class="strow">
+          <td valign="top" class="stentry"><strong class="ph b"><samp class="ph codeph">name</samp></strong></td>
+
+          <td valign="top" class="stentry">Specifies the service that uses the device group. A <samp class="ph codeph">name</samp> field
+            containing <strong class="ph b">swift</strong> indicates that the drives or logical volumes are used by
+            Swift.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><strong class="ph b"><samp class="ph codeph">attrs</samp></strong></td>
+
+          <td valign="top" class="stentry">Lists the rings that the devices are allocated to. It must contain a
+              <samp class="ph codeph">rings</samp> item.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" class="stentry"><strong class="ph b"><samp class="ph codeph">rings</samp></strong></td>
+
+          <td valign="top" class="stentry">Contains a list of ring names. In the <samp class="ph codeph">rings</samp> list, the
+              <samp class="ph codeph">name</samp> field is optional.</td>
+
+        </tr>
+</table>
+</div>
+
+    
+    <p class="p">The following are the different configurations (patterns) of the proxy, account, container,
+      and object services:</p>
+
+    <ul class="ul" id="allocating-disk-drives__ul_dvq_kyb_jt">
+      <li class="li">Proxy, account, container, and object (PACO) run on same node type.</li>
+
+      <li class="li">Proxy, account, and container run on a node type (PAC) and the object services run on a
+        dedicated object server (OBJ).</li>
+
+    </ul>
+
+    <div class="p">
+      <div class="note note"><span class="notetitle">Note:</span> The proxy service does not have any rings associated with it.</div>
+
+    </div>
+
+    <div class="example">Example: <strong class="ph b">PACO</strong> – proxy, account, container, and object run on the same node
+      type.<pre class="pre codeblock">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: account
+        - name: container
+        - name: object-0</pre>
+</div>
+
+    <div class="example">Example: <strong class="ph b">PAC</strong> – proxy, account, and container run on the same node
+      type.<pre class="pre codeblock">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: account
+        - name: container</pre>
+</div>
+
+    <div class="example">Example: <strong class="ph b">OBJ</strong> - Dedicated object server. The following example shows two Storage
+      Policies (object-0 and object-1). For more information, see <a class="xref" href="storage_policies.html">Designing Storage
+      Policies</a>.<pre class="pre codeblock">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: object-0
+        - name: object-1</pre>
+</div>
+
+    <div class="section" id="allocating-disk-drives__swift-device-groups"><h2 class="title sectiontitle"><strong class="ph b">Swift Device Groups</strong></h2>
+      
+      <p class="p"> A device-group is used when the same consumer uses a number of disk drives. </p>
+
+    </div>
+
+    <div class="example">In the following example, 4 disk drives are used by both the object-0 and object-1
+      rings.<pre class="pre codeblock">device-groups:
+- name: swiftobj
+  devices:
+  - name: /dev/sdb
+  - name: /dev/sdc
+  - name: /dev/sde
+  - name: /dev/sdf
+  consumer:
+      name: swift
+      attrs:
+          rings:
+          - name: object-0
+          - name: object-1</pre>
+</div>
+
+    <div class="section" id="allocating-disk-drives__swift-logical-vol"><h2 class="title sectiontitle">Swift Logical Volumes</h2>
+      
+      <div class="cautiontitle">CAUTION:</div><div class="note caution">Be careful while using logical volumes to store Swift data. The data
+        remains intact during an upgrade, but will be lost if the server is reimaged. If you use
+        logical volumes you must ensure that you only reimage one server at a time. This is to allow
+        the data from the other replicas to be replicated back to the logical volume once the
+        reimage is complete.</div>
+
+      <div class="p">Swift can use a logical volume. To do this, ensure you meet the requirements listed in the
+        table below:<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+            <td valign="top" class="stentry">
+              <ul class="ul" id="allocating-disk-drives__ul_whq_2sc_jt">
+                <li class="li"><samp class="ph codeph"><strong class="ph b">mount</strong></samp></li>
+
+                <li class="li"><samp class="ph codeph"><strong class="ph b">mkfs-opts</strong></samp></li>
+
+              </ul>
+
+            </td>
+
+            <td valign="top" class="stentry">Do not specify these attributes.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">
+              <ul class="ul" id="allocating-disk-drives__ul_ixh_r3n_pt">
+                <li class="li"><samp class="ph codeph"><strong class="ph b">fstype</strong></samp></li>
+
+              </ul>
+
+            </td>
+
+            <td valign="top" class="stentry">Set this to <strong class="ph b">xfs</strong>.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">
+              <ul class="ul" id="allocating-disk-drives__ul_wjz_jsc_jt">
+                <li class="li"><samp class="ph codeph"><strong class="ph b">name</strong></samp></li>
+
+                <li class="li"><samp class="ph codeph"><strong class="ph b">size</strong></samp></li>
+
+              </ul>
+
+            </td>
+
+            <td valign="top" class="stentry">Specify both of these attributes.</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">
+              <ul class="ul" id="allocating-disk-drives__ul_z5d_s3n_pt">
+                <li class="li"><samp class="ph codeph"><strong class="ph b">consumer</strong></samp></li>
+
+              </ul>
+
+            </td>
+
+            <td valign="top" class="stentry"> This attribute must have a <samp class="ph codeph">name</samp> field set to
+              <strong class="ph b">swift</strong>.</td>
+
+          </tr>
+</table>
+</div>
+
+    </div>
+
+    <div class="p"> Following is an example of Swift logical
+      volumes:<pre class="pre codeblock">.
+.
+   - name: swift
+     size: 50%
+     fstype: xfs
+     consumer:
+         name: swift
+         attrs:
+             rings:
+             - name: object-0
+             - name: object-1</pre>
+</div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

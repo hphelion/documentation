@@ -1,0 +1,67 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Customization What level of customization will be possible via modifying the configuration files and using them to deploy? For full details about the input model and what options are available can be ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Frequently Asked Questions"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="faq"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Frequently Asked Questions</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../index.html";
+          
+          --></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="faq">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Frequently Asked Questions</h1>
+
+  <div class="body">
+    <div class="section" id="faq__Customization"><h2 class="title sectiontitle">Customization</h2>
+      <p class="p"><strong class="ph b">What level of customization will be possible via modifying the configuration files and
+          using them to deploy?</strong></p>
+
+      <p class="p">For full details about the input model and what options are available can be found, see
+          <a class="xref" href="input_model.html">HPE Helion OpenStack 2.0: Input Model</a>.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">How do I change my service passwords from the default?</h2>
+      
+      <p class="p">By default there is an Administrator user (username "admin") created during the
+        installation process. To retrieve the random password set, use this command:</p>
+
+      <pre class="pre codeblock">source ~/service.osrc</pre>
+
+      <p class="p">For more details, see <a class="xref" href="operations/accessing_horizon.html">HPE Helion OpenStack 2.0: Accessing the Horizon Dashboard</a>.</p>
+
+    </div>
+
+    <div class="section" id="faq__Neutron"><h2 class="title sectiontitle">Neutron Features</h2>
+      
+      
+      <p class="p"><strong class="ph b">How does network separation work and what benefit does it provide?</strong></p>
+
+      <p class="p">Network separation is the name given for the practice of segregation of traffic by types.
+        The primary drivers for this are performance and security. Having a dedicated channel
+        enables a network administrator to exercise better control over the SLA offered to the
+        tenant. It is often implemented as part of a security policy that is enforced by the
+        security practice in the company.</p>
+
+      <p class="p">There are two types of network separation: physical and logical. Both are the same in that
+        they create separate channels for traffic types. For example, a best practice deployment is
+        to create separate channel for storage (iSCSI) traffic. This can be done by creating a
+        logical separation using VLAN on a single NIC or by dedicating a NIC for this type of
+        traffic. In the cloud today, management, tenant, external and services traffic types are
+        segregated into their own channels.</p>
+
+      <p class="p"><strong class="ph b">How does the Multiple-Network feature work?</strong></p>
+
+      <p class="p">Multiple networks is a feature in HPE Helion OpenStack 2.0 that enables bridging of multiple
+        external physical networks to neutron network. Using this functionality, a tenant can
+        dictate the path taken by the data in the physical network outside the cloud. It can also be
+        used for multihoming to two physical networks.</p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

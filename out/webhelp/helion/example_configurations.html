@@ -1,0 +1,1116 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The HPE Helion OpenStack 2.0 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and running quickly with a minimum number of configuration ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Example Configurations"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="example_configurations"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Example Configurations</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../index.html";
+          
+          --></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="example_configurations">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Example Configurations</h1>
+
+  <div class="body">
+    <p class="p">The HPE Helion OpenStack 2.0 system ships with a collection of pre-qualified example
+      configurations. These are designed to help you to get up and running quickly with a minimum
+      number of configuration changes.</p>
+
+    <p class="p">The HPE Helion OpenStack input model allows a wide variety of configuration parameters that
+      may, at first glance, appear daunting. The example configurations are designed to simplify
+      this process by providing pre-built and pre-qualified examples that need only a minimum number
+      of modifications to get started.</p>
+
+    <div class="section" id="example_configurations__contents">
+      <ul class="ul">
+        <li class="li"><a class="xref" href="example_configurations.html#example_configurations__example_configs">HP
+            Helion OpenStack Example Configurations</a>
+          <ul class="ul">
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__entryscale_kvm_vsa">Entry-Scale KVM with VSA Model</a></li>
+
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__entryscale_esx">Entry-Scale ESX Model</a></li>
+
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__entryscale_swift">Entry-Scale Swift Model</a></li>
+
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__entryscale_ceph">Entry-Scale KVM with Ceph Model</a></li>
+
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__midscale_kvm_vsa">Mid-Scale KVM with VSA Model</a></li>
+
+          </ul>
+</li>
+
+        <li class="li"><a class="xref" href="example_configurations.html#example_configurations__modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA Model for Your Environment</a>
+          <ul class="ul">
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__localizing_inputmodel">Localizing the Input Model</a>
+              <ul class="ul">
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__networks">Networks.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__nicmappings">Nic_mappings.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__netinterfaces">Net_interfaces.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__networkgroups">Network_groups.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__servers">Servers.yml</a></li>
+
+              </ul>
+</li>
+
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__customizing_inputmodel">Customizing the Input Model</a>
+              <ul class="ul">
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__disks_controller">Disks_controller.yml</a>
+                  <ul class="ul">
+                    <li class="li"><a class="xref" href="example_configurations.html#example_configurations__filesystems">File Systems Storage</a></li>
+
+                    <li class="li"><a class="xref" href="example_configurations.html#example_configurations__swiftstorage">Swift Storage</a></li>
+
+                  </ul>
+</li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__disks_vsa">Disks_vsa.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__disks_compute">Disks_compute.yml</a></li>
+
+              </ul>
+</li>
+
+            <li class="li"><a class="xref" href="example_configurations.html#example_configurations__standalone">Using a
+                Standalone Lifecycle-Manager Node</a>
+              <ul class="ul">
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__control_plane_yml">Control_plane.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__server_roles_yml">Server_roles.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__net_interfaces_yml">Net_interfaces.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__disks_lifecycle_manager_yml">Disks_lifecycle_manager.yml</a></li>
+
+                <li class="li"><a class="xref" href="example_configurations.html#example_configurations__servers_yml">Servers.yml</a></li>
+
+              </ul>
+</li>
+
+          </ul>
+</li>
+
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="example_configurations__example_configs"><h2 class="title sectiontitle">HPE Helion OpenStack Example Configurations</h2>
+      <p class="p">This section briefly describes the various example configurations and their capabilities.
+        It also describes in detail, for the entry-scale-kvm-vsa example, how you can adapt the
+        input model to work in your environment.</p>
+
+      <p class="p">HPE Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
+        tech-preview. The models in the examples directory have been qualified by our Quality
+        Engineering team, while the tech-preview models are more experimental.</p>
+
+      <p class="p">The following pre-qualified examples are shipped with HPE Helion OpenStack 2.0:</p>
+
+      <ul class="ul">
+        <li class="li">Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
+
+        <li class="li">Entry-scale Swift-only model (entry-scale-swift)</li>
+
+        <li class="li">Entry-scale KVM with Ceph model (entry-scale-kvm-ceph)</li>
+
+        <li class="li">Entry-scale ESX model (entry-scale-esx)</li>
+
+      </ul>
+
+      <p class="p">These systems are designed to provide an entry-level solution that can be scaled from a
+        small number of nodes to a moderately high node count (approximately 100 compute nodes, for
+        example).</p>
+
+      <p class="p">The tech-preview configuration includes the following model:</p>
+
+      <ul class="ul">
+        <li class="li">Mid-scale KVM with VSA model (mid-scale-kvm-vsa)</li>
+
+      </ul>
+
+      <p class="p">In this model, the cloud control plane
+        is subdivided into a number of dedicated service clusters to provide more processing power
+        for individual control plane elements. This enables a greater number of resources to be
+        supported (compute nodes, Swift object servers). This model also shows how a segmented
+        network can be expressed in the HPE Helion OpenStack model.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__entryscale_kvm_vsa"><h2 class="title sectiontitle">Entry-Scale KVM with VSA Model</h2>
+      <p class="p">This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
+        scale of 100 compute nodes.</p>
+
+      <p class="p">The example is focused on the minimum server count to support a highly-available (HA)
+        compute cloud deployment. The first (manually installed) server, often referred to as the
+        deployer or lifecycle-manager, is also used as one of the controller nodes. This model
+        consists of a minimum server count of seven, with three controllers, three VSA storage
+        servers, and one compute server. Swift storage in this example is contained on the
+        controllers.</p>
+
+      <p class="p">Note that the VSA storage requires a minimum of three servers for a HA configuration,
+        although the deployment will work with as little as one VSA node.</p>
+
+      <p class="p">This model can also be deployed without the VSA servers and configured to use an external
+        storage device, such as a 3PAR array, which would reduce the minimum server count to
+        four.</p>
+
+      <p class="p"><img class="image" src="../media/examples/entry_scale_kvm_vsa.png"></img></p>
+
+      <p class="p"><a class="xref" href="../media/examples/entry_scale_kvm_vsa_lg.png" target="_blank">Download a high-resolution version</a></p>
+
+      <p class="p">The example requires the following networks:</p>
+
+      <ul class="ul">
+        <li class="li"><strong class="ph b">External API</strong> - This is the network that users will use to make requests to the
+          cloud.</li>
+
+        <li class="li"><strong class="ph b">External VM</strong> - This is the network that will be used to provide access to virtual
+          machines (via floating IP addresses).</li>
+
+        <li class="li"><strong class="ph b">Guest/VxLAN</strong> - This is the network that will carry traffic between virtual
+          machines on private networks within the cloud.</li>
+
+        <li class="li"><strong class="ph b">Management</strong> - This is the network that will be used for all internal traffic
+          between the cloud services, including node provisioning. This network must be on an
+          untagged VLAN.</li>
+
+      </ul>
+
+      <p class="p">All of these networks are configured to be presented via a pair of bonded NICs. The example
+        also enables provider VLANs to be configured in Neutron on this interface.</p>
+
+      <p class="p">In the diagram, "External Routing" refers to whatever routing you want to provide to allow
+        users to access the External API and External VM networks. Note that the EXTERNAL_API
+        network must be reachable from the EXTERNAL_VM network if you want virtual machines to be
+        able to make API calls to the cloud. "Internal Routing" refers to whatever routing you want
+        to provide to allow administrators to access the Management network.</p>
+
+      <p class="p">If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
+        network connected to the IPMI/iLO ports of all servers and routable from the
+        lifecycle-manager server is also required for BIOS and power management of the nodes during
+        the operating system installation process.</p>
+
+      <p class="p">The example uses the following disk configurations:</p>
+
+      <ul class="ul">
+        <li class="li"><strong class="ph b">Controllers</strong> - One operating system disk and two disks for Swift storage.</li>
+
+        <li class="li"><strong class="ph b">VSA</strong> - One operating system disk and two disks for VSA storage.</li>
+
+        <li class="li"><strong class="ph b">Compute</strong> - One operating system disk and one disk for virtual machine ephemeral
+          storage.</li>
+
+      </ul>
+For details about how to modify this example to match your environment, see <a class="xref" href="example_configurations.html#example_configurations__modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA model for your Environment</a>. </div>
+
+    <div class="section" id="example_configurations__entryscale_esx"><h2 class="title sectiontitle">Entry-Scale ESX Model</h2>
+      <p class="p">This example shows how to integrate HPE Helion OpenStack with ESX. The controller
+        configuration is essentially the same as in the KVM example, but the resource nodes are
+        provided by vCenter. In addition, a number of controller virtual machines are created for
+        each vCenter cluster: one ESX Compute virtual machine (which provides the nova-compute proxy
+        for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
+        access). These virtual machines are created automatically by HPE Helion OpenStack as part of
+        activating the vCenter cluster, and are therefore not defined in the example.</p>
+
+      <p class="p"><img class="image" src="../media/examples/entry_scale_esx.png"></img></p>
+
+      
+      <p class="p"><a class="xref" href="../media/examples/entry_scale_esx_lg.png" target="_blank">Download a high-resolution version</a></p>
+
+      <p class="p">The physical networking configuration is also largely the same as the KVM example, with the
+        exception of the GUEST network which uses tenant VLANs as the Neutron networking model
+        rather than VxLAN.</p>
+
+      <p class="p">A separate configuration network (CONF) is required for configuration access from the
+        lifecycle-manager. This network must be reachable from the Management network.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__entryscale_swift"><h2 class="title sectiontitle">Entry-Scale Swift Model</h2>
+      <p class="p">This example shows how HPE Helion OpenStack can be configured to provide a Swift-only
+        configuration, consisting of three controllers and one or more Swift object servers.</p>
+
+      <p class="p"><img class="image" src="../media/examples/entry_scale_swift.png"></img></p>
+
+      <p class="p"><a class="xref" href="../media/examples/entry_scale_swift_lg.png" target="_blank">Download a high-resolution version</a></p>
+
+      <p class="p">The example requires the following networks:</p>
+
+      <ul class="ul">
+        <li class="li"><strong class="ph b">External API</strong> - This is the network that users will use to make requests to the
+          cloud.</li>
+
+        <li class="li"><strong class="ph b">Swift</strong> - This is the network that will be used for all data traffic between the
+          Swift services.</li>
+
+        <li class="li"><strong class="ph b">Management</strong> - This is the network that will be used for all internal traffic
+          between the cloud services, including node provisioning. This network must be on an
+          untagged VLAN.</li>
+
+      </ul>
+
+      <p class="p">All of these networks are configured to be presented via a pair of bonded NICs. The example
+        also enables provider VLANs to be configured in Neutron on this interface.</p>
+
+      <p class="p">In the diagram "External Routing" refers to whatever routing you want to provide to allow
+        users to access the External API. "Internal Routing" refers to whatever routing you want to
+        provide to allow administrators to access the Management network.</p>
+
+      <p class="p">If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
+        network connected to the IPMI/iLO ports of all servers and routable from the
+        lifecycle-manager is also required for BIOS and power management of the node during the
+        operating system installation process.</p>
+
+      <p class="p">In the example the controllers use one disk for the operating system and two disks for
+        Swift proxy and account storage. The Swift object servers use one disk for the operating
+        system and four disks for Swift storage. These values can be modified to suit your
+        environment.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__entryscale_ceph"><h2 class="title sectiontitle">Entry-Scale KVM with Ceph Model</h2>
+      <p class="p">This example provides a KVM-based cloud using Ceph for volume storage. This controller and
+        compute configuration are essentially the same as in the KVM example, but the backend Cinder
+        storage is provided by Ceph.</p>
+
+      <p class="p"><img class="image" src="../media/examples/entry_scale_kvm_ceph.png"></img></p>
+
+      <p class="p"><a class="xref" href="../media/examples/entry_scale_kvm_ceph_lg.png" target="_blank">Download a high-resolution version</a></p>
+
+    </div>
+
+    <div class="section" id="example_configurations__midscale_kvm_vsa"><h2 class="title sectiontitle">Mid-Scale KVM with VSA Model (Technical Preview)</h2>
+      <p class="p">The mid-scale model, which is included as a technology preview in HPE Helion OpenStack 2.0,
+        illustrates two important aspects of configuring HPE Helion OpenStack for increased scale.
+        The controller services are distributed across a greater number of controllers and a number
+        of the networks are configured as multiple L3 segments (implementing per-rack
+        networking).</p>
+
+      <p class="p"><img class="image" src="../media/examples/mid_scale_kvm_vsa.png"></img></p>
+
+      <p class="p"><img class="image" src="../media/examples/mid_scale_kvm_vsa_notes.png"></img></p>
+
+      <p class="p"><a class="xref" href="../media/examples/mid_scale_kvm_vsa_lg.png" target="_blank">Download a high-resolution version</a></p>
+
+      <p class="p">The distribution of services across controllers is only one possible configuration, and
+        other combinations can also be expressed.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__modify_entryscale_kvm_vsa"><h2 class="title sectiontitle">Modifying the Entry-Scale KVM with VSA Model for Your Environment</h2>
+      <p class="p">This section covers the changes that need to be made to the input model to deploy and run
+        this cloud model in your environment.</p>
+
+      <p class="p">This section is written from the perspective of the <samp class="ph codeph">entry-scale-kvm-vsa</samp>
+        example, although the same principles apply to all of the examples.</p>
+
+      <p class="p">There are two categories of modifications that we will look at:</p>
+
+      <ol class="ol">
+        <li class="li"><strong class="ph b">Localizations</strong> - These are the minimum set of changes that you need to make to
+          adapt the examples to run in your environment. These are mostly concerned with
+          networking.</li>
+
+        <li class="li"><strong class="ph b">Customizations</strong> - These describe more general changes that you can make to your
+          model, e.g. changing disk storage layouts.</li>
+
+      </ol>
+
+      <p class="p">Note that, as a convention, the examples use upper case for the object names, but these
+        strings are only used to define the relationships between objects and have no specific
+        significance to the configuration processor. You can change the names to values that are
+        relevant to your context providing you do so consistently across the input model.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__localizing_inputmodel"><h2 class="title sectiontitle">Localizing the Input Model</h2>
+      <p class="p">This section covers the minimum set of changes needed to localize the cloud for your
+        environment. This assumes you are using other features of the example unchanged:</p>
+
+      <ul class="ul">
+        <li class="li">Update <samp class="ph codeph">networks.yml</samp> to specify the network addresses (VLAN IDs and CIDR
+          values) for your cloud.</li>
+
+        <li class="li">Update <samp class="ph codeph">nic_mappings.yml</samp> to specify the PCI bus information for your
+          servers' Ethernet devices.</li>
+
+        <li class="li">Update <samp class="ph codeph">net_interfaces.yml</samp> to provide network interface configurations,
+          such as bond settings and bond devices.</li>
+
+        <li class="li">Update <samp class="ph codeph">network_groups.yml</samp> to provide the public URL for your cloud and
+          to provide security certificates.</li>
+
+        <li class="li">Update <samp class="ph codeph">servers.yml</samp> to provide information about your servers.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="example_configurations__networks"><h2 class="title sectiontitle">Networks.yml</h2>
+      
+      <p class="p">You will need to allocate site specific CIDRs and VLANs for these networks and update these
+        values in the <samp class="ph codeph">networks.yml</samp> file. The example models define the following
+        networks:</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="example_configurations__table_xrn_zzy_st" class="table" frame="border" border="1" rules="all">
+          
+          
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" id="d19184e534">Network</th>
+
+              <th class="entry" valign="top" id="d19184e537">CIDR</th>
+
+              <th class="entry" valign="top" id="d19184e540">VLAN ID</th>
+
+              <th class="entry" valign="top" id="d19184e543">Tagged / Untagged</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" headers="d19184e534 ">External API</td>
+
+              <td class="entry" valign="top" headers="d19184e537 ">10.0.1.0/24</td>
+
+              <td class="entry" valign="top" headers="d19184e540 ">101</td>
+
+              <td class="entry" valign="top" headers="d19184e543 ">Tagged</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d19184e534 ">External VM</td>
+
+              <td class="entry" valign="top" headers="d19184e537 ">Addresses configured by Neutron, leave blank in the file.</td>
+
+              <td class="entry" valign="top" headers="d19184e540 ">102</td>
+
+              <td class="entry" valign="top" headers="d19184e543 ">Tagged</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d19184e534 ">Guest</td>
+
+              <td class="entry" valign="top" headers="d19184e537 ">10.1.1.0/24</td>
+
+              <td class="entry" valign="top" headers="d19184e540 ">103</td>
+
+              <td class="entry" valign="top" headers="d19184e543 ">Tagged</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" headers="d19184e534 ">Management</td>
+
+              <td class="entry" valign="top" headers="d19184e537 ">192.168.10.0/24</td>
+
+              <td class="entry" valign="top" headers="d19184e540 ">100</td>
+
+              <td class="entry" valign="top" headers="d19184e543 ">Untagged</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p class="p">You will need to edit this file to provide your local values for these networks.</p>
+
+      <p class="p">The CIDR for the External VM network is configured separately using the Neutron API. (For
+        instructions, see <a class="xref" href="administration/create_extnet.html">HPE Helion OpenStack 2.0: Creating an External Network</a>.) You will only specify
+        its VLAN ID during the installation process.</p>
+
+      <p class="p">The Management network is shown as untagged. This is required if you are using this network
+        to PXE install the operating system on the cloud nodes.</p>
+
+      <p class="p">The example <samp class="ph codeph">networks.yml</samp> file is shown below. Modify the bolded fields to
+        reflect your site values.</p>
+
+      <pre class="pre codeblock">networks:
+   #
+   # This example uses the following networks
+   #
+   # Network       CIDR             VLAN
+   # -------       ----             ----
+   # External API  10.0.1.0/24      101 (tagged)
+   # External VM   see note 1       102 (tagged)
+   # Guest         10.1.1.0/24      103 (tagged)
+   # Management    192.168.10.0/24  100 (untagged)
+   #	
+   # Notes:
+   # 1. Defined as part of Neutron configuration
+   #
+   # Modify these values to match your environment
+   #
+   - name: EXTERNAL-API-NET
+     vlanid: <strong class="ph b">101</strong>
+     tagged-vlan: true
+     cidr: <strong class="ph b">10.0.1.0/24</strong>
+     gateway-ip: <strong class="ph b">10.0.1.1</strong>
+     network-group: EXTERNAL-API
+        
+   - name: EXTERNAL-VM-NET
+     vlanid: <strong class="ph b">102</strong>
+     tagged-vlan: true
+     network-group: EXTERNAL-VM
+        
+   - name: GUEST-NET
+     vlanid: <strong class="ph b">103</strong>
+     tagged-vlan: true
+     cidr: <strong class="ph b">10.1.1.0/24</strong>
+     gateway-ip: <strong class="ph b">10.1.1.1</strong>
+     network-group: GUEST
+        
+   - name: MANAGEMENT-NET
+     vlanid: 100
+     tagged-vlan: false
+     cidr: <strong class="ph b">192.168.10.0/24</strong>
+     gateway-ip: <strong class="ph b">192.168.10.1</strong>
+     network-group: MANAGEMENT</pre>
+
+    </div>
+
+    <div class="section" id="example_configurations__nicmappings"><h2 class="title sectiontitle">Nic_mappings.yml</h2>
+      <p class="p">This file maps Ethernet port names to specific bus slots. Due to inherent race conditions
+        associated with multiple PCI device discovery there is no guarantee that Ethernet devices
+        will be named as expected by the operating system, and it is possible that different port
+        naming will exist on different servers with the same physical configuration.</p>
+
+      <p class="p">To provide a deterministic naming pattern, the input model supports an explicit mapping
+        from PCI bus address to a user specified name. HPE Helion OpenStack uses the prefix
+          <strong class="ph b">hed</strong> (Helion Ethernet Device) to name such devices to avoid any name clashes with
+        the <strong class="ph b">eth</strong> names assigned by the operating system.</p>
+
+      <p class="p">The example <samp class="ph codeph">nic_mappings.yml</samp> file is shown below.</p>
+
+      <pre class="pre codeblock">nic-mappings:
+        
+   - name: HP-DL360-4PORT
+     physical-ports:
+       - logical-name: hed1
+         type: simple-port
+         bus-address: "0000:07:00.0"
+        
+        - logical-name: hed2
+          type: simple-port
+          bus-address: "0000:08:00.0"
+        
+        - logical-name: hed3
+          type: simple-port
+          bus-address: "0000:09:00.0"
+        
+        - logical-name: hed4
+          type: simple-port
+          bus-address: "0000:0a:00.0"
+        
+    - name: MY-2PORT-SERVER
+      physical-ports:
+        - logical-name: hed3
+          type: simple-port
+          bus-address: "0000:04:00.0"
+        
+        - logical-name: hed4
+          type: simple-port
+          bus-address: "0000:04:00.1"</pre>
+
+      <p class="p">This defines two sets of NIC mappings, representing two different physical server types.
+        The name of each mapping is used as a value in the <samp class="ph codeph">servers.yml</samp> file to
+        associate each server with its required mapping. This enables the use of different server
+        models or servers with different network hardware.</p>
+
+      <p class="p">Each mapping lists a set of ports with the following information:</p>
+
+      <ul class="ul">
+        <li class="li"><strong class="ph b">Logical name</strong> - HPE Helion OpenStack uses the form <samp class="ph codeph">hedN</samp>.</li>
+
+        <li class="li"><strong class="ph b">Type</strong> - Only simple-port types are supported in HPE Helion OpenStack 2.0.</li>
+
+        <li class="li"><strong class="ph b">Bus-address</strong> - The PIC bus address of the port.</li>
+
+      </ul>
+
+      <p class="p">The PCI bus address can be found using the <samp class="ph codeph">lspci</samp> command on one of the
+        servers. This command can produce a lot of output, so you can use the following command
+        which will limit the output to list Ethernet class devices only:</p>
+
+      <pre class="pre codeblock">sudo lspci -D |grep -i eth</pre>
+
+      <p class="p">Here is an example output:</p>
+
+      <pre class="pre codeblock">$ sudo lspci -D |grep -i eth
+0000:02:00.0 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:02:00.1 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:02:00.2 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:02:00.3 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
+0000:04:00.0 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)
+0000:04:00.1 Ethernet controller: Intel Corporation 82599ES 10-Gigabit SFI/SFP+ Network Connection (rev 01)</pre>
+
+      <p class="p">To localize this file, replace the mapping names with the names of your choice and
+        enumerate the ports as required.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__netinterfaces"><h2 class="title sectiontitle">Net_interfaces.yml</h2>
+      <p class="p">This file is used to define how the network interfaces are to be configured. The example
+        reflects the slightly different configuration of controller, compute nodes, and VSA
+        nodes.</p>
+
+      <p class="p">If network bonding is to be used, this file specifies how bonding is to be set up. It also
+        specifies which networks are to be associated with each interface.</p>
+
+      <p class="p">The example uses a bond of interfaces <samp class="ph codeph">hed3</samp> and <samp class="ph codeph">hed4</samp>. You
+        only need to modify this file if you have mapped your physical ports to different names, or
+        if you need to modify the bond options.</p>
+
+      <p class="p">The section of configuration file is shown below, which will create a bonded interface
+        using the named <samp class="ph codeph">hed3</samp> and <samp class="ph codeph">hed4</samp> NIC mappings described in
+        the previous section.</p>
+
+      <pre class="pre codeblock">
+    - name: CONTROLLER-INTERFACES
+      network-interfaces:
+        - name: BOND0
+          device:
+              name: bond0
+          bond-data:
+              options:
+                  mode: active-backup
+                  miimon: 200
+                  primary: hed3
+          provider: linux
+          devices:
+              - name: hed3
+              - name: hed4
+          network-groups:
+            - EXTERNAL-API
+            - EXTERNAL-VM
+            - GUEST
+            - MANAGEMENT</pre>
+
+      <p class="p">If your system cannot support bonding, then you can modify this specification to specify a
+        non-bonded interface, for example using device <samp class="ph codeph">hed3</samp>:</p>
+
+      <pre class="pre codeblock">
+   - name: CONTROLLER-INTERFACES
+     network-interfaces:
+        - name: hed3
+          device:
+             name: hed3
+          network-groups:
+             - EXTERNAL-API
+             - EXTERNAL-VM
+             - GUEST
+             - MANAGEMENT</pre>
+
+    </div>
+
+    <div class="section" id="example_configurations__networkgroups"><h2 class="title sectiontitle">Network_groups.yml</h2>
+      
+      <p class="p">This file defines the networks groups used in your cloud. A network-group defines the
+        traffic separation model, and all of the properties that are common to the set of L3
+        networks that carry each type of traffic. They define where services and load balancers are
+        attached to the network model and the routing within that model.</p>
+
+      <p class="p">In this example, the following network groups are defined:</p>
+
+      <ul class="ul">
+        <li class="li"><strong class="ph b">EXTERNAL-API</strong> - This network group is used for external IP traffic to the cloud.
+          In addition, it defines: <ul class="ul">
+            <li class="li">The characteristics of the load balancer to be used for the external API.</li>
+
+            <li class="li">The Transport Layer Security (TLS) attributes.</li>
+
+          </ul>
+</li>
+
+        <li class="li"><strong class="ph b">EXTERNAL-VM</strong> - Floating IPs for virtual machines are created on this network
+          group. This is identified by the tag value
+            <samp class="ph codeph">neutron.l3_agent.external_network_bridge</samp>.</li>
+
+        <li class="li"><strong class="ph b">GUEST</strong> - Tenant VxLAN traffic is carried on this network group. This is identified
+          by the tag value <samp class="ph codeph">neutron.networks.vxlan</samp>.</li>
+
+        <li class="li"><strong class="ph b">MANAGEMENT</strong> - This is the default network group for traffic between service
+          components in the cloud. In addition, it defines: <ul class="ul">
+            <li class="li">An internal load balancer is defined on this network group for managing internal and
+              administrative API requests.</li>
+
+          </ul>
+</li>
+
+      </ul>
+
+      <p class="p">Most of the values in this file should be left unmodified if you are using the network
+        model defined by the example. More complex modifications are supported but are outside the
+        scope of this document.</p>
+
+      <p class="p">However, the values related to the external API network are site-specific and need to be
+        modified:</p>
+
+      <ul class="ul">
+        <li class="li">Provide an external URL for the cloud.</li>
+
+        <li class="li">Provide the name of the security certificate to use.</li>
+
+      </ul>
+
+      <p class="p">The example <samp class="ph codeph">network_groups.yml</samp> file is shown below, modify the bolded
+        fields to reflect your site values.</p>
+
+      <pre class="pre codeblock">
+   # External API
+   #
+   # This is the network group that users will use to
+   # access the public API endpoints of your cloud
+   #
+   - name: EXTERNAL-API
+     hostname-suffix: extapi
+        
+     load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved
+         # in your network 
+         # or comment out this line to use IP addresses
+         <strong class="ph b">external-name</strong>:
+        
+         <strong class="ph b">tls-components</strong>:
+            - default
+         roles:
+            - public
+         <strong class="ph b">cert-file: my-public-cert</strong></pre>
+
+      <p class="p">The above bolded sections as follows:</p>
+
+      <p class="p"><strong class="ph b">external-name</strong> - The external name defines how the public URLs will be registered in
+        Keystone. Users of your cloud will need to be able to resolve this URL to access the cloud
+        APIs, and if you are using the TLS, the name must match the certificate used.</p>
+
+      <p class="p">Because this value is difficult to change after initial deployment, this value is left
+        blank in the supplied example which prevents the configuration processor from running until
+        a value has been supplied. If you want to register the public URLs as IP addresses instead
+        of a name, then you can comment out this line.</p>
+
+      <p class="p"><strong class="ph b">cert-file</strong> - Provide the name of the file located in
+          <samp class="ph codeph">~/helion/my_cloud/config/tls/certs/</samp> that will be used for your cloud
+        endpoints. As shown above, this can be either a single certificate for all endpoints or a
+        default certificate file and a set of service-specific certificate files.</p>
+
+      <p class="p"><strong class="ph b">tls-components</strong> - If you do not want to use a TLS for the public URLs then change the
+        entry that says <samp class="ph codeph">tls-components</samp> to <samp class="ph codeph">components</samp>.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__servers"><h2 class="title sectiontitle">Servers.yml</h2>
+      
+      <p class="p">This file is where you provide the details of the physical servers that make up your cloud.
+        There are two sections to this file: <samp class="ph codeph">baremetal</samp> and
+        <samp class="ph codeph">servers</samp>:</p>
+
+      <pre class="pre codeblock">
+   baremetal:
+      # NOTE: These values need to be changed to match your environment.
+      # Define the network range that contains the ip-addr values for
+      # the individual servers listed below.
+      subnet: <strong class="ph b">192.168.10.0</strong>
+      netmask: <strong class="ph b">255.255.255.0</strong></pre>
+
+      <p class="p">The two values in this section are used to configure cobbler for operating system
+        installation and must match the network values for the addresses given for the servers.</p>
+
+      <p class="p">The servers section below provides the details of each individual server. For example, here
+        are the details for the first controller:</p>
+
+      <pre class="pre codeblock">
+   servers:
+        
+      # Controllers
+      - id: controller1
+        ip-addr: <strong class="ph b">192.168.10.3</strong>
+        role: CONTROLLER-ROLE
+        server-group: RACK1
+        nic-mapping: <strong class="ph b">HP-DL360-4PORT</strong>
+        mac-addr: <strong class="ph b">b2:72:8d:ac:7c:6f</strong>
+        ilo-ip: <strong class="ph b">192.168.9.3</strong>
+        ilo-password: <strong class="ph b">password</strong>
+        ilo-user: <strong class="ph b">admin</strong></pre>
+
+      <p class="p">Here is a description of each of the above bolded sections:</p>
+
+      <p class="p"><strong class="ph b">id</strong> - A name you provide to uniquely identify a server. This can be any string which
+        is makes sense in your context, such as an asset tag, descriptive name, etc. The system will
+        use this value to remember how the server has been allocated.</p>
+
+      <p class="p"><strong class="ph b">ip-addr</strong> - The IP address that the system will use for SSH connections to the server
+        for deployment and configuration changes. This address must be in the IP range of one of the
+        networks in the model. In the example, the servers are provided with addresses from the
+        MANAGEMENT network.</p>
+
+      <p class="p"><strong class="ph b">role</strong> - A string that refers to an entry in <samp class="ph codeph">server_roles.yml</samp> that
+        tells the system how to configure the disks and network interfaces for this server. Roles
+        are also used to define which servers can be used for specific purposes. Adding and changing
+        roles is beyond the scope of this walkthrough - for more information, see <a class="xref" href="input_model.html">HPE Helion OpenStack 2.0 Input Model</a>.</p>
+
+      <p class="p"><strong class="ph b">server-group</strong> - Tells the system how this server is physically related to networks
+        and other servers. Server groups are used to ensure that servers in a cluster are selected
+        from different physical groups. The example provides a set of server groups that divide the
+        servers into three sets called <strong class="ph b">RACK1</strong>, <strong class="ph b">RACK2</strong>, and <strong class="ph b">RACK3</strong>. Modifying the
+        server group structure is beyond the scope of this walkthrough - for more information, see
+          <a class="xref" href="input_model.html">HPE Helion OpenStack 2.0 Input Model</a>.</p>
+
+      <p class="p"><strong class="ph b">nic-mapping</strong> - The name of a network port mapping definition (for more information,
+        see <a class="xref" href="example_configurations.html#example_configurations__nicmappings">Nic_mappings.yml</a>). You need to set this to the mapping that corresponds to this
+        server.</p>
+
+      <p class="p"><strong class="ph b">mac-addr</strong> - The MAC address of the interface associated with this server that will be
+        used for PXE boot.</p>
+
+      <p class="p"><strong class="ph b">ilo-ip</strong> - The IP address of the iLO or IPMI port for this server.</p>
+
+      <p class="p"><strong class="ph b">ilo-user and ilo-password</strong> - The login details used to access the iLO or IPMI port of
+        this server. The iLO password value can be provided as an OpenSSL encrypted string. (For
+        instructions on how to generate encrypted passwords, see <a class="xref" href="installation/install_entryscale_kvm.html#install_kvm__configuration">Configure Your Environment</a>.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__customizing_inputmodel"><h2 class="title sectiontitle">Customizing the Input Model</h2>
+      <p class="p">This section covers additional changes that you can make to further adapt the example to
+        your environment:</p>
+
+      <ul class="ul">
+        <li class="li">Update <samp class="ph codeph">disks_controller.yml</samp> to add additional disk capacity to your
+          controllers.</li>
+
+        <li class="li">Update <samp class="ph codeph">disks_vsa.yml</samp> to add additional disk capacity to your VSA
+          servers.</li>
+
+        <li class="li">Update <samp class="ph codeph">disks_compute.yml</samp> to add additional disk capacity to your
+          compute servers.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="example_configurations__disks_controller"><h2 class="title sectiontitle">Disks_controller.yml</h2>
+      <p class="p">The disk configuration of the controllers consists of two sections: a definition of a
+        volume group that provides a number of file-systems for various subsystems, and device-group
+        that provides disk capacity for Swift.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__filesystems"><h2 class="title sectiontitle">File Systems Storage</h2>
+      <p class="p">The root volume group (hlm-vg) is divided into a number of logical volumes that provide
+        separate file systems for the various services that are co-hosted on the controllers in the
+        entry-scale examples. The capacity of each file system is expressed as a percentage of the
+        overall volume group capacity. Because not all file system usage scales linearly, two
+        different disk configurations are provided:</p>
+
+      <ul class="ul">
+        <li class="li"><strong class="ph b">CONTROLLER-DISKS</strong> - Based on a 512 GB root volume group.</li>
+
+        <li class="li"><strong class="ph b">CONTROLLER-1TB-DISKS</strong> - Provides a higher percentage of space for the logging
+          service.</li>
+
+      </ul>
+
+      <p class="p">As supplied, the example uses the smaller disk model. To use the larger disk model you need
+        to modify the <samp class="ph codeph">disk-models</samp> parameter in the
+          <samp class="ph codeph">server_roles.yml</samp> file, as shown below:</p>
+
+      <pre class="pre codeblock">
+    server-roles:
+        
+       - name: CONTROLLER-ROLE
+         interface-model: CONTROLLER-INTERFACES
+         disk-model: CONTROLLER-1TB-DISKS</pre>
+
+      <p class="p">To add additional disks to the root volume group, you need to modify the volume group
+        definition in whichever disk model you are using. The following example shows adding an
+        additional disk, <samp class="ph codeph">/dev/sdd</samp> to the <samp class="ph codeph">disks_controller.yml</samp>
+        file:</p>
+
+      <pre class="pre codeblock">
+   disk-models:
+      - name: CONTROLLER-DISKS
+        
+        volume-groups:
+         - name: hlm-vg
+           physical-volumes:
+        
+              # NOTE: 'sda_root' is a templated value. This value is checked in
+              # os-config and replaced by the partition actually used on sda
+              #e.g. sda1 or sda5
+              - /dev/sda_root
+              <strong class="ph b">- /dev/sdd</strong></pre>
+
+    </div>
+
+    <div class="section" id="example_configurations__swiftstorage"><h2 class="title sectiontitle">Swift Storage</h2>
+      <p class="p">Swift storage is configured as a device-group and has a syntax that allows disks to be
+        allocated to specific rings. In the example, two disks are allocated to Swift to be shared
+        by the account, container, and object-0 rings.</p>
+
+      <pre class="pre codeblock">
+   device-groups:
+       - name: swiftobj
+         devices:
+            - name: /dev/sdb
+            - name: /dev/sdc
+            # Add any additional disks for swift here
+            # -name: /dev/sdd
+            # -name: /dev/sde
+         consumer:
+           name: swift
+           attrs:
+              rings:
+                 - account
+                 - container
+                       - object-0</pre>
+
+      <p class="p">For instruction to configure additional Swift storage, see <a class="xref" href="objectstorage/allocating_disk_drives.html">HPE Helion OpenStack 2.0: Allocating Disk Drives for Object Storage</a>.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__disks_vsa"><h2 class="title sectiontitle">Disks_vsa.yml</h2>
+      <p class="p">VSA storage is configured as a device-group and has a syntax that allows disks to be
+        allocated for data storage or for adaptive optimization (caching). As a best practice, you
+        should use solid state drives for adaptive optimization. The example disk configuration for
+        VSA nodes has two disks, one for data and one of adaptive optimization. (For more
+        information, see <a class="xref" href="installation/configure_vsa.html#config_vsa__deploy-vsa-with-ao-without-ao">VSA with
+          AO or without AO</a>.)</p>
+
+      <pre class="pre codeblock">
+   device-groups:
+       - name: vsa-data
+         consumer:
+           name: vsa
+           usage: data
+         devices:
+           - name: /dev/sdc
+       - name: vsa-cache
+         consumer:
+           name: vsa
+           usage: adaptive-optimization
+         devices:
+            - name: /dev/sdb</pre>
+
+      <p class="p">Additional capacity can be added by adding more disks to the <samp class="ph codeph">vsa-data</samp>
+        device group. Similarly, caching capacity can be increased by adding more high speed storage
+        devices to the <samp class="ph codeph">vsa-cache</samp> device group.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__disks_compute"><h2 class="title sectiontitle">Disks_compute.yml</h2>
+      <p class="p">The example disk configuration for compute nodes consists of two volume groups: one for the
+        operating system and one for the ephemeral storage for virtual machines, with one disk
+        allocated to each.</p>
+
+      <p class="p">Additional virtual machine ephemeral storage capacity can be configured by adding
+        additional disks to the <samp class="ph codeph">vg-comp</samp> volume group. The following example shows
+        the addition of two more disks, <samp class="ph codeph">/dev/sdc</samp> and <samp class="ph codeph">/dev/sdd</samp>, to
+        the <samp class="ph codeph">disks_compute.yml</samp> file:</p>
+
+      <pre class="pre codeblock">
+   - name: vg-comp
+        physical-volumes:
+          - /dev/sdb
+          - /dev/sdc
+          - /dev/sdd
+        logical-volumes:
+          - name: compute
+            size: 95%
+            mount: /var/lib/nova
+            fstype: ext4
+                  mkfs-opts: -O large_file</pre>
+
+    </div>
+
+    <div class="section" id="example_configurations__standalone"><h2 class="title sectiontitle">Using a Standalone Lifecycle-Manager Node</h2>
+      <p class="p">All of the examples described above host the lifecycle-manager on one of the control nodes.
+        It is also possible to deploy this service on a dedicated node, as shown below: </p>
+
+      <p class="p"><img class="image" src="../media/examples/entry_scale_kvm_vsa_shared.png"></img></p>
+
+      <p class="p"><a class="xref" href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" target="_blank">Download a high-resolution version</a></p>
+
+      <p class="p">A typical use case for wanting to run the dedicated lifecycle-manager is to be able to test
+        the deployment of different configurations without having to re-install the first server.
+        Some administrators might also prefer the additional security of keeping all of the
+        configuration data on a separate server from those that users of the cloud connect to
+        (although all of the data can be encrypted and SSH keys can be password protected).</p>
+
+      <p class="p">This requires the following changes to the configuration files:</p>
+
+      <ul class="ul">
+        <li class="li">Update <span class="ph uicontrol">control_plane.yml</span> to add the lifecycle-manager node.</li>
+
+        <li class="li">Update <span class="ph uicontrol">server_roles.yml</span> to add the lifecycle-manager role.</li>
+
+        <li class="li">Update <span class="ph uicontrol">net_interfaces.yml</span> to add the interface definition for the
+          lifecycle-manager node.</li>
+
+        <li class="li">Create a <span class="ph uicontrol">disks_lifecycle_manager.yml</span> file to define the disk
+          layout for the lifecycle-manager node.</li>
+
+        <li class="li">Update <span class="ph uicontrol">servers.yml</span> to add the dedicated lifecycle-manager
+          node.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="example_configurations__control_plane_yml"><h2 class="title sectiontitle">Control_plane.yml</h2>
+      <p class="p">The snippet below shows the addition of a single node cluster into the control plane to
+        host the lifecycle-manager service. Note that, in addition to adding the new cluster, you
+        also have to remove the lifecycle-manager component from the <samp class="ph codeph">cluster1</samp> in
+        the examples:</p>
+
+      <pre class="pre codeblock">
+  clusters:
+     - name: cluster0
+       cluster-prefix: c0
+       server-role: LIFECYCLE-MANAGER-ROLE
+       member-count: 1	
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager
+     - name: cluster1
+       cluster-prefix: c1
+       server-role: CONTROLLER-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager
+            - ntp-server</pre>
+
+      <p class="p">This specifies a single node of role <samp class="ph codeph">LIFECYCLE-MANAGER-ROLE</samp> hosting the
+        lifecycle-manager.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__server_roles_yml"><h2 class="title sectiontitle">Server_roles.yml</h2>
+      <p class="p">The snippet below shows the insertion of the new server roles definition:</p>
+
+      <pre class="pre codeblock">
+   server-roles:
+      
+      - name: LIFECYCLE-MANAGER-ROLE
+        interface-model: LIFECYCLE-MANAGER-INTERFACES
+        disk-model: LIFECYCLE-MANAGER-DISKS	
+      
+      - name: CONTROLLER-ROLE</pre>
+
+      <p class="p">This defines a new server role which references a new interface-model and disk-model to be
+        used when configuring the server.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__net_interfaces_yml"><h2 class="title sectiontitle">Net-interfaces.yml</h2>
+      <p class="p">The snippet below shows the insertion of the network-interface info:</p>
+
+      <pre class="pre codeblock">
+    - name: LIFECYCLE-MANAGER-INTERFACES
+      network-interfaces:
+        - name: BOND0
+          device:
+             name: bond0
+          bond-data:
+             options:
+                 mode: active-backup
+                 miimon: 200
+                 primary: hed3
+             provider: linux
+             devices:
+                 - name: hed3
+                 - name: hed4
+          network-groups:
+             - MANAGEMENT</pre>
+
+      <p class="p">This assumes that the server uses the same physical networking layout as the other servers
+        in the example. For details on how to modify this to match your configuration, see <a class="xref" href="example_configurations.html#example_configurations__netinterfaces">Net_interfaces.yml</a>.</p>
+
+    </div>
+
+    <div class="section" id="example_configurations__disks_lifecycle_manager_yml"><h2 class="title sectiontitle">Disks_lifecycle_manager.yml</h2>
+      <p class="p">In the examples, disk-models are provided as separate files (this is just a convention, not
+        a limitation) so the following should be added as a new file named
+          <samp class="ph codeph">disks_lifecycle_manager.yml</samp>:</p>
+
+      <pre class="pre codeblock">---
+   product:
+      version: 2
+        
+   disk-models:
+   - name: LIFECYCLE-MANAGER-DISKS
+     # Disk model to be used for Lifecycle Managers nodes
+     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+     # sda_root is a templated value to align with whatever partition is really used
+     # This value is checked in os config and replaced by the partition actually used
+     # on sda e.g. sda1 or sda5
+        
+     volume-groups:
+       - name: hlm-vg
+         physical-volumes:
+           - /dev/sda_root
+        
+       logical-volumes:
+       # The policy is not to consume 100% of the space of each volume group.
+       # 5% should be left free for snapshots and to allow for some flexibility.
+          - name: root
+            size: 80%
+            fstype: ext4
+            mount: /
+          - name: crash
+            size: 15%
+            mount: /var/crash
+            fstype: ext4
+            mkfs-opts: -O large_file
+        consumer:
+              name: os</pre>
+
+    </div>
+
+    <div class="section" id="example_configurations__servers_yml"><h2 class="title sectiontitle">Servers.yml</h2>
+      <p class="p">The snippet below shows the insertion of an additional server used for hosting the
+        lifecycle-manager. Provide the address information here for the server you are running on,
+        i.e., the node where you have installed the HPE Helion OpenStack ISO.</p>
+
+      <pre class="pre codeblock">
+  servers:
+     # NOTE: Addresses of servers need to be changed to match your environment.
+     #
+     #       Add additional servers as required
+        
+     #Lifecycle-manager
+     - id: lifecycle-manager
+       ip-addr: &lt;your IP address here&gt;
+       role: LIFECYCLE-MANAGER-ROLE
+       server-group: RACK1
+       # ipmi information is not needed 
+          
+     # Controllers
+     - id: controller1
+       ip-addr: 192.168.10.3
+       role: CONTROLLER-ROLE</pre>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

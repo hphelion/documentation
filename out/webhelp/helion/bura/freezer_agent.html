@@ -1,0 +1,192 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Backing up your Data Introduction As of HPE Helion OpenStack ® 2.0, you must follow these steps to perform backups: Define what you want to backup. Define a mode for that backup. The following modes ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Understanding the Freezer Agent"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_pgq_mnw_dt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Understanding the Freezer Agent</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_pgq_mnw_dt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+    <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Understanding the Freezer Agent</h1>
+
+    <div class="body">
+        <div class="section"><h2 class="title sectiontitle">Backing up your Data</h2></div>
+
+        <div class="section"><h2 class="title sectiontitle">Introduction </h2><div class="p">As of HPE Helion OpenStack<sup>®</sup> 2.0,
+                you must follow these steps to perform backups: <ol class="ol">
+                    <li class="li">Define what you want to backup.</li>
+
+                    <li class="li">Define a mode for that backup. The following modes are available: <ul class="ul">
+                            <li class="li">FS (filesystem) (default)</li>
+
+                            <li class="li">MySQL</li>
+
+                            <li class="li">SQL Server</li>
+
+                            <li class="li">Mongo</li>
+
+                        </ul>
+<div class="note note"><span class="notetitle">Note:</span> It is recommended that you use snapshots if the mode is MySQL,
+                            SQL Server, or Mongo.</div>
+</li>
+
+                    <li class="li">Define whether to use a snapshot in the file system for the backup:<ul class="ul">
+                            <li class="li">In Unix systems LVM is used (when available). </li>
+
+                            <li class="li">In Windows systems virtual shadow copies are used.</li>
+
+                        </ul>
+</li>
+
+                    <li class="li">Define a storage media in a job from the following list: <ul class="ul">
+                            <li class="li">Swift (requires OpenStack credentials)(default)</li>
+
+                            <li class="li">Local (no credentials required)</li>
+
+                            <li class="li">SSH (no credentials required) (not implemented on Windows)</li>
+
+                        </ul>
+</li>
+
+                </ol>
+</div>
+
+        </div>
+
+        <div class="section"><h2 class="title sectiontitle">Basic Configuration</h2>
+            <div class="p">There are several mandatory arguments to execute a backup: <ul class="ul">
+                    <li class="li">Action (backup by default)</li>
+
+                    <li class="li">Mode (fs by default)</li>
+
+                    <li class="li">Path-to-backup</li>
+
+                    <li class="li">Backup-name</li>
+
+                    <li class="li">Container (Swift container or local path)</li>
+
+                    <li class="li">Storage (Swift by default)</li>
+
+                </ul>
+</div>
+ For HPE Helion OpenStack 2.0, you can create a backup using only mandatory
+            values, as in the following example:
+            <pre class="pre codeblock">- freezerc --action backup --mode fs --storage swift --path-to-backup /home/user/tmp --container tmp_backups --backup-name backup1</pre>
+
+            The translation to a configuration file for this backup execution would be as follows:
+            <pre class="pre codeblock">
+  {
+    "job_actions": [
+        {
+            "freezer_action": {
+                "action": "backup",
+                "mode": "fs",
+                "backup_name": "backup1",
+                "path_to_backup": "/home/user/tmp",
+                "container": "tmp_backups"
+            },
+            "max_retries": 3,
+            "max_retries_interval": 60
+        }
+    ],
+    "job_schedule": {
+        "schedule_interval": "24 hours"
+    },
+    "description": "backup for tmp dir"
+  }
+</pre>
+
+            In this configuration file (JSON), the freezer command is wrapped in the
+            "freezer_action" key. <div class="note note"><span class="notetitle">Note:</span> All "-" are translated to "_" and the first "--" are
+                omitted.</div>
+ As of HPE Helion OpenStack 2.0, we can define the schedule rules that
+            this job will follow (only available through the configuration file) and a brief
+            description of the job. </div>
+
+        <div class="section"><h2 class="title sectiontitle">Restoring your Data</h2><div class="p"> As of HPE Helion OpenStack<sup>®</sup> 2.0, you must do the following in order to restore data after a
+                backup: <ol class="ol">
+                    <li class="li">Select a backup to restore.</li>
+
+                    <li class="li">Define a mode for the restore: The following modes are available:<ul class="ul">
+                            <li class="li">FS (filesystem) (default)</li>
+
+                            <li class="li">MySQL</li>
+
+                            <li class="li">SQL Server</li>
+
+                            <li class="li">Mongo</li>
+
+                        </ul>
+</li>
+
+                    <li class="li">If the restore involves an application (such as MySQL) remember to shut down
+                        the application or service and start it again after the restore.</li>
+
+                </ol>
+</div>
+</div>
+
+        <div class="section"><h2 class="title sectiontitle">Basic Configuration</h2>
+            
+            <p class="p">To restore from a backup, note that in some cases you must stop the service (for
+                instance, MySQL) before the restore.</p>
+
+            <div class="p">There are several mandatory options to execute a restore: <ul class="ul">
+                    <li class="li">action (backup by default)</li>
+
+                    <li class="li">mode (fs by default)</li>
+
+                    <li class="li">restore-abs-path</li>
+
+                    <li class="li">backup-name</li>
+
+                    <li class="li">container (Swift container or local path)</li>
+
+                    <li class="li">storage (Swift by default)</li>
+
+                    <li class="li">restore-from-host</li>
+
+                    <li class="li">restore-from-date (optional)</li>
+
+                </ul>
+</div>
+
+            <div class="p">You can create a restore using mandatory values, as in the following example:
+                <pre class="pre codeblock">  - freezerc --action restore --mode fs --storage swift --restore-abs-path /home/user/tmp --container tmp_backups --backup-name backup1 --restore-from-host ubuntu</pre>
+</div>
+
+            <div class="p">The translation to a configuration file for this restore execution would be as
+                follows:
+                <pre class="pre codeblock">
+  {
+    "job_actions": [
+        {
+            "freezer_action": {
+                "action": "restore",
+                "mode": "fs",
+                "backup_name": "backup1",
+                "restore_abs_path": "/home/user/tmp",
+                "container": "tmp_backups",
+                "restore_from_host": "ubuntu"
+            },
+            "max_retries": 3,
+            "max_retries_interval": 60
+        }
+    ],
+    "description": "backup for tmp dir"
+  }
+</pre>
+</div>
+
+        </div>
+
+        <p class="p"></p>
+
+    </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

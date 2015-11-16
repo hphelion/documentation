@@ -1,0 +1,186 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The HPE Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant, scalable, fault-tolerant OpenStack monitoring service. This document describes the Monasca service and contains ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Monitoring Service"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="monitoring"></meta><meta name="DC.Language" content="en-us"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Monitoring Service</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="monitoring">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Monitoring Service</h1>
+
+  <div class="body">
+    <div class="section" id="monitoring__about">
+      <p class="p">The HPE Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+        scalable, fault-tolerant OpenStack monitoring service.</p>
+
+      <p class="p">This document describes the Monasca service and contains the following sections:</p>
+
+      <ul class="ul">
+        <li class="li">
+          <a class="xref" href="#monitoring__installation">Installation</a>
+        </li>
+
+        <li class="li">
+          <a class="xref" href="#monitoring__differences">Differences Between Upstream and 
+            HPE Helion OpenStack Implementations</a>
+        </li>
+
+        <li class="li">
+          <a class="xref" href="#monitoring__diagram">Diagram of Monasca Service</a>
+        </li>
+
+        <li class="li">
+          <a class="xref" href="#monitoring__working">Working with Monasca</a>
+        </li>
+
+        <li class="li">
+          <a class="xref" href="#monitoring__servicealarms">Service Alarm Definitions</a>
+        </li>
+
+        <li class="li">
+          <a class="xref" href="#monitoring__info">For More Information</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="monitoring__installation"><h2 class="title sectiontitle">Installation</h2>
+      <p class="p">The Monasca service is automatically installed as part of the HPE Helion OpenStack
+        installation.</p>
+
+      <p class="p">No specific configuration is required to use Monasca. However, you can configure the
+        database for storing metrics as detailed in the <a class="xref" href="../administration/configure_monitoring.html">Monitoring Configuration</a>
+        document.</p>
+
+    </div>
+
+    <div class="section" id="monitoring__differences"><h2 class="title sectiontitle">Differences Between Upstream and HPE Helion OpenStack
+        Implementations</h2>
+      <p class="p">In the HPE Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is
+        included as the HPE Helion OpenStack monitoring solution with the following exceptions:</p>
+
+      <ul class="ul">
+        <li class="li">Transform Engine</li>
+
+        <li class="li">Events Engine </li>
+
+        <li class="li">Anomaly and Prediction Engine</li>
+
+      </ul>
+
+      <div class="note note"><span class="notetitle">Note:</span> Icinga was supported in previous Helion versions but it has been deprecated in HPE Helion
+        OpenStack 2.0.</div>
+
+    </div>
+
+    <div class="section" id="monitoring__diagram"><h2 class="title sectiontitle">Diagram of Monasca Service</h2>
+      
+      <p class="p"><br xmlns="http://www.w3.org/1999/xhtml" /><img class="image" src="../../media/monasca_diagram.png"></img><br xmlns="http://www.w3.org/1999/xhtml" /></p>
+
+    </div>
+
+    <div class="section" id="monitoring__working"><h2 class="title sectiontitle">Working with Monasca</h2>
+      <p class="p"><strong class="ph b">Monasca-Agent</strong></p>
+
+      <div class="p">The <strong class="ph b">monasca-agent</strong> is a Python program that runs on the control plane nodes. It runs
+        the defined checks and then sends data onto the API. The checks that the agent runs include: <ul class="ul">
+          <li class="li">System Metrics: CPU utilization, memory usage, disk I/O, network I/O, and filesystem
+            utilization on Control Plane and Resource Nodes.</li>
+
+          <li class="li">Service Metrics: the agent supports plugins such as MySQL, RabbitMQ, Kafka, and many
+            others.</li>
+
+          <li class="li">VM Metrics: CPU utilization, disk I/O, network I/O, and memory usage of hosted virtual
+            machines on Compute nodes. Full details of these can be found <a class="xref" href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#per-instance-metrics" target="_blank">here</a>.</li>
+
+        </ul>
+</div>
+
+      <p class="p">For a full list of packaged plugins that are included HPE Helion OpenStack, see <a class="xref" href="https://github.com/stackforge/monasca-agent/blob/master/docs/Plugins.md" target="_blank">Monasca Plugins</a></p>
+
+      <p class="p">You can further customize the monasca-agent to suit your needs, see <a class="xref" href="https://github.com/stackforge/monasca-agent/blob/master/docs/Customizations.md" target="_blank">Customizing the Agent</a></p>
+
+    </div>
+
+    <div class="section" id="monitoring__access"><h2 class="title sectiontitle">Access to Monasca</h2>
+      <p class="p">Access to Monasca is available through a number of different interfaces.</p>
+
+      <p class="p"><strong class="ph b">Command-Line Interface</strong></p>
+
+      <p class="p">For users who prefer using the command line, there is the python-monascaclient.</p>
+
+      <p class="p">For details on the CLI, including installation instructions, see <a class="xref" href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst" target="_blank">Python-Monasca Client</a></p>
+
+      <p class="p"><strong class="ph b">Monasca API</strong></p>
+
+      <p class="p">If low-level access is desired, there is the Monasca REST API.</p>
+
+      <p class="p">Full details of the Monasca API can be found <a class="xref" href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md" target="_blank">on GitHub</a></p>
+
+      <p class="p"><strong class="ph b">Operations Console (OpsConsole) GUI</strong></p>
+</div>
+
+    <div class="section">
+      <p class="p">The Operations Console (Ops Console) for HPE Helion OpenStack 2.0 is designed for HPE
+        Helion OpenStack Administrators to have a web-based UI they can use to view data about their
+        cloud infrastructure. The Ops Console is a web-based GUI that offers the user access to data
+        such as monitoring alarms data by service, performance data, compute nodes and instances
+        lists, and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a
+        middleware component that serves as a single point of contact for the UI to communicate with
+        OpenStack services such as Monasca, Nova, and others.</p>
+
+    </div>
+
+    <div class="section">
+      <p class="p">If your administrator set a hostname value for <samp class="ph codeph">external_name</samp> in your
+          <samp class="ph codeph">network_groups.yml</samp> file during the configuration process for your cloud
+        then the Operations Console will be accessed over port 9095 on that hostname.</p>
+
+      <div class="p">If your administrator did not set a hostname value then in order to determine which IP
+        address to use to access Horizon you can use this command from your lifecycle-manager node:
+        <pre class="pre codeblock">grep vip-HZN-WEB /etc/hosts</pre>
+</div>
+
+      <div class="p">The output of that command will show you the virtual IP address you should use. It is
+        listening over port 9095 on that virtual IP address, so you can use the following syntax to
+        access it:<pre class="pre codeblock">http://VIP:9095</pre>
+</div>
+
+      <p class="p">The default username for the Administrator user is <samp class="ph codeph">admin</samp>. In order to find
+        the randomized password that is created for this user you will need to look into the
+          <samp class="ph codeph">~/service.osrc</samp> file on the deployer/lifecycle-manager node. You can do
+        that with this command:</p>
+
+      <pre class="pre codeblock">cat ~/service.osrc</pre>
+
+      
+      
+    </div>
+
+    <div class="section" id="monitoring__servicealarms"><h2 class="title sectiontitle">Service Alarm Definitions</h2>
+      <p class="p">Helion OpenStack comes with some predefined monitoring alarms for the services
+        installed.</p>
+
+      <p class="p">Full details of all service alarms can be found here: <a class="xref" href="alarms.html" title="This topic contains a list of service-specific alarms and the recommended troubleshooting steps.">Service
+          Alarm Definitions</a>.</p>
+
+      <p class="p">When alarms are triggered it is helpful to review the service logs. Details on how to use
+        the logging UI built into the Operations Console can be found here: <a class="xref" href="centralized_logging.html#logging__interface">Logging Interface</a></p>
+
+    </div>
+
+    <div class="section" id="monitoring__info"><h2 class="title sectiontitle">For More Information</h2>
+      <p class="p">For details on OpenStack Monasca, see <a class="xref" href="http://monasca.io/" target="_blank">Monasca.io</a></p>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

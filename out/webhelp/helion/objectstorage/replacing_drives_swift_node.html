@@ -1,0 +1,93 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="There are two different classes of drives in a Swift node that needs to be replaced; the operating system disk drive (generally /dev/sda ) and storage disk drives. There are different procedures for ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Replacing Drives in a Swift Node"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_am4_mjv_pt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Replacing Drives in a Swift Node</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_am4_mjv_pt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Replacing Drives in a Swift Node</h1>
+
+  <div class="body">
+    <p class="p">There are two different classes of drives in a Swift node that needs to be replaced; the
+      operating system disk drive (generally <strong class="ph b">/dev/sda</strong>) and storage disk drives. There are
+      different procedures for the replacement of each class of drive to bring the node back to
+      normal.</p>
+
+    <div class="section"><h2 class="title sectiontitle"><strong class="ph b">To Replace the Operating System Disk Drive</strong></h2>
+      
+      <div class="p">After the operating system disk drive is replaced, the node must be reimaged.<ol class="ol" id="topic_am4_mjv_pt__ol_ewb_vjv_pt">
+          <li class="li">Log onto the deployer/lifecycle-manager node.</li>
+
+          <li class="li">Using Ansible, reimage the
+              node:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;server id&gt;</pre>
+<div class="p">In
+              the example below <strong class="ph b">swobj2</strong> server is
+              reimaged:<pre class="pre codeblock">cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=swobj2</pre>
+</div>
+</li>
+
+          <li class="li">Review the <samp class="ph codeph">cloudConfig.yml</samp> and
+              <samp class="ph codeph">data/control_plane.yml</samp> files to get the host prefix (for example,
+            helion) and the control plane name (for example, cp1). This gives you the hostname of
+            the node. Configure the operating
+              system:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –-limit &lt;hostname&gt;</pre>
+<div class="p">In
+              the following example, for <strong class="ph b">swobj2</strong>, the hostname is
+              <strong class="ph b">helion-cp1-swobj0002</strong>:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml –limit helion-cp1-swobj0002*</pre>
+</div>
+</li>
+
+          <li class="li">If this is the first server running the swift-proxy service, restore the Swift Ring
+            Builder files to the <samp class="ph codeph">/etc/swiftlm/builder_dir</samp> directory. (For more
+            information and instructions, see <a class="xref" href="first_proxy_server.html#topic_rtc_s3t_mt">HPE Helion OpenStack 2.0: Identifying the First Swift Proxy Server</a>
+            <a class="xref" href="recovering_builder_file.html#topic_gbz_13t_mt">HPE Helion OpenStack 2.0: Recovering Swift Builder Files</a>.)</li>
+
+          <li class="li">Configure services on the node using the <samp class="ph codeph">site.yml</samp> playbook. If you
+            have used an encryption password when running the Configuration processor include the
+              <samp class="ph codeph">--ask-vault-pass</samp>
+              argument.<pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit &lt;hostname&gt;</pre>
+<div class="p">For
+              example:<pre class="pre codeblock">ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --ask-vault-pass --limit helion-cp1-swobj0002*</pre>
+</div>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle"><strong class="ph b">To Replace a Storage Disk Drive</strong></h2>
+      
+      <div class="p">After a storage drive is replaced, there is no need to reimage the server. Instead, run the
+          <samp class="ph codeph">swift-reconfigure.yml</samp> playbook.<ol class="ol" id="topic_am4_mjv_pt__ol_kqj_hkv_pt">
+          <li class="li">Log onto the deployer/lifecycle-manager node.</li>
+
+          <li class="li">Run the following
+              commands:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit &lt;hostname&gt;</pre>
+<div class="p">In
+              following example, the server used is
+              <strong class="ph b">swobj2</strong>:<pre class="pre codeblock">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml --limit helion-cp1-swobj0002-mgmt </pre>
+</div>
+</li>
+
+        </ol>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

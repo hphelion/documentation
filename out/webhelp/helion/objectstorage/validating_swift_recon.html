@@ -1,0 +1,86 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The swift-recon command retrieves data from Swift servers and displays the results. To use this command, log on as a root user to any node which is running the swift-proxy service. The following ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Gathering Swift Data"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_xq2_dw4_nt"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Gathering Swift Data</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_xq2_dw4_nt">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Gathering Swift Data</h1>
+
+  <div class="body">
+    <p class="p">The <samp class="ph codeph">swift-recon</samp> command retrieves data from Swift servers and displays the
+      results. To use this command, log on as a root user to any node which is running the
+      swift-proxy service.</p>
+
+    <div class="p">The following command retrieves and displays disk usage
+      information:<pre class="pre codeblock">$ sudo swift-recon --diskusage</pre>
+</div>
+
+    <div class="p">For
+      example:<pre class="pre codeblock">$ sudo swift-recon --diskusage
+===============================================================================
+--&gt; Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-09-14 16:01:40] Checking disk usage now
+Distribution Graph:
+ 10%    3 *********************************************************************
+ 11%    1 ***********************
+ 12%    2 **********************************************
+Disk usage: space used: 13745373184 of 119927734272
+Disk usage: space free: 106182361088 of 119927734272
+Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4613798613%
+===============================================================================</pre>
+</div>
+
+    <div class="p">In the above example, the results for several nodes are combined together. You can also view
+      the results from individual nodes by adding the <strong class="ph b">-v</strong> option as shown in the following
+      example:<pre class="pre codeblock">$ sudo swift-recon --diskusage -v
+===============================================================================
+--&gt; Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-09-14 16:12:30] Checking disk usage now
+-&gt; http://192.168.245.3:6000/recon/diskusage: [{'device': 'disk1', 'avail': 17398411264, 'mounted': True, 'used': 2589544448, 'size': 19987955712}, {'device': 'disk0', 'avail': 17904222208, 'mounted': True, 'used': 2083733504, 'size': 19987955712}]
+-&gt; http://192.168.245.2:6000/recon/diskusage: [{'device': 'disk1', 'avail': 17769721856, 'mounted': True, 'used': 2218233856, 'size': 19987955712}, {'device': 'disk0', 'avail': 17793581056, 'mounted': True, 'used': 2194374656, 'size': 19987955712}]
+-&gt; http://192.168.245.4:6000/recon/diskusage: [{'device': 'disk1', 'avail': 17912147968, 'mounted': True, 'used': 2075807744, 'size': 19987955712}, {'device': 'disk0', 'avail': 17404235776, 'mounted': True, 'used': 2583719936, 'size': 19987955712}]
+Distribution Graph:
+ 10%    3 *********************************************************************
+ 11%    1 ***********************
+ 12%    2 **********************************************
+Disk usage: space used: 13745414144 of 119927734272
+Disk usage: space free: 106182320128 of 119927734272
+Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
+===============================================================================</pre>
+</div>
+
+    <div class="p">By default, <samp class="ph codeph">swift-recon</samp> uses the object-0 ring for information about nodes
+      and drives. For some commands, it is appropriate to specify <strong class="ph b">account</strong>, <strong class="ph b">container</strong>,
+      or <strong class="ph b">object</strong> to indicate the type of ring. For example, to check the checksum of the
+      account ring, use the
+      following:<pre class="pre codeblock">$ sudo swift-recon --md5 account 
+===============================================================================
+--&gt; Starting reconnaissance on 3 hosts
+===============================================================================
+[2015-09-14 16:17:28] Checking ring md5sums
+3/3 hosts matched, 0 error[s] while checking hosts.
+===============================================================================
+[2015-09-14 16:17:28] Checking swift.conf md5sum
+3/3 hosts matched, 0 error[s] while checking hosts.
+===============================================================================</pre>
+</div>
+
+    <div class="p">
+      <div class="note note"><span class="notetitle">Note:</span> Use <samp class="ph codeph">--help</samp> to see all the available commands. The command
+          <samp class="ph codeph">--driveaudit</samp> is not supported in this release.</div>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>

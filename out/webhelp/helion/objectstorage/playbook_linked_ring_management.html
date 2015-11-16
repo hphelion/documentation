@@ -1,0 +1,120 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The following table describes how playbooks relate to ring management. Playbook Description Notes _swift-make-delta-rebalance.yml There are two steps in this playbook: Make delta It processes the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="HPE Helion OpenStack 2.0: Managing Rings Using Swift Playbooks"></meta><meta name="prodname" content="HPE Helion"></meta><meta name="version" content="4.1.0"></meta><meta name="copyright" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Rights.Owner" content="HPE Helion 2015" type="primary"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="topic_jmm_cnz_4t"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HPE Helion OpenStack 2.0: Managing Rings Using Swift Playbooks</title><!--  Generated with Oxygen version 17.0, build number 2015072912.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "../../index.html";
+          
+          --></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="../../oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="../../oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="topic_jmm_cnz_4t">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">HPE Helion OpenStack<sup>®</sup> 2.0: Managing Rings Using Swift Playbooks</h1>
+
+  <div class="body">
+    <p class="p">The following table describes how playbooks relate to ring management.</p>
+
+    <table cellpadding="4" cellspacing="0" summary="" id="topic_jmm_cnz_4t__simpletable_mtc_yb1_kt" border="1" class="simpletable"><tr class="strow">
+        <td valign="top" class="stentry"><strong class="ph b">Playbook</strong></td>
+
+        <td valign="top" class="stentry"><strong class="ph b">Description</strong></td>
+
+        <td valign="top" class="stentry"><strong class="ph b">Notes</strong></td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" class="stentry"><samp class="ph codeph">_swift-make-delta-rebalance.yml</samp></td>
+
+        <td valign="top" class="stentry">There are two steps in this playbook:<ul class="ul" id="topic_jmm_cnz_4t__ul_smp_ygy_4t">
+            <li class="li">Make delta<p class="p">It processes the input model and compares it against the existing
+                rings. After comparison, it produces a list of differences between the input model
+                and the existing rings. This is called the ring delta. The ring delta covers drives
+                being added, drives being removed, weight changes, and replica count
+              changes.</p>
+</li>
+
+          </ul>
+<ul class="ul" id="topic_jmm_cnz_4t__ul_xbm_2hy_4t">
+            <li class="li">Rebalance<p class="p">The ring delta is then converted into a series of commands (such as
+                  <samp class="ph codeph">add</samp>) to the swift-ring-builder program. Finally, the
+                  <samp class="ph codeph">rebalance</samp> command is issued to the swift-ring-builder
+                program.</p>
+</li>
+
+          </ul>
+</td>
+
+        <td valign="top" class="stentry">This playbook performs its actions on the first node running the swift-proxy
+          service. (For more information, see <a class="xref" href="first_proxy_server.html">HPE Helion OpenStack 2.0: Identifying the First Swift Proxy Server</a>.) However, it
+          also scans all Swift nodes to find the size of disk drives.<p class="p">If there are no changes in
+            the ring delta, the <samp class="ph codeph">rebalance</samp> command is still executed to rebalance
+            the rings. If <samp class="ph codeph">min-part-time</samp> has not yet elapsed or if no partitions
+            need to be moved, new rings are not written.</p>
+</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" class="stentry"><samp class="ph codeph">_swift-validate-input-model.yml</samp></td>
+
+        <td valign="top" class="stentry">There are two steps in this playbook:<ul class="ul" id="topic_jmm_cnz_4t__ul_qc2_b3y_4t">
+            <li class="li">Make delta<p class="p">This is the same  as described for
+                  <samp class="ph codeph">swift-make-delta-rebalance.yml</samp>.</p>
+</li>
+
+          </ul>
+<ul class="ul" id="topic_jmm_cnz_4t__ul_ht2_f3y_4t">
+            <li class="li">Report<p class="p">This prints a summary of the proposed changes that will be made to the
+                rings (i.e., what would happen if you rebalanced).</p>
+</li>
+
+          </ul>
+<p class="p">The playbook reports any issues or problems it finds with the input
+            model.</p>
+<p class="p">This playbook can be useful to confirm that there are no errors in the
+            input model. It also allows you to check that when you change the input model, that the
+            proposed ring changes are as expected. For example, if you have added a server to the
+            input model, but this playbook reports that no drives are being added, you should
+            determine the cause.</p>
+</td>
+
+        <td valign="top" class="stentry"> </td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" class="stentry"><samp class="ph codeph">swift-deploy.yml</samp></td>
+
+        <td valign="top" class="stentry"><samp class="ph codeph">swift-deploy.yml</samp> is responsible for installing software and
+          configuring Swift on nodes. As part of installing and configuring, it runs the
+            <samp class="ph codeph">_swift-make-delta-rebalance.yml</samp> and
+            <samp class="ph codeph">swift-reconfigure.yml</samp> playbooks.</td>
+
+        <td valign="top" class="stentry">This playbook is included in the <samp class="ph codeph">hlm-deploy.yml</samp> and
+            <samp class="ph codeph">site.yml</samp> playbooks, so if you run either of those playbooks, the
+            <samp class="ph codeph">swift-deploy.yml</samp> playbook is also run.</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" class="stentry"><samp class="ph codeph">swift-reconfigure.yml</samp></td>
+
+        <td valign="top" class="stentry">
+          <p class="p"><samp class="ph codeph">swift-reconfigure.yml</samp> takes rings that the
+              <samp class="ph codeph">_swift-make-delta-rebalance.yml</samp> playbook has changed and copies those
+            rings to all Swift nodes.</p>
+
+        </td>
+
+        <td valign="top" class="stentry">Every time that you directly use the
+            <samp class="ph codeph">_swift-make-delta-rebalance.yml</samp> playbook, you must copy these rings to
+          the system using the <samp class="ph codeph">swift-reconfigure.yml</samp> playbook. If you forget and
+          run <samp class="ph codeph">_swift-make-delta-rebalance.yml</samp> twice, the process may move two
+          replicates of some partitions at the same time.</td>
+
+      </tr>
+</table>
+
+  </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="../../oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+</body>
+</html>
