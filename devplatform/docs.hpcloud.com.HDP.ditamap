@@ -59,6 +59,8 @@
       <topicref href="2.0/installation/install_listOptions.dita" toc="no"/>
       <topicref href="2.0/installation/install_dbaasNoTLS.dita" toc="no"/>
       <topicref href="2.0/installation/devplatform_commercial_install.dita" toc="no"/>
+      <topicref href="2.0/devplatform.troubleshooting.dita" navtitle="Troubleshooting"
+        locktitle="yes"/>
     </topichead>
     <topichead navtitle="Service Monitoring">
       <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
