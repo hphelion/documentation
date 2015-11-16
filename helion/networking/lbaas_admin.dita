@@ -92,7 +92,8 @@
         <li>In the section specifying the compute nodes (resources/compute) replace neutron-lbaasv2-agent with neutron-lbaas-agent - there will only be one occurrence in that file.</li>
         <li>Save the modified file.</li>
         <li>Edit the ~/helion/my_cloud/config/neutron/neutron.conf.j2  - depending on your installation the neutron.conf.j2 file might be in a different location.</li>
-        <li>Comment out the LBaaS v2 service_plugin and service_provider lines.</li>
+        <li>Comment out the LBaaS v2 service_plugin and service_provider lines.   Both lines must be
+          commented out in order to avoid deployment failures.</li>
         <li>Uncomment the LBaaS v1 lines.</li>
         <li>Save the file.</li>
         <li>Follow the steps in <xref href="../installation/using_git.dita#using_git">HPE Helion OpenStack® 2.0: Using Git for Configuration Management</xref> to commit and apply the changes.</li>
