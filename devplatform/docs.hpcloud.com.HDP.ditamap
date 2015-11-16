@@ -319,6 +319,7 @@
         navtitle="Using the Database Service"/>
       <topicref href="2.0/database/devplatform.database-releasenotes.dita"/>
       <topicref href="2.0/database/devplatform.database-architecture.dita"/>
+      <topicref href="2.0/database/devplatform.database-hotpools.dita"/>
       <topicref href="2.0/database/devplatform.database-create-horizon.dita"
         navtitle="Creating a database from Horizon"/>
       <topicref href="2.0/database/devplatform.database-create-cli.dita"
