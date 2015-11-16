@@ -95,6 +95,8 @@
       <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
         format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
     </topichead>
+    <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
+      format="ditamap"/>
     <topichead navtitle="Administration" locktitle="yes">
       <topichead navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes">
         <topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap" format="ditamap"/>
