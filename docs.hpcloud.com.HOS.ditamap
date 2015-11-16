@@ -56,6 +56,8 @@
       <topicref href="helion/installation/install_entryscale_dcn.dita"
         navtitle="Installation for Helion Entry-scale DCN Cloud" locktitle="yes" toc="no"/>
       <topicref href="helion/gui_installer.dita" navtitle="Installing via the GUI" locktitle="yes"/>
+      <mapref href="http://docs.hpcloud.com/#devplatform/2.0/installation/install_dnsaas.html"
+        navtitle="Installing the DNS Service" locktitle="yes" format="html" scope="external"/>
       <topicref href="helion/installation/installation_verification.dita"
         navtitle="Verifying Your Installation" locktitle="yes"/>
       <topicref href="helion/installation/installation_troubleshooting.dita"
