@@ -138,7 +138,7 @@
   <topicref href="codar-landing-page.dita" navtitle="HPE Codar"/>
   <topicref href="helion.rack.solution.dita" navtitle="HPE Helion Cloud Solutions" locktitle="yes"/>
   <topichead navtitle="Previous Versions">
-    <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"
+    <mapref href="devplatform/docs.hpcloud.com.HDP13.ditamap" format="ditamap"
       navtitle="HPE Helion Development Platform 1.3" locktitle="yes"/>
     <topicref href="devplatform/1.2/1.2devplatform.index.dita"
       navtitle="HPE Helion Development Platform 1.2" locktitle="yes">
