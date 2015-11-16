@@ -19,6 +19,8 @@
   <!--permalink: /-->
   <topicref href="home.dita"/>
   <mapref href="docs.hpcloud.com.HOS.ditamap" />
+  <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"
+    navtitle="HPE Development Platform 2.0" locktitle="yes"/>
 
   <!-- Community -->
 
