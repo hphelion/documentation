@@ -17,6 +17,7 @@
 <body>
 <p>This Servlet-based Java web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
+<p>If you are missing any of these items, you must <xref href="../../installation/devplatform_commercial_install.dita" >install them</xref>.</p>
 <ul>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>

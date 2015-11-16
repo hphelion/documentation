@@ -18,9 +18,7 @@
 <p>This very simple PHPE web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.</p>
 <section id="prereq"> <title>Prerequisites</title>
 <ul>
-<li>An installation of the<xref
-              href="../../installation/devplatform_install_platform.dita">HPE Helion Development
-              Platform</xref>.</li>
+<li>An installation of the <xref href="../../installation/devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>.</li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/cluster_index.dita" >Cluster</xref>
 </li>
 <li>Access to the <xref href="../../helion/CLI/ALS_Client_Downloads.dita" >Helion command-line client (CLI)</xref>.</li>

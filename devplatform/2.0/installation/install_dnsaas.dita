@@ -90,8 +90,8 @@ EOF</codeblock>
         <p>You must publish the DNSaaS Cloud Image to the target project/tenant before proceeding to
           the next step. </p><ol>
           <li>Update your environment. <codeblock>$ source dnsaas.osrc</codeblock></li>
-          <li>Create image. Make a note of the value of the <codeph>owner</codeph> parameter and the
-              <codeph>DNS Cloud Image ID</codeph>
+          <li>Create an image. Make a note of the value of the <codeph>owner</codeph> parameter and
+            the <codeph>DNS Cloud Image ID</codeph>
             value.<codeblock>$ glance image-create --name "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z" \
 --file "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2" \
 --is-public False \
@@ -165,9 +165,7 @@ Enter same passphrase again:
 # Do not continue with the installation steps that appear here
 # Ignore this next line.
 To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/definition      </codeblock></li>
-        </ol>
-      </sectiondiv>
-    </section>
+        </ol></sectiondiv></section>
 
     <section id="PrepareDeployment">
       <title>Prepare the Deployment</title><sectiondiv>
@@ -180,8 +178,7 @@ To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/
 $ cp -r examples/powerdns/* my_cloud/definition/
 $ git add -A
 $ git commit -a -m "Add DNSaaS Example Model" </codeblock>
-      </sectiondiv>
-      <sectiondiv>
+      </sectiondiv><sectiondiv>
         <b>Customize the Example Deployment Model</b>
         <ol>
           <li>You will need to change directories to the my_cloud/definition directory and run nano
@@ -210,17 +207,15 @@ $ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>
           </li>
         </ol>
       </sectiondiv>
-      
       <sectiondiv>
         <p><b>Create SSL Certificates</b></p>
         <p>If you want to install a self-signed certificate that meets the needs of HPE Helion
           OpenStack and HPE Helion Development Platform, follow the steps outlined in the FQDN-based
           Certificate section. If you want to create an IP-address Certificate follow the steps in
           the IP-Address Certificate section.</p>
-        
         <p>FQDN-based Certificate</p>
-        <p>You will need a real or fictional domain name e.g. "your.domain.com" and it must
-              match across the next 3 steps. </p>
+        <p>You will need a real or fictional domain name e.g. "your.domain.com" and it must match
+          across the next 3 steps. </p>
         <ol>
           <li>Create a Certificate Signing Request (CSR) with a defined subject.
             <codeblock>cd ~
@@ -236,22 +231,23 @@ openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my
 subjectAltName=DNS:your.domain.com
 EOF
             </codeblock></li>
-            <li>Self-sign your certificate.
-              <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text</codeblock></li>
-            <li>Installing the Certificate. 
-              <note>If you are using a FQDN - Create or obtain a
-                  certificate to match the domain name you are going to use.</note>
-              <ul>
-               <li>Join the private and public keys into "my-cert-file" at the required location.
+          <li>Self-sign your certificate.
+            <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text</codeblock></li>
+          <li>Installing the Certificate. <note>If you are using a FQDN - Create or obtain a
+              certificate to match the domain name you are going to use.</note>
+            <ul>
+              <li>Join the private and public keys into "my-cert-file" at the required location.
                 <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
-               </li>
-               <li>Edit network_groups.yml, locate a line containing <codeph>name: extlb</codeph>.  
-                  Add the following lines at the same indentation level as <codeph>name: extlb</codeph>
-                  <codeblock>external-name: your.domain.name
+              </li>
+              <li>Edit network_groups.yml, locate a line containing <codeph>name: extlb</codeph>.
+                Add the following lines at the same indentation level as <codeph>name:
+                  extlb</codeph>
+                <codeblock>external-name: your.domain.name
         cert-file: my-public-cert</codeblock></li>
-               <li>Rename the "components" section of the extlb for a "tls-components" section, activating TLS on all external components.
-                  <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
-               <li>Add changes to git.
+              <li>Rename the "components" section of the extlb for a "tls-components" section,
+                activating TLS on all external components.
+                <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
+              <li>Add changes to git.
                 <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
 $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
 # --- Output example ---
@@ -272,13 +268,12 @@ $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
 $ git commit -m "Configure SSL certificate"
                   </codeblock>
               </li>
-                <li>Commit changes to git.
+              <li>Commit changes to git.
                 <codeblock>$ git commit -m "Configure SSL certificate"</codeblock>
               </li>
-              </ul>
-            </li>
-          </ol>
-        
+            </ul>
+          </li>
+        </ol>
         <p>IP-Address Certificate</p>
         <ol>
           <li>Identify the external IP Address.
@@ -289,9 +284,10 @@ $ git commit -m "Configure SSL certificate"
 stack@dnsaas-deployer:~$ openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
   -subj '/C=US/O=Helion Test Certificate/CN=&lt;EXTERNAL_IP_ADDRESS&gt;/emailAddress=test@example.org/'</codeblock>
           </li>
-          <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entr above and provide your IP address.
-            <note>The IP address must be the same in DNS: and IP:
-              The IP address is what is used by HPE Helion Development Platform and the DNS is used by HPE Helion OpenStack.</note>
+          <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entr
+            above and provide your IP address. <note>The IP address must be the same in DNS: and IP:
+              The IP address is what is used by HPE Helion Development Platform and the DNS is used
+              by HPE Helion OpenStack.</note>
             <codeblock>stack@dnsaas-deployer:~$ cat &gt; v3_ext.cnf &lt;&lt; EOF
 [ v3_req ]
 subjectAltName=DNS:&lt;EXTERNAL_IP_ADDRESS&gt;, IP:&lt;EXTERNAL_IP_ADDRESS&gt;
@@ -304,16 +300,17 @@ EOF</codeblock>
             <codeblock>$ openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -out my-public-cert.crt -text
             </codeblock>
           </li>
-          <li>Installing the Certificate.
-            <ul>
+          <li>Installing the Certificate. <ul>
               <li>Join the private and public keys into "my-cert-file" at the required location.
                 <codeblock>$ cat my-public-cert.key my-public-cert.crt > ~/helion/my_cloud/config/tls/certs/my-public-cert</codeblock>
               </li>
-              <li>Edit network_groups.yml, locate a line containing <codeph>name: extlb</codeph>.  
-                  Add the following lines at the same indentation level as <codeph>name: extlb</codeph>
-                  <codeblock>cert-file: my-public-cert</codeblock>
+              <li>Edit network_groups.yml, locate a line containing <codeph>name: extlb</codeph>.
+                Add the following lines at the same indentation level as <codeph>name:
+                  extlb</codeph>
+                <codeblock>cert-file: my-public-cert</codeblock>
               </li>
-              <li>Rename the "components" section of the extlb for a "tls-components" section, activating TLS on all external components.
+              <li>Rename the "components" section of the extlb for a "tls-components" section,
+                activating TLS on all external components.
                 <codeblock>$ nano ~/helion/my_cloud/definition/data/network_groups.yml</codeblock>
               </li>
               <li>Add changes to git.
@@ -340,7 +337,6 @@ $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
           </li>
         </ol>
       </sectiondiv>
-      
       <sectiondiv>
         <p><b>Save Configured Deployment Model</b></p>
         <ol>

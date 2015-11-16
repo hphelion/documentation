@@ -24,18 +24,22 @@
         <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
           been installed.)</li>
         <li>Source the Virtual
-          Environment.<codeblock>stack@hlm:~$ source /opt/stack/venv/dev_platform_installer-devplat_installer-1.0.0/bin/activate </codeblock></li>
+          Environment.<codeblock>source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
         <li>Install the database service.
        <ol> <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation
-                files:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
+                files:
+         <codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
 openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblock><note>Make
                 sure you run the installer from the <b>same</b> directory where the installation
                 files are saved. If the installer cannot find a file with the name you provided in
                 the local directory, it will attempt to download the files again. </note></li>
-        <li>If you did not pre-download the file: <ol>
-                <li>Find the most recent version of the
-                  file.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
+        <li>If you did not pre-download the file: <ol id="ol_fcs_t5r_yt">
+                <li>Find the most recent version of the file. Note that this command provides only a
+                  quick list of recent files; there are <xref
+                    href="install_listOptions.dita#listContent">more complete listing options</xref>
+                  available that include installation
+                  status.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
                   similar
                   to:<pre>+----------------------------+----------------+-----------+------------+
 | service                    | id             | version   | state      |
@@ -55,8 +59,8 @@ openstack --os-cloud mycloud hdpi database install <i>&lt;filename></i></codeblo
                 <li>Begin the download and
                   installation:<codeblock>openstack --os-cloud mycloud hdpi database install wscatalog.####</codeblock></li>
               </ol><note> Downloading may take a significant amount of time; depending on network
-                traffic, it could take 20-90 minutes.</note>During installation, this command will
-              generate output similar to the following:
+                traffic, it could take 20-90 minutes.</note></li>
+            <li>During installation, this command will generate output similar to the following:
               <codeblock>Database is (downloaded)
 Database is already (available)
 Database is already configured
@@ -71,7 +75,7 @@ $</codeblock></li></ol></li></ol></section>
               <codeblock>openstack server list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($8,5) }'</codeblock>
             </p></li>
           <li> Identify the Virtual IP used to load balance the HPE Helion OpenStack
-            services.<codeblock>openstack endpoint show database -c publicurl --format value</codeblock></li>
+            services.<codeblock>openstack endpoint list | grep database | grep public | awk '{ print $14 }' | awk -F':' '{ print $2 }' | awk -F'/' '{ print $3 }'</codeblock></li>
           <li> Update configuration of the HPE Helion OpenStack controller nodes. The following
             commands are run from the HLM deployer node.<ol>
               <li>Navigate to the following directory.
@@ -79,11 +83,10 @@ $</codeblock></li></ol></li></ol></section>
               <li>Open the <codeph>haproxy.cfg.j2</codeph> file for editing. Add the following lines
                 to the Custom Configuration section at the bottom of the
                   file.<codeblock>listen trove_api
-bind &lt;<i>virtual IP from step 2</i>&gt;:8779
-ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
+bind &lt;<i>virtual IP from step 2</i>&gt;:8779 ssl crt <i>&lt;path to certificate file/certFileName&gt; </i>
 option httpchk GET /
-server trove-trove&lt;<i>n</i>&gt;_api-&lt;<i>uniqueid</i>&gt; &lt;<i>API server n's IP Address</i>&gt; check inter 2000 rise 2 fall 5
-server trove-trove&lt;<i>n+1</i>&gt;_api-&lt;<i>uniqueid</i>&gt; &lt;<i>API server n+1's IP Address</i>&gt; check inter 2000 rise 2 fall 5</codeblock><note>The
+server trove-trove&lt;<i>n</i>>_api-&lt;<i>uniqueid</i>> &lt;<i>API server n's IP Address</i>> check inter 2000 rise 2 fall 5
+server trove-trove&lt;<i>n+1</i>>_api-&lt;<i>uniqueid</i>> &lt;<i>API server n+1's IP Address</i>> check inter 2000 rise 2 fall 5</codeblock><note>The
                   last line in the codeblock should be repeated once for <b>each</b> API server
                   identified in step 1. </note><note>The <codeph>ssl cert</codeph> information in
                   the <b>bind</b> statement only applies if SSL has been enabled for public
@@ -103,8 +106,9 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
                 configuration.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts FND-CLU-reconfigure.yml</codeblock></li>
             </ol></li>
-          <li>Edit the IP table filtering rules to permit access by the Trove service on port
-            8779.<!-- do we need to reload? Dan or Shayne will get back to us with HLM commands so it's applied properly--><codeblock>sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
+          <li>On each controller node, edit the IP table filtering rules to permit access by the
+            Trove service on port 8779.
+            <codeblock>sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT</codeblock></li>
         </ol></sectiondiv></section>
 
  

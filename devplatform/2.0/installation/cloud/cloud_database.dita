@@ -31,14 +31,17 @@
             implements SSL using HAProxy, so in installations of version 2.0 or later, this value
             must be <b>False</b>. </dd></dlentry>
         <dlentry><dt>ephemeral_ca_cert</dt><dd>If SSL has been enabled on the public endpoints, this value needs to be identical to the
-              <codeph>cacert</codeph> value provided previously. If SSL has not been enabled,
-            provide a non-blank value such as <b>unset</b>.  Do not leave blank.</dd></dlentry>
+                            <codeph>cacert</codeph> value provided previously. </dd>
+                    <dd>If SSL has <b>not</b> been enabled,<xref
+                            href="../install_dbaasNoTLS.dita#topic_gxm_4xw_yt"> follow these
+                            additional instructions</xref> to determine the value that should be
+                        provided here. </dd></dlentry>
         <dlentry><dt>external_network</dt><dd>The ID (GUID) of the external network. In a typical installation, the name of this network is
               <b>ext-net</b>. </dd></dlentry>
         <dlentry><dt>provider_network</dt><dd> The ID (GUID) of the service provider network. In a typical installation, the name of this
             network is <b>svc-net</b>. </dd></dlentry>
-        <dlentry><dt>ntp_server</dt><dd> IP address of NDP server. In typical installations, this is the IP address of the first
-            Management Controller.</dd></dlentry>
+        <dlentry><dt>ntp_server</dt><dd> IP address of NTP server. In typical installations, this is the IP address of the first
+                        Management Controller.</dd></dlentry>
         <dlentry><dt>keypair</dt><dd> Specify the name of a keypair to use when creating the Database Service. This keypair will be
             used for debugging purposes when logging into instances of the Database Service.
               <note>This key must already exist in Nova prior to installation.</note></dd></dlentry>
@@ -56,8 +59,7 @@
             be used to create storage for the Database Service's MySQL database backend.</dd></dlentry>
         <dlentry><dt>logstash_rabbitmq_host</dt><dd> The IP address of the HPE Helion OpenStack logging service. In typical installations, this is
             the IP address of the first Management Controller.</dd></dlentry>
-        <dlentry><dt>logstash_rabbitmq_password</dt><dd> The admin password for the HPE Helion OpenStack logging service.
-            <!--shayne will get back to us with a better explanation of this one and where to find it--></dd></dlentry>
+        <dlentry><dt>logstash_rabbitmq_password</dt><dd> The admin password for the HPE Helion OpenStack logging service. </dd></dlentry>
         <dlentry><dt>hotpools_enabled</dt><dd> Options are True or False. The default value is True. If True, a pool of "hot" databases will
             be pre-provisioned for use when a new instance is requested. This functionalty greatly
             reduces database creation time. If False, remove all other <i>hotpools</i> configuration

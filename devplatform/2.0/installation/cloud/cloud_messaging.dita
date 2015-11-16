@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudMessaging">
-  <title>Messaging Configuration</title>
+  <title>HPE Helion 2.0 Development Platform: Messaging Broker Service Configuration</title>
   <body>
     
     <section>This additional section of the clouds.yaml file is required only if the Messaging
-      Service is installed. <codeblock>clouds:
+      Broker Service is installed.
+      <codeblock>clouds:
   mycloud:
   ... 
     messaging:
@@ -33,7 +34,7 @@
       username: 
       password: 
       project_domain_name: default
-      user_domain_name: default              </codeblock><dl>
+      user_domain_name: default              </codeblock></section><section><title>Service Configuration Parameters for the HDPI Installer</title><dl>
         <dlentry>
           <dt>deployer_cloud</dt>
           <dd>The cloud identified in the clouds.yaml where the deployer will be created. Note that
@@ -58,8 +59,8 @@
         </dlentry>
         <dlentry>
           <dt>deployer_flavor (optional)</dt>
-          <dd>The flavor ID to use for the deployer instance. Default value: 4 (which is
-            Large).  Recommended flavor: 3 (Medium)</dd>
+          <dd>The flavor ID to use for the deployer instance. Default value: 4 (which is Large).
+            Recommended flavor: 3 (Medium)</dd>
         </dlentry>
         <dlentry>
           <dt>deployer_name (optional)</dt>
@@ -76,18 +77,18 @@
               <i>helionci</i> or <i>msgaas</i> and containing the word <i>hlinux</i>.</dd>
         </dlentry>
         <dlentry>
-          <dt>deployer_net_id (optional)</dt>
-          <dd>Network ID for the deployer instance. Default value: The ID of the network named SVC.
-          </dd>
-        </dlentry>
-        <dlentry>
           <dt>deployer_ext_net_id (optional)</dt>
-          <dd>The external network name. Default value: ext-net <note>This must be specified in the configuration file, but the value is not currently read- only the default is used.</note></dd>
+          <dd>The external network name. Default value: ext-net <note>This must be specified in the
+              configuration file, but the value is not currently read- only the default is
+              used.</note></dd>
         </dlentry>
         <dlentry>
           <dt>deployer_cname (optional)</dt>
           <dd>CN name used to generate the certificate file.</dd>
-        </dlentry>
+        </dlentry></dl>
+      </section>
+      <section><title>Cloud Configuration Parameters for the Messaging Installer</title>
+        <dl>
         <dlentry>
           <dt> image_api_version(optional)</dt>
           <dd>The image API version to use. The default value is 1. </dd>
@@ -115,12 +116,12 @@
         <dlentry>
           <dt>project_name</dt>
           <dd>This project will be created by the HDPI service installation process. This project
-            must NOT exist prior to installing the Messaging Service.</dd>
+            must NOT exist prior to installing the Messaging Broker Service.</dd>
         </dlentry>
         <dlentry>
           <dt>username</dt>
           <dd>This user will be created by the HDPI service installation process. This project must
-            NOT exist prior to installing the Messaging Service.</dd>
+            NOT exist prior to installing the Messaging Broker Service.</dd>
         </dlentry>
         <dlentry>
           <dt>password</dt>

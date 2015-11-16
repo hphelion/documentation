@@ -33,9 +33,13 @@ openstack --os-cloud mycloud hdpi als install <i>&lt;filename></i></codeblock><n
                         <li>If you did not pre-download the file: 
                             
                             <ol>
-                                <li>Find the most recent version of the
-                                    file.<pre>openstack --os-cloud mycloud hdpi list</pre>The output
-                                    should look similar
+                                <li>Find the most recent version of the file.  Note that this
+                                    command provides only a quick list of recent files; there are
+                                        <xref href="install_listOptions.dita#listContent">more
+                                        complete listing options</xref> available that include
+                                    installation
+                                    status.<pre>openstack --os-cloud mycloud hdpi list</pre> The
+                                    output should look similar
                                     to:<pre>+----------------------------+----------------+-----------+------------+
 | service                    | id             | version   | state      |
 +----------------------------+----------------+-----------+------------+

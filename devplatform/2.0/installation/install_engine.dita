@@ -36,14 +36,17 @@ nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>E
             <li>If you <xref href="install_offline.dita#topic_w25_hqp_xt">pre-downloaded</xref> the
               installation file, run the following command to install
                 it:<codeblock>cd <i>&lt;directory where the pre-downloaded file is></i>
-openstack --os-cloud hce hdpi helionce install <i>&lt;filename></i></codeblock><note>When
+openstack --os-cloud mycloud hdpi helionce install <i>&lt;filename></i></codeblock><note>When
                 installing pre-downloaded files, make sure you run the installer from the same
                 directory where the installation files are saved. If the installer cannot find a
                 file with the name you provided in the local directory, it will attempt to download
                 the files again. </note></li>
           <li>If you did not pre-download the file: <ol>
-                <li>Find the most recent version of the
-                  file.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
+                <li>Find the most recent version of the file. Note that this command provides only a
+                  quick list of recent files; there are <xref
+                    href="install_listOptions.dita#listContent">more complete listing options</xref>
+                  available that include installation
+                  status.<pre>openstack --os-cloud mycloud hdpi list</pre>The output should look
                   similar
                   to:<pre>+----------------------------+----------------+-----------+------------+
 | service                    | id             | version   | state      |
@@ -62,45 +65,50 @@ openstack --os-cloud hce hdpi helionce install <i>&lt;filename></i></codeblock><
                 <li>If desired, inspect the installation files for size, version, and other detailed
                   information.<codeblock>openstack hdpi show wscatalog.#### --os-cloud mycloud</codeblock></li>
                 <li>Begin the download and
-                  installation:<codeblock>openstack --os-cloud hce hdpi helionce install wscatalog.####</codeblock></li>
+                  installation:<codeblock>openstack --os-cloud mycloud hdpi helionce install wscatalog.####</codeblock></li>
               </ol><note>If troubleshooting installation, turn on the debug option and run the
                 command again:
-              </note><codeblock>openstack --debug --os-cloud hce hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></li></ol></li>
+              </note><codeblock>openstack --debug --os-cloud mycloud hdpi helionce install <i>&lt;filename or catalog number></i></codeblock></li></ol></li>
           
             <li>Launch the
-              instance.<codeblock>openstack hdpi helionce launch --os-cloud hce
+          instance.<codeblock>openstack hdpi helionce launch --os-cloud mycloud
 deactivate</codeblock></li>
         <li>List all available machines. You should see an instance named
-            <codeph>helionce_deployer</codeph>. Make a note of its IP address. This is also a quick
-          test to verify that the HPE Helion Code Engine VM is
-          running.<codeblock>openstack --os-cloud hce server list</codeblock></li>
+            <codeph>helionce_deployer</codeph>. Make a note of its IP address.
+          <codeblock>source helionce.osrc
+openstack server list</codeblock></li>
         <li>Log in to and initialize the VM. <note>Ignore the TASK/msg message that appears in the
             output. Do not run the playbook at this time; that playbook must be run later in the
             installation
-            process.</note><codeblock>ssh -i ~/.ssh/id_rsa.pub stack@&lt;IP address> 
+            process.</note><pre>ssh -i helionce-shared stack@&lt;IP address&gt;
 ...
 stack@helionce-deployer:~$ ls
 helionce-1.0.0
 ...
 stack@helionce-deployer:~$ cd helionce-1.0.0/
 stack@helionce-deployer:~/helionce-1.0.0$ ./helionce-init.bash
-...</codeblock><note>This
+...</pre><note>This
             process can take a few minutes. When the initialization has completed, ensure both
               <codeph>unreachable</codeph> and <codeph>failed</codeph> are zero (0). This indicates
             success. If not, check the output for error messages, address the errors, and try
             running the command again.</note></li>
         <li>Copy the helionce deployment model.
           <codeblock>stack@helionce-deployer:~/helionce-1.0.0$ cd ~/helion/
-stack@helionce-deployer:~/helion$ cp -r examples/helionce/* my_cloud/definition/
+stack@helionce-deployer:~/helion$ cp -R /home/stack/helion/examples/helionce/* /home/stack/helion/my_cloud/definition
 stack@helionce-deployer:~/helion$ cp ~/platform-pass-through.yml my_cloud/definition/data/pass-through/platform-pass-through.yml</codeblock></li>
         <li>Using Git, persist these changes. This information is required for playbooks executed
           later in this installation
           process.<codeblock>stack@helionce-deployer:~/helion$ git add -A
 stack@helionce-deployer:~/helion$ git commit -a -m "Add HelionCE default model"</codeblock></li>
         <li>Create a Github OAuth Application. <ol>
-            <li>Create a new application at <xref
-                href="https://github.com/settings/applications/new" format="html" scope="external"
-                >https://github.com/settings/applications/new</xref></li>
+            <li>Create a new application.
+            <ol><li>If you are using the public GitHub.com, create the new application at <xref
+                    href="https://github.com/settings/applications/new" format="html"
+                    scope="external">https://github.com/settings/applications/new</xref></li>
+            <li>If you are using a custom, hosted GitHub Enterprise, create the new application at
+                    <codeph>https://&lt;hostname&gt;/settings/applications/new</codeph>. You may
+                  need to contact your System Administrator to get the <codeph>hostname</codeph> for
+                  your GitHub instance.</li></ol></li>
             <li>Include the following values: <table frame="all" rowsep="1" colsep="1">
                 <tgroup cols="2">
                   <colspec colname="c1" colnum="1" colwidth="1*"/>
@@ -172,7 +180,7 @@ http_proxy: "http://&lt;https proxy hostname>:&lt;https proxy port>/"</codeblock
             success. If not, check the output for error messages, address the errors, add the Debug
             option (-vvv) to the command line, and run the playbook again.</note><ol>
             <li> Run the Pre-Installation Playbook
-              <codeblock>stack@helionce-deployer:~/helion$ source ~/user.osrc
+              <codeblock>stack@helionce-deployer:~/helion$ source ~/service.osrc
 stack@helionce-deployer:~/helion$ cd hos/ansible/
 stack@helionce-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>Successful
               output will look similar to the
@@ -268,15 +276,11 @@ ok: [hci-helionci-ccp-c1-m1-mgmt] => {
 ...</codeblock></li>
             <li>Make a note of the IP address and port provided in the final messages from the log.
               This is the web site you will want to access.</li></ol></li>
-            <li>Return to the Github application you created earlier.
-              <ol>
-            <li>Update the values in  the <b>Homepage URL</b> and <b>Authorization Callback URL</b>
-              fields based on the IP Address and Port provided by the Site Playbook. You will be
-              replacing the placeholder string <codeph>myhelionce</codeph>. For example:<image
-                placement="break" href="../../../media/ce_install_config.png" id="image_hzs_pnn_xt"
-              /></li>
-            <li/>
-              </ol></li>
+            <li>Return to the Github application you created earlier and update the values in the
+            <b>Homepage URL</b> and <b>Authorization Callback URL</b> fields based on the IP Address
+          and Port provided by the Site Playbook. You will be replacing the placeholder string
+            <codeph>myhelionce</codeph>. For example:<image placement="break"
+            href="../../../media/ce_install_config.png" id="image_hzs_pnn_xt"/></li>
       </ol></section>
        
   </body>
