@@ -126,6 +126,8 @@
       <topicref href="CarrierGrade/AdminGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
         navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"/>
     </topichead>
+    <topicref href="CarrierGrade/AdminGuideKVM/Test1.ditamap" format="ditamap" navtitle="Test"
+      locktitle="yes"/>
     <topichead navtitle="Operations">
       <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap"
         navtitle="User Guide" locktitle="yes" format="ditamap"/>
