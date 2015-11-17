@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteRule ^permalink/helion-openstack-mpc/most-current/landing_page http://docs.hpcloud.com/#helion/mpc/index_mpc.html  [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack-mpc/most-current/landing_page?$ http://docs.hpcloud.com/#helion/mpc/index_mpc.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/landing-page?$ http://docs.hpcloud.com/#helion/index.html  [NE,R=301,L]
 RewriteRule ^publiccloud/whats_new_with_HP_Cloud_Console/?$	/#publiccloud/hz.whatsnewjan.2014.html [NE,R=301,L]
 RewriteRule ^publiccloud/upload-publish-partner-images135/?$	/#publiccloud/upload-publish-partner-images135.html [NE,R=301,L]
