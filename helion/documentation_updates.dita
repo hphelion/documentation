@@ -27,6 +27,12 @@
             <tbody>
               <row>
                 <entry>11/16/2015</entry>
+                <entry>DNSaaS</entry>
+                <entry>Added DNSaaS Installation and Configuration documentation. (<xref
+                    href="networking/dnsaas.dita#HP2.0DNSaaS">Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>11/16/2015</entry>
                 <entry>Logging</entry>
                 <entry>Updated several of the service-specific logging level change instructions.
                     (<xref
