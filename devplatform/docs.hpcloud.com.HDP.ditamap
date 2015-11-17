@@ -373,14 +373,12 @@
         </topicref>
       </topicref>
       <topicref href="2.0/cluster_creation.dita">
-        <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
-          navtitle="Creating a database cluster from Horizon"/>
-        <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
-          navtitle="Creating a database cluster from the command line"/>
         <topicref href="2.0/devplatform.deploy-ALS.dita" locktitle="yes"
           navtitle="Create an ALS Cluster Using Horizon"/>
         <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
           navtitle="Create a Database Cluster Using Horizon" locktitle="yes"/>
+        <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
+          navtitle="Creating a database cluster from the command line"/>
         <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
           navtitle="Create Clusters and Add Services from the Command Line" locktitle="yes"
           otherprops="add-service">

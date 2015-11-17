@@ -4,7 +4,8 @@
   <topic id="topic_zqs_lgq_15">
     <title>Cluster Management Tool</title>
     <body>
-      <p/>
+      <p>In this section you will learn about installing and using the Cluster Management Tool. You
+        will also lean about configuring <filepath>cf-mgmt</filepath> to work with Keystone v3.</p>
     </body>
   </topic>
 </dita>

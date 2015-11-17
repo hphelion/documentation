@@ -4,7 +4,8 @@
   <topic id="topic_gdx_nkq_15">
     <title>Docker</title>
     <body>
-      <p/>
+      <p>In this section you will learn how to deploy Docker apps, enable container deployment, and
+        create and deploy your first Docker app.</p>
     </body>
   </topic>
 </dita>
