@@ -72,6 +72,50 @@
       <p>You can now choose between Ceph, VSA, and 3PAR for Block Storage backends.</p>
       <p>See: <xref href="blockstorage/blockstorage_overview.dita">Block Storage Overview</xref> for
         more details</p>
+      
+      <dl><dlentry>
+        <dt>DNSaaS 2.0</dt>
+        <dd>
+          <b>New Features</b>
+          <ul>
+            <li>New API V2 <ul>
+              <li>Adds Zones that replaces Domains from V1.</li>
+              <li>Adds RecordSets that replaces Records from V1. </li>
+            </ul></li>
+            <li>Scalability and Resilience improvements <ul>
+              <li>New service PoolManager that handles coordination / resiliency.</li>
+              <li>New service MiniDNS.</li>
+            </ul></li>
+            <li>Support for wildcard records.</li>
+            <li>Support for Secondary Zones.</li>
+          </ul>
+          <b>Known Issues</b>
+          <ul>
+            <li>Selecting a flavor larger than m1.medium for the Deployer or Control Plane nodes
+              fails due to a failure to re-size LVM. The recommended flavors for the Deployer and
+              Control Plane nodes are m1.small or m1.medium.</li>
+          </ul>
+          <b>Not included in the release</b>
+          <ul>
+            <li>Backend support for BIND9 / DynECT / Akamai is not included in this release.</li>
+            <li>Support for Ceilometer is not included in this release.</li>
+            <li>There is currently no backup and restore functionality.</li>
+          </ul>
+          <b>Bugfixes</b>
+          <ul>
+            <li>API TTL input validation.</li>
+            <li>Improve error message on API actions.</li>
+            <li>Launchpad 1471161 <ul>
+              <li>CVE-2015-5695 Quotas were being bypassed.</li>
+              <li>CVE-2015-5694 does not enforce the DNS protocol limit concerning record set
+                sizes.</li>
+            </ul></li>
+            <li>Launchpad 1471158: Incorrect regular expressions used for schema validation.</li>
+            <li>Launchpad 1497031: Authenticated Denial of Service in Blacklists.</li>
+          </ul></dd>
+      </dlentry></dl>     
+      
+      
       <p><b>Neutron FWaaS, LBaaS and VPNaaS Extensions</b></p>
       <p>We have implemented networking extensions firewall, load balancing, and virtual private
         networks. Here is a description of each of these: <ul>
