@@ -92,7 +92,7 @@
           navtitle="Node MySQL Database Sample"/>
         <!--<topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes" navtitle="Node RabbitMQ Messaging Sample"/>-->
       </topichead>
-      <topichead navtitle="PHPE Code Samples">
+      <topichead navtitle="PHP Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.php.dita" locktitle="yes"
           navtitle="PHPE Hello World Sample "/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
