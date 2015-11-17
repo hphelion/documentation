@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ud1_tqx_wt">
-  <title>placeholder</title>
+  <title>Administrator Reference</title>
   <body>
-    <p>used to fill  blank toc object.  Authors may no longer have empty toc objects</p>
+    <p>This section contains reference for Administrators working with Windows instances and .NET
+      applications. This section also contains instructions on retrieving the administrator
+      password, using remote desktop access, and a Glazier reference guide.</p>
   </body>
 </topic>
