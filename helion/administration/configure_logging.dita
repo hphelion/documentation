@@ -600,10 +600,16 @@ ansible-playbook -i hosts/verb_hosts site.yml -e "ops_console_loglevel=DEBUG"</c
                 <entry><p>INFO</p></entry>
                 <entry><p>The Swift service log levels are configurable in the file below:</p>
                   <codeblock>~/helion/my_cloud/config/swift/account-server.conf.j2</codeblock>
-                  <p>If you make edits to this file, then run the
-                      <codeph>swift-reconfigure.yml</codeph> playbook to commit them to the
+                  <p>Add the following line to the <codeph>[DEFAULT]</codeph> section:</p>
+                  <codeblock>log_level = DEBUG</codeblock>
+                  <p>If you make edits to this file, then run the following commands to commit them to the
                     environment:</p>
-                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
+                  <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "change Swift log level"
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock>
                 </entry>
               </row>
