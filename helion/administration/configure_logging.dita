@@ -5,6 +5,10 @@
     Service</title>
   <body>
     <!--Needs Work; do all the file names, variables, parameters, etc. need to be surrounded by codeph tags?-->
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/administration/configure_logging.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
     <section id="config">
       <p>In HPE Helion OpenStack 2.0, you have the option to configure the Centralized Logging
         service for your specific needs. This topic covers the following:</p>
