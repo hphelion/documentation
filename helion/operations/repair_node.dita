@@ -43,7 +43,7 @@
           deleting the instances will be necessary. It may be possible to migrate instances to a
           different compute node. </li>
         <li>Migrate the
-          node:<codeblock>nova live-migration --block-migrate [&lt;target compute host>]</codeblock><!--See
+          node:<codeblock>nova live-migration --block-migrate &lt;instance uuid> [&lt;target compute host>]</codeblock><!--See
       HNOV-240 for details of alternative instance backup mechanism.--></li>
         <li>When the node is ready to be restored, the process for re-introducing it will depend on
           the actions performed to repair it. If it was simply rebooted to introduce new software,

@@ -12,7 +12,7 @@
         <li>Get the <b>servers.yml</b> file stored in
           git:<codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock> Add
-          details of new node(s) to <b>severs.yml</b>. For example, if adding new server
+          details of new node(s) to <b>servers.yml</b>. For example, if adding new server
             <codeph>compute7</codeph> in <b>servers.yml
           </b><codeblock>---
   product:

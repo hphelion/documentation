@@ -7,23 +7,31 @@
       <p>For HPE Helion OpenStack 2.0 versions, you must have three controller nodes. Therefore,
         adding or removing nodes is not an option. However, if you need to repair or replace a
         controller node, you may do so by following the steps outlined here. Note that to run any
-        playbooks whatsoever for cloud maintenance, you will always run from the
-        lifecycle manager.</p>
-      <note>Do not add entries for a new server; instead, just update the entries for the broken
-        one. Also note that if you are replacing a control plane node that also happens to be
-        running the lifecycle manager, that process is different. You’ll need to restore you lifecycle manager data
-        first. </note><note>Be aware that all management commands are run on the node where the
-        lifecycle manager is running. </note>
-      <b>Update your model with replacement server information</b>
+        playbooks whatsoever for cloud maintenance, you will always run from the lifecycle
+        manager.</p>
+    </section>
+    <section id="notes"><title>Notes</title>
+      <p>Do not add entries for a new server; instead, just update the entries for the broken one.
+        Also note that if you are replacing a control plane node that also happens to be running the
+        lifecycle manager, that process is different. You’ll need to restore your lifecycle manager
+        data first.</p>
+      <p>Be aware that all management commands are run on the node where the lifecycle manager is
+        running.</p>
+    </section>
+    <section id="steps"><title>Procedure for Replacing a Controller Node</title>
+      <p><b>Update your model with replacement server information</b></p>
       <ol>
-        <li> Update your cloud model (<b>servers.yml </b>) Update your cloud model (servers.yml )
-          with new mac-addr, ilo-ip, ilo-password, ilo-user fields where these have changed. Do not
-          change the id, ip-addr, role, server-group settings. (Please follow the procedure for
-          updating your cloud model/ git repo)</li>
+        <li> Update your cloud model (<codeph>servers.yml</codeph>) with the new
+            <codeph>mac-addr</codeph>, <codeph>ilo-ip</codeph>, <codeph>ilo-password</codeph>, or
+            <codeph>ilo-user</codeph> fields where these have changed. Do not change the
+            <codeph>id</codeph>, <codeph>ip-addr</codeph>, <codeph>role</codeph>, or
+            <codeph>server-group</codeph> settings. (Please follow the procedure for updating your
+          cloud model in the git repo)</li>
         <li> Get the <b>servers.yml</b> file stored in git:
           <codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock> then change,
-          as necessary, the mac-addr, ilo-ip, ilo-password, and ilo-user fields of this existing
+          as necessary, the <codeph>mac-addr</codeph>, <codeph>ilo-ip</codeph>,
+            <codeph>ilo-password</codeph>, and <codeph>ilo-user</codeph> fields of this existing
           controller node. Save and commit the change
           <codeblock>git commit -a -m "repaired node X"</codeblock></li>
         <li>Run the configuration processor as follows:
@@ -35,8 +43,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
       </ol>
       <b>Image the new node</b>
       <ol>
-        <li>Log onto the node that is running the lifecycle manager. Remove the broken control plane node
-          from cobbler by running sudo cobbler system remove --name &lt;server-id>. Here's an
+        <li>Log onto the node that is running the lifecycle manager. Remove the broken control plane
+          node from cobbler by running sudo cobbler system remove --name &lt;server-id>. Here's an
           example:<codeblock> sudo cobbler system remove --name controller2</codeblock>
         </li>
         <li>Remove the ssh key of the old controller node from the known hosts file. Here's an
