@@ -182,7 +182,7 @@
           navtitle="Organizations and Spaces"/>
       </topicref>
       <topicref href="2.0/language_specific.dita" otherprops="lang-deploy">
-        <topicref href="2.0/docker.dita">
+        <topicref href="2.0/docker.dita" otherprops="docker">
           <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
             navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
           <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita" navtitle="Docker Apps"
