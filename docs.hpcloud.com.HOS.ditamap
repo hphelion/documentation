@@ -177,8 +177,8 @@
       <!-- BEGIN - Administration/Networking -->
       <topicref href="helion/networking/networking_overview.dita" navtitle="Networking Service"
         locktitle="yes">
-        <topicref href="http://docs.hpcloud.com/devplatform/2.0/installation/install_dnsaas.html"
-          locktitle="yes" navtitle="Installation and Configuration of DNS as a Service (DNSaaS)" format="html" scope="external"/>
+        <topicref href="helion/networking/install_dnsaas.dita"
+          navtitle="Installation and Configuration of DNS as a Service (DNSaaS)" locktitle="yes"/>
         <topicref href="helion/networking/lbaas_admin.dita"
           navtitle="Configuring Load Balancing as a Service (LBaaS)" locktitle="yes"/>
         <topicref href="helion/networking/multinetwork.dita"
