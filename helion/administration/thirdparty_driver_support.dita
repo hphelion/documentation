@@ -1,43 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_vd2_vth_xt">
+<topic id="thirdpartydriver">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Third-party Driver Support</title>
   <body>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+      href="http://docs.hpcloud.com/helion/administration/thirdparty_driver_support.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">
       <p>HPE Helion OpenStack 2.0 comes with a selection of built-in plugins and drivers that
         services use. Depending on your environment you may have a need to add additional
         third-party plugins or drivers. This document provides an overview of deployer-side
         additions to a HPE Helion OpenStack deployment.</p>
+      <p>We will describe the third-party plugin process from two perspectives. The first will be
+        from the perspective of an administrator who wants to add a third-party plugin to their HPE
+        Helion OpenStack environment. The second will be from the perspective of a developer who
+        wants to package their driver for use on HPE Helion OpenStack.</p>
+      <ul>
+        <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/overview">Third-party Plugin
+            Overview</xref>
+          <ul>
+            <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/venv_editing">Note about
+                deployer-side Virtual Environment Editing</xref></li>
+            <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/admin">Third-party
+                Plugin as an Administrator</xref>
+              <ul>
+                <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/patching_venv"
+                    >Patching a venv after a deploy has already occurred</xref></li>
+                <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/multiple_drivers"
+                    >Handling multiple drivers</xref></li>
+                <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/upgrade">Rolling
+                    third-party drivers forward with new HPE Helion OpenStack versions</xref></li>
+              </ul></li>
+            <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/driver_packager"
+                >Third-party Plugin Support as a Driver Packager</xref>
+              <ul>
+                <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/binary1">Binary
+                    dependencies: in-venv</xref></li>
+                <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/binary2">Binary
+                    dependencies: at the OS layer</xref></li>
+                <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/packaging">Packaging
+                    non-pypi-based Python</xref></li>
+              </ul></li>
+          </ul></li>
+        <li><xref href="thirdparty_driver_support.dita#thirdpartydriver/example">Example: Adding a
+            3rd Party Neutron Plugin</xref></li>
+      </ul>
     </section>
-    <section id="venv_editing"><title>Deployer-side venv editing</title>
-      <p>Additional driver code may be required in a venv: this Python driver code can be injected
+    <section id="overview"> </section>
+    <section id="venv_editing"><title>Note about deployer-side Virtual Environment Editing</title>
+      <p>Additional driver code may be required in a venv; this Python driver code can be injected
         into a venv using the venv-edit.yml playbook.</p>
     </section>
-    <section id="customer"><title>As a customer</title>
+    <section id="admin"><title>Third-party Plugin as an Administrator</title>
       <p>The third-party driver contains a directory of packaged Python content (wheels). This can
         be injected into a venv as follows. Assume that the wheelhouse is unpacked in
-        `/home/hlmuser/third-party-wheelhouse` and it's to be applied to the nova venv.</p>
+          <codeph>/home/hlmuser/third-party-wheelhouse</codeph> and it's to be applied to the nova
+        venv.</p>
       <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost venv-edit.yml \
--e source=/opt/hlm_packager/nova-20150101T120000Z.tgz \
--e suffix=001 \
--e wheelhouse=/home/hlmuser/third-party-wheelhouse \
--e wheel='foo-driver'</codeblock>
-      <p>The result of this will be to create a second venv, 'nova-20150101T120000Z001.tgz' in the
-        '/opt/hlm_packager' directory, and update the 'packages' manifest in that directory to
-        record it.</p>
-      <p>At this point a deployment (or an upgrade) can take place as normal. Because the deployer
-        considers the new version number (`20150101T120000Z001`) to be in advance, that venv package
-        will be selected. For the case of an upgrade, service restarts will be performed as
-        necessary.</p>
+     -e source=/opt/hlm_packager/nova-20150101T120000Z.tgz \
+     -e suffix=001 \
+     -e wheelhouse=/home/hlmuser/third-party-wheelhouse \
+     -e wheel='foo-driver'</codeblock>
+      <p>The result of this will be to create a second venv,
+          <codeph>nova-20150101T120000Z001.tgz</codeph> in the <codeph>/opt/hlm_packager</codeph>
+        directory, and update the <codeph>packages</codeph> manifest in that directory to record
+        it.</p>
+      <p>At this point, a deployment (or an upgrade) can take place as normal because the deployer
+        considers the new version number (<codeph>20150101T120000Z001</codeph>) to be in advance,
+        that venv package will be selected. For the case of an upgrade, service restarts will be
+        performed as necessary.</p>
     </section>
 
     <section id="patching_venv"><title>Patching a venv after a deploy has already occurred</title>
-      <p>Typically it would be advisable for a customer to patch their venvs prior to a deploy or
-        upgrade: indeed, one would expect that in most scenarios, the need for a partcular extra
+      <p>Typically it would be advisable for an administrator to patch their venvs prior to a deploy
+        or upgrade: indeed, one would expect that in most scenarios, the need for a particular extra
         driver will be understood in advance.</p>
-      <p>It is not, however, a hard-and-fast requirement to do this. Because the venv-edit process
-        produces a new venv with an updated version number, the driver can be inserted after an
+      <p>It is not, however, a hard-and-fast requirement to do this because the venv-edit process
+        produces a new venv with an updated version number. The driver can be inserted after an
         initial deployment - and the typical upgrade process will replace the running venvs with the
         newer one.</p>
     </section>
@@ -46,30 +86,36 @@ ansible-playbook -i hosts/localhost venv-edit.yml \
       <p>It is possible to apply several third-party patches at once, either one-at-a-time (with
         suffixes 001, 002, etc.) or potentially all-at-once. To do this, the contents of the input
         wheelhouses should be combined, and the target wheel names be given, space-separated, as the
-        `wheel` parameter to 'venv-edit.yml'.</p>
+          <codeph>wheel</codeph> parameter to <codeph>venv-edit.yml</codeph>.</p>
       <codeblock>mkdir ~/third-party-wheelhouse
 cp ~/third-party-wheelhouse-{foo,bar,baz}/* ~/third-party-wheelhouse
 ansible-playbook -i hosts/localhost venv-edit.yml \
--e source=/opt/hlm_packager/nova-20150101T120000Z.tgz \
--e suffix=001 \
--e wheelhouse=/home/hlmuser/third-party-wheelhouse \
--e wheel='foo-driver bar-driver baz-driver'</codeblock>
+     -e source=/opt/hlm_packager/nova-20150101T120000Z.tgz \
+     -e suffix=001 \
+     -e wheelhouse=/home/hlmuser/third-party-wheelhouse \
+     -e wheel='foo-driver bar-driver baz-driver'</codeblock>
       <p>Whether or not this is advisable is a decision that depends upon context: for instance, it
         might be the case that multiple additional drivers can be configured to live side-by-side in
-        the storage case; depending on the invasiveness of the driver, however, it's likely that it
+        the storage case; depending on the invasiveness of the driver. However, it's likely that it
         only makes sense to have one third party driver - eg, for neutron.</p>
     </section>
-    <section id="upgrade"><title>Rolling third-party drivers forward with new HOS versions</title>
+
+    <section id="upgrade"><title>Rolling third-party drivers forward with new HPE Helion OpenStack
+        versions</title>
       <p>There is no automatic support for this; driver patches much be reapplied to their target
         venvs every time a new Helion version is received.</p>
     </section>
 
-    <section id="driver_packager"><title>As a driver packager</title>
-      <p>The requirement for the packager is to construct a 'wheelhouse' directory. Wheels are a
-        standard Python distribution format. They can be constructed using the 'wheel' command.
-        Typically the process might look as follows: it is not necessary that this process be
-        performed on the deployer itself; such packaging could potentially be performed in advance,
-        merely delivering the finished wheelhouse to the customer.</p>
+    <section id="driver_packager"><title>Third-party Plugin Support as a Driver Packager</title>
+      <p>The driver packager needs to have enough knowledge of Python tooling to ensure that the
+        requirements in the following steps are met. This is meant to be used as a guide only and
+        support is limited.</p>
+      <p>The requirement for the packager is to construct a <codeph>wheelhouse</codeph> directory.
+        Wheels are a standard Python distribution format. They can be constructed using the
+          <codeph>wheel</codeph> command. Typically the process might look as follows:</p>
+      <note>It is not necessary that this process be performed on the lifecycle manager itself; such
+        packaging could potentially be performed in advance, merely delivering the finished
+        wheelhouse to the customer.</note>
       <p>Note that binary contents (Python .so files) will need to be compatible with the version of
         Python in the target venv.</p>
       <codeblock># Assumes the source is in ~/scratch/source_dir
@@ -91,8 +137,8 @@ mkdir ~/third-party-wheelhouse
     <section id="binary2"><title>Binary dependencies: at the OS layer</title>
       <p>Some Python drivers utilise third-party binary extensions that are installed into the base
         operating system; Ceph's `rados.py` is an example of this. For those third-party drivers,
-        the install playbook will need to be extended to ensure that the additional third-party
-        libraries are installed on the appropriate target systems.</p>
+        the additional third-party libraries need to be installed on the appropriate target systems
+        manually by the driver installer.</p>
     </section>
 
     <section id="packaging"><title>Packaging non-pypi-based Python</title>
@@ -104,18 +150,54 @@ mkdir ~/third-party-wheelhouse
           0427</xref> for details. A rudimentary - but sufficient - implementation of this can be
         seen in <codeph>/ansible/roles/venv/templates/wheels_parallel.bash.j2</codeph>.</p>
     </section>
-
-    <!-- NOT YET COMPLETE
-    ## Additional third-party deb packages
-    
-    (TODO)
-    
-    ## Additional install/configure/start/stop hooks
-    
-    (TODO)
-    
-    -->
-
+    <section id="example"><title>Example: Adding a 3rd Party Neutron Plugin</title>
+      <p>To show how to add a 3rd party plugin we are going to use <xref
+          href="https://github.com/openstack/networking-l2gw" scope="external" format="html"
+          >'networking-l2gw'</xref> as an example. You can replace the references to the
+        'networking-l2gw' plugin with the plugin or driver of your choice.</p>
+      <ol>
+        <li>On a local Linux workstation with <codeph>python-pip</codeph> installed you will build
+          or obtain a python wheel of the driver or plugin source that you want to add. These steps
+          show how to create the wheel, if you already have the wheel then you can skip to step #2.<ol>
+            <li>In this example, we are going to download the install package for 'networking-l2gw'
+              while skipping the installation:
+              <codeblock>pip install -d ./ networking-l2gw</codeblock></li>
+            <li>In the same directory that the 'networking-l2gw' package is, create a
+                <codeph>requirements.txt</codeph> file with the contents below which you will use as
+              the input for the pip wheel command in a later step.
+              <codeblock>networking-l2gw</codeblock></li>
+            <li>Also in that same directory you need to create an empty directory called
+              'third-party-wheelhouse'.</li>
+            <li>Using <codeph>pip wheel</codeph> you will create a wheel file for the
+              'networking-l2gw' package: <codeblock>pip wheel --no-deps --wheel-dir=third-party-wheelhouse -r ./requirements.txt</codeblock>
+              <p>The result should be a file named
+                  <codeph>networking_l2gw-2015.1.1-py2-none-any.whl</codeph> in your
+                'third-party-wheelhouse' directory.</p></li>
+            <li>On your lifecycle manager, create a new directory named 'wheelhouse':
+              <codeblock>mkdir ~/wheelhouse</codeblock></li>
+            <li>Copy the <codeph>networking_l2gw-2015.1.1-py2-none-any.whl</codeph> file from your
+              local workstation into the <codeph>~/wheelhouse</codeph> directory that you
+              created.</li>
+          </ol></li>
+        <li>On your lifecycle manager, run the <codeph>venv-edit.yml</codeph> playbook to add the
+          driver or plugin package to the desired virtual environment. <ol>
+            <li>Check in your <codeph>/opt/hlm_packager/</codeph> directory for the file name of
+              your <codeph>neutron-*.tgz</codeph> file to use in the command in the next step.</li>
+            <li>For our 'networking-l2gw' example we would use this command using the wheel file we
+              created in the previous step. Replace the source file name with the one relevant to
+              your environment.
+              <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost venv-edit.yml -e source=/opt/hlm_packager/neutron-20151026T074248Z.tgz -e suffix=0001 -e wheelhouse=~/wheelhouse -e wheel='networking_l2gw'</codeblock></li>
+            <li>The result should be a new <codeph>neutron-*.tgz</codeph> package in the
+                <codeph>opt/hlm-packager</codeph> directory.</li>
+          </ol></li>
+        <li>You should now run the <codeph>site.yml</codeph> playbook which should create a Neutron
+          virtual environment in <codeph>/opt/stack/services/neutron</codeph> which included the
+          contents of the 3rd party 'networking-l2gw' package:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
+      </ol>
+    </section>
 
   </body>
 </topic>

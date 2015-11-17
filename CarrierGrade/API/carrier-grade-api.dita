@@ -33,7 +33,7 @@
         href="../Overview/carrier-grade.services-overview.dita#topic4220">Services Overview</xref>.</p> 
       
     <p><b>KVM Region API</b>. For the API refernece for the KVM region, see <xref
-        href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">Hp Helion
+        href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">Hp Helion
         OpenStack Carrier Grade: REST API Guide</xref>. This document contains HPE Helion OpenStack
       Carrier Grade extensions to the OpenStack Compute API for use with the servers in the KVM
       region.</p>

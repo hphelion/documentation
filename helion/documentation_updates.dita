@@ -26,6 +26,27 @@
             </thead>
             <tbody>
               <row>
+                <entry>11/16/2015</entry>
+                <entry>DNSaaS</entry>
+                <entry>Added DNSaaS Installation and Configuration documentation. (<xref
+                    href="networking/dnsaas.dita#HP2.0DNSaaS">Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>11/16/2015</entry>
+                <entry>Logging</entry>
+                <entry>Updated several of the service-specific logging level change instructions.
+                    (<xref
+                    href="administration/configure_logging.dita#configure_logging/service_config"
+                    >Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>11/16/2015</entry>
+                <entry>HPE Helion OpenStack Firewall</entry>
+                <entry>Added new page describing the HPE Helion OpenStack firewall and how to
+                  add/remove/edit rules for it. (<xref href="administration/configure_firewall.dita"
+                    >Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/10/2015</entry>
                 <entry>Security - ArcSight </entry>
                 <entry>Added ArcSight page (<xref href="security/arcsight.dita#topic_n5d_tjn_yt"
@@ -34,19 +55,19 @@
               <row>
                 <entry>11/09/2015</entry>
                 <entry>Hardware and Software Support Matrix </entry>
-                <entry>Added Guest OS support information (<xref
-                    href="hardware.dita">Link</xref>)</entry>
+                <entry>Added Guest OS support information (<xref href="hardware.dita"
+                  >Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/09/2015</entry>
                 <entry>Release Notes</entry>
-                <entry>Added workaround for Monitoring Service Threshold Engine issue when using a single control plane node (<xref
-                  href="releasenotes.dita">Link</xref>)</entry>
+                <entry>Added workaround for Monitoring Service Threshold Engine issue when using a
+                  single control plane node (<xref href="releasenotes.dita">Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/05/2015</entry>
                 <entry>Security - TLS </entry>
-                <entry>Amended  Private CA FQDN certificates steps to include copying both keys
+                <entry>Amended Private CA FQDN certificates steps to include copying both keys
                     (<xref href="security/tls.dita#topic_yym_nps_4t/ol_ngj_qfq_rt"
                   >Link</xref>)</entry>
               </row>
@@ -73,13 +94,14 @@
               <row>
                 <entry>10/29/2015</entry>
                 <entry>Horizon</entry>
-                <entry>Added note about meters avalable from the Metric option  (<xref
+                <entry>Added note about meters avalable from the Metric option (<xref
                     href="horizon/horizon_overview.dita#topic1564">Link</xref>)</entry>
               </row>
               <row>
                 <entry>10/29/2015</entry>
                 <entry>Horizon</entry>
-                <entry>Added web browser support information to the Horizon Overview (<xref href="horizon/horizon_overview.dita">Link</xref>)</entry>
+                <entry>Added web browser support information to the Horizon Overview (<xref
+                    href="horizon/horizon_overview.dita">Link</xref>)</entry>
               </row>
 
               <row>
@@ -92,7 +114,8 @@
                 <entry>10/28/2015</entry>
                 <entry>Monitoring</entry>
                 <entry>Added step to ensure new Compute nodes that you add to your environment are
-                  included in monitoring (<xref href="operations/add_node.dita">Link</xref>) </entry>
+                  included in monitoring (<xref href="operations/add_node.dita">Link</xref>)
+                </entry>
               </row>
               <row>
                 <entry>10/28/2015</entry>

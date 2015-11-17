@@ -92,6 +92,7 @@
         navtitle="Creating the Helion Development Platform Service Net" locktitle="yes"/>
       <topicref href="helion/administration/configure_firewall.dita"
         navtitle="Configuring the HPE Helion OpenStack Firewall" locktitle="yes"/>
+      <topicref href="helion/administration/thirdparty_driver_support.dita" navtitle="Third-party Driver Support" locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
@@ -182,10 +183,6 @@
           navtitle="Configuring Load Balancing as a Service (LBaaS)" locktitle="yes"/>
         <topicref href="helion/networking/multinetwork.dita"
           navtitle="Configuring Multiple External Networks" locktitle="yes"/>
-        <topicref href="helion/administration/neutron_add_thirdparty_plugin_driver.dita"
-          navtitle="Adding a 3rd Party Driver or Plugin to
-          Neutron" locktitle="yes"
-          toc="no"/>
       </topicref>
       <!-- BEGIN - Administration/EON -->
       <topicref href="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service"
