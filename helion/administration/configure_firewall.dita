@@ -5,6 +5,10 @@
     Firewall</title>
   <body>
     <section id="about">
+      <p>The following instructions provide information about how to identify and modify the overall
+        HPE Helion OpenStack firewall that is configured in front of the control services. This
+        firewall is administered only by a cloud admin and is not available for tenant use for
+        private network firewall services.</p>
       <p>During the installation process, the configuration processor will automatically generate
         "allow" firewall rules for each server based on the services deployed and block all other
         ports. These are populated in <codeph>~/helion/my_cloud/info/firewall_info.yml</codeph>,
@@ -17,7 +21,10 @@
       <p>The purpose of this document is to show you how to make post-installation changes to the
         firewall rules if the need arises.</p>
       <note type="important">This process is not to be confused with the <xref
-          href="../networking/fwaas.dita">Firewall as a Service</xref>.</note>
+          href="../networking/fwaas.dita">Firewall as a Service</xref>, which is a separate service
+        that enables the ability for HPE Helion OpenStack tenants to create north-south,
+        network-level firewalls to provide stateful protection to all instances in a private, tenant
+        network. This service is optional and is tenant-configured.</note>
     </section>
     <section id="howto"><title>Making Changes to the Firewall Rules</title>
       <ol>
