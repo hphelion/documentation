@@ -22,6 +22,26 @@
     
     </section>
     <section>
+      <title>What's New</title>
+      <p>This release contains key functionality to make building and deploying cloud native apps
+        easier and faster for our customers.</p>
+      <ul>
+        <li>Enterprises can deploy microservices packaged as Docker containers into a managed Cloud
+          Foundry-based Platform-as-a-Service (PaaS). </li>
+        <li>This  release includes the new HPE Helion Code Engine - a continuous
+          integration/continuous delivery (CI/CD) toolchain for automating the build/test/deploy
+          workflow to help you modernize their development experience.</li>
+        <li>Further integrating IaaS + PaaS, this release provides support for clustered MySQL,
+          MongoDB, and Redis. </li>
+        <li>It also includes a technical preview of Vertica in our Database as a Service offering. </li>
+        <li>The Messaging Broker Service supports RabbitMQ cluster provisioning.</li>
+        <li>Monitoring alerts available through Monasca for the Messaging Broker service and the
+          Database Service.</li>
+        <li>Improved documentation with targeted search and new user feedback link.</li>
+      </ul>
+    </section>
+    
+    <section>
       <title>2.0 General Notes</title>
       <dl>
         <dlentry>
