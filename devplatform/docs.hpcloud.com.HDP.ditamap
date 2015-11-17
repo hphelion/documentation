@@ -5,35 +5,14 @@
 <title>HPE Helion Development Platform</title>
   <topicref href="2.0/devplatform.index.dita" navtitle="HPE Helion Development Platform 2.0"
     locktitle="yes" otherprops="">
-    <!--root level installation-->
     <topicref href="2.0/devplatform.whatsnew.dita" locktitle="yes" navtitle="What's New"/>
     <topicref href="2.0/devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes"/>
     <topicref href="2.0/devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <topicref href="2.0/devplatform.eula.dita" navtitle="Software License Terms" locktitle="yes"/>
-    <!--quick start
-    <topichead navtitle="Developer Quick Start Trial Guide">  
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita"
-        navtitle="Quick Start Step 1: Register" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita"
-        navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita"
-        navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita"
-        navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita"
-        locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita"
-        locktitle="yes" navtitle="Quick Start Step 6: Explore More"/>
-      <topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita"
-        locktitle="yes" navtitle="Quick Start Termination"/>
-      <topicref
-        href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
-    </topichead>-->
-    <!--installation-->
-    <topichead navtitle="Installation" otherprops="install">
+    <topicref href="2.0/installation/installation.dita" navtitle="Installation" otherprops="install">
       <topicref href="2.0/installation/install_offline.dita"
-        navtitle="Downloding for Offline Installation" locktitle="yes"/>
+        navtitle="Downloading for Offline Installation" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/install_cloudsyaml.dita"
@@ -58,26 +37,18 @@
       <topicref href="2.0/installation/devplatform_commercial_install.dita" toc="no"/>
       <topicref href="2.0/devplatform.troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
-    </topichead>
-    <topichead navtitle="Service Monitoring" otherprops="service-monitor">
+    </topicref>
+    <topicref href="2.0/monitoring/service_monitoring.dita" navtitle="Service Monitoring" otherprops="service-monitor">
       <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
       <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
       <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
-    </topichead>
-    <!--uninstallation -->
-    <!--  <topichead navtitle="Uninstallation"-->
-    <!--<topicref href="2.0/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes"/>-->
-    <!--<topicref href="2.0/uninstallation/devplatform_uninstall_platform.dita" navtitle="Uninstall the Development Platform" locktitle="yes"/>-->
-    <!--<topicref href="2.0/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes"/>-->
-    <!--<topicref href="2.0/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>-->
-    <!--<topicref href="2.0/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>-->
-    <!--  </topichead>-->
-    <topichead navtitle="Command Line Clients" otherprops="cli">
+    </topicref>
+    <topicref href="2.0/helion/CLI/cli.dita" navtitle="Command Line Clients" otherprops="cli">
       <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
         navtitle="Command Line Client Downloads" locktitle="yes"/>
       <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
         navtitle="Kato Command Reference"/>
-      <topichead navtitle="ALS Helion Client" otherprops="als">
+      <topicref href="2.0/helion/CLI/als_helion_client.dita" navtitle="ALS Helion Client" otherprops="als">
         <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
           navtitle="ALS Client Installation"/>
         <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
@@ -131,8 +102,8 @@
           <topicref href="2.0/helion/user/reference/client-ref-user-management.dita" locktitle="yes"
             navtitle="User Management "/>
         </topicref>
-      </topichead>
-      <topichead navtitle="Cluster Management Tool" otherprops="cluster-man">
+      </topicref>
+      <topicref href="2.0/helion/CLI/cluster_management_tool.dita" navtitle="Cluster Management Tool" otherprops="cluster-man">
         <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
           navtitle="Cluster Management Tool Installation and Reference"/>
         <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
@@ -146,8 +117,8 @@
             navtitle="Example: Add a Service" locktitle="yes"/>
         </topicref>
         <topicref href="2.0/helion/CLI/cfmgmt_configure_keystonev3.dita" toc="no"/>
-      </topichead>
-      <topichead navtitle="ALS Management Console" otherprops="als-console">
+      </topicref>
+      <topicref href="2.0/helion/CLI/als_management_console.dita" navtitle="ALS Management Console" otherprops="als-console">
         <topicref href="2.0/helion/admin/console/console_intro.dita"
           navtitle="Introduction and First Use" locktitle="yes"/>
         <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
@@ -160,12 +131,11 @@
           navtitle="Management Console Customization"/>
         <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
           navtitle="Sample Applications"/>
-      </topichead>
-    </topichead>
-    <!--application developers-->
-    <topichead navtitle="Windows Reference" otherprops="windows-ref">
+      </topicref>
+    </topicref>
+    <topicref href="2.0/windows_reference.dita" navtitle="Windows Reference" otherprops="windows-ref">
       <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
-      <topichead navtitle="Administrator Reference" otherprops="admin-ref">
+      <topicref href="2.0/administrator_reference.dita">
         <topicref href="2.0/windows/windows_building_and_deploying.dita" locktitle="yes"
           navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
         <topicref href="2.0/windows/windows_adding_services.dita" locktitle="yes"
@@ -178,8 +148,8 @@
           navtitle="Glazier Reference Guide"/>
         <topicref href="2.0/windows/windows_growcluster.dita"
           navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
-      </topichead>
-      <topichead navtitle="Developer Reference" otherprops="def-ref">
+      </topicref>
+      <topicref href="2.0/developer_reference.dita">
         <topicref href="2.0/windows/windows_firstapp.dita" locktitle="yes"
           navtitle="Deploying your first .NET Application"/>
         <topicref href="2.0/windows/windows_tools_guide.dita" locktitle="yes"
@@ -189,15 +159,14 @@
         <topicref href="2.0/windows/windows_creating_sql.dita"/>
         <topicref href="2.0/windows/windows_nonnet.dita"
           navtitle="Deploying a Node.js Application with Visual Studio" locktitle="yes"/>
-      </topichead>
+      </topicref>
       <topicref href="2.0/windows/windows_troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
       <topicref href="2.0/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
         locktitle="yes" toc="no"/>
-    </topichead>
+    </topicref>
     <topicref href="2.0/devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers " otherprops="app-dev">
-      <!--<topicref href="2.0/CICD/cicd_overview.dita" navtitle="Continuous Integration and Deployment" locktitle="yes"><topicref href="2.0/CICD/cicd_walkthrough.dita" navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/><topicref href="2.0/CICD/cicd_installation.dita"/><topicref href="2.0/CICD/cicd_initial_configuration.dita"/><topicref href="2.0/CICD/cicd_troubleshooting.dita"/><topicref href="2.0/CICD/cicd_users_guide.dita" navtitle="User's Guide" locktitle="yes"><topicref href="2.0/CICD/cicd_environment_create.dita" navtitle="Create a New Environment" locktitle="yes"/><topicref href="2.0/CICD/cicd_edit_environment.dita" navtitle="Change an Existing Environment" locktitle="yes"/><topicref href="2.0/CICD/cicd_create_project.dita" navtitle="Create a New Project" locktitle="yes"><topicref href="2.0/CICD/cicd_hipchat_data.dita" navtitle="Where to Find HipChat Notification Data" locktitle="yes"/></topicref><topicref href="2.0/CICD/cicd_edit_project.dita" navtitle="Change an Existing Project" locktitle="yes"><topicref href="2.0/CICD/cicd_project_delete.dita" navtitle="Delete a Project" locktitle="yes"/><topicref href="2.0/CICD/cicd_project_invite.dita" navtitle="Invite Users to a Project" locktitle="yes"/><topicref href="2.0/CICD/cicd_create_postdeploy.dita" navtitle="Add or Edit Post Deployment Actions" locktitle="yes"/></topicref><topicref href="2.0/CICD/cicd_create_build.dita" navtitle="Create a New Build" locktitle="yes"/><topicref href="2.0/CICD/cicd_preview_tempdeploy.dita" navtitle="Create a Temporary Deployment" locktitle="yes"/></topicref></topicref>-->
       <topicref href="2.0/helion/user/deploy/deploy_index.dita" locktitle="yes"
         navtitle="General Deployment" otherprops="deploy">
         <topicref href="2.0/helion/user/deploy/app-debug.dita" locktitle="yes"
@@ -212,15 +181,15 @@
         <topicref href="2.0/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
           navtitle="Organizations and Spaces"/>
       </topicref>
-      <topichead navtitle="Language Specific Application Deployment" otherprops="lang-deploy">
-        <topichead navtitle="Docker" otherprops="docker">
+      <topicref href="2.0/language_specific.dita">
+        <topicref href="2.0/docker.dita">
           <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
             navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
           <topicref href="2.0/helion/user/deploy/languages/docker_apps.dita" navtitle="Docker Apps"
             locktitle="yes"/>
           <topicref href="2.0/helion/user/deploy/container_enable_deployment.dita" toc="no"
             navtitle="Enable Container Deployment" locktitle="yes"/>
-        </topichead>
+        </topicref>
         <topicref href="2.0/helion/user/deploy/languages/clojure.dita" locktitle="yes"
           navtitle="Clojure"/>
         <topicref href="2.0/helion/user/deploy/languages/go.dita" locktitle="yes" navtitle="Go"/>
@@ -249,40 +218,37 @@
         </topicref>
         <topicref href="2.0/helion/user/deploy/languages/ruby.dita" locktitle="yes" navtitle="Ruby"
         />
-      </topichead>
-      <!--<topicref href="2.0/messaging/cue_dev_overview.dita" navtitle="Messaging" locktitle="yes"/>-->
+      </topicref>
       <topicref href="2.0/helion/user/reference/environment.dita" locktitle="yes"
         navtitle="Environment Variables "/>
       <topicref href="2.0/devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
-      <!--workbook-->
-      <topichead navtitle="JAVA Code Samples" otherprops="java-sample">
+      <topicref href="2.0/java_code_samples.dita">
         <topicref href="2.0/workbook/helloworld/helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample"/>
         <topicref href="2.0/workbook/database/database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample"/>
         <topicref href="2.0/workbook/messaging/messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample"/>
-      </topichead>
-      <topichead navtitle="Node Code Samples" otherprops="node-sample">
+      </topicref>
+      <topicref href="2.0/node_code_samples.dita">
         <topicref href="2.0/workbook/helloworld/helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample"/>
         <topicref href="2.0/workbook/database/database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample"/>
         <topicref href="2.0/workbook/messaging/messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample"/>
-      </topichead>
-      <topichead navtitle="PHPE Code Samples" otherprops="php-sample">
+      </topicref>
+      <topicref href="2.0/php_code_samples.dita">
         <topicref href="2.0/workbook/helloworld/helloworld.php.dita"
           navtitle="PHP HelloWorld Sample"/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample"/>
         <topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes"
           navtitle="PHP RabbitMQ Messaging Sample"/>
-      </topichead>
+      </topicref>
     </topicref>
-    <!--database -->
-    <topichead navtitle="Database Service Reference" otherprops="db-ref">
+    <topicref href="2.0/database/database_service_reference.dita" otherprops="db-ref">
       <topicref href="2.0/database/devplatform.database-instance.dita" locktitle="yes"
         navtitle="Using the Database Service"/>
       <topicref href="2.0/database/devplatform.database-releasenotes.dita"/>
@@ -306,8 +272,8 @@
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
       <topicref href="2.0/installation/install_dbaas_configureAvailabilityZones.dita" toc="no"/>
       <topicref href="2.0/installation/install_dbaas_checkQuotas.dita" toc="no"/>
-    </topichead>
-    <topichead navtitle="Messaging Service Reference" otherprops="message-ref">
+    </topicref>
+    <topicref href="2.0/messaging/messaging_service_ref.dita">
       <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
         navtitle="Using Messaging as a Service"/>
       <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
@@ -321,27 +287,7 @@
       <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
         navtitle="Cue Reference Architecture"/>
       <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"/>
-    </topichead>
-    <!-- messaging -->
-    <!--
-    <topichead navtitle="Messaging Service Reference">
-      <topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita"
-        navtitle="Using Messaging as a Service"/>
-      <topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita"
-        navtitle="Using the Messaging Service with ALS"/>
-      <topicref href="2.0/messaging/cue_dev_createCluster.dita"
-        navtitle="Create a Cluster from the Command Line"/>
-      <topicref href="2.0/messaging/cue_ops_manageCluster.dita"
-        navtitle="Manage a Cluster from the Command Line"/>
-      <topicref href="2.0/installation/devplatform_install_messaging.dita"
-        navtitle="Install Messaging as a Service"/>
-      <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
-        navtitle="Cue Reference Architecture"/>
-      <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"/>
-      <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
-    </topichead>
--->
-    <!--IT Ops-->
+    </topicref>
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops"
       otherprops="it-ops">
       <topicref href="2.0/installation/install_dnsaas.dita" navtitle="DNS Configuration"
@@ -351,12 +297,12 @@
         locktitle="yes"/>
       <topicref href="2.0/helion/user/services/filesystem.dita" locktitle="yes"
         navtitle="Persistent File System"/>
-      <topichead navtitle="Command Line Clients" otherprops="cli">
+      <topicref href="2.0/cli.dita">
         <topicref href="2.0/helion/CLI/ALS_Client_Downloads.dita"
           navtitle="Command Line Client Downloads" locktitle="yes"/>
         <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference"/>
-        <topichead navtitle="ALS Helion Client" otherprops="als-client">
+        <topicref href="2.0/als_helion_client.dita">
           <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
             navtitle="ALS Client Installation"/>
           <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
@@ -410,8 +356,8 @@
             <topicref href="2.0/helion/user/reference/client-ref-user-management.dita"
               locktitle="yes" navtitle="User Management "/>
           </topicref>
-        </topichead>
-        <topichead navtitle="Cluster Management Tool" otherprops="cluster">
+        </topicref>
+        <topicref href="2.0/cluster_management_tool.dita">
           <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
             navtitle="Cluster Management Tool Installation and Reference"/>
           <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
@@ -424,9 +370,9 @@
             <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
               navtitle="Example: Add a Service" locktitle="yes"/>
           </topicref>
-        </topichead>
-      </topichead>
-      <topichead navtitle="Cluster Creation" otherprops="cluster-creation">
+        </topicref>
+      </topicref>
+      <topicref href="2.0/cluster_creation.dita">
         <topicref href="2.0/database/devplatform.database-create-cluster-horizon.dita"
           navtitle="Creating a database cluster from Horizon"/>
         <topicref href="2.0/database/devplatform.database-create-cluster-cli.dita"
@@ -446,11 +392,10 @@
             navtitle="Example: Add a Service" locktitle="yes"/>
           <topicref href="2.0/helion/CLI/devplatform_downloadRCFile.dita" toc="no"/>
         </topicref>
-      </topichead>
-      <!--<topicref href="2.0/messaging/cue_ops_overview.dita" navtitle="Messaging Service" locktitle="yes"><topicref href="2.0/messaging/devplatform.using-the-messaging-service.dita" locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/><topicref href="2.0/messaging/devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS"/><topicref href="2.0/messaging/cue_dev_createCluster.dita" navtitle="Create a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_manageCluster.dita" navtitle="Manage a Cluster from the Command Line" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_install.dita" navtitle="Install the Cue Service" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita" navtitle="Cue Reference Architecture" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices" locktitle="yes"/><topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Cue" locktitle="yes"/></topicref>-->
+      </topicref>
       <topicref href="2.0/helion/helion_index.dita" locktitle="yes"
         navtitle="Application Lifecycle Service" otherprops="als">
-        <topichead navtitle="ALS Management Console" otherprops="console">
+        <topicref href="2.0/als_management_console.dita">
           <topicref href="2.0/helion/admin/console/console_intro.dita"
             navtitle="Introduction and First Use" locktitle="yes"/>
           <topicref href="2.0/helion/admin/console/console_index.dita" locktitle="yes"
@@ -463,7 +408,7 @@
             navtitle="Management Console Customization"/>
           <topicref href="2.0/helion/admin/console/app-store.dita" locktitle="yes"
             navtitle="Sample Applications"/>
-        </topichead>
+        </topicref>
         <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
           navtitle="Application Lifecycle Service Data Services"/>
         <topicref href="2.0/helion/CLI/constructor_vm.dita" navtitle="ALS Constructor VM"
@@ -499,7 +444,7 @@
             <topicref href="2.0/helion/admin/server/router.dita" locktitle="yes"
               navtitle="ALS Router"/>
           </topicref>
-          <topichead navtitle="Reference" otherprops="ref">
+          <topicref href="2.0/helion/admin/reference.dita">
             <topicref href="2.0/helion/admin/reference/groups.dita" locktitle="yes"
               navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
             <topicref href="2.0/helion/admin/reference/known-issues.dita" locktitle="yes"
@@ -510,7 +455,7 @@
               navtitle="Adding System Services"/>
             <topicref href="2.0/helion/admin/reference/reference_troubleshoot.dita" locktitle="yes"
               navtitle="Troubleshooting"/>
-          </topichead>
+          </topicref>
         </topicref>
         <topicref href="2.0/helion/user/helion_user_index.dita" locktitle="yes"
           navtitle="ALS User Guide" otherprops="als-user-guide">
@@ -526,7 +471,7 @@
             navtitle="Application Logs "/>
         </topicref>
       </topicref>
-      <topichead navtitle="Other Services" otherprops="other-services">
+      <topicref href="2.0/other_services.dita">
         <topicref href="2.0/helion/user/services/data-services.dita" locktitle="yes"
           navtitle="Application Lifecycle Service Data Services"/>
         <topicref href="2.0/helion/admin/cluster/external-db.dita" locktitle="yes"
@@ -539,11 +484,11 @@
           navtitle="Port Service (Harbor)"/>
         <topicref href="2.0/helion/user/services/user-provided.dita" locktitle="yes"
           navtitle="User-Provided Services"/>
-      </topichead>
-      <topichead navtitle="Service Monitoring" otherprops="service-mon">
+      </topicref>
+      <topicref href="2.0/service_monitoring.dita">
         <topicref href="2.0/monitoring/devplatform.database-monitor.dita"/>
         <topicref href="2.0/monitoring/devplatform.database-monitor-cli.dita"/>
-      </topichead>
+      </topicref>
     </topicref>
   </topicref>
  </map>
