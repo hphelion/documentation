@@ -94,9 +94,9 @@
       </topichead>
       <topichead navtitle="PHP Code Samples">
         <topicref href="2.0/workbook/helloworld/helloworld.php.dita" locktitle="yes"
-          navtitle="PHPE Hello World Sample "/>
+          navtitle="PHP Hello World Sample "/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
-          navtitle="PHPE MySQL Database Sample"/>
+          navtitle="PHP MySQL Database Sample"/>
         <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHPE RabbitMQ Messaging Sample"/>-->
       </topichead>
     </topicref>
