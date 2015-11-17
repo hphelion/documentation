@@ -2375,21 +2375,21 @@
         they don’t disrupt the previously deployed allocations.</p>
       <p>To allow users to make multiple iterations of the input model before deployment HPE Helion
         OpenStack will only persist data when the administrator confirms that they are about to
-        deploy the results via the "ready-deployment" operation. To under this better, consider the
-        following example:</p>
+        deploy the results via the "ready-deployment" operation. To understand this better, consider
+        the following example:</p>
       <p>Imagine you have completed your HPE Helion OpenStack deployment with servers A, B, and C
         and you want to add two new compute nodes by adding servers D and E to the input model.</p>
       <p>When you add these to the input model and re-run the configuration processor it will read
-        the persisted data for A, B, and C and allocate D and E as new servers. The Configuration
-        Processor now has allocation data for A, B, C, D, and E -- which it keeps in a staging area
-        (actually a special branch in git) until we get confirmation that the Configuration
-        Processor has done what you intended and you are ready to deploy the revised
+        the persisted data for A, B, and C and allocate D and E as new servers. The configuration
+        processor now has allocation data for A, B, C, D, and E -- which it keeps in a staging area
+        (actually a special branch in git) until we get confirmation that the configuration
+        processor has done what you intended and you are ready to deploy the revised
         configuration.</p>
-      <p>If you noticed that the role of E was wrong and it became a Swift node instead of a Nova
-        node you need to be able to change the input mode and re-run the configuration processor.
-        This is fine because the allocations of D and E have not been confirmed, and so the
-        configuration processor will re-read the data about A, B, C and re-allocate D and E now to
-        the correct clusters, updating the persisted data in the staging area.</p>
+      <p>If you notice that the role of E is wrong and it became a Swift node instead of a Nova node
+        you need to be able to change the input model and re-run the configuration processor. This
+        is fine because the allocations of D and E have not been confirmed, and so the configuration
+        processor will re-read the data about A, B, C and re-allocate D and E now to the correct
+        clusters, updating the persisted data in the staging area.</p>
       <p>You can loop though this as many times as needed. Each time, the configuration processor is
         processing the deltas to what is deployed, not the results of the previous run. When you are
         ready to use the results of the configuration processor, you run
@@ -2601,7 +2601,7 @@
         a new server. Conversely, if a different physical server is added with the same ID as a
         deleted server the configuration processor will assume that it is the original server being
         returned to the model.</p>
-      <p>You can force the removal of persisted data for server that are no longer in the input
+      <p>You can force the removal of persisted data for servers that are no longer in the input
         model by running the configuration processor with the
           <codeph>remove_deleted_servers</codeph> option, like below:</p>
       <codeblock>cd ~/helion/hos/ansible
@@ -2610,7 +2610,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_s
     <section id="persistedaddressallocations"><title>Persisted Address Allocations</title>
       <p>The configuration processor persists IP address allocations by the generated name (see
           <xref href="#input_model/namegeneration">Name Generation</xref> for how names are
-        generated). As with servers once an address has been allocated, that address will remain
+        generated). As with servers. once an address has been allocated that address will remain
         allocated until the configuration processor is explicitly told that it is no longer
         required. The configuration processor will generate warnings for addresses that are
         persisted but no longer used.</p>

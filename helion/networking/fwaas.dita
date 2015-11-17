@@ -3,10 +3,10 @@
 <topic id="HP2.0FWaaS">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Firewall as a Service (FWaaS)</title>
   <body>
-    <p>HPE Helion OpenStack 2.0 FWaaS Configuration</p>
-    <p>Firewall as a Service (FWaaS) is an advance networking service that introduces firewall
-      feature set. This document describes the configuration process and requirements for the 
-      HPE Helion OpenStack 2.0 Firewall as a Service module. </p>
+    <section id="about">
+    <p>Firewall as a Service (FWaaS) is an advanced networking service that introduces a firewall
+      feature set. This document describes the configuration process and requirements for the HPE
+      Helion OpenStack 2.0 Firewall as a Service module.</p>
 
     <p>FWaaS is implemented directly in the L3 agent (<i>neutron-l3-agent</i>), however if VPNaaS is
       enabled, FWaaS is implemented in the VPNaaS agent (<i>neutron-vpn-agent</i>). Because FWaaS
@@ -19,7 +19,7 @@
         <li><xref href="fwaas.dita#HP2.0FWaaS/MoreInfo">More Information</xref></li>
       </ul>
     </p>
-    
+    </section>
     <section id="Prerequisites">
       <title>Prerequisites</title>
       <p>HPE Helion OpenStack must be installed. </p>
