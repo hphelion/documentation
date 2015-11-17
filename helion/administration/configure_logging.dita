@@ -552,29 +552,25 @@ ansible-playbook -i hosts/verb_hosts monasca-agent-reconfigure.yml -e "monasca_l
 ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock></entry>
               </row>
               <row>
-                <entry morerows="1"><p>Nova</p></entry>
-                <entry><p>nova-api</p></entry>
+                <entry><p>Nova</p></entry>
+                <entry><p>All</p></entry>
                 <entry><p>INFO</p></entry>
                 <entry>
-                  <p>Nova service log levels are configurable in the following file:</p>
-                  <codeblock>~/helion/my_cloud/config/nova/*-logging.conf.j2</codeblock>
-                  <p>If you make edits to this file, then run the
-                      <codeph>nova-reconfigure.yml</codeph> playbook:</p>
+                  <p>Nova service log levels are configurable in the following files:</p>
+                  <codeblock>~/helion/my_cloud/config/nova/novncproxy-logging.conf.j2
+~/helion/my_cloud/config/nova/api-logging.conf.j2
+~/helion/my_cloud/config/nova/compute-logging.conf.j2
+~/helion/my_cloud/config/nova/conductor-logging.conf.j2
+~/helion/my_cloud/config/nova/consoleauth-logging.conf.j2
+~/helion/my_cloud/config/nova/scheduler-logging.conf.j2</codeblock>
+                  <p>If you make edits to one or more of these files, then run the
+                      <codeph>nova-reconfigure.yml</codeph> playbook after committing the
+                    changes:</p>
                   <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock>
                 </entry>
               </row>
-              <row>
-                <entry><p>nova-compute</p></entry>
-                <entry><p>INFO</p></entry>
-                <entry><p>Nova service log levels are configurable in the following file:</p>
-                  <codeblock>~/helion/my_cloud/config/nova/*-logging.conf.j2</codeblock>
-                  <p>If you make edits to this file, then run the
-                      <codeph>nova-reconfigure.yml</codeph> playbook:</p>
-                  <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></entry>
-              </row>
-              <row>
+                           <row>
                 <entry><p>Operations Console</p></entry>
                 <entry><p>ops-web</p>
                   <p>ops-mon</p></entry>
