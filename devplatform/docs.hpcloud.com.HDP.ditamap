@@ -135,7 +135,7 @@
     </topicref>
     <topicref href="2.0/windows_reference.dita" navtitle="Windows Reference" otherprops="windows-ref">
       <topicref href="2.0/windows/windows_overview.dita" locktitle="yes" navtitle="Windows Overview"/>
-      <topicref href="2.0/administrator_reference.dita">
+      <topicref href="2.0/administrator_reference.dita" otherprops="admin-ref">
         <topicref href="2.0/windows/windows_building_and_deploying.dita" locktitle="yes"
           navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
         <topicref href="2.0/windows/windows_adding_services.dita" locktitle="yes"
@@ -149,7 +149,7 @@
         <topicref href="2.0/windows/windows_growcluster.dita"
           navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
       </topicref>
-      <topicref href="2.0/developer_reference.dita">
+      <topicref href="2.0/developer_reference.dita" otherprops="dev-ref">
         <topicref href="2.0/windows/windows_firstapp.dita" locktitle="yes"
           navtitle="Deploying your first .NET Application"/>
         <topicref href="2.0/windows/windows_tools_guide.dita" locktitle="yes"
@@ -181,7 +181,7 @@
         <topicref href="2.0/helion/user/deploy/orgs-spaces.dita" locktitle="yes"
           navtitle="Organizations and Spaces"/>
       </topicref>
-      <topicref href="2.0/language_specific.dita">
+      <topicref href="2.0/language_specific.dita" otherprops="lang-deploy">
         <topicref href="2.0/docker.dita">
           <topicref href="2.0/helion/user/deploy/docker_firstapp.dita"
             navtitle="Creating and Deploying Your First Docker App" locktitle="yes"/>
@@ -302,11 +302,11 @@
           navtitle="Command Line Client Downloads" locktitle="yes"/>
         <topicref href="2.0/helion/admin/reference/kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference"/>
-        <topicref href="2.0/als_helion_client.dita">
+        <topicref href="2.0/als_helion_client.dita" otherprops="als-helion">
           <topicref href="2.0/helion/user/client/client_index.dita" locktitle="yes"
             navtitle="ALS Client Installation"/>
           <topicref href="2.0/helion/user/reference/client-ref.dita" locktitle="yes"
-            navtitle="ALS Client Command Reference" otherprops="als-client-cli">
+            navtitle="ALS Client Command Reference" otherprops="als-cli-ref">
             <topicref href="2.0/helion/user/reference/client-ref-administration.dita"
               locktitle="yes" navtitle="Administration"/>
             <topicref href="2.0/helion/user/reference/client-ref-applications.dita" locktitle="yes"
@@ -357,7 +357,7 @@
               locktitle="yes" navtitle="User Management "/>
           </topicref>
         </topicref>
-        <topicref href="2.0/cluster_management_tool.dita">
+        <topicref href="2.0/cluster_management_tool.dita" otherprops="cluster-management">
           <topicref href="2.0/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
             navtitle="Cluster Management Tool Installation and Reference"/>
           <topicref href="2.0/helion/CLI/cf_mgmt_createcluster.dita"
@@ -442,7 +442,7 @@
             <topicref href="2.0/helion/admin/server/router.dita" locktitle="yes"
               navtitle="ALS Router"/>
           </topicref>
-          <topicref href="2.0/helion/admin/reference.dita">
+          <topicref href="2.0/helion/admin/reference.dita" otherprops="ref">
             <topicref href="2.0/helion/admin/reference/groups.dita" locktitle="yes"
               navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
             <topicref href="2.0/helion/admin/reference/known-issues.dita" locktitle="yes"
