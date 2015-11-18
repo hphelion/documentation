@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1925">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Deploying the Denver
+    Template</title>
+  <titlealts>
+    <searchtitle>HP Helion OpenStack Carrier Grade 2.0 Beta: Installation Overivew</searchtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--UNDER REVISION-->
+      <!--./CarrierGrade/Installation/carrier-grade-install-pb-overview.md-->
+      <!--permalink: /helion/openstack/carrier/install/pb/overview/--></p>
+    <p>This document describes the process for installing HP Helion OpenStack Carrier Grade.</p>
+    <section id="about-the-installation">
+      <title>About the installation</title>
+      <p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management
+        VM, creates a base HP Helion OpenStack cloud, configures network virtualization through HP
+        Distributed Cloud Networking (DCN), and deploys a carrier grade cloud.</p>
+      <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
+          href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+          >Horizon graphical interface</xref> or using the CLIs of the respective <xref
+          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita"
+        >services</xref>.</p>
+    </section>
+    <section id="install-option">
+      <p id="denver"><b>KVM Topology using the <i>denver</i> template</b></p>
+      <p>If installing the <codeph>denver</codeph> template, you are installing the KVM region and
+        HP Helion OpenStack AVS networking. </p>
+      <p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the KVM
+        region. </p>
+      <p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and are
+        independent of HP Helion OpenStack Carrier Grade. During the installation, you will
+        integrate the storage into HP Helion OpenStack Carrier Grade. See the <xref
+          href="CGH-2-install-denver.dita#topic10581/storage">installation instructions</xref> for
+        the 3PAR and/or VSA parameters you will need.</p>
+    </section>
+
+    <section id="nic"><title>Unbonded or Bonded NIC configuration</title>
+      <p>During the installation, specific steps might be different, based on whether you are
+        installing into a single NIC or bonded NIC environment. </p>
+    </section>
+
+    <section id="installation-process">
+      <title>Installation process</title>
+      <p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal
+        environment.</p>
+      <ol>
+        <li>Review the <xref
+            href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita">Technical
+            Overview</xref> for information on the HP Helion OpenStack Carrier Grade environment. <ul>
+            <li>Review the Cloud Topologies to decide appropriate topology for your use case.</li>
+            <li>Review the deployment architecture for different hypervisors</li>
+            <li>Review the network architecture for networking needs</li>
+          </ul></li>
+        <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
+            Matrix</xref> to make sure your environment meets the minimum requirements.</li>
+        <li> Perform any required or optional <xref
+            href="../../CarrierGrade/Installation/carrier-grade-install-prereqs.dita"
+            >installation prerequisites</xref>. </li>
+        <li>
+          <xref
+            href="../../CarrierGrade/Installation/carrier-grade-install-network-prepare.dita"
+            >Prepare the network for installation</xref>
+        </li>
+        <li>Install the cloud topologies: <p>In this cloud topology, the standard OpenStack services
+            like Keystone, Glance, Cinder, Swift are installed in the non-KVM region first. Then the
+            KVM region is installed. </p><ul id="ul_fxd_x4c_b5">
+            <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
+                Management and Installation Services</xref>.</li>
+            <li>Install the <xref href="carrier-grade-install-non-kvm.dita#topic10581">HPE Helion
+                OpenStack cloud</xref>. These components will be installed into what is called the
+                <i>Non-KVM region</i>.</li>
+            <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581">Helion
+                user interface</xref>.</li>
+            <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what is
+              called the <i>KVM region.</i></li>
+          </ul></li>
+      </ol>
+    </section>
+
+    <section id="first-step">
+      <title>First Step</title>
+      <p>Perform the <xref href="carrier-grade-install-prereqs.dita#topic7148">prerequisite
+          steps and one time setup</xref> on your KVM Host required to install HP Helion OpenStack
+        Carrier Grade in a baremetal environment.</p>
+    </section>
+  </body>
+</topic>

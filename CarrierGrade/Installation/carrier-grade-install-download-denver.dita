@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic7148">
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Download the Denver
+                Installation Packages</title>
+        <titlealts>
+                <searchtitle>HP Helion OpenStack Carrier Grade Installation
+                        Prerequisites</searchtitle>
+        </titlealts>
+        <prolog>
+                <metadata>
+                        <othermeta name="layout" content="default"/>
+                        <othermeta name="product-version"
+                                content="HP Helion OpenStack Carrier Grade 1.1"/>
+                        <othermeta name="role" content="Storage Administrator"/>
+                        <othermeta name="role" content="Storage Architect"/>
+                        <othermeta name="role" content="Michael B"/>
+                        <othermeta name="product-version1"
+                                content="HP Helion OpenStack Carrier Grade 1.1"/>
+                </metadata>
+        </prolog>
+        <body>
+                <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md--><!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
+                <p>This document describes the prerequisite steps required to install HP Helion
+                        OpenStack Carrier Grade in a baremetal environment.</p>
+                <section conref="carrier-grade-install-download.dita#topic7148/getinstall"/>
+                <section conref="carrier-grade-install-download.dita#topic7148/infoblox"/>
+                <section conref="carrier-grade-install-download.dita#topic7148/esx"/>
+                <section conref="carrier-grade-install-download.dita#topic7148/checksum"/>
+                <section conref="carrier-grade-install-download.dita#topic7148/extract"/>
+                <section conref="carrier-grade-install-download.dita#topic7148/kvm"/>
+                <section id="next-step">
+                        <title>Next Step</title>
+                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the lifecycle manager and installation
+                                                  services</xref>.
+                                
+                        </p>
+                </section>
+        </body>
+</topic>
