@@ -115,7 +115,7 @@ Actor_id = ‘cinder’  </codeblock></p><p>The
         <li><xref href="CGH-2-install-denver.dita#topic10581/ldap3">denver template</xref></li>
         <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap3">tahoe template</xref></li>
         <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">memphis template</xref></li>
-        <li><xref href="CGH-2-install-sacramento.dita#topic10581/ldap3">sacramento template</xref></li>
+    <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone">sacramento template</xref></li>
       </ul></p>
   </body>
 </topic>

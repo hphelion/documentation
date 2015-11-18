@@ -21,10 +21,7 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.md-->
- <!--permalink: /helion/openstack/carrier/services/horizon/overview/--></p>
+
 <p>Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack Carrier
       Grade web interface or <b>dashboard</b>.</p>
 <p>The dashboard provides a web-based user interface to HP Helion OpenStack Carrier Grade services

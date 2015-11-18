@@ -42,9 +42,8 @@
         >https://h20566.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_b05d4c644fb742aa87cb5f5da1&amp;lang=en-us&amp;cc=us</xref>.
       This page also contains installation instructions.</p>
     <p><i>Return to installing the non-KVM region for the <xref
-          href="CGH-2-install-tahoe.dita#topic10581/vmware-patch">tahoe</xref>
-      <xref href="CGH-2-install-memphis.dita#topic10581/vmware-patch">memphis</xref> or <xref
-        href="CGH-2-install-sacramento.dita#topic10581/vmware-patch">sacramento</xref>
+      href="CGH-2-install-memphis.dita#topic10581/conref-vmware-workaround">memphis</xref> or <xref
+        href="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround">sacramento</xref>
         template.</i></p>
   </body>
 </topic>

@@ -155,8 +155,8 @@ _vars.vsc_dcm_ip_subnet}}
             <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
                 appropriate for your environment. The IP addresses are masked for security purposes.</p>
             <p><i>Return to installing the non-KVM region for the <xref
-                        href="CGH-2-install-memphis.dita#topic10581/json">memphis</xref> or <xref
-                        href="CGH-2-install-sacramento.dita#topic10581/json">sacramento</xref>
+                href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref>
                     template.</i></p>
 <codeblock>{
     "product": {

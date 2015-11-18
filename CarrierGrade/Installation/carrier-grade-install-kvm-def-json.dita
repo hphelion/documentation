@@ -25,8 +25,8 @@
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager. The IP
         addresses are masked for security purposes. Use values appropriate for your environment.</p>
             <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/json">memphis</xref> or <xref
-            href="CGH-2-install-sacramento.dita#topic10581/json">sacramento</xref> template.</i></p>
+              href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref> template.</i></p>
 <codeblock>{
   "cloud": {
     "environment": "environment.json",

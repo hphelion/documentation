@@ -66,7 +66,7 @@ You can perform the following tasks:
 - **Adding and removing a network to a router** - Attach or detach a network to your router.
 - **Adding, modifying or removing a router** - Add, modify or remove a router from your network.
 - **Adding, modifying or removing an interface** - Add, modify or remove an interface from your router.
-- **Adding and removing an external network to a router** - Attach or detach a router from an external network. -->
+- **Adding and removing an external network to a router** - Attach or detach a router from an external network. 
 </section>
   <section id="info"> <title>For more information</title>
     <p>For information on how to operate your cloud we suggest you read the <xref
@@ -74,7 +74,7 @@ You can perform the following tasks:
       format="pdf" scope="external"><i>Administrator Guide</i></xref>.</p>
 
   </section>
-    <!-- In GA aether only?
+ In GA aether only?
 ### Adding and removing a network to a DHCP agent ###
 
 Use the Networking service to add or remove a network from a DHCP agent.
@@ -83,6 +83,6 @@ Use the Networking service to add or remove a network from a DHCP agent.
 
 Use the Networking service to add or remove a network from an L3 agent.
 -->
-
+</section>
 </body>
 </topic>

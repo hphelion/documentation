@@ -41,9 +41,9 @@
         <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
           commands. </li>
         <li>Make sure all the VSD services are in PASS state.</li>
-            <li><xref href="#topic10581/conrref-vsd-license" format="dita">Apply the VSD
+            <li><xref href="#topic10581/conref-vsd-license" format="dita">Apply the VSD
             license</xref> based on single or clustered VSD setup. </li>
-            <li><xref href="#topic10581/conrref-admin-user" format="dita">Create the required VSD
+            <li><xref href="#topic10581/conref-admin-user" format="dita">Create the required VSD
             users</xref>.</li>
       </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
           Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
@@ -101,7 +101,7 @@
       <p>
         <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"/></p>
     </section>
-    <section id="conrref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
+    <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
       license file when you purchased DCN. You need to apply that license on the KVM Host. For more
       information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
     <section id="conref-admin-user">
@@ -500,7 +500,7 @@ Password: cghelion</codeblock>
           StoreServ (3PAR) attched to the KVM region.<p>Use the <codeph>enabled_backends</codeph>
             variable to list each of the back-ends you are using. You must specify at least one
             back-end for the non-KVM region and one or more for the KVM region.</p><table
-            id="table_kzd_5mf_zt">
+              id="backend">
             <tgroup cols="3">
               <colspec colname="col1" colsep="1" rowsep="1"/>
               <colspec colname="col2" colsep="1" rowsep="1"/>

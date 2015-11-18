@@ -15,8 +15,8 @@
 </prolog>
 <body>
   <p><i>Return to installing the non-KVM region for the <xref
-          href="CGH-2-install-memphis.dita#topic10581/esx-proxy">memphis</xref> or <xref
-          href="CGH-2-install-sacramento.dita#topic10581/esx-proxy">sacramento</xref>
+    href="CGH-2-install-memphis.dita#topic10581/conref-esx-proxy">memphis</xref> or <xref
+      href="CGH-2-install-sacramento.dita#topic10581/conref-esx-proxy">sacramento</xref>
       template.</i></p>
   
     <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
@@ -65,7 +65,7 @@
         environment. You can use the CLM network details  from the <codeph>environment.json</codeph>
         file. The compute proxy nodes will be assigned a static IP address based on the cidr
         calculation.</p>
-      <p>See <xref href="carrier-grade-install-kvm-esx-json.dita#topic4797">Sample esx.json
+      <p>See <xref href="carrier-grade-install-kvm-esx-json.dita#topic10581">Sample esx.json
           file</xref> for details on modifying the esx.json file.</p>
     </section>
       <section id="integrate"><title>Integration into the cloud framework</title>
@@ -80,8 +80,8 @@
         process.</p>
     </section>
   <p><i>Return to installing the non-KVM region for the <xref
-          href="CGH-2-install-memphis.dita#topic10581/esx-proxy">memphis</xref> or <xref
-          href="CGH-2-install-sacramento.dita#topic10581/esx-proxy">sacramento</xref>
+    href="CGH-2-install-memphis.dita#topic10581/conref-esx-proxy">memphis</xref> or <xref
+      href="CGH-2-install-sacramento.dita#topic10581/conref-esx-proxy">sacramento</xref>
       template.</i></p>
   </body>
 </topic>

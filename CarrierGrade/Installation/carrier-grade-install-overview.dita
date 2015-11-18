@@ -56,7 +56,7 @@
       <p>You must install DCN, 3PAR or VSA before starting the HP Helion OpenStack installation and
         are independent of HP Helion OpenStack Carrier Grade. During the installation, you will
         integrate the storage into HP Helion OpenStack Carrier Grade. See the <xref
-          href="CGH-2-install-tahoe.dita#topic10581/backend">installation instructions</xref> for
+          href="CGH-2-install-tahoe.dita#topic10581/storage">installation instructions</xref> for
         the 3PAR and/or VSA parameters you will need.</p>
 
     
@@ -67,9 +67,9 @@
         region. </p>
       <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HP Helion OpenStack
         installation and are independent of HP Helion OpenStack Carrier Grade. During the
-        installation, you will integrate the storage into HP Helion OpenStack Carrier Grade. See
-        the <xref href="CGH-2-install-memphis.dita#topic10581/backend">installation
-          instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
+        installation, you will integrate the storage into HP Helion OpenStack Carrier Grade. See the
+          <xref href="CGH-2-install-memphis.dita#topic10581/storage">installation instructions</xref>
+        for the 3PAR and/or VSA parameters you will need.</p>
        <p id="sacramento"><b>KVM + ESX + Ironic with DCN Topology using the <i>sacramento</i>
           template</b></p>
       <p>If you are installing the <codeph>sacramento</codeph> template, you are installing the KVM

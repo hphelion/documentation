@@ -1130,11 +1130,5 @@
         <p>Validate the VM with PCI-PT vNIC got an IP address</p>
       </li>
     </ol>
-    <section>
-      <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
-            href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
-        template.</i></p>
-    </section>
 </body>
 </topic>

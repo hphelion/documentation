@@ -17,8 +17,8 @@
 </prolog>
 <body>
   <p><i>Return to installing the non-KVM region for the <xref
-          href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
-          href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
+    href="CGH-2-install-memphis.dita#topic10581/conref-vmware">memphis</xref> or <xref
+      href="CGH-2-install-sacramento.dita#topic10581/conref-vmware">sacramento</xref>
       template.</i></p>
   
   <p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
@@ -53,8 +53,8 @@
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
       <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/vmware">memphis</xref> or <xref
-            href="CGH-2-install-sacramento.dita#topic10581/vmware">sacramento</xref>
+        href="CGH-2-install-memphis.dita#topic10581/conref-vmware">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/conref-vmware">sacramento</xref>
         template.</i></p>
     </section>
 </body>

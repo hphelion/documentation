@@ -47,6 +47,98 @@ hlm define -l </codeblock>
         <codeblock>hlm define mycloud -t memphis</codeblock>
       </p>
     </section>
+    <section>
+      <title>hlm-deploy</title>
+      <p>Deploys all cloud services on respective cloud nodes. </p>
+      <p>This command is for a first-time commit of the cloud configuration. Attempting to deploy an
+        already deployed cloud will return an error. </p>
+      <p><b>Synopsis</b></p>
+      <p>
+        <codeblock>hlm deploy -c &lt;cloud name> [-v &lt;verbose>] [-r &lt;rerun>] [-t &lt;tags|roles|tiers>]</codeblock>
+      </p>
+      <p><b>Arguments</b></p>
+      <p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
+      <p><codeph>--verbose, -v</codeph> -- Produce verbose output. </p>
+      <p><codeph>--rerun, -r</codeph> -- Rerun from a failed task.</p>
+      <p><codeph>--tags, -t</codeph> -- Run only specified tags separated by a space and included in
+        double quotes. </p>
+      <p><b>Examples</b></p>
+      <p>Deploy the cloud first time <codeblock>hlm deploy -c mycloud </codeblock></p>
+      <p>Rerun from previously failed role<codeblock>hlm deploy -c mycloud -r </codeblock></p>
+      <p>Deploy specific services
+        <codeblock>hlm deploy -c mycloud -t "FND-MDB KEY-API" </codeblock></p>
+    </section>
+    <section><title>hlm-display</title><p>Displays information about the cloud. If no arguments but
+        the cloud name are specified, the topology of the current state is displayed.
+          </p><p><b>Synopsis</b></p><p>
+        <codeblock>hlm display -c &lt;cloud name> [] [--topology | --explain | --service-map | --network-map | --node-map]  </codeblock>
+      </p><p><b>Arguments</b></p><codeph>--cloud, -c</codeph> Specify the name of the cloud to
+          display.<p><codeph>--topology</codeph> -- Display the cloud topology. This is the default.
+          </p><p><codeph>--explain</codeph> -- Display a text description of the
+        cloud.</p><codeph>--service-map</codeph> -- Display the service map file for the cloud.
+          <p><codeph>--network-map</codeph> -- Display the network map file for the
+        cloud.</p><codeph>--node-map</codeph> -- Display the list of nodes that have been allocated
+      in the cloud.<p><b>Examples</b></p><p>Display details about how networks will be provisioned
+        in the cloud: <codeblock>hlm display -c mycloud --network-ma</codeblock></p></section>
+    <section><title>hlm-dump</title><p>Gathers all log files generated as part of the lifecycle
+        process and compresses them in a single TAR file in the current location or on a location
+        that is specified, using the same name as the cloud:
+        <codeph>&lt;cloudname.tar></codeph>.</p><p><b>Synopsis</b></p><p>
+        <codeblock>hlm dump -c &lt;cloud name> [-p &lt;dump location>]</codeblock>
+      </p><p><b>Arguments</b></p><p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to
+        act upon. </p><p><codeph>--path, -p</codeph> -- Specify the path to create tar
+          file.</p><p><b>Examples</b></p>Create a log dump file in the current directory:
+      <codeblock>hlm dump -c mycloud</codeblock>Create a log dump file in a different directory :
+      <codeblock>hlm dump -c mycloud -p /home/cghelion </codeblock></section>
+    <section>
+      <title>hlm-generate</title>
+      <p>Execute the configuration processor that generates cloud configuration files needed for
+        cloud deployment. The HP Helion OpenStack configuration processor is a script, called
+          <codeph>hcfgproc</codeph>, that is incorporated into the installation environment. This
+        command generates the necessary configuration for the cloud. </p>
+      <p><b>Synopsis</b></p>
+      <p>
+        <codeblock>hlm generate -c &lt;cloud name> [-C &lt;cloud | service | component>] [-p &lt;control plane>] [-v]</codeblock>
+      </p>
+      <p><b>Arguments</b></p>
+      <p><codeph> --cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
+      <p><codeph>--change-credential, -C</codeph> -- Change the credentials for the entire cloud,
+        all components for a service, or a single component. </p>
+      <p><codeph>--control-plane, -p</codeph> -- Limit the scope of credential change to components
+        of a single control plane. </p>
+      <p><codeph>--verbose, -v</codeph> -- Produce verbose output.</p>
+      <p><b>Example</b></p>
+      <p>
+        <codeblock>hlm generate -c mycloud</codeblock>
+      </p>
+    </section>
+    <section><title>hlm-list</title>Lists the clouds that are currently
+        defined.<p><b>Synopsis</b></p><p>
+        <codeblock>hlm list</codeblock>
+      </p><p><b>Examples</b></p><p>
+        <codeblock>hlm list</codeblock>
+      </p></section>
+    <section><title>hlm-netinit</title>Configures network interfaces on cloud nodes. <p>Network
+        interface files along with NIC bonding or PCI enumeration related files (generated by the
+        configuration processor) are copied to cloud nodes. After the interfaces are configured, the
+        command restarts the network service on cloud nodes to reflect the
+          changes.</p><p><b>Synopsis</b></p><p>
+        <codeblock>hlm netinit -c &lt;cloud name> [-v]</codeblock>
+      </p><p><b>Arguments</b></p><p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to
+        act upon. </p><p><codeph>--verbose, -v</codeph> -- Produce verbose
+          output.</p><p><b>Example</b></p><p>
+        <codeblock>hlm netinit -c mycloud</codeblock>
+      </p></section>
+    <section>
+      <title>hlm plugin</title>
+      <p>Deploys a plugin on top of an existing cloud deployment. </p>
+      <p><b>Examples</b></p>
+      <p>Deploy the Infoblox plugin
+        <codeblock>hlm plugin -c &lt;cloudname> -n infoblox</codeblock>Rollback a plugin that was
+        already
+        deployed<codeblock>hlm plugin -c &lt;cloudname> -n infoblox --rollback</codeblock></p>
+      <p/>
+    </section>
     <section><title>hlm provision</title><p>Provision nodes to be used in a cloud. </p><p>Before
         executing the command, <xref
           href="../Installation/carrier-grade-install-kvm-node-json.dita#topic4797">edit the
@@ -68,88 +160,6 @@ hlm define -l </codeblock>
       </p>Deprovision specific
         nodes:<p><codeblock>hlm provision -c mycloud -d "ccn4 ccn5"</codeblock>Provision only proxy
         nodes:</p><codeblock> hlm provision -c mycloud -p</codeblock></section>
-    <section>
-      <title>hlm-generate</title>
-      <p>Execute the configuration processor that generates cloud configuration files needed for
-        cloud deployment. The HP Helion OpenStack configuration processor is a script, called
-          <codeph>hcfgproc</codeph>, that is incorporated into the installation environment. This
-        command generates the necessary configuration for the cloud. </p>
-    </section>
-    <p><b>Synopsis</b></p>
-    <p>
-      <codeblock>hlm generate -c &lt;cloud name> [-C &lt;cloud | service | component>] [-p &lt;control plane>] [-v]</codeblock>
-    </p>
-    <p><b>Arguments</b></p>
-    <p><codeph> --cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
-    <p><codeph>--change-credential, -C</codeph> -- Change the credentials for the entire cloud, all
-      components for a service, or a single component. </p>
-    <p><codeph>--control-plane, -p</codeph> -- Limit the scope of credential change to components of
-      a single control plane. </p>
-    <p><codeph>--verbose, -v</codeph> -- Produce verbose output.</p>
-    <p><b>Example</b></p>
-    <p>
-      <codeblock>hlm generate -c mycloud</codeblock>
-    </p>
-    <section><title>hlm-netinit</title>Configures network interfaces on cloud nodes. <p>Network
-        interface files along with NIC bonding or PCI enumeration related files (generated by the
-        configuration processor) are copied to cloud nodes. After the interfaces are configured, the
-        command restarts the network service on cloud nodes to reflect the
-          changes.</p><p><b>Synopsis</b></p><p>
-        <codeblock>hlm netinit -c &lt;cloud name> [-v]</codeblock>
-      </p><p><b>Arguments</b></p><p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to
-        act upon. </p><p><codeph>--verbose, -v</codeph> -- Produce verbose
-          output.</p><p><b>Example</b></p><p>
-        <codeblock>hlm netinit -c mycloud</codeblock>
-      </p></section>
-    <section>
-      <title>hlm-deploy</title>
-      <p>Deploys all cloud services on respective cloud nodes. </p>
-      <p>This command is for a first-time commit of the cloud configuration. Attempting to deploy an
-        already deployed cloud will return an error. </p>
-      <p><b>Synopsis</b></p>
-      <p>
-        <codeblock>hlm deploy -c &lt;cloud name> [-v &lt;verbose>] [-r &lt;rerun>] [-t &lt;tags|roles|tiers>]</codeblock>
-      </p>
-      <p><b>Arguments</b></p>
-      <p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to act upon. </p>
-      <p><codeph>--verbose, -v</codeph> -- Produce verbose output.  </p>
-      <p><codeph>--rerun, -r</codeph> -- Rerun from a failed task.</p>
-      <p><codeph>--tags, -t</codeph> -- Run only specified tags separated by a space and included in
-        double quotes. </p>
-      <p><b>Examples</b></p>
-      <p>Deploy the cloud first time <codeblock>hlm deploy -c mycloud </codeblock></p>
-      <p>Rerun from previously failed role<codeblock>hlm deploy -c mycloud -r </codeblock></p>
-      <p>Deploy specific services
-        <codeblock>hlm deploy -c mycloud -t "FND-MDB KEY-API" </codeblock></p>
-    </section>
-    <section><title>hlm-dump</title><p>Gathers all log files generated as part of the lifecycle
-        process and compresses them in a single TAR file in the current location or on a location
-        that is specified, using the same name as the cloud:
-        <codeph>&lt;cloudname.tar></codeph>.</p><p><b>Synopsis</b></p><p>
-        <codeblock>hlm dump -c &lt;cloud name> [-p &lt;dump location>]</codeblock>
-      </p><p><b>Arguments</b></p><p><codeph>--cloud, -c</codeph> -- Specify the name of the cloud to
-        act upon. </p><p><codeph>--path, -p</codeph> -- Specify the path to create tar
-          file.</p><p><b>Examples</b></p>Create a log dump file in the current directory:
-      <codeblock>hlm dump -c mycloud</codeblock>Create a log dump file in a different directory :
-      <codeblock>hlm dump -c mycloud -p /home/cghelion </codeblock></section>
-    <section><title>hlm-list</title>Lists the clouds that are currently
-        defined.<p><b>Synopsis</b></p><p>
-        <codeblock>hlm list</codeblock>
-      </p><p><b>Examples</b></p><p>
-        <codeblock>hlm list</codeblock>
-      </p></section>
-    <section><title>hlm-display</title><p>Displays information about the cloud. If no arguments but
-        the cloud name are specified, the topology of the current state is displayed.
-          </p><p><b>Synopsis</b></p><p>
-        <codeblock>hlm display -c &lt;cloud name> [] [--topology | --explain | --service-map | --network-map | --node-map]  </codeblock>
-      </p><p><b>Arguments</b></p><codeph>--cloud, -c</codeph> Specify the name of the cloud to
-          display.<p><codeph>--topology</codeph> -- Display the cloud topology. This is the default.
-          </p><p><codeph>--explain</codeph> -- Display a text description of the
-        cloud.</p><codeph>--service-map</codeph> -- Display the service map file for the cloud.
-          <p><codeph>--network-map</codeph> -- Display the network map file for the
-        cloud.</p><codeph>--node-map</codeph> -- Display the list of nodes that have been allocated
-      in the cloud.<p><b>Examples</b></p><p>Display details about how networks will be provisioned
-        in the cloud: <codeblock>hlm display -c mycloud --network-ma</codeblock></p></section>
     <section>
       <title>hlm-start</title>
       <p>Start a particular service or start all services. The command starts services on a

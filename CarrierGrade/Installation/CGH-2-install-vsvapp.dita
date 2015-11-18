@@ -16,8 +16,8 @@
     </prolog>
     <body>
         <p><i>Return to installing the non-KVM region for the <xref
-                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581/conref-vapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581/conref-vapp">sacramento</xref>
                 template.</i></p>
         <p>This document describes how to install the HP Distributed Cloud Networking (DCN) vSphere
             Solution required to properly integrate the HPE Distributed Cloud Networking and VMWare
@@ -323,8 +323,8 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
             </p>
         </section>
         <p><i>Return to installing the non-KVM region for the <xref
-                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581/conref-vapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581/conref-vapp">sacramento</xref>
                 template.</i></p>
     </body>
 </topic>

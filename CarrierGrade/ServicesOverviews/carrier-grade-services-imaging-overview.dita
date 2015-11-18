@@ -121,7 +121,7 @@
 
  Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack [CLI](
+The following lists of tasks can be performed by a user or administrator through the HP Helion OpenStack Dashboard, the OpenStack CLI]
 http://docs.openstack.org/cli-reference/content/glanceclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-image-v2.html).
 
 ### Tasks performed by users
@@ -152,8 +152,8 @@ Use the Image Operations service to modify the metadata for a private image. </p
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 
 
-* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/1.1/manage/operational-dashboard/)
-* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/1.1/manage/administration-dashboard/) -->
+* [HP Helion OpenStack Operational Dashboard Help]
+* [HP Helion OpenStack Administration Dashboard Help] -->
       --. </section>
   <section id="info"> <title>For more information</title>
     <p>For information on how to operate your cloud we suggest you read the <xref

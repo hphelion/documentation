@@ -54,8 +54,8 @@
                                 <li><xref href="#topic7148/network" format="dita"/></li>
                                 <li><xref href="#topic7148/ldap" format="dita"/></li>
                                 <li><xref href="#topic7148/getinstall" format="dita"/></li>
-                                <li><xref href="#topic7148/kvm-region" format="dita">Download the
-                                                installation packages for the KVM region</xref></li>
+                                <!--<li><xref href="#topic7148/kvm-region" format="dita">Download the
+                                                installation packages for the KVM region</xref></li> -->
                                 <!--<li><xref href="#topic7148/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
                                 <!--<li><xref href="#topic7148/verify" format="dita"/></li>-->
                                 <li><xref href="#topic7148/checksum" format="dita"/></li>

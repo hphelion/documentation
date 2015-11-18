@@ -19,7 +19,7 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--UNDER REVISION--><!--./CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.md--><!--permalink: /helion/openstack/carrier/services/compute/overview/--></p>
+    
     <p>The HP Helion OpenStack Carrier Grade Compute service leverages the OpenStack Nova compute
       service to instantiate virtual machine instances on publicly accessible physical machines
       hosted in your cloud environment.</p>

@@ -31,8 +31,8 @@
     "eth0, eth1"
 ],</codeblock>
             <p><i>Return to installing the non-KVM region for the <xref
-                        href="CGH-2-install-memphis.dita#topic10581/json">memphis</xref> or <xref
-                        href="CGH-2-install-sacramento.dita#topic10581/json">sacramento</xref>
+                href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref>
                     template.</i></p>
             <p>Make sure the file contains the following lines for the TUL network. Remove any
                 additional TUL entries, if present:</p>

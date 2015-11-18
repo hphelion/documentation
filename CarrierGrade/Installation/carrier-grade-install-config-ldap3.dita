@@ -164,10 +164,11 @@ SecurityWarning
   </ol>
 </section>
   <p>Return installing the non-KVM region for: <ul id="ul_n3r_dfx_wt">
-        <li><xref href="CGH-2-install-denver.dita#topic10581/ldap3">denver template</xref></li>
-        <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap3">tahoe template</xref></li>
-        <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">memphis template</xref></li>
-        <li><xref href="CGH-2-install-sacramento.dita#topic10581/ldap3">sacramento template</xref></li>
+        <li><xref href="CGH-2-install-denver.dita#topic10581/ldap3">Denver template</xref></li>
+        <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap3">Tahoe template</xref></li>
+        <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">Memphis template</xref></li>
+    <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone">Sacramento
+          template</xref></li>
       </ul></p>
   </body>
 </topic>

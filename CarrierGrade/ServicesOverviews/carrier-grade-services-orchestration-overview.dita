@@ -22,10 +22,6 @@
 </prolog>
 <body>
 <p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.md-->
- <!--permalink: /helion/openstack/carrier/services/orchestration/overview/--></p>
-<p>
 
 </p>
 <!-- modeled after HPE Cloud Networking Getting Started (network.getting.started.md) -->
@@ -53,11 +49,15 @@
 
 Taken from http://docs.openstack.org/user-guide/content/heatclient_commands.html 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
+The following lists of tasks can be performed by a user or administrator through the 
+[HP Helion OpenStack Dashboard], 
+the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or 
+OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
 
 ### Working with stacks ###
 
-The Orchestration service allows users to work with stacks, which are a mechanism of using built-in stack definitions for specific resource types. This option allows you to perform the following functions:
+The Orchestration service allows users to work with stacks, which are a mechanism of using built-in stack definitions for specific resource types. 
+This option allows you to perform the following functions:
 
 - **Create and delete stacks** &#151; Create or delete stacks.
 - **Resume a stack** &#151; Resume the operation of stacks.
@@ -71,13 +71,13 @@ The Orchestration service allows users to work with stacks, which are a mechanis
 - **Show list of resources belonging to a stack** &#151; List infrastructure resources associated with a stack.
 - **List resource metadata** &#151; Show a list of meta data associated with infrastructure resources.
 - **Describe the resource** &#151; Show details of an infrastructure resource.
--->
+
 </section>
   <section id="info"> <title>For more information</title>
     <p>For information on how to operate your cloud we suggest you read the <xref
       href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
       format="pdf" scope="external"><i>Administrator Guide</i></xref>.</p>
-
-  </section>
+-->
+  </section> 
 </body>
 </topic>

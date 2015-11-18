@@ -27,18 +27,18 @@
       disregard these instructions. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hos-install"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-provision"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json" id="conref-node-provision-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-json" id="conref-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-def-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-env-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-verify-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/keystone-neutron-patch"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-config-proc"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hdeploy"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone" id="ldap3"/>
     
     <section id="next-step">
       <title>Next Step</title>

@@ -69,6 +69,7 @@
                     locktitle="yes"/>
                 <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
                 <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
+                <topicref href="carrier-grade-install-bonded-nic.dita"/>
             </topichead>
         </topicref>
         <topicref href="carrier-grade-install-launch-horizon.dita"

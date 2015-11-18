@@ -47,7 +47,9 @@
 <!--
 ## How To's with the HP Helion Volume Operations Service<a name="howto"></a>
  
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the 
+[HP Helion OpenStack Dashboard], 
+the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
 
@@ -104,10 +106,12 @@ Use the Volume Operations service to create or delete volume types.
 
 Use the Volume Operations service to enable or disable services.-->
 </section>
+<!--  
   <section id="info"> <title>For more information</title>
     <p>For information on how to operate your cloud we suggest you read the <xref
       href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
       format="pdf" scope="external"><i>Administrator Guide</i></xref>.</p>
   </section>
+  -->
 </body>
 </topic>
