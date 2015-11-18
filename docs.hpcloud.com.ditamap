@@ -18,6 +18,7 @@
   <!--permalink: /-->
 <!-- Index -->
 <topicref href="home.dita"/>
+  <topicref href="coming_soon.dita"/>
 <!-- HoS 2.0 -->
 <topichead navtitle="HPE Helion OpenStack 2.0">
 <topichead navtitle="HPE Helion OpenStack Services">
