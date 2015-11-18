@@ -203,8 +203,7 @@
               or Sacramento.</li>
           </ul></li>
         <li>Execute following command to apply patch:
-            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox
-ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p>Where
+            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox</codeblock><p>Where
               <codeph>&lt;cloudname></codeph> is the name of the HP Helion OpenStack
               cloud.</p><p><b>To deploy the plug-in on the baremetal region controller:</b></p></li>
       </ol>
@@ -231,8 +230,7 @@ ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p>Where
               or Sacramento.</li>
           </ul></li>
             <li>Execute following command to apply patch:
-            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox
-ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p>Where
+            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox</codeblock><p>Where
               <codeph>&lt;cloudname></codeph> is the name of the HP Helion OpenStack cloud.
           </p></li>
           
