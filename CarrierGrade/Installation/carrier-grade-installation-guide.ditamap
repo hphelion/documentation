@@ -19,6 +19,12 @@
         locktitle="yes">
         <topicref href="carrier-grade-install-overview-denver.dita"
             navtitle="Deploying the Denver Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-denver.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-denver.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
             <topicref href="carrier-grade-install-prereqs.dita"
                 navtitle="Installation Prerequisites" locktitle="yes">
                 <topicref href="carrier-grade-install-network-prepare.dita" toc="no"
@@ -81,6 +87,12 @@
         </topicref>
         <topicref href="carrier-grade-install-overview-tahoe.dita"
             navtitle="Deploying the Tahoe Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-tahoe.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-tahoe.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
             <topicref href="carrier-grade-install-prereqs.dita"
                 navtitle="Installation Prerequisites" locktitle="yes"/>
             <topicref href="carrier-grade-install-download-tahoe.dita"
@@ -133,6 +145,12 @@
         </topicref>
         <topicref href="carrier-grade-install-overview-memphis.dita"
             navtitle="Deploying the Memphis Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-memphis.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-memphis.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
             <topicref href="carrier-grade-install-prereqs.dita"
                 navtitle="Installation Prerequisites" locktitle="yes"/>
             <topicref href="carrier-grade-install-download-memphis.dita"
@@ -185,6 +203,12 @@
         </topicref>
         <topicref href="carrier-grade-install-overview-sacramento.dita"
             navtitle="Deploying the Sacramento Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-sacramento.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix2.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
             <topicref href="carrier-grade-install-prereqs.dita"
                 navtitle="Installation Prerequisites" locktitle="yes"/>
             <topicref href="carrier-grade-install-download.dita"

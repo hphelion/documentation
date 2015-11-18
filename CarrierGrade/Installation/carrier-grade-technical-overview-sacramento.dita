@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Sacramento (KVM + ESX +
-    Baremetal with DCN) Deployment Architecture Reference</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Sacramento Deployment
+    Technical Overview</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -22,6 +22,7 @@
     <p>The KVM + ESX deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>sacramento</codeph> template that comes
       with the installation package to create the KVM + ESX deployment.</p>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/Helion-services"/>
     <section>
       <title>Network/Component Architecture</title>
     <p><image href="../../media/CGH-2-block-arch-sacramento.png" width="750" id="image_wdn_zbw_mt"
@@ -243,5 +244,9 @@
       </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
         the major DCN components, including how to access the various systems, IP addresses, and
         user credentials. </p></section>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/eth-int"/>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/usb-interface"/>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/net"/>
   </body>
 </topic>

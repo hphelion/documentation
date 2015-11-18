@@ -13,7 +13,7 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
+    <section>
     <p>This page introduces you to the technical aspects of the HP Helion OpenStack Carrier Grade
       environment that you will be installing.</p>
     <ul>
@@ -33,6 +33,7 @@
         href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
         format="pdf" scope="external">HP Helion OpenStack Carrier Grade 2.0 Beta: Administrator
         Guide</xref>.</p>
+    </section>
     <section id="Helion-services">
       <title>Services overview</title>
       <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
@@ -42,19 +43,7 @@
           href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
           Overview</xref> page.</p>
     </section>
-    <section id="deploy-arch">
-      <title>Deployment and network architectures</title>
-      <p>See one of the following pages for the appropriate deployment and network architectures:<ul
-          id="ul_th3_bpb_ws">
-          <li><xref href="carrier-grade-technical-overview-memphis.dita#topic3485">denver Deployment
-              Architecture Reference (KVM-only)</xref></li>
-          <li><xref href="carrier-grade-technical-overview-tahoe.dita#topic3485">tahoe Deployment
-              Architecture Reference (KVM with DCN)</xref></li>
-          <li><xref href="carrier-grade-technical-overview-memphis.dita#topic3485">memphis
-              Deployment Architecture Reference (KVM + ESX with DCN )</xref></li>
-        <li><xref href="carrier-grade-technical-overview-sacramento.dita#topic3485">sacramento
-              Deployment Architecture Reference (KVM + ESX + Baremetal with DCN)</xref></li>
-        </ul></p>
+    <section id="eth-int">
       <title>Ethernet Interfaces</title>
       <p>All hosts in the server connect to at least the internal management network using an
         Ethernet interface. The ports used for this connection must support network booting and must
@@ -137,8 +126,8 @@
         <li><xref href="#topic3485/board-network" format="dita">an optional board management network.</xref> </li>
       </ul>
       <p>Operational requirements for each network are described in the following sections.</p>
-    </section>
-    <section id="internal-management-network"><b>Internal Management Network</b>
+    
+    <title id="internal-management-network">Internal Management Network</title>
       <p>The internal management network must be implemented as a single, dedicated, Layer 2
         broadcast domain for the exclusive use of each server cluster. Sharing of this network by
         more than one server cluster is not a supported configuration.</p><p>During the server
@@ -150,8 +139,8 @@
         either case, requirements for this port are:</p><ul>
         <li>must be capable of PXE-booting</li>
         <li>can be used by the motherboard as a primary boot device</li>
-      </ul></section>
-    <section id="oam-network"><b>CAN/OAM Network</b>
+      </ul>
+    <title id="oam-network">CAN/OAM Network</title>
       <p>You should ensure that the following services are available on the CAN/OAM Network:</p><ul>
         <li>
           <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the
@@ -168,21 +157,21 @@
             operations.</p>
         </li>
       </ul><p>The server compute nodes always use the controller nodes as the time server for the
-        entire cluster. </p></section>
-    <section id="provider-network"><b>Provider Network</b>
+        entire cluster. </p>
+    <title id="provider-network">Provider Network</title>
       <p>There are no specific requirements for network services to be available on the provider
         network. However, you must ensure that all network services required by the guests running
         in the compute nodes are available. For configuration purposes, the compute nodes themselves
         are entirely served by the services provided by the controller nodes over the internal
-        management network.</p></section>
-    <section id="infrastructure-network"><b>Infrastructure Network</b>
+        management network.</p>
+    <title id="infrastructure-network">Infrastructure Network</title>
       <p>This is an optional network.</p><p>As with the internal management network, the
         infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain
         for the exclusive use of each server cluster.</p><p>Sharing of this network by more than one
         server cluster is not a supported configuration.</p><p>The infrastructure network can be
         implemented as a 10 Gb Ethernet network. In its absence, all infrastructure traffic is
-        carried over the internal management network.</p></section>
-  <section id="board-network"><b>Board Management Network</b>
+        carried over the internal management network.</p>
+  <title id="board-network">Board Management Network</title>
       <p>Board Management CTL (IPMI Control) Network External access to the board management
       network, the board management modules are assigned IP addresses accessible from the OAM
       network, and the controller uses the OAM network to connect to them.</p></section>

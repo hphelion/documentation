@@ -13,29 +13,32 @@
   </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
- <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
+
+<section id="intro">  
 <p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is very
       important to meet the requirements and conform to the recommendations listed in this document. <ul>
         <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
+        <li><xref href="#topic1773/req-specs" format="dita">Required Specifications</xref></li>
+          <li><xref href="#topic1773/esx-dcn-hardware" format="dita">ESX and DCN
+            components</xref></li>
         <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
-            Configuration</xref></li>
+          Configurations</xref></li>
+        <li><xref href="#topic1773/dcn" format="dita">DCN Components</xref></li>
+        <li><xref href="#topic1773/esx" format="dita">ESX Components</xref></li>
+        <li><xref href="#topic1773/isonic" format="dita">Ironic Baremetal Components</xref></li>
         <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
+        <li><xref href="#topic1773/add-esx" format="dita">ESX Software Requirements</xref></li>
+        <li><xref href="#topic1773/add-dcn" format="dita">DCN Software Requirements</xref></li>
+        <li><xref href="#topic1773/storage" format="dita">External Storage</xref></li>
         <li><xref href="#topic1773/guestOS" format="dita">Supported Guest Operating Systems</xref></li>
+        <li><xref href="#topic1773/os-dcn-esx" format="dita">Additional Guest Operating
+          Systems</xref></li>
       </ul></p>
-    <p>The hardware requirements and configurations are different, depending upon the topology: KVM
-      or KVM + ESX<tm tmtype="reg"/>. See the <xref
-        href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref> for more
-      information on these topologies.</p>
+</section>
     <section id="hardware">
       <title>Supported Hardware</title>
       <p>The following servers are supported for the KVM Host, and for the controllers and compute
         servers.</p>
-      <p><b>Note:</b>
-        <i><b>For the KVM + ESX cloud</b></i>, consult the DCN and ESX documentation for the
-        supported hardware.</p>
       <p><b id="hlm">KVM Host</b> The KVM Host is a single server with at least a 40 GB disk size
         and 8,192 MB RAM.</p>
       <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
@@ -66,9 +69,6 @@
       <title id="specs"><b>Required Specifications</b></title>
       <p>The following table lists the specifications for the servers that will host HLM, HP Helion
         OpenStack, and the KVM region. </p>
-      <p><b>Note:</b>
-        <i><b>For the KVM and ESX cloud</b></i>, consult the DCN and ESX documentation for the
-        required hardware specifications. </p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
           <tgroup cols="3">
@@ -231,65 +231,16 @@
         for ProLiant (SPP) Version 2015.06.0. </p>
 -->
     </section>
+    <section id="esx-dcn-hardware">
+      <title>ESX and DCN Specifications</title>
+      <p>For the KVM + ESX cloud, consult the DCN and ESX documentation for the supported hardware
+        and required hardware specifications. </p>
+    </section>
   <section id="hardware-config">
       <title>Required Hardware Configurations </title>
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported
           Hardware</xref> lists, must be configured as follows for HP Helion OpenStack Carrier
         Grade.</p>
-      <p id="components">The following table indicates the components required for each deployment type. If your
-        deployment indicates Yes in a column, you must install that component. If a column is blank,
-        you can disregard that component. <table frame="all" rowsep="1" colsep="1"
-          id="table_iqg_gyd_xt">
-          <tgroup cols="5">
-            <colspec colname="c2" colnum="1" colwidth="1.0*"/>
-            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
-            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
-            <colspec colname="c3" colnum="4" colwidth="1.0*"/>
-            <colspec colname="newCol5" colnum="5" colwidth="1*"/>
-            <thead>
-              <row>
-                <entry>Deployment</entry>
-                <entry>All Deployments</entry>
-                <entry>HP DCN</entry>
-                <entry>VMware ESX</entry>
-                <entry>Ironic Baremetal</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>Denver</entry>
-                <entry>Yes</entry>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry>Tahoe</entry>
-                <entry>Yes</entry>
-                <entry>Yes</entry>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry>Memphis</entry>
-                <entry>Yes</entry>
-                <entry>Yes</entry>
-                <entry>Yes</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry>Sacramento</entry>
-                <entry>Yes</entry>
-                <entry>Yes</entry>
-                <entry>Yes</entry>
-                <entry>Yes</entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table></p>
-      <p><b>For all deployments</b></p>
-      <p>The following hardware is required for all deployments. See <xref href="#topic1773/specs"
-          format="dita">Required Specifications</xref> for supported hardware models.</p>
       <p>One (1) <b>KVM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
         KVM Host. This server will also host the VSD VM.</p>
       <p id="non-kvm-hos">Three (3) <b>HP Helion OpenStack Controllers.</b> You must have three (3)
@@ -324,11 +275,12 @@
           </ul><p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
             Helion OpenStack Carrier Grade.</p></li></ul>
   </section>
-  <section>
-    <title>HP Distributed Cloud Networking Components</title>
+  <section id="dcn">
+    <title>DCN Components</title>
       
-      <p>If you are installing DCN, you need the following additional components. Refer to the DCN
-        documentation for the supported hardware configurations. </p>
+      <p>If you are installing HP Distributed Cloud Networking (DCN), you need the following
+        additional components. Refer to the DCN documentation for the supported hardware
+        configurations. </p>
     <p>
       <ul>
         <li>Two (2) <b>DCN hosts</b>. You must have: <ul>
@@ -340,11 +292,10 @@
                 installation Guide for VRSvApp installation. </li>
             </ul></li></ul></p>
   </section>
-  <section>
-    <title>VMware ESX Storage</title>
-      <p><i>For Memphis and Sacramento</i></p>
-      <p>If you are installing VMware ESX, you need the following additional components. Refer to
-        the ESX documentation for the supported hardware configurations. </p>
+  <section id="esx">
+    <title>ESX Components</title>
+      <p>If you are installing VMware vSphere, you need the following additional components. Refer
+        to the ESX documentation for the supported hardware configurations. </p>
     <p>
         <ul id="ul_s3d_pmx_dt">
           <li>Two (2) <b>ESX hosts</b>. You must have a minimum of two (2) baremetal systems for
@@ -373,13 +324,18 @@
     <p><b>KVM Region Controllers</b>. The servers should be baremetal. The HP Helion OpenStack
         Carrier Grade installation process installs the required software.</p>
       <p><b>KVM Region Compute</b>. The servers should be baremetal. The HP Helion OpenStack
-        Carrier Grade installation process installs the required software.</p>
-    <p><b><i>VMware ESX</i></b>. if you are installing VMware, VMware vSphere must be fully
-        installed and operational before installing HP Helion OpenStack Carrier Grade.</p>
-      <p><b><i>HP DCN</i></b>. If you are installing HP Distributed Cloud Networking (DCN), DCN must
-        be fully installed and operational before installing HP Helion OpenStack Carrier Grade. The
-        currently supported version is  <b
-          conref="carrier-grade-install-download.dita#topic7148/dcn-version"/>.</p></section>
+        Carrier Grade installation process installs the required software.</p></section>
+    <section id="add-esx">
+      <title>ESX Software Requirements</title>
+      <p>VMware vSphere must be fully installed and operational before installing HP Helion
+        OpenStack Carrier Grade.</p>
+    </section>
+  <section id="add-dcn">
+      <title>DCN Software Requirements</title>
+      <p>HP Distributed Cloud Networking (DCN) must be fully installed and operational before
+        installing HP Helion OpenStack Carrier Grade. The currently supported version is <b
+          conref="carrier-grade-install-download.dita#topic7148/dcn-version"/>.</p>
+    </section>
     <section id="storage">
       <title>External Storage</title>
       <p>The following back-end drivers are supported to enable management of the OpenStack Block
@@ -395,8 +351,8 @@
     </section>
   
   <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
-      operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade
-      servers. <p><b>KVM Host</b>. There are no supported guest OSs for the KVM Host server.
+      operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade servers.
+          <p><b>KVM Host</b>. There are no supported guest OSs for the KVM Host server.
           </p><p><b>Non-KVM Region Controllers</b>. There are no supported guest OSs for the servers
         that host the HP Helion OpenStack Controllers.</p><p><b>KVM Region Compute and
           Controllers</b>. The following Guest OSs are supported for the servers in the KVM region
@@ -419,14 +375,18 @@
         <li>
           <p>OpenSUSE 12.3 </p>
         </li>
-      </ul><p><i><b>For Tahoe, Memphis and Sacramento deployments</b></i>, the following guest OSs
-        are supported for the servers in the Non-KVM region, when configured with ESX and DCN: </p><p>
+      </ul></section>
+    <section id="os-dcn-esx">
+      <title>Additional Guest Operating Systems</title>
+      <p>For Tahoe, Memphis and Sacramento deployments
+      the following guest OSs are supported for the servers in the Non-KVM region, when configured
+      with ESX and DCN: </p>
         <ul id="ul_hfp_g5r_5s">
           <li>Cirros 3.2</li>
           <li>RHEL6.5</li>
           <li>Ubuntu 14.04 </li>
         </ul>
-      </p></section>
+</section>
     <!--<section id="typical"><title>Typical Configurations</title><p>The following tables list the hardware required for a typical KVM + ESX deployment cloud installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita">enclosure</xref>. </p><p>The KVM + ESX deployment requires an existing and operational VMware vSphere installation on the appropriate ESX/ESXi servers.</p><p><b>Note:</b> The KVM deployment requires the same hardware, except you need only six (6) DL360 G9 controllers, not ten (10).</p><p id="rack"><b>GEN9 Rackmount Base</b></p><table id="table_tgx_5k2_qs"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>16 x DL360 G9 (Compute)</entry><entry>See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>.</entry></row><row><entry>10 x DL360 G9(Control)</entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches</entry><entry><ul id="ul_wgx_5k2_qs"><li>6 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p> 1 x 3PAR 7400 </p></entry></row></tbody></tgroup></table><p id="enclosure"><b>GEN9 Enclosure Based</b></p><table id="table_xyv_xcs_ns"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>2 x C7000 Enclosure (Compute) </entry><entry><ul id="ul_q2d_bns_ns"><li>2 x Virtual Connect FlexFabric-20/40 F8 Module</li><li>4 x 6125XLG Blade Switch</li></ul></entry></row><row><entry><p>16 x BL460 G9 (Compute) </p></entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry><p>10 x DL360 G9 (Control)</p></entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches </entry><entry><ul id="ul_ygx_5k2_qs"><li>4 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p><ul id="ul_ilg_fns_ns"><li>1 x 3PAR 7400 </li></ul></p></entry></row></tbody></tgroup></table></section>-->
   
 <!-- 

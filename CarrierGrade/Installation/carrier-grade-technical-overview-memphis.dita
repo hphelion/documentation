@@ -21,6 +21,7 @@
       Cloud Networking (DCN) virtual network solution. During the installation, use the
       <codeph>tahoe</codeph> template that comes with the installation package to create the KVM
       with DCN deployment.</p>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/Helion-services"/>
     <section>
     <title>Network/Component Architecture</title>
     <p><image href="../../media/CGH-2-block-arch-tahoe.png" width="750" id="image_wdn_zbw_mt"/></p>
@@ -159,5 +160,9 @@
       </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
         the major DCN components, including how to access the various systems, IP addresses, and
         user credentials. </p></section>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/eth-int"/>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/usb-interface"/>
+    <section conref="carrier-grade-technical-overview.dita#topic3485/net"/>
   </body>
 </topic>
