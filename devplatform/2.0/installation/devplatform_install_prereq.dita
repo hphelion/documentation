@@ -106,7 +106,7 @@ echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock></li>
               environment.<codeblock>http_proxy=http://myproxy.example.com 
 https_proxy=https://myproxy.example.com</codeblock>
               4. After editing the file, restart Apache2.
-              <codeblock>sudo sevice apache2 restart</codeblock></li>
+              <codeblock>sudo service apache2 restart</codeblock></li>
           </ol></li>
          
       </ol>
