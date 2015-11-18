@@ -25,6 +25,22 @@
       <title>2.0 General Notes</title>
       <dl>
         <dlentry>
+          <dt>MSGaaS now based on OpenStack Cue</dt>
+          <dd>MSGaaS is now based on OpenStack Cue, and has the following enhancements:
+            <ul>
+              <li>Managed message-brokers, specifically RabbitMQ.</li>
+              <li>The Messaging Service is exposed to the user via the Trove Python CLI, REST APIs, and the Horizon web interface.</li>
+              <li>Active monitoring of RabbitMQ Clusters: the health of Cue managed clusters reported via the Cue API.</li>
+              <li>The Messaging Service Installation now leverages Helion Lifecycle Manager.</li>
+              <li>Monasca Integration to alarm based on health of Cue Control Plane nodes</li>
+              <li>Ops Console visibility into health of Cue Control Plane nodes</li>
+            </ul> 
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt></dt>
+        </dlentry>
+        <dlentry>
           <dt>Enable Monasca Monitoring for the Database Service</dt>
           <dd> The following instructions will enable the Monasca agent on the DBaaS control plane.
               <note>These instructions assume that you have permission to SSH into the control
