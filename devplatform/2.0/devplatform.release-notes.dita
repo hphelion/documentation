@@ -6,9 +6,9 @@
   <body>
     <p>The following release notes are for the HPE Helion Development Platform 2.0 released in
       November, 2015. We hope you enjoy the release!</p>
-    
-    <section><title>In This Release:</title>
-    <p>HPE Helion Development Platform is comprised of the following services:</p>
+    <section>
+      <title>In This Release:</title>
+      <p>HPE Helion Development Platform is comprised of the following services:</p>
       <ul>
         <li>Development Platform Installer version 2.0.0.2</li>
         <li>Application Lifecycle Service version 2.0.0.548 </li>
@@ -16,10 +16,39 @@
         <li>Messaging Broker Service version 1.0.0.165 </li>
         <li>Helion Code Engine version 1.0.0.42 </li>
         <li>DNS as a Service version 2.0.0.190</li>
-        
       </ul>
-    
-    
+    </section>
+    <section>
+      <title>What's New</title>
+      <p>This release contains key functionality to make building and deploying cloud native apps
+        easier and faster for our customers.</p>
+      <ul>
+        <li>Enterprises can deploy microservices packaged as Docker containers into a managed Cloud
+          Foundry-based Platform-as-a-Service (PaaS). </li>
+        <li>This release includes the new HPE Helion Code Engine - a continuous
+          integration/continuous delivery (CI/CD) toolchain for automating the build/test/deploy
+          workflow to help modernize the development experience.</li>
+        <li>Further integrating IaaS + PaaS, this release provides support for clustered MySQL,
+          MongoDB, and Redis. </li>
+        <li>It also includes a technical preview of Vertica in our Database as a Service offering. </li>
+        <li>The Messaging Broker Service supports RabbitMQ cluster provisioning.</li>
+        <li>Monitoring alerts available through Monasca for the Messaging Broker service and the
+          Database Service.</li>
+        <li>Improved documentation with targeted search and new user feedback link.</li>
+      </ul>
+    </section>
+    <section>
+      <p>MSGaaS now based on OpenStack Cue, and has the following enhancements: <ul
+          id="ul_vtk_yzc_b5">
+          <li>Managed message-brokers, specifically RabbitMQ.</li>
+          <li>The Messaging Service is exposed to the user via the Trove Python CLI, REST APIs, and
+            the Horizon web interface.</li>
+          <li>Active monitoring of RabbitMQ Clusters: the health of Cue managed clusters reported
+            via the Cue API.</li>
+          <li>The Messaging Service Installation now leverages Helion Lifecycle Manager.</li>
+          <li>Monasca Integration to alarm based on health of Cue Control Plane nodes</li>
+          <li>Ops Console visibility into health of Cue Control Plane nodes</li>
+        </ul></p>
     </section>
     <section>
       <title>2.0 General Notes</title>
@@ -53,7 +82,8 @@ Oslo.config-1.3.0</codeblock></li>
 $ openstack endpoint create database admin 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'
 $ openstack endpoint create database internal 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'
 $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address></i>:8779/v1.0/$(tenant_id)s'</codeblock></dd>
-        </dlentry><dlentry>
+        </dlentry>
+        <dlentry>
           <dt>Multiple Syntax Errors in Python pip Install Output</dt>
           <dd>Installing a Python package also installs any required dependencies. This may generate
             several syntax warnings inline as the install occurs. This is expected behavior, and
@@ -64,22 +94,25 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
     </section>
     <section>
       <title>Known Issues</title>
-      <dl><dlentry>
-        <dt>Alarms appear in "No Service Defined" Panel</dt>
-        <dd>If the Message Broker sends alarms for MySQL or Zookeeper, they appear in the "No Service Defined" panel of the Opsconsole, not the Messaging as a Service panel. This is a known issue.</dd>
-      </dlentry>
+      <dl>
         <dlentry>
-        <dt>Creating an ALS cluster results in error: 413 Request Entity Too Large</dt>
-        <dd>When using the <codeph>cf-mgmt</codeph> tool, cluster creation fails because the payload
-            sent to OpenStack to boot a new instance was too large. This is caused by including
-            certificates in the payload. To fix this, skip SSL validation or use Horizon to create
-            the cluster instead.<ol>
+          <dt>Alarms appear in "No Service Defined" Panel</dt>
+          <dd>If the Message Broker sends alarms for MySQL or Zookeeper, they appear in the "No
+            Service Defined" panel of the Opsconsole, not the Messaging as a Service panel. This is
+            a known issue.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Creating an ALS cluster results in error: 413 Request Entity Too Large</dt>
+          <dd>When using the <codeph>cf-mgmt</codeph> tool, cluster creation fails because the
+            payload sent to OpenStack to boot a new instance was too large. This is caused by
+            including certificates in the payload. To fix this, skip SSL validation or use Horizon
+            to create the cluster instead.<ol>
               <li>Launch the <codeph>cf-mgmt</codeph> tool.</li>
               <li>Add the <codeph>--skip-ssl-validation</codeph> parameter prior to the cluster
                 creation command.
                 <codeblock>cf-mgmt --skip-ssl-validation create-cluster <i>[command options]</i> <i>[arguments...]</i></codeblock></li>
             </ol></dd>
-      </dlentry>
+        </dlentry>
         <dlentry>
           <dt>UTM or Gateway Firewalls</dt>
           <dd>UTM (Unified Threat Management) or Gateway firewalls may interfere with upgrades,
@@ -132,48 +165,6 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
                 tool as follows:
                 <codeblock>cf-mgmt cc --external​-network-n​ame &lt;mynetworkName></codeblock><codeblock>cf-mgmt cc --external​-network-id &lt;mynetworkID></codeblock></li>
             </ol></dd>
-        </dlentry>
-        <dlentry>
-          <dt>DNS 2.0</dt>
-          <dd>
-            <b>New Features</b>
-            <ul>
-              <li>New API V2 <ul>
-                  <li>Adds Zones that replaces Domains from V1.</li>
-                  <li>Adds RecordSets that replaces Records from V1. </li>
-                </ul></li>
-              <li>Scalability and Resilience improvements <ul>
-                  <li>New service PoolManager that handles coordination / resiliency.</li>
-                  <li>New service MiniDNS.</li>
-                </ul></li>
-              <li>Support for wildcard records.</li>
-              <li>Support for Secondary Zones.</li>
-            </ul>
-            <b>Known Issues</b>
-            <ul>
-              <li>Selecting a flavor larger than m1.medium for the Deployer or Control Plane nodes 
-                fails due to a failure to re-size LVM. The recommended flavors for the Deployer and 
-                Control Plane nodes are m1.small or m1.medium.</li>
-            </ul>
-            <b>Not included in the release</b>
-            <ul>
-              <li>Backend support for BIND9 / DynECT / Akamai is not included in this release.</li>
-              <li>Support for Ceilometer is not included in this release.</li>
-              <li>There is currently no backup and restore functionality.</li>
-            </ul>
-            <b>Bugfixes</b>
-            <ul>
-              <li>API TTL input validation.</li>
-              <li>Improve error message on API actions.</li>
-              <li>Launchpad 1471161 <ul>
-                  <li>CVE-2015-5695 Quotas were being bypassed.</li>
-                  <li>CVE-2015-5694 does not enforce the DNS protocol limit concerning record set
-                    sizes.</li>
-                </ul></li>
-              <li>Launchpad 1471158: Incorrect regular expressions used for schema validation.</li>
-              <li>Launchpad 1497031: Authenticated Denial of Service in Blacklists.</li>
-            </ul>
-          </dd>
         </dlentry>
       </dl>
     </section>
