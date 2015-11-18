@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_mrh_h1b_dt">
+<topic id="cfmgmt_add_dea">
   <title><i>cf-mgmt</i> Tool Example: Add a DEA Node to an Existing Cluster</title>
   <body>
     <p>This example demonstrates how to add a DEA node to a cluster that already exists. </p>

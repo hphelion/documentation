@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic4410">
+<topic xml:lang="en-us" id="server_operations">
   <title>HPE Helion 2.0 Development Platform: Common Server Operations</title>
   <body>
     <ul>
       <li>
-        <xref type="section" href="#topic4410/server-status">Server Status</xref>
+        <xref type="section" href="#server_operations/server-status">Server Status</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/starting-and-stopping-roles">Starting and Stopping
+        <xref type="section" href="#server_operations/starting-and-stopping-roles">Starting and Stopping
           Roles</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/system-shutdown">System Shutdown</xref>
+        <xref type="section" href="#server_operations/system-shutdown">System Shutdown</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/setting-the-time-zone">Setting the Time Zone</xref>
+        <xref type="section" href="#server_operations/setting-the-time-zone">Setting the Time Zone</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/resetting-the-vm">Resetting the VM</xref>
+        <xref type="section" href="#server_operations/resetting-the-vm">Resetting the VM</xref>
       </li>
       <li>
-        <xref href="#topic4410/monitoring-the-application-lifecycle-service-server" format="dita"
+        <xref href="#server_operations/monitoring-the-application-lifecycle-service-server" format="dita"
           >Monitoring The Application Lifecycle Service Server</xref></li>
       <li>
-        <xref type="section" href="#topic4410/management-console">Management Console</xref>
+        <xref type="section" href="#server_operations/management-console">Management Console</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/creating-an-admin-user">Creating an Admin User</xref>
+        <xref type="section" href="#server_operations/creating-an-admin-user">Creating an Admin User</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/system-monitoring-with-nagios">System Monitoring with
+        <xref type="section" href="#server_operations/system-monitoring-with-nagios">System Monitoring with
           Nagios</xref>
       </li>
       <li>
-        <xref type="section" href="#topic4410/server-backup-import-and-export">Server Backup,
+        <xref type="section" href="#server_operations/server-backup-import-and-export">Server Backup,
           Import, and Export</xref>
       </li>
     </ul>

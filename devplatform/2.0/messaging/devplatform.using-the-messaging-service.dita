@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3880">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="using_messaging">
 <title>HPE Helion 2.0 Development Platform: Using Messaging as a Service</title>
 <body>
 
@@ -18,12 +18,12 @@
 <p>The following topics explain how to create and manage a instance:</p>
 <ul>
 <li>
-<xref type="section" href="#topic3880/create">Creating a cluster</xref> </li>
+<xref type="section" href="#using_messaging/create">Creating a cluster</xref> </li>
 <li>
-<xref type="section" href="#topic3880/delete">Deleting a cluster</xref>
+<xref type="section" href="#using_messaging/delete">Deleting a cluster</xref>
 </li>
 <li>
-<xref type="section" href="#topic3880/manage">Managing a cluster</xref>
+<xref type="section" href="#using_messaging/manage">Managing a cluster</xref>
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>

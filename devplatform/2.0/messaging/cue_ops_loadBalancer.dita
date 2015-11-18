@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3880">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="cue_ops_loadbalancer">
 <title>HPE Helion 2.0 Development Platform: Accessing RabbitMQ via a load balancer</title>
 <body>
   <p>Clustering and load balancing connect multiple nodes to form one single logical broker. Virtual hosts, exchanges, users and permissions are mirrored across all nodes in a cluster. 
