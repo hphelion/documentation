@@ -192,8 +192,7 @@
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
           your environment: <ul id="ul_ubj_3h5_xt">
             <li>
-              <codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM. 
-            </li>
+              <codeph>ioa_ipaddress</codeph>: DCM IP of infoblox Openstack Adapter (IOA) VM. </li>
             <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
                 <codeph>admin</codeph>.</li>
             <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
@@ -204,8 +203,10 @@
               or Sacramento.</li>
           </ul></li>
         <li>Execute following command to apply patch:
-              <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p><b>To deploy
-              the plug-in on the baremetal region controller:</b></p></li>
+            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox
+ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the HP Helion OpenStack
+              cloud.</p><p><b>To deploy the plug-in on the baremetal region controller:</b></p></li>
       </ol>
       <ol>
         <li>Log into the baremetal controller.</li>
@@ -219,7 +220,7 @@
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
           your environment: <ul id="ul_ipn_325_xt">
             <li>
-              <codeph>ioa_ipaddress</codeph>: CLM IP of infoblox Openstack Adapter (IOA) VM. </li>
+              <codeph>ioa_ipaddress</codeph>: DCM IP of infoblox Openstack Adapter (IOA) VM. </li>
             <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
                 <codeph>admin</codeph>.</li>
             <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
@@ -230,7 +231,10 @@
               or Sacramento.</li>
           </ul></li>
             <li>Execute following command to apply patch:
-              <codeblock>ansible-playbook -i hosts deploy-infoblox.yml</codeblock></li>
+            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox
+ansible-playbook -i hosts deploy-infoblox.yml</codeblock><p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the HP Helion OpenStack cloud.
+          </p></li>
           
       </ol>
     </section>
