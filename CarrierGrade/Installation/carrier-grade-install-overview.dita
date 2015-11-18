@@ -18,8 +18,7 @@
     <section id="about-the-installation">
       <title>About the installation</title>
       <p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management
-        VM, creates a base HP Helion OpenStack cloud, configures network virtualization through HP
-        Distributed Cloud Networking (DCN), and deploys a carrier grade cloud.</p>
+        VM, creates a base HP Helion OpenStack cloud, and deploys a carrier grade cloud.</p>
       <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
           >Horizon graphical interface</xref> or using the CLIs of the respective <xref
@@ -29,12 +28,10 @@
     <section id="install-option"><title>Installation options</title><p>HP Helion OpenStack Carrier
         Grade has two baremetal installation options depending on your system configuration. It
         allows you to manage the KVM and VMware ESX<tm tmtype="reg"/> hypervisors and provision
-        virtual machines.</p><p>You can find more information on the hypervisor options in the <xref
-          href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref>.</p><p
-        id="components">The following table indicates the components required for each deployment
-        type. If your deployment indicates Yes in a column, you must install that component. If a
-        column is blank, you can disregard that component. <table frame="all" rowsep="1" colsep="1"
-          id="table_iqg_gyd_xt">
+        virtual machines.</p><p id="components">The following table indicates the components
+        required for each deployment type. If your deployment indicates Yes in a column, you must
+        install that component. If a column is blank, you can disregard that component. <table
+          frame="all" rowsep="1" colsep="1" id="table_iqg_gyd_xt">
           <tgroup cols="5">
             <colspec colname="c2" colnum="1" colwidth="1.0*"/>
             <colspec colname="newCol2" colnum="2" colwidth="1*"/>
