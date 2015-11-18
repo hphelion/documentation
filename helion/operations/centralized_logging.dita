@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="logging">
+<topic xml:lang="en-us" id="centralized_logging">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging Service</title>
   <body>
 
@@ -22,33 +22,33 @@
     <p>This document describes the Centralized Logging feature and contains the following
       sections:</p>
     <ul>
-      <li><xref href="#logging/install">Installation</xref></li>
-      <li><xref href="#logging/components">Centralized Logging Components</xref></li>
-      <li><xref href="#logging/retaining_logs">Log Retention Information</xref></li>
+      <li><xref href="#centralized_logging/install">Installation</xref></li>
+      <li><xref href="#centralized_logging/components">Centralized Logging Components</xref></li>
+      <li><xref href="#centralized_logging/retaining_logs">Log Retention Information</xref></li>
       <li>
-        <xref href="#logging/types">Centralized Logging Data</xref>
+        <xref href="#centralized_logging/types">Centralized Logging Data</xref>
       </li>
       <li>
-        <xref href="#logging/kibana">Kibana Configuration</xref>
+        <xref href="#centralized_logging/kibana">Kibana Configuration</xref>
         <ul>
           <li>
-            <xref href="#logging/interface">Logging into Kibana</xref>
+            <xref href="#centralized_logging/interface">Logging into Kibana</xref>
           </li>
         </ul>
       </li>
       <li>
-        <xref href="#logging/troubleshooting">Using Centralized Logging to Troubleshoot
+        <xref href="#centralized_logging/troubleshooting">Using Centralized Logging to Troubleshoot
           Issues</xref>
       </li>
       <li>
-        <xref href="#logging/monitoring">Monitoring Centralized Logging</xref>
+        <xref href="#centralized_logging/monitoring">Monitoring Centralized Logging</xref>
       </li>
       <li>
-        <xref href="#logging/troubleshooting_issues">Troubleshooting Centralized Logging
+        <xref href="#centralized_logging/troubleshooting_issues">Troubleshooting Centralized Logging
           Issues</xref>
       </li>
       <li>
-        <xref href="#logging/info">For More Information</xref>
+        <xref href="#centralized_logging/info">For More Information</xref>
       </li>
     </ul>
     <section id="install">
