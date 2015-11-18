@@ -37,9 +37,7 @@
             </ul> 
           </dd>
         </dlentry>
-        <dlentry>
-          <dt></dt>
-        </dlentry>
+       
         <dlentry>
           <dt>Enable Monasca Monitoring for the Database Service</dt>
           <dd> The following instructions will enable the Monasca agent on the DBaaS control plane.
