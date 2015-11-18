@@ -97,32 +97,6 @@ password:  &lt;random></codeblock><p>The Horizon
       <p><b>Important!</b> Follow the steps for a <xref href="#topic1107/nic" format="dita">bonded
           NIC environment</xref> below.</p>
     </section>
-  <section id="kvm-unlock"><title>For a Non-Bonded Environment</title>
-      <ol>
-        <li>Create the Infra interface. See <xref
-            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
-          /> or <i>Interfaces</i> in the Administrtor Guide.</li>
-        <li>Create a Provider Network. See <xref
-            href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
-          /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-        <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation Range</b>
-          option. See <xref
-            href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
-          /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-        <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
-            interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
-          Guide.</li>
-        <li>Optionally, change the default CPU allocations and/or the default memory allocations
-          (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes. See
-            <i>Processor</i> in the Administrator Guide.</li>
-        <li><xref
-            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
-            >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
-          the inventory page to show <b>Available</b> and <b>Online</b>.</li>
-        <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
-            bonded NIC environments</xref>.</li>
-      </ol>
-    </section>
   <section id="kvm-esx-unlock">
     <title>For a Non-Bonded Environment</title>
       <ol>

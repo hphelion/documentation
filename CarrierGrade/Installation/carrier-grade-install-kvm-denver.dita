@@ -19,8 +19,8 @@
     <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/install-license"/>
     <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/install-cloud"/>
     <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/unlock"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/kvm-unlock"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/nic"/>
+    <section conref="carrier-grade-install-kvm-tahoe.dita#topic1107/kvm-unlock"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/nic-unlock"/>
     <section id="next-step">
       <title>Next Steps</title>
       <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref>.</p>

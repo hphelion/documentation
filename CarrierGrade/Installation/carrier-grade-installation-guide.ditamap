@@ -139,9 +139,7 @@
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-tahoe.dita"
-                navtitle="Deploying the KVM Region" locktitle="yes">
-                <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
-            </topicref>
+                navtitle="Deploying the KVM Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-overview-memphis.dita"
             navtitle="Deploying the Memphis Template" locktitle="yes">
@@ -197,9 +195,7 @@
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-memphis.dita"
-                navtitle="Deploying the KVM Region" locktitle="yes">
-                <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
-            </topicref>
+                navtitle="Deploying the KVM Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-overview-sacramento.dita"
             navtitle="Deploying the Sacramento Template" locktitle="yes">
