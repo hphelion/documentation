@@ -27,7 +27,7 @@
         Interface</xref>.</p>
     <section>
       <p><b>Deploy and Configure Infoblox Openstack Adapter (IOA) VM in ESX</b></p>
-      <p>Infoblox vNIOS™ (Network Infrastructure Operating System) for VMware® allows deployment of
+      <p>Infoblox <tm tmtype="tm">vNIOS</tm> (Network Infrastructure Operating System) for <tm tmtype="reg">VMware</tm> allows deployment of
         a virtualized instance of an Infoblox appliance. You can use ESX vCenter to import the
         template and deploy the Infoblox IOA VM.</p>
       <p>To deploy the template in ESX:<ol id="ol_ezn_ybt_xs">

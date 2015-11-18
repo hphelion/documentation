@@ -137,7 +137,11 @@ export OS_AUTH_URL=&lt;your_os_auth_url&gt;</codeblock></li>
       <title>Restore the HP Helion OpenStack Carrier Grade</title>
       <p>To restore an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol id="ol_vlq_wm3_pt">
-        <li>Log in to the controller.</li>
+        <li>Log in to the controller as cghelion user. The default password is
+            <codeph>cghelion</codeph>.</li>
+        <li>Execute the following commands to change to the Attis
+          user:<codeblock>sudo -i
+su attis</codeblock></li>
         <li> Authenticate using export
           variables:<codeblock>export OS_TENANT_NAME=admin 
 export OS_USERNAME=admin 
