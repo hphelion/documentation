@@ -76,23 +76,6 @@
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-install-overview.dita"
       navtitle="Installation" locktitle="yes">
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
-        navtitle="Technical Overview" locktitle="yes">
-        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-denver.dita"
-          navtitle="Denver (KVM-only) Deployment Architecture Reference" locktitle="yes"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-memphis.dita"
-          navtitle="Tahoe (KVM with DCN) Deployment Architecture Reference" locktitle="yes"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita"
-          navtitle="Memphis (KVM + ESX with DCN ) Deployment Architecture Reference" locktitle="yes"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-sacramento.dita"
-          navtitle="Sacramento (KVM + ESX + Baremetal with DCN) Deployment Architecture Reference"
-          locktitle="yes"/>
-        <!--<topicref href="CarrierGrade/Installation/carrier-grade-technical-overview-tahoe.dita" navtitle="KVM with DCN Deployment Architecture Reference " locktitle="yes" toc="no"/>-->
-      </topicref>
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"
-        navtitle="Technical Specifications" locktitle="yes"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"
-        navtitle="Support Matrix" locktitle="yes"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
         format="ditamap"/>
     </topicref>
