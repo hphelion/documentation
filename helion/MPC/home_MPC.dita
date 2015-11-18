@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3076_mpc">
+  <title>Welcome to HPE Helion Documentation</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--PUBLISHED--><!--./index.md--><!--permalink: /--></p>
+    <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+    <p>HPE Helion provides public, private, and managed cloud solutions to get you moving on your
+      cloud journey. This content set contains information about the following products.</p>
+    <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
+      <strow>
+        <stentry>
+          <xref href="index_MPC.dita">HPE Helion <tm tmtype="reg">OpenStack</tm> Managed Private
+            Cloud</xref>
+        </stentry>
+        <stentry>A commercial-grade, managed software solution that enables customers to manage and
+          use private cloud services based on OpenStack HPE Helion OpenStack. This hardened,
+          extensible product is designed to deliver leading open-source cloud computing while
+          adhering tightly to OpenStack software API standards and services.</stentry>
+      </strow>
+      <strow>
+        <stentry>
+          <xref href="../../devplatform/2.0/devplatform.index.dita">HPE Helion Development
+            Platform</xref>
+        </stentry>
+        <stentry>
+          <p>A platform-as-a-service (PaaS) based on Cloud Foundry™ technology and fully integrated
+            with HPE Helion OpenStack. This product helps developers build cloud-native applications
+            and then deploy across private and public clouds. </p>
+        </stentry>
+      </strow>
+    </simpletable>
+  </body>
+</topic>
