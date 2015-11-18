@@ -120,7 +120,7 @@
             HLM_VM_IP is the CLM IP of the lifecycle manager. Locate the IP address for the
             lifecycle manager in the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph>
             file under <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
-            <codeblock>User Name: root
+            <codeblock>User Name: cghelion
 Password: cghelion</codeblock>
           </p><p><b>Important:</b> After logging in with the default password, make sure you change
             the password for the <codeph>cghelion</codeph> user. </p><p><image
