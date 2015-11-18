@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ud1_tqx_wt">
+  <title>Developer Quick Start Trial Guide</title>
+  <body>
+    <p>This guide will walk you through the process of registering a Helion Public Cloud account,
+      downloading the ALS management tool and the ALS client, creating your sandbox environment, and
+      deploying your first cluster. After deploying your cluster, you will be able to push sample
+      applications and troubleshoot or terminate your instance and its security groups as
+      necessary.</p>
+    <note type="important">You can use this guide to try out the HPE Helion Development Platform and
+      to learn about its operation. You must not use your sandbox environment as a production
+      system.</note>
+  </body>
+</topic>
