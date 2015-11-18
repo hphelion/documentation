@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ud1_tqx_wt">
+  <title>Docker</title>
+  <body>
+    <p>In this section you will learn how to deploy Docker apps, enable container deployment, and
+      create and deploy your first Docker app.</p>
+  </body>
+</topic>
