@@ -30,10 +30,6 @@
     "interface_ports": [
     "eth0, eth1"
 ],</codeblock>
-            <p><i>Return to installing the non-KVM region for the <xref
-                href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref>
-                    template.</i></p>
             <p>Make sure the file contains the following lines for the TUL network. Remove any
                 additional TUL entries, if present:</p>
             <codeblock>"vswitch_type": "nuage_vrs",
@@ -109,5 +105,15 @@
     ]
 }</codeblock>
         </section>
+        <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                <li><xref href="CGH-2-install-denver.dita#topic10581/conref-json">Denver
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                        deployment</xref></li>
+            </ul></p>
 </body>
 </topic>

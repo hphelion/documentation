@@ -20,9 +20,9 @@
             Virtualized Services Directory (<i>VSD</i>):</p>
         <section><title>Install the VSD VM</title><ol id="ol_gtd_b1l_2t">
                 <li>Log into the KVM Host.</li>
-                <li>Copy the VSD qcow image, named <codeph><ph
-                            conref="carrier-grade-install-prereqs.dita#topic7148/vsd-qcow"
-                        /></codeph>, to the <codeph>var/lib/libvirt/images</codeph>
+                <li>Copy the VSD qcow image, which you should have <xref
+                        href="carrier-grade-install-download.dita#topic7148/dcn">downloaded in the
+                        Prerequisites</xref>, to the <codeph>var/lib/libvirt/images</codeph>
                             directory.<p><b>Note:</b> The vsd.xml is a sample created for internal
                         HP Helion OpenStack Carrier Grade development quality assurance. For a
                         production environment, refer to the HPE DCN documentation to deploy and

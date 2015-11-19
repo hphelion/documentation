@@ -21,7 +21,7 @@
       template that comes with the installation package to create the KVM deployment. </p>
     <p><b>Note:</b> The Denver deployment is for proof-of-concept (POC) only and is not intended for
       production environments.</p>
-    <section conref="carrier-grade-technical-overview.dita#topic3485/Helion-services"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
     <p><b>Network/Component Architecture</b></p>
     <p><image href="../../media/CGH-2-block-arch-denver.png" width="750" id="image_wdn_zbw_mt"/></p>
     <ul>
@@ -159,9 +159,9 @@
       
       
     </section>
-    <section conref="carrier-grade-technical-overview.dita#topic3485/eth-int"/>
-    <section conref="carrier-grade-technical-overview.dita#topic3485/board-management-modules"/>
-    <section conref="carrier-grade-technical-overview.dita#topic3485/usb-interface"/>
-    <section conref="carrier-grade-technical-overview.dita#topic3485/net"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/> 
   </body>
 </topic>

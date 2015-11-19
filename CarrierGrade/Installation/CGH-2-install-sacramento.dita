@@ -167,8 +167,8 @@ Password: cghelion</codeblock>
         file supplies input values to the <codeph>hprovision</codeph> script, later in the
         installation. </p>
       <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json File for
-          Installing the KVM + ESX Topology</xref>.</p>
+          href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json
+        File</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
         <li>Change to the <codeph>&lt;cloudname&gt;</codeph>
           directory:<codeblock>cd /var/hlm/clouds/&lt;cloudname&gt;</codeblock></li>
@@ -601,7 +601,7 @@ Saved the current configuration to mainboard device successfully.
     <section id="keystone-neutron-patch">
       <title>Deploy the Keystone and Neutron Role Patches</title>
       <p>Apply these patches to update the Keystone and Neutron roles on kenobi-node-configuration.
-        You should have <xref href="carrier-grade-install-prereqs.dita#topic7148/patches">downloaded
+        You should have <xref href="carrier-grade-install-download.dita#topic7148/patches">downloaded
           the patch files in the Prerequisites</xref>.</p>
       <p>For more information, see <xref
           href="carrier-grade-install-keystone-neutron-role-patch.dita#topic10581">Deploying the

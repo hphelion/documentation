@@ -21,17 +21,12 @@
     <p>The process for installing the memphis or sacramento deployment requires several JSON files
             that will be used when deploying the lifecycle manager.</p>
 <section id="sample-node-provisionjson-file">
-  <p>The following represents a sample <codeph>machine_architecture.json</codeph> file for <xref
-                    href="carrier-grade-install-overview.dita#topic1925/nic">a bonded NIC
-                    installation</xref>. Use values appropriate for your environment. You can use
-                the following command on the KVM Host to gather the required PCI network info: </p>
+  <p>The following represents a sample <codeph>machine_architecture.json</codeph> file for a bonded
+                NIC installation. Use values appropriate for your environment. You can use the
+                following command on the KVM Host to gather the required PCI network info: </p>
             <p>
                 <codeblock>ls -l /sys/class/net | egrep pci | sed -e 's/^.*pci//' -e 's%/net.*$%%' </codeblock>
             </p>
-            <p><i>Return to installing the non-KVM region for the <xref
-                href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref>
-                    template.</i></p>
         
 <codeblock>{
                     "name": "ProLiant DL360 Gen9",
@@ -74,6 +69,16 @@
     
     <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 
         and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM Host.</p>
+            <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                    <li><xref href="CGH-2-install-denver.dita#topic10581/conref-json">Denver
+                            deployment</xref></li>
+                    <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                            deployment</xref></li>
+                    <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+                            deployment</xref></li>
+                    <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                            deployment</xref></li>
+                </ul></p>
     
         </section>
 </body>

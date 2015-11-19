@@ -17,7 +17,7 @@
   <body>
     <p>Before launching the <codeph>hlm generate</codeph> command, deploy the patches to update the
       Keystone and Neutron roles on kenobi-node-configuration. You should have <xref
-        href="carrier-grade-install-prereqs.dita#topic7148/patches">downloaded the patch files in
+        href="carrier-grade-install-download.dita#topic7148/patches">downloaded the patch files in
         the Prerequisites</xref>.</p>
    
       <p>To apply the patches:<ol id="ol_ww1_kwn_zt">

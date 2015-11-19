@@ -37,7 +37,7 @@
     <section id="deploy">
       <title>Deploy the compute proxy on the ESX Host</title>
       <p>You should have downloaded and extract the <codeph>TEMPL-CPV9.ova</codeph> to any local
-        directory <xref href="carrier-grade-install-prereqs.dita#topic7148/extract">during the
+        directory <xref href="carrier-grade-install-download.dita#topic7148/extract">during the
           Prerequisites</xref>.</p>
       <p>To deploy the compute proxy:<ol id="ol_ezn_ybt_xs">
           <li>Launch the VMware vCenter client.</li>

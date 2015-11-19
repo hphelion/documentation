@@ -30,10 +30,6 @@
                 <codeblock>"ldap_username": "admin", 
 "ldap_password": "admin_001", </codeblock>
             </p>
-            <p><i>Return to installing the non-KVM region for the <xref
-                href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref>
-                    template.</i></p>
             <codeblock>{ 
     "product": { 
         "version": 1 
@@ -56,5 +52,15 @@
 }
 </codeblock>
         </section>
+        <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                <li><xref href="CGH-2-install-denver.dita#topic10581/conref-json">Denver
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                        deployment</xref></li>
+            </ul></p>
 </body>
 </topic>

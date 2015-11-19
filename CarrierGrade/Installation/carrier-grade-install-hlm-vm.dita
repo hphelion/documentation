@@ -21,12 +21,12 @@
     <section><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
         Grade maintains a local Debian repository on the KVM Host from where Debain packages are
         installed. Before starting the installation, make sure the Debian files you <xref
-          href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in the
+          href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded in the
           Prerequisites</xref> are present in the repository: </p>Copy the following Debian packages
       to the <codeph>/root/cg/dcn</codeph> directory. When you run the ansible-playbook command,
-      these files will be picked up and moved into the repository.  <ul id="ul_wwn_13h_xt">
-        <li conref="carrier-grade-install-prereqs.dita#topic7148/libproto"/>
-        <li conref="carrier-grade-install-prereqs.dita#topic7148/setproc"/>
+      these files will be picked up and moved into the repository. <ul id="ul_wwn_13h_xt">
+        <li><xref href="carrier-grade-install-download.dita#topic7148/libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</xref></li>
+        <li><xref href="carrier-grade-install-download.dita#topic7148/setproc">python-setproctitle_1.1.8-1_amd64.deb</xref></li>
       </ul></section>
     <section id="prepare">
       <title>Prepare the system for deployment</title>
@@ -106,7 +106,7 @@ upstream_ntp_servers:
       <p>A YML file needs to be added to the <codeph>/root/infra-ansible-playbooks</codeph>
         directory before running the ansible-playbook command. You should have downloaded the
           <codeph>processtarball.yml</codeph> file <xref
-          href="carrier-grade-install-prereqs.dita#topic7148/patches">in the Prerequisites</xref>. </p>
+            href="carrier-grade-install-download.dita#topic7148/patches">in the Prerequisites</xref>. </p>
       <p>Copy the <codeph>processtarball.yml</codeph> file to following location on HML
         host:<codeblock>/root/infra-ansible-playbooks/roles/HLM-CFG/tasks/processtarball.yml</codeblock></p>
     </section>

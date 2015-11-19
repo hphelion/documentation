@@ -26,7 +26,7 @@
             vApp, called the VRSvApp, to integrate ESX and HPE DCN. One VRSvApp is required for each
             ESX host. There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
             installation package is contained in the packages you <xref
-                href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in the
+                href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded in the
                 Prerequisites</xref>.</p>
         <p>The DCN vSphere Solution addresses this integration. The installation involves deploying
             a stand-alone VM, installing the new vCenter Integration Node (called the vCenter
@@ -67,7 +67,7 @@
         <section><title>Import Templates to Create Required VMs</title><p>Two VMs are required for
                 the DCN vSphere Solution. You can use ESX vCenter client to import template files to
                 create these VMs. You should have <xref
-                    href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded these
+                    href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded these
                     template files during the prerequisites</xref>.</p><p>For instructions on how to
                 import OVA files, refer to the ESX documentation.</p>To deploy the vCenter
             Integration Node VM:<ol id="ol_mkw_drl_xt">
@@ -78,7 +78,7 @@
                     installation, you will select a network for the VM. Select the DVS Datapath
                     (TUL) network. Select the</li>
                 <li>Import the <codeph>itoolbox1.ova</codeph> template file.<p>You should have <xref
-                            href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
+                    href="carrier-grade-install-download.dita#topic7148/getinstall"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
                         file creates the HTTP\DHCP VM. During the installation, you will select a
                         network for the VM. Select the DVS Datapath (TUL) network.</p><p>For
@@ -120,7 +120,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                 <ol id="ol_v11_wh4_rt">
                     <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph>template
                             file.<p>You should have <xref
-                                href="carrier-grade-install-prereqs.dita#topic7148/getinstall"
+                                href="carrier-grade-install-download.dita#topic7148/getinstall"
                                 >downloaded this file during the prerequisites</xref>. Importing the
                             OVA file creates the HTTP\DHCP VM.</p><p>For instructions, refer to the
                             ESX documentation.</p></li>

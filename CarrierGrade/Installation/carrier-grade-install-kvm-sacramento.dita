@@ -50,7 +50,7 @@ ifconfig eth0 up</codeblock></li>
             </li>
             <li><codeph>cakey.pem</codeph></li>
           </ul><p>You should have downloaded these files <xref
-              href="carrier-grade-install-prereqs.dita#topic7148/patches">in the
+            href="carrier-grade-install-download.dita#topic7148/patches">in the
               prerequisites</xref></p></li>
       </ol>
     </section>
@@ -94,7 +94,7 @@ password:  &lt;random></codeblock><p>The Horizon
       <title>Configure and unlock the compute controllers</title>
       <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute
         the following commands from controller-0 to unlock each compute node in the inventory.</p>
-      <p><b>Important!</b> Follow the steps for a <xref href="#topic1107/nic" format="dita">bonded
+      <p><b>Important!</b> Follow the steps for a <xref href="#topic1107/nic-unlock" format="dita">bonded
           NIC environment</xref> below.</p>
     </section>
   <section id="kvm-esx-unlock">
