@@ -162,9 +162,18 @@ helion/tech-preview            Directory contains the config input files of the 
               <p>If you are using the Entry-scale KVM with Ceph model, see <xref
                   href="configure_ceph.dita#config_ceph/config_files">Configuring Your Ceph
                   Environment Input Files</xref> for details.</p></li>
-          </ol>
-          <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
-            passwords. This script uses OpenSSL.</p>
+          </ol></li>
+        <li>[WORKAROUND] - There is currently an issue with the Elasticsearch name that requires that you change it in the logging configuration file before continuing in the installation. The steps to do this are:
+        <ol>
+          <li>Edit the file below:
+            <codeblock>~/helion/hos/ansible/roles/logging-common/defaults/main.yml</codeblock></li>
+          <li>Edit the default value for the <codeph>elasticsearch_cluster_name</codeph> to a value other than <codeph>elasticsearch</codeph>. This entry will be under the Elasticsearch defaults section, which looks like the example below. Change the bolded value.
+          <codeblock># Elasticsearch defaults
+...
+elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>elasticsearch</b>') }}"</codeblock></li>
+        </ol></li>
+          <li>[OPTIONAL] - You can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
+            passwords. This script uses OpenSSL.
           <ol>
             <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
             <li>Put the encryption key into the following environment variable:
@@ -174,18 +183,19 @@ helion/tech-preview            Directory contains the config input files of the 
             <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
               in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
               remembering to enclose it in quotes.</li>
-            <li>Repeat the above for each server.</li>
-          </ol>
+            <li>Repeat the above for each server.
+          
           <note>Before you run any playbooks, remember that you need to export the encryption key in
             the following environment variable: <codeph>export
               HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
-      </ol>
-      <!--  TODO What branch? is it set automatically to "site"? is there a need to change directory? -->
-      <p>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
+      </ol></li>
+       <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
         follows: <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config or other commit message"</codeblock>
-        <note type="important">This step needs to be repeated any time you make changes to your
+git commit -m "My config or other commit message"</codeblock></li>
+      </ol>
+      
+        <p><note type="important">This step needs to be repeated any time you make changes to your
           configuration files before you move onto the following steps. See <xref
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
@@ -309,13 +319,11 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           you are using fresh machines this step may not be necessary.
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock></li>
-        <li>Run the <codeph>site.yml</codeph> playbook using the command below. The <codeph>-e
-            elasticsearch_cluster_name</codeph> switch is used to set a unique name for your
-          elasticsearch cluster. This should be set to a value other than
-            <codeph>elasticsearch</codeph>. <codeblock>cd ~/scratch/ansible/next/hos/ansible 
-ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock>
+        <li>Run the <codeph>site.yml</codeph> playbook below:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible 
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           <p>If you have used an encryption password when running the configuration processor use
-            the command below and enter the encryption password when prompted: <!-- TODO does this need the -e switch as well? -->
+            the command below and enter the encryption password when prompted:
             <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
           </p>
           <note>The step above runs <codeph>osconfig</codeph> to configure the cloud and
