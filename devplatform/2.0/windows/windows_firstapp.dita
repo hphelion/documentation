@@ -143,18 +143,18 @@
         <li>Right click the "Contoso" application and select <b>View in Browser</b>: <image
             href="../../../media/windows_viewbrowser.png" placement="break"/>
         </li>
-      </ol> That's it! You are ready to use your application. </section><section><title>Deploy the sample application from the command line</title>
-
-If you are deploying your application from the command line, you do not need Visual Studio to deploy your application. You can deploy it using the Helion client tool. For more information about using the Helion client tool with Windows applications, see "/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide.
-
-
-One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. Typically, a push is run with the tool in the solution directory, the client tool uploads the application, and the application is built on the server.
-<ol>
-<li> Open <codeph>Web.config</codeph> with a text editor</li>
-<li> Change the following configuration line (this will pull the connection string parameters from
-          environment variables, rather than using hardcoded values):
-       
-<codeblock>  &lt;add name="SchoolContext" 
+      </ol> That's it! You are ready to use your application. </section><section><title>Deploy the sample application from the command line</title> If you are deploying
+      your application from the command line, you do not need Visual Studio to deploy your
+      application. You can deploy it using the Helion client tool. For more information about using
+      the Helion client tool with Windows applications, see <xref
+        href="windows_tools_guide.dita#topic_w5z_kcw_js">Windows and .NET Tools Guide</xref>. One
+      advantage of using the command line is that you can use Mac or Linux as well as Windows to
+      deploy your application. Typically, a push is run with the tool in the solution directory, the
+      client tool uploads the application, and the application is built on the server. <ol>
+        <li> Open <codeph>Web.config</codeph> with a text editor</li>
+        <li> Change the following configuration line (this will pull the connection string
+          parameters from environment variables, rather than using hardcoded values):
+          <codeblock>  &lt;add name="SchoolContext" 
     connectionString="Data Source=(LocalDb)\v11.0;
     Initial Catalog=ContosoUniversity2;
     Integrated Security=SSPI;"
@@ -164,9 +164,14 @@ One advantage of using the command line is that you can use Mac or Linux as well
   connectionString="{ContosoUniversity-db#connectionString}" 
   providerName="System.Data.SqlClient" /&gt;</codeblock>
         </li>
-<li> Create a new file called <codeph>manifest.yml</codeph> in the same directory as your solution
-          file, with the following contents. This is the application manifest file, which the
-          deployment tool will use to determine what to do with the application.
+        <li> Create a new file called <codeph>manifest.yml</codeph> in the same directory as your
+          solution file, with the following contents. This is the application manifest file, which
+          the deployment tool will use to determine what to do with the application.
+          <note>When deploying from Visual Studio, the deployer will find <codeph>manifest.yml</codeph> using the solution file, so it doesn't need to be in any specific
+            location. If you are deploying your solution using the command line, it is recommended to use the <codeph>--manifest</codeph> setting to specify the location
+            of <codeph>manifest.yml</codeph>. If the <codeph>--manifest</codeph> setting is not specified, the directory containing the project file will be searched, but
+            this may lead to deploying more files than intended, such as code or the project file itself.
+            </note>
           <codeblock>---
 applications:
   -name: ContosoUniversity
@@ -174,19 +179,18 @@ applications:
   services:
     ${name}-db:
       type: mssql2014</codeblock></li>
-<li> Use the "http://docs.hpcloud.com/helion/devplatform/windows/tools_guide/#helion" Helion ALS
-          Client (Helion.exe) to deploy the application. Run this command in the same directory as
-            <codeph>manifest.yml</codeph> (The <codeph>-n</codeph> parameter suppresses prompts
+        <li> Use the "http://docs.hpcloud.com/helion/devplatform/windows/tools_guide/#helion" Helion
+          ALS Client (Helion.exe) to deploy the application. Run this command in the same directory
+          as <codeph>manifest.yml</codeph> (The <codeph>-n</codeph> parameter suppresses prompts
           about defaults that the script uses):
           <codeblock>helion target &lt;cluster URL>
 helion login
 helion push --stack win2012r2 -n</codeblock></li>
-<li> When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
-</li>
-<li> Browse to the application URL to verify the deployment. </li>
-</ol>
-    
-</section>
+        <li> When the push completes, the command line will show the application URL (e.g.
+          ContosoUniversity.xx.xx.xx.xx.xip.io). </li>
+        <li> Browse to the application URL to verify the deployment. </li>
+      </ol>
+    </section>
       <section id="view_apps"><title>Configure Windows DEA to view application files in the management console</title>
       <p>When the new DEA is created, applications can only be viewed on the command line. Follow these steps to view applications in the management console:</p>
       <ol>
