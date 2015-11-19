@@ -11,18 +11,18 @@
         configuration.</p>
       <ol>
         <li>Ensure that the <codeph>domain_specific_drivers_enabled</codeph> option is set to
-            <codeph>True</codeph> in the main configuration file template in this file:
+          <codeph>True</codeph> in the main configuration file template in this file:
           <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone.conf.j2</codeblock></li>
         <li>Create a YAML file which contains the definition of the LDAP server connection. The
           sample file below is already provided as part of the lifecycle manager <xref
             href="../installation/using_git.dita#using_git">local git repository</xref>. It is
           available on a lifecycle manager in the following file:
           <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_sample.yml</codeblock>.
-            <p>Save a copy of this file with a new name, for example:</p>
+          <p>Save a copy of this file with a new name, for example:</p>
           <codeblock>/home/stack/helion/my_cloud/config/keystone/keystone_configure_ldap_my.yml</codeblock>
           <note>Please refer to [ldap] section of the <xref
-              href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
-              scope="external" format="html">Keystone</xref> documentation for OpenStack Kilo for
+            href="http://docs.openstack.org/kilo/config-reference/content/keystone-configuration-file.html"
+            scope="external" format="html">Keystone</xref> documentation for OpenStack Kilo for
             the full option list and description.</note>
           <p>Here is the sample YAML configuration, optimized for Microsoft Active Directory
             server:</p>
@@ -55,6 +55,8 @@ keystone_domainldap_conf:
       identity:
          driver: keystone.identity.backends.ldap.Identity
  
+      assignment:
+        driver: keystone.assignment.backends.sql.Assignment
  
       # For full list and description of ldap configuration options, please refer to
       # https://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample or
@@ -95,21 +97,17 @@ keystone_domainldap_conf:
         # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
         # by different authorities, make sure that you place certs for all the LDAP backend domains in the 
         # cacert parameter as seen in this sample yml file so that all the certs are combined in a single CA file 
-        # and every LDAP domain configuration points to the combined CA file. 
-        # Note: 
-        # 1. Please be advised that every time a new ldap domain is configured, the single CA file gets overwritten 
-        # and hence ensure that you place certs for all the LDAP backend domains in the cacert parameter.
-        # 2. There is a known issue on one cert per CA file per domain when the system processes 
+        # and every LDAP domain configuration points to the combined CA file.
+        # Note: There is a known issue on one cert per CA file per domain when the system processes 
         # concurrent requests to multiple LDAP domains. Using the single CA file with all certs combined 
         # shall get the system working properly*.
+        # The issue is in the underlying SSL library. Upstream is not investing in python-ldap package anymore. It is also not python3
+        # compliant. At <xref href="https://etherpad.openstack.org/p/keystone-mitaka-summit-brainstorm" format="html" scope="external">Mitaka summit</xref>, we will be proposing a transition off python-ldap to use python3-ldap.
         
-        tls_cacertfile: /etc/keystone/ssl/certs/all_ldapdomains_ca.pem
-        
-        # The issue is in the underlying SSL library. Upstream is not investing in python-ldap package anymore. 
-        # It is also not python3 compliant. In Mitaka summit, we will be proposing to transition off python-ldap and use python3-ldap. </codeblock>
+        tls_cacertfile: /etc/keystone/ssl/certs/all_ldapca.pem</codeblock>
         </li>
         <li>As suggested at <xref href="../installation/using_git.dita#using_git">Using Git for
-            Configuration Management</xref>, commit the new file into local git repository, and
+          Configuration Management</xref>, commit the new file into local git repository, and
           rerun configuration processor / deployment area preparation playbooks :
           <codeblock>$ cd ~/helion
 $ git checkout site
@@ -206,7 +204,7 @@ $ openstack --os-identity-api-version 3 \
 | user_id   | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
 +-----------+------------------------------------------------------------------+</codeblock>
         </li>
-
+        
         <li>Users can also have a project within domain and get a project-scoped token:
           <codeblock># Set environment variables for admin level access
 $ source keystone.osrc
@@ -256,9 +254,9 @@ $ openstack --os-identity-api-version 3 \
 | user_id    | e6d8c90abdc4510621271b73cc4dda8bc6009f263e421d8735d5f850f002f607 |
 +------------+------------------------------------------------------------------+</codeblock>
         </li>
-
-
-
+        
+        
+        
       </ol>
     </section>
     <section id="encrypt"><title>Transport Layer Security (TLS) Support</title>
@@ -268,10 +266,10 @@ $ openstack --os-identity-api-version 3 \
         <li>External authentication with LDAP and Microsoft Active Directory systems</li>
         <li>LDAPS specific support</li>
         <li>STARTTLS</li>
-
+        
       </ul>
     </section>
-
+    
     <!-- <section><title>Support and Troubleshooting</title>
     
     </section>-->
