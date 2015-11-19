@@ -382,9 +382,7 @@ pools:
                         <entry>Use the pool name value from the
                             <codeph>~/helion/my_cloud/config/ceph/user_model.yml</codeph> file,
                           highlighted below::
-                          <codeblock>- user:
-    name: <b>cinder-backup</b>
-    type: openstack
+                          <codeblock>
 pools:
     - name: <b>backups</b></codeblock></entry>
                       </row>
