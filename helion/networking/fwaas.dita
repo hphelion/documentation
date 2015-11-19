@@ -4,9 +4,15 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Firewall as a Service (FWaaS)</title>
   <body>
     <section id="about">
-    <p>Firewall as a Service (FWaaS) is an advanced networking service that introduces a firewall
-      feature set. This document describes the configuration process and requirements for the HPE
-      Helion OpenStack 2.0 Firewall as a Service module.</p>
+    <p>The Firewall as a Service (FWaaS) provides the ability to assign network-level, port security
+        for all traffic entering and existing a tenant network. More information on this service can
+        be found via the public OpenStack documentation located at <xref
+          href="http://specs.openstack.org/openstack/neutron-specs/specs/api/firewall_as_a_service__fwaas_.html"
+          format="html" scope="external"
+          >http://specs.openstack.org/openstack/neutron-specs/specs/api/firewall_as_a_service__fwaas_.html</xref>.
+        The following documentation provides Command Line Interface (CLI) sample instructions for
+        configuring and testing a firewall. The Firewall as a Service can also be configured and
+        managed by the Horizon web interface.</p>
 
     <p>FWaaS is implemented directly in the L3 agent (<i>neutron-l3-agent</i>), however if VPNaaS is
       enabled, FWaaS is implemented in the VPNaaS agent (<i>neutron-vpn-agent</i>). Because FWaaS
@@ -142,6 +148,16 @@ $ ./webserv.sh</codeblock></li>
      </section>
     <section id="MoreInfo">
       <title>More Information</title>
+      <p>Firewalls are based in IPtable settings.</p>
+      <p>Each firewall that is created is known as an instance.</p>
+      <p>A firewall instance can be deployed on selected project routers. If no specific project router is selected, a firewall 
+        instance is automatically applied to all project routers.</p>
+      <p>Only 1 firewall instance can be applied to a project router.</p>
+      <p>Only 1 firewall policy can be applied to a firewall instance.</p>
+      <p>Multiple firewall rules can be added and applied to a firewall policy.</p>
+      <p>Firewall rules can be shared across different projects via the Share API flag.</p>
+      <p>Firewall rules supersede the Security Group rules that are applied at the Instance level for all traffic entering or 
+        leaving a private, project network.</p>
       <p>For more information on the neutron command-line interface (CLI) and firewalls, see the OpenStack networking command-line client
         reference: <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html"></xref></p>
     </section>
