@@ -126,7 +126,7 @@
       <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two
         logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
         installation process. The <xref
-          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
+          href="carrier-grade-technical-overview-tahoe.dita#topic3485/deploy-arch">Deployment Architecture
           diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
       <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and

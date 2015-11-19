@@ -25,7 +25,7 @@
           Configurations</xref></li>
         <li><xref href="#topic1773/dcn" format="dita">DCN Components</xref></li>
         <li><xref href="#topic1773/esx" format="dita">ESX Components</xref></li>
-        <li><xref href="#topic1773/isonic" format="dita">Ironic Baremetal Components</xref></li>
+        <li><xref href="#topic1773/ironic" format="dita">Ironic Baremetal Components</xref></li>
         <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
         <li><xref href="#topic1773/add-esx" format="dita">ESX Software Requirements</xref></li>
         <li><xref href="#topic1773/add-dcn" format="dita">DCN Software Requirements</xref></li>

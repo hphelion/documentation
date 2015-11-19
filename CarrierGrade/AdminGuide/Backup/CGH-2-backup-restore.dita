@@ -113,6 +113,30 @@ But the CLI, REST API etc should all be same --></p>
       <p>For more information on the Attis backup and restore CLI see <xref
           href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
     </section>
+    <section>
+      <p>
+        <b>Before backing up or restoring the KVM region</b></p>
+      <p>Before performing your first backup of the KVM region, perform this one-time task.</p>
+      <p>
+        <ol id="ol_b4k_nrk_zt">
+          <li>Copy/Replace the following files to the
+              <codeph>/usr/share/attis-content/playbooks/cg/</codeph> directory on all controller
+            nodes:. You should have <xref
+              href="../../Installation/carrier-grade-install-prereqs.dita#topic7148/patches"
+              >downloaded these files in the Prerequisites</xref>.<ul id="ul_awb_srk_zt">
+              <li>vsc_config_backup.yml</li>
+              <li>vsc_config_restore.yml </li>
+              <li>wr_cc_system_backup.yml</li>
+              <li>wr_cc_system_restore.yml </li>
+            </ul></li>
+          <li>Run the following command to correct the <codeph>target_temp_folder</codeph> parameter
+            in the KVM region backup/restore configuration
+            <codeblock>cd /home/attis-access to /home/attis
+attis config --id 13b370f8-79f1-11e5-9587-d72dee4aa55b --update-parameter '{"target_temp_folder":"/home/attis"}'
+attis config --id 1cdcf21c-79f1-11e5-8da3-c76cce2f76d6 --update-parameter '{"target_temp_folder":"/home/attis"}'</codeblock></li>
+        </ol>
+      </p>
+    </section>
     <section><title>Backing up the HP Helion OpenStack Carrier Grade</title>
       <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
       <ol>
@@ -168,30 +192,11 @@ export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
       <p>SSH to VSD node and execute the following command after restoring
         VSD:<codeblock>service vsd restart</codeblock></p>
       <p><b>After restoring the controller database:</b></p>
-      
-        <ol id="ol_blr_crk_zt">
-          <li>After restore job is complete, from the HLM host, SSH to the compute proxy nodes. </li>
-          <li>Execute the following command to restart the Compute (Nova) service
-            <codeblock>service nova-compute restart</codeblock></li>
-        </ol>
-            <p>
-            <b>After restoring VSC/WR
-              backup/restore</b></p>
-              <p>
-        <ol id="ol_b4k_nrk_zt">
-          <li>Copy/Replace the following files to the
-              <codeph>/usr/share/attis-content/playbooks/cg/</codeph> directory on all controller
-            nodes:. You should have <xref
-              href="../../Installation/carrier-grade-install-prereqs.dita#topic7148/patches"
-              >downloaded these files in the Prerequisites</xref>.<ul id="ul_awb_srk_zt">
-              <li>vsc_config_backup.yml</li>
-              <li>vsc_config_restore.yml </li>
-              <li>wr_cc_system_backup.yml</li>
-              <li>wr_cc_system_restore.yml </li>
-            </ul></li>
-        </ol>
-      </p>
-      
+      <ol id="ol_blr_crk_zt">
+        <li>After restore job is complete, from the HLM host, SSH to the compute proxy nodes. </li>
+        <li>Execute the following command to restart the Compute (Nova) service
+          <codeblock>service nova-compute restart</codeblock></li>
+      </ol>
     </section>
     <p/>
   </body>

@@ -44,8 +44,8 @@
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/dcn" id="dcn"/>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/esx" id="esx"/>
     <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/software" id="software"/>
-    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/add-esx"/>
-    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/add-dcn"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/add-esx" id="add-esx"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/add-dcn" id="add-dcn"/>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/storage" id="storage"/>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/guestOS" id="guestos"/>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/os-dcn-esx"

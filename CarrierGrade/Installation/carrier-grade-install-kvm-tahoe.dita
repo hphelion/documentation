@@ -41,12 +41,12 @@
         href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
         >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
         the inventory page to show <b>Available</b> and <b>Online</b>.</li>
-      <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
+      <li>If you are using a bonded interface, see <xref href="#topic1107/nic-unlock" format="dita">For
         bonded NIC environments</xref>.</li>
     </ol>
   </section>
   
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/nic-unlock"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/nic-unlock" id="nic-unlock"/>
   
   <section id="next-step">
       <title>Next Steps</title>
