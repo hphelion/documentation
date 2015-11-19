@@ -48,6 +48,20 @@
 - name: SWOBJ-DRAINING-ROLE
   interface-model: INTERFACE_SET_SWOBJ
   disk-model: SWOBJ-DRAINING-DISKS</codeblock></li>
+          <li>Add the new role to the <codeph>server-role</codeph> attribute of either the cluster or resources item (depending on context). For example, for a Swift object server, the original <codeph>server-role</codeph> attribute looks like:
+            <codeblock>resources:
+  - name: swobj
+    ...
+    server-role: SWOBJ-ROLE
+    ...</codeblock>
+          <p>Change this to a list containing the original <codeph>SWOBJ-ROLE</codeph> and the new <codeph>SWOBJ-DRAINING-ROLE</codeph> as follows:
+            <codeblock>resources:
+  - name: swobj
+    ...
+    server-role:
+    - SWOBJ-ROLE
+    - SWOBJ-DRAINING-ROLE
+    ...</codeblock></p></li>
           <li>Create a SWOBJ-DRAINING-DISKS disk model by editing the file containing the
             SWOBJ-DISKS disk model (usually the <codeph>data/swobj_disks.yml</codeph> file) and
             adding an entry for SWOBJ-DRAINING-DISKS. Make a copy of the SWOBJ-DISKS disk model, but
