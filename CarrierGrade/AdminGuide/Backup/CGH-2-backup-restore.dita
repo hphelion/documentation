@@ -114,8 +114,7 @@ But the CLI, REST API etc should all be same --></p>
           href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
     </section>
     <section>
-      <p>
-        <b>Before backing up or restoring the KVM region</b></p>
+        <title>Before backing up or restoring the KVM region</title>
       <p>Before performing your first backup of the KVM region, perform this one-time task.</p>
       <p>
         <ol id="ol_b4k_nrk_zt">
