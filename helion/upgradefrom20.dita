@@ -5,8 +5,13 @@
   <body>
     <section>
       <title>Performing the Upgrade from HPE Helion OpenStack 2.0 </title>HPE Helion OpenStack 2.0
-      shipped with example configuration files, and you were able to modify them to suit your needs.
-      The configuration you specified will remain unchanged through the upgrade process.</section>
+      shipped with example configuration files, and you were able to modify them to suit your needs. </section>
+    <section><note type="caution">The configuration you specified will remain unchanged through the upgrade
+        process; however, if you made any configuration changes by passing parameters to any Ansible
+        playbooks using the -e option, you should find the affected files and make the required
+        changes directly in the files in <b>helion/my_cloud</b> and commit them to the git
+        repository so that those changes are tracked and applied during the upgrade process.
+        Otherwise they will not be applied.</note></section>
     <section>You may also install HPE Helion OpenStack 2.0.1 as a full install. Those instructions
       are found in the installation guide.</section>
     <section>To begin the upgrade process, log in to the lifecyce manager node as the user you
