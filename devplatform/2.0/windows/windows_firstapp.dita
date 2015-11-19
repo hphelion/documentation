@@ -165,13 +165,15 @@
   providerName="System.Data.SqlClient" /&gt;</codeblock>
         </li>
         <li> Create a new file called <codeph>manifest.yml</codeph> in the same directory as your
-          solution file, with the following contents. This is the application manifest file, which
-          the deployment tool will use to determine what to do with the application.
-          <note>When deploying from Visual Studio, the deployer will find <codeph>manifest.yml</codeph> using the solution file, so it doesn't need to be in any specific
-            location. If you are deploying your solution using the command line, it is recommended to use the <codeph>--manifest</codeph> setting to specify the location
-            of <codeph>manifest.yml</codeph>. If the <codeph>--manifest</codeph> setting is not specified, the directory containing the project file will be searched, but
-            this may lead to deploying more files than intended, such as code or the project file itself.
-            </note>
+          project file, with the following contents. This is the application manifest file, which
+          the deployment tool will use to determine what to do with the application. <note>When
+            deploying from Visual Studio, the deployer will find <codeph>manifest.yml</codeph> using
+            the solution file, so it doesn't need to be in any specific location. If you are
+            deploying your solution using the command line to a production environment, it is recommended to use the
+              <codeph>--manifest</codeph> setting to specify the location of
+              <codeph>manifest.yml</codeph>. If the <codeph>--manifest</codeph> setting is not
+            specified, the directory containing the project file will be searched, but this may lead
+            to deploying more files than intended, such as code or the project file itself. </note>
           <codeblock>---
 applications:
   -name: ContosoUniversity
@@ -179,10 +181,10 @@ applications:
   services:
     ${name}-db:
       type: mssql2014</codeblock></li>
-        <li> Use the "http://docs.hpcloud.com/helion/devplatform/windows/tools_guide/#helion" Helion
-          ALS Client (Helion.exe) to deploy the application. Run this command in the same directory
-          as <codeph>manifest.yml</codeph> (The <codeph>-n</codeph> parameter suppresses prompts
-          about defaults that the script uses):
+        <li> Use the <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/ul_jgl_fhw_js">Helion ALS
+            Client</xref> (Helion.exe) to deploy the application. Run this command in the same
+          directory as <codeph>manifest.yml</codeph> (The <codeph>-n</codeph> parameter suppresses
+          prompts about defaults that the script uses):
           <codeblock>helion target &lt;cluster URL>
 helion login
 helion push --stack win2012r2 -n</codeblock></li>
