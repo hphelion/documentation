@@ -113,7 +113,7 @@
           <p>For automated installation (e.g. CI) it is possible to disable SSH passphrase prompting
             by setting the <codeph>HOS_INIT_AUTO</codeph> environment variable before running
               <codeph>hos-init.bash</codeph>, like this:</p>
-          <codeblock>export HOST_INIT_AUTO=y</codeblock></li>
+          <codeblock>export HOS_INIT_AUTO=y</codeblock></li>
       </ol>
       <p>If you have protected the SSH key with a passphrase then execute the following commands to
         avoid having to enter the passphrase on every attempt by Ansible to connect to its client

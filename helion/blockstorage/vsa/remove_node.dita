@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_yfy_vjq_5t">
-  <title>HPE Helion OpenStack 2.0: Removing a VSA Node </title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node</title>
   <body>
     <p>
       <note type="warning">Please perform this operation under the supervision of the HPE support
         team.</note>
     </p>
-    <p>This topic describes how to remove the VSA node.</p>
-    <p>You can remove the VSA storage system from the cloud after it is removed from the cluster
-      management group in CMC. This is performed if you want to remove VSA permanently.</p>
-    <p><b>Prerequisite</b>:</p>
-    <p>You must remove the VSA cluster from CMC before removing the VSA node. To remove the CMC
-      cluster, refer to <b>HPE StoreVirtual Storage Online help in CMC</b> for more details.<note
-        type="important">You can remove a VSA node only if you have more than three nodes in a
-        cluster.</note></p>
-    <p><b>To Remove a VSA Node from a Cloud</b></p>
-    <p>Perform the following steps to remove the same cluster which has been removed from CMC in
-      your cloud.<ol id="ol_uqx_hfv_5t">
+    <section id="about">
+      <p>You may have a need to remove a VSA node for maintenance, re-allocation, or another purpose
+        and these steps will help you achieve this.</p>
+      <p>If you want to remove the VSA node permanently then you must start by removing the node
+        from the management group cluster in the CMC utility. Once it has been removed from the
+        management group cluster then you can remove the VSA storage system from the cloud.</p>
+    </section>
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>You must remove the VSA cluster from CMC before removing the VSA node. To remove the CMC
+        cluster, refer to <b>HPE StoreVirtual Storage Online help in CMC</b> for more details.</p>
+      <note type="important">You can remove a VSA node only if you have more than three nodes in a
+        cluster.</note>
+    </section>
+    <section id="howto"><title>To Remove a VSA Node from a Cloud</title>
+      <p>Perform the following steps to remove the same cluster which has been removed from CMC in
+        your cloud.</p>
+      <ol>
         <li>Edit the definition of the server (usually in the
-            <systemoutput>data/servers.yml</systemoutput> file), for example:
-            <codeblock>- id: vsa1
+            <systemoutput>data/servers.yml</systemoutput> file), for example: <codeblock>- id: vsa1
       ip-addr: 192.168.61.15
       role: VSA-ROLE
       server-group: RACK1
@@ -58,10 +63,10 @@
       ilo-ip: 10.1.192.235
       ilo-password: gone2far
       ilo-user: Administrator
-      mac-addr: 5C:B9:01:78:2D:00</codeblock><p>The
-            above example shows one cluster with four nodes. Since you have already removed the VSA
-            cluster from CMC, now you can remove one of the nodes associated with that cluster. In
-            the following example, <codeph>servers.yml</codeph> file <b>vsa2</b> has been
+      mac-addr: 5C:B9:01:78:2D:00</codeblock>
+          <p>The above example shows one cluster with four nodes. Since you have already removed the
+            VSA cluster from CMC, now you can remove one of the nodes associated with that cluster.
+            In the following example, <codeph>servers.yml</codeph> file <b>vsa2</b> has been
             removed:<codeblock>- id: vsa1
       ip-addr: 192.168.61.15
       role: VSA-ROLE
@@ -95,11 +100,19 @@
           configuration:<pre>cd ~/helion/hos/ansible
 git add -A
 git commit -m &lt;"commit message"></pre></li>
-        <li>Run the Configuration
-          Processor:<codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-        <li>Use the playbook below to create a deployment directory:
-          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-        <li>Verify that the node is removed from <codeph>hosts/verb_hosts</codeph> file.</li>
-      </ol></p>
+        <li>Then, commit the change, and rerun the config processor:
+          <codeblock>git commit -a -m "Removed node &lt;name>"
+cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+        </li>
+        <li>There is no need to run the site.yml playbook. However you should remove the node from
+          cobbler, as shown
+          here:<codeblock>sudo cobbler system remove --name=&lt;node>
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
+        </li>
+        <li>Ensure that the node you removed is also removed in the <codeph>~/scratch/ansible/next/hos/ansible/hosts/verb_hosts</codeph> file.</li>
+      </ol>
+    </section>
   </body>
 </topic>
