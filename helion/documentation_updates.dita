@@ -26,6 +26,12 @@
             </thead>
             <tbody>
               <row>
+                <entry>11/20/2015</entry>
+                <entry>Security - HTTP</entry>
+                <entry>Added page on header poisoning prevention. (<xref
+                  href="security/header_poisoning.dita">Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/16/2015</entry>
                 <entry>DNSaaS</entry>
                 <entry>Added DNSaaS Installation and Configuration documentation. (<xref
