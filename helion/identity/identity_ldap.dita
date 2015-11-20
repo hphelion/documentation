@@ -26,7 +26,7 @@
             the full option list and description.</note>
           <p>Here is the sample YAML configuration, optimized for Microsoft Active Directory
             server:</p>
-          <codeblock>---
+          <codeblock id="ldapcert">---
  
 keystone_domainldap_conf:
  

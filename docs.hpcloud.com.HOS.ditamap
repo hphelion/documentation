@@ -70,6 +70,9 @@
     <topichead navtitle="Security">
       <topicref href="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints"
         locktitle="yes"/>
+      <topicref href="helion/security/header_poisoning.dita" navtitle="Preventing Host Header Poisoning"
+        locktitle="yes" toc="no"/>
+      
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
