@@ -20,7 +20,7 @@
   <!-- HoS 2.0 -->
   <topicref href="helion/index.dita">
     <topicref href="helion/upgradefrom20.dita" navtitle="Upgrading from HPE Helion OpenStack 2.0 to 2.0.1" locktitle="yes"/>
-    <topicref href="helion/upgrade_from_beta2.dita"/> 
+    <topicref href="helion/upgrade_from_beta2.dita" toc="no"/> 
     
     <topicref href="helion/releasenotes.dita"/>
     <topicref href="helion/supportedconfigs.dita"/>
