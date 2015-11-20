@@ -32,10 +32,17 @@
                   href="security/header_poisoning.dita">Link</xref>)</entry>
               </row>
               <row>
+                <entry>11/19/2015</entry>
+                <entry>Identity - LDAP</entry>
+                <entry>Added clarification concerning LDAP/Keystone integration.
+                  (<xref>Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/16/2015</entry>
                 <entry>DNSaaS</entry>
                 <entry>Added DNSaaS Installation and Configuration documentation. (<xref
-                    href="networking/install_dnsaas.dita#HP2.0DNSaaS">Link</xref>)</entry>
+                    href="identity/identity_ldap.dita#topic_ifg_n33_bt/ldapcert"
+                  >Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/16/2015</entry>
