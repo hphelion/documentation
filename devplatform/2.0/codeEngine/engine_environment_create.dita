@@ -26,29 +26,17 @@
             <li>Provide the required credentials and then click <b>Connect</b>.<image
                         placement="break"
                         href="../../../media/engine_create_environment_credentials.png"
-                        id="image_kds_44y_kt"/><ul>
-                        <li>For Cloud Foundry, provide:<ol>
-                        <li>The <b>Helion Cloud Foundry URL</b> (it will be in the format:
-                                        <codeph>https://api.xxx.xxx.xxx.xxx.xip.io</codeph>)</li>
-                                <li><b>Username</b>
-                                </li>
-                                <li><b>Password</b>
-                                </li>
-                                <li>Click <b>Connect</b>.</li></ol></li>
-                    </ul></li>
-        
-        <li>Select the Organization and Space. <ol>
-                        <li>Select the target <b>Organization</b>. If the target Organization does
-                            not appear in the list, you may have to <xref
-                                href="../helion/user/reference/client-ref-organizations.dita#topic6634/command-create-org"
-                                >create it</xref>.</li>
-                        <li>Select the target <b>Space</b>. If the target Space does not appear in
-                            the list, you may have to <xref
-                                href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
-                                >create it</xref>.</li>
-                        <li>Click <b>Save</b>.</li>
-                    </ol>
-                </li><li>Your new environment will now appear in the list.</li>
+                        id="image_kds_44y_kt"/>
+     <ol>
+                        <li>Provide a descriptive <b>Name</b> for this Environment.</li>           <li>Select the target <b>Organization</b>. If the target Organization does not
+                    appear in the list, you may have to <xref
+                        href="../helion/user/reference/client-ref-organizations.dita#topic6634/command-create-org"
+                        >create it</xref>.</li>
+                <li>Select the target <b>Space</b>. If the target Space does not appear in the list,
+                    you may have to <xref
+                        href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
+                        >create it</xref>.</li>
+         <li>Click <b>Save</b>.</li></ol></li>
         </ol></p>
     </body>
 </topic>
