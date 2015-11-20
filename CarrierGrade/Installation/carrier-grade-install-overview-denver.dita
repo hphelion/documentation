@@ -20,8 +20,8 @@
     <p>This document describes the process for installing HP Helion OpenStack Carrier Grade.</p>
     <section id="about-the-installation">
       <title>About the installation</title>
-      <p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management
-        VM, creates a base HP Helion OpenStack cloud, configures network virtualization through HP
+      <p>The HP Helion OpenStack Carrier Grade installation installs the lifecycle manager, 
+        creates a base HP Helion OpenStack cloud, configures network virtualization through HP
         Distributed Cloud Networking (DCN), and deploys a carrier grade cloud.</p>
       <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
@@ -72,8 +72,8 @@
         <li>Install the cloud topologies: <p>In this cloud topology, the standard OpenStack services
             like Keystone, Glance, Cinder, Swift are installed in the non-KVM region first. Then the
             KVM region is installed. </p><ul id="ul_fxd_x4c_b5">
-            <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
-                Management and Installation Services</xref>.</li>
+              <li> Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">the Lifecycle Manager 
+                and Installation Services</xref>.</li>
             <li>Install the <xref href="carrier-grade-install-non-kvm.dita#topic10581">HPE Helion
                 OpenStack cloud</xref>. These components will be installed into what is called the
                 <i>Non-KVM region</i>.</li>

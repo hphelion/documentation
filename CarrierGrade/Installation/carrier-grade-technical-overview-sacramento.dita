@@ -174,7 +174,7 @@
               <entry> DCM </entry>
               <entry> CLM </entry>
               <entry>
-                <p>VSC IP to HLM CLM VM IP (only during deployment)</p>
+                <p>VSC IP to lifecycle manager CLM VM IP (only during deployment)</p>
                 <p>VSD IP to ESX host CLM IP (during VRS-vAp deployment)</p>
               </entry>
             </row>
@@ -220,7 +220,7 @@
           href="carrier-grade-technical-overview-sacramento.dita#topic3485/deploy-arch">Deployment
           Architecture diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
-      <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
+      <p>The Non-KVM region contains the lifecycle manager, to deploy and
         maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
         distribution of OpenStack. The ESX and DCN components and servers also reside in the
         non-KVM zone.  </p>

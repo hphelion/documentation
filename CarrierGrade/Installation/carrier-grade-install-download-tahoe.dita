@@ -33,8 +33,7 @@
                 <section conref="carrier-grade-install-download.dita#topic7148/kvm"/>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the lifecycle manager and installation
-                                                  services</xref>.
+                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the Lifecycle Manager and Installation Services</xref>.
                                 
                         </p>
                 </section>

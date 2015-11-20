@@ -17,7 +17,7 @@
     <p>This document describes the process for installing HP Helion OpenStack Carrier Grade.</p>
     <section id="about-the-installation">
       <title>About the installation</title>
-      <p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management
+      <p>The HP Helion OpenStack Carrier Grade installation installs a virtual machine for the lifecycle manager
         VM, creates a base HP Helion OpenStack cloud, and deploys a carrier grade cloud.</p>
       <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
