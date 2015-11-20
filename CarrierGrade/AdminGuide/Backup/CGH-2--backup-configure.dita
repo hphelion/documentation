@@ -141,10 +141,14 @@ ssh-copy-id vsd_user@vsd_address</codeblock><p><b>Note:</b>
         username/password is set other than defaults, use the Attis CLI to update those values in
         the KVM region controller
         config.<codeblock>attis config --id &lt;config_id of WR_Appliance_system_files_Backup&gt; --update-parameter '{"wr_controller_backup_user":"YOUR_USER"}'
-attis config --id &lt;config_id of WR_Appliance_system_files_Restore&gt; --update-parameter '{"wr_controller_backup_password":"YOUR_PASSWORD"}'</codeblock></p><p><b>Cloud
-          Controller Database Restore</b></p><p> This job restores MySQL database of the Cloud
-        Controller. Remember to update parameters of the config template you’re using (default
-        location: /etc/attis/config_template) before you trigger restore. </p><ul id="ul_o44_rbp_xt">
+attis config --id &lt;config_id of WR_Appliance_system_files_Restore&gt; --update-parameter '{"wr_controller_backup_password":"YOUR_PASSWORD"}'</codeblock></p><p><b>Backing
+          up and Restoring the Baremetal Controller</b></p><p>Before backing up or restoring the
+        baremetal controller, update the <codeph>bm_controller_address</codeph> field in the
+          <codeph>/etc/attis/dcn.lst</codeph>
+          file:<codeblock>vi /etc/attis/dcn.lst</codeblock></p><p><b>Cloud Controller Database
+          Restore</b></p><p> This job restores MySQL database of the Cloud Controller. Remember to
+        update parameters of the config template you’re using (default location:
+        /etc/attis/config_template) before you trigger restore. </p><ul id="ul_o44_rbp_xt">
         <li>If SCP option is
           selected:<codeblock>attis restore --config-path /etc/attis/config_template/cloudcontrollerappliancedbrestore_scp.json</codeblock></li>
       </ul><ul id="ul_mmg_qbp_xt">

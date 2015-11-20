@@ -129,8 +129,8 @@ But the CLI, REST API etc should all be same --></p>
               <li>wr_cc_system_restore.yml </li>
             </ul></li>
           <li>Run the following command to correct the <codeph>target_temp_folder</codeph> parameter
-            in the KVM region backup/restore configuration
-            <codeblock>cd /home/attis-access to /home/attis
+            in the WR_system_files_Backup &amp; WR_Appliance_system_files_Restore configuration
+            files.<codeblock>cd /home/attis-access to /home/attis
 attis config --id 13b370f8-79f1-11e5-9587-d72dee4aa55b --update-parameter '{"target_temp_folder":"/home/attis"}'
 attis config --id 1cdcf21c-79f1-11e5-8da3-c76cce2f76d6 --update-parameter '{"target_temp_folder":"/home/attis"}'</codeblock></li>
         </ol>
