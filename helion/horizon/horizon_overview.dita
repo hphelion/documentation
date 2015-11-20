@@ -22,8 +22,8 @@
 
 
     <section><title>Browser support for Horizon</title> According to OpenStack.org, Horizon is
-      tested and supported on the latest versions of Firefox and Chrome, and IE9+. Below is a smmary
-      of browser support for Horizon <dl>
+      tested and supported on the latest versions of Firefox and Chrome, and IE9+. Below is a
+      summary of browser support for Horizon <dl>
         <dlentry>
           <dt>Very good</dt>
           <dd>Very well tested; should work as expected</dd>
