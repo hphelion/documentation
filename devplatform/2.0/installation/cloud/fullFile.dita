@@ -3,19 +3,21 @@
 <topic id="topic_mhg_f2n_vt">
   <title>Full clouds.yaml Sample File</title>
   <body>
-    <p>For information on each variable, see the service-specific documentation.</p>
-    <codeblock><xref href="cloud_platform.dita#cloudPlatform">clouds</xref>:
+    <p>For information on what each variable value is and where to find it, see the <xref
+        href="../install_cloudsyaml.dita#topic_wzw_r4w_rt">service-specific
+      </xref>documentation.</p>
+    <codeblock>clouds:
   mycloud:
-    codn_username: xxxxx
-    codn_password: xxxxxx
+    codn_username: 
+    codn_password: 
     cacert: /home/stack/ca/cacert.pem
     region_name: region1
     auth:
       auth_url: https:
-      project_name: admin
-      username: admin
+      project_name: 
+      username: 
       password:   
-    <xref href="cloud_messaging.dita#cloudMessaging">messaging</xref>:   
+    messaging:   
       deployer_key: msgaas
       deployer_flavor: 4
       deployer_name: msgaas_deployer_01   
@@ -29,7 +31,7 @@
       deployer_ext_net_id: 
       deployer_cacert: /home/stack/ca/cacert.pem
       deployer_cname: "cname"             
-    <xref href="cloud_codeengine.dita#cloudCodeEngine">helionce</xref>:
+    helionce:
       deployer_key: helionce-shared
       deployer_flavor: 3
       deployer_dns_servers: dnsservers
@@ -40,12 +42,12 @@
         project_name: admin
         username: admin
         password: 
-   <xref href="cloud_messaging.dita#cloudMessaging">msgaas</xref>:
+    msgaas:
       image_api_version: '1'
       identity_api_version: '2'
       region_name: region1
       insecure: True
-    <xref href="cloud_database.dita#cloudDatabase">database</xref>:
+    database:
       trove_enable_ssl: False
       ephemeral_ca_cert: /home/stack/ca/cacert.pem  
       external_network: 

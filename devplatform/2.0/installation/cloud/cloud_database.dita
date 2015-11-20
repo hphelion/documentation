@@ -25,7 +25,9 @@
       hotpools_max_instances: 1
       hotpools_image_name: percona
       hotpools_flavor_names: 'm1.medium'
-      project_id: </codeblock></p>
+      project_id: 
+      control_plane_database_volume_type: VOLTYPE_HERE
+      guest_instance_volume_type: VOLTYPE_HERE</codeblock></p>
       <dl>
         <dlentry><dt>trove_enable_ssl</dt><dd>This variable defines whether SSL is used internally by Trove. HPE Helion OpenStack 2.0
             implements SSL using HAProxy, so in installations of version 2.0 or later, this value
@@ -69,7 +71,18 @@
             2.0 or greater, this value must not be changed.</dd></dlentry>
         <dlentry><dt>hotpools_flavor_names</dt><dd> The default value is <codeph>m1.medium</codeph>.  This is the set of  flavor sizes to keep in
             the pool. </dd></dlentry>
-        <dlentry><dt>project_id</dt><dd> Project id of the project where the service will be installed.  </dd></dlentry></dl></section>
+        <dlentry><dt>project_id</dt><dd> Project id of the project where the service will be installed.  </dd></dlentry>
+      <dlentry>
+          <dt>control_plane_database_volume_type</dt>
+          <dd>This value sets the Cinder volume type. The default value is LVM; if you are using LVM, do not include this parameter. If you are using Ceph for Cinder volumes, set this value to <codeph>ceph</codeph></dd>
+      </dlentry>
+          <dlentry>
+              <dt>guest_instance_volume_type</dt>
+              <dd>This value sets the Cinder volume type. The default value is LVM; if you are using LVM, do not include this parameter. If you are using Ceph for Cinder volumes, set this value to <codeph>ceph</codeph></dd>
+          </dlentry>
+          
+      
+      </dl></section>
     
   </body>
 </topic>
