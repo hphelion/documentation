@@ -255,7 +255,8 @@
         <topicref href="helion/administration/adding_moonshot_nodes.dita"
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
         <!-- BLOCK STORAGE -->
-        <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing VSA Node"
+        <topicref href="helion/operations/add_vsa_node.dita" navtitle="Adding a VSA Node" locktitle="yes" toc="no"/>
+        <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing a VSA Node"
           locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
           navtitle="Removing a VSA Node For Maintenance" locktitle="yes"/>
