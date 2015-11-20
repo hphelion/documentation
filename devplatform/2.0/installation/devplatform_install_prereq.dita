@@ -120,7 +120,7 @@ https_proxy=https://myproxy.example.com</codeblock>
           <codeblock>KEYSTONE_URL_PUBLIC=`openstack endpoint list | grep keystone | grep public | grep -Eo '(http|https)://{1}\S+'`
 wget -t3 --timeout=5 -O/dev/null -q $KEYSTONE_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $KEYSTONE_URL_PUBLIC</codeblock></li>
         <li>Verify access to the public Sherpa
-          endpoint:<pre>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+' | sed -e 's/v1$//‘`
+          endpoint:<pre>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+' | sed -e 's/v1$//'`
 wget -t3 --timeout=5 -O/dev/null -q $SHERPA_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $SHERPA_URL_PUBLIC</pre></li>
       </ol>
     </section>
