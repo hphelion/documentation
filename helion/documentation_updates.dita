@@ -34,8 +34,9 @@
               <row>
                 <entry>11/19/2015</entry>
                 <entry>Identity - LDAP</entry>
-                <entry>Added clarification concerning LDAP/Keystone integration.
-                  (<xref>Link</xref>)</entry>
+                <entry>Added clarification concerning LDAP/Keystone integration. (<xref
+                    href="identity/identity_ldap.dita#topic_ifg_n33_bt/ldapcert"
+                  >Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/16/2015</entry>
