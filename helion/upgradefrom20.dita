@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_uxh_jj4_yt">
-  <title>Upgrading from HPE Helion OpenStack&#174; 2.0</title>
+  <title>Upgrading from HPE Helion OpenStack&#174; 2.0 to 2.01</title>
   <body>
     <section>
-      <title>Performing the Upgrade from HPE Helion OpenStack 2.0 </title>HPE Helion OpenStack 2.0
-      shipped with example configuration files, and you were able to modify them to suit your needs. </section>
+      <title>Performing the Upgrade from HPE Helion OpenStack 2.0  to 2.01</title>HPE Helion
+      OpenStack 2.0 shipped with example configuration files, and you were able to modify them to
+      suit your needs. </section>
     <section><note type="caution">The configuration you specified will remain unchanged through the upgrade
         process; <b>however</b>, if you made any configuration changes by passing parameters to any
         Ansible playbooks using the -e option, you should find the affected files and make the
