@@ -70,10 +70,10 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&#60;node name></
           numbers from being reallocated. See the <ph id="_Toc432693223">Persisted Server
             Allocations</ph> section in <xref href="../input_model.dita#input_model">HPE Helion
               OpenStack 2.0 Input Model</xref> for information on how this works.</p></li>
-        <li>Run the following deployment step specifying the <codeph>--limit</codeph> option to apply the
-          deployment actions only to the target node(s).
+        <li>Run the following deployment step specifying the <codeph>--limit</codeph> option to
+          apply the deployment actions only to the target node(s).
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li>
+ansible-playbook -i hosts/verb_hosts site.yml --limit helion-cp1-vsa0004-mgmt</codeblock></li>
         
       </ol>
     </section>
