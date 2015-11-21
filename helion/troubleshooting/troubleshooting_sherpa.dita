@@ -27,7 +27,15 @@
     <section id="database"><title>How to Access the MySQL Database</title>
       <p>From any controller node, use this commmand:</p>
       <codeblock>mysql -u sherpa -p</codeblock>
-      <p>The Sherpa database password is in the <codeph>/etc/sherpa/sherpa.conf</codeph> file.</p>
+      <p>The Sherpa database password is in the <codeph>/etc/sherpa/sherpa.conf</codeph> file. Below is an example of this file where the bolded selection is the password:</p>
+      <codeblock># Database configurations
+        
+storage = {
+   'mapping': {
+        'mysql': {
+             'classname': 'sherpa.dao.db_impl.DbDao',
+             'url': 'mysql://sherpa:<b>yz6jci4C</b>@helion-cp1-vip-FND-MDB-mgmt/sherpa',
+             ...</codeblock>
     </section>
 
     <section id="checkstatus">
