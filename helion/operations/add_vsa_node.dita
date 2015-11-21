@@ -19,7 +19,7 @@
 
     <section id="prereqs"><title>Prerequisites</title>
       <p>You should have one or more baremetal servers that meet the minimum hardware requirements
-        for a VSA node which are documented in the <xref href="../hardware.dita">Hard Support
+        for a VSA node which are documented in the <xref href="../hardware.dita">Hardware Support
           Matrix</xref>.</p>
     </section>
 

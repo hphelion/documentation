@@ -3,134 +3,137 @@
 <topic id="topic_qsv_h5y_lt">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a Compute Node</title>
   <body>
-    <section> To add a new compute node to your cloud, you will need to add it to the
-        <b>servers.yml</b> file and then run the playbooks that update your cloud configuration.
-      Note that to run any playbooks whatsoever for cloud maintenance, you will always run them from
-      the lifecycle manager.</section>
-    <section>To begin, access the <b>servers.yml</b> file by checking out the git branch where you
-      are required to make the changes: <ol id="ol_bw1_rg5_tt">
-        <li>Get the <b>servers.yml</b> file stored in
-          git:<codeblock>cd ~/helion/my_cloud/definition/data
-git checkout site</codeblock> Add
-          details of new node(s) to <b>servers.yml</b>. For example, if adding new server
-            <codeph>compute7</codeph> in <b>servers.yml
-          </b><codeblock>---
-  product:
-    version: 2  
-
-  baremetal:
-    # NOTE: These values need to be changed to match your environment.
-    # Define the network range that contains the ip-addr values for
-    # the individual servers listed below.
-    subnet: 192.168.10.0
-    netmask: 255.255.255.0
-
-  servers:
-    # NOTE: Addresses of servers need to be changed to match your environment.
-    #
-    # Add additional servers as required
-    #
-     
-     ... 
-    # Compute Nodes
-    - id: compute7
-      ip-addr: 192.168.10.13
-      role: COMPUTE-ROLE
-      server-group: RACK1
-      nic-mapping: nic-mapping: HP_DL360_6PORT
-      mac-addr: d6:70:c1:36:43:f7
-      ilo_ip: "10.1.8.24"
-      ilo_user: "admin"
-      ilo_password: "whatever"</codeblock>
-        </li>
-        <li> Commit the changes <codeblock>git commit -a -m "Add node &lt;name>"</codeblock> Then
-          run the configuration processor and the ready deployment
-          playbooks:<codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-        </li>
-        <li>Now configure the new node(s)
-            <codeblock>ansible-playbook -i hosts/localhost cobbler-deploy.yml
-ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=compute7</codeblock><b
-          > </b>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see
-          if the assignment of the node you have added is what you expect. It may not be, as nodes
-          will not be numbered consecutively if any have previously been removed. This is to prevent
-          loss of data; the config processor retains data about removed nodes and keeps their ID
-          numbers from being reallocated. See the <ph id="_Toc432693223">Persisted Server
-            Allocations</ph> section in <xref href="../input_model.dita#input_model">HPE Helion
-            OpenStack 2.0 Input Model</xref> for information on how this works.</li>
-        <li>Run the following deployment step specifying the '--limit' option to apply the
-          deployment actions only to the target node(s).
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0007*</codeblock></li>
-        <li>If you want the new compute node to be included in the monitoring service checks, there
-          is an additional playbook that must be run to ensure this happens:
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock></li>
+    <section id="about">
+      <p>You may have a need to add a Compute node for additional virtual machine capacity or another purpose
+        and these steps will help you achieve this.</p>
+      <p>The steps involved are:</p>
+      <ol>
+        <li><xref href="add_node.dita#add_vsa/prereqs">Prerequisites</xref></li>
+        <li><xref href="add_node.dita#add_vsa/steps">Adding a VSA Node</xref></li>
+        <li><xref href="add_node.dita#add_vsa/monitoring">Adding a New VSA Node to
+          Monitoring</xref></li>
+        <li><xref href="add_node.dita#add_vsa/cmc">Adding a New VSA Node to your CMC Management
+          Cluster</xref></li>
       </ol>
     </section>
-
-    <section><title>Add availability zones</title>
+    
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>You should have one or more baremetal servers that meet the minimum hardware requirements
+        for a Compute node which are documented in the <xref href="../hardware.dita">Hardware Support
+          Matrix</xref>.</p>
+    </section>
+    
+    <section id="steps"><title>Adding a VSA Node</title>
+      <p>These steps will show you how to add the new VSA node to your <codeph>servers.yml</codeph>
+        file and then run the playbooks that update your cloud configuration. You will run these
+        playbooks from the lifecycle manager.</p>
+      <ol>
+        <li>Log in to your lifecycle manager.</li>
+        <li>Checkout the <codeph>site</codeph> branch of your local git so you can begin to make the
+          necessary edits:
+          <codeblock>cd ~/helion/my_cloud/definition/data
+            git checkout site</codeblock></li>
+        <li>In the same directory, edit your <codeph>servers.yml</codeph> file to include the
+          details about your new VSA node(s). <p>For example, if you alrady had a cluster of three
+            VSA nodes and needed to add a fourth one you would add your details to the bottom of the
+            file in this format:</p>
+          <codeblock># Compute Nodes
+- id: compute1
+  ip-addr: 10.13.111.137
+  role: COMPUTE-ROLE
+  server-group: RACK1
+  nic-mapping: HP-DL360-4PORT
+  mac-addr: f0:92:1c:05:69:98
+  ilo-ip: 192.168.9.4
+  ilo-password: password
+  ilo-user: admin</codeblock>
+          <p>You can find detailed descriptions of these fields <xref
+            href="../input_model.dita#input_model/co_servers">here</xref>.</p>
+         <note type="important">You will need to verify that the <codeph>ip-addr</codeph> value you
+          choose for this node does not conflict with any other IP address in your cloud
+          environment. You can confirm this by checking the
+          <codeph>~/stack/helion/my_cloud/info/address_info.yml</codeph> file on your lifecycle
+          manager.</note>
+          </li>
+        <li>In your <codeph>control_plane.yml</codeph> file you will need to check the values for
+          <codeph>member-count</codeph>, <codeph>min-count</codeph>, and
+          <codeph>max-count</codeph>, if you specified them, to ensure that they match up with
+          your new total node count. So for example, if you had previously specified
+          <codeph>member-count: 3</codeph> and are adding a fourth Compute node, you will need to
+          change that value to <codeph>member-count: 4</codeph>. <p>See <xref
+            href="../input_model.dita#input_model/co_controlplane">Input Model - Control
+            Plane</xref> for more details.</p></li>
+        <li>Commit the changes to git:
+          <codeblock>git commit -a -m "Add node &lt;name>"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Run the ready deployment playbook:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+        </li>
+        <li>Add the new node into Cobbler:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>Then you can image the node: <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&#60;node name></codeblock>
+          <note>If you don't know the <codeph>&#60;node name></codeph> already, you can get it by
+            using <codeph>sudo cobbler system list</codeph></note>
+          <p>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see if
+            the assignment of the node you have added is what you expect. It may not be, as nodes
+            will not be numbered consecutively if any have previously been removed. This is to
+            prevent loss of data; the config processor retains data about removed nodes and keeps
+            their ID numbers from being reallocated. See the Persisted Server Allocations section in
+            <xref href="../input_model.dita#input_model/persistedserverallocations">HPE Helion
+              OpenStack 2.0 Input Model</xref> for information on how this works.</p></li>
+        <li>Run the following deployment step specifying the <codeph>--limit</codeph> option to
+          apply the deployment actions only to the target node(s). <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit &#60;host_var name></codeblock>
+          <note>If you don't know the <codeph>&#60;host_var name></codeph> already, you can get it
+            by looking in the <codeph>~/scratch/ansible/next/hos/ansible/host_vars</codeph>
+            directory.</note></li>
+      </ol>
+    </section>
+        
+    <section id="monitoring"><title>Adding a New Compute Node to Monitoring</title> If you want to add a
+      new VSA node to the monitoring service checks, there is an additional playbook that must be
+      run to ensure this happens:
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
+    </section>  
+  <section><title>Add availability zones</title>
       <p>When adding a new node, an additional step you'll
       need to take is to add the new node(s) to a Nova availability zone. This can be skipped if you
       have not configured any availability zones.</p>
       <ol>
-        <li>First get a list of availability zones to get their status:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
-          <codeblock>+------------------------------+----------------------------------------+
-| Name                         | Status                                 |
-+------------------------------+----------------------------------------+
-| internal                     | available                              |
-| |- padawan-ccp-c1-m1-mgmt    |                                        |
-| | |- nova-conductor          | enabled :-) 2015-10-12T10:32:26.000000 |
-| | |- nova-scheduler          | enabled :-) 2015-10-12T10:32:23.000000 |
-| | |- nova-consoleauth        | enabled :-) 2015-10-12T10:32:25.000000 |
-| |- padawan-ccp-c1-m2-mgmt    |                                        |
-| | |- nova-conductor          | enabled :-) 2015-10-12T10:32:22.000000 |
-| | |- nova-scheduler          | enabled :-) 2015-10-12T10:32:24.000000 |
-| |- padawan-ccp-c1-m3-mgmt    |                                        |
-| | |- nova-conductor          | enabled :-) 2015-10-12T10:32:24.000000 |
-| | |- nova-scheduler          | enabled :-) 2015-10-12T10:32:24.000000 |
-| AZ1                          | available                              |
-| |- padawan-ccp-comp0001-mgmt |                                        |
-| | |- nova-compute            | enabled :-) 2015-10-12T10:32:21.000000 |
-| AZ3                          | available                              |
-| |- padawan-ccp-comp0003-mgmt |                                        |
-| | |- nova-compute            | enabled :-) 2015-10-12T10:32:21.000000 |
-| nova                         | available                              |
-| |- padawan-ccp-comp0002-mgmt |                                        |
-| | |- nova-compute            | enabled :-) 2015-10-12T10:32:21.000000 |
-+------------------------------+----------------------------------------+</codeblock>
+        <li>First get a list of availability zones to get their status:
+          <codeblock>$ nova availability-zone-list</codeblock>
+          <codeblock>+-----------------------------+----------------------------------------+
+| Name                        | Status                                 |
++-----------------------------+----------------------------------------+
+| internal                    | available                              |
+| |- helion-cp1-c1-m1-mgmt    |                                        |
+| | |- nova-conductor         | enabled :-) 2015-11-21T17:35:44.000000 |
+| | |- nova-scheduler         | enabled :-) 2015-11-21T17:35:42.000000 |
+| | |- nova-consoleauth       | enabled :-) 2015-11-21T17:35:46.000000 |
+| |- helion-cp1-c1-m2-mgmt    |                                        |
+| | |- nova-conductor         | enabled :-) 2015-11-21T17:35:40.000000 |
+| | |- nova-scheduler         | enabled :-) 2015-11-21T17:35:46.000000 |
+| |- helion-cp1-c1-m3-mgmt    |                                        |
+| | |- nova-conductor         | enabled :-) 2015-11-21T17:35:41.000000 |
+| | |- nova-scheduler         | enabled :-) 2015-11-21T17:35:40.000000 |
+| nova                        | available                              |
+| |- helion-cp1-comp0001-mgmt |                                        |
+| | |- nova-compute           | enabled :-) 2015-11-21T17:35:43.000000 |
++-----------------------------+----------------------------------------+</codeblock>
         </li>
-        <li>Then run nova-cloud-configure.yml to update the nova availability zones and effect the
-          changes you made in the previous section:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ ansible-playbook -i hosts/verb_hosts nova-cloud-configure.yml</codeblock>
-          <codeblock>PLAY [NOV-CLI] **************************************************************** 
-
-GATHERING FACTS *************************************************************** 
-ok: [padawan-ccp-c1-m2-mgmt]
-ok: [padawan-ccp-c1-m3-mgmt]
-ok: [padawan-ccp-c1-m1-mgmt]
-
-TASK: [NOV-CLI | availability_zones | create host aggregate and az] *********** 
-ok: [padawan-ccp-c1-m1-mgmt] => (item=AZ1)
-ok: [padawan-ccp-c1-m1-mgmt] => (item=AZ2)
-ok: [padawan-ccp-c1-m1-mgmt] => (item=AZ3)
-
-TASK: [NOV-CLI | availability_zones | add host to az] ************************* 
-ok: [padawan-ccp-c1-m1-mgmt] => (item=padawan-ccp-comp0001-mgmt)
-changed: [padawan-ccp-c1-m1-mgmt] => (item=padawan-ccp-comp0002-mgmt)
-ok: [padawan-ccp-c1-m1-mgmt] => (item=padawan-ccp-comp0003-mgmt)
-
-PLAY RECAP ******************************************************************** 
-NOV-CLI | availability_zones | add host to az --------------------------- 7.30s
-NOV-CLI | availability_zones | create host aggregate and az ------------- 3.68s
--------------------------------------------------------------------------------
-Total: ----------------------------------------------------------------- 14.10s
-padawan-ccp-c1-m1-mgmt     : ok=3    changed=1    unreachable=0    failed=0   
-padawan-ccp-c1-m2-mgmt     : ok=3    changed=1    unreachable=0    failed=0   
-padawan-ccp-c1-m3-mgmt     : ok=3    changed=1    unreachable=0    failed=0</codeblock>
-        </li>
+        <li>Then run <codeph>nova-cloud-configure.yml</codeph> to update the nova availability zones and effect the
+          changes you made in the previous section:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts nova-cloud-configure.yml</codeblock></li>
         <li>Get a list of availability zones again to verify that the new node is in the right
-          availability zone now.<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
+          availability zone now.
+          <codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova availability-zone-list</codeblock>
           <codeblock>+------------------------------+----------------------------------------+
 | Name                         | Status                                 |
 +------------------------------+----------------------------------------+
