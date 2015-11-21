@@ -8,7 +8,7 @@
   <body><!--Needs Work; should the command/code content in the table be surrounded by codeph tags; we are inconsistent? for Ceilometer/HTTP Status, what needs to be restarted (it?); is there a mititgation for Keystone/Host alive Check?-->
     <p>When alarms are triggered it may be helpful for you to review the service logs. For details
       on how to use the logging user interface built into the Operations Console, see <xref
-        href="centralized_logging.dita#logging/interface"/>.</p>
+        href="centralized_logging.dita#centralized_logging/interface"/>.</p>
     <section id="services"><title>Services</title>
       <p>Alarms for the following services are described below:</p>
       <ul>

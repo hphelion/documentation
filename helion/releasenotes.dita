@@ -432,7 +432,7 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         </li>
         <li>Logging Dashboard <ul id="ul_jfb_d45_tt">
             <li>There is no auto-logon function, users must use the credentials in the <xref
-                href="operations/centralized_logging.dita#logging/interface">Logging Overview</xref>
+              href="operations/centralized_logging.dita#centralized_logging/interface">Logging Overview</xref>
               to access the UI.</li>
             <li>The Kibana console intermittently will not function correctly if Kibana is on a
               different network than the Operations Console. If both Kibana and the Operations

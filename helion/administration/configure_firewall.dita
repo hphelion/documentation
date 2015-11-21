@@ -14,10 +14,10 @@
         ports. These are populated in <codeph>~/helion/my_cloud/info/firewall_info.yml</codeph>,
         which includes a list of all the ports by network, including the addresses on which the
         ports will be opened. This is described in more details <xref
-          href="../input_model.dita#input_model/input_model__firewall_info_yml">here</xref>.</p>
+          href="../input_model.dita#input_model/firewall_info_yml">here</xref>.</p>
       <p>The <codeph>firewall_rules.yml</codeph> file in the input model allows you to define
         additional rules for each network group. You can read more about this <xref
-          href="../input_model.dita#input_model/input_model__co_firewallrules">here</xref>.</p>
+          href="../input_model.dita#input_model/co_firewallrules">here</xref>.</p>
       <p>The purpose of this document is to show you how to make post-installation changes to the
         firewall rules if the need arises.</p>
       <note type="important">This process is not to be confused with the <xref
