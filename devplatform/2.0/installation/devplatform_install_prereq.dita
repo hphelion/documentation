@@ -99,19 +99,12 @@ echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
                 type="important">Ensure that each and every Keystone AUTH_URL IP is included in the
                 no-proxy
               list.</note><codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL </codeblock></li> </ol></li>
-            <li>Set the Sherpa proxy shell variables. If the HOS environment is behind a firewall, a
-          proxy may be necessary for the Sherpa service to communicate out to the Helion Download
-          Network (HDN)  <!--does this need to be done if you are using the pre-downloaded files?  should we put this in the troubleshooting? if your install hangs and exits, check this? bug DOCS2042-->
-          <ol>
-            <li>On each of the HPE Helion OpenStack controller nodes, edit the
-                <codeph>sherpa.conf</codeph> file as
-              follows:<codeblock>sudo nano /etc/sherpa/sherpa.conf </codeblock>3. Verify that the
-              http_proxy and http_proxy is set appropriately for your
-              environment.<codeblock>http_proxy=http://myproxy.example.com 
-https_proxy=https://myproxy.example.com</codeblock>
-              4. After editing the file, restart Apache2.
-              <codeblock>sudo service apache2 restart</codeblock></li>
-          </ol></li>
+            <li>If your HPE Helion OpenStack deployment is behind a firewall, verify that the <xref
+            href="http://www.docs.hpcloud.com/helion/operations/accessing_sherpa.html#sherpa_access"
+            format="html" scope="external">Sherpa proxy shell variables</xref> have been set. If
+          these variables have not been set, either set them or follow the <xref
+            href="install_offline.dita">offline installation instructions</xref> to acquire the
+          packages without using the Sherpa service.</li>
          
       </ol>
     </section>

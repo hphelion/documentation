@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_w25_hqp_xt">
-  <title>HPE Helion 2.0 Development Platform: Pre-downloading for Offline Installation</title>
+  <title>HPE Helion 2.0 Development Platform: Downloading for Offline Installation</title>
   <body>
     <p>If downloading directly to the Deployer is not an option for security or other reasons, you
       can pre-download the installation packages for use during installation.</p>
@@ -12,7 +12,7 @@
           href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
           scope="external">HPE Helion Download Network</xref> (HDN) and log in. If necessary, create
         an account first.</li>
-      <li>Click on the Download button in the left navigation panel.</li>
+      <li>Click on the <b>Download</b> button in the left navigation panel.</li>
       <li>Click the service you wish to download. Click the blue <b>Download</b> button at the top
         right of the screen to begin the download. </li>
       <li>The best option is to download directly to the HPE Helion OpenStack Deployer. If you can
