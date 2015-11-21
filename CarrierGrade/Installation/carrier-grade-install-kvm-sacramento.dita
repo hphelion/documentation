@@ -28,8 +28,9 @@
           select <codeph>Controller+Compute</codeph>.</li>
         <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password
             <codeph>wrsroot</codeph>. Make sure you change the password.</li>
-        <li>Temporarily assign an IP address to the PXE NIC - eth0. Use the IP you have reserved for
-          the KVM PXE. <codeblock>ip addr add &lt;CIDR> dev eth0
+        <li>Temporarily assign an IP address to the <codeph>PXE NIC - eth0</codeph>. Use the IP you
+          have reserved for the KVM PXE.
+          <codeblock>ip addr add &lt;CIDR> dev eth0
 ifconfig eth0 up</codeblock></li>
         <li> Set the default gateway to the PXE network gateway
           <codeblock>route add default gw &lt;CIDR_gateway_IP&gt;</codeblock></li>
@@ -57,8 +58,10 @@ ifconfig eth0 up</codeblock></li>
     <section id="install-cloud">
       <title>Install the KVM region cloud</title>
       <ol>
-        <li>Execute the following command to install the KVM region cloud:
-              <codeblock>sudo config_region region_config</codeblock><p><image
+        <li>Launch a console session to the <codeph>controller-0</codeph> node.</li>
+        <li>Execute the following command to install the KVM region cloud:<p><b>Important:</b>
+            Always execute this command from a console window, not an SSH
+              session</p><codeblock>sudo config_region region_config</codeblock><p><image
               href="../../media/CGH-install-KVM.png" width="500" id="image_c2w_4kk_bt"/></p>Ignore
           the message which displays during <codeph>config_region</codeph> process.
               <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually zeroing. </codeblock><p><image
