@@ -30,7 +30,8 @@
                     This defines the target code repository and specifies build notifications.</li>
             <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/post">Create Post-Deployment Actions</xref>. This defines what actions to take, usually
                     testing, after the build is completed. (optional)</li>
-            <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/commit">Commit and Build</xref>. Start the whole cycle from your source repo.</li>
+            <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/commit">Commit a Change</xref>.
+                    Start the whole cycle from your source repo.</li>
         </ol>
         </section>
 <section id="environment"><title>Specify an Environment</title>
