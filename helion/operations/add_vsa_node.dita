@@ -4,8 +4,9 @@
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a VSA Node</title>
   <body>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="http://docs.hpcloud.com/helion/operations/add_vsa_node.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+        href="http://docs.hpcloud.com/helion/operations/add_vsa_node.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
     <section id="about">
       <p>You may have a need to add a VSA node for additional storage capacity or another purpose
         and these steps will help you achieve this.</p>
@@ -100,9 +101,9 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit &#60;host_var name></codeb
       </ol>
     </section>
 
-    <section id="monitoring"><title>Adding a New VSA Node to Monitoring</title> If you want to add a
-      new VSA node to the monitoring service checks, there is an additional playbook that must be
-      run to ensure this happens:
+    <section id="monitoring"><title>Adding a New VSA Node to Monitoring</title>
+      <p>If you want to add a new VSA node to the monitoring service checks, there is an additional
+        playbook that must be run to ensure this happens:</p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
     </section>

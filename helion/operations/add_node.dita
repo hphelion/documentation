@@ -101,11 +101,11 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit &#60;host_var name></codeb
       </ol>
     </section>
 
-    <section id="monitoring"><title>Adding a New Compute Node to Monitoring</title> If you want to
-      add a new Compute node to the monitoring service checks, there is an additional playbook that
-      must be run to ensure this happens:
+    <section id="monitoring"><title>Adding a New VSA Node to Monitoring</title>
+      <p>If you want to add a new VSA node to the monitoring service checks, there is an additional
+        playbook that must be run to ensure this happens:</p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
+        ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
     </section>
 
     <section id="az"><title>Adding a New Compute Node to an Availability Zone</title>
