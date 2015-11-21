@@ -3,21 +3,33 @@
 <topic id="troubleshooting_sherpa">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Sherpa Service</title>
   <body>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/troubleshooting/troubleshooting_sherpa.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
     <section id="about">
-      <p>We have gathered some of the common issues and troubleshooting steps that will help when resolving issues that occur with the Sherpa service.</p>
-      
+      <p>We have gathered some of the common issues and troubleshooting steps that will help when
+        resolving issues that occur with the Sherpa service.</p>
       <ul>
-        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/database">How to Access the MySQL Database</xref></li>
-        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/checkstatus">How to Check and Reset the Job Status</xref></li>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/database">How to Access
+            the MySQL Database</xref></li>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/checkstatus">How to Check
+            and Reset the Job Status</xref></li>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/cleanup">How to Clean Up
+            Sherpa When a Download or Install of a CSU File Failed</xref></li>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/failrecover">How to
+            Recover a Download Failure</xref></li>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/proxy">How to Set
+            http_proxy in Sherpa</xref></li>
       </ul>
     </section>
-    
+
     <section id="database"><title>How to Access the MySQL Database</title>
-    <p>From any controller node, use this commmand:</p>
+      <p>From any controller node, use this commmand:</p>
       <codeblock>mysql -u sherpa -p</codeblock>
       <p>The Sherpa database password is in the <codeph>/etc/sherpa/sherpa.conf</codeph> file.</p>
     </section>
-    
+
     <section id="checkstatus">
       <title>How to Check and Reset the Job Status</title>
       <p>Log into the Sherpa database per the <xref
@@ -61,6 +73,43 @@ mysql> select catalogId, status, type, startTime, endTime from jobs;</codeblock>
           </tbody>
         </tgroup>
       </table>
+    </section>
+
+    <section id="cleanup"><title>How to Clean Up Sherpa When a Download or Install of a CSU File
+        Failed</title>
+      <ol>
+        <li>If Sherpa has already pushed the images to Glance then you will need to remove all
+          images of the CSU file from Glance.</li>
+        <li>Remove the cache file of the CSU file in the <codeph>sherpa_cache</codeph> Swift
+          container or in <codeph>/var/cache/sherpa</codeph>. This step is optional since the
+          subsequent download will overwrite the old Sherpa cache.</li>
+        <li>Check the job status of the CSU file using the <xref
+            href="troubleshooting_sherpa.dita#troubleshooting_sherpa/checkstatus">steps
+          above</xref>. If the status is 0 or 1, change it to 3.</li>
+      </ol>
+    </section>
+
+    <section id="failrecover"><title>How to Recover a Download Failure</title>
+      <p>If there is a broken network connection in the middle of a download, Sherpa will retry. If
+        Sherpa cannot automatically recover the failure then you should follow the steps above to
+        clean up the failed download and retry once the network connection is restored.</p>
+    </section>
+
+    <section id="proxy"><title>How to Set http_proxy in Sherpa</title>
+      <p>If the HPE Helion OpenStack environment is behind a firewall, you need to set the Sherpa
+        proxy shell variables so that the Sherpa service can communicate out to the Helion Download
+        Network (HDN).</p>
+      <p>On each of your controller nodes, perform these steps to set the proxies:</p>
+      <ol>
+        <li>Edit the sherpa.conf file on each controller node in the following location:
+          <codeblock>/etc/sherpa/sherpa.conf</codeblock></li>
+        <li>Verify that the <codeph>http_proxy</codeph> and <codeph>https_proxy</codeph> is set
+          appropriately for your environment.
+          <codeblock>http_proxy=http://myproxy.example.com 
+https_proxy=https://myproxy.example.com</codeblock></li>
+        <li>After editing the file, restart the Apache service:
+          <codeblock>sudo service apache2 restart</codeblock></li>
+      </ol>
     </section>
   </body>
 </topic>
