@@ -77,7 +77,7 @@
                 ESX hypervisor are installed along with standard services in the non-KVM region
                 first. Then the KVM region is installed.</p><ul>
                 <li>Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581">
-                  Lifecycle Manager and Installation Services</xref>.</li>
+                   a/xref>.</li>
                 <li>Install <xref href="carrier-grade-install-non-kvm.dita#topic10581">HP Helion
                     OpenStack cloud and install the HPE Distributed Cloud Networking (DCN)
                     components</xref>. You will also install the VMware ESX compute proxy. These

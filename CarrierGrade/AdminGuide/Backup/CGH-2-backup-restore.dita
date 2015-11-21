@@ -129,7 +129,8 @@ But the CLI, REST API etc should all be same --></p>
               <li>wr_cc_system_restore.yml </li>
             </ul></li>
           <li>Run the following command to correct the <codeph>target_temp_folder</codeph> parameter
-            in the WR_system_files_Backup &amp; WR_Appliance_system_files_Restore configuration
+            in the <codeph>WR_Appliance_system_files_Backup</codeph> and
+              <codeph>WR_Appliance_system_files_Restore</codeph> configuration
             files.<codeblock>cd /home/attis-access to /home/attis
 attis config --id 13b370f8-79f1-11e5-9587-d72dee4aa55b --update-parameter '{"target_temp_folder":"/home/attis"}'
 attis config --id 1cdcf21c-79f1-11e5-8da3-c76cce2f76d6 --update-parameter '{"target_temp_folder":"/home/attis"}'</codeblock></li>
@@ -137,7 +138,8 @@ attis config --id 1cdcf21c-79f1-11e5-8da3-c76cce2f76d6 --update-parameter '{"tar
       </p>
     </section>
     <section><title>Backing up the HP Helion OpenStack Carrier Grade</title>
-      <p>To back up an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
+      <p>To back up an HP Helion OpenStack Carrier Grade appliance (for example, the lifecycle
+        manager, a controller, the VSC, the VSD and so forth), use the following steps:</p>
       <ol>
         <li>Log in to the controller.</li>
         <li> Authenticate using the <codeph>source stackrc</codeph> command or export the variables
@@ -158,7 +160,8 @@ export OS_AUTH_URL=&lt;your_os_auth_url&gt;</codeblock></li>
     </section>
     <section>
       <title>Restore the HP Helion OpenStack Carrier Grade</title>
-      <p>To restore an HP Helion OpenStack Carrier Grade controller, use the following steps:</p>
+      <p>To restore an HP Helion OpenStack Carrier Grade appliance (for example, the lifecycle
+        manager, a controller, the VSC, the VSD and so forth), use the following steps:</p>
       <ol id="ol_vlq_wm3_pt">
         <li>Log in to the controller as cghelion user. The default password is
             <codeph>cghelion</codeph>.</li>
