@@ -51,7 +51,7 @@ git checkout site</codeblock></li>
           <codeblock>git commit -a -m "Add node &lt;name>"</codeblock></li>
         <li>Run the configuration processor:
           <codeblock>cd ~/helion/hos/ansible
-            ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Run the ready deployment playbook:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>

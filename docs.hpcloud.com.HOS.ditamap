@@ -89,6 +89,8 @@
         <topicref href="helion/administration/upload_image.dita"
           navtitle="Uploading an Image for Use" locktitle="yes"/>
       </topichead>
+      <topicref href="helion/operations/accessing_sherpa.dita"
+        navtitle="Accessing and Using the Sherpa Catalog" locktitle="yes"/>
       <topicref href="helion/conceptual_overviews/high_availability.dita"
         navtitle="High Availability Concepts" locktitle="yes"/>
       <topicref href="helion/administration/create_hdp_servicenet.dita"
@@ -255,7 +257,7 @@
         <topicref href="helion/administration/adding_moonshot_nodes.dita"
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
         <!-- BLOCK STORAGE -->
-        <topicref href="helion/operations/add_vsa_node.dita" navtitle="Adding a VSA Node" locktitle="yes"/>
+        <topicref href="helion/operations/add_vsa_node.dita" navtitle="Adding a VSA Node" locktitle="yes" toc="no"/>
         <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing a VSA Node"
           locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
@@ -364,15 +366,7 @@
         <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
           locktitle="yes"/>
       </topicref>
-      <!-- BEGIN - OPERATIONS/SHERPA -->
-      <topicref href="helion/operations/sherpa_overview.dita"
-        navtitle="Sherpa Catalog Service Overview" locktitle="yes">
-        <topicref href="helion/operations/accessing_sherpa.dita"
-          navtitle="Accessing the Sherpa Catalog" locktitle="yes"/>
-        <topicref href="helion/operations/validate_sherpa_signatures.dita"
-          navtitle="Validating Download Signatures" locktitle="yes"/>
-      </topicref>
-    </topichead>
+       </topichead>
     <!-- END - OPERATIONS -->
     <!-- BEGIN - TROUBLESHOOTING -->
     <topichead navtitle="Troubleshooting">
