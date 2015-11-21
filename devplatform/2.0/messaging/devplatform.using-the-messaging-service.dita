@@ -98,10 +98,6 @@
 <li>
 <p>For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the <xref href="https://www.rabbitmq.com/documentation.html" scope="external" format="html" >RabbitMQ documentation site</xref>.</p>
 </li>
-<li>
-  <p>For more information using HPE Helion OpenStack visit the <xref
-    href="../../../commercial/GA1/1.1commercial.index.dita">documentation</xref>.</p>
-</li>
 </ul>
 </section>
 </body>
