@@ -40,7 +40,7 @@
           <codeblock>cd ~/helion/my_cloud/definition/data
 git checkout site</codeblock></li>
         <li>In the same directory, edit your <codeph>servers.yml</codeph> file to include the
-          details about your new Compute node(s). <p>For example, if you alrady had a cluster of
+          details about your new Compute node(s). <p>For example, if you already had a cluster of
             three Compute nodes and needed to add a fourth one you would add your details to the
             bottom of the file in this format:</p>
           <codeblock># Compute Nodes
