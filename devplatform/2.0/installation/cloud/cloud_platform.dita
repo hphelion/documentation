@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudPlatform">
-  <title>HPE Helion 2.0 Development Platform: Platform Configuration</title>
+  <title>Platform Configuration</title>
   <body>
     <section>
       <p>These sections in the clouds.yaml file are the absolute minimum required. Installing each
