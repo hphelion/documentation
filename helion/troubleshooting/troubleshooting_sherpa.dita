@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="troubleshooting_sherpa">
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Sherpa Service</title>
+  <body>
+    <section id="about">
+      <p>We have gathered some of the common issues and troubleshooting steps that will help when resolving issues that occur with the Sherpa service.</p>
+      
+      <ul>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/database">How to Access the MySQL Database</xref></li>
+        <li><xref href="troubleshooting_sherpa.dita#troubleshooting_sherpa/checkstatus">How to Check and Reset the Job Status</xref></li>
+      </ul>
+    </section>
+    
+    <section id="database"><title>How to Access the MySQL Database</title>
+    <p>From any controller node, use this commmand:</p>
+      <codeblock>mysql -u sherpa -p</codeblock>
+      <p>The Sherpa database password is in the <codeph>/etc/sherpa/sherpa.conf</codeph> file.</p>
+    </section>
+    
+    <section id="checkstatus">
+      <title>How to Check and Reset the Job Status</title>
+      <p>Log into the Sherpa database per the <xref
+          href="troubleshooting_sherpa.dita#troubleshooting_sherpa/database">steps above</xref>.</p>
+      <p>Once you have accessed the database, you can use these commands to check the status from
+        the <codeph>mysql</codeph> prompt:</p>
+      <codeblock>mysql> use sherpa;
+mysql> select catalogId, status, type, startTime, endTime from jobs;</codeblock>
+      <p>The status value will be in the range of <codeph>[0, 1, 2, 3, 4]</codeph>, where:</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_bdd_rwx_b5">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Value</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>0</entry>
+              <entry>CREATED</entry>
+            </row>
+            <row>
+              <entry>1</entry>
+              <entry>PROCESSING</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>SUCCESS</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>FAILED</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>CANCELLED</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </body>
+</topic>

@@ -372,6 +372,8 @@
     <topichead navtitle="Troubleshooting">
       <topicref href="helion/installation/installation_troubleshooting.dita"
         navtitle="Troubleshooting the Installation" locktitle="yes"/>
+      <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
+        navtitle="Troubleshooting the Sherpa Service" locktitle="yes"/>
       <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
         navtitle="Troubleshooting the Block Storage Backend Configuration" locktitle="yes"/>
       <topicref href="helion/objectstorage/troubleshooting.dita"
