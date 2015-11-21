@@ -90,18 +90,9 @@
           <tbody>
             <row>
               <entry>--debug</entry>
-              <entry>Enables additional debug information.  Possible values are: general, cpi,shell,
-                kato, timing, all </entry>
+              <entry>Enables additional debug information.</entry>
               <entry>$CFMGMT_DEBUG</entry>
               <entry>No</entry>
-            </row>
-            <row>
-              <entry>
-                <p>--disable-connection-reuse</p>
-              </entry>
-              <entry> Disable connection reuse</entry>
-              <entry/>
-              <entry/>
             </row>
             <row>
               <entry>--dry-run</entry>
@@ -128,16 +119,16 @@
               <entry>Yes</entry>
             </row>
             <row>
-              <entry>--os-tenant-id</entry>
-              <entry>OpenStack tenant ID</entry>
-              <entry>$OS_TENANT_ID</entry>
-              <entry>Yes, if <codeph>os-tenant-name</codeph> is not defined.</entry>
+              <entry>--os-project-id</entry>
+              <entry>OpenStack project ID</entry>
+              <entry>$OS_PROJECT_ID</entry>
+              <entry>Yes, if <codeph>project-name</codeph> is not defined.</entry>
             </row>
             <row>
-              <entry>--os-tenant-name</entry>
-              <entry>OpenStack tenant name</entry>
-              <entry>$OS_TENANT_NAME</entry>
-              <entry>Yes, if <codeph>os-tenant-id</codeph> is not defined.</entry>
+              <entry>--os-project-name</entry>
+              <entry>OpenStack project name</entry>
+              <entry>$OS_PROJECT_NAME</entry>
+              <entry>Yes, if <codeph>project-id</codeph> is not defined.</entry>
             </row>
             <row>
               <entry>--os-region-name</entry>
@@ -183,10 +174,18 @@
   <section><title>Debugging</title>
     <p><b>Syntax</b>: <codeph>--debug [option]</codeph></p>
       <p>This command provides debug information and can be very helpful when creating clusters. </p>
-      <p>The options are <codeph>general</codeph>, <codeph>cpi</codeph> (Cloud Provider Interface),
-          <codeph>shell</codeph>, <codeph>kato</codeph>, <codeph>timing</codeph>,
-          <codeph>all</codeph>.</p>
+      <p>The options are <codeph>general</codeph>, <codeph>cpi</codeph>, <codeph>shell</codeph>,
+          <codeph>kato</codeph>, <codeph>timing</codeph>, <codeph>all</codeph>.</p>
 <p>Example: <codeblock>cf-mgmt --debug all cc</codeblock></p>
+         <!--   <p>The possible values are:    </p>
+      <dl>
+        <dlentry><dt>general</dt><dd></dd></dlentry>
+        <dlentry><dt>cpi</dt><dd>This stands for Cloud Provider Interface, which will </dd></dlentry>
+        <dlentry><dt>shell</dt><dd></dd></dlentry>
+        <dlentry><dt>kato</dt><dd></dd></dlentry>
+        <dlentry><dt>timing</dt><dd></dd></dlentry>
+        <dlentry><dt>all</dt><dd></dd></dlentry>
+      </dl>   -->
    
   </section>
     <section id="commands">
