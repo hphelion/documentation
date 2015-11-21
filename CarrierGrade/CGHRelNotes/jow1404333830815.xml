@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
 
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Changes in This
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Changes in This
         Release</title>
     <shortdesc>This release of HP Helion OpenStack Carrier Grade includes a number of performance
         enhancements and additions to functionality in the KVM region. </shortdesc>
@@ -19,8 +19,7 @@
     <body>
         <section>
             <title>Enhancements</title>
-            <p>The following enhancements were added for the HP Helion OpenStack Carrier Grade 2.0
-                Beta release:</p>
+            <p>The following enhancements were added for the HP Helion OpenStack Carrier Grade 2.0 release:</p>
             <ul id="ul_ccj_3wm_vt">
                 <li>Ironic Baremetal Region</li>
                 <li>Support for Unbonded or Bonded NIC</li>

@@ -1,7 +1,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
     
-    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Installation
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
         Guide</title>
     <topicmeta>
         <copyright>
@@ -66,12 +66,12 @@
                     <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
                     <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                     <topicref href="CGH-2-install-vsvapp.dita"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Deploying the VRSvApp CGH2.0"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Deploying the VRSvApp CGH2.0"
                         locktitle="yes" toc="no" class="- map/topicref "/>
                     <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
                     <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
                     <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Configuring LDAP 3"
                         locktitle="yes"/>
                     <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
                     <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
@@ -124,12 +124,12 @@
                     <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
                     <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                     <topicref href="CGH-2-install-vsvapp.dita"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Deploying the VRSvApp CGH2.0"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Deploying the VRSvApp CGH2.0"
                         locktitle="yes" toc="no" class="- map/topicref "/>
                     <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
                     <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
                     <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Configuring LDAP 3"
                         locktitle="yes"/>
                     <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
                     <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
@@ -180,12 +180,12 @@
                     <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
                     <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                     <topicref href="CGH-2-install-vsvapp.dita"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Deploying the VRSvApp CGH2.0"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Deploying the VRSvApp CGH2.0"
                         locktitle="yes" toc="no" class="- map/topicref "/>
                     <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
                     <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
                     <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Configuring LDAP 3"
                         locktitle="yes"/>
                     <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
                     <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
@@ -238,12 +238,12 @@
                     <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
                     <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
                     <topicref href="CGH-2-install-vsvapp.dita"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Deploying the VRSvApp CGH2.0"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Deploying the VRSvApp CGH2.0"
                         locktitle="yes" toc="no" class="- map/topicref "/>
                     <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
                     <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
                     <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
-                        navtitle="HP Helion OpenStack Carrier Grade 2.0 Beta: Configuring LDAP 3"
+                        navtitle="HP Helion OpenStack Carrier Grade 2.0: Configuring LDAP 3"
                         locktitle="yes"/>
                     <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
                     <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>

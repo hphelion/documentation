@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Beta: Variables</title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Variables</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Installation Prerequisites</searchtitle>
         </titlealts>
@@ -234,7 +234,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 packages are located using FTP at <xref
                                         href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar"
                                         format="html" scope="external">HP Helion OpenStack Carrier
-                                        Grade V2.0 Beta</xref>. HPE internal network access is
+                                        Grade V2.0</xref>. HPE internal network access is
                                 required.<codeblock><xref href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar" format="html" scope="external">http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar</xref></codeblock></p>
                         <p>The FTP download, <codeph>hcg-2-0-beta.tar</codeph>, contains all of the
                                 files you will need to install and configure HP Helion OpenStack
