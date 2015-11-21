@@ -6,9 +6,9 @@
     Catalog</title>
   <body>
     <section id="about">
-      <p>The <xref href="sherpa_overview.dita">HPE Helion OpenStack Sherpa Service</xref> provides a
-        link to the remote web catalog containing a repository of software available for purchase
-        and download into the HPE Helion environment.</p>
+      <p>The HPE Helion OpenStack Sherpa service provides a link to the remote web catalog
+        containing a repository of software available for purchase and download into the HPE Helion
+        environment.</p>
       <p>You can make purchases using a self-service account on the public web server. Once a
         purchase is made, you can use the Sherpa UI and back-end service to download the
         content.</p>
