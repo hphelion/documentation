@@ -64,44 +64,44 @@ https_proxy=https://myproxy.example.com</codeblock></li>
         <li>Download the signature file of the CSU file from Helion Download Network(HDN) </li>
         <li>Check all public keys are already delivered in /etc/sherpa
           <codeblock>ls -l /etc/sherpa
-          total 44
-          -r--r--r-- 1 sherpa sherpa  647 Oct 21 08:10 gpg_2048_hpPublicKey.pub
-          -r--r--r-- 1 sherpa sherpa 1712 Oct 21 08:10 gpg-hpPublicKey.pub
-          -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-1.pub
-          -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-2.pub
-          -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-3.pub
-          -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-4.pub
-          -r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-5.pub</codeblock>
+total 44
+-r--r--r-- 1 sherpa sherpa  647 Oct 21 08:10 gpg_2048_hpPublicKey.pub
+-r--r--r-- 1 sherpa sherpa 1712 Oct 21 08:10 gpg-hpPublicKey.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-1.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-2.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-3.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-4.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-5.pub</codeblock>
         </li>
         <li>Execute the following command to import the keys: <codeblock>gpg --import "</codeblock>
           where &lt;filename> is the name of the public key. The keys are then imported into the
           gpgp key share:
           <codeblock>gpg --import gpg-hpPublicKey.pub
-          gpg --import gpg_2048_hpPublicKey.pub
-          gpg --import HP-RPM-GPG-2048-KEY-1.pub
-          gpg --import HP-RPM-GPG-2048-KEY-2.pub
-          gpg --import HP-RPM-GPG-2048-KEY-3.pub
-          gpg --import HP-RPM-GPG-2048-KEY-4.pub
-          gpg --import HP-RPM-GPG-2048-KEY-5.pub</codeblock>
+gpg --import gpg_2048_hpPublicKey.pub
+gpg --import HP-RPM-GPG-2048-KEY-1.pub
+gpg --import HP-RPM-GPG-2048-KEY-2.pub
+gpg --import HP-RPM-GPG-2048-KEY-3.pub
+gpg --import HP-RPM-GPG-2048-KEY-4.pub
+gpg --import HP-RPM-GPG-2048-KEY-5.pub</codeblock>
         </li>
         <li>Use the following command to view the keys in the key store:
           <codeblock>gpg --list-keys
-          /home/stack/.gnupg/pubring.gpg
-          ------------------------------
-          pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
-          uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
-          pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
-          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)
-          pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
-          pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
-          pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
-          pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
-          pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
-          uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5</codeblock>
+/home/stack/.gnupg/pubring.gpg
+------------------------------
+pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
+uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
+pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)
+pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
+pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
+pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
+pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
+pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5</codeblock>
         </li>
         <li>Use the following command to verify the signature:
           <codeblock>gpg --verify &lt;filename>.sig &lt;filename>.csu</codeblock>
