@@ -15,7 +15,7 @@
         </metadata>
     </prolog>
     <body>
-        <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md--><!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
+        
         <p>Use the following steps to launch the virtual machine for the required HPE DCN
             Virtualized Services Directory (<i>VSD</i>):</p>
         <section><title>Install the VSD VM</title><ol id="ol_gtd_b1l_2t">

@@ -13,10 +13,6 @@
     </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md-->
- <!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
 <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations.</p>
         <section>
             <title>VLAN ID Reference</title>

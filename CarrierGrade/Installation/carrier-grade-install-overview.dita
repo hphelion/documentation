@@ -13,7 +13,7 @@
     </metadata>
   </prolog>
   <body>
-    <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-install-pb-overview.md--><!--permalink: /helion/openstack/carrier/install/pb/overview/--></p>
+
     <p>This document describes the process for installing HP Helion OpenStack Carrier Grade.</p>
     <section id="about-the-installation">
       <title>About the installation</title>

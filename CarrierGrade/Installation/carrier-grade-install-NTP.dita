@@ -13,10 +13,6 @@
   </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-install-NTP.md-->
- <!--permalink: /helion/openstack/carrier/install/ntp/--></p>
 <p>This page provides detailed information on <xref type="section" href="#topic4740/client"
         >configuring Network Time Protocol (NTP) on HP Helion OpenStack Carrier Grade servers</xref>
       and, optionally, <xref type="section" href="#topic4740/server">installing an NTP server on the

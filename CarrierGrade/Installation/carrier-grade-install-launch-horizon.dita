@@ -15,10 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    <p>
-      <!--UNDER REVISION-->
-      <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
-      <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
+    
     <p>After the HP Helion OpenStack cloud is installed, you can launch the Horizon interface to
       verify that the installation was successful.</p>
     <section>

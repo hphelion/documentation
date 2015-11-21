@@ -15,7 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
+   
     <p>This page introduces deployment and network architectures of the KVM with DCN deployment of
       HP Helion OpenStack Carrier Grade.  The KVM with DCN deployment incorprates HPE Distributed
       Cloud Networking (DCN) virtual network solution. During the installation, use the

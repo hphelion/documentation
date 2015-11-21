@@ -13,10 +13,8 @@
   </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
- <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
+
+
 <p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is very
       important to meet the requirements and conform to the recommendations listed in this document. <ul>
         <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>

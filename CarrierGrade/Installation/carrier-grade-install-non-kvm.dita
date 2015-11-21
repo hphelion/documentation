@@ -15,10 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    <p>
-      <!--UNDER REVISION-->
-      <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
-      <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
+    <p><!--Leave this file to prevent broken links --></p>
     <p>After the lifecycle manager is installed, the next task is to deploy the HP
       Helion OpenStack cloud into the non-KVM region.</p>
     <p>Use one of the following links, depending upon which deployment model you are using:<ul

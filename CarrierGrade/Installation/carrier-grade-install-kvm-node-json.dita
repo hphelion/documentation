@@ -14,10 +14,6 @@
     </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
- <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
     <p>The process for installing the memphis and sacramento deployments requires several JSON file
             that will be used when deploying the HP Helion OpenStack.</p>
         <p><i>Return to installing the non-KVM region for the <xref
