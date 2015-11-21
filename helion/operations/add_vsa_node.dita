@@ -3,6 +3,9 @@
 <topic id="add_vsa">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding a VSA Node</title>
   <body>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+      href="http://docs.hpcloud.com/helion/operations/add_vsa_node.html" scope="external" format="html">Click
+      here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">
       <p>You may have a need to add a VSA node for additional storage capacity or another purpose
         and these steps will help you achieve this.</p>
@@ -53,7 +56,7 @@ git checkout site</codeblock></li>
           <note type="important">You will need to verify that the <codeph>ip-addr</codeph> value you
             choose for this node does not conflict with any other IP address in your cloud
             environment. You can confirm this by checking the
-              <codeph>~/stack/helion/my_cloud/info/address_info.yml</codeph> file on your lifecycle
+              <codeph>~/helion/my_cloud/info/address_info.yml</codeph> file on your lifecycle
             manager.</note>
         </li>
         <li>In your <codeph>control_plane.yml</codeph> file you will need to check the values for
