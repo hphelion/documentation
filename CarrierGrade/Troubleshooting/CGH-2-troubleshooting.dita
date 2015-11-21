@@ -40,8 +40,8 @@
       <p>After <xref
           href="../Installation/carrier-grade-install-config-dcn.dita#topic10581/vrsg-config"
           >configuring the VRS-G</xref> during installation, the VRS-G VM is assigned with private
-        and floating IP, when seen on the VSD dashboard. However, if you launch a console session to
-        the VM, there is no networking.</p>
+        and floating IP ddress, when seen on the VSD dashboard. However, if you launch a console
+        session to the VM, there is no networking.</p>
       <p>
         <b>Resolution</b>
       </p>
