@@ -215,7 +215,7 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
                 <p><image href="../../media/vsa/cmc2.png"/></p></li>
           <li>Once you have all of your VSA nodes entered, click the <b>Close</b> button. <p><image
                 href="../../media/vsa/cmc3.png"/></p></li>
-          <li>Next click the <b>Tasks</b> menu and then navigate to the <b>Management Group</b>
+          <li>Next, click the <b>Tasks</b> menu and then navigate to the <b>Management Group</b>
             submenu and select the <b>New Management Group</b> option. <p><image
                 href="../../media/vsa/cmc4.png"/></p></li>
           <li>In the Management Group wizard, click <b>Next</b> and then select <b>New Management

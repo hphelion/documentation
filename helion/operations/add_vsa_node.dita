@@ -6,6 +6,15 @@
     <section id="about">
       <p>You may have a need to add a VSA node for additional storage capacity or another purpose
         and these steps will help you achieve this.</p>
+      <p>The steps involved are:</p>
+      <ol>
+        <li><xref href="add_vsa_node.dita#add_vsa/prereqs">Prerequisites</xref></li>
+        <li><xref href="add_vsa_node.dita#add_vsa/steps">Adding a VSA Node</xref></li>
+        <li><xref href="add_vsa_node.dita#add_vsa/monitoring">Adding a New VSA Node to
+            Monitoring</xref></li>
+        <li><xref href="add_vsa_node.dita#add_vsa/cmc">Adding a New VSA Node to your CMC Management
+            Cluster</xref></li>
+      </ol>
     </section>
 
     <section id="prereqs"><title>Prerequisites</title>
@@ -97,6 +106,37 @@ ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_check
 
     <section id="cmc"><title>Adding a New VSA Node to your CMC Management Cluster</title>
       <p>Coming</p>
+      <ol>
+        <li>On your lifecycle manager, collect the IP addresses of the VSA virtual machines that you
+          added from the <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
+          file. This file is generated as part of output of the configuration processor during
+          installation. You will need this IP address in the next steps.</li>
+        <li>Launch the CMC utility. You will likely want to use the same method you used when you
+          did your initial VSA cluster configuration. See <xref
+            href="../installation/configure_vsa.dita#config_vsa/launch_cmc">Launching the CMC
+            utility GUI</xref> for more details.</li>
+        <li>In the CMC GUI, click the <b>Find</b> menu and then select the <b>Find Systems</b>
+          options. <p><image href="../../media/vsa/addvsa_cmc1.png"/></p>
+        </li>
+        <li>Click the <b>Add</b> button which will open the <b>Enter IP Address</b> dialogue box
+          where you can enter the IP address of the VSA node(s) that you are adding. These will be
+          the same IP addresses you noted in step 1 from your
+            <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. <p><image
+              href="../../media/vsa/addvsa_cmc2.png"/></p></li>
+        <li>Once you have all of your VSA nodes entered, click the <b>Close</b> button. <p><image
+              href="../../media/vsa/addvsa_cmc3.png"/></p></li>
+        <li>Next, click the <b>Tasks</b> menu and then navigate to the <b>System</b> submenu and
+          select the <b>Add to Existing Management Group</b> option. <p><image
+              href="../../media/vsa/addvsa_cmc4.png"/></p></li>
+        <li>In the Management Group wizard, select your new VSA node and then press <b>Continue</b>.
+              <p><image href="../../media/vsa/addvsa_cmc5.png"/></p></li>
+        <li>Select your <b>Group Name</b> from the drop down box and then press <b>Add</b> to
+          continue. <p><image href="../../media/vsa/addvsa_cmc6.png"/></p></li>
+        <li>The CMC utility will then add your new VSA node to the management group. Once it has
+          completed you will see the <b>Status</b> change to <codeph>Storage System Normal</codeph>.
+              <p><image href="../../media/vsa/addvsa_cmc7.png"/></p></li>
+        <li>You can then continue on to create additional volumes.</li>
+      </ol>
     </section>
 
   </body>
