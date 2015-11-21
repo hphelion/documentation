@@ -99,7 +99,7 @@ echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
                 type="important">Ensure that each and every Keystone AUTH_URL IP is included in the
                 no-proxy
               list.</note><codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL </codeblock></li> </ol></li>
-        <li>If your HPE Helion OpenStack deployment is behind a firewall, verify that the <xref href="http://docs.hpcloud.com/helion/operations/accessing_sherpa.html#sherpa_access_prereqs" format="html" scope="local" >Sherpa
+        <li>If your HPE Helion OpenStack deployment is behind a firewall, verify that the <xref href="http://docs.hpcloud.com/helion/operations/accessing_sherpa.html#sherpa_access_prereqs" format="html" scope="external" >Sherpa
           proxy shell variables</xref> have been set. If these variables have not been set, either set them
           or follow the <xref href="install_offline.dita">offline installation instructions</xref>
           to acquire the packages without using the Sherpa service.</li>
