@@ -75,6 +75,7 @@
         <topicref href="2.0/helion/CLI/cfmgmt_growcluster_addservice.dita"
           navtitle="Example: Add a Service" locktitle="yes"/>
       </topicref>
+      <topicref href="2.0/helion/CLI/cfmgmt_configure_keystonev3.dita"/>
     </topichead>
     <topichead navtitle="ALS Management Console">
       <topicref href="2.0/helion/admin/console/console_intro.dita"
