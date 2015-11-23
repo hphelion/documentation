@@ -13,4 +13,418 @@
       <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
+  <body>
+ <p>This document has steps/prereqs and snapshots to configure multi-DC.</p>
+  <p>These instructions are based on HCG2.0 Build#34 [Memphis Topology] and DCN R4 bits. This
+    document is for people who knows installation/configuration of HCG cloud, knowledge of
+    configuring DCN components.</p>
+    <section><title>PreReq and config steps</title><p>Before starting this document, make sure the
+        following conditions are met:</p><ul>
+        <li>Assuming the Memphis clouds are up and functional on 2 different datacenters.</li>
+        <li>Make sure you can talk between 2 clouds and they are routable from the DCM network</li>
+        <li>VSC on management Network on both the testbeds.</li>
+      </ul><p><b>Shut down the VSD</b></p><p>Decide on which VSD will be acting as a common that
+        will control both datacenters. </p><p>Shutdown the VSD that will not be used from the
+        VSD:</p><ol id="ol_dhy_ql4_c5">
+        <li>Execute the following these steps<codeblock>service vsd stop </codeblock></li>
+        <li>After all the services are shutdown gracefully, execute the following command to shut
+          down the server: <codeblock>shutdown –hy now</codeblock></li>
+        <li>Execute the following command to make sure the VSD that you do not need is in shutdown
+            state:<codeblock>virsh list --all</codeblock><p>For
+          example:</p><codeblock>root@LR4TB1:~# virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+37    hlm                            running
+ -     tempest                        shut off
+ -     vsd1                           shut off
+</codeblock></li>
+      </ol><p><b>Update the non-KVM controllers</b></p><p>Update all your non-KVM region controller
+        nodes with the VSD domain name that is managing the clouds. On each controller node:</p><ol
+        id="ol_h1c_5m4_c5">
+        <li>Edit the <codeph>/etc/neutron/plugins/nuage/nuage_plugin.ini</codeph> to update the
+          entry as shown:
+          <codeblock>[DATABASE]
+connection = mysql://neutron:BfevkqJevNEm@BASE-CCP-T2-VIP-FND-MDB-NETCLM:3306/neutron
+[RESTPROXY]
+default_net_partition_name = Helion_Nuage_Integration
+auth_resource = /me
+server = vsd1.dcn-two.helion.cg:8443
+organization = csp
+serverauth = OSadmin:OSadmin
+serverssl = True
+base_uri = /nuage/api/v3_2</codeblock></li>
+        <li>Execute the following command to re-start the controller
+          node:<codeblock>service neutron-server restart</codeblock></li>
+        <li>Check the status by running:<codeblock>service neutron-server status</codeblock></li>
+      </ol><p><b>Update the VSC with the new VSD domain name on all the VSC’s in the multi DC
+          setup.</b></p><ol id="ol_tpz_gn4_c5">
+        <li>From the <codeph>vsc</codeph> prompt, go to configure mode and set the vsd domain as
+          shown in the below
+          example.<codeblock>configure vswitch-controller xmpp-server "&lt;vscname>:password@&lt;vsd domain name>” </codeblock>For
+          example:
+          <codeblock>vswitch-controller xmpp-server "tb1vsc1:password@&lt;vsd1.dcn-one.helion.cg"</codeblock></li>
+        <li>Save the
+          changes:<codeblock>admin save
+Writing configuration to cf1:\config.cfg
+Saving configuration ... OK
+Completed.     </codeblock></li>
+        <li>Execute the following command to verify the
+            changes:<codeblock>admin display-config</codeblock><p>For example, your xmpp-server will
+            have the same vsd domain name.
+            <codeblock> xmpp-server "tb1vsc1:password@vsd1.dcn-two.helion.cg"</codeblock></p></li>
+      </ol><p><b>Change the existing route entries</b></p>Change the existing route entries on all
+      the VSC across datecenters so they can ping the VSD and compute node’s TUL IP across both the
+      testbeds. Manually go to each VSC on both dtacenters and add a new route entry to point to the
+      common VSD.<p>For example: </p><p>Delete the existing route entries:
+        <codeblock>bof# no static-route 10.1.2.0/24 next-hop 10.10.4.1
+bof# no static-route 10.10.2.0/24 next-hop 10.10.4.1
+</codeblock>Add
+        the route entries to support cloud2 DCM network:
+        <codeblock>bof# save cf1:
+Writing BOF to cf1:/bof.cfg ... OK
+Completed.
+bof# show bof</codeblock></p><p><b>Verify
+          connection from VSC to VSD</b></p><p>Management interface of VSC should reach VSD. You can
+        check this by pinging the VSD FQDN from the VSC. </p><p>For example:
+        <codeblock>ping router "management" 10.20.5.1
+PING 10.20.5.1 56 data bytes
+64 bytes from 10.20.5.1: icmp_seq=1 ttl=255 time=1.83ms.
+64 bytes from 10.20.5.1: icmp_seq=2 ttl=255 time=1.66ms.</codeblock></p><p><b>Verify
+          the VSC</b></p><p>Use the VSD dashboard to make sure the VSC from each cloud is present in
+        VSD. You might see the VSD in down or in RED status. This is a cosmetic issue and will not
+        affect the functionality.</p><p><b>Configure BGP on each VSC</b></p><p>Configure BGP on each
+        VSC in both the clouds accordingly as shown:</p><p>
+        <ul id="ul_kdk_vq4_c5">
+          <li>Configure all the other vsc’s across multi-DC as neighbor on each of the VSC’s.<p>For
+              example, if you have four VSC across two clouds [in a HA mode]. On
+                <codeph>Cloud1/vsc1</codeph> add:
+              <codeblock>cloud1/vsc2 &amp; cloud2-vsc/1&amp;vsc2</codeblock></p></li>
+        </ul>
+        <ul id="ul_ikb_pq4_c5">
+          <li>Check the <codeph>admin-display config</codeph> output provided
+                below:<p><b>Cloud1/VSC1:</b></p><codeblock># TiMOS-DC-C-3.2.S-current cpm/i386 NUAGE VSC Copyright (c) 2000-2015 Alcatel-Lucent.
+# All rights reserved. All use subject to applicable license agreements.
+# Built on Wed Nov 4 13:21:16 PST 2015 [0d0e61] by builder in /build/workspace/sros-pullrequest/panos/main
+ 
+# Generated MON NOV 16 19:16:34 2015 UTC
+ 
+exit all
+configure
+#--------------------------------------------------
+echo "System Configuration"
+#--------------------------------------------------
+    system
+        name "tb1vsc1"
+        snmp
+        exit
+        time
+            ntp
+                server 10.1.2.44
+                server 16.110.135.123
+                no shutdown
+            exit
+            sntp
+                shutdown
+            exit
+            zone UTC
+        exit
+        thresholds
+            rmon
+            exit
+        exit
+    exit
+#--------------------------------------------------
+echo "System Security Configuration"
+#--------------------------------------------------
+    system
+    exit
+#--------------------------------------------------
+echo "Log Configuration"
+#--------------------------------------------------
+    log
+    exit
+#--------------------------------------------------
+echo "System Security Cpm Hw Filters and PKI Configuration"
+#--------------------------------------------------
+    system
+        security
+        exit
+    exit
+#--------------------------------------------------
+echo "QoS Policy Configuration"
+#--------------------------------------------------
+    qos
+    exit
+#--------------------------------------------------
+echo "Card Configuration"
+#--------------------------------------------------
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+    exit
+#--------------------------------------------------
+echo "LAG Configuration"
+#--------------------------------------------------
+    lag 98
+        description "Multichassis interconnect LAG"
+        encap-type dot1q
+        qos
+        exit
+        lacp active administrative-key 36864
+        no shutdown
+    exit
+#--------------------------------------------------
+echo "Virtual Switch Controller Configuration"
+#--------------------------------------------------
+    vswitch-controller
+        xmpp-server "tb1vsc1:password@vsd1.dcn-two.helion.cg"
+        open-flow
+        exit
+        xmpp
+        exit
+        ovsdb
+        exit
+    exit
+#--------------------------------------------------
+echo "Management Router Configuration"
+#--------------------------------------------------
+    router management
+    exit
+ 
+#--------------------------------------------------
+echo "Router (Network Side) Configuration"
+#--------------------------------------------------
+    router
+        interface "control"
+            address 10.10.5.31/24
+            no shutdown
+        exit
+        interface "system"
+            no shutdown
+        exit
+        vxlan
+        exit
+        autonomous-system 1000
+#--------------------------------------------------
+echo "Static Route Configuration"
+#--------------------------------------------------
+        static-route 10.20.6.0/24 next-hop 10.10.5.1
+#--------------------------------------------------
+echo "Web Portal Protocol Configuration"
+#--------------------------------------------------
+    exit
+ 
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+        customer 1 create
+            description "Default customer"
+        exit
+    exit
+#--------------------------------------------------
+echo "Router (Service Side) Configuration"
+#--------------------------------------------------
+    router
+#--------------------------------------------------
+echo "BGP Configuration"
+#--------------------------------------------------
+        bgp
+            family ipv4 vpn-ipv4 evpn
+            connect-retry 2
+            min-route-advertisement 1
+            router-id 10.10.5.31
+            rapid-update evpn
+            group "multidc"
+                med-out 100
+                peer-as 1000
+                neighbor 10.10.5.32
+                exit
+                neighbor 10.20.6.31
+                exit
+                neighbor 10.20.6.32
+                exit
+            exit
+            no shutdown
+        exit
+    exit
+ 
+#--------------------------------------------------
+echo "System Time NTP Configuration"
+#--------------------------------------------------
+    system
+        time
+            ntp
+            exit
+        exit
+    exit
+ 
+exit all
+ 
+# Finished MON NOV 16 19:16:39 2015 UTC</codeblock><p><b>Cloud2/VSC1</b><codeblock># TiMOS-DC-C-3.2.S-current cpm/i386 NUAGE VSC Copyright (c) 2000-2015 Alcatel-Lucent.
+# All rights reserved. All use subject to applicable license agreements.
+# Built on Wed Nov 4 13:21:16 PST 2015 [0d0e61] by builder in /build/workspace/sros-pullrequest/panos/main
+ 
+# Generated MON NOV 16 19:18:04 2015 UTC
+ 
+exit all
+configure
+#--------------------------------------------------
+echo "System Configuration"
+#--------------------------------------------------
+    system
+        name "vsc1"
+        snmp
+        exit
+        time
+            ntp
+                server 10.1.2.44
+                server 16.110.135.123
+                no shutdown
+            exit
+            sntp
+                shutdown
+            exit
+            zone UTC
+        exit
+        thresholds
+            rmon
+            exit
+        exit
+    exit
+#--------------------------------------------------
+echo "System Security Configuration"
+#--------------------------------------------------
+    system
+    exit
+#--------------------------------------------------
+echo "Log Configuration"
+#--------------------------------------------------
+    log
+    exit
+#--------------------------------------------------
+echo "System Security Cpm Hw Filters and PKI Configuration"
+#--------------------------------------------------
+    system
+        security
+        exit
+    exit
+#--------------------------------------------------
+echo "QoS Policy Configuration"
+#--------------------------------------------------
+    qos
+    exit
+#--------------------------------------------------
+echo "Card Configuration"
+#--------------------------------------------------
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+    exit
+#--------------------------------------------------
+echo "LAG Configuration"
+#--------------------------------------------------
+    lag 98
+        description "Multichassis interconnect LAG"
+        encap-type dot1q
+        qos
+        exit
+        lacp active administrative-key 36864
+        no shutdown
+    exit
+#--------------------------------------------------
+echo "Virtual Switch Controller Configuration"
+#--------------------------------------------------
+    vswitch-controller
+        xmpp-server "vsc1:password@vsd1.dcn-two.helion.cg"
+        open-flow
+        exit
+        xmpp
+        exit
+        ovsdb
+        exit
+    exit
+#--------------------------------------------------
+echo "Management Router Configuration"
+#--------------------------------------------------
+    router management
+    exit
+ 
+#--------------------------------------------------
+echo "Router (Network Side) Configuration"
+#--------------------------------------------------
+    router
+        interface "control"
+            address 10.20.6.31/24
+            no shutdown
+        exit
+        interface "system"
+            no shutdown
+        exit
+        vxlan
+        exit
+        autonomous-system 1000
+#--------------------------------------------------
+echo "Static Route Configuration"
+#--------------------------------------------------
+        static-route 10.10.5.0/24 next-hop 10.20.6.1
+#--------------------------------------------------
+echo "Web Portal Protocol Configuration"
+#--------------------------------------------------
+    exit
+ 
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+        customer 1 create
+            description "Default customer"
+        exit
+    exit
+#--------------------------------------------------
+echo "Router (Service Side) Configuration"
+#--------------------------------------------------
+    router
+#--------------------------------------------------
+echo "BGP Configuration"
+#--------------------------------------------------
+        bgp
+            family ipv4 vpn-ipv4 evpn
+            connect-retry 2
+            min-route-advertisement 1
+            router-id 10.20.6.31
+            rapid-update evpn
+            group "multidc"
+                med-out 100
+                peer-as 1000
+                neighbor 10.10.5.31
+                exit
+                neighbor 10.10.5.32
+                exit
+                neighbor 10.20.6.32
+                exit
+            exit
+            no shutdown
+        exit
+    exit
+ 
+#--------------------------------------------------
+echo "System Time NTP Configuration"
+#--------------------------------------------------
+    system
+        time
+            ntp
+            exit
+        exit
+    exit
+ 
+exit all
+ 
+# Finished MON NOV 16 19:18:07 2015 UTC</codeblock></p></li>
+        </ul>
+      </p></section>
+
+  </body>
 </topic>
