@@ -27,7 +27,8 @@
     <section id="database"><title>How to Access the MySQL Database</title>
       <p>From any controller node, use this commmand:</p>
       <codeblock>mysql -u sherpa -p</codeblock>
-      <p>The Sherpa database password is in the <codeph>/etc/sherpa/sherpa.conf</codeph> file. Below is an example of this file where the bolded selection is the password:</p>
+      <p>The Sherpa database password is in the <codeph>/etc/sherpa/sherpa.conf</codeph> file. Below
+        is an example of this file where the bolded selection is the password:</p>
       <codeblock># Database configurations
         
 storage = {
@@ -46,6 +47,15 @@ storage = {
         the <codeph>mysql</codeph> prompt:</p>
       <codeblock>mysql> use sherpa;
 mysql> select catalogId, status, type, startTime, endTime from jobs;</codeblock>
+      <p>Here an example output:</p>
+      <codeblock>+--------------------------------------+----------------+--------+----------+------------------+------------------+
+| id                                   | catalogId      | status | type     | startTime        | endTime          |
++--------------------------------------+----------------+--------+----------+------------------+------------------+
+| 0142a340-8d6e-11e5-99bc-5254008d4238 | wscatalog.2145 |      3 | download | 1447793931.17357 | 1447793949.45329 |
+| 51bdc1d2-8d6f-11e5-99bc-5254008d4238 | wscatalog.2145 |      2 | download | 1447794495.69476 | 1447794516.21147 |
+| 80d6c298-8d6f-11e5-a4e3-525400505207 | wscatalog.2145 |      1 | install  | 1447794574.71137 | 1447794604.08189 |
+| d1acfe7c-8d6e-11e5-99bc-5254008d4238 | wscatalog.2145 |      3 | download | 1447794280.83645 |  1447794292.6886 |
++--------------------------------------+----------------+--------+----------+------------------+------------------+</codeblock>
       <p>The status value will be in the range of <codeph>[0, 1, 2, 3, 4]</codeph>, where:</p>
       <table frame="all" rowsep="1" colsep="1" id="table_bdd_rwx_b5">
         <tgroup cols="2">
@@ -93,7 +103,16 @@ mysql> select catalogId, status, type, startTime, endTime from jobs;</codeblock>
           subsequent download will overwrite the old Sherpa cache.</li>
         <li>Check the job status of the CSU file using the <xref
             href="troubleshooting_sherpa.dita#troubleshooting_sherpa/checkstatus">steps
-          above</xref>. If the status is 0 or 1, change it to 3.</li>
+          above</xref>. If the status is 0 or 1, change it to 3. <p>Using the example output in the
+            previous step, if you wanted to change the status of the stalled job you would use this
+            command:</p>
+          <codeblock>update jobs set status=3 where id="80d6c298-8d6f-11e5-a4e3-525400505207";</codeblock>
+          <p>To cleanup a catalog item, the following sql command will delete all records related to
+            a catalogId:</p>
+          <codeblock>delete from jobs where catalogId="wscatalog.2145";</codeblock>
+          <p>To cleanup the Sherpa database, the following sql command will drop the jobs table and
+            delete everything in the table:</p>
+          <codeblock>drop table jobs;</codeblock></li>
       </ol>
     </section>
 
