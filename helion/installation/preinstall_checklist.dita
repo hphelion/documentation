@@ -790,7 +790,9 @@
               <row>
                 <entry/>
                 <entry>Disk Requirement: 3x 512 GB disks (or enough space to create three logical
-                  drives with that amount of space)</entry>
+                  drives with that amount of space)<p>- The VSA appliance deployed on a host is
+                    expected to consume ~40 GB of disk space from the host root disk for ephemeral
+                    storage to run the VSA virtual machine.</p></entry>
               </row>
               <row>
                 <entry/>

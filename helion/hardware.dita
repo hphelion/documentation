@@ -182,7 +182,7 @@
               <entry morerows="3">VSA or OSD (Ceph)</entry>
               <entry morerows="3">0 or 3 (which will provide the recommended redundancy)</entry>
               <entry>Disk</entry>
-              <entry>3 X 512 GB (minimum)</entry>
+              <entry>3 X 512 GB (minimum) See <xref href="installation/preinstall_checklist.dita#preinstall_checklist/vsa">Pre-Install Checklist - VSA</xref> for more details.</entry>
             </row>
             <row>
               <entry>Memory</entry>
