@@ -55,7 +55,7 @@
  <p>The explorer can be opened in Visual
   Studio under **View -&gt;Other Windows -&gt;Cloud Foundry Explorer**. </p>
  <p>The explorer window shows endpoints that you have successfully connected to:<image
-     href="../../../media/windows_cf_explorer.png" id="image_yvb_xk4_c5"/></p>
+     href="../../../media/windows_cf_explore.png" id="image_yvb_xk4_c5" placement="break"/></p>
  <p>The Cloud Foundry Explorer Window displays the following types of nodes: </p>
  <table>
     <tgroup cols="1">
