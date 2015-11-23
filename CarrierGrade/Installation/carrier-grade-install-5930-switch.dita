@@ -35,315 +35,100 @@
       <title>Initial Configuration and Data Collection</title>
       <p/>
     </section>
-    <p><b>Identify ToR Switch and Configure compute nodes with specific Interfaces as PCI-PT or
-        SRIOV --&gt; Cloud Administrator (Manual)</b></p>
-    <p>HCG Cloud will be deployed by the administrator. Based on Sizing and Capacity planning, few
-      compute nodes and/or Rack with ToR Switch would be dedicated for the purpose of providing
-      PCI-PT or SRIOV vNIC types to the guest VM or VNFs. Administrator will use system clis or
-      Horizon UI to provide this assignment. Few examples,</p>
-    <table id="table_v52_4yr_zt">
-      <tgroup cols="1">
-        <colspec colnum="1" colname="col1"/>
-        <tbody>
-          <row>
-            <entry>
-              <codeblock># Assign eth7
-                              on mem17-compute1 as sriov </codeblock>
-              <codeblock>interface</codeblock>
-              <codeblock>with </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>VF</codeblock>
-              <codeblock>system
-                              host-</codeblock>
-              <codeblock>if</codeblock>
-              <codeblock>-modify -nt pci-sriov -N </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>-p physnet1 mem17-compute1
-                            eth7</codeblock>
-              <codeblock># Assign eth8 on mem17-compute1 as pci-pt
-                              </codeblock>
-              <codeblock>interface</codeblock>
-              <codeblock>system
-                              host-</codeblock>
-              <codeblock>if</codeblock>
-              <codeblock>-modify -nt pci-passthrough -p physnet1
-                              mem17-compute1 eth8</codeblock>
-            </entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
-    <p><b>Configure ToR Switch - One Time Operation</b></p>
-    <p>Identified ToR needs a firmware update to support VxLAN-VLAN bridging.</p>
+    <p><b>Configure Compute Nodes for PCI-PT or SRIOV</b></p>
+    <p>After the HP Helion Carrier Grade cloud is deployed, you need to configure the compute nodes
+      with specific interfaces for PCI-Passthrough or SR-IOV.</p>
+    <p> Based on your organizational sizing and capacity plans, some compute nodes and/or the top of
+      rack (ToR) switch are dedicated for providing PCI-PT or SR-IOV vNIC types to the guest VM or
+      VNFs. </p>
+    <p>Use system CLI or Horizon UI to provide this assignment. For example:</p>
+    <p>The following command assigns <codeph>eth7</codeph> on a compute node named
+        <codeph>mem17-compute1</codeph> as an SR-IOV interface with four virtual funtions:
+      <codeblock>system host-if-modify -nt pci-sriov -N 4 -p physnet1 mem17-compute1 eth7</codeblock>The
+      following command assigns <codeph>eth8</codeph> on the <codeph>mem17-compute1</codeph>node  as
+      a PCI-PT interface:
+      <codeblock>system host-if-modify -nt pci-passthrough -p physnet1 mem17-compute1 eth8</codeblock></p>
+    <p><b>Configure ToR Switch </b></p>
+    <p>Perform the following one-time task to update the ToR switch firmware to support VxLAN-VLAN
+      bridging.</p>
     <ol id="ol_w52_4yr_zt">
-      <li>
-        <p>Download and update firmware of ToR 5930 assigned for the Rack hosting PCI-PT and SRIOV
-          capable compute nodes</p>
-        <p>5930-D2413-1111.ipe</p>
-        <p>FTP Access : <xref href="ftp://cmwbits:MN6cz=YK@h2.usa.hp.com" format="html"
-            scope="external">ftp://cmwbits:MN6cz=YK@h2.usa.hp.com</xref></p>
-        <p><b>Note: </b>This package is updated, so do not use the one shipped with HCG Beta
-          tarball</p>
-      </li>
-      <li>
-        <p>Validate if the firmware has been updated successfully: Display Boot-Loader to confirm
-          firmware is applied currently or will be next boot. For example,</p>
-        <table id="table_x52_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>   </codeblock>
-                  <codeblock>&lt;R26N6640-</codeblock>
-                  <codeblock>5930</codeblock>
-                  <codeblock>-IRF&gt;dis
-                                  boot-loader</codeblock>
-                  <codeblock>Software images on slot </codeblock>
-                  <codeblock>1</codeblock>
-                  <codeblock>:</codeblock>
-                  <codeblock>Current software images:</codeblock>
-                  <codeblock>  </codeblock>
-                  <codeblock>flash:/</codeblock>
-                  <codeblock>5930</codeblock>
-                  <codeblock>-cmw710-boot-d2423.bin</codeblock>
-                  <codeblock>  </codeblock>
-                  <codeblock>flash:/</codeblock>
-                  <codeblock>5930</codeblock>
-                  <codeblock>-cmw710-system-d2423.bin</codeblock>
-                  <codeblock>  </codeblock>
-                  <codeblock>flash:/</codeblock>
-                  <codeblock>5930</codeblock>
-                  <codeblock>-cmw710-devkit-d2423.bin </codeblock>
-                  <codeblock>  </codeblock>
-                  <codeblock>flash:/</codeblock>
-                  <codeblock>5930</codeblock>
-                  <codeblock>-cmw710-manufacture-d2423.bin</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Enable L2/L3 OVSDB server and set up connectivity to VSC</p>
-        <table id="table_y52_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>#
-                                  </codeblock>
-                  <codeblock>805</codeblock>
-                  <codeblock>is untagged VLAN </codeblock>
-                  <codeblock>for</codeblock>
-                  <codeblock>TUL</codeblock>
-                  <codeblock>interface</codeblock>
-                  <codeblock>Vlan-interface805</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>ip address </codeblock>
-                  <codeblock>10.80</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>5.250</codeblock>
-                  <codeblock>255.255</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>255.0</codeblock>
-                  <codeblock># Enable
-                                  L2/L3 OVSDB</codeblock>
-                  <codeblock>l2vpn enable</codeblock>
-                  <codeblock>vtep
-                                  enable</codeblock>
-                  <codeblock>## Assign a TUL IP to </codeblock>
-                  <codeblock>5930</codeblock>
-                  <codeblock>. This acts
-                                  as VTEP Gateway IP and shows up in VSD &gt; Infrastructure. Pick one
-                                  unused IP from TUL Range. </codeblock>
-                  <codeblock>tunnel
-                                  global source-address </codeblock>
-                  <codeblock>10.80</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>5.250</codeblock>
-                  <codeblock>vxlan
-                                  local-mac report</codeblock>
-                  <codeblock>ovsdb
-                                  server tcp </codeblock>
-                  <codeblock>10.80</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>5.31</codeblock>
-                  <codeblock>port </codeblock>
-                  <codeblock>6640</codeblock>
-                  <codeblock>ovsdb server enable</codeblock>
-                  <codeblock>dhcp
-                                  enable </codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <p><b>NOTE</b>: FOR HA add second VSC ip line for ovsdb server. Here, 10.80.5.31 is VSC TUL
-          IP</p>
-      </li>
-      <li>
-        <p>Allow DHCP packet to CPU</p>
-        <p>This is a temporary fix. Future releases might not need this step.</p>
-        <table id="table_z52_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>acl number
-                                  </codeblock>
-                  <codeblock>3001</codeblock>
-                  <codeblock>rule
-                                  </codeblock>
-                  <codeblock>0</codeblock>
-                  <codeblock>permit udp destination-port eq
-                                  bootps</codeblock>
-                  <codeblock>traffic classifier dhcp operator
-                                and</codeblock>
-                  <codeblock>if</codeblock>
-                  <codeblock>-match acl
-                                  </codeblock>
-                  <codeblock>3001</codeblock>
-                  <codeblock>traffic
-                                  behavior count</codeblock>
-                  <codeblock>accounting packet</codeblock>
-                  <codeblock>redirect
-                                  cpu</codeblock>
-                  <codeblock>qos policy dhcp</codeblock>
-                  <codeblock>classifier
-                                  dhcp behavior count</codeblock>
-                  <codeblock>qos apply
-                                  policy dhcp global inbound</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Configure Switch Ports as VTEP Access Port</p>
-        <p>By doing so, the participating switch ports (connected to the host ports that are
-          configured either as SRIOV or PCIPT devices) can now viewed in VSD and programmed through
-          it.</p>
-        <table id="table_av2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>interface</codeblock>
-                  <codeblock>Ten-GigabitEthernet </codeblock>
-                  <codeblock>1</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>19</codeblock>
-                  <codeblock>:</codeblock>
-                  <codeblock>4</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>vtep access
-                                port</codeblock>
-                  <codeblock>interface</codeblock>
-                  <codeblock>Ten-GigabitEthernet </codeblock>
-                  <codeblock>2</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>23</codeblock>
-                  <codeblock>:</codeblock>
-                  <codeblock>4</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>vtep access
-                                port</codeblock>
-                  <codeblock>#Example,
-                                </codeblock>
-                  <codeblock>#For SRIOV Switch Port the complete
-                                  configuration must look like:</codeblock>
-                  <codeblock>#</codeblock>
-                  <codeblock>interface</codeblock>
-                  <codeblock>Ten-GigabitEthernet1/</codeblock>
-                  <codeblock>0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>19</codeblock>
-                  <codeblock>:</codeblock>
-                  <codeblock>4</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#port link-mode
-                                bridge</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#port
-                                  link-type trunk</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#port trunk permit vlan
-                                  </codeblock>
-                  <codeblock>805</codeblock>
-                  <codeblock>810</codeblock>
-                  <codeblock>to </codeblock>
-                  <codeblock>817</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#port trunk
-                                  pvid vlan </codeblock>
-                  <codeblock>805</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#vtep access
-                                port</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#For
-                                  Baremetal/PCI-PT port the complete configuration must look
-                                  like:</codeblock>
-                  <codeblock>#</codeblock>
-                  <codeblock>interface</codeblock>
-                  <codeblock>Ten-GigabitEthernet2/</codeblock>
-                  <codeblock>0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>23</codeblock>
-                  <codeblock>:</codeblock>
-                  <codeblock>4</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#port link-mode
-                                bridge</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#port access
-                                  vlan </codeblock>
-                  <codeblock>805</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>#vtep access
-                                port</codeblock>
-                  <codeblock>#Note. You must have noticed that </codeblock>
-                  <codeblock>switch</codeblock>
-                  <codeblock>port </codeblock>
-                  <codeblock>for</codeblock>
-                  <codeblock>PCI-PT and SRIOV assigned nic ports have
-                                  two differences:</codeblock>
-                  <codeblock>#</codeblock>
-                  <codeblock>1</codeblock>
-                  <codeblock>. SRIOV </codeblock>
-                  <codeblock>switch</codeblock>
-                  <codeblock>port expects a tagged traffic from the
-                                  compute node whereas PCI-PT doesn't. Hence, SRIOV </codeblock>
-                  <codeblock>switch</codeblock>
-                  <codeblock>port is in trunk mode and PCI-PT in Access.
-                                </codeblock>
-                  <codeblock>#</codeblock>
-                  <codeblock>2</codeblock>
-                  <codeblock>. In trunk mode, specific VLANID is allowed in
-                                  the SR-IOV Switch Port, in </codeblock>
-                  <codeblock>this</codeblock>
-                  <codeblock>example </codeblock>
-                  <codeblock>810</codeblock>
-                  <codeblock>to </codeblock>
-                  <codeblock>817</codeblock>
-                  <codeblock>. These VLANs are defined in
-                                  neutron's VLAN tenant network.</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
+      <li>Download and update firmware for the HP FlexFabric 5930 Switch assigned to the rack
+        hosting PCI-PT and SR-IOV compute nodes. The firmware is named:
+          <codeph>5930-D2413-1111.ipe</codeph>.<p>Follow the instructions with the download to
+          perform the update.</p></li>
+      <li>Execute the following command to validate that the firmware has been updated successfully:
+        Display Boot-Loader to confirm firmware is applied currently or will be next
+        boot:<codeblock>display boot-loader</codeblock>The output appears similar to the
+        following:<codeblock>Software images on slot 1: 
+Current software images: 
+  flash:/5930-cmw710-boot-d2423.bin 
+  flash:/5930-cmw710-system-d2423.bin 
+  flash:/5930-cmw710-devkit-d2423.bin 
+  flash:/5930-cmw710-manufacture-d2423.bin</codeblock></li>
+      <li>Enable the L2/L3 OVSDB server and set up connectivity to VSC:<ol id="ol_gx3_cmm_c5">
+          <li>Execute the following command to assign an IP address for the untagged VLAN for TUL
+            network:
+              <codeblock>interface &lt;name> 
+ ip address &lt;IP_address></codeblock><p>Where:
+                <codeph>&lt;name></codeph> is a descriptive name for the interface and
+                <codeph>&lt;IP_address></codeph> is the address to assign.</p><p>For
+              example:<codeblock>interface Vlan-interface805 
+ ip address 10.80.5.250 255.255.255.0 </codeblock></p></li>
+          <li> Execute the following commands to enable Open vSwitch Database Management Protocol
+            (OVSDB) for L2/L3: <codeblock>l2vpn enable 
+vtep enable</codeblock></li>
+          <li>Execute the following commands assign a TUL IP to the switch. This acts as VTEP
+            Gateway IP and appears up in VSD. Select one unused IP from TUL Range.
+            <codeblock>tunnel global source-address &lt;tunnel_IP> 
+vxlan local-mac report 
+ovsdb server tcp &lt;IP_address> port &lt;port> 
+ovsdb server enable 
+dhcp enable</codeblock>
+            Where: <ul id="ul_nbm_cpm_c5">
+              <li><codeph>&lt;tunnel_IP></codeph> is </li>
+              <li><codeph>&lt;IP_address></codeph> and <codeph>&lt;port></codeph> are</li>
+            </ul>For
+            example:<codeblock>tunnel global source-address 10.80.5.250 
+vxlan local-mac report 
+ovsdb server tcp 10.80.5.31 port 6640 
+ovsdb server enable 
+dhcp enable</codeblock></li>
+        </ol><p><b>NOTE</b>: FOR HA add second VSC ip line for ovsdb server. Here, 10.80.5.31 is VSC
+          TUL IP</p></li>
+      <li>Execute the following commands to configure DHCP packet to CPU.
+        <!--This is a temporary fix. Future releases might not need this step.--><codeblock>acl number &lt;number> 
+rule &lt;rule_id> permit udp destination-port eq &lt;port> 
+traffic classifier &lt;classifier-name> operator and 
+if-match acl &lt;number> 
+traffic behavior count 
+accounting packet 
+redirect cpu 
+qos policy dhcp 
+classifier dhcp behavior count 
+qos apply policy dhcp global inbound</codeblock>DO
+        NOT RUN THIS STEP IF ToR IS SHARED WITH NON-DATA NETWORK. IN THAT CASE, CONFIGURE INDIVIDUAL
+        SWITCH PORT WHERE DHCP IS NEEDED. SEE STEP 5</li>
+      <li>Execute the following commands to configure the switch ports as VTEP access ports.<p>By
+          doing so, the participating switch ports (connected to the host ports that are configured
+          either as SRIOV or PCIPT devices) can now viewed in VSD and programmed through
+        it.</p>interface Ten-GigabitEthernet 1/0/19:4 vtep access port # The dhcp step is only
+        needed if step 4 is not set to use in global mode qos apply policy dhcp inbound interface
+        Ten-GigabitEthernet 2/0/23:4 vtep access port # The dhcp step is only needed if step 4 is
+        not set to use in global mode qos apply policy dhcp inbound #Example, #For SRIOV Switch Port
+        the complete configuration must look like: #interface Ten-GigabitEthernet1/0/19:4 #port
+        link-mode bridge #port link-type trunk #port trunk permit vlan 805 810 to 817 #port trunk
+        pvid vlan 805 #vtep access port #For Baremetal/PCI-PT port the complete configuration must
+        look like: #interface Ten-GigabitEthernet2/0/23:4 #port link-mode bridge #port access vlan
+        805 #vtep access port #Note. You must have noticed that switch port for PCI-PT and SRIOV
+        assigned nic ports have two differences: #1. SRIOV switch port expects a tagged traffic from
+        the compute node whereas PCI-PT doesn't. Hence, SRIOV switch port is in trunk mode and
+        PCI-PT in Access. #2. In trunk mode, specific VLANID is allowed in the SR-IOV Switch Port,
+        in this example 810 to 817. These VLANs are defined in neutron's VLAN tenant network. #3.
+        With recent HPN drops, we don't have to differentiate between SR-IOV and/or PCI-PT switch
+        ports (here, 805 is for untagged vlan, 810 to 817 are provider VLANs specifically used to
+        identify sriov virtual functions): interface Ten-GigabitEthernet1/0/19:4 port link-mode
+        bridge port link-type trunk port trunk permit vlan 805 810 to 817 port trunk pvid vlan 805
+        vtep access port</li>
       <li>
         <p>Configure Service service loopback group, required only for 5930</p>
         <p>Configure a service loopback group per slot. This is used for VxLAN-VLAN bridging, hence

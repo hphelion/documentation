@@ -76,11 +76,8 @@
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"
         navtitle="Known Problems and Limitations" locktitle="yes"/>
     </topicref>
-    <topicref href="CarrierGrade/Installation/carrier-grade-install-overview.dita"
-      navtitle="Installation" locktitle="yes">
-      <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
-        format="ditamap"/>
-    </topicref>
+    <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
+      format="ditamap" navtitle="Installation" locktitle="yes"/>
     <topichead navtitle="Administration" locktitle="yes">
       <topichead navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes">
         <mapref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"/>

@@ -22,13 +22,243 @@
       uses AVS networking, follow these instructions. If you are installing a different deployment,
       disregard these instructions. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hos-install"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-provision"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json" id="conref-node-provision-json"/>
+    <section>
+      <title>Configuring JSON files</title>
+    </section>
+    <section id="jsons">The HP Helion OpenStack deployment requires several JSON files.</section>
+    <section id="node-prov">
+      <title>Configure the the node-provision.json file</title>
+      <p>Modify the <codeph>node-provision.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
+        file supplies input values to the hprovision script, later in the installation.</p>
+      <p>Edit the <codeph>node-provision.json</codeph> file to change only the following
+          fields:<table id="table_ycw_qrn_xs">
+          <tgroup cols="2">
+            <colspec colname="col1" colsep="1" rowsep="1"/>
+            <colspec colname="col2" colsep="1" rowsep="1"/>
+            <thead>
+              <row>
+                <entry colsep="1" rowsep="1">Field</entry>
+                <entry colsep="1" rowsep="1">Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Pxe-mac-address</entry>
+                <entry>MAC address of the interface you want to PXE boot onto. This is not same as
+                  iLO MAC address.</entry>
+              </row>
+              <row>
+                <entry>pm_ip</entry>
+                <entry>Power management IP (iLO ip)</entry>
+              </row>
+              <row>
+                <entry>pm_user</entry>
+                <entry>Power management user (iLO username)</entry>
+              </row>
+              <row>
+                <entry>pm_pass</entry>
+                <entry>Power management password (iLO password)</entry>
+              </row>
+              <row>
+                <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
+                <entry>Enter the same value as for these fields an in the
+                    <codeph>nodes.json</codeph> file used during cloud deployment</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+      <p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
+          href="carrier-grade-install-kvm-only-json.dita#topic10581">Sample JSON File for the HLM
+          Virtual Machine Installation</xref>. </p>
+    </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-json" id="conref-json"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-def-json"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-env-json"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-verify-json"/>
+    <section id="environment">
+      <p>Modify the e<codeph>nvironment.json</codeph> file</p>
+      <p>Modify the <codeph>environment.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager.
+        Configure the VLANs and network addresses as appropriate for your environment. Set the
+        following for the CLM, CAN, and BLS
+        network:<codeblock>"cidr": 
+          "start-address": </codeblock> The three controller
+        nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1.
+        <!--Hiding for RC0 
+              <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
+           -->
+      </p>
+      <p>
+        <b>Example:</b>
+      </p><p><codeblock>{
+        "product": {
+        "version": 1
+        },
+        
+        "node-type": [
+        {
+        "name": "CCN",
+        "interface-map": [
+        {
+        "name": "INTF0",
+        "ethernet-port-map": {
+        "interface-ports": [ "eth0" ]
+        },
+        "logical-network-map": [
+        {
+        "name": "CLM",
+        "type": "vlan",
+        "segment-id": "502",
+        "network-address": {
+        "cidr": "10.50.2.0/24",
+        "start-address": "10.50.2.10",
+        "gateway": "10.50.2.1"
+        }
+        },
+        {
+        "name": "CAN",
+        "type": "vlan",
+        "segment-id": "504",
+        "network-address": {
+        "cidr": "10.50.4.0/24",
+        "start-address": "10.50.4.10"
+        }
+        },
+        {
+        "name": "BLS",
+        "type": "vlan",
+        "segment-id": "76",
+        "network-address": {
+        "cidr": "172.16.76.0/19",
+        "start-address": "172.16.76.10"
+        }
+        }
+        ]
+        }
+        ]
+        }
+        ]
+        }</codeblock>
+        <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM address
+        range to itself for serving python and debian repositories. Make sure that you set the first
+        IP address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
+    </section>
+    <section><title>Modify the <codeph>definition.json</codeph></title>
+        <p>Modify the <codeph>definition.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
+        directory of the lifecycle manager: </p>
+      <ol>
+        <li>Set the number of compute systems to 2.
+          <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
+        <li>Update the <codeph>ansible-vars</codeph> section with all the information based on
+          your setup.</li>
+        <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph>
+          fields in the <codeph>definition.json</codeph> file as seen in the following example.
+          If you have only one NTP server in your environment, specify the same NTP server
+          twice. Example:
+          <codeblock>{
+            "product": {
+            "version": 1
+            },
+            
+            "cloud": {
+            "name": "b44tb4",
+            "nickname": "b44tb4",
+            "server-config": "nodes.json",
+            "environment": "environment.json",
+            "network-config": ".hos/lnet-control-data.json"
+            },
+            
+            "failure-zones": [
+            {
+            "name": "fz1"
+            },
+            {
+            "name": "fz2"
+            },
+            {
+            "name": "fz3"
+            }
+            ],
+            
+            "control-planes": [
+            {
+            "file": ".hos/ccp-1x3-ss.json",
+            "resource-nodes": []
+            }
+            ],
+            
+            "ansible-vars": {
+            "dns_address": "10.1.2.44",
+            "dns_domain_name": "helion.cg",
+            "ldap_url": "10.1.2.44",
+            "ldap_username": "admin",
+            "ldap_password": "admin",
+            "ldap_domain": "dc=helioncg,dc=local",
+            "ldap_ou": "CGTestUsers",
+            "ldap_nova_password": "nova",
+            "ldap_nova_user": "nova",
+            "ldap_neutron_password": "neutron",
+            "ldap_neutron_user": "neutron",
+            "ldap_cinder_password": "cinder",
+            "ldap_cinder_user": "cinder",
+            "ldap_glance_password": "glance",
+            "ldap_glance_user": "glance",
+            "ldap_enabled": 1,
+            "upstream_ntp_servers": [
+            "10.1.2.44",
+            "16.110.135.123",
+            "2.debian.pool.ntp.org"
+            ],
+            "ssl_cert_file": "ca.crt",
+            "ssl_key_file": "cakey.pem",
+            "ssl_passphrase": "cghelion"
+            },
+            
+            "wr-vars": {
+            "database_storage": 50,
+            "backup_storage": 300,
+            "image_storage": 250,
+            "region_name": "RegionOne",
+            "logical_interface": [
+            {
+            "lag_interface": "N",
+            "interface_mtu": 1500,
+            "interface_ports": [
+            "eth0"
+            ],
+            "network": [
+            {
+            "ip_start_address": "10.50.2.51",
+            "ip_end_address": "10.50.2.99",
+            "name": "CLM"
+            },
+            {
+            "ip_start_address": "172.16.76.150",
+            "ip_end_address": "172.16.76.199",
+            "name": "BLS"
+            },
+            {
+            "ip_start_address": "10.50.4.51",
+            "ip_end_address": "10.50.4.99",
+            "gateway": "10.50.4.1",
+            "name": "CAN"
+            }
+            ]
+            }
+            ],
+            "pxeboot_cidr": "10.50.1.0/24",
+            "license_file_name": "license.lic"
+            }
+            }
+          </codeblock></li>
+      </ol>
+    </section>    
+    
+    <section id="verify-json">
+      <title>Verify the JSON files</title>
+      <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
+        errors using the tool of your preference. For example, using the Python json.tool: </p>
+      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
+    </section>
+    
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/keystone-neutron-patch"/>
