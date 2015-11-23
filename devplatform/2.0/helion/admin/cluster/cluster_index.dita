@@ -138,7 +138,7 @@ take on one or more of the following roles:</p>
 </li>
 <li>mdns (intended for micro clouds)</li>
 <li>
-  <xref href="../../user/services/filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >filesystem</xref>
+  <xref href="../../user/services/filesystem.dita#user_filesystem/creating-a-persistent-file-system" type="section"   >filesystem</xref>
 </li>
 <li>
   <xref href="../../user/reference/glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
