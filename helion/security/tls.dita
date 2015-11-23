@@ -28,10 +28,10 @@
             Production Environments</xref>.</note>
       </p>-->
     </section>
-    <section> When logging into the lifecycle manager to run the configuration processor and the requisite
-      playbooks, you must decide if you want to configure TLS or if you want to disable it. This
-      can't be changed after deployment. Therefore, you will have to make one of the following
-        changes:<ul id="ul_sdj_qfq_rt">
+    <section> When logging into the lifecycle manager to run the configuration processor and the
+      requisite playbooks, you must decide if you want to configure the external VIP with an FQDN or
+      just leave it as an IP address. This can't be changed after deployment. Therefore, you will
+      have to make one of the following changes:<ul id="ul_sdj_qfq_rt">
         <li>Comment out the "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
           used) </li>
