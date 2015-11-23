@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic_w5z_kcw_js">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="windows_tools">
  <title>HPE Helion 2.0 Development Platform: Windows and .NET Applications Tools Guide</title>
  <prolog>
   <metadata>
@@ -26,18 +26,18 @@
     Framework HTTP-based applications. This document describes how to install and use these tools.
    </p> This document contains the following sections:  <p><b>.NET tools:</b></p><ul
     id="ul_dmq_khw_js">
-    <li><xref type="section"  href="#topic_w5z_kcw_js/cloudfoundryextensions" >Cloud Foundry Extensions</xref></li>
-    <li><xref type="section"  href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
-    <li><xref type="section"  href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET
+    <li><xref type="section"  href="#windows_tools/cloudfoundryextensions" >Cloud Foundry Extensions</xref></li>
+    <li><xref type="section"  href="#windows_tools/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
+    <li><xref type="section"  href="#windows_tools/sdk">Cloud Foundry .NET
       SDK</xref></li>
    </ul>
    <b>Setup tools</b><ul id="ul_jgl_fhw_js">
-    <li><xref type="section"  href="#topic_w5z_kcw_js/als">ALS Cluster Management (cf-mgmt)</xref></li>
-    <li><xref type="section"  href="#topic_w5z_kcw_js/helion">Helion client
+    <li><xref type="section"  href="#windows_tools/als">ALS Cluster Management (cf-mgmt)</xref></li>
+    <li><xref type="section"  href="#windows_tools/helion">Helion client
       (helion)</xref></li>
    </ul><!--
    <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
-    <li><xref type="section"  href="#topic_w5z_kcw_js/glazier">Glazier</xref></li>
+    <li><xref type="section"  href="#windows_tools/glazier">Glazier</xref></li>
    </ul>-->
  </section>
  <section id="cloudfoundryextensions"><title>Cloud Foundry Extensions</title> <p>This Visual Studio 2013 extension
