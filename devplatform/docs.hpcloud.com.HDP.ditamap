@@ -41,6 +41,8 @@
         locktitle="yes" toc="no"/>
       <topicref href="2.0/installation/cloud/fullFile.dita" navtitle="no_fullYamlSample"
         locktitle="yes" toc="no"/>
+      <topicref href="2.0/installation/devplatform_commercial_install.dita"
+        navtitle="no_fullInstall" locktitle="yes" toc="no"/>
     </topichead>
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->
