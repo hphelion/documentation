@@ -7,8 +7,6 @@
     <section><title>Environments</title>
       <ul>
         <li><xref href="engine_environment_create.dita">Create a New Environment</xref></li>
-        <li><xref href="engine_edit_environment.dita#topic_ib5_v5b_3t">Change an Existing
-            Environment</xref></li>
       </ul>
     </section>
       
