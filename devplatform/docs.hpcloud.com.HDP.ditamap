@@ -43,6 +43,8 @@
         locktitle="yes" toc="no"/>
       <topicref href="2.0/installation/devplatform_commercial_install.dita"
         navtitle="no_fullInstall" locktitle="yes" toc="no"/>
+      <topicref href="2.0/devplatform.troubleshooting.dita" navtitle="Troubleshooting"
+        locktitle="yes"/>
     </topichead>
     <!--uninstallation -->
     <!--  <topichead navtitle="Uninstallation"-->
