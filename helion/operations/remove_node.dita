@@ -194,8 +194,8 @@ ansible-playbook -i hosts/localhost bm-power-down.yml -e nodelist=&#60;node name
         Nova:</p>
       <codeblock>nova hypervisor-list</codeblock>
     </section>
-    <section id="remove_node"><title>Remove the Compute Host from the <codeph>servers.yml</codeph>
-        File and Run the Configuration Processor</title>
+    <section id="remove_node"><title>Remove the Compute Host from the servers.yml File and Run the
+        Configuration Processor</title>
       <p>Complete these steps from the lifecycle manager to remove the Compute node:</p>
       <ol>
         <li>Log in to the lifecycle manager</li>
