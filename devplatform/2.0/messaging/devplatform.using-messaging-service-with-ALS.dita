@@ -20,7 +20,7 @@ note from Min  that Arun is looking into this right now. Cue manages the message
       <p>To use the Messaging Broker Service with ALS, you need to:</p>
       <ol>
         <li>
-          <xref href="devplatform.using-the-messaging-service.dita#topic3880/create" type="section"
+          <xref href="devplatform.using-the-messaging-service.dita#using_messaging/create" type="section"
             >Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not
           already exist. </li>
         <li>Once a cluster has been created, you can connect an application deployed to ALS with the
