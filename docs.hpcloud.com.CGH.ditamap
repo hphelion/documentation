@@ -91,6 +91,8 @@
       <topicref
         href="CarrierGrade/AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
         navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
+      <topicref href="CarrierGrade/MultiDC/CGH-2-Config-Multi-DC.dita"
+        navtitle="Confguring a Multiple Datacenter Environment" locktitle="yes"/>
       <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
         navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
         <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
