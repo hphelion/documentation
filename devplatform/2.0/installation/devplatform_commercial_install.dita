@@ -51,6 +51,5 @@
  
   <topic id="engine" conref="install_engine.dita#topic_gkq_fqy_rt"><title>Install the Helion Code Engine</title>
   </topic>  
-  <topic id="dns" conref="install_dnsaas.dita#HP2.0DNSaaS"><title>Install DNSaaS</title></topic>
   
 </topic>
