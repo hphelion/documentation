@@ -10,8 +10,8 @@
     </section>
     <section id="vsa"><title>Troubleshooting the VSA Configuration</title>
       <p><b>Issue: You have forgotten the identifying information about your VSA cluster</b></p>
-      <p>If you have forgotten the cluster name or IP address after creating the cluster in the CMC utility then you
-        can perform the following steps to retrieve them:</p>
+      <p>If you have forgotten the cluster name or IP address after creating the cluster in the CMC
+        utility then you can perform the following steps to retrieve them:</p>
       <ol>
         <li>Log in to CMC console using the <codeph>/opt/HP/StoreVirtual/UI/jre/bin/java -jar
             /opt/HP/StoreVirtual/UI/UI.jar</codeph> command from the lifecycle manager/deployer
@@ -24,8 +24,10 @@
         <li>Click <codeph>iSCSI</codeph> on the right hand side of the page. The virtual IP address
           will be displayed in the tabular form. You can view your cluster ID here.</li>
       </ol>
-      <p><b>Running <codeph>site.yml</codeph> during the VSA installation produces an error in the "Create VSA appliance" task step</b></p>
-      <p>If you are going through the VSA configuration and the <codeph>site.yml</codeph> playbook results in the error below then you likely did not set your locale properly.</p>
+      <p><b>Running <codeph>site.yml</codeph> during the VSA installation produces an error in the
+          "Create VSA appliance" task step</b></p>
+      <p>If you are going through the VSA configuration and the <codeph>site.yml</codeph> playbook
+        results in either of the errors below then you likely did not set your locale properly.</p>
       <p>Error:</p>
       <codeblock>
 TASK: [VSA-DEP | deploy | Create VSA appliance] *******************************
@@ -43,9 +45,14 @@ Traceback (most recent call last):
 storevirtual_installer.vsa_excs.NetworkDestroyFailed: Failed to destroy and undefine the network
 
 FATAL: all hosts have already failed -- aborting</codeblock>
+      <p>OR</p>
+      <codeblock>Unable to get XML definition of storage pool -------------------------------------------. Err: exit status 1: setlocale: No such file or directory
+error: failed to get pool '-------------------------------------------'
+error: Storage pool not found: no storage pool with matching name '-------------------------------------------'</codeblock>
       <p>Fix:</p>
-      <p>Set your locale prior to running <codeph>site.yml</codeph> with this command on your lifecycle manager:</p>
+      <p>Set your locale prior to running <codeph>site.yml</codeph> with this command on your
+        lifecycle manager:</p>
       <codeblock>export LC_ALL=C</codeblock>
-      </section>
+    </section>
   </body>
 </topic>
