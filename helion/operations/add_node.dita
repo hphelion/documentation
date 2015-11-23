@@ -92,9 +92,12 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&#60;node name></
             their ID numbers from being reallocated. See the Persisted Server Allocations section in
               <xref href="../input_model.dita#input_model/persistedserverallocations">HPE Helion
               OpenStack 2.0 Input Model</xref> for information on how this works.</p></li>
-        <li>Run the following deployment step specifying the <codeph>--limit</codeph> option to
-          apply the deployment actions only to the target node(s). <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts site.yml --limit &#60;host_var name></codeblock>
+        <li>Run the following command:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock></li>
+      <li>Run this command to complete the deployment of your new node, ensuring you use the <codeph>--limit</codeph> option to specify your new node:
+        <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit &#60;host_var name></codeblock>
           <note>If you don't know the <codeph>&#60;host_var name></codeph> already, you can get it
             by looking in the <codeph>~/scratch/ansible/next/hos/ansible/host_vars</codeph>
             directory.</note></li>
@@ -105,7 +108,7 @@ ansible-playbook -i hosts/verb_hosts site.yml --limit &#60;host_var name></codeb
       <p>If you want to add a new VSA node to the monitoring service checks, there is an additional
         playbook that must be run to ensure this happens:</p>
       <codeblock>cd ~/scratch/ansible/next/hos/ansible
-        ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
+ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
     </section>
 
     <section id="az"><title>Adding a New Compute Node to an Availability Zone</title>
