@@ -17,7 +17,7 @@
  </topicmeta>
  <topicref href="helion/index.dita">
   <!-- BEGIN - TOP LEVEL -->
-  <topicref href="helion/overview.dita" navtitle="HPE Helion OpenStack 2.0 Overview"
+  <topicref href="helion/overview.dita" navtitle="HPE Helion OpenStack 2.1 Overview"
    locktitle="yes"/>
  </topicref>
 </map>
