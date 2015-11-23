@@ -276,10 +276,9 @@ doesn't exist, then uWSGI will forward the request to the app.</p>
       </p>
 </section>
 <section id="using-a-custom-web-server"> <title>Using a custom web server</title>
-<p>To use a different web server instead of uWSGI, specify its startup
-command in <codeph>manifest.yml</codeph>. Here's a sample
-manifest.yml used to deploy a Django 1.4 application named "dj14" using
-gunicorn:</p>
+<p>To use a different web server instead of uWSGI, specify its startup command in
+          <codeph>manifest.yml</codeph>. Here's a sample manifest.yml used to deploy a Django 1.8
+        application named "dj14" using gunicorn (assuming pip version &lt; 1.4).</p>
 <codeblock>name: dj14
 
 framework:
@@ -290,7 +289,7 @@ processes:
 
 requirements:
   pypm: [gunicorn]
-  pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball#egg=django-1.4b1"]</codeblock>
+  pip: ["https://www.djangoproject.com/download/1.8.6/tarball/"]</codeblock>
 <p>The custom web server must bind to IP address <codeph>0.0.0.0</codeph> and port <codeph>$PORT</codeph>. The same trick can be
 used to serve non-WSGI applications (such as Tornado). See the
 <xref href="https://github.com/Stackato-Apps/bottle-py3" scope="external" format="html" >bottle-py3 example</xref> sample
