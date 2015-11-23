@@ -15,6 +15,8 @@
   </prolog>
   <body>
     <p>This topic describes all the known issues that you might encounter:</p>
+    
+    <section>
     <ul id="ul_xzh_nmc_mt">
       <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
           non-KVM region</xref></li>
@@ -22,6 +24,79 @@
       <li><xref href="#topic10581/vrs" format="dita"/></li>
       <li><xref href="#topic10581/backup" format="dita"/></li>
     </ul>
+    </section>
+    <section><title>Installation fails at Ansible playbook</title>
+      <p><b>System Behavior/Message</b></p>
+      <p>The HP Helion OpenStack Carrier Grade installation fails during the HLM deployment (after
+        executing the <codeph>ansible-playbook</codeph> command) with an error similar to the
+        following.</p>
+<codeblock>
+TASK: [HLM-CREATE-ON-BM | Add hlm to the in-memory inventory of playbook] ***** 
+ok: [192.168.122.1] 
+PLAY [hlm] 
+********************************* GATHERING FACTS ***************************** 
+previous known host file not found 
+fatal: [192.168.122.240] => SSH encountered an unknown error during the connection. 
+We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue 
+TASK: [HLM-CFG | Delete existing interfaces file] 
+***************************** FATAL: no hosts matched or all hosts have already failed -- aborting 
+PLAY RECAP ******************************************************************** 
+to retry, use: --limit @/root/setup_hlm_onBM.retry 
+192.168.122.1 : ok=18 changed=8 unreachable=0 failed=0 
+192.168.122.240 : ok=0 changed=0 unreachable=1 failed=0</codeblock>
+<p><b>Resolution</b></p>
+<p>Perform the following steps:</p>
+  <ol id="ol_fqn_wqn_c5">
+          <li>Execute the following command to determine if the HLM VM was created:
+            <codeblock>virsh list –all</codeblock>If the HLM VM appears in the output, delete the VM
+            using the following
+            commands:<codeblock>virsh destroy hlm
+virsh undefined hlm</codeblock></li>
+          <li>Edit the <codeph>/root/infra-ansible-playbooks/setup_hlm_onBM.yml</codeph> file to
+          comment the second role. The file contains two roles: the first one creates the VM and the
+          second one configures the VM.
+          <codeblock>hosts: hlm_kvm_host
+sudo: yes
+user: root
+roles:
+HLM-CREATE-ON-BM
+hosts: hlm
+#sudo: yes
+#user: root
+#roles:
+HLM-CFG</codeblock></li>
+        <li>Again, run the <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>.</li>
+        
+        <li>After the command completes, execute the following command to obtain the vibr0 IP
+          address for the HLM<codeblock>arp | grep aa</codeblock>Copy the IP address you get in the
+          output. 192.168.122.XXX</li>
+          
+          <li>Edit the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to add the vibr0 IP
+          address in the following manner:
+          <codeblock>[vsd]
+10.10.10.10 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
+        
+[hlm]
+192.168.122.240 ansible_ssh_user=root ansible_ssh_pass=cghelion
+        
+[hlm_kvm_host]
+192.168.122.1 #ansible_ssh_user=root ansible_ssh_pass=root</codeblock></li>
+
+        <li>Edit the <codeph>setup_hlm_onBM.yml</codeph> to comment-out the first role and
+          un-comment the second role.
+          <codeblock>hosts: hlm_kvm_host
+sudo: yes
+user: root
+roles:
+- HLM-CREATE-ON-BM
+hosts: hlm
+sudo: yes
+user: root
+roles:
+HLM-CFG</codeblock></li>
+      <li>Run <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>
+          <codeph>HCG-909</codeph></li></ol>
+    </section>
     <section id="no-instance">
       <title><b>Unable to create an instance in the non-KVM region</b></title>
       <p>When trying to create a virtual machine instance in the non-KVM region, the user receives a

@@ -111,90 +111,74 @@ qos apply policy dhcp global inbound</codeblock>DO
       <li>Execute the following commands to configure the switch ports as VTEP access ports.<p>By
           doing so, the participating switch ports (connected to the host ports that are configured
           either as SRIOV or PCIPT devices) can now viewed in VSD and programmed through
-        it.</p>interface Ten-GigabitEthernet 1/0/19:4 vtep access port # The dhcp step is only
-        needed if step 4 is not set to use in global mode qos apply policy dhcp inbound interface
-        Ten-GigabitEthernet 2/0/23:4 vtep access port # The dhcp step is only needed if step 4 is
-        not set to use in global mode qos apply policy dhcp inbound #Example, #For SRIOV Switch Port
-        the complete configuration must look like: #interface Ten-GigabitEthernet1/0/19:4 #port
-        link-mode bridge #port link-type trunk #port trunk permit vlan 805 810 to 817 #port trunk
-        pvid vlan 805 #vtep access port #For Baremetal/PCI-PT port the complete configuration must
-        look like: #interface Ten-GigabitEthernet2/0/23:4 #port link-mode bridge #port access vlan
-        805 #vtep access port #Note. You must have noticed that switch port for PCI-PT and SRIOV
-        assigned nic ports have two differences: #1. SRIOV switch port expects a tagged traffic from
-        the compute node whereas PCI-PT doesn't. Hence, SRIOV switch port is in trunk mode and
-        PCI-PT in Access. #2. In trunk mode, specific VLANID is allowed in the SR-IOV Switch Port,
-        in this example 810 to 817. These VLANs are defined in neutron's VLAN tenant network. #3.
-        With recent HPN drops, we don't have to differentiate between SR-IOV and/or PCI-PT switch
-        ports (here, 805 is for untagged vlan, 810 to 817 are provider VLANs specifically used to
-        identify sriov virtual functions): interface Ten-GigabitEthernet1/0/19:4 port link-mode
-        bridge port link-type trunk port trunk permit vlan 805 810 to 817 port trunk pvid vlan 805
-        vtep access port</li>
-      <li>
-        <p>Configure Service service loopback group, required only for 5930</p>
-        <p>Configure a service loopback group per slot. This is used for VxLAN-VLAN bridging, hence
-          recommendation is to use 40G Port.</p>
-        <table id="table_bv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>service-loopback group </codeblock>
-                  <codeblock>1</codeblock>
-                  <codeblock>type vsi-gateway</codeblock>
-                  <codeblock>reserve-vlan-</codeblock>
-                  <codeblock>interface</codeblock>
-                  <codeblock>4000</codeblock>
-                  <codeblock>to </codeblock>
-                  <codeblock>4020</codeblock>
-                  <codeblock>interface</codeblock>
-                  <codeblock>FortyGigE1/</codeblock>
-                  <codeblock>0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>4</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>port
-                                  link-mode bridge</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>port
-                                  service-loopback group </codeblock>
-                  <codeblock>1</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <p><b>Note:</b> Use multiple physical port per service-loopback group to give more
-          bandwidth. Specifically for L3 communication. Do this per slot, if need be.</p>
-      </li>
-      <li>On board the ToR as VTEP Gateway in VSD<ol id="ol_cv2_4yr_zt">
-          <li>Using VSD Architect Dashboard, click on 'Open Platform Configuration' icon</li>
-          <li>
-            <p>Go to Infrastructure &gt; Gateways &gt; Pending Gateways &gt; Click on 'Use this
-              gateway' icon (down arrow)</p>
-            <p><b>Note: </b>You can now see all the ports marked as VTEP Access port under the
-              gateway.</p>
-          </li>
+        it.</p><codeblock>interface Ten-GigabitEthernet 1/0/19:4
+ vtep access port
+ # The dhcp step is only needed if step 4 is not set to use in global mode
+ qos apply policy dhcp inbound 
+interface Ten-GigabitEthernet 2/0/23:4
+ vtep access port
+ # The dhcp step is only needed if step 4 is not set to use in global mode 
+ qos apply policy dhcp inbound
+#Example, 
+#For SRIOV Switch Port the complete configuration must look like:
+#interface Ten-GigabitEthernet1/0/19:4
+ #port link-mode bridge
+ #port link-type trunk
+ #port trunk permit vlan 805 810 to 817
+ #port trunk pvid vlan 805
+ #vtep access port
+ 
+#For Baremetal/PCI-PT port the complete configuration must look like:
+#interface Ten-GigabitEthernet2/0/23:4
+ #port link-mode bridge
+ #port access vlan 805
+ #vtep access port
+#Note. You must have noticed that switch port for PCI-PT and SRIOV assigned nic ports have two differences:
+#1. SRIOV switch port expects a tagged traffic from the compute node whereas PCI-PT doesn't. Hence, SRIOV switch port is in trunk mode and PCI-PT in Access. 
+#2. In trunk mode, specific VLANID is allowed in the SR-IOV Switch Port, in this example 810 to 817. These VLANs are defined in neutron's VLAN tenant network. 
+#3. With recent HPN drops, we don't have to differentiate between SR-IOV and/or PCI-PT switch ports (here, 805 is for untagged vlan, 810 to 817 are provider VLANs specifically used to identify sriov virtual functions):
+    interface Ten-GigabitEthernet1/0/19:4
+     port link-mode bridge
+     port link-type trunk
+     port trunk permit vlan 805 810 to 817
+     port trunk pvid vlan 805
+     vtep access port</codeblock></li>
+      <li>Execute the following commands to configure a service loopback group for each slot.
+          <p>This is used for VxLAN-VLAN bridging, hence recommendation is to use 40G
+          Port.<codeblock>service-loopback group 1 type vsi-gateway
+reserve-vlan-interface 4000 to 4020
+interface FortyGigE1/0/4
+ port link-mode bridge
+ port service-loopback group 1</codeblock></p><p><b>Note:</b>
+          If needed, you can use multiple physical ports for each service-loopback group to provide
+          more bandwidth, specifically for L3 communication. </p></li>
+      <li>On-board the ToR as a VTEP Gateway in VSD<ol id="ol_cv2_4yr_zt">
+          <li>Launch the VSD Architect Dashboard.</li>
+          <li>Click the <b>Open Platform Configuration</b> icon.</li>
+          <li>Click <b>Infrastructure</b>, then <b>Gateways</b>, then <b>Pending Gateways</b>. </li>
+          <li>Click the <b>Use this gateway</b> icon.<p><b>Note: </b>You can now see all the ports
+              marked as VTEP Access port under the gateway.</p></li>
         </ol></li>
     </ol>
-    <p><b>Discover Datacenter Network Topology --&gt; HP Software UCMDB</b></p>
-    <p>Presumably, this mapping data is collected by OMi and stored in CMDB and dynamically updated
-      on periodic bases. For Orchestrator to configure a specific switch <b>port</b> (applicable for
-      PCI-PT or baremetal node use cases) or switch <b>port,vlan</b> (applicable for SR-IOV use case
-      ), it needs to understand or map the following (specifically aware of the highlighted
-      mapping):</p>
+    <p><b>Discover Datacenter Network Topology</b></p>
+    <p>Mapping data can be collected by OMi and stored in a configuration management database
+        (<b>CMDB</b>) and dynamically updated on a periodic basis. </p>
+    <p>For Orchestrator to configure a specific switch <b>port</b> (applicable for PCI-PT or
+      baremetal node use cases) or switch <b>port,vlan</b> (applicable for SR-IOV use case ), it
+      needs to understand or map the following (specifically aware of the highlighted mapping).</p>
+    <p>In HP Universal CMDB (UCMD)</p>
     <ul id="ul_dv2_4yr_zt">
       <li>
         <p>For SRIOV</p>
-        <p> VM --&gt; Neutron Port --&gt; <b>Compute Node --&gt; Virtual Function --&gt; Physical
-            Function/Host Port ---&gt; Switch Port --&gt; ToR VTEP Gateway</b></p>
+        <p> VM --> Neutron Port --> Compute Node --> Virtual Function --> Physical Function/Host
+          Port ---> Switch Port --> ToR VTEP Gateway</p>
       </li>
     </ul>
     <ul id="ul_ev2_4yr_zt">
       <li>
         <p>For PCI-PT or Baremetal Port</p>
-        <p> VM --&gt; Neutron Port --&gt; <b>Compute Node --&gt; Host Port ---&gt; Switch Port
-            --&gt; ToR VTEP Gateway</b></p>
+        <p> VM --> Neutron Port --> Compute Node --> Host Port ---> Switch Port --> ToR VTEP
+          Gateway</p>
       </li>
     </ul>
     <p>An inventory of this format is recorded in CMDB:</p>
@@ -247,365 +231,92 @@ qos apply policy dhcp global inbound</codeblock>DO
       </tgroup>
     </table>
     <p><b>CLIs to capture mapping information from Compute Node:</b></p>
-    <p>For SRIOV</p>
-    <table id="table_gv2_4yr_zt">
-      <tgroup cols="1">
-        <colspec colnum="1" colname="col1"/>
-        <tbody>
-          <row>
-            <entry>
-              <codeblock># grab the
-                              </codeblock>
-              <codeblock>'name'</codeblock>
-              <codeblock>, </codeblock>
-              <codeblock>for</codeblock>
-              <codeblock>example eth7; </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>is the compute node ID</codeblock>
-              <codeblock>system
-                              host-</codeblock>
-              <codeblock>if</codeblock>
-              <codeblock>-list </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>| grep pci-sriov </codeblock>
-              <codeblock># grab the
-                              UUID</codeblock>
-              <codeblock>system host-port-list </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>I grep eth7 </codeblock>
-              <codeblock># grab the
-                              imac of eth7</codeblock>
-              <codeblock>system host-</codeblock>
-              <codeblock>if</codeblock>
-              <codeblock>-show </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>fdb4b7cf-6b8b-421a-bdc2-a07209a31548 | grep
-                              imac</codeblock>
-              <codeblock># </codeblock>
-              <codeblock>this</codeblock>
-              <codeblock>output will give you PF to VF
-                            mapping</codeblock>
-              <codeblock>system host-port-show </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>&lt;uuid&gt;  </codeblock>
-            </entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
+    <p>For SRIOV<ol id="ol_ilb_byn_c5">
+        <li>Grab the 'name', for example eth7; 4 is the compute node
+          ID:<codeblock>system host-if-list 4 | grep pci-sriov</codeblock></li>
+        <li>Grab the UUID:<codeblock>system host-port-list 4 I grep eth7 </codeblock></li>
+        <li>Grab the imac of
+          eth7<codeblock>system host-if-show 4 fdb4b7cf-6b8b-421a-bdc2-a07209a31548 | grep imac</codeblock></li>
+        <li>This output will give you PF to VF
+          mapping:<codeblock>system host-port-show 4 &lt;uuid>  </codeblock></li>
+      </ol></p>
     <p>For PCI-PT</p>
-    <table id="table_hv2_4yr_zt">
-      <tgroup cols="1">
-        <colspec colnum="1" colname="col1"/>
-        <tbody>
-          <row>
-            <entry>
-              <codeblock># grab the
-                              </codeblock>
-              <codeblock>'name'</codeblock>
-              <codeblock>, </codeblock>
-              <codeblock>for</codeblock>
-              <codeblock>example eth7; </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>is the compute node ID</codeblock>
-              <codeblock>system
-                              host-</codeblock>
-              <codeblock>if</codeblock>
-              <codeblock>-list </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>| grep pci-passthrough </codeblock>
-              <codeblock># grab the
-                              UUID</codeblock>
-              <codeblock>system host-port-list </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>| grep eth7 </codeblock>
-              <codeblock># grab the
-                              imac</codeblock>
-              <codeblock>system host-port-show </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>c4cb43cd-bddd-</codeblock>
-              <codeblock>4999</codeblock>
-              <codeblock>-bab5-2f0db8e6ac2f | grep
-                              imac</codeblock>
-              <codeblock># </codeblock>
-              <codeblock>this</codeblock>
-              <codeblock>output will give you pci
-                            address</codeblock>
-              <codeblock>system host-port-show </codeblock>
-              <codeblock>4</codeblock>
-              <codeblock>&lt;uuid&gt;  </codeblock>
-            </entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
+    <ol id="ol_uhw_lyn_c5">
+      <li>Grab the 'name', for example eth7; 4 is the compute node
+        ID:<codeblock>system host-if-list 4| grep pci-passthrough</codeblock></li>
+      <li>Grab the UUID:<codeblock>system host-port-list 4 I grep eth7 </codeblock></li>
+      <li>Grab the imac of
+        eth7<codeblock>system host-port-show 4 c4cb43cd-bddd-4999-bab5-2f0db8e6ac2f | grep imac</codeblock></li>
+      <li>This output will give you PF to VF
+        mapping:<codeblock>system host-port-show 4 &lt;uuid&gt;    </codeblock></li>
+    </ol>
     <p><b>Create an L3 domain in VSD and DHCP Server Pool in ToR ---&gt; Orchestration through
         NFV-D</b></p>
     <ol id="ol_iv2_4yr_zt">
-      <li>
-        <p>Create an L3 domain in VSD. This will be orchestrated by NFV-D.</p>
-      </li>
-      <li>
-        <p>Get the Service ID by right clicking the l3 domain &gt; Inspect</p>
-        <p> </p>
-      </li>
-      <li>
-        <p>Create a DHCP Server Pool on ToR Switch Per L3 domain using prefixed the service id with
-          vrf </p>
-        <table id="table_jv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>dhcp
-                                  server ip-pool mkt-l3-dom1</codeblock>
-                  <codeblock>  </codeblock>
-                  <codeblock>vpn-instance
-                                vrf20001</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
+      <li>Create an L3 domain in VSD. This will be orchestrated by NFV-D.</li>
+      <li>Get the Service ID by right clicking the l3 domain > Inspect </li>
+      <li>Create a DHCP Server Pool on ToR Switch Per L3 domain using prefixed the service id with
+        vrf <codeblock>dhcp server ip-pool
+mkt-l3-dom1  vpn-instance vrf20001</codeblock><b>Note:
+        </b>If there is a need to set gateway per subnet, you need to create a pool per subnet and
+        use the same vpn-instance. The syntax of setting gateway is as
+        follows:<codeblock>dhcp server ip-pool
+mkt-l3-dom1-subnet1  vpn-instance
+vrf20001  gateway-list 50.50.50.1</codeblock></li>
     </ol>
     <p><b>Create networks and subnets - Orchestration through NFV-D</b></p>
     <ol id="ol_kv2_4yr_zt">
       <li>Create a VSD Managed Subnet: Create a subnet under Private zone and grab the VSD ID
         (right-click Inspect). For example, 50.50.50.0/24 CIDR</li>
-      <li>
-        <p>Create a VxLAN Tenant network and subnet for Virtio vNICs: This network will be used for
-          launching VMs with VirtIO vNICs. It is a VxLAN tenant network created using VSD ID
-          (--nuagenet)</p>
-        <table id="table_lv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>neutron
-                                  net-create mkt-net1</codeblock>
-                  <codeblock>neutron
-                                  subnet-create mkt-net1 </codeblock>
-                  <codeblock>50.50</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>50.0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>24</codeblock>
-                  <codeblock>--nuagenet
-                                  0c806349-27ee-440a-a8fd-b5cb144fb3b6 --net-partition Marketing
-                                  --enable-dhcp</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Create a neutron network and subnet for PCI-PT/SRIOV vNICs: This network will be used for
-          launching VMs with baremetal ports like SRIOV, PCI-PT. This is a VLAN tenant network. In
-          this example, a VLAN 814 is used and provider net is physnet1. The same alias 'physnet1'
-          is used when assigning interfaces for PCI-PT/SRIOV.</p>
-        <table id="table_mv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>neutron
-                                  net-create mkt-sriov-pcipt-net --provider:network_type vlan
-                                  --provider:segmentation_id </codeblock>
-                  <codeblock>814</codeblock>
-                  <codeblock>--provider:physical_network
-                                physnet1</codeblock>
-                  <codeblock>neutron subnet-create
-                                  8614d6fd-ad8c-442a-8af4-2991173cfe6b </codeblock>
-                  <codeblock>50.50</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>50.0</codeblock>
-                  <codeblock>/</codeblock>
-                  <codeblock>24</codeblock>
-                  <codeblock>#net-id
-                                  returned here is
-                              8614d6fd-ad8c-442a-8af4-2991173cfe6b</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <p><b>Note</b> As same CIDR is used for both VxLAN and VLAN tenant networks, unique IP
-          address allocation is managed by infoblox IPAM Plugin.</p>
-      </li>
+      <li>Create a VxLAN Tenant network and subnet for Virtio vNICs: This network will be used for
+        launching VMs with VirtIO vNICs. It is a VxLAN tenant network created using VSD ID
+        (--nuagenet)<codeblock>neutron net-create
+mkt-net1neutron
+subnet-create mkt-net1 50.50.50.0/24--nuagenet 0c806349-27ee-440a-a8fd-b5cb144fb3b6 --net-partition Marketing --enable-dhcp</codeblock></li>
+      <li>Create a neutron network and subnet for PCI-PT/SRIOV vNICs: This network will be used for
+        launching VMs with baremetal ports like SRIOV, PCI-PT. This is a VLAN tenant network. In
+        this example, a VLAN 814 is used and provider net is physnet1. The same alias 'physnet1' is
+        used when assigning interfaces for
+            PCI-PT/SRIOV.<codeblock>neutron net-create mkt-sriov-pcipt-net --provider:network_type vlan --provider:segmentation_id 814--provider:physical_network physnet1
+neutron subnet-create 8614d6fd-ad8c-442a-8af4-2991173cfe6b 50.50.50.0/24 
+#net-id returned here is 8614d6fd-ad8c-442a-8af4-2991173cfe6b</codeblock><p><b>Note</b>
+          As same CIDR is used for both VxLAN and VLAN tenant networks, unique IP address allocation
+          is managed by infoblox IPAM Plugin.</p></li>
+      <li>(OPTIONAL) If there is a need to set gateway per subnet, you need to create a pool per
+        subnet and use the same vpn-instance. The syntax of setting gateway is as
+        follows:<codeblock>dhcp server ip-pool mkt-l3-dom1-mkt-sriov-pcipt-net  
+vpn-instance vrf20001  
+gateway-list 50.50.50.1</codeblock></li>
     </ol>
-    <p><b>Sequence of events during VM Provisioning using SRIOV vNIC - Orchestration through
-        NFV-D</b></p>
+    <p><b>Sequence of events during VM Provisioning using SRIOV vNIC</b></p>
     <p>NFV-D orchestrated the provisioning of VM using OpenStack APIs. Here is the sequence:</p>
     <ol id="ol_nv2_4yr_zt">
-      <li>
-        <p>Launch VM using virtio SR-IOV vNIC</p>
-        <table id="table_ov2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock># Nova
-                                  boot using vif-model </codeblock>
-                  <codeblock>nova boot
-                                  mkt-sriov-vm --image wr-</codeblock>
-                  <codeblock>new</codeblock>
-                  <codeblock>--flavor m1.small --nic
-                                  net-id=8614d6fd-ad8c-442a-8af4-2991173cfe6b,vif-model=pci-sriov
-                                  --availability-zone c1</codeblock>
-                  <codeblock># Returns
-                                  the UUID. </codeblock>
-                  <codeblock># It is recommended to launch a VM with a
-                                  managment port being virtio vNIC and data ports as pci-pt or
-                                  pci-sriov</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Get the compute node where the VM Launched and SRIOV port UUID</p>
-        <table id="table_pv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>nova show
-                                </codeblock>
-                  <codeblock># Get hypervisor_hostname and sriov port
-                                  UUID</codeblock>
-                  <codeblock>| OS-EXT-SRV-ATTR:hypervisor_hostname  |
-                                  mem17-compute1  </codeblock>
-                  <codeblock>|
-                                  wrs-</codeblock>
-                  <codeblock>if</codeblock>
-                  <codeblock>:nics                          |
-                                  {</codeblock>
-                  <codeblock>"nic1"</codeblock>
-                  <codeblock>: {</codeblock>
-                  <codeblock>"vif_model"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>null</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"mac_address"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"fa:16:3e:b9:e2:cb"</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"port_id"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"67ba96d1-ab14-4649-a92f-7a469a1c8992"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"network"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"mkt-pcipt-net"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"mtu"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>null</codeblock>
-                  <codeblock>}}
-                                  |</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <p><b>NOTE: </b>Currently, the way to identify whether it is sriov v/s pci-pt vNIC is as
-          follows:</p>
-        <ol id="ol_qv2_4yr_zt">
+      <li>Launch VM using virtio SR-IOV
+        vNIC<codeblock># Nova boot using vif-model 
+nova boot mkt-sriov-vm --image wr-new --flavor m1.small --nic net-id=8614d6fd-ad8c-442a-8af4-2991173cfe6b,vif-model=pci-sriov --availability-zone c1
+# Returns the UUID. 
+# It is recommended to launch a VM with a managment port being virtio vNIC and data ports as pci-pt or pci-sriov</codeblock></li>
+      <li>Get the compute node where the VM Launched and SRIOV port
+            UUID:<codeblock>nova show 
+# Get hypervisor_hostname and sriov port UUID
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | mem17-compute1  
+| wrs-if:nics                          | {"nic1": {"vif_model": null, "mac_address": "fa:16:3e:b9:e2:cb", "port_id": "67ba96d1-ab14-4649-a92f-7a469a1c8992", "network": "mkt-pcipt-net", "mtu": null}} |</codeblock><p><b>NOTE:
+          </b>Currently, the way to identify whether it is sriov v/s pci-pt vNIC is as
+          follows:</p><ol id="ol_ox5_cd4_c5">
           <li>mac address: if starting ‘fa’, sriov, other than that pci-pt</li>
           <li>network: all pci-pt and sriov will land on vlan network. If above condition is met, we
-            double-check whether it belongs the vlan network. </li>
-        </ol>
-        <p> </p>
-      </li>
-      <li>
-        <p>Get the VF PCIBusID, IP, MAC and VLAN Tag </p>
-        <table id="table_rv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>neutron
-                                  port-show </codeblock>
-                  <codeblock>"67ba96d1-ab14-4649-a92f-7a469a1c8992"</codeblock>
-                  <codeblock># Get the
-                                  IP, MAC, PCI_Slot and VLANID </codeblock>
-                  <codeblock>|
-                                  binding:profile       | {</codeblock>
-                  <codeblock>"pci_request_id"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"2c2cfcee-7a1a-49ce-8975-7df92f2771aa"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"dev_type"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"type-VF"</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"pci_slot"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"0000:08:13.5"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"physical_network"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"physnet1"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"pci_vendor_info"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"8086:10ed"</codeblock>
-                  <codeblock>} |</codeblock>
-                  <codeblock>|
-                                  binding:vif_details   | {</codeblock>
-                  <codeblock>"port_filter"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>false</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"vlan"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"814"</codeblock>
-                  <codeblock>}                                                                                                                                        
-                                </codeblock>
-                  <codeblock>| fixed_ips             |
-                                  {</codeblock>
-                  <codeblock>"subnet_id"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"ca2d8853-3f04-448a-8de5-87458304f312"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"ip_address"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"50.50.50.103"</codeblock>
-                  <codeblock>}                                                                                          
-                                </codeblock>
-                  <codeblock>| id                    |
-                                  67ba96d1-ab14-</codeblock>
-                  <codeblock>4649</codeblock>
-                  <codeblock>-a92f-7a469a1c8992                                                                                                                                         
-                                </codeblock>
-                  <codeblock>| mac_address           |
-                                  fa:</codeblock>
-                  <codeblock>16</codeblock>
-                  <codeblock>:3e:b9:e2:cb                                                       
-                                </codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Using PCIBusID of VF, get the PF PCIBusID and Switch Port and compute node inputs, query
-          CMDB to get PF and Switch Port it is connected to</p>
-        <table id="table_sv2_4yr_zt">
+            double-check whether it belongs the vlan network.  </li>
+        </ol></li>
+      <li>Get the VF PCIBusID, IP, MAC and VLAN Tag
+        <codeblock>neutron port-show "67ba96d1-ab14-4649-a92f-7a469a1c8992"
+# Get the IP, MAC, PCI_Slot and VLANID 
+| binding:profile       | {"pci_request_id": "2c2cfcee-7a1a-49ce-8975-7df92f2771aa", "dev_type": "type-VF", "pci_slot": "0000:08:13.5", "physical_network": "physnet1", "pci_vendor_info": "8086:10ed"} |
+| binding:vif_details   | {"port_filter": false, "vlan": "814"}                                                                                                                                         
+| fixed_ips             | {"subnet_id": "ca2d8853-3f04-448a-8de5-87458304f312", "ip_address": "50.50.50.103"}                                                                                           
+| id                    | 67ba96d1-ab14-4649-a92f-7a469a1c8992                                                                                                                                          
+| mac_address           | fa:16:3e:b9:e2:cb    </codeblock></li>
+      <li>Using PCIBusID of VF, get the PF PCIBusID and Switch Port and compute node inputs, query
+        CMDB to get PF and Switch Port it is connected to<table id="table_sv2_4yr_zt">
           <tgroup cols="7">
             <colspec colnum="1" colname="col1"/>
             <colspec colnum="2" colname="col2"/>
@@ -637,208 +348,47 @@ qos apply policy dhcp global inbound</codeblock>DO
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Using VSD Dashboard or API create VLAN 814 on the switch port and grant privileges to the
-          destination VSD Org where VM is launched</p>
-        <p>Optional: This step is optional if previous VM provisioning has already created the same
-          type vlan on the same port. </p>
-      </li>
-      <li>
-        <p>Add the <b>port,vlan</b> to the VxLAN tenant Network as Bridge vPort. See the
-          screenshot</p>
-        <p>Optional: This step is optional if previous VM provisioning has already created the same
-          type vlan on the same port. </p>
-      </li>
-      <li>
-        <p>Update the ToR switch with IP MAC reservation for the sriov neutron port</p>
-        <table id="table_tv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>dhcp
-                                  server ip-pool mkt-l3-dom1</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>vpn-instance
-                                vrf20001</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>static</codeblock>
-                  <codeblock>-bind ip-address
-                                  </codeblock>
-                  <codeblock>50.50</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>50.103</codeblock>
-                  <codeblock>mask </codeblock>
-                  <codeblock>255.255</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>255.0</codeblock>
-                  <codeblock>hardware-address
-                                fa16-3eb9-e2cb</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Validate if VM with SRIOV vNIC got an IP</p>
-      </li>
+        </table></li>
+      <li>Using VSD Dashboard or API create VLAN 814 on the switch port and grant privileges to the
+        destination VSD Org where VM is launched<p><b>Optional:</b> This step is optional if
+          previous VM provisioning has already created the same type vlan on the same port.
+        </p></li>
+      <li>Add the <b>port,vlan</b> to the VxLAN tenant Network as Bridge vPort. <p><b>Optional:</b>
+          This step is optional if previous VM provisioning has already created the same type vlan
+          on the same port. </p></li>
+      <li>Update the ToR switch with IP MAC reservation for the sriov neutron
+        port<codeblock>dhcp server ip-pool mkt-l3-dom1
+ vpn-instance vrf20001
+ static-bind ip-address 50.50.50.103 mask 255.255.255.0 hardware-address fa16-3eb9-e2cb</codeblock></li>
+      <li>Validate if VM with SRIOV vNIC got an IP</li>
     </ol>
     <p><b>Sequence of events during VM Provisioning using PCI-PT vNIC - Orchestration through
         NFV-D</b></p>
     <ol id="ol_uv2_4yr_zt">
-      <li>
-        <p>Launch VM using PCI-PT vNIC</p>
-        <table id="table_vv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock># Nova
-                                  boot using vif-model </codeblock>
-                  <codeblock>nova boot
-                                  mkt-pci-pt-vm --image wr-</codeblock>
-                  <codeblock>new</codeblock>
-                  <codeblock>--flavor m1.small --nic
-                                  net-id=8614d6fd-ad8c-442a-8af4-2991173cfe6b,vif-model=pci-passthrough
-                                  --availability-zone c1</codeblock>
-                  <codeblock># Returns
-                                  the UUID. </codeblock>
-                  <codeblock># It is recommended to launch a VM with a
-                                  managment port being virtio vNIC and data ports as pci-pt or
-                                  pci-sriov</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Get the compute node where the VM Launched and PCI-PT port UUID</p>
-        <table id="table_wv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>nova show
-                                </codeblock>
-                  <codeblock># Get hypervisor_hostname and pci-pt port
-                                  UUID</codeblock>
-                  <codeblock>| OS-EXT-SRV-ATTR:hypervisor_hostname  |
-                                  mem17-compute1              </codeblock>
-                  <codeblock>|
-                                  wrs-</codeblock>
-                  <codeblock>if</codeblock>
-                  <codeblock>:nics                          |
-                                  {</codeblock>
-                  <codeblock>"nic1"</codeblock>
-                  <codeblock>: {</codeblock>
-                  <codeblock>"vif_model"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>null</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"mac_address"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"8c:dc:d4:ac:68:54"</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"port_id"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"71b44265-ea24-465e-b7e2-c881458d5983"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"network"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"mkt-pcipt-net"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"mtu"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>null</codeblock>
-                  <codeblock>}}
-                                  |</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-        <p><b>NOTE: </b>Currently, the way to identify whether it is sriov vNIC vs/ pci-pt is as
-          follows:</p>
-        <ol id="ol_xv2_4yr_zt">
+      <li>Launch VM using PCI-PT
+        vNIC:<codeblock># Nova boot using vif-model 
+nova boot mkt-pci-pt-vm --image wr-new --flavor m1.small --nic net-id=8614d6fd-ad8c-442a-8af4-2991173cfe6b,vif-model=pci-passthrough --availability-zone c1
+# Returns the UUID. 
+# It is recommended to launch a VM with a managment port being virtio vNIC and data ports as pci-pt or pci-sriov</codeblock></li>
+      <li>Get the compute node where the VM Launched and PCI-PT port
+            UUID:<codeblock>nova show # Get hypervisor_hostname and
+          pci-pt port UUID| OS-EXT-SRV-ATTR:hypervisor_hostname  |
+          mem17-compute1              | wrs-if:nics                          | {"nic1": {"vif_model": null, "mac_address": "8c:dc:d4:ac:68:54", "port_id": "71b44265-ea24-465e-b7e2-c881458d5983", "network": "mkt-pcipt-net", "mtu": null}} |</codeblock><p><b>NOTE:
+          </b>Currently, the way to identify whether it is sriov vNIC vs/ pci-pt is as
+          follows:</p><ol id="ol_xv2_4yr_zt">
           <li>mac address: if starting ‘fa’, sriov, other than that pci-pt</li>
-          <li>
-            <p>network: all pci-pt and sriov will land on vlan network. If above condition is met,
-              we double-check whether it belongs the vlan network. </p>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <p>Get the PCI BusID to identify Switch Port</p>
-        <table id="table_yv2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>neutron
-                                  port-show </codeblock>
-                  <codeblock>"71755861-c9f8-4198-912b-4c5f7eb2184a"</codeblock>
-                  <codeblock># Get the
-                                  IP, MAC, PCI_Slot and VLANID </codeblock>
-                  <codeblock>|
-                                  binding:host_id       |
-                                  mem17-compute1                                                                                                                                                                
-                                  | binding:profile       | {</codeblock>
-                  <codeblock>"pci_request_id"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"c0bc1760-3e83-4291-b41b-e92a0f13a454"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"dev_type"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"type-PCI"</codeblock>
-                  <codeblock>,
-                                  </codeblock>
-                  <codeblock>"pci_slot"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"0000:87:00.0"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"physical_network"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"physnet1"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"pci_vendor_info"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"8086:10f8"</codeblock>
-                  <codeblock>} |</codeblock>
-                  <codeblock>|
-                                  fixed_ips             | {</codeblock>
-                  <codeblock>"subnet_id"</codeblock>
-                  <codeblock>:
-                                  </codeblock>
-                  <codeblock>"ca2d8853-3f04-448a-8de5-87458304f312"</codeblock>
-                  <codeblock>, </codeblock>
-                  <codeblock>"ip_address"</codeblock>
-                  <codeblock>: </codeblock>
-                  <codeblock>"50.50.50.102"</codeblock>
-                  <codeblock>}                                                                                           
-                                  | mac_address           | 8c:dc:d4:ac:</codeblock>
-                  <codeblock>68</codeblock>
-                  <codeblock>:</codeblock>
-                  <codeblock>54</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Using pci_slot and compute node inputs, query CMDB to get Switch Port it is connected
-          to</p>
-        <table id="table_zv2_4yr_zt">
+          <li>network: all pci-pt and sriov will land on vlan network. If above condition is met, we
+            double-check whether it belongs the vlan network. </li>
+        </ol></li>
+      <li>Get the PCI BusID to identify Switch
+        Port:<codeblock>neutron port-show "71755861-c9f8-4198-912b-4c5f7eb2184a"# Get the IP, MAC, PCI_Slot and
+          VLANID  | binding:host_id       |
+          mem17-compute1                                                                                                                                                                
+          | binding:profile       | {"pci_request_id": "c0bc1760-3e83-4291-b41b-e92a0f13a454", "dev_type": "type-PCI", "pci_slot": "0000:87:00.0", "physical_network": "physnet1", "pci_vendor_info": "8086:10f8"} ||
+          fixed_ips             | {"subnet_id": "ca2d8853-3f04-448a-8de5-87458304f312", "ip_address": "50.50.50.102"}                                                                                           
+          | mac_address           | 8c:dc:d4:ac:68:54</codeblock></li>
+      <li>Using pci_slot and compute node inputs, query CMDB to get Switch Port it is connected
+          to<table id="table_zv2_4yr_zt">
           <tgroup cols="7">
             <colspec colnum="1" colname="col1"/>
             <colspec colnum="2" colname="col2"/>
@@ -870,50 +420,15 @@ qos apply policy dhcp global inbound</codeblock>DO
               </row>
             </tbody>
           </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Using VSD Dashboard or API create VLAN 0 (untagged) on the switch port and grant
-          privileges to the destination VSD Org where VM is launched. </p>
-      </li>
-      <li>
-        <p>Add the port,vlan to the VxLAN tenant Network as Bridge vPort. See the screenshot</p>
-      </li>
-      <li>
-        <p>Update the ToR switch with IP MAC reservation for the sriov neutron port</p>
-        <table id="table_aw2_4yr_zt">
-          <tgroup cols="1">
-            <colspec colnum="1" colname="col1"/>
-            <tbody>
-              <row>
-                <entry>
-                  <codeblock>dhcp
-                                  server ip-pool mkt-l3-dom1</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>vpn-instance
-                                vrf20001</codeblock>
-                  <codeblock> </codeblock>
-                  <codeblock>static</codeblock>
-                  <codeblock>-bind ip-address
-                                  </codeblock>
-                  <codeblock>50.50</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>50.102</codeblock>
-                  <codeblock>mask </codeblock>
-                  <codeblock>255.255</codeblock>
-                  <codeblock>.</codeblock>
-                  <codeblock>255.0</codeblock>
-                  <codeblock>hardware-address 8cdc-d4ac-</codeblock>
-                  <codeblock>6854</codeblock>
-                </entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </li>
-      <li>
-        <p>Validate the VM with PCI-PT vNIC got an IP address</p>
-      </li>
+        </table></li>
+      <li>Using VSD Dashboard or API create VLAN 0 (untagged) on the switch port and grant
+        privileges to the destination VSD Org where VM is launched. </li>
+      <li>Add the port,vlan to the VxLAN tenant Network as Bridge vPort. See the screenshot</li>
+      <li>Update the ToR switch with IP MAC reservation for the sriov neutron
+        port:<codeblock>dhcp server ip-pool mkt-l3-dom1 
+vpn-instance vrf20001 
+static-bind ip-address 50.50.50.102mask 255.255.255.0hardware-address 8cdc-d4ac-6854</codeblock></li>
+      <li>Validate the VM with PCI-PT vNIC got an IP address</li>
     </ol>
 </body>
 </topic>
