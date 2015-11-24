@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<map xml:lang="en" linking="none" locktitle="no">
+<map xml:lang="en" linking="none" locktitle="no" otherprops="&quot;&quot;">
   <title>HP Helion OpenStack Carrier Grade 2.0</title>
   <topicmeta>
     <copyright>
@@ -16,14 +16,14 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
-<!-- Index -->
-<!-- HoS 2.0 -->
-<!--Dev Plat-->
-<!-- Euca -->
-<!-- CGH -->
-  <topicref href="CarrierGrade/carrier-grade-index.dita">
+  <!-- Index -->
+  <!-- HoS 2.0 -->
+  <!--Dev Plat-->
+  <!-- Euca -->
+  <!-- CGH -->
+  <topicref href="CarrierGrade/carrier-grade-index.dita" otherprops="&quot;&quot;">
     <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita" navtitle="Overview"
-      locktitle="yes">
+      locktitle="yes" otherprops="overview">
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"
         navtitle="Non-KVM Region Overview" locktitle="yes"/>
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"
@@ -33,7 +33,7 @@
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"
         navtitle="Technical Overview" locktitle="yes"/>
       <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita"
-        navtitle="Services Overview" locktitle="yes">
+        navtitle="Services Overview" locktitle="yes" otherprops="overviewsvc">
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"
           navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
         <topicref
@@ -55,7 +55,7 @@
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
           navtitle="Ironic Service Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          navtitle="Horizon Service Overview" locktitle="yes">
+          navtitle="Horizon Service Overview" locktitle="yes" otherprops="overviewhor">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
@@ -68,7 +68,7 @@
       </topicref>
     </topicref>
     <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml" navtitle="Release Notes"
-      locktitle="yes">
+      locktitle="yes" otherprops="relnotes">
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"
         navtitle="Changes in This Release" locktitle="yes"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml" navtitle="Usage Caveats"
@@ -77,8 +77,8 @@
         navtitle="Known Problems and Limitations" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
-      format="ditamap" navtitle="Installation" locktitle="yes"/>
-    <topichead navtitle="Administration" locktitle="yes">
+      format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation"/>
+    <topichead navtitle="Administration" locktitle="yes" otherprops="admin">
       <topichead navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes">
         <mapref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"/>
       </topichead>
@@ -94,7 +94,8 @@
       <topicref href="CarrierGrade/MultiDC/CGH-2-Config-Multi-DC.dita"
         navtitle="Confguring a Multiple Datacenter Environment (Multi-DC)" locktitle="yes"/>
       <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
-        navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes">
+        navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes"
+        otherprops="backup">
         <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
           navtitle="Attis Backup and Restore CLI Reference" locktitle="yes"/>
         <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-configure.dita"
@@ -105,9 +106,10 @@
       <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
         navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
       <topicref href="CarrierGrade/AdminGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
-        navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"/>
+        navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"
+      />
     </topichead>
-    <topichead navtitle="Operations">
+    <topichead navtitle="Operations" outputclass="operations">
       <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap"
         navtitle="User Guide" locktitle="yes" format="ditamap"/>
     </topichead>
@@ -123,16 +125,20 @@
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">
       <topicref
-        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita" toc="no"/>
+        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"
+        toc="no"/>
       <topicref
-        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita" toc="no"/>
+        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita"
+        toc="no"/>
       <topicref
-        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita" toc="no"/>
+        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita"
+        toc="no"/>
       <topicref
         href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
         toc="no"/>
       <topicref
-        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" toc="no"/>
+        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita"
+        toc="no"/>
     </topichead>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
@@ -235,5 +241,5 @@
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
       </topicref>
     </topicref>  -->
-  </topicref>  
- </map>
+  </topicref>
+</map>
