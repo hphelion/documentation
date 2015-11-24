@@ -48,7 +48,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
         <li>Commit your changes to Sherpa with this playbook:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts sherpa-reconfigurure.yml</codeblock></li>
+ansible-playbook -i hosts/verb_hosts sherpa-reconfigure.yml</codeblock></li>
       </ol>
     </section>
 
