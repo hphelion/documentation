@@ -1595,7 +1595,7 @@
         server definition file. (see <xref href="#input_model/co_servers">Servers</xref>). Devices
         should be named <codeph>hedN</codeph> to avoid name clashes with any other devices
         configured during the operating system install as well as any interfaces that are not being
-        managed by HPE Helion OpenStack.</p>
+        managed by HPE Helion OpenStack. An excerpt from <codeph>nic_mappings.yml</codeph> illustrates:</p>
       <codeblock>---
   product:
     version: 2
@@ -1613,12 +1613,16 @@
           bus-address: "0000:08:00.0"
         
         - logical-name: hed3
-          type: simple-port
+          type: multi-port
           bus-address: "0000:09:00.0"
+          port-attributes:
+              port-num: 0
         
         - logical-name: hed4
-          type: simple-port
-          bus-address: "0000:0a:00.0"</codeblock>
+          type: multi-port
+          bus-address: "0000:0a:00.0"
+          port-attributes:
+              port-num: 1</codeblock>
       <p>Each entry in the <uicontrol>nic-mappings</uicontrol> list has the following
         attributes:</p>
       <p>
@@ -1670,13 +1674,20 @@
               </row>
               <row>
                 <entry>type</entry>
-                <entry>The type of port. The current implementation supports only "simple-port";
-                  other port types may be added in a future release.</entry>
+                <entry>The type of port. The current implementation supports  "simple-port" and
+                  "multi-port"; other port types may be added in a future release.</entry>
               </row>
               <row>
                 <entry>bus-address</entry>
                 <entry>PCI bus address of the port. Enclose the bus address in quotation marks so
                   yaml does not misinterpret the embedded colon (:) characters.</entry>
+              </row>
+              <row>
+                <entry>port-attributes (required if type is <codeph>multi-port</codeph></entry>
+                <entry>Provides a list of attributes for the physical port. The current
+                  implementation supports only one attribute, "port-num", which is used to identify
+                  individual ports on network adapters that support more than one port on the same
+                  <codeph>bus-address</codeph>.</entry>
               </row>
             </tbody>
           </tgroup>

@@ -24,8 +24,10 @@
               </ul></entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
+              <entry>Input Model</entry>
+              <entry><ul>
+                <li>Edited <xref href="#input_model/co_nicmappings">NIC Mappings</xref> section to adding details about multi-port</li>
+              </ul></entry>
             </row>
             <row>
               <entry/>
