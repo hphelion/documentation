@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3826">
+<topic xml:lang="en-us" id="using_messaging_als">
   <title>HPE Helion 2.0 Development Platform: Using the Messaging Broker Service with ALS</title>
   <body>
     <p><!--going to be two pages here - how do i interface cloudfoundry with cue? dev--></p>
@@ -20,7 +20,7 @@ note from Min  that Arun is looking into this right now. Cue manages the message
       <p>To use the Messaging Broker Service with ALS, you need to:</p>
       <ol>
         <li>
-          <xref href="devplatform.using-the-messaging-service.dita#topic3880/create" type="section"
+          <xref href="devplatform.using-the-messaging-service.dita#using_messaging/create" type="section"
             >Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not
           already exist. </li>
         <li>Once a cluster has been created, you can connect an application deployed to ALS with the
