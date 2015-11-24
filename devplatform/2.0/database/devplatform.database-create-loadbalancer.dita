@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="database_create_loadbalancer">
+<topic id="create_database_loadbalancer">
   <title>Creating a load balancer for a MySql cluster</title>
   <body>
     <p>This topic describes how to create a load balancer for a MySql cluster from the command line, and how to use a load balancer in an application.</p>
     <p>A load balancer is an object that exposes a VIP (Virtual IP address) endpoint to applications, and manages pools (logical sets of devices, such as web servers, that you group together to receive and process traffic), listeners (processes that monitor connections to endpoints), 
       and members (applications running on the backend server).</p>
     <ul>
-      <li><xref href="#database_create_loadbalancer/prerequisites" format="dita">Connect to your database and set up a MySql cluster</xref></li>
-      <li><xref href="#database_create_loadbalancer/neutron_2" format="dita">Create a load balancer with Neutron 2.0</xref></li>
-      <li><xref href="#database_create_loadbalancer/neutron_1" format="dita">Create a load balancer with Neutron 1.0</xref></li> 
-      <li><xref href="#database_create_loadbalancer/get_ips" format="dita">Get the ip addresses of the instances in the mysql cluster</xref></li>
-      <li><xref href="#database_create_loadbalancer/member_v2" format="dita">Create members with Neutron 2.0</xref></li>
-      <li><xref href="#database_create_loadbalancer/member_v1" format="dita">Create members with Neutron 1.0</xref></li>
-      <li><xref href="#database_create_loadbalancer/application" format="dita">Use a load balancer in an application</xref></li>
+      <li><xref href="#create_database_loadbalancer/prerequisites" format="dita">Connect to your database and set up a MySql cluster</xref></li>
+      <li><xref href="#create_database_loadbalancer/neutron_2" format="dita">Create a load balancer with Neutron 2.0</xref></li>
+      <li><xref href="#create_database_loadbalancer/neutron_1" format="dita">Create a load balancer with Neutron 1.0</xref></li> 
+      <li><xref href="#create_database_loadbalancer/get_ips" format="dita">Get the ip addresses of the instances in the mysql cluster</xref></li>
+      <li><xref href="#create_database_loadbalancer/member_v2" format="dita">Create members with Neutron 2.0</xref></li>
+      <li><xref href="#create_database_loadbalancer/member_v1" format="dita">Create members with Neutron 1.0</xref></li>
+      <li><xref href="#create_database_loadbalancer/application" format="dita">Use a load balancer in an application</xref></li>
     </ul>
     <section id="prerequisites"><title>Connect to your database and set up a MySql cluster</title>
       <ol>

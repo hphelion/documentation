@@ -28,5 +28,8 @@ UI installed for database
 Create service endpoint for service database
 Completed installing database
 (.devplatform)stack@redwood:~$</codeblock></section>
+    <section><title>“mysql cluster 5.5” listed as option in Launch Instance dialog</title>
+    <p>When <b>Launch Instance</b> is selected in the <b>Project->Database->Instances</b> panel in Horizon, a <b>Datastore</b> option of <b>mysql-cluster</b> version <b>5.5</b> is displayed. Selecting this option
+    creates a standard <b>mysql</b> cluster.</p></section>
   </body>
 </topic>

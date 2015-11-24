@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="windows_tools_guide">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="windows_tools">
  <title>HPE Helion 2.0 Development Platform: Windows and .NET Applications Tools Guide</title>
  <prolog>
   <metadata>
@@ -26,18 +26,18 @@
     Framework HTTP-based applications. This document describes how to install and use these tools.
    </p> This document contains the following sections:  <p><b>.NET tools:</b></p><ul
     id="ul_dmq_khw_js">
-    <li><xref type="section"  href="#windows_tools_guide/cloudfoundryextensions" >Cloud Foundry Extensions</xref></li>
-    <li><xref type="section"  href="#windows_tools_guide/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
-    <li><xref type="section"  href="#windows_tools_guide/sdk">Cloud Foundry .NET
+    <li><xref type="section"  href="#windows_tools/cloudfoundryextensions" >Cloud Foundry Extensions</xref></li>
+    <li><xref type="section"  href="#windows_tools/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
+    <li><xref type="section"  href="#windows_tools/sdk">Cloud Foundry .NET
       SDK</xref></li>
    </ul>
    <b>Setup tools</b><ul id="ul_jgl_fhw_js">
-    <li><xref type="section"  href="#windows_tools_guide/als">ALS Cluster Management (cf-mgmt)</xref></li>
-    <li><xref type="section"  href="#windows_tools_guide/helion">Helion client
+    <li><xref type="section"  href="#windows_tools/als">ALS Cluster Management (cf-mgmt)</xref></li>
+    <li><xref type="section"  href="#windows_tools/helion">Helion client
       (helion)</xref></li>
    </ul><!--
    <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
-    <li><xref type="section"  href="#windows_tools_guide/glazier">Glazier</xref></li>
+    <li><xref type="section"  href="#windows_tools/glazier">Glazier</xref></li>
    </ul>-->
  </section>
  <section id="cloudfoundryextensions"><title>Cloud Foundry Extensions</title> <p>This Visual Studio 2013 extension
@@ -54,9 +54,8 @@
 <section><title>The Cloud Foundry Explorer Window</title> 
  <p>The explorer can be opened in Visual
   Studio under **View -&gt;Other Windows -&gt;Cloud Foundry Explorer**. </p>
- <p>The explorer window shows endpoints that you have successfully connected to:</p>
- <p><image placement="break" href="../../../media/windows_cf_explorer.png" id="image_fnz_g3w_js"
-     align="left"/></p>
+ <p>The explorer window shows endpoints that you have successfully connected to:<image
+     href="../../../media/windows_cf_explore.png" id="image_yvb_xk4_c5" placement="break"/></p>
  <p>The Cloud Foundry Explorer Window displays the following types of nodes: </p>
  <table>
     <tgroup cols="1">
@@ -178,7 +177,7 @@
    </table></section>
  <section><title>Deploying an application</title>
   <p>For an example of how to deploy an application from Visual Studio, see <xref
-     href="windows_firstapp.dita#topic_amr_q3w_js"  format="dita">Deploying your first .NET Application</xref>.</p>
+     href="windows_firstapp.dita"  format="dita">Deploying your first .NET Application</xref>.</p>
  </section>
  
  <section id="msbuild"><title>Cloud Foundry MSBuild Tasks</title>
