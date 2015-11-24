@@ -194,8 +194,8 @@ stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Depl
                   <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
                   you have performed a full installation previously, you <b>must</b> remove the Cue
                   user and service from Keystone <b>before</b> running this playbook again. <ul id="ul_rsf_tfs_wt">
-                    <li> SSH into the HOS deployer, source the keystone.osrc file, and then execute
-                      these
+                    <li> SSH into the HPE Helion OpenStack lifecycle manager (deployer node), source
+                      the keystone.osrc file, and then execute these
                       commands:<codeblock>openstack service delete cue
 openstack user delete cue </codeblock></li>
                   </ul></note>Successful output should look similar to the following.

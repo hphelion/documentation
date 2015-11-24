@@ -44,7 +44,7 @@
     <dt>When installing Messaging, the installer hangs and does not progress.</dt>
     <dd><p><b>Cause</b>: User is uploading an image to Glance which already exists.</p> 
       <p><b>Resolution</b>: Delete existing images and upload again. SSH into the HPE Helion
-              OpenStack deployer and
+              OpenStack lifecycle manager (deployer node) and
                 run:<codeblock>glance image-list | grep -iE '('"$PRODUCT"')' | cut -d '|' -f2 | tr -d ' ' | xargs -I {} -n1 glance image-delete {}</codeblock><note
                 type="caution">This will remove ALL MSGaaS images.</note></p></dd>
   </dlentry><dlentry>
@@ -62,18 +62,12 @@
       </ol></dd>
   </dlentry>
     <dlentry>
-      <dt>After installation, the final output window is closed before you can make a note of the IP address, etc.</dt>
-      <dd>       
-        from the HOS deployer, run openstack --os-cloud msgaas server list
-        you just ran the install and lost the last window
-        you already have the hdpi environment sourced
-        so you're running commands against the messaging user, this is the msgas user 
-        as defined in clouds.yaml
-        this will list the list of servers created by the user
-        that will include the deployer 
-        control plane nodes
-        clusters, if created, and everything else
-        ip will appear in the list for sshing purposes</dd>
+      <dt>After installation, the final output window is closed before you can make a note of the IP
+            address or other information.</dt>
+      <dd> From the HPE Helion OpenStack lifecycle manager (deployer node), run
+            :<codeblock>openstack --os-cloud msgaas server list</codeblock>This command will list
+            the list of servers created by the user, including the control plane nodes clusters, if
+            created. </dd>
     </dlentry>
     <dlentry id="command-line-installer-fails-to-install">
       <dt>Command line installer fails to install</dt>

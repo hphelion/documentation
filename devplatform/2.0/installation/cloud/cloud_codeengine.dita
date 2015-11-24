@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudCodeEngine">
-  <title>HPE Helion 2.0 Development Platform: HPE Helion Code Engine Configuration</title>
+  <title>HPE Helion Code Engine</title>
   <body>
     <section>A complete clouds.yaml file is <xref href="fullFile.dita#topic_mhg_f2n_vt">available
         here</xref> for reference.</section>
