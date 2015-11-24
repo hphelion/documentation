@@ -31,9 +31,12 @@
         
             </ul>
   </section><section>
-      <title>Logging and Testing</title><ul>
-        <li><xref href="engine_logging.dita">Log Files</xref></li><li><xref href="engine_testing.dita">Testing Frameworks</xref></li></ul>
+      <title>Testing</title>
     </section>
+    <ul>
+      <li><xref href="engine_logging.dita">Log Files</xref></li>
+      <li><xref href="engine_testing.dita">Test Conventions</xref></li>
+    </ul>
     
   </body>
 </topic>
