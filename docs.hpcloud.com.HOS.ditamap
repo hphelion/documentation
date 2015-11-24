@@ -67,28 +67,26 @@
     </topicref>
     <!-- END - INSTALLATION -->
     <!-- BEGIN - SECURITY -->
-    <topichead navtitle="Security">
+    <topicref href="helion/security/security_overview.dita" navtitle="Security" locktitle="yes">
       <topicref href="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints"
         locktitle="yes"/>
-      <topicref href="helion/security/header_poisoning.dita" navtitle="Preventing Host Header Poisoning"
-        locktitle="yes" toc="no"/>
-      
+      <topicref href="helion/security/header_poisoning.dita"
+        navtitle="Preventing Host Header Poisoning" locktitle="yes" toc="no"/>
       <topicref href="helion/security/encrypted_storage.dita"
         navtitle="Encryption of Passwords and Sensitive Data" locktitle="yes"/>
       <topicref href="helion/security/using_apparmor.dita"
         navtitle="Refining Access Control with AppArmor" locktitle="yes"/>
       <topicref href="helion/security/arcsight.dita"
         navtitle="Threat Monitoring and Integration with HPE ArcSight" locktitle="yes"/>
-    </topichead>
+    </topicref>
     <!-- END - SECURITY -->
     <!-- BEGIN ADMINISTRATION -->
-    <topichead navtitle="Administration">
-      <topichead navtitle="Initial Configuration">
-        <topicref href="helion/administration/create_extnet.dita"
-          navtitle="Creating an External Network" locktitle="yes"/>
-        <topicref href="helion/administration/upload_image.dita"
-          navtitle="Uploading an Image for Use" locktitle="yes"/>
-      </topichead>
+    <topicref href="helion/administration/administration_index.dita" navtitle="Administration"
+      locktitle="yes">
+      <topicref href="helion/administration/create_extnet.dita"
+        navtitle="Creating an External Network" locktitle="yes"/>
+      <topicref href="helion/administration/upload_image.dita" navtitle="Uploading an Image for Use"
+        locktitle="yes"/>
       <topicref href="helion/conceptual_overviews/high_availability.dita"
         navtitle="High Availability Concepts" locktitle="yes"/>
       <topicref href="helion/operations/accessing_sherpa.dita"
@@ -97,7 +95,8 @@
         navtitle="Creating the Helion Development Platform Service Net" locktitle="yes"/>
       <topicref href="helion/administration/configure_firewall.dita"
         navtitle="Configuring the HPE Helion OpenStack Firewall" locktitle="yes"/>
-      <topicref href="helion/administration/thirdparty_driver_support.dita" navtitle="Third-party Driver Support" locktitle="yes"/>
+      <topicref href="helion/administration/thirdparty_driver_support.dita"
+        navtitle="Third-party Driver Support" locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
@@ -206,7 +205,7 @@
         <topicref href="helion/esx/scale_config_changes.dita"
           navtitle="Making SCALE Configuration Changes" locktitle="yes"/>
       </topicref>
-    </topichead>
+    </topicref>
     <!-- END - ADMINISTRATION -->
     <!-- BEGIN - OPERATIONS -->
     <topichead navtitle="Operations">
@@ -257,7 +256,8 @@
         <topicref href="helion/administration/adding_moonshot_nodes.dita"
           navtitle="Adding Moonshot Nodes" locktitle="yes"/>
         <!-- BLOCK STORAGE -->
-        <topicref href="helion/operations/add_vsa_node.dita" navtitle="Adding a VSA Node" locktitle="yes"/>
+        <topicref href="helion/operations/add_vsa_node.dita" navtitle="Adding a VSA Node"
+          locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_node.dita" navtitle="Removing a VSA Node"
           locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/remove_vsa_maintenance.dita"
@@ -366,7 +366,7 @@
         <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
           locktitle="yes"/>
       </topicref>
-       </topichead>
+    </topichead>
     <!-- END - OPERATIONS -->
     <!-- BEGIN - TROUBLESHOOTING -->
     <topichead navtitle="Troubleshooting">
