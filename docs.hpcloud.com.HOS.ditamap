@@ -292,8 +292,6 @@
       <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
       <topicref href="helion/operations/objectstorage_index.dita" navtitle="Object Storage"
         locktitle="yes" otherprops="operations_objectstorage">
-        <topicref href="helion/objectstorage/add_new_storage_policy.dita"
-          navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
           navtitle="Checking Object Storage Status" locktitle="yes"
           otherprops="operations_objectstorage_status">
