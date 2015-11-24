@@ -27,7 +27,7 @@
         page <xref href="gui_installer.dita"/>.</p>
       <p><b>Transport Layer Security (TLS) Support</b>
       </p><p>TLS is now supported for public endpoints. See <xref
-          href="security/tls.dita#topic_yym_nps_4t">Enabling TLS for Public Endpoints</xref> for
+          href="security/tls.dita">Enabling TLS for Public Endpoints</xref> for
         more information.</p>
       <p><b>Encryption of sensitive data</b></p>
       <p>In this release, connection details and passwords are encrypted and or protected. See <xref
