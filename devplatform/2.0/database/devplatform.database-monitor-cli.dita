@@ -3,6 +3,7 @@
 <topic id="topic_database_monitor_cli">
   <title>Monitoring a database from the command line</title>
   <body>
-    <p>Monitoring client databases from the command line is not supported in Helion Development Platform 2.0 Beta 1.</p>
+    <p>Monitoring client databases from the command line is not supported in Helion Development
+      Platform 2.0.</p>
   </body>
 </topic>

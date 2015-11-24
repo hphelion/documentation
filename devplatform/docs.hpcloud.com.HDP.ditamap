@@ -50,16 +50,28 @@
         navtitle="Install the HPE Helion Code Engine" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_messaging.dita"
         navtitle="Install the Messaging Service" locktitle="yes"/>
-      <topicref href="2.0/installation/cloud/fullFile.dita" toc="no"/>
-      <topicref href="2.0/installation/cloud/cloud_codeengine.dita" toc="no"/>
-      <topicref href="2.0/installation/cloud/cloud_database.dita" toc="no"/>
-      <topicref href="2.0/installation/cloud/cloud_messaging.dita" toc="no"/>
-      <topicref href="2.0/installation/cloud/cloud_platform.dita" toc="no"/>
-      <topicref href="2.0/installation/install_listOptions.dita" toc="no"/>
-      <topicref href="2.0/installation/install_dbaasNoTLS.dita" toc="no"/>
-      <topicref href="2.0/installation/devplatform_commercial_install.dita" toc="no"/>
       <topicref href="2.0/devplatform.troubleshooting.dita" navtitle="Troubleshooting"
         locktitle="yes"/>
+      <topicref href="2.0/installation/cloud/cloud_codeengine.dita" toc="no" navtitle="no_ceYaml"
+        locktitle="yes"/>
+      <topicref href="2.0/installation/cloud/cloud_messaging.dita" toc="no" navtitle="no_msgConfig"
+        locktitle="yes"/>
+      <topicref href="2.0/installation/cloud/cloud_platform.dita" toc="no"
+        navtitle="no_platformYaml" locktitle="yes"/>
+      <topicref href="2.0/installation/install_dbaasNoTLS.dita" toc="no" navtitle="no_dbNoSsl"
+        locktitle="yes"/>
+      <topicref href="2.0/installation/cloud/cloud_database.dita" toc="no" navtitle="no_dbYaml"
+        locktitle="yes"/>
+      <topicref href="2.0/installation/install_listOptions.dita" navtitle="no_ListContent"
+        locktitle="yes" toc="no"/>
+      <topicref href="2.0/installation/install_dbaas_configureAvailabilityZones.dita"
+        navtitle="no_configAZ" locktitle="yes" toc="no"/>
+      <topicref href="2.0/installation/install_dbaas_checkQuotas.dita" navtitle="no_checkQuotas"
+        locktitle="yes" toc="no"/>
+      <topicref href="2.0/installation/cloud/fullFile.dita" navtitle="no_fullYamlSample"
+        locktitle="yes" toc="no"/>
+      <topicref href="2.0/installation/devplatform_commercial_install.dita"
+        navtitle="no_fullInstall" locktitle="yes" toc="no"/>
     </topichead>
     <topichead navtitle="Service Monitoring">
       <topicref href="2.0/monitoring/devplatform.messaging-monitor.dita"/>
