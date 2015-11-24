@@ -353,8 +353,6 @@
     
     <!--IT Ops-->
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops">
-      <topicref href="2.0/installation/install_dnsaas.dita" navtitle="DNS Configuration"
-        locktitle="yes"/>
       <topicref href="2.0/helion/admin/server/network_port_configuration.dita"/>
       <topicref href="2.0/helion/admin/server/docker.dita" navtitle="Docker and Fence"
         locktitle="yes"/>
