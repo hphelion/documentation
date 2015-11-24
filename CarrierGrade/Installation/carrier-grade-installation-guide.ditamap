@@ -129,7 +129,7 @@
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-verify-vrsg.dita"
                 navtitle="Verifying the VRS-G Node" locktitle="yes"/>
-            <topicref href="../AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+            <topicref href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
                 navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
             <topicref href="carrier-grade-install-5930-switch.dita"
                 navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports"
@@ -140,7 +140,7 @@
             locktitle="yes"/>
         <topicref href="carrier-grade-install-config-dcn.dita"
             navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes">
-            <topicref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita" toc="no"/>
+            <topicref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita" toc="no"/>
         </topicref>
         <topichead navtitle="Linked Files" toc="no">
             <topicref href="carrier-grade-install-kvm-tahoe.dita" toc="no"/>

@@ -25,7 +25,7 @@
       <title>Next Steps</title>
       <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref>.</p>
       <p>If you are installing the <b>Sacramento</b> deployment, also see <xref
-          href="../AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   </body>

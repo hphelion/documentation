@@ -174,7 +174,7 @@
         which you can use to backup and restore essential system files and components of the non-KVM
         cloud. Attis is automatically installed on each of the controller nodes in the non-KVM
         region. For more information, see <xref
-          href="../AdminGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and Restore
+          href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and Restore
           Configuration Files and MySQL Clusters</xref>.</p>
     </section>
     <section>
@@ -187,7 +187,7 @@
         central system, rather than leaving the logs scattered across the network. The administrator
         can use a single Kibana interface to view log information in charts, graphs, tables,
         histograms, and other forms. For more information, see <xref
-          href="../AdminGuide/Logging/CHG-2-logging-overview.dita#topic5937">Centralized
+          href="../OperationsGuide/Logging/CHG-2-logging-overview.dita#topic5937">Centralized
           Logging</xref>.</p>
     </section>
     <section><title>Installation Options</title>HP Helion OpenStack Carrier Grade has two baremetal

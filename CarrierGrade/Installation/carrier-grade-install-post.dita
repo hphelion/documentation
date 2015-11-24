@@ -39,7 +39,7 @@
         region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
         instructions to provision baremetal nodes.</p>
       <p>For more information, see <xref
-          href="../AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   <section><title>Configure a 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</title> This
@@ -50,7 +50,7 @@
           with virtio vNIC, a VM with SRIOV vNIC and a VM with PCI-PT vNIC in the same l2
           domain.</li>
       </ul><p>For more information, see: <xref
-          href="../AdminGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581"
+          href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581"
           >Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</xref></p>
     </section>
   </body>
