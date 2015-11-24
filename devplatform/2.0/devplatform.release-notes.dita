@@ -106,8 +106,8 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
           <dd>The current Vertica Management Console release has a known issue where ng to search  
             for Vertica log entries may result in an API key being requested. As a workaround, it is  
             suggested to access Vertica event data directly through the database's ACTIVE_EVENTS,  
-            QUERY_EVENTS and QUERY_REQUESTS tables, as described in <xref  
-              href="devplatform.database-vertica.dita#topic_q1p_nnp_tt">Managing a Vertica Cluster from the Management Console</xref>.</dd>  
+            QUERY_EVENTS and QUERY_REQUESTS tables, as described in<xref  
+              href="database/devplatform.database-vertica.dita"> Managing a Vertica Cluster from the Management Console</xref>.</dd>  
         </dlentry>  
         <dlentry><dt>"Stack trove in status ROLLBACK_COMPLETE" message when DBaaS on fails</dt>  
           <dd>The installation process may display a <codeph>ROLLBACK_COMPLETE</codeph>  when installation fails. This may look like the following:  <codeblock>.devplatform)stack@redwood:~$ openstack --os-cloud mycloud hdpi database install --path cow2_2.0.0.31.csu  
