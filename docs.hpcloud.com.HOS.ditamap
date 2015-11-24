@@ -208,7 +208,7 @@
     </topicref>
     <!-- END - ADMINISTRATION -->
     <!-- BEGIN - OPERATIONS -->
-    <topichead navtitle="Operations">
+    <topicref href="helion/operations/operations_index.dita" navtitle="Operations" locktitle="yes">
 
       <topicref href="helion/operations/start_stop_services.dita"
         navtitle="Starting and Stopping Services" locktitle="yes"/>
@@ -284,7 +284,8 @@
       </topicref>
       <!-- END - OPERATIONS/Node Maintenance -->
       <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
-      <topichead navtitle="Object Storage">
+      <topicref href="helion/operations/objectstorage_index.dita" navtitle="Object Storage"
+        locktitle="yes" otherprops="">
         <topicref href="helion/objectstorage/add_new_storage_policy.dita"
           navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
@@ -296,9 +297,10 @@
           <topicref href="helion/objectstorage/utility.dita"
             navtitle="Using the Swift Command-line Client (CLI)" locktitle="yes"/>
         </topicref>
-      </topichead>
+      </topicref>
       <!-- BEGIN - OPERATIONS/BLOCK STORAGE -->
-      <topichead navtitle="Block Storage">
+      <topicref href="helion/operations/blockstorage_index.dita" navtitle="Block Storage"
+        locktitle="yes" otherprops="">
         <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"
           navtitle="Creating Multiple VSA Clusters" locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
@@ -313,7 +315,7 @@
           navtitle="Defining a Ceph Monitor Resource" locktitle="yes"/>
         <topicref href="helion/blockstorage/ceph/reconfigure_ceph_services.dita"
           navtitle="Reconfiguring Ceph Services" locktitle="yes"/>
-      </topichead>
+      </topicref>
       <!-- BEGIN - OPERATIONS/BURA -->
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data"
         locktitle="yes">
@@ -366,10 +368,11 @@
         <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
           locktitle="yes"/>
       </topicref>
-    </topichead>
+    </topicref>
     <!-- END - OPERATIONS -->
     <!-- BEGIN - TROUBLESHOOTING -->
-    <topichead navtitle="Troubleshooting">
+    <topicref href="helion/troubleshooting/troubleshooting_index.dita" navtitle="Troubleshooting"
+      locktitle="yes" otherprops="">
       <topicref href="helion/installation/installation_troubleshooting.dita"
         navtitle="Troubleshooting the Installation" locktitle="yes"/>
       <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
@@ -399,9 +402,10 @@
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
       <topicref href="helion/blockstorage/ceph/troubleshooting.dita"
         navtitle="Troubleshooting the Ceph Service" locktitle="yes"/>
-    </topichead>
+    </topicref>
     <!-- BEGIN - USER GUIDE -->
-    <topichead navtitle="User Guide">
+    <topicref href="helion/userguide/userguide_index.dita" navtitle="User Guide" locktitle="yes"
+      otherprops="">
       <!-- HORIZON -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes"/>
@@ -421,7 +425,7 @@
           <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
       </topicref>
-    </topichead>
+    </topicref>
     <!-- END USER GUIDE -->
     <topicref href="helion/documentation_updates.dita"/>
     <!--
