@@ -115,7 +115,7 @@
           navtitle="PHP Hello World Sample "/>
         <topicref href="2.0/workbook/database/database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample"/>
-        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHPE RabbitMQ Messaging Sample"/>-->
+        <!--<topicref href="2.0/workbook/messaging/messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample"/>-->
         <topicref href="2.0/workbook/messaging/messaging.php.dita" navtitle="PHP Messaging Sample"
           locktitle="yes"/>
       </topichead>
