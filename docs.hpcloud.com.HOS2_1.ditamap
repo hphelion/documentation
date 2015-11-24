@@ -21,6 +21,8 @@
    locktitle="yes"/>
   <topicref href="helion/input_model.dita" navtitle="Input Model"
    locktitle="yes"/>
+  <topicref href="helion/objectstorage/swift_device_groups.dita" navtitle="Swift Requirements for Device Group
+   Drives" locktitle="yes"/>
   <topicref href="helion/troubleshooting/troubleshooting_logging.dita" navtitle="Troubleshooting the Centralized Logging Service"
    locktitle="yes"/>
  </topicref>
