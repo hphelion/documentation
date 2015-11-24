@@ -292,8 +292,6 @@
       <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
       <topicref href="helion/operations/objectstorage_index.dita" navtitle="Object Storage"
         locktitle="yes" otherprops="operations_objectstorage">
-        <topicref href="helion/objectstorage/add_new_storage_policy.dita"
-          navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
           navtitle="Checking Object Storage Status" locktitle="yes"
           otherprops="operations_objectstorage_status">
@@ -380,8 +378,6 @@
     <!-- BEGIN - TROUBLESHOOTING -->
     <topicref href="helion/troubleshooting/troubleshooting_index.dita" navtitle="Troubleshooting"
       locktitle="yes" otherprops="troubleshooting">
-      <topicref href="helion/installation/installation_troubleshooting.dita"
-        navtitle="Troubleshooting the Installation" locktitle="yes"/>
       <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
         navtitle="Troubleshooting the Sherpa Service" locktitle="yes"/>
       <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
@@ -419,20 +415,13 @@
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-
+      <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
-      <!--  LBaaS, FWaaS, VPNaaS -->
-      <topicref href="helion/networking/fwaas.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Using Firewall as a Service (FWaaS)</navtitle>
-        </topicmeta>
-      </topicref>
-      <topicref href="helion/networking/vpnaas.dita" locktitle="yes">
-        <topicmeta>
-          <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
-        </topicmeta>
-      </topicref>
+      <topicref href="helion/networking/fwaas.dita" navtitle="Using Firewall as a Service (FWaaS)"
+        locktitle="yes"/>
+      <topicref href="helion/networking/vpnaas.dita" navtitle="Using VPN as a Service (VPNaaS)"
+        locktitle="yes"/>
     </topicref>
     <!-- END USER GUIDE -->
     <topicref href="helion/documentation_updates.dita"/>

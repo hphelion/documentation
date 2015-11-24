@@ -63,7 +63,7 @@
               <row>
                 <entry>11/10/2015</entry>
                 <entry>Security - ArcSight </entry>
-                <entry>Added ArcSight page (<xref href="security/arcsight.dita#topic_n5d_tjn_yt"
+                <entry>Added ArcSight page (<xref href="security/arcsight.dita"
                     >Link</xref>)</entry>
               </row>
               <row>
@@ -82,7 +82,7 @@
                 <entry>11/05/2015</entry>
                 <entry>Security - TLS </entry>
                 <entry>Amended Private CA FQDN certificates steps to include copying both keys
-                    (<xref href="security/tls.dita#topic_yym_nps_4t/ol_ngj_qfq_rt"
+                  (<xref href="security/tls.dita#configure_tls/ol_ngj_qfq_rt"
                   >Link</xref>)</entry>
               </row>
               <row>
@@ -96,8 +96,8 @@
                 <entry>11/03/2015</entry>
                 <entry>Security - TLS</entry>
                 <entry>Added TLS steps required for Private CA certificates (<xref
-                    href="security/tls.dita#topic_yym_nps_4t/private1">Link </xref>and <xref
-                    href="security/tls.dita#topic_yym_nps_4t/private2">Link</xref>)</entry>
+                  href="security/tls.dita#configure_tls/private1">Link </xref>and <xref
+                    href="security/tls.dita#configure_tls/private2">Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/02/2015</entry>

@@ -141,7 +141,7 @@
             self-signed certificate is in use. These certificates are not considered trustworthy by
             default. Verify the certificate or add an exception in the browser to bypass the
             warning. You can manage certificates by visiting the topic <xref
-              href="../security/tls.dita#topic_yym_nps_4t">Enabling TLS</xref></note></li>
+              href="../security/tls.dita">Enabling TLS</xref></note></li>
         <li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign
             In</b>.<p>
             <image href="../../media/horizon/HelionLogin.png">
