@@ -41,7 +41,7 @@
 <li>
   <xref type="section" href="#windows_remoting/add_security">Add the RDP security group to the instance</xref>
 </li>
-  <li><xref href="#windows_remoting" format="dita">Connect to the instance with Remote Desktop
+  <li><xref href="#windows_remoting/connect" format="dita">Connect to the instance with Remote Desktop
           Connection</xref></li>
 
 </ul>
