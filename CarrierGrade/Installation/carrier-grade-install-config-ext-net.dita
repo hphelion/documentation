@@ -78,7 +78,7 @@ Password: cghelion</codeblock>
       <p><i>For more information on performing this task, refer to the latest DCN documentation
         </i></p>
       <ol>
-        <li><xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">Log into the
+        <li><xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">Log into the
             VSD dashboard</xref>.</li>
         <li>Click <b>Platform Configuration</b>, then the <b>Infrastructure</b> tab, then click the
             <b>Data Center Gateways</b> icon. The new gateway appears in the <b>Pending Gateways</b>
@@ -109,7 +109,7 @@ Hide for alpha
       select <b>Use Permission</b>. <p><i>For more information on performing this task, refer to the
           latest DCN documentation </i></p><p>To assign
         permissions:<!-- Cannot see select groups for VRS-G--></p><ol id="ol_x4q_vl1_1t">
-        <li>In <xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
             dashboard</xref>.</li>
         <li>Select the gateway you created and click <b>Add a Permission</b>.</li>
         <li>The <b>Select Groups</b> dialog appears. The default permission, <codeph>allowed to use
@@ -124,7 +124,7 @@ Hide for alpha
         create and edit a cURL script. </p>
       <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
       <ol>
-        <li>In <xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
             dashboard</xref>, click <b>Platform Configuration</b>, then <b>Shared Network</b> tab. </li>
         <li>Click the + icon to create a floating IP pool subnet.<p><image
               href="../../media/CGH-2-install-nuage-ipsub-alpha.png" width="600"
@@ -236,7 +236,7 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
         can either use the default template or create a new L3 Domain Template.</p><i>For more
         information on performing these tasks, refer to the DCN documentation </i><p> To create a
         Layer 3 Domain Template:<ol id="ol_bft_2ks_nt">
-          <li>In <xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+          <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
               dashboard</xref>, click <b>Platform Configuration</b>.</li>
           <li>Click the organization you created previously. </li>
           <li>Click the <b>Networks</b> tab.<p>A default L3 Template is created for the
@@ -284,7 +284,7 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
       names defined on the Domain Template.<p><i>For more information on performing these tasks,
           refer to the DCN documentation </i></p><p>To instantiate a domain template:</p><ol
         id="ol_rbc_51t_nt">
-        <li>In <xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
             dashboard</xref>, click <b>Platform Configuration</b>.</li>
         <li>Select the domain template you created.</li>
         <li>Click the <b>Instantiate</b> icon.<p><image
@@ -346,7 +346,7 @@ start=10.51.77.50,end=10.51.77.250 --nuagenet &lt;UUID> --net-partition &lt;part
     <section>
       <title>Operations to be performed on VSD</title>
       <ol id="ol_jx4_b5y_nt">
-        <li>In <xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
             dashboard</xref>, click <b>Platform Configuration</b>.</li>
         <li>Click the organization you created previously. </li>
         <li>Click the <b>Networks</b> tab.</li>

@@ -86,31 +86,31 @@
         navtitle="KVM Region Administrator Guide" locktitle="yes"/>
       <!--<topicref href="CarrierGrade/AdminGuideKVM/CGH-2-KVM-Admin.ditamap"
         navtitle="KVM Region Administrator Guide (On-Line)" locktitle="yes" format="ditamap"/>-->
-      <topicref href="CarrierGrade/AdminGuide/Logging/CHG-2-logging-overview.dita"
+      <topicref href="CarrierGrade/OperationsGuide/Logging/CHG-2-logging-overview.dita"
         navtitle="Centralized Logging" locktitle="yes"/>
       <topicref
-        href="CarrierGrade/AdminGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+        href="CarrierGrade/OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
         navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
       <topicref href="CarrierGrade/MultiDC/CGH-2-Config-Multi-DC.dita"
         navtitle="Confguring a Multiple Datacenter Environment (Multi-DC)" locktitle="yes"/>
-      <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
+      <topicref href="CarrierGrade/OperationsGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
         navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes"
         otherprops="backup">
-        <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-restore-cli.dita"
+        <topicref href="CarrierGrade/OperationsGuide/Backup/CGH-2--backup-restore-cli.dita"
           navtitle="Attis Backup and Restore CLI Reference" locktitle="yes"/>
-        <topicref href="CarrierGrade/AdminGuide/Backup/CGH-2--backup-configure.dita"
+        <topicref href="CarrierGrade/OperationsGuide/Backup/CGH-2--backup-configure.dita"
           navtitle="Configuring the Backup and Restore Location " locktitle="yes"/>
       </topicref>
       <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
         locktitle="yes"/>
       <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
         navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
-      <topicref href="CarrierGrade/AdminGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
+      <topicref href="CarrierGrade/OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
         navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"
       />
     </topichead>
     <topichead navtitle="Operations" outputclass="operations">
-      <topicref href="CarrierGrade/AdminGuide/carrier-grade-User-guide.ditamap"
+      <topicref href="CarrierGrade/OperationsGuide/carrier-grade-User-guide.ditamap"
         navtitle="User Guide" locktitle="yes" format="ditamap"/>
     </topichead>
     <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting.dita"
