@@ -33,13 +33,14 @@
     <!-- END - TOP LEVEL -->
     <!-- BEGIN - INSTALLATION -->
     <topicref href="helion/installation/installation_overview.dita" navtitle="Installation"
-      locktitle="yes" otherprops="">
+      locktitle="yes" otherprops="installation">
       <topicref href="helion/installation/using_git.dita"
         navtitle="Using Git for Configuration Management" locktitle="yes"/>
       <topicref href="helion/installation/preinstall_checklist.dita"
         navtitle="Pre-Installation Checklist" locktitle="yes"/>
       <topicref href="helion/installation/install_entryscale_kvm.dita"
-        navtitle="Installation for Helion Entry-scale KVM Cloud" locktitle="yes" otherprops="">
+        navtitle="Installation for Helion Entry-scale KVM Cloud" locktitle="yes"
+        otherprops="installentryscalekvm">
         <topicref href="helion/installation/configure_vsa.dita" navtitle="VSA Configuration"
           locktitle="yes"/>
         <topicref href="helion/installation/configure_ceph.dita" navtitle="Ceph Configuration"
@@ -68,7 +69,7 @@
     <!-- END - INSTALLATION -->
     <!-- BEGIN - SECURITY -->
     <topicref href="helion/security/security_overview.dita" navtitle="Security" locktitle="yes"
-      otherprops="">
+      otherprops="security">
       <topicref href="helion/security/tls.dita" navtitle="Configuring TLS for Public Endpoints"
         locktitle="yes"/>
       <topicref href="helion/security/header_poisoning.dita"
@@ -83,7 +84,7 @@
     <!-- END - SECURITY -->
     <!-- BEGIN ADMINISTRATION -->
     <topicref href="helion/administration/administration_index.dita" navtitle="Administration"
-      locktitle="yes" otherprops="">
+      locktitle="yes" otherprops="administration">
       <topicref href="helion/administration/create_extnet.dita"
         navtitle="Creating an External Network" locktitle="yes"/>
       <topicref href="helion/administration/upload_image.dita" navtitle="Uploading an Image for Use"
@@ -104,7 +105,7 @@
         navtitle="Configuring the Centralized Logging Service" locktitle="yes"/>
       <!-- BEGIN - Administration/IDENTITY -->
       <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="identity">
         <topicref href="helion/identity/identity_roles.dita"
           navtitle="Creating Domains, Projects, Users, Groups, and Roles" locktitle="yes"/>
         <topicref href="helion/identity/identity_init.dita"
@@ -122,10 +123,10 @@
       </topicref>
       <!-- BEGIN - Administration/Object Storage -->
       <topicref href="helion/objectstorage/objectstorage_overview.dita"
-        navtitle="Object Storage Service" locktitle="yes" otherprops="">
+        navtitle="Object Storage Service" locktitle="yes" otherprops="admin_objectstorage">
         <topicref href="helion/objectstorage/input_cloud_model.dita"
           navtitle="Modifying Example Configurations for Object Storage" locktitle="yes"
-          otherprops="">
+          otherprops="admin_objectstorage_config">
           <topicref href="helion/objectstorage/allocate_pac.dita"
             navtitle="Allocating Proxy, Account, and Container Servers for Object Storage"
             locktitle="yes"/>
@@ -134,7 +135,8 @@
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"
             navtitle="Creating Roles for Swift Nodes" locktitle="yes"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
-            navtitle="Allocating Disk Drives for Object Storage" locktitle="yes" otherprops="">
+            navtitle="Allocating Disk Drives for Object Storage" locktitle="yes"
+            otherprops="admin_objectstorage_allocate">
             <topicref href="helion/objectstorage/label_on_partition.dita"
               navtitle="Verifying a Swift Partition Label" locktitle="yes"/>
             <topicref href="helion/objectstorage/filesystem_label.dita"
@@ -155,7 +157,8 @@
             navtitle="Designing Storage Policies" locktitle="yes"/>
         </topicref>
         <topicref href="helion/objectstorage/ring_management.dita"
-          navtitle="Managing Object Storage Rings" locktitle="yes" otherprops="">
+          navtitle="Managing Object Storage Rings" locktitle="yes"
+          otherprops="admin_objectstorage_rings">
           <topicref href="helion/objectstorage/rebalanced_explained.dita"
             navtitle="Rebalancing Object Storage Rings" locktitle="yes"/>
           <topicref href="helion/objectstorage/setting_up_weight_attributes_ring_changes.dita"
@@ -176,13 +179,13 @@
       </topicref>
       <!-- BEGIN - Administration/Block Storage -->
       <topicref href="helion/blockstorage/blockstorage_overview.dita"
-        navtitle="Block Storage Service" locktitle="yes" otherprops="">
+        navtitle="Block Storage Service" locktitle="yes" otherprops="admin_blockstorage">
         <topicref href="helion/blockstorage/ceph/ceph_overview.dita" navtitle="Ceph Overview"
           locktitle="yes"/>
       </topicref>
       <!-- BEGIN - Administration/Networking -->
       <topicref href="helion/networking/networking_overview.dita" navtitle="Networking Service"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="admin_networking">
         <topicref href="helion/networking/install_dnsaas.dita"
           navtitle="Installation and Configuration of DNS as a Service (DNSaaS)" locktitle="yes"/>
         <topicref href="helion/networking/lbaas_admin.dita"
@@ -192,7 +195,7 @@
       </topicref>
       <!-- BEGIN - Administration/EON -->
       <topicref href="helion/esx/eon_service.dita" navtitle="ESX ON-Boarding (EON) Service"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="admin_eon">
         <topicref href="helion/esx/network_esx_ovsvapp.dita"
           navtitle="Networking for ESXi Hypervisor" locktitle="yes"/>
         <topicref href="helion/esx/esx_host_commissioning.dita" navtitle="ESX Host Commissioning"
@@ -211,14 +214,14 @@
     <!-- END - ADMINISTRATION -->
     <!-- BEGIN - OPERATIONS -->
     <topicref href="helion/operations/operations_index.dita" navtitle="Operations" locktitle="yes"
-      otherprops="">
+      otherprops="operations">
 
       <topicref href="helion/operations/start_stop_services.dita"
         navtitle="Starting and Stopping Services" locktitle="yes"/>
       <topicref href="helion/operations/accessing_horizon.dita"
         navtitle="Accessing the Horizon Dashboard" locktitle="yes"/>
       <topicref href="helion/operations/opsconsole_overview.dita"
-        navtitle="Using the Operations Console" locktitle="yes" otherprops="">
+        navtitle="Using the Operations Console" locktitle="yes" otherprops="opsconsole">
         <topicref href="helion/operations/opsconsole/dashboard.dita"
           navtitle="Operations Console: Dashboard" locktitle="yes" toc="no"/>
         <topicref href="helion/operations/opsconsole/logging.dita"
@@ -246,7 +249,7 @@
       </topicref>
       <!-- BEGIN - OPERATIONS/Node Maintenance -->
       <topicref href="helion/operations/node_maintenance.dita" navtitle="Node Maintenance"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="operations_node">
         <topicref href="helion/operations/replace_controller.dita"
           navtitle="Replacing a Controller Node" locktitle="yes"/>
         <!-- COMPUTE -->
@@ -288,11 +291,12 @@
       <!-- END - OPERATIONS/Node Maintenance -->
       <!-- BEGIN - OPERATIONS/OBJECT STORAGE -->
       <topicref href="helion/operations/objectstorage_index.dita" navtitle="Object Storage"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="operations_objectstorage">
         <topicref href="helion/objectstorage/add_new_storage_policy.dita"
           navtitle="Adding a New Swift Storage Policy" locktitle="yes"/>
         <topicref href="helion/objectstorage/check_objectstorage_operation.dita"
-          navtitle="Checking Object Storage Status" locktitle="yes" otherprops="">
+          navtitle="Checking Object Storage Status" locktitle="yes"
+          otherprops="operations_objectstorage_status">
           <topicref href="helion/objectstorage/validating_swift_recon.dita"
             navtitle="Gathering Swift Data" locktitle="yes"/>
           <topicref href="helion/objectstorage/lm_scan_metering.dita"
@@ -303,7 +307,7 @@
       </topicref>
       <!-- BEGIN - OPERATIONS/BLOCK STORAGE -->
       <topicref href="helion/operations/blockstorage_index.dita" navtitle="Block Storage"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="operations_blockstorage">
         <topicref href="helion/blockstorage/vsa/vsa_create_multiple_clusters.dita"
           navtitle="Creating Multiple VSA Clusters" locktitle="yes"/>
         <topicref href="helion/blockstorage/vsa/configure_vsa_separate_iscsi_network.dita"
@@ -321,7 +325,7 @@
       </topicref>
       <!-- BEGIN - OPERATIONS/BURA -->
       <topicref href="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="operations_bura">
         <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"
           navtitle="Backing up the Cloud Control Plane" locktitle="yes"/>
         <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita"
@@ -341,7 +345,7 @@
       </topicref>
       <!-- BEGIN - OPERATIONS/Metering -->
       <topicref href="helion/metering/metering_overview.dita" navtitle="Metering Service"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="operations_metering">
         <topicref href="helion/metering/metering_apis.dita" navtitle="Ceilometer Metering APIs"
           locktitle="yes"/>
         <topicref href="helion/metering/metering_reconfig.dita"
@@ -362,12 +366,12 @@
       </topicref>
       <!-- BEGIN - OPERATIONS/MONITORING / LOGGING -->
       <topicref href="helion/operations/monitoring_service.dita" navtitle="Monitoring Service"
-        locktitle="yes" otherprops="">
+        locktitle="yes" otherprops="operations_monitoring">
         <topicref href="helion/operations/alarms.dita" navtitle="Service Alarm Definitions"
           locktitle="yes"/>
       </topicref>
       <topicref href="helion/operations/centralized_logging.dita"
-        navtitle="Centralized Logging Service" locktitle="yes" otherprops="">
+        navtitle="Centralized Logging Service" locktitle="yes" otherprops="operations_logging">
         <topicref href="helion/operations/logging_settings.dita" navtitle="Default Logging Settings"
           locktitle="yes"/>
       </topicref>
@@ -375,7 +379,7 @@
     <!-- END - OPERATIONS -->
     <!-- BEGIN - TROUBLESHOOTING -->
     <topicref href="helion/troubleshooting/troubleshooting_index.dita" navtitle="Troubleshooting"
-      locktitle="yes" otherprops="">
+      locktitle="yes" otherprops="troubleshooting">
       <topicref href="helion/installation/installation_troubleshooting.dita"
         navtitle="Troubleshooting the Installation" locktitle="yes"/>
       <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
@@ -383,7 +387,8 @@
       <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
         navtitle="Troubleshooting the Block Storage Backend Configuration" locktitle="yes"/>
       <topicref href="helion/objectstorage/troubleshooting.dita"
-        navtitle="Troubleshooting the Object Storage Service" locktitle="yes" otherprops="">
+        navtitle="Troubleshooting the Object Storage Service" locktitle="yes"
+        otherprops="troubleshooting_objectstorage">
         <topicref href="helion/objectstorage/deploy_fails_with_msdos_disks.dita"
           navtitle="Deployment Fails with a MSDOS Disks Labels Error" locktitle="yes"/>
         <topicref href="helion/objectstorage/examine_details_planned_ring_changes_prior_deploy.dita"
@@ -408,7 +413,7 @@
     </topicref>
     <!-- BEGIN - USER GUIDE -->
     <topicref href="helion/userguide/userguide_index.dita" navtitle="User Guide" locktitle="yes"
-      otherprops="">
+      otherprops="userguide">
       <!-- HORIZON -->
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes"/>
