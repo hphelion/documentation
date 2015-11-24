@@ -24,8 +24,9 @@
           referenced by HPE which may be software license information, additional license
           authorizations, software specifications, published warranties, supplier terms, open source
           software licenses and similar content ("Supporting Material"). Additional license
-          authorizations are below and at <xref href="devplatform.thirdparty.licensing.dita"
-            >http://docs.hpcloud.com/devplatform/2.0/devplatform.thirdparty.licensing.html</xref>.</li>
+          authorizations are below and at <xref href="devplatform.thirdparty.licensing.dita">HPE
+            Helion Development Platform Open Source and Third-Party Software License
+            Agreements</xref>.</li>
         <li>
           <b>Authorization</b>. If you agree to this Agreement on behalf of another person or
           entity, you warrant you have authority to do so.</li>
@@ -74,10 +75,10 @@
           <b>90-day Limited Warranty for HPE Software.</b> HPE-branded software is free of malware
           at the time of delivery; if you notify HPE within 90 days of delivery of non-conformance
           to this warranty, HPE will replace your copy. This Agreement states all remedies for
-          warranty claims. <p>HPE does not warrant that the operation of software will be
-            uninterrupted or error free, or that software will operate in hardware and software
-            combinations other than as authorized by HPE in Supporting Material. To the extent
-            permitted by law, HPE disclaims all other warranties.</p></li>
+          warranty claims. HPE does not warrant that the operation of software will be uninterrupted
+          or error free, or that software will operate in hardware and software combinations other
+          than as authorized by HPE in Supporting Material. To the extent permitted by law, HPE
+          disclaims all other warranties.</li>
         <li>
           <b>Intellectual Property Rights Infringement.</b>  Subject to Section 14(e) of this Part
           1, HPE will defend and/or settle any claims against you that allege that HPE-branded
@@ -202,11 +203,11 @@
           Platform Management Software to deploy, configure, manage and operate your HPE Helion
           Development Platform on your Cloud Fabric. The right to Use the Software may not be
           transferred from the initial licensed Physical Server to a new or replacement Physical
-          Server, except according to Section 2(i) below.</li></ul> <p>Subject to Customer’s continuing
-            compliance with the terms and conditions of this Agreement, following the Term of Use,
-            Customer may continue to Use the Software on the Physical Server that was licensed and
-            in operation before the end of the Term of Use.</p>
-
+          Server, except according to Section 2(i) below. Subject to Customer’s continuing
+          compliance with the terms and conditions of this Agreement, following the Term of Use,
+          Customer may continue to Use the Software on the Physical Server that was licensed and in
+          operation before the end of the Term of Use.</li>
+</ul>
 <p>
   <b>2. Other Terms:</b>
 </p><p>
@@ -222,9 +223,9 @@
         <b>c. Commercial Service Providers:</b> Customers must accept the terms contained in a
         supplemental agreement in order to provide commercial services to third parties using the
         Software, found at <xref
-          href="https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=CS_SRV_PRVD."
-          format="html" scope="external"
-          >https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=CS_SRV_PRVD.</xref></p>
+          href="http://www.hp.com/go/HPE%20Helion%20End%20User%20License%20Supplement%20for%20Commercial%20Service%20Providers"
+          format="html" scope="external">www.hp.com/go/HPE Helion End User License Supplement for
+          Commercial Service Providers</xref></p>
 <p>
         <b>d. Compliance and Audit:</b> HPE shall have the right to audit the customer's use of the
         Software at HPE's expense and in accordance with any agreement between the parties related

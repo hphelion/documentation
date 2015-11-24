@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="using_messaging">
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="using_messaging">
 <title>HPE Helion 2.0 Development Platform: Using Messaging as a Service</title>
 <body>
 
@@ -14,7 +15,7 @@
   <p>For information on managing the Messaging Broker Service via the Python client, see <xref
         href="https://github.com/openstack/python-cueclient" format="html" scope="external"
         >openstack/python-cueclient on GitHub</xref>.</p>
-<p>The following topics explain how to create and manage an instance:</p>
+<p>The following topics explain how to create and manage a instance:</p>
 <ul>
 <li>
 <xref type="section" href="#using_messaging/create">Creating a cluster</xref> </li>
@@ -27,7 +28,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref href="../installation/devplatform_install_platform.dita" >HPE Helion Development Platform</xref>and configure the services.</li>
+<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>and configure the services.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a RabbitMQ Cluster</title>
@@ -99,7 +100,7 @@
 </li>
 <li>
   <p>For more information using HPE Helion OpenStack visit the <xref
-    href="http://docs.hpcloud.com/#helion/index.html" format="html">documentation</xref>.</p>
+    href="http://docs.hpcloud.com/#helion/overview.html" format="html">documentation</xref>.</p>
 </li>
 </ul>
 </section>

@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mhg_f2n_vt">
-  <title>Full clouds.yaml Sample File</title>
+  <title>HPE Helion 2.0 Development Platform: Full clouds.yaml Sample File</title>
   <body>
-    <p>For information on what each variable value is and where to find it, see the <xref
-        href="../install_cloudsyaml.dita#topic_wzw_r4w_rt">service-specific
-      </xref>documentation.</p>
-    <codeblock>clouds:
+    <p>For information on each variable, see the service-specific documentation.</p>
+    <codeblock><xref href="cloud_platform.dita#cloudPlatform">clouds</xref>:
   mycloud:
-    codn_username: 
-    codn_password: 
+    codn_username: xxxxx
+    codn_password: xxxxxx
     cacert: /home/stack/ca/cacert.pem
     region_name: region1
     auth:
       auth_url: https:
-      project_name: 
-      username: 
+      project_name: admin
+      username: admin
       password:   
-    messaging:   
+    <xref href="cloud_messaging.dita#cloudMessaging">messaging</xref>:   
       deployer_key: msgaas
       deployer_flavor: 4
       deployer_name: msgaas_deployer_01   
@@ -31,7 +29,7 @@
       deployer_ext_net_id: 
       deployer_cacert: /home/stack/ca/cacert.pem
       deployer_cname: "cname"             
-    helionce:
+    <xref href="cloud_codeengine.dita#cloudCodeEngine">helionce</xref>:
       deployer_key: helionce-shared
       deployer_flavor: 3
       deployer_dns_servers: dnsservers
@@ -42,12 +40,12 @@
         project_name: admin
         username: admin
         password: 
-    msgaas:
+   <xref href="cloud_messaging.dita#cloudMessaging">msgaas</xref>:
       image_api_version: '1'
       identity_api_version: '2'
       region_name: region1
       insecure: True
-    database:
+    <xref href="cloud_database.dita#cloudDatabase">database</xref>:
       trove_enable_ssl: False
       ephemeral_ca_cert: /home/stack/ca/cacert.pem  
       external_network: 

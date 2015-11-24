@@ -35,7 +35,7 @@
 <section id="adding-a-service-to-a-net-application"> <title>Adding a service to a .NET application</title>
 <ol>
 <li>When deploying your application using <xref
-            href="windows_tools_guide.dita#windows_tools/cloudfoundryextensions">Cloud Foundry
+            href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions">Cloud Foundry
             Explorer</xref>, in the deployment information window, enter the service information in
           the <b>Service</b> field in the format <codeph>Service Name, Service Type, Service
             Plan</codeph>:<p>

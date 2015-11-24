@@ -13,7 +13,12 @@
           <xref href="http://docs.hpcloud.com/#helion/installation/installation_overview.html"
             format="html" scope="external">cloud deployed</xref>.</li>
 <li>Application Lifecycle Service <xref href="devplatform.deploy-ALS.dita">Cluster</xref> available
-          with MySQL and the Message Broker service enabled. </li>
+          with MySQL and the Message Broker service enabled.   <!-- <ul>
+        <li>You can also quickly set up a cluster in the free and publicly available Helion
+              cloud as part of the <xref
+                href="devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"
+                >Quick Start Developer Trial</xref>: </li>
+          </ul> --></li>
 <li>Log on and password credentials for the cluster.</li>
 <li>Access to the <xref href="helion/user/client/client_index.dita" >Helion command-line interface (CLI)</xref>
 </li>

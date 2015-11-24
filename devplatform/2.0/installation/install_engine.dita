@@ -8,10 +8,12 @@
       <ul>
         <li>The HDP Installer 2.0, also known as HDPI, must already <xref
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-        <li>A properly configured <xref href="install_cloudsyaml.dita#id_xnd_3dn_vt">clouds.yaml
-          </xref>file.</li>
+        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+            >clouds.yaml</xref> file.</li>
         <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
           its <codeph>services.osrc</codeph> file, which contains configuration information.</li>
+        <li>A SSH public and private keypair, uploaded to OpenStack, configured in clouds.yml, and
+          used as ssh keys on the deployer machine.</li>
         <li>You must know the NTP server and DNS server IP addresses.</li>
         <li>You must know the proxy values and ports required for accessing external services such
           as Github.com, Stormrunner, or Dockerhub.</li>
@@ -24,14 +26,8 @@
       <ol>
         <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
           been installed.)</li>
-        <li>Upload an SSH keypair to Nova to be used by the HPE Helion Code Engine Deployer.
-            <note>The name of the key you are creating in Nova (<codeph>helionce-shared</codeph>)
-            must match the value of the <codeph>deployer_key</codeph> value in the <xref
-              href="install_cloudsyaml.dita#id_xnd_3dn_vt">clouds.yaml </xref> file. Since you will
-            need these keys to access the Helion Code Engine deployer VM in the future, it is
-            strongly recommended that you save the key files (<codeph>~/.ssh/id_rsa</codeph> and
-              <codeph>~/.ssh/id_rsa</codeph>) in a safe
-          place.</note><pre>source ./service.osrc
+        <li>Upload an SSH keypair to Nova to be used by the HPE Helion Code Engine
+          Deployer.<pre>source ./service.osrc
 nova keypair-add --pub-key ~/.ssh/id_rsa.pub helionce-shared</pre></li>    <li>Ensure all OS_ variables are unset. Run <codeblock>env | grep OS_ </codeblock> and then
             <codeph>unset</codeph> any variables which appear in the list of results. </li>
         <li>Source the Virtual Environment.

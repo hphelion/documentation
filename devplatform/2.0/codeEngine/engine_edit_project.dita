@@ -22,16 +22,15 @@
         <li>Click <b>Save</b>.</li>
       </ol>
     </section>
-   <section id="changePostDeploy"><title>Create a new Post-deployment Action</title>
+   <section id="changePostDeploy"><title>Create Post-deployment Actions</title>
     <p conref="engine_create_postdeploy.dita#createPostDeploy/createpd"/></section>
     
-    <section><title>Create New Notifications</title>
+    <section><title>Create Notifications</title>
       <ol><li>Click the <b>Projects</b> tab.</li>
         <li>Find the desired Project in the list and then click <b>View Details</b>.</li>
         <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>. </li>
-        <li>Define the <b>Notification Target</b>:<image
-            href="../../../media/engine_edit_notification.png" id="image_k1l_hhs_lt"
-            placement="break"/><ol><li>Provide a descriptive <b>Name</b> for this Notification.</li>
+        <li>Define the Notification Target:<image
+            href="../../../media/engine_edit_notification.png" id="image_k1l_hhs_lt" placement="break"/><ol>
             <li conref="engine_create_project.dita#createProject/defineNotifications"/>
             <li>Click <b>Save</b>.</li>
           </ol></li>

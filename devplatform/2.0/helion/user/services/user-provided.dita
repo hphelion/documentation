@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4060">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="als_user_provided">
 <title>HPE Helion 2.0 Development Platform: User-Provided Services</title>
 <prolog>
 <metadata>
@@ -18,8 +18,8 @@
 <p>User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the
 credentials into the application. The service instance provides the
-connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="data-services.dita#user_data_services/configuring-helion-data-services" >built-in data services</xref>.</p>
-<p>Think of user-provided services as a credentials database for your Application Lifecycle Service application space. You provide the connection information and ALS stores it in a <xref type="section" href="#topic4060/using">
+connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="data-services.dita#topic19772/configuring-helion-data-services" >built-in data services</xref>.</p>
+  <p>Think of user-provided services as a credentials database for your Application Lifecycle Service application space. You provide the connection information and ALS stores it in a <xref type="section" href="#als_user_provided/using">
 <i>JSON object</i>
 </xref> which can then be bound any applications in the space.</p>
 <section id="creating"> <title>Creating</title>
@@ -67,7 +67,7 @@ prod-db-int
 |              |                              |
 | Applications | django-cms                   |
 +--------------+------------------------------+</codeblock>
-  <p>The <xref href="data-services.dita#user_data_services/vcap-services" type="section"   >
+  <p>The <xref href="data-services.dita#topic19772/vcap-services" type="section"   >
 <i>VCAP_SERVICES</i>
 </xref>
 variables will expose the connection information within the application
@@ -84,7 +84,7 @@ object:</p>
     "user": "ro-web"
   }
 }</codeblock>
-  <p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../deploy/deploy_index.dita#user_deploy_index/languages" type="section"   >Language Specific Deployment</xref> documentation for examples.</p>
+  <p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../deploy/deploy_index.dita#topic1693/languages" type="section"   >Language Specific Deployment</xref> documentation for examples.</p>
 <p>Buildpacks that auto-configure applications for system-provided services can also do so for user-provided services. For example, the <xref href="https://github.com/cloudfoundry/java-buildpack" scope="external" format="html" >java buildpack</xref> will configure applications to connect to a database if the service has a name or tag with <i>postgres</i>, <i>mariadb</i>, or <i>mysql</i> in it. Check the buildpack's documentation or code to see exactly what it supports.</p>
 </section>
 <section id="user-provided-URL-env"> <title>Other Environment Variables</title>

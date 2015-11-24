@@ -11,7 +11,7 @@
         Groups</xref></li>
       <li><xref href="#topic_database_manage_cli/users" format="dita">Users</xref></li>
       <li><xref href="#topic_database_manage_cli/metadata" format="dita">Metadata</xref></li>
-      <li><xref href="#topic_database_manage_cli/security" format="dita">Security Groups</xref></li>
+      
     </ul>
     <p>For a comprehensive list of Trove commands, see <xref
         href="http://docs.openstack.org/cli-reference/content/troveclient_commands.html"
@@ -113,27 +113,6 @@
       <p><b>Modify instance metadata</b></p>
       <p>The following command modifies metadata on an instance:</p>
       <codeblock>trove metadata-edit &lt;instance_id&gt; &lt;key&gt; &lt;value&gt;</codeblock>
-    </section>
-    
-    <section id="security">
-      <title>Security Groups</title>
-      <p>This section describes how to apply security rules to security groups. Security groups cannot be created through the Trove interface; you must
-        create security groups either through the Horizon interface, or by using Neutron or Nova commands.</p>
-      <p><b>Add a security group rule to an instance</b></p>
-      <p>The following command adds a security group rule to an instance:</p>
-      <codeblock>trove  secgroup-add-rule &lt;security_group&gt; &lt;IP range in CIDR format&gt; </codeblock>
-      <p><b>Delete a security group rule</b></p>
-      <p>The following command deletes a security group rule</p>
-      <codeblock>trove  secgroup-delete-rule &lt;security_group_rule&gt;</codeblock>
-      <p><b>List all security groups</b></p>
-      <p>The following command lists all security groups:</p>
-      <codeblock>trove secgroup-list</codeblock>
-      <p><b>List all rules for a security group</b></p>
-      <p>The following command lists all rules for a security group:</p>
-      <codeblock>trove secgroup-list-rules &lt;security_group&gt;</codeblock>
-      <p><b>Show details of a security group</b></p>
-      <p>The following command shows details for a security group:</p>
-      <codeblock>trove secgroup-show &lt;security_group&gt;</codeblock>
     </section>
   </body>
 </topic>

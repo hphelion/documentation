@@ -22,8 +22,8 @@
       <ul>
         <li>Visual Studio 2013. Any edition is supported, including the Community (Free) edition.</li>
         <li>Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See 
-          <xref href="windows_tools_guide.dita#windows_tools/cloudfoundryextensions" type="section"> Windows and .NET Tools Guide: Cloud Foundry Explorer</xref> and 
-          <xref href="windows_tools_guide.dita#windows_tools/msbuild" type="section">Windows and .NET Tools Guide: MSBuild Tasks</xref> for more details. </li>
+          <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions" type="section"> Windows and .NET Tools Guide: Cloud Foundry Explorer</xref> and 
+          <xref href="windows_tools_guide.dita#topic_w5z_kcw_js/msbuild" type="section">Windows and .NET Tools Guide: MSBuild Tasks</xref> for more details. </li>
       </ul>
     </section>
     <section id="service"><title>Creating the web service application</title>

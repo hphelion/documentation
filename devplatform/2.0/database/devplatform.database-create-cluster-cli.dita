@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_database_create_cluster_cli">
-  <title>Creating a database cluster from the command line</title>
+  <title>Creating a Database Cluster from the Command line</title>
   <body>
     <p>This topic describes how to create a database cluster from the command line.</p>
     <ol>

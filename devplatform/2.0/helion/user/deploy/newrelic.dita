@@ -141,7 +141,7 @@ directory of your application along with WEB-INF folder.</p>
 GitHub</xref>.</p>
 </section>
 <section id="new-relic-for-php"> <title>New Relic for PHP</title>
-<p>The New Relic agent PHP libraries are pre-installed on Application Lifecycle Service. To add
+<p>The New Relic agent PHPE libraries are pre-installed on Application Lifecycle Service. To add
 monitoring, you need to add an agent configuration file to the root
 directory of the application and make some modifications to
 <i>manifest.yml</i>.</p>

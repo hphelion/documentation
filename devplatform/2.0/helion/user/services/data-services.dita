@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="user_data_services">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="als_data_services">
 <title>HPE Helion 2.0 Development Platform: Application Lifecycle Service Data Services</title>
 <prolog>
 <metadata>
@@ -16,85 +16,85 @@
 </prolog>
 <body>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="filesystem.dita#user_filesystem/creating-a-persistent-file-system" >persistent file system</xref> service and 
+  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="filesystem.dita#topic4410/creating-a-persistent-file-system" >persistent file system</xref> service and 
   <xref href="memcached.dita">Memcached</xref>.</p>
-<p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#user_data_services/using-external-databases">Using External Database Services</xref>.</p>
+<p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19772/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
 <li>
-        <xref type="section" href="#user_data_services/configuring-helion-data-services">Configuring
+        <xref type="section" href="#topic19772/configuring-helion-data-services">Configuring
           Application Lifecycle Service Data Services</xref>
         <ul>
           <li>
-            <xref type="section" href="#user_data_services/using-manifest-yml">Defining Services in the
+            <xref type="section" href="#topic19772/using-manifest-yml">Defining Services in the
                 <i>manifest.yml</i> File (before push)</xref>
           </li>
           <li>
-            <xref type="section" href="#user_data_services/using-helion-push">Creating Services During
+            <xref type="section" href="#topic19772/using-helion-push">Creating Services During
               Push</xref>
           </li>
           <li>
-            <xref type="section" href="#user_data_services/creating-and-binding-services">Creating and
+            <xref type="section" href="#topic19772/creating-and-binding-services">Creating and
               Binding Services After Push</xref>
           </li>
         </ul></li>
 <li>
-        <xref type="section" href="#user_data_services/using-database-services">Using Database Service
+        <xref type="section" href="#topic19772/using-database-services">Using Database Service
           Environment Variables</xref>
         <ul>
           <li>
-            <xref type="section" href="#user_data_services/vcap-services">VCAP_SERVICES</xref>
+            <xref type="section" href="#topic19772/vcap-services">VCAP_SERVICES</xref>
           </li>
           <li>
-            <xref type="section" href="#user_data_services/using-external-databases">Connecting to External
+            <xref type="section" href="#topic19772/using-external-databases">Connecting to External
               Databases</xref>
           </li>
           <li>
-            <xref type="section" href="#user_data_services/accessing-database-services">Directly Accessing
+            <xref type="section" href="#topic19772/accessing-database-services">Directly Accessing
               Database Services</xref>
             <ul>
               <li>
-                <xref type="section" href="#user_data_services/using-dbshell">Using <i>dbshell</i>
+                <xref type="section" href="#topic19772/using-dbshell">Using <i>dbshell</i>
                 </xref>
               </li>
               <li>
-                <xref type="section" href="#user_data_services/using-tunnel">Using Tunnel</xref>
+                <xref type="section" href="#topic19772/using-tunnel">Using Tunnel</xref>
               </li>
             </ul></li>
         </ul></li>
 <li>
-<xref type="section" href="#user_data_services/pre-populating-a-database-while-pushing-an-app">Pre-populating a database while pushing an app</xref>
+<xref type="section" href="#topic19772/pre-populating-a-database-while-pushing-an-app">Pre-populating a database while pushing an app</xref>
 </li>
 <li>
-        <xref type="section" href="#user_data_services/backing-up-a-mysql-database">Backing up a MySQL
+        <xref type="section" href="#topic19772/backing-up-a-mysql-database">Backing up a MySQL
           database</xref>
         <ul>
           <li>
-            <xref type="section" href="#user_data_services/using-helion-run">Using <i>helion run</i>
+            <xref type="section" href="#topic19772/using-helion-run">Using <i>helion run</i>
             </xref>
           </li>
           <li>
-            <xref type="section" href="#user_data_services/using-helion-tunnel">Using <i>helion tunnel</i>
+            <xref type="section" href="#topic19772/using-helion-tunnel">Using <i>helion tunnel</i>
             </xref>
           </li>
         </ul></li>
 <li>
-        <xref type="section" href="#user_data_services/importing-a-mysql-database">Importing a MySQL
+        <xref type="section" href="#topic19772/importing-a-mysql-database">Importing a MySQL
           database</xref>
         <ul>
           <li>
-            <xref type="section" href="#user_data_services/sqldbshell">Using <i>dbshell</i>
+            <xref type="section" href="#topic19772/sqldbshell">Using <i>dbshell</i>
             </xref>
           </li>
           <li>
-            <xref type="section" href="#user_data_services/sqltunnel">Using <i>helion tunnel</i>
+            <xref type="section" href="#topic19772/sqltunnel">Using <i>helion tunnel</i>
             </xref>
           </li>
         </ul></li>
 <li>
-<xref type="section" href="#user_data_services/database-version-changes">Changing Database Versions</xref>
+<xref type="section" href="#topic19772/database-version-changes">Changing Database Versions</xref>
 </li>
 <li>
-<xref type="section" href="#user_data_services/sqlite">Using SQLite</xref>
+<xref type="section" href="#topic19772/sqlite">Using SQLite</xref>
 </li>
 </ul>
 <section id="configuring-helion-data-services"> <title>Configuring Application Lifecycle Service Data Services</title>
@@ -141,7 +141,7 @@ services:
   <xref href="../reference/glossary.dita#topic6187/term-Redis" type="section"   >redis</xref>
 </li>
 </ul>
-<p>To access the database services after they've been created, see <xref type="section" href="#user_data_services/accessing-database-services">Accessing Database Services</xref>.</p>
+<p>To access the database services after they've been created, see <xref type="section" href="#topic19772/accessing-database-services">Accessing Database Services</xref>.</p>
 </section>
 <section id="using-helion-push"> <title>Creating Services During Push</title>
 <p>In order to ensure that the correct services are configured each time the app is pushed, list the services in the <i>manifest.yml</i> file.</p>
@@ -244,7 +244,7 @@ the <xref href="../reference/client-ref-service-management.dita" >ALS Service Ma
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title>
   <p>When you bind a database service to an application, <xref href="../reference/environment.dita#topic7631/helion-app-env" type="section" >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
-  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/deploy_index.dita#user_deploy_index/languages" type="section" >language-specific</xref> documentation.</p>
+  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/deploy_index.dita#topic1693/languages" type="section" >language-specific</xref> documentation.</p>
 </section>
 <section id="database-url"> <title>DATABASE_URL<!--Removed anchor point database-url--><!-- id="database-url" --></title>
 <p>
@@ -479,7 +479,7 @@ containing the manifest.yml file, the application name may be omitted.</p>
 </section>
 <section id="using-helion-tunnel"> <title>Using helion tunnel</title>
 <p>This method of database backup is provided for compatibility with Cloud Foundry. It tends to be slower than using <codeph>helion run ...</codeph>.</p>
-<p>To back up a MySQL database, use the <xref type="section" href="#user_data_services/sqltunnel">tunnel</xref>
+<p>To back up a MySQL database, use the <xref type="section" href="#topic19772/sqltunnel">tunnel</xref>
 command to make a connection to the server and export the data using
 <codeph>mysqldump</codeph>.</p>
   <p>Use the <xref href="../reference/client-ref-service-management.dita#topic10567/command-tunnel" type="section" >helion tunnel</xref> command to access the service (in
@@ -506,7 +506,7 @@ Which client would you like to start?</codeblock>
 <p>Select option <codeph>3. mysqldump</codeph>. You will be prompted to enter a path to where the
         dump will be saved.</p>
   <p>See the <xref href="../reference/client-ref-service-management.dita#topic10567/command-tunnel" type="section"   >helion tunnel</xref> command documentation for other
-ways of accessing a MySQL database. See <xref type="section" href="#user_data_services/importing-a-mysql-database">Importing a MySQL database</xref> for details on importing a
+ways of accessing a MySQL database. See <xref type="section" href="#topic19772/importing-a-mysql-database">Importing a MySQL database</xref> for details on importing a
 file created by mysqldump into an existing MySQL database service.</p>
 </section>
 <section id="importing-a-mysql-database"> <title>Importing a MySQL database</title>
@@ -548,7 +548,7 @@ Which client would you like to start?</codeblock>
 <p>Then, import an SQL file with the following command:</p>
 <codeblock>mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;pass&gt; &lt;name&gt; &lt; mydatabase.sql</codeblock>
   <p>See the <xref href="../reference/client-ref-service-management.dita#topic10567/command-tunnel" type="section"   >helion tunnel</xref> command documentation for other
-ways of accessing a MySQL database. See <xref type="section" href="#user_data_services/backing-up-a-mysql-database">Backing up a MySQL database</xref> for details on how to create
+ways of accessing a MySQL database. See <xref type="section" href="#topic19772/backing-up-a-mysql-database">Backing up a MySQL database</xref> for details on how to create
 a <codeph>mysqldump</codeph> backup that can then be imported into
 another database service.</p>
 </section>
@@ -588,7 +588,7 @@ variable. See the following language-specific documentation:</p>
 </ul>
 </section>
 <section id="sqlite"> <title>SQLite</title>
-  <p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="filesystem.dita#user_filesystem/creating-a-persistent-file-system" type="section"   >Persistent File System</xref> mount point to avoid losing data.</p>
+  <p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >Persistent File System</xref> mount point to avoid losing data.</p>
 </section>
 </body>
 </topic>

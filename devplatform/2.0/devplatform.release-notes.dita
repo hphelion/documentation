@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic2502">
-  <title>HPE Helion 2.0 Development Platform: Release Notes </title>
+  <title>HPE Helion 2.0 Development Platform: Release Notes</title>
   <body>
     <p>The following release notes are for the HPE Helion Development Platform 2.0 released in
       November, 2015. We hope you enjoy the release!</p>
@@ -92,40 +92,7 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
         </dlentry>
       </dl>
     </section>
- <section><title>Database Service</title>  
-      
-      <dl>  
-        <dlentry>  
-          <dt>No option to reset password on Vertica Preview instance on Horizon</dt>  
-          <dd>Vertica clusters can be accessed via credentials obtained by enabling root, either Horizon or the Trove CLI. Single node   
-            Vertica instances must have root enabled through the Trove CLI, as this action is not  in Horizon. </dd>  
-          <dd>Example:  
-            <codeblock>trove root-enable &lt;instance&gt; </codeblock></dd>  
-        </dlentry>  
-        <dlentry><dt>Searching for log entries returns API KEY ERROR: Missing</dt>  
-          <dd>The current Vertica Management Console release has a known issue where ng to search  
-            for Vertica log entries may result in an API key being requested. As a workaround, it is  
-            suggested to access Vertica event data directly through the database's ACTIVE_EVENTS,  
-            QUERY_EVENTS and QUERY_REQUESTS tables, as described in<xref  
-              href="database/devplatform.database-vertica.dita"> Managing a Vertica Cluster from the Management Console</xref>.</dd>  
-        </dlentry>  
-        <dlentry><dt>"Stack trove in status ROLLBACK_COMPLETE" message when DBaaS on fails</dt>  
-          <dd>The installation process may display a <codeph>ROLLBACK_COMPLETE</codeph>  when installation fails. This may look like the following:  <codeblock>.devplatform)stack@redwood:~$ openstack --os-cloud mycloud hdpi database install --path cow2_2.0.0.31.csu  
-            dbaas-qcow2_2.0.0.31.csu is already downloaded  
-            dbaas-qcow2_2.0.0.31.csu is already (installed)  
-            Disabling SSL Features for databaseervice  
-            aunching stack...  
-            tack trove creating  
-            tack trove in status ROLLBACK_COMPLETE  
-            UI installed for database  
-            Create service endpoint for service database  
-            Completed installing database  
-            .devplatform)stack@redwood:~$</codeblock></dd></dlentry>  
-        <dlentry><dt>“mysql cluster 5.5” listed as option in Launch Instance dialog</dt>  
-          <dd>When <b>Launch Instance</b> is selected in the <b>Project->Database->Instances</b> panel in Horizon, a <b>Datastore</b> option of <b>mysql-cluster</b> version <b>5.5</b> is displayed. Selecting this option  
-            creates a standard <b>mysql</b> cluster.</dd></dlentry>  
-      </dl></section>  
-      <section>
+    <section>
       <title>Known Issues</title>
       <dl>
         <dlentry>
@@ -151,7 +118,7 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
           <dd>UTM (Unified Threat Management) or Gateway firewalls may interfere with upgrades,
             patches, or normal application staging if they are configured to inspect all HTTP(S)
             traffic between ALS nodes and upstream package repositories. <xref
-              href="helion/admin/cluster/cluster_index.dita#admin_cluster_index/utm">See the full
+              href="helion/admin/cluster/cluster_index.dita#topic18326/utm">See the full
               documentation</xref> for a detailed explanation and suggested solutions.</dd>
         </dlentry>
         <dlentry>
@@ -200,6 +167,6 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
             </ol></dd>
         </dlentry>
       </dl>
-      </section>
+    </section>
   </body>
 </topic>

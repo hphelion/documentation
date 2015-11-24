@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="devplat_install_config">
 <title>HPE Helion 2.0 Development Platform: Installation and Configuration</title>
 <body>
 <section>
@@ -24,6 +24,7 @@
           <xref href="#id_hm5_bxw_ft" format="dita">Install the Messaging Service</xref>
         </li>
   <li><xref href="#engine" format="dita">Install the Helion Code Engine</xref></li>
+  <li><xref href="#dns" format="dita">Install DNSaaS</xref></li>
 
 </ul>
 </section>
@@ -50,5 +51,6 @@
  
   <topic id="engine" conref="install_engine.dita#topic_gkq_fqy_rt"><title>Install the Helion Code Engine</title>
   </topic>  
+  <topic id="dns" conref="install_dnsaas.dita#HP2.0DNSaaS"><title>Install DNSaaS</title></topic>
   
 </topic>
