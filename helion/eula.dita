@@ -24,9 +24,10 @@
           referenced by HPE which may be software license information, additional license
           authorizations, software specifications, published warranties, supplier terms, open source
           software licenses and similar content ("Supporting Material"). Additional license
-          authorizations are below and at: <xref href="3rd-party-license-agreements.dita"
-            >HPE Helion OpenStack Open Source and Third-Party Software License
-          Agreements.</xref></li>
+          authorizations are below and at: <xref
+            href="http://docs.hpcloud.com/helion/3rd-party-license-agreements.html" format="html"
+            scope="external"
+          >http://docs.hpcloud.com/helion/3rd-party-license-agreements.html</xref></li>
       <li>
           <b>Authorization</b>. If you agree to this Agreement on behalf of another person or
           entity, you warrant you have authority to do so.</li>
@@ -70,15 +71,13 @@
         <li>
           <b>Copyright Notices.</b> You must reproduce copyright notices on software and
           documentation for authorized copies.</li>
-        <li><b>90-day Limited Warranty for HPE Software.</b>
-        <ul>
-        <li>HPE-branded software is free of malware at the time of delivery; if you notify HPE
-              within 90 days of delivery of non-conformance to this warranty, HPE will replace your
-              copy. This Agreement states all remedies for warranty claims.</li>
-        <li>HPE does not warrant that the operation of software will be uninterrupted or error free,
-          or that software will operate in hardware and software combinations other than as
-          authorized by HPE in Supporting Material. To the extent permitted by law, HPE disclaims all
-          other warranties.</li></ul></li>
+        <li><b>90-day Limited Warranty for HPE Software.</b> HPE-branded software is free of malware
+          at the time of delivery; if you notify HPE within 90 days of delivery of non-conformance
+          to this warranty, HPE will replace your copy. This Agreement states all remedies for
+          warranty claims.<p>HPE does not warrant that the operation of software will be
+            uninterrupted or error free, or that software will operate in hardware and software
+            combinations other than as authorized by HPE in Supporting Material. To the extent
+            permitted by law, HPE disclaims all other warranties.</p></li>
       <li>
           <b>Intellectual Property Rights Infringement.</b> Subject to Section 14(e) of this Part 1,
           HPE will defend and/or settle any claims against you that allege that HPE-branded software
@@ -219,8 +218,8 @@
               supplemental agreement in order to provide commercial services to third parties using
               the Software, found at <xref
                 href="https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=CS_SRV_PRVD"
-                format="html" scope="external">www.hp.com/go/HPE Helion End User License Supplement
-                for Commercial Service Providers</xref></li>
+                format="html" scope="external"
+                >https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=CS_SRV_PRVD</xref></li>
             <li>
               <b>Compliance and Audit:</b> HPE shall have the right to audit the customer's use of
               the Software at HPE's expense and in accordance with any agreement between the parties
@@ -276,8 +275,9 @@
     <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software for Software</title>
       <p>Additional license authorizations related to ancillary, third party and open source
         software components are available at: <xref
-          href="3rd-party-license-agreements.dita">HPE Helion OpenStack Open Source and
-          Third-Party Software License Agreements.</xref></p>
+          href="http://docs.hpcloud.com/helion/3rd-party-license-agreements.html" format="html"
+          scope="external"
+        >http://docs.hpcloud.com/helion/3rd-party-license-agreements.html</xref></p>
     </section>
   </body>
 </topic>
