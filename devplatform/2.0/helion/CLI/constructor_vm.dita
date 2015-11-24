@@ -110,11 +110,10 @@
                 <li>The CVM terminates. (Unless the termination is <xref type="section" href="#topic11989/disable">overridden</xref>.)</li>
             </ol>
         </section>
-        <section id="publiccloud"> <title>Method #4: Boot Without a Configuration File (Helion public cloud)</title>
-            <p>During the boot process the CVM will detect
-                that a configuration file is not present. When the user logs in, the CVM will prompt
-                the user to run a script which will create a configuration file specifically
-                tailored for the public beta.</p>
+        <section id="publiccloud"> <title>Method #4: Boot Without a Configuration File </title>
+            <p>During the boot process the CVM will detect that a configuration file is not present.
+                When the user logs in, the CVM will prompt the user to run a script which will
+                create a configuration file.</p>
             <note>Using this method requires the user to set up the network to the CVM properly,
                 including all routing information, security groups, ssh keys, accessible IP
                 addresses, and so on.</note>

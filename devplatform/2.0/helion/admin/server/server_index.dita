@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3007">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="server_index">
 <title>HPE Helion 2.0 Development Platform: Server Configuration</title>
 <prolog>
 <metadata>
@@ -65,55 +65,55 @@ status checks. For a complete list of options, see the <xref href="../reference/
           <ul>
             <li>
               <xref
-                href="operations.dita#topic4410/server-status"
+                href="operations.dita#server_operations/server-status"
                 type="section">Server Status</xref>
               <ul>
                 <li>
                   <xref
-                    href="operations.dita#topic4410/starting-and-stopping-roles"
+                    href="operations.dita#server_operations/starting-and-stopping-roles"
                     type="section">Starting and Stopping Roles</xref>
                 </li>
                 <li>
                   <xref
-                    href="operations.dita#topic4410/system-shutdown"
+                    href="operations.dita#server_operations/system-shutdown"
                     type="section">System Shutdown</xref>
                 </li>
               </ul></li>
             <li>
               <xref
-                href="operations.dita#topic4410/setting-the-time-zone"
+                href="operations.dita#server_operations/setting-the-time-zone"
                 type="section">Setting the Time Zone</xref>
             </li>
             <li>
               <xref
-                href="operations.dita#topic4410/resetting-the-vm"
+                href="operations.dita#server_operations/resetting-the-vm"
                 type="section">Resetting the VM</xref>
             </li>
             <li>
               <xref
-                href="operations.dita#topic4410/monitoring-the-application-lifecycle-service-server"
+                href="operations.dita#server_operations/monitoring-the-application-lifecycle-service-server"
                 type="section">Monitoring The Application Lifecycle Service Server</xref>
               <ul>
                 <li>
                   <xref
-                    href="operations.dita#topic4410/management-console"
+                    href="operations.dita#server_operations/management-console"
                     type="section">Management Console</xref>
                 </li>
        
                 <li>
                   <xref
-                    href="operations.dita#topic4410/creating-an-admin-user"
+                    href="operations.dita#server_operations/creating-an-admin-user"
                     type="section">Creating an Admin User</xref>
                 </li>
                 <li>
                   <xref
-                    href="operations.dita#topic4410/system-monitoring-with-nagios"
+                    href="operations.dita#server_operations/system-monitoring-with-nagios"
                     type="section">System Monitoring with Nagios</xref>
                 </li>
               </ul></li>
             <li>
               <xref
-                href="operations.dita#topic4410/server-backup-import-and-export"
+                href="operations.dita#server_operations/server-backup-import-and-export"
                 type="section">Server Backup, Import, and Export</xref>
             </li>
           </ul></li>
