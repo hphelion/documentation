@@ -173,6 +173,9 @@
         <topicref href="2.0/codeEngine/engine_initial_configuration.dita" toc="no"/>
         <topicref href="2.0/codeEngine/engine_troubleshooting.dita" navtitle="Troubleshooting"
           locktitle="yes"/>
+        <topicref href="2.0/codeEngine/engine_logging.dita" navtitle="Log Files" locktitle="yes"/>
+        <topicref href="2.0/codeEngine/engine_testing.dita" navtitle="Test Frameworks"
+          locktitle="yes"/>
         <topicref href="2.0/codeEngine/engine_users_guide.dita" navtitle="User's Guide"
           locktitle="yes" otherprops="user">
           <topicref href="2.0/codeEngine/engine_environment_create.dita"

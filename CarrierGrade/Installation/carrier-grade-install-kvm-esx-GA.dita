@@ -472,7 +472,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
         
         <section><title>Apply the Helion Dynamic Password Patch</title>The HPE Helion OpenStack cloud
       deployment creates a default password to log into the Helion interface. You can deploy a patch
-      to configure the installer to generate a dynamic user name and password for the Helion
+      to configure the installer to generate a dynamic password for the Helion
       interface. The user name can password can be retrieved from a configuration files. <p>For more
         information, see the README in the download or <xref
           href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
