@@ -55,7 +55,7 @@
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
           navtitle="Ironic Service Overview" locktitle="yes"/>
         <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          navtitle="Horizon Service Overview" locktitle="yes" otherprops="overviewhor">
+          navtitle="Horizon Service Overview" locktitle="yes" otherprops="overviewhoriz">
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
