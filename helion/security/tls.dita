@@ -18,6 +18,25 @@
         about certificates. It will not match your IP address, but you can ignore the warnings.
         Later, when you require a trusted certificate, you can add your own certificate and
         redeploy.</p> 
+      
+      <p>
+        Keystone currently doesn't support updating an endpoint. Therefore the public 
+        endpoint cannot be changed after the initial deployment
+        
+        This has the following implications:</p>
+        <ul>
+       <li>TLS cannot be turned on/off after the initial deployment</li>
+        <li>The public endpoint ip address or FQDN cannot be changed after deployment.</li></ul>
+      <p>Therefore, you will have to make one of the choices below. When logging into the lifecycle
+        manager to run the configuration processor and the requisite playbooks, you must decide if
+        you want to configure TLS or disable it and take the action appropriate to your choice:</p>
+        
+      <ul>
+        <li>Comment out the "external-name:" line in /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are used)
+        </li><li>Assign a name to "external-name:" line in /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is used)
+        </li><li>We recommend keeping TLS on by default as it cannot be changed. But if you want it disabled you need to change "tls-components" 
+          to "components" in network_groups.yml and comment out cert-file.</li></ul>
+      
       <!--<p>
         <note type="warning">Here we are configuring and installing a test certificate. It is
           recommended that you create and sign certifcates properly for a production environment.
@@ -28,25 +47,11 @@
             Production Environments</xref>.</note>
       </p>-->
     </section>
-    <section> When logging into the lifecycle manager to run the configuration processor and the
-      requisite playbooks, you must decide if you want to configure the external VIP with an FQDN or
-      just leave it as an IP address. This can't be changed after deployment. Therefore, you will
-      have to make one of the following changes:<ul id="ul_sdj_qfq_rt">
-        <li>Comment out the "external-name:" line in
-          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
-          used) </li>
-        <li>Assign a name to "external-name:" line in
-          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is
-          used)</li>
-      </ul>
-    </section>
-
     <section>
-      <title>Creating a self-signed certificate</title>
-      If you want to install a
-      self-signed certificate that meets the needs of  HPE Helion OpenStack and HPE Helion Development
-      Platform, follow these steps to create the cert, and then install it by following the
-      installation steps.<ol id="ol_wmt_wsp_tt">
+      <title>Creating a self-signed certificate</title> If you want to install a self-signed
+      certificate that meets the needs of HPE Helion OpenStack and HPE Helion Development Platform,
+      follow these steps to create the cert, and then install it by following the installation
+        steps.<ol id="ol_wmt_wsp_tt">
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
         -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
@@ -63,10 +68,10 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
           Note that the domain name in the certificate signing request in step 1 and the DNS entry
           in step 2 must match, although the domain do not have to exist. <p>In step 2 you need the
             same IP address listed for both the DNS and the IP entries. The IP address is what is
-            used by HPE Helion Development Platform and the DNS is used by HPE Helion OpenStack. Note
-            that is you examine the output certificate, the issuer will match the subject because
-            the cert is self-signed. The requirement for the DNS entry stems from a low-level Python
-            bug.</p>
+            used by HPE Helion Development Platform and the DNS is used by HPE Helion OpenStack.
+            Note that is you examine the output certificate, the issuer will match the subject
+            because the cert is self-signed. The requirement for the DNS entry stems from a
+            low-level Python bug.</p>
         </li>
       </ol>
       <!--Follow these steps to
