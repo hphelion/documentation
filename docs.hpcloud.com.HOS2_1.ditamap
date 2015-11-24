@@ -17,6 +17,8 @@
  </topicmeta>
  <topicref href="helion/index.dita">
   <!-- BEGIN - TOP LEVEL -->
+  <topicref href="helion/documentation_updates_2_1.dita" navtitle="2.1 Changelog"
+   locktitle="yes"/>
   <topicref href="helion/troubleshooting/troubleshooting_logging.dita" navtitle="Troubleshooting the Centralized Logging Service"
    locktitle="yes"/>
  </topicref>

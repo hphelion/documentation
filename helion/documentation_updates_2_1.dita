@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_g53_wvt_c5">
+  <title>2.1 Changelog</title>
+  <body>
+    <p>
+      <table frame="all" rowsep="1" colsep="1" id="table_el3_xvt_c5">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>Topic</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Centralized Logging Troubleshooting</entry>
+              <entry><ul>
+                <li>Moved troubleshooting section from Centralized Logging doc to separate
+                  Troubleshooting Centralized Logging page</li>
+                <li>Added 2.1 note about Kibana troubleshooting</li>
+              </ul></entry>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </p>
+  </body>
+</topic>
