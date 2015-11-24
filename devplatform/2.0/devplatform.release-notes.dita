@@ -100,7 +100,7 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
           <dd>Vertica clusters can be accessed via credentials obtained by enabling root, either Horizon or the Trove CLI. Single node   
             Vertica instances must have root enabled through the Trove CLI, as this action is not  in Horizon. </dd>  
           <dd>Example:  
-            <codeblock>trove root-enable &lt;instance&gt;</codeblock></dd>  
+            <codeblock>trove root-enable &lt;instance&gt; </codeblock></dd>  
         </dlentry>  
         <dlentry><dt>Searching for log entries returns API KEY ERROR: Missing</dt>  
           <dd>The current Vertica Management Console release has a known issue where ng to search  
