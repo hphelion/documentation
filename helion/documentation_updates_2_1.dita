@@ -20,13 +20,14 @@
               <entry><ul>
                 <li>Moved troubleshooting section from Centralized Logging doc to separate
                   Troubleshooting Centralized Logging page</li>
-                <li>Added 2.1 note about Kibana troubleshooting</li>
+                <li>Added 2.1 note about Kibana troubleshooting (DOCS-2134)</li>
               </ul></entry>
             </row>
             <row>
               <entry>Input Model</entry>
               <entry><ul>
-                <li>Edited <xref href="#input_model/co_nicmappings">NIC Mappings</xref> section to adding details about multi-port</li>
+                <li>Edited <xref href="#input_model/co_nicmappings">NIC Mappings</xref> section to adding details about multi-port (DOCS-2194)</li>
+                <li>Edited <xref href="#input_model/co_volumegroups">Volume Groups</xref> section to add details about mode bits (DOCS-2032)</li>
               </ul></entry>
             </row>
             <row>
