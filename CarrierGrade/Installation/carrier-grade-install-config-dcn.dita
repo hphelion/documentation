@@ -76,7 +76,7 @@ Password: cghelion</codeblock>
         gateway and configure the <codeph>eth0</codeph> port.</p>
       <p><i>For more information on performing this task, refer to the latest DCN documentation
         </i></p>
-      <ol>
+      <ol id="onboard-gateway">      <!--Section used in CGH-2-Config-Multi-DC.dita -->
         <li><xref href="../AdminGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">Log into the
             VSD dashboard</xref>.</li>
         <li>Click <b>Platform Configuration</b>, then the <b>Infrastructure</b> tab, then click the
@@ -116,7 +116,8 @@ Hide for alpha
         <li>Select an organization and click <b>Select</b>. Members of this group will be able to
           use the gateway.</li>
       </ol></section>
-    <section>
+    <section id="subnet-and-FIP">
+      <!--Section used in CGH-2-Config-Multi-DC.dita -->
       <title>Create a subnet for the floating IP</title>
       <p>Use the following steps to create a subnet for the floating IP.</p>
       <p><b>Note:</b> You will need the floating IP subnet name during the installation when you
@@ -139,8 +140,7 @@ Hide for alpha
     </section>
     <section>
       <title>Run a cURL script to enable floating IPs on the VRS-G</title>
-    </section>
-    <section>
+    
       <p>This script creates the uplink on the VRS-G, which is a requirement for the EXT-NET to
         function with HP Helion OpenStack Carrier Grade. </p>
       <ol id="ol_ks4_zhj_1t">
