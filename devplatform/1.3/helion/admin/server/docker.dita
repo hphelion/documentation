@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7767">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="dockerfence">
 <title>HPE Helion 1.3 Development Platform: Docker and Fence</title> 
 <titlealts>
 <searchtitle>HPE Helion 1.3 Development Platform: Docker and Fence</searchtitle>
@@ -33,21 +33,21 @@
         href="../../user/deploy/languages/docker_apps.dita#topic_l4n_y3n_xs">deploying Docker
         apps</xref>.</p>
     <ul>
-      <li><xref type="section" href="#topic7767/appdeploy">Docker Apps and Deployment
+      <li><xref type="section" href="#dockerfence/appdeploy">Docker Apps and Deployment
           Permission</xref></li>
-      <li><xref type="section" href="#topic7767/storagelimits">Docker Image Storage Limits</xref></li>
-      <li><xref type="section" href="#topic7767/modifying-or-updating-the-container-image">Modifying
+      <li><xref type="section" href="#dockerfence/storagelimits">Docker Image Storage Limits</xref></li>
+      <li><xref type="section" href="#dockerfence/modifying-or-updating-the-container-image">Modifying
           or Updating the Container Image</xref>
       </li>
       <li>
-        <xref type="section" href="#topic7767/admin-hooks">Admin Hooks</xref>
+        <xref type="section" href="#dockerfence/admin-hooks">Admin Hooks</xref>
       </li>
       <li>
-        <xref type="section" href="#topic7767/creating-a-docker-registry">Creating a Docker
+        <xref type="section" href="#dockerfence/creating-a-docker-registry">Creating a Docker
           Registry</xref>
       </li>
       <li>
-        <xref type="section" href="#topic7767/docker-privileged-containers">Privileged
+        <xref type="section" href="#dockerfence/docker-privileged-containers">Privileged
           Containers</xref>
       </li>
     </ul>
@@ -185,7 +185,7 @@ sudo /etc/init.d/newrelic-sysmond start</codeblock><note>
         variables in <codeph>helion ssh</codeph> sessions, in the application container's crontab,
         and in PHP applications using the Legacy buildpack. </note><p>The Dockerfile for creating
         the image (see <xref type="section"
-          href="#topic7767/modifying-or-updating-the-container-image">Modifying or Updating the
+          href="#dockerfence/modifying-or-updating-the-container-image">Modifying or Updating the
           Container Image</xref> ) would use the ADD directive to put a local <i>hooks</i> directory
         in the Docker image's <i>/etc/helion/</i>
         directory:</p><codeblock>FROM helion/stack-alsek

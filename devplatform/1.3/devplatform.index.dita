@@ -29,7 +29,7 @@
 <section id="platform-overview"> <title>Platform Overview</title> 
 <p>The Helion Development Platform is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>
-  <li>It supports <xref href="devplatform.appdev.dita#topic2457/java" >Java</xref>, <xref href="devplatform.appdev.dita#topic2457/node" >Node</xref>, <xref href="devplatform.appdev.dita#topic2457/PHP" type="section">PHP</xref>, and other language runtimes.</li>
+  <li>It supports <xref href="devplatform.appdev.dita#devplatform_resources/java" >Java</xref>, <xref href="devplatform.appdev.dita#devplatform_resources/node" >Node</xref>, <xref href="devplatform.appdev.dita#devplatform_resources/PHP" type="section">PHP</xref>, and other language runtimes.</li>
 <li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>
 <li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
 <li>It provides auto-scaling and application log drains.</li>
