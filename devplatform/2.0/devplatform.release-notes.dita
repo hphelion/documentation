@@ -151,7 +151,7 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
           <dd>UTM (Unified Threat Management) or Gateway firewalls may interfere with upgrades,
             patches, or normal application staging if they are configured to inspect all HTTP(S)
             traffic between ALS nodes and upstream package repositories. <xref
-              href="helion/admin/cluster/cluster_index.dita#topic18326/utm">See the full
+              href="helion/admin/cluster/cluster_index.dita#admin_cluster_index/utm">See the full
               documentation</xref> for a detailed explanation and suggested solutions.</dd>
         </dlentry>
         <dlentry>
