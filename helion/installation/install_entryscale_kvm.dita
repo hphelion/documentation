@@ -5,16 +5,17 @@
     with KVM</title>
   <body>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="http://docs.hpcloud.com/helion/installation/install_entryscale_kvm.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+        href="http://docs.hpcloud.com/helion/installation/install_entryscale_kvm.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
     <section id="about">
-      <p>This page describes the common installation steps that are required for
-        each of the HPE Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on
-        the Compute nodes. This includes the following example configurations:</p>
+      <p>This page describes the common installation steps that are required for each of the HPE
+        Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on the Compute
+        nodes. This includes the following example configurations:</p>
       <ul>
-          <li>Entry-scale KVM with VSA model</li>
-          <li>Entry-scale KVM with Ceph model</li>
-        </ul>
+        <li>Entry-scale KVM with VSA model</li>
+        <li>Entry-scale KVM with Ceph model</li>
+      </ul>
       <p>The different phases of the installation:</p>
       <ul>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/setup_deployer">Set up the
@@ -101,8 +102,8 @@
         the steps. Run then as the user you just created (or <codeph>stack</codeph> if you left the
         default of "stack").</note>
       <ol>
-        <li>Log into your lifecycle manager as the user you created and mount the install media
-          at <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
+        <li>Log into your lifecycle manager as the user you created and mount the install media at
+            <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
           another file transfer method to transfer the install media to the lifecycle manager before
           completing this step. Here is the command to mount the media:
           <codeblock>sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</codeblock></li>
@@ -166,18 +167,38 @@ helion/tech-preview            Directory contains the config input files of the 
                   href="configure_ceph.dita#config_ceph/config_files">Configuring Your Ceph
                   Environment Input Files</xref> for details.</p></li>
           </ol></li>
-        <li>[WORKAROUND] - There is currently an issue with the Elasticsearch name that requires that you change it in the logging configuration file before continuing in the installation. The steps to do this are:
-        <ol>
-          <li>Edit the file below:
-            <codeblock>~/helion/hos/ansible/roles/logging-common/defaults/main.yml</codeblock></li>
-          <li>Edit the default value for the <codeph>elasticsearch_cluster_name</codeph> to a value other than <codeph>elasticsearch</codeph>. This entry will be under the Elasticsearch defaults section, which looks like the example below. Change the bolded value.
-          <codeblock># Elasticsearch defaults
+        <li>If your HPE Helion OpenStack environment is behind a firewall, you need to set the
+          Sherpa proxy shell variables so that the Sherpa service can communicate out to the Helion
+          Download Network (HDN). <ol>
+            <li>Edit the sherpa.conf.j2 file in the location below:
+              <codeblock>~/helion/my_cloud/config/sherpa/sherpa.conf.j2</codeblock></li>
+            <li>Verify that the <codeph>http_proxy</codeph> and <codeph>https_proxy</codeph> values
+              are set appropriately for your environment. The text in the file will look like this:
+              <codeblock>##############################################################
+# Proxy settings must be present
+# but can be empty string ('') if no proxy needed
+##############################################################
+http_proxy = '{{ sherpa_http_proxy }}'
+https_proxy = '{{ sherpa_https_proxy }}'
+no_proxy =  '{{ sherpa_no_proxy }}'
+##############################################################</codeblock></li>
+          </ol></li>
+        <li>[WORKAROUND] - There is currently an issue with the Elasticsearch name that requires
+          that you change it in the logging configuration file before continuing in the
+          installation. The steps to do this are: <ol>
+            <li>Edit the file below:
+              <codeblock>~/helion/hos/ansible/roles/logging-common/defaults/main.yml</codeblock></li>
+            <li>Edit the default value for the <codeph>elasticsearch_cluster_name</codeph> to a
+              value other than <codeph>elasticsearch</codeph>. This entry will be under the
+              Elasticsearch defaults section, which looks like the example below. Change the bolded
+              value.
+              <codeblock># Elasticsearch defaults
 ...
 elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>elasticsearch</b>') }}"</codeblock></li>
-        </ol></li>
-          <li>[OPTIONAL] - You can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
-            passwords. This script uses OpenSSL.
-          <ol>
+          </ol></li>
+
+        <li>[OPTIONAL] - You can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
+          passwords. This script uses OpenSSL. <ol>
             <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
             <li>Put the encryption key into the following environment variable:
               <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
@@ -186,19 +207,18 @@ elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name'
             <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
               in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
               remembering to enclose it in quotes.</li>
-            <li>Repeat the above for each server.
-          
-          <note>Before you run any playbooks, remember that you need to export the encryption key in
-            the following environment variable: <codeph>export
-              HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
-      </ol></li>
-       <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
-        follows: <codeblock>cd ~/helion/hos/ansible
+            <li>Repeat the above for each server. <note>Before you run any playbooks, remember that
+                you need to export the encryption key in the following environment variable:
+                  <codeph>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption
+              key></codeph></note></li>
+          </ol></li>
+        <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
+          follows:
+          <codeblock>cd ~/helion/hos/ansible
 git add -A
 git commit -m "My config or other commit message"</codeblock></li>
       </ol>
-      
-        <p><note type="important">This step needs to be repeated any time you make changes to your
+      <p><note type="important">This step needs to be repeated any time you make changes to your
           configuration files before you move onto the following steps. See <xref
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
@@ -242,10 +262,10 @@ git commit -m "My config or other commit message"</codeblock></li>
         live node by accident.</p>
       <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
         password that will be encrypted and stored in Cobbler, which is associated with the user
-        running the command on the lifecycle manager, that you will use to log in to the nodes via their
-        consoles after install. The username is the same as the user set up in the initial dialogue
-        when installing the lifecycle manager from the iso, and is the same user that is running the
-        cobbler-deploy play.</p>
+        running the command on the lifecycle manager, that you will use to log in to the nodes via
+        their consoles after install. The username is the same as the user set up in the initial
+        dialogue when installing the lifecycle manager from the iso, and is the same user that is
+        running the cobbler-deploy play.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
@@ -322,8 +342,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           you are using fresh machines this step may not be necessary.
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock></li>
-        <li>Run the <codeph>site.yml</codeph> playbook below:
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible 
+        <li>Run the <codeph>site.yml</codeph> playbook below: <codeblock>cd ~/scratch/ansible/next/hos/ansible 
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           <p>If you have used an encryption password when running the configuration processor use
             the command below and enter the encryption password when prompted:

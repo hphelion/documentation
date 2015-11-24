@@ -19,17 +19,36 @@
     <section id="prereqs"><title>Prerequisites</title>
       <p>If the HPE Helion OpenStack environment is behind a firewall, you need to set the Sherpa
         proxy shell variables so that the Sherpa service can communicate out to the Helion Download
-        Network (HDN).</p>
-      <p>On each of your controller nodes, perform these steps to set the proxies:</p>
+        Network (HDN). If you did not already set these values during the installation process, here
+        is how you can change these post-installation:</p>
+      <p>On your lifecycle manager, perform these steps to set the proxies:</p>
       <ol>
-        <li>Edit the sherpa.conf file on each controller node in the following location:
-          <codeblock>/etc/sherpa/sherpa.conf</codeblock></li>
-        <li>Verify that the <codeph>http_proxy</codeph> and <codeph>https_proxy</codeph> is set
-          appropriately for your environment.
-          <codeblock>http_proxy=http://myproxy.example.com 
-https_proxy=https://myproxy.example.com</codeblock></li>
-        <li>After editing the file, restart the Apache service:
-          <codeblock>sudo service apache2 restart</codeblock></li>
+        <li>Edit the sherpa.conf.j2 file in the location below:
+          <codeblock>~/helion/my_cloud/config/sherpa/sherpa.conf.j2</codeblock></li>
+        <li>Verify that the <codeph>http_proxy</codeph> and <codeph>https_proxy</codeph> values are
+          set appropriately for your environment. The text in the file will look like this:
+          <codeblock>##############################################################
+# Proxy settings must be present
+# but can be empty string ('') if no proxy needed
+##############################################################
+http_proxy = '{{ sherpa_http_proxy }}'
+https_proxy = '{{ sherpa_https_proxy }}'
+no_proxy =  '{{ sherpa_no_proxy }}'
+##############################################################</codeblock></li>
+        <li>Commit your configuration to the <xref href="../installation/using_git.dita">local git
+            repo</xref>, as follows:
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Use the playbook below to create a deployment directory:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Commit your changes to Sherpa with this playbook:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts sherpa-reconfigurure.yml</codeblock></li>
       </ol>
     </section>
 
