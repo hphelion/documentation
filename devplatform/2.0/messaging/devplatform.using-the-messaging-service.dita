@@ -14,7 +14,7 @@
   <p>For information on managing the Messaging Broker Service via the Python client, see <xref
         href="https://github.com/openstack/python-cueclient" format="html" scope="external"
         >openstack/python-cueclient on GitHub</xref>.</p>
-<p>The following topics explain how to create and manage a instance:</p>
+<p>The following topics explain how to create and manage an instance:</p>
 <ul>
 <li>
 <xref type="section" href="#using_messaging/create">Creating a cluster</xref> </li>
