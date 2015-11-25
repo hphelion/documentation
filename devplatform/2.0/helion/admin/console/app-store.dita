@@ -64,7 +64,7 @@ apps:
   src: https://github.com/Helion-Apps/bugzilla.git
   info: https://github.com/Helion-Apps/bugzilla.git#readme
   icon: https://get.helion.com/store/icon/bugzilla.png
-  mem: 256
+  memory: 256
 
 - name: Django CMS
   id: django-cms
@@ -77,7 +77,7 @@ apps:
   src: https://github.com/Helion-Apps/django-cms.git
   info: https://github.com/Helion-Apps/django-cms.git#readme
   icon: https://get.helion.com/store/icon/django-cms.png
-  mem: 128
+  memory: 128
 
 - name: Node Chat
   id: node-chat
@@ -86,7 +86,7 @@ apps:
   runtime: node
   commit: master
   icon: https://get.helion.com/store/icon/chat.png
-  mem: 64
+  memory: 64
   license: MIT
   src: https://github.com/Helion-Apps/node-chat.git
   info: https://github.com/Helion-Apps/node-chat.git#readme</codeblock>

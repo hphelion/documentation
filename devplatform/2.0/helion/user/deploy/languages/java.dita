@@ -62,13 +62,12 @@ demonstrates a simple Java application using a MySQL service.</p>
 Management Console) to override Application Lifecycle Service defaults.</p>
       <note type="restriction"> CATALINA_OPTS settings cannot be modified without restaging. Applications must be
         re-pushed with new settings to apply changes.</note>
-<p>Application Lifecycle Service sets the CATALINA_OPTS environment variable for applications
-using Tomcat automatically, based on the <codeph>mem:</codeph>
-value specified for application instances. Application Lifecycle Service will always leave at
-least 64MB for the heap, but will otherwise reserves up to 96MB for
-overhead, that is for the code of the JVM itself, for additional
-libraries loaded via JNI, for additional processes to run in the
-background, and for the JVM permanent pool.</p>
+<p>Application Lifecycle Service sets the CATALINA_OPTS environment variable for applications using
+        Tomcat automatically, based on the <codeph>memory:</codeph> value specified for application
+        instances. Application Lifecycle Service will always leave at least 64MB for the heap, but
+        will otherwise reserves up to 96MB for overhead, that is for the code of the JVM itself, for
+        additional libraries loaded via JNI, for additional processes to run in the background, and
+        for the JVM permanent pool.</p>
 <p>This means, for example, a 128MB application will end up with 64MB for
 the heap and 64MB for overhead, a 160MB application will still have 64MB
 for the heap but 96MB for overhead, and a 512MB application will get a
