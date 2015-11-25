@@ -180,8 +180,6 @@
           locktitle="yes" otherprops="user">
           <topicref href="2.0/codeEngine/engine_environment_create.dita"
             navtitle="Create a New Environment" locktitle="yes"/>
-          <topicref href="2.0/codeEngine/engine_edit_environment.dita"
-            navtitle="Change an Existing Environment" locktitle="yes" toc="no"/>
           <topicref href="2.0/codeEngine/engine_create_project.dita" navtitle="Create a New Project"
             locktitle="yes" otherprops="create">
             <topicref href="2.0/codeEngine/engine_hipchat_data.dita"
@@ -318,9 +316,6 @@
         navtitle="Manage a Cluster from the Command Line"/>
       <topicref href="2.0/messaging/cue_ops_loadBalancer.dita"
         navtitle="Accessing RabbitMQ via a Load Balancer"/>
-      <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
-        navtitle="Cue Reference Architecture"/>
-      <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"/>
     </topicref>
     <topicref href="2.0/devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops"
       otherprops="it-ops">
