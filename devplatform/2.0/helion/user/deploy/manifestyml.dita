@@ -354,68 +354,72 @@ app-dir: target</codeblock>
 <p>To launch multiple applications from multiple sub-directories use a <xref href="#topic20922"
           format="dita"><i>manifest.yml</i></xref> file.</p>
 </section>
-<section id="services"> <title>services:</title>
-<p>A list of services to create and bind to the application. Each sub key
-is the name of the service to create / bind, and the associated value is
-the type of the new service. If multiple services of the same type are
-needed, list them on separate lines as in the example below.</p>
-<p>Use <codeph>helion services</codeph> for a complete list of
-available services. If not specified, the user may be prompted during
-<codeph>helion push</codeph>.</p>
-<p>Example:</p>
-<codeblock>  services:
-  customerdb: mysql
-  paymentsdb: mysql</codeblock>
-<p>The Application Lifecycle Service client supports <xref type="section" href="#topic20922/key-substitution">key
-substitution</xref> for service names,
-allowing you to create service names based on the specified application
-name. For example:</p>
-<codeblock>  services:
+<section id="services">
+      <title>services:</title>
+      <p>This key specifies a list of services to create and bind to an application. Each sub-key is
+        the name of the service to create or bind, and the associated value is the type of the new
+        service.</p>
+      <p>If you need to launch an application that must attach to an existing user-provided service
+        instance, specify only the name of a service.</p>
+      <note>If only the name of a service is specified in a <codeph>services:</codeph> block, ALS
+        will look for an existing service with the specified name instead of creating a new service
+        (which requires additional keys).</note>
+      <p>If multiple services of the same type are needed, list them on separate lines, for
+        example:</p>
+      <codeblock>services:
+  customerdb:mysql
+  paymentsdb:mysql</codeblock>
+      <p>If the key is not specified, the user may be prompted for a value during <codeph>helion
+          push</codeph>.</p>
+      <note>For a complete list of available services, use the <codeph>helion services</codeph>
+        command. For more information on how services are bound to applications, see the <xref
+          href="../services/data-services.dita#user_data_services">Data Services</xref>
+        section.</note>
+      <p>To create service names based on the specified application name, you can use <xref
+          type="section" href="#topic20922/key-substitution">key substitution</xref>, for
+        example:</p>
+      <codeblock>services:
   ${name}-db: mysql</codeblock>
-  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/client-ref-management.dita#topic50918/command-push">helion push</xref> command, overriding
-the <b>name</b> value defined in <i>manifest.yml</i>. Use this technique when
-pushing multiple versions of the same application (using different
-names) if you want them to use separate databases. For example:</p>
-<codeblock>  name: sample
-
-framework:
-  type: node
-
+      <p>To push multiple versions of the same application (using different names) that will use
+        separate databases, you can specify the application name as a <xref type="section"
+          href="../../user/reference/client-ref-management.dita#topic50918/command-push">helion
+          push</xref> option, overriding the <codeph>name:</codeph> value defined in
+          <codeph>manifest.yml</codeph>, for example:</p>
+      <codeblock>name: sample
 services:
   ${name}-db: mysql</codeblock>
-<p>Using the name specified in <i>manifest.yml</i>, a data service is created to
-match that name:</p>
-<codeblock>  helion push -n
+      <p>A data service is created to match that name using the name specified in
+          <codeph>manifest.yml</codeph>:</p>
+      <codeblock>$ helion push -n
 Pushing application 'sample'...
-Framework:       node
-Runtime:         &lt;framework-specific default&gt;
-Application Url: sample.helion-pjw3.local
-Creating Application [sample]: OK
-Binding service [sample-db]: OK
+Runtime:         &lt;framework-specific default>
+Application Url:sample.helion-pjw3.local
+Creating Application [sample]:OK
+Binding service [sample-db]:OK
 ...
-Starting Application [sample]: ...OK</codeblock>
-<p>If you specify a new name for the application as an argument to
-<codeph>helion push</codeph>, a new service with a matching name
-is created rather than binding to the existing 'sample-db' service:</p>
-<codeblock>  helion push sample-2 -n
+Starting Application [sample]:...OK</codeblock>
+      <p>If you specify a new name for the application as a <xref type="section"
+          href="../../user/reference/client-ref-management.dita#topic50918/command-push">helion
+          push</xref> argument, a new service with a matching name is created rather than binding to
+        the existing <codeph>sample-db</codeph> service:</p>
+      <codeblock>$ helion push sample-2 -n
 Pushing application 'sample-2'...
-Framework:       node
-Runtime:         &lt;framework-specific default&gt;
+Runtime:         &lt;framework-specific default>
 Application Url: sample-2.helion-pjw3.local
 Creating Application [sample-2]: OK
 Binding service [sample-2-db]: OK
 ...
 Starting Application [sample-2]: ..OK
 
-helion apps
+$ helion apps
 
 +-------------+---+---------+------------------------------+-------------+
 | Application | # | Health  | URLS                         | Services    |
 +-------------+---+---------+------------------------------+-------------+
-| sample      | 1 | RUNNING | sample.helion-pjw3.local   | sample-db   |
-| sample-2    | 1 | RUNNING | sample-2.helion-pjw3.local | sample-2-db |
+| sample      | 1 | RUNNING | sample.helion-pjw3.local     | sample-db   |
+| sample-2    | 1 | RUNNING | sample-2.helion-pjw3.local   | sample-2-db |
 +-------------+---+---------+------------------------------+-------------+</codeblock>
-</section>
+    </section>
 <section id="requirements"> <title>Requirements</title>
 <p>Specifies required modules and allows the installation of additional operating system
         packages.</p>
