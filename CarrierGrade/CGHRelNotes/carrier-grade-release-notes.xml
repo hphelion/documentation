@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic6108">
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Release Notes</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p>Thank you for your interest in HPE Helion OpenStack This document provides an overview of
+            the features contained within HPE Helion OpenStack version 1.1.1, including known issues
+            and workarounds, and where to find further information on the product release.</p>
+        <p>For more information on using HP Helion OpenStack Carrier Grade, see the <xref
+                href="../Installation/carrier-grade-install-overview.dita#topic1925">HP Helion
+                OpenStack Carrier Grade Installation Guide</xref>, the <xref
+                href="../carrier-grade-administration.dita#topic916">HP Helion OpenStack Carrier
+                Grade Administrator Guide</xref> and the <xref
+                href="../OperationsGuide/CGH-2-User-Overview.dita#jow1404333560080">HP Helion
+                OpenStack Operations Guide</xref>. For information on using the HP Helion OpenStack
+            Carrier Grade Developer API, including API definitions and usage descriptions, see the
+                <xref href="../API/carrier-grade-api.dita#topic15959">HP Helion OpenStack Carrier
+                Grade API and SDK Reference</xref>.</p>
+        <section>See:<ul id="ul_z23_gdw_c5">
+                <li><xref href="#topic6108/changes" format="dita"/></li>
+                <li><xref href="#topic6108/usage" format="dita"/></li>
+                <li><xref href="#topic6108/problems" format="dita"/></li>
+            </ul></section>
+        <section id="changes">
+            <title>Changes in this release</title>
+            <p>The following enhancements were added for the HP Helion OpenStack Carrier Grade 2.0
+                release:</p>
+            <ul id="ul_ccj_3wm_vt">
+                <li>Ironic Baremetal Region</li>
+                <li>Support for Unbonded or Bonded NIC</li>
+                <li>Support for Multiple NIC VMs</li>
+            </ul>
+            <p>The following enhancements were added for the HP Helion OpenStack Carrier Grade 2.0
+                Alpha release:</p>
+            <ul id="ul_dcj_3wm_vt">
+                <li>Support for ESX </li>
+                <li>
+                    <p>Virtual machine instantiation is enhanced to support:</p>
+                    <ul id="ul_ecj_3wm_vt">
+                        <li>
+                            <p>CPU pinning</p>
+                        </li>
+                        <li>
+                            <p>CPU up/down scaling</p>
+                        </li>
+                        <li>
+                            <p>NUMA node awareness</p>
+                        </li>
+                        <li>
+                            <p>Multi-NUMA support</p>
+                        </li>
+                        <li>
+                            <p>Dedicated and configurable 2M and 1G huge pages</p>
+                        </li>
+                        <li>
+                            <p>VM local storage support</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>To use shared VCPUs, a shared physical CPU must be designated. For more
+                        information, see the <cite>HP Helion OpenStack Carrier Grade Administration
+                            Guide: Designating Shared Physical CPUs on Compute Host</cite>.</p>
+                </li>
+                <li>
+                    <p>Extra-specification commands are revised for improved OpenStack
+                        compatibility:</p>
+                    <ul id="ul_fcj_3wm_vt">
+                        <li>
+                            <p>Custom <cmdname>nova flavor-create</cmdname> options are replaced by
+                                    <b>nova flavor-key</b> options as follows:</p>
+                            <simpletable id="simpletable_gcj_3wm_vt">
+                                <sthead>
+                                    <stentry>
+                                        <p>nova flavor-create (removed)</p>
+                                    </stentry>
+                                    <stentry>
+                                        <p>nova flavor-key (added)</p>
+                                    </stentry>
+                                </sthead>
+                                <strow>
+                                    <stentry>
+                                        <p>--vcpu-model</p>
+                                    </stentry>
+                                    <stentry>
+                                        <p>hw:cpu_model</p>
+                                    </stentry>
+                                </strow>
+                                <strow>
+                                    <stentry>
+                                        <p>--dedicated-cpus &lt;true | false&gt;</p>
+                                    </stentry>
+                                    <stentry>
+                                        <p>hw:cpu-model &lt;dedicated | shared&gt;</p>
+                                    </stentry>
+                                </strow>
+                                <strow>
+                                    <stentry>
+                                        <p>--guest-heartbeat</p>
+                                    </stentry>
+                                    <stentry>
+                                        <p>sw:wrs:guest-heartbeat</p>
+                                    </stentry>
+                                </strow>
+                                <strow>
+                                    <stentry>
+                                        <p>--processor-node &lt;host-numa-node #&gt;</p>
+                                    </stentry>
+                                    <stentry>
+                                        <p>hw:numa_node.&lt;guest-numa-node-#&gt; =
+                                            &lt;host-numa-node-#&gt;</p>
+                                    </stentry>
+                                </strow>
+                            </simpletable>
+                        </li>
+                        <li>
+                            <p>HP Helion OpenStack Carrier Grade-specific options are identified
+                                using the string <b>wrs</b>:</p>
+                            <ul id="ul_hcj_3wm_vt">
+                                <li>
+                                    <p>hw:wrs:min_vcpus</p>
+                                </li>
+                                <li>
+                                    <p>hw:wrs:shared_vcpu</p>
+                                </li>
+                                <li>
+                                    <p>hw:wrs:vcpu:scheduler</p>
+                                </li>
+                                <li>
+                                    <p>sw:wrs:guest-heartbeat</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Networking capabilities are enhanced to support:</p>
+                    <ul id="ul_icj_3wm_vt">
+                        <li>
+                            <p>Consolidated interfaces for OAM, management, infrastructure, and data
+                                networks</p>
+                        </li>
+                        <li>
+                            <p>Accelerated virtual routing</p>
+                        </li>
+                        <li>
+                            <p>Distributed virtual routing</p>
+                        </li>
+                        <li>
+                            <p>VXLAN networking</p>
+                        </li>
+                        <li>
+                            <p>PCI Pass-through and SR-IOV support</p>
+                        </li>
+                        <li>
+                            <p>Mellanox CX-3 NICs</p>
+                        </li>
+                    </ul>
+                    <note>
+                        <p>The syntax and GUI controls for adding and modifying interfaces are
+                            revised substantially to accommodate logical interfaces and interface
+                            consolidation.</p>
+                    </note>
+                </li>
+                <li>
+                    <p>Management facilities are enhanced for:</p>
+                    <ul id="ul_jcj_3wm_vt">
+                        <li>
+                            <p>Historical alarms</p>
+                        </li>
+                        <li>
+                            <p>GUI-based patching</p>
+                        </li>
+                        <li>
+                            <p>REST API patching access</p>
+                        </li>
+                        <li>
+                            <p>Customer logs</p>
+                        </li>
+                        <li>
+                            <p>Support for externally managed board management network</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>REST API extensions are added for Nova, Neutron, Cinder, and Ceilometer.</p>
+                </li>
+                <li>
+                    <p>HTTPS support is added for REST API access</p>
+                </li>
+            </ul>
+        </section>
+        <section id="usage"><title>Usage Caveats</title>
+            <b>Backup files in cloud directories can cause installation to fail</b>
+            <p>During the HP Helion OpenStack Carrier Grade installation, you will need to create
+                and eddit a number of JSON configuration files. You should create backups of these
+                files, in the event you need to reinstall. Create the backups in a directory on
+                    <codeph>/root/</codeph> directory or on a remote system. Do not store backups of
+                the JSON files inside your cloud directory or any where inside the
+                    <codeph>/var/hlm/clouds</codeph> directory. </p><p>
+                <b>VMs reported as ACTIVE before compute nodes are recovered</b></p><p>During a
+                system recovery (for example, after a site power outage), when the controller is
+                available but before the compute nodes are available, the Nova service shows an
+                    <b>Active</b> status for VMs . Until the compute nodes are available, this
+                should be an <b>Error</b> status.</p><p>
+                <b>Controller swact raises spurious ssh security warning</b></p><p>On ssh login to
+                the active controller after a controller swact, a security warning appears, saying
+                the host identification has changed. This occurs because the ssh keys are not
+                currently synchronized across controllers. It can be disregarded. </p><p>
+                <b>Mismatch of interface settings in LAG group</b></p><p>If the interfaces in a LAG
+                group have mismatched speed or duplex settings, they are marked as incompatible by
+                the system. To prevent this, ensure both interfaces in a LAG group use the same
+                speed and duplex settings.</p><p>
+                <b>Storage or compute node must be re-added after MAC address change on management
+                    interface</b></p><p>For a compute or storage node, any change to the management
+                interface configuration that results in a change of MAC address requires the node to
+                be re-installed. The management interface MAC address can change if the physical
+                Ethernet port is changed (for example, from eth1 to eth2), or if a LAG configuration
+                is changed in a way that removes the Ethernet port associated with the LAG MAC
+                address (for example, if the interface originally used for PXE boot is removed or
+                replaced).</p><p>
+                <b>Instance cannot be launched with a specified port ID</b></p><p>Use of the
+                    <codeph>--port-id</codeph> parameter when launching an instance results in
+                command failure.</p><p>
+                <b>Live migration resets uptime</b></p><p>When a VM is live-migrated, the uptime
+                reported for the VM is reset to 0.</p><p>
+                <b>Interface network type cannot be changed directly from SRIOV to
+                data</b></p><p>For an interface using network type "SRIOV," the network type must be
+                changed to "none" before it can be changed to "data."</p><p>
+                <b>Glance image deletion does not release storage space</b></p><p>The storage space
+                used by a glance image is not released when the image is deleted. To free the space
+                for other uses, a glance-api restart is required.</p></section>
+        <section id="problems">
+            <title>Known Problems and Limitations</title>
+            <p><b>Use the CLI with the KVM Region </b></p>
+            <p>When working with the servers in the KVM region, do not use the Horizon interface.
+                Please use the <xref href="http://docs.openstack.org/cli-reference/content/"
+                    format="html" scope="external">OpenStack command-line interface CLI
+                    commands</xref>. </p>
+            <p><b>Potential Vulnerability with Intel® LAN Products with SR-IOV</b></p>
+            <p>In Intel® LAN products with SR-IOV capability, the potential exists where, under
+                specific conditions, Virtual Machines (VMs) can cause network congestion spreading,
+                a well-known side-effect of Ethernet flow control, which could affect other VMs as
+                well as the Hypervisor itself.</p>
+            <p>For more information, see the <xref
+                    href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00046&amp;languageid=en-fr"
+                    format="html" scope="external">bulletin in the Intel Security Center</xref>.</p>
+            <p id="passwprds"><b>Do not change OpenStack Service default passwords</b></p>
+            <p>Changing the default password for Swift, Glance, Cinder results in failing of their
+                respective cloud admin operations. </p>
+            <p><!--HCG-919--></p>
+            <p><b>Floating IP not working when SNAT is enabled</b></p>
+            <!-- CG-1012 -->
+            <p>When router is configured either centralized (server default) or distributed , it is
+                seen that Floating IP is not working.</p>
+            <p>To fix this issue, log onto <codeph>controller-0</codeph> for the KVM region and
+                execute the following command to disable SNAT on the router:
+                <codeblock>neutron router-update &lt;router-name> --external_gateway_info type=dict network_id=&lt;network-id>,enable_snat=False</codeblock></p>
+            <p><b>Unable to create new users through the Horizon UI</b></p>
+            <!-- CG-1042 -->
+            <p>After logging into the Horizon interface as an <codeph>admin</codeph> user, an error
+                occurs when you click <b>Create User</b> under the <b>Idenity</b> section.</p>
+            <p>You can create users with the OpenStack Keystone CLI commands. For axample:</p>
+            <codeblock>keystone user-create --name &lt;user-name> [--tenant &lt;tenant>][--pass [&lt;pass>]] [--email &lt;email>][--enabled &lt;true|false>]</codeblock>
+            <p>For more information, see <xref
+                    href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html"
+                    format="html" scope="external">OpenStack Command-Line Interface
+                Reference</xref>.</p>
+            <p><b>Unable to create new project through the Horizon Identity UI</b></p>
+            <!-- CG-1041 -->
+            <p>After logging into the Horizon interface as an <codeph>admin</codeph> user, an error
+                occurs when you click <b>Create Project</b> under the <b>Idenity</b> section.</p>
+            <p>You can create projects with the OpenStack Keystone CLI commands. For axample:</p>
+            <codeblock>keystone tenant-create --name &lt;tenant-name>
+                [--description &lt;tenant-description>]
+                [--enabled &lt;true|false>]</codeblock>
+            <p>For more information, see <xref
+                    href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html"
+                    format="html" scope="external">OpenStack Command-Line Interface
+                Reference</xref>.</p>
+            <p><b>Cinder Volume Backup is not working upon cloud deployment</b></p>
+            <!-- CG-410 -->
+            <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier
+                Grade 2.0 The <codeph>cinder.backup.driver</codeph> file is not present in
+                /etc/cinder/cinder.conf.</p>
+            <p><b>Bonding on the control interface is not supported</b></p>
+            <!-- CG-1052 -->
+            <p>Due to an issue in <codeph>config_region</codeph> script, bonding on the control
+                interface (hosts PXE, CLM, BLS, CAN networks) is not supported. A patch to support
+                this feature is actively being worked upon. </p>
+            <p>Because of this issue, the data interface on the compute node does support
+                balanced-xor bonding mode and Active/Standby modes. </p>
+            <p><b>StoreVirtual Cluster VIP not available on storage network. </b></p>
+            <p>If you cannot ping a specific virtual IP address on a StoreVirtual server, locate the
+                host with the associated IP and reboot that server.</p>
+            <p><!--  CG-1306 --></p>
+            <p><b>VXLAN not certified</b></p>
+            <p>The VXLAN feature has not been certified for HP Helion OpenStack Carrier Grade.</p>
+            <p>
+                <b>Cinder Block Storage snapshot feature not working </b></p>
+            <!-- CG-1043 -->
+            <p>For HP Helion OpenStack Carrier Grade cloud using 3PAR iSCSI configured as the Cinder
+                block storage service. The Cinder volume snapshot feature might not function
+                properly if following entries are enabled in the
+                    <codeph>/etc/cinder/cinder.conf</codeph> file. </p>
+            <codeblock>hp3par_snapshot_retention=48
+hp3par_snapshot_expiration=72</codeblock>
+            <p> To correct this issue, edit the <codeph>/etc/cinder/cinder.conf</codeph> file to
+                disable these entries by commenting-out the entries, as follows:</p>
+            <codeblock>#hp3par_snapshot_retention=48
+#hp3par_snapshot_expiration=72           </codeblock>
+            <p>The <codeph>hp3par_snapshot_retention</codeph> entry is the time in hours to retain a
+                snapshot.</p>
+            <p>The <codeph>hp3par_snapshot_expiration</codeph> entry is the time in hours when a
+                snapshot expires and is deleted. </p>
+            <p> LDAP conflict causing error with templates</p>
+            <p>When deploying templates, such as <codeph>VMAutoScaling.yaml</codeph> you might
+                receive a n error similar to the following:
+                <codeblock>Error: Can’t find role heat_stack_user </codeblock></p>
+            <p>The problem is due to an inconsistency in the HP Helion OpenStack Carrier Grade LDAP
+                implementation. To fix this problem, you should disable LDAP in Keystone and create
+                few roles as mentioned below. </p>
+            <p>How you fix the problem depends upon whether your he HP Helion OpenStack Carrier
+                Grade cloud is currently deployed.</p>
+            <p><b><i>If the cloud is not deployed</i></b></p>
+            <ol id="ol_lzl_ccw_c5">
+                <li>If the HP Helion OpenStack Carrier Grade cloud is not deployed, before deploying
+                    edit the <codeph>definition.json</codeph> file to set
+                        <codeph>ldap_enabled</codeph> to 0.
+                        <codeblock>"ldap_enabled": 0,</codeblock><p>This setting causes the cloud to
+                        deploy with SQL as Keystone backend instead of LDAP.</p></li>
+                <li>After you deploy the cloud, create the following roles in the Keystone by
+                    logging on to one of the controller nodes: <ol id="ol_mzl_ccw_c5">
+                        <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_owner </codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_user</codeblock></li>
+                    </ol></li>
+            </ol>
+            <p><i>
+                    <b>If the cloud is currently deployed</b></i></p>
+            <ol id="ol_nzl_ccw_c5">
+                <li>After the cloud is deployed, on each controller, modify the
+                        <codeph>/etc/keystone/keystone.conf</codeph> to comment-out the LDAP entry
+                    and uncomment SQL driver, as shown:
+                    <codeblock>    [identity]
+    driver = keystone.identity.backends.sql.Identity
+    #driver = keystone.identity.backends.ldap.Identity</codeblock></li>
+                <li>Create the following roles in the Keystone by logging on to one of the
+                    controller nodes: <ol id="ol_ozl_ccw_c5">
+                        <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_owner </codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_user </codeblock></li>
+                    </ol></li>
+            </ol>
+            <p><b>Non-shared services do not work from Horizon dashboard</b></p>
+            <ol id="ol_kzl_ccw_c5">
+                <li>Go to each controller node in the non-KVM region and replace
+                        <codeph>user.py</codeph> file in the following location:
+                        <codeph>/opt/stack/venvs/horizon/lib/python2.7/site-packages/openstack_auth/user.py</codeph></li>
+                <li>Restart apache2 service</li>
+            </ol>
+            <p><b>LAG for the KVM region control plane does not work</b></p>
+            <p>Link aggregation groups (LAG) are not supported in the KVM region control plane. This
+                is a known limitation that is scheduled to be corrected with the HP Helion OpenStack
+                Carrier Grade GA release. A LAG is a mechanism that allows multiple parallel
+                Ethernet network connections between two hosts to be used as a single logical
+                connection.</p>
+            <p><b>SR-IOV limitations</b></p>
+            <ul id="ul_pzl_ccw_c5">
+                <li>
+                    <p>SR-IOV is supported only for Intel 82599.</p>
+                </li>
+                <li>
+                    <p>The maximum number of VFs per NIC is 32.</p>
+                </li>
+                <li>
+                    <p>SR-IOV and PCI passthrough cannot both be used on the same provider
+                        network.</p>
+                </li>
+            </ul>
+            <p><b>Interface or interface consolidation limitations</b></p>
+            <ul id="ul_qzl_ccw_c5">
+                <li>
+                    <p>VLAN over bonded interface without an assigned network type is not
+                        supported.</p>
+                </li>
+                <li>
+                    <p>Addition of an infrastructure interface after installation is not
+                        functional.</p>
+                </li>
+                <li>
+                    <p>Consolidation of the infrastructure network over the OAM network is not
+                        supported.</p>
+                </li>
+                <li>
+                    <p>Stacked VLANs are not supported. On a consolidated management or
+                        infrastructure interface, a VLAN provider network can be associated directly
+                        with the untagged interface; however, flat or VXLAN provider networks must
+                        be associated with a consolidated VLAN data interface.</p>
+                </li>
+                <li>
+                    <p>Interface profiles cannot be created for <!--AE and -->VLAN interface types.
+                    </p>
+                </li>
+                <li>
+                    <p>The <cmdname>system host-if-modify-ports</cmdname> command is deprecated.
+                    </p>
+                </li>
+            </ul>
+            <p><b>Mellanox limitations</b></p>
+            <ul id="ul_rzl_ccw_c5">
+                <li>
+                    <p>For a Mellanox CX3, all ports must be used ether for data interfaces, or for
+                        non-data interfaces. It is not possible to use some ports for data
+                        interfaces and others for non-data interfaces on the same Mellanox CX3
+                        NIC.</p>
+                </li>
+                <li>
+                    <p>Jumbo frames are not supported on Mellanox NICs.</p>
+                </li>
+            </ul>
+            <p><b>Installation does not fully utilize disks greater than two terabytes</b></p>
+            <p>HP Helion OpenStack Carrier Grade in the KVM region can be installed on disks greater
+                than 2 TB, but only 2 TB of the disk is useable.</p>
+            <!-- Remove per Hrushi email 7-2
+        
+            <p><b>Cannot create Cinder LVM volumes using disks greater than two
+                terabytes</b></p>
+            <p>Using a disk greater than 2 TB for Cinder LVM results in a
+                    <filepath>config_controller</filepath> failure.</p>
+          -->
+            <p><b>Guest heartbeat and notification features are not fully validated.</b></p>
+            <p>Heartbeat and notification services for VMs are not fully validated. </p>
+            <p><b>Cinder API version generates a log warning</b></p>
+            <p>The V1 API for Cinder in use by this version of HP Helion OpenStack Carrier Grade is
+                deprecated, resulting in log warnings.</p>
+        </section>
+    </body>
+</topic>
