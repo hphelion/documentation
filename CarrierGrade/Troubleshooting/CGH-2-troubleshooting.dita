@@ -15,22 +15,51 @@
   </prolog>
   <body>
     <p>This topic describes all the known issues that you might encounter:</p>
-    
     <section>
-    <ul id="ul_xzh_nmc_mt">
-      <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
-          non-KVM region</xref></li>
-      <li><xref href="#topic10581/vm" format="dita"/></li>
-      <li><xref href="#topic10581/vrs" format="dita"/></li>
-      <li><xref href="#topic10581/backup" format="dita"/></li>
-    </ul>
+      <ul id="ul_xzh_nmc_mt">
+        <li/>
+        <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
+            non-KVM region</xref></li>
+        <li><xref href="#topic10581/vm" format="dita"/></li>
+        <li><xref href="#topic10581/vrs" format="dita"/></li>
+        <li><xref href="#topic10581/backup" format="dita"/></li>
+      </ul>
     </section>
-    <section><title>Installation fails at Ansible playbook</title>
+    <section>
+      <title>Baremetal Control plane RDBMS recovery after reboot</title>
+    </section>
+    <p><b>System Behavior/Message</b></p>
+    <p>The controller in the baremetal region of the Sacaramento deployment is designed to be a
+      single control plane. If the controller reboots, the MySQL database installed into the
+      controller crashes and the <codeph>mysql</codeph> service does not restart. </p>
+    <p><b>Resolution</b></p>
+    <p>Perform the following steps:</p>
+    <p>
+      <ol id="ol_avt_1r1_d5">
+        <li>Log in to the Baremetal controller after reboot.<pre>sudo su -</pre></li>
+        <li>Execute the following command to manually restart the <codeph>mysql</codeph>
+          service:<codeblock>/etc/init.d/mysql bootstrap-pxc</codeblock></li>
+      </ol>
+    </p>
+    <section><b>Validation</b><ol id="ol_c5j_qr1_d5">
+        <li>Execute the following command to check status of mysql service:
+          <codeblock>service mysql status</codeblock>This status should be <codeph>active</codeph>. </li>
+        <li>Log in to MySQL.  <pre>sudo su -</pre></li>
+        <li>Execute the following command to log into the MySQL database:
+          <codeblock>mysql</codeblock></li>
+        <li>Exit after logging in:<codeblock>exit</codeblock></li>
+        <li>Check that the previous data is intact: Example commands: <ul id="ol_d5j_qr1_d5">
+            <li><b>ironic node-list</b> should display the nodes registered before reboot</li>
+            <li><b>neutron net-list</b> should display the created networks</li>
+          </ul></li>
+      </ol></section>
+    <section id="install-fails">
+      <title>Installation fails at Ansible playbook</title>
       <p><b>System Behavior/Message</b></p>
       <p>The HP Helion OpenStack Carrier Grade installation fails during the HLM deployment (after
         executing the <codeph>ansible-playbook</codeph> command) with an error similar to the
         following.</p>
-<codeblock>
+      <codeblock>
 TASK: [HLM-CREATE-ON-BM | Add hlm to the in-memory inventory of playbook] ***** 
 ok: [192.168.122.1] 
 PLAY [hlm] 
@@ -44,15 +73,15 @@ PLAY RECAP ********************************************************************
 to retry, use: --limit @/root/setup_hlm_onBM.retry 
 192.168.122.1 : ok=18 changed=8 unreachable=0 failed=0 
 192.168.122.240 : ok=0 changed=0 unreachable=1 failed=0</codeblock>
-<p><b>Resolution</b></p>
-<p>Perform the following steps:</p>
-  <ol id="ol_fqn_wqn_c5">
-          <li>Execute the following command to determine if the HLM VM was created:
-            <codeblock>virsh list –all</codeblock>If the HLM VM appears in the output, delete the VM
-            using the following
-            commands:<codeblock>virsh destroy hlm
+      <p><b>Resolution</b></p>
+      <p>Perform the following steps:</p>
+      <ol id="ol_fqn_wqn_c5">
+        <li>Execute the following command to determine if the HLM VM was created:
+          <codeblock>virsh list –all</codeblock>If the HLM VM appears in the output, delete the VM
+          using the following
+          commands:<codeblock>virsh destroy hlm
 virsh undefined hlm</codeblock></li>
-          <li>Edit the <codeph>/root/infra-ansible-playbooks/setup_hlm_onBM.yml</codeph> file to
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/setup_hlm_onBM.yml</codeph> file to
           comment the second role. The file contains two roles: the first one creates the VM and the
           second one configures the VM.
           <codeblock>hosts: hlm_kvm_host
@@ -66,12 +95,10 @@ hosts: hlm
 #roles:
 HLM-CFG</codeblock></li>
         <li>Again, run the <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>.</li>
-        
         <li>After the command completes, execute the following command to obtain the vibr0 IP
           address for the HLM<codeblock>arp | grep aa</codeblock>Copy the IP address you get in the
           output. 192.168.122.XXX</li>
-          
-          <li>Edit the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to add the vibr0 IP
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to add the vibr0 IP
           address in the following manner:
           <codeblock>[vsd]
 10.10.10.10 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
@@ -81,7 +108,6 @@ HLM-CFG</codeblock></li>
         
 [hlm_kvm_host]
 192.168.122.1 #ansible_ssh_user=root ansible_ssh_pass=root</codeblock></li>
-
         <li>Edit the <codeph>setup_hlm_onBM.yml</codeph> to comment-out the first role and
           un-comment the second role.
           <codeblock>hosts: hlm_kvm_host
@@ -94,8 +120,9 @@ sudo: yes
 user: root
 roles:
 HLM-CFG</codeblock></li>
-      <li>Run <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>
-          <codeph>HCG-909</codeph></li></ol>
+        <li>Run <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>
+          <codeph>HCG-909</codeph></li>
+      </ol>
     </section>
     <section id="no-instance">
       <title><b>Unable to create an instance in the non-KVM region</b></title>
@@ -106,8 +133,7 @@ HLM-CFG</codeblock></li>
           href="../Installation/carrier-grade-install-esx-proxy.dita#topic10581">install the ESX
           compute proxy</xref>. <!--CG-1413--></p>
     </section>
-    
-    <section  id="vm">
+    <section id="vm">
       <title>VM fails to get private/Fixed IP address</title>
       <p>
         <b>System Behavior/Message</b>
@@ -120,7 +146,7 @@ HLM-CFG</codeblock></li>
       <p>
         <b>Resolution</b>
       </p>
-      <p>Make sure the Glance image has the correct  properties set. For example, check that the
+      <p>Make sure the Glance image has the correct properties set. For example, check that the
         adapter type is <codeph>ide</codeph>. Also, check if gateway and subnet values are correctly
         assigned to VRSvAPPs. </p>
     </section>
@@ -156,7 +182,8 @@ HLM-CFG</codeblock></li>
         </ol>
       </p>
     </section>
-    <section><title>See Also</title>
+    <section>
+      <title>See Also</title>
       <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref
           href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HP Helion
           OpenStack 1.1: Troubleshooting</xref>.</p>
