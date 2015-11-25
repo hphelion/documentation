@@ -15,9 +15,9 @@
     <topicref href="2.0/messaging/cue_ops_loadBalancer.dita"
       navtitle="Accessing RabbitMQ via a Load Balancer" locktitle="yes"/>
     <topicref href="2.0/messaging/cue_ops_referenceArchitecture.dita"
-      navtitle="Cue Reference Architecture" locktitle="yes"/>
+      navtitle="Cue Reference Architecture" locktitle="yes" toc="no"/>
     <topicref href="2.0/messaging/cue_ops_bestPractices.dita" navtitle="Cue Best Practices"
-      locktitle="yes"/>
+      locktitle="yes" toc="no"/>
     <topicref href="2.0/messaging/cue_ops_monitoring.dita" navtitle="Monitoring Messaging"
       locktitle="yes"/>
   </topicref>
