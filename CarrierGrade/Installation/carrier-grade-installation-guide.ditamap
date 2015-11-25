@@ -146,9 +146,6 @@
             <topicref href="carrier-grade-install-kvm-tahoe.dita" toc="no"/>
             <topicref href="carrier-grade-install-non-kvm.dita"
                 navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-only-json"
-                navtitle="Sample JSON File for Installing the KVM Deployment" locktitle="yes"
-                toc="no"/>
             <topicref href="carrier-grade-install-kvm-node-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-def-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-ansible-json.dita" toc="no"/>

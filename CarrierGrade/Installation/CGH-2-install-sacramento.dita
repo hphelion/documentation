@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Sacramento
-    KVM Region Cloud</title>
+    Non-KVM Region Cloud</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -185,20 +185,20 @@ Password: cghelion</codeblock>
               <tbody>
                 <row>
                   <entry>Pxe-mac-address</entry>
-                  <entry>The MAC address of the interface you want to PXE boot onto. This is not
-                    same as iLO* MAC address.</entry>
+                  <entry>Specify the MAC address of the interface you want to PXE boot onto. This is
+                    not same as iLO* MAC address.</entry>
                 </row>
                 <row>
                   <entry>pm_ip</entry>
-                  <entry>The power management IP address (iLO IP address).</entry>
+                  <entry>Specify the power management IP address (iLO IP address).</entry>
                 </row>
                 <row>
                   <entry>pm_user</entry>
-                  <entry>The power management user name (iLO user name).</entry>
+                  <entry>Create a power management user name (iLO user name).</entry>
                 </row>
                 <row>
                   <entry>pm_pass</entry>
-                  <entry>The power management password (iLO password).</entry>
+                  <entry>Create a power management password (iLO password).</entry>
                 </row>
                 <row>
                   <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
