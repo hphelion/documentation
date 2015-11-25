@@ -22,7 +22,7 @@
     <!-- BEGIN - TOP LEVEL -->
     <topicref href="helion/overview.dita"
       locktitle="yes">   	    
-      <topicmeta><navtitle><keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version"/></navtitle></topicmeta>
+      <topicmeta><navtitle><keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version"/> Overview</navtitle></topicmeta>
     </topicref>
     <topicref href="helion/kilo_features.dita" navtitle="OpenStack Kilo Features" locktitle="yes"/>
     <topicref href="helion/input_model.dita" navtitle="Input Model" locktitle="yes"/>
