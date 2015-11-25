@@ -13,5 +13,9 @@
       <othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
     </metadata>
   </prolog>
-  <body/>
+  <body>
+    <p>Refer to the table of contents on the left side of the screen for a link to the HP Helion
+      OpenStack Administrator Guide and links to several other administrative tasks you can
+      perform.</p>
+  </body>
 </topic>

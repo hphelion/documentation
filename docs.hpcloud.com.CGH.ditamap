@@ -96,6 +96,8 @@
         <topicref href="CarrierGrade/OperationsGuide/Backup/CGH-2--backup-configure.dita"
           navtitle="Configuring the Backup and Restore Location " locktitle="yes"/>
       </topicref>
+      <topicref href="CarrierGrade/OperationsGuide/Upgrade/CGH-2-Update-Patch.dita"
+        navtitle="Patching and Update Process" locktitle="yes"/>
       <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
         locktitle="yes"/>
       <topicref href="CarrierGrade/HLMCLI/CGH-2-hlm-cli.dita"
