@@ -161,7 +161,7 @@ stack@messaging-deployer:~/helion$ git commit -a -m "Configured Deployment Model
                 update the value of the <b>external_net_name</b> variable in
                   <codeph>~/helion/hos/ansible/roles/openstack-operations/defaults/main.yml</codeph>
                 to the correct
-                value.</note><codeblock>stack@messaging-deployer:~/helion$ source ~/user.src
+                value.</note><codeblock>stack@messaging-deployer:~/helion$ source ~/user.osrc
 stack@messaging-deployer:~/helion$ cd hos/ansible/
 stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost hlm-pre-install.yml </codeblock><p>The
                 output should look similar to the
