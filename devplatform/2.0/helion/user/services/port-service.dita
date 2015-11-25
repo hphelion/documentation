@@ -49,7 +49,7 @@
           href="../deploy/manifestyml.dita#topic20922/services"><b>services</b></xref> block. For
         example:</p>
 <codeblock>name: port-test
-mem: 256
+memory: 256
 services:
   my-port: harbor</codeblock>
 <p>This creates a TCP port tunnel which the application can access on the

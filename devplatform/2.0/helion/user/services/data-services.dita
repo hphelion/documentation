@@ -116,7 +116,7 @@ for using the <i>manifest.yml</i> file, please see <xref href="../deploy/manifes
 <p>A simple example telling the Application Lifecycle Service Client to request a MySQL database named
 <b>cirrusdb</b>:</p>
 <codeblock>name: cirrus
-mem: 256M
+memory: 256M
 instances: 2
 services:
     cirrusdb: mysql</codeblock>
