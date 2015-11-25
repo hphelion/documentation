@@ -17,7 +17,7 @@
     codn_username: 
     codn_password: 
     region_name: region1
-    cacert: /home/stack/ca/cacert.pem
+    cacert: 
     auth:
       auth_url: &lt;identity url&gt;
       project_name: &lt; admin project name&gt;
