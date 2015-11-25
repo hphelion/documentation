@@ -17,7 +17,8 @@
     <p>This topic describes all the known issues that you might encounter:</p>
     <section>
       <ul id="ul_xzh_nmc_mt">
-        <li/>
+        <li><xref href="#topic10581/baremetal" format="dita"/></li>
+        <li><xref href="#topic10581/install-fails" format="dita"/></li>
         <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
             non-KVM region</xref></li>
         <li><xref href="#topic10581/vm" format="dita"/></li>
@@ -25,8 +26,9 @@
         <li><xref href="#topic10581/backup" format="dita"/></li>
       </ul>
     </section>
-    <section>
+    <section id="baremetal">
       <title>Baremetal Control plane RDBMS recovery after reboot</title>
+      <p><!--https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?title=Baremetal+Control+plane+RDBMS+recovery+after+reboot++-+HCG2.0&spaceKey=cloudos--></p>
     </section>
     <p><b>System Behavior/Message</b></p>
     <p>The controller in the baremetal region of the Sacaramento deployment is designed to be a
