@@ -20,12 +20,12 @@
         scope="external">deploying an application</xref>.</note>
   <simpletable>
    <strow>
-    <stentry>1. <xref conref="CFR_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-              <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
-              <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
-              <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
+    <stentry>1. <xref conref="cfr_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
                 <b><keyword keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6.
-            <xref conref="CFR_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+            <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Sample Applications</b><p>The following sample applications will get your started
             with the <codeph>cf push</codeph> workflow:<dl>
               <dlentry>
@@ -108,7 +108,7 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
                       format="html" scope="external">Troubleshooting Application Deployment and
                       Health</xref></li>
                 </ul></note></li>
-          </ol><xref href="CFR_step_6.dita#concept_m3k_bth_tt">
+          </ol><xref href="cfr_step_6.dita#concept_m3k_bth_tt">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

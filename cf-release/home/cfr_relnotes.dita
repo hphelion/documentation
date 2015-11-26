@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="CFR_relnotes">
+<concept id="cfr_relnotes">
  <title>Release Notes</title>
  <shortdesc></shortdesc>
  <prolog>
@@ -10,7 +10,7 @@
  </prolog>
  <conbody>
   <p>This is the first release of <keyword keyref="prodLong"/>. For information on features and
-   functionality, see <xref href="CFR_whats_new.dita#concept_uvz_1cx_tt"/>.</p>
+   functionality, see <xref href="cfr_whats_new.dita#concept_uvz_1cx_tt"/>.</p>
   <draft-comment author="michaelk">The following are release notes for <keyword keyref="prodLong"/>
    released in <varname>&lt;DATE></varname>.</draft-comment>
  </conbody>
