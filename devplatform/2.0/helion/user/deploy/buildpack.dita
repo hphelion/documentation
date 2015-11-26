@@ -34,7 +34,7 @@ framework:
 <p>To specify the exact buildpack to use for deploying your application,
 set a top-level <codeph>buildpack:</codeph> key in <i>manifest.yml</i> to the URL of the buildpack's Git repository. For example:</p>
 <codeblock>name: myrubyapp
-mem: 256MB
+memory: 256MB
 buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git</codeblock>
 <p>You can use a specific branch by specifying it at the end of the URL using the following format:</p>
 <codeblock>buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git#branchname</codeblock>
