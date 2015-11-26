@@ -19,7 +19,7 @@
     region_name: region1
     cacert: 
     auth:
-      auth_url: &lt;identity url&gt;
+      auth_url: https://##.##.###.#:#####/v3 (or v2, depending on the version of Keystone authentication in use)
       project_name: &lt; admin project name&gt;
       username: &lt; admin user name&gt;
       password: &lt; admin password&gt;</codeblock>
@@ -32,13 +32,50 @@
           account. (The name of the download network used to be CODN.)</dd></dlentry>
         <dlentry><dt>region_name</dt><dd>Default value is <codeph>region1 </codeph></dd></dlentry>
         <dlentry><dt>cacert</dt><dd>The location where the SSL certificates can be accessed.</dd></dlentry>
-        <dlentry><dt>auth_url</dt><dd>This URL can be found in Horizon at: Project Compute &gt; Access &amp; Security &gt; API Access or  
-            Copy the Service Endpoint URL for the Identity Service. Note that this must be
-              <codeph>https</codeph>, not simply <codeph>http</codeph>.</dd></dlentry>
-        <dlentry><dt>project_name</dt><dd>The Name of the admin project in Horizon. </dd></dlentry>
-        <dlentry><dt>username</dt><dd>The Username of an account with installation privileges (administrator role). </dd></dlentry>
-        <dlentry><dt>password</dt><dd>The Password for the same account with installation privileges (administrator role).</dd> </dlentry>
-      </dl>
+        <dlentry>
+          <dt>auth_url</dt>
+          <dd>
+            <p>Note that this must be <codeph>https</codeph>, not simply <codeph>http</codeph>. This
+              is the value of the <codeph>OS_AUTH_URL</codeph> variable from
+                <codeph>~/service.osrc</codeph>
+            </p>
+            <p>Example:</p>
+            <p>
+              <pre>user@host:~$ grep OS_AUTH_URL ~/service.osrc</pre>
+              <pre>export OS_AUTH_URL=https://10.22.200.2:35357/v3</pre>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>project_name</dt>
+          <dd>
+            <p>This is the value of the <codeph>OS_PROJECT_NAME</codeph> variable from
+              <codeph>~/service.osrc</codeph></p>
+            <p>Example:<pre>user@host:~$ grep OS_PROJECT_NAME ~/service.osrc</pre><pre>export OS_PROJECT_NAME=admin</pre></p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>username</dt>
+          <dd>
+            <p>The Username of an account with installation privileges (administrator role). This is
+              the value of the <codeph>OS_USERNAME</codeph> variable from
+                <codeph>~/service.osrc</codeph></p>
+            <p>Example:</p>
+            <p>
+              <pre>user@host:~$ grep OS_USERNAME ~/service.osrc</pre>
+              <pre>export OS_USERNAME=admin</pre>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>password</dt>
+          <dd>
+            <p>The Password for the same account with installation privileges (administrator role).
+              This is the value of the <codeph>OS_PASSWORD </codeph>variable from
+                <codeph>~/service.osrc</codeph></p>
+            <p>Example:<pre>user@host:~$ grep OS_PASSWORD ~/service.osrc</pre><pre>export OS_PASSWORD=verystrongpassword</pre></p>
+          </dd>
+        </dlentry></dl>
     </section>
   </body>
 </topic>
