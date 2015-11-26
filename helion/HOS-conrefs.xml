@@ -3,38 +3,45 @@
 <concept id="HOS-conrefs">
  <title>HOS Conrefs</title>
  <conbody>
-  <p><ph id="product-title"          outputclass="product-title"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version"/>: </ph></p>
-
-  <p><ph id="product-title-20"       outputclass="product-title"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/>: </ph></p>
-  <p><ph id="product-title-201"      outputclass="product-title"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version201"/>: </ph></p>
-  <p><ph id="product-title-202"      outputclass="product-title"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version202"/>: </ph></p>
-  <p><ph id="product-title-21"       outputclass="product-title"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version21"/>: </ph></p>
-
-  <p><ph id="product-title-full"     outputclass="product-title"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version"/>: </ph></p>
-  <p><ph id="product-title-plain"    outputclass="product-title"><keyword keyref="kw-hos-tm"/>: </ph></p>
-  <p><ph id="product-title-empty"    outputclass="product-title-empty"/></p>
  
 
-  <!-- For now, leave Applies To as empty placeholder -->
-  <p id="page-applies-to"          outputclass="page-applies-to"/>
-  <!--
-   <p id="page-applies-to"          outputclass="page-applies-to">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/> and <keyword keyref="kw-hos-version21"/>.</p>
-  -->
-  
-  <p id="page-applies-to-empty"    outputclass="page-applies-to-empty"/>
-  
-  <p id="page-applies-to-all"      outputclass="page-applies-to">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/> and <keyword keyref="kw-hos-version21"/>.</p>
-  <p id="page-applies-to-20"       outputclass="page-applies-to">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/>.</p>
-  <p id="page-applies-to-202"      outputclass="page-applies-to">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version202"/>.</p>
-  <p id="page-applies-to-21"       outputclass="page-applies-to">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version21"/>.</p>
+  <p>
+   <ph id="empty-string"/> 
+   <ph id="applies-to-all-string">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/> and <keyword keyref="kw-hos-version21"/>.</ph>
+   <ph id="applies-to-20-string">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/>.</ph>
+   <ph id="applies-to-202-string">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version202"/>.</ph>
+   <ph id="applies-to-21-string">This page applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version21"/>.</ph>
+   <ph id="product-title-string"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version"/>: </ph>
+   <ph id="product-title-20-string"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/>: </ph>
+   <ph id="product-title-201-string"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version201"/>: </ph>
+   <ph id="product-title-202-string"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version202"/>: </ph>
+   <ph id="product-title-21-string"><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version21"/>: </ph>
+   <ph id="product-title-plain-string"><keyword keyref="kw-hos-tm"/>: </ph>   
+  </p>  
 
-  <p id="section-applies"          outputclass="section-applies-to">This section applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/> and <keyword keyref="kw-hos-version21"/>.</p>
-  
-  <p id="section-applies-to-all"   outputclass="section-applies-to">This section applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/> and <keyword keyref="kw-hos-version21"/>.</p>
-  <p id="section-applies-to-20"    outputclass="section-applies-to">This section applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version20"/>.</p>
-  <p id="section-applies-to-202"   outputclass="section-applies-to">This section applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version202"/>.</p>
-  <p id="section-applies-to-21"    outputclass="section-applies-to">This section applies to <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version21"/>.</p>
-  
+
+
+
+
+  <p>
+   <ph id="product-title" outputclass="product-title"><ph conkeyref="HOS-conrefs/product-title-string"/></ph>
+   <ph id="product-title-20" outputclass="product-title"><ph conkeyref="HOS-conrefs/product-title-20-string"/></ph>
+   <ph id="product-title-201" outputclass="product-title"><ph conkeyref="HOS-conrefs/product-title-201-string"/></ph>
+   <ph id="product-title-202" outputclass="product-title"><ph conkeyref="HOS-conrefs/product-title-202-string"/></ph>
+   <ph id="product-title-21" outputclass="product-title"><ph conkeyref="HOS-conrefs/product-title-21-string"/></ph>
+   <ph id="product-title-plain" outputclass="product-title"><ph conkeyref="HOS-conrefs/product-title-plain-string"/></ph>
+   <ph id="product-title-empty" outputclass="product-title"><ph conkeyref="HOS-conrefs/empty-string"/></ph>
+  </p>
+
+
+  <p id="applies-to"       outputclass="applies-to"><ph conkeyref="HOS-conrefs/empty-string"/></p>
+  <p id="applies-to-all"   outputclass="applies-to"><ph conkeyref="HOS-conrefs/applies-to-all-string"/></p>
+  <p id="applies-to-20"    outputclass="applies-to"><ph conkeyref="HOS-conrefs/applies-to-20-string"/></p>
+  <p id="applies-to-202"   outputclass="applies-to"><ph conkeyref="HOS-conrefs/applies-to-202-string"/></p>
+  <p id="applies-to-21"    outputclass="applies-to"><ph conkeyref="HOS-conrefs/applies-to-21-string"/></p>
+  <p id="applies-to-empty" outputclass="applies-to"><ph conkeyref="HOS-conrefs/empty-string"/></p>
+
+
   
  </conbody>
 </concept>
