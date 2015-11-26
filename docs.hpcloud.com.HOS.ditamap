@@ -16,7 +16,7 @@
     </prodinfo>
   </topicmeta>
   
-  <mapref href="helion/HOS-keywords.xml" format="ditamap"/>
+  <mapref href="helion/HOS-keywords.xml" format="ditamap" processing-role="resource-only"/>
   
   <topicref href="helion/index.dita" otherprops="">
     <!-- BEGIN - TOP LEVEL -->
