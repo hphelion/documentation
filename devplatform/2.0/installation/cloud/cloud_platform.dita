@@ -20,9 +20,9 @@
     cacert: 
     auth:
       auth_url: https://##.##.###.#:#####/v3 (or v2, depending on the version of Keystone authentication in use)
-      project_name: &lt; admin project name&gt;
-      username: &lt; admin user name&gt;
-      password: &lt; admin password&gt;</codeblock>
+      project_name: &lt;admin project name&gt;
+      username: &lt;admin user name&gt;
+      password: &lt;admin password&gt;</codeblock>
       
       <dl>
         <dlentry>
