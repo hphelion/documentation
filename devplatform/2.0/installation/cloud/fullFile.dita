@@ -9,9 +9,9 @@
       file serves only as a visual example of what a complete cloud file should look like when all
       the sections are together.</p>
     <p>
-      <codeblock conref="cloud_platform.dita#cloudPlatform/cloudplatform"/>
-      <codeblock conref="cloud_messaging.dita#cloudMessaging/cloudmsgaas"/>
-      <codeblock conref="cloud_database.dita#cloudDatabase/cloudDB"/>
+      <codeblock outputclass="codesquish" conref="cloud_platform.dita#cloudPlatform/cloudplatform"/>
+      <codeblock outputclass="codesquish" conref="cloud_messaging.dita#cloudMessaging/cloudmsgaas"/>
+      <codeblock outputclass="codesquish" conref="cloud_database.dita#cloudDatabase/cloudDB"/>
       <codeblock conref="cloud_codeengine.dita#cloudCodeEngine/cloudengine"/>
     </p>
   </body>

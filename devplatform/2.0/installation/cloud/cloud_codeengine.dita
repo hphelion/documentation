@@ -7,7 +7,7 @@
         here</xref> for reference.</section>
     <section><p>If you are deploying Helion Code Engine, append the <codeph>helionce</codeph>
         section to the <codeph>clouds.yml</codeph> file as described
-      below:</p><codeblock id="cloudengine">  helionce:
+      below:</p><codeblock id="cloudengine">helionce:
     deployer_key: helionce-shared
     deployer_flavor: 3
     deployer_ntp_servers: ntpservers
