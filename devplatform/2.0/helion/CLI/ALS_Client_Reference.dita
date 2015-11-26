@@ -14,7 +14,7 @@
       <li>
         <xref type="section" href="#topic13234/global">Global Options</xref>
       </li>
-      <li>Debugging</li>
+      <li><xref type="section" href="#topic13234/debug">Debug Command</xref></li>
       <li><xref href="#topic13234/update-the-cf-mgmt-tool" format="dita"/></li>
       <li>
         <xref type="section" href="#topic13234/commands">Cluster Commands</xref>
@@ -265,7 +265,7 @@
             </row>
           </tbody>
         </tgroup>
-      </table>
+      </table></section><section id="debug">
       <title>Debugging</title>
       <p><b>Syntax</b>: <codeph>--debug [option] [option]</codeph></p>
       <p>This command provides debug information and can be very helpful when creating clusters. </p>
