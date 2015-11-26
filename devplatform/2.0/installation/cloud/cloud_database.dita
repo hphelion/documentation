@@ -5,29 +5,27 @@
   <body>
     <section>
       <p>This additional section is required only if the Database Service is
-                installed.<codeblock>clouds:
-  mycloud:
-    database:
-      trove_enable_ssl: False
-      ephemeral_ca_cert: /home/stack/ca/cacert.pem  
-      external_network: 
-      provider_network:
-      ntp_server: 
-      keypair: default
-      enable_ha: False
-      flavor: m1.medium
-      database_flavor: m1.medium
-      messaging_flavor: m1.medium
-      database_volume_size: 10
-      logstash_rabbitmq_host:
-      logstash_rabbitmq_password:
-      hotpools_enabled: True
-      hotpools_max_instances: 1
-      hotpools_image_name: percona
-      hotpools_flavor_names: 'm1.medium'
-      project_id: 
-      control_plane_database_volume_type: VOLTYPE_HERE
-      guest_instance_volume_type: VOLTYPE_HERE</codeblock></p>
+                installed.<codeblock id="cloudDB">  database:
+    trove_enable_ssl: False
+    ephemeral_ca_cert: /home/stack/ca/cacert.pem  
+    external_network: 
+    provider_network:
+    ntp_server: 
+    keypair: default
+    enable_ha: False
+    flavor: m1.medium
+    database_flavor: m1.medium
+    messaging_flavor: m1.medium
+    database_volume_size: 10
+    logstash_rabbitmq_host:
+    logstash_rabbitmq_password:
+    hotpools_enabled: True
+    hotpools_max_instances: 1
+    hotpools_image_name: percona
+    hotpools_flavor_names: 'm1.medium'
+    project_id: 
+    control_plane_database_volume_type: VOLTYPE_HERE
+    guest_instance_volume_type: VOLTYPE_HERE</codeblock></p>
       <dl>
         <dlentry><dt>trove_enable_ssl</dt><dd>This variable defines whether SSL is used internally by Trove. HPE Helion OpenStack 2.0
             implements SSL using HAProxy, so in installations of version 2.0 or later, this value

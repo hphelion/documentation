@@ -12,7 +12,7 @@
         <note>This basic information is also  the minimum required for listing the content from HDN,
         which is used as a test to determine if the HDPI was installed correctly.</note>
       
-      <codeblock>clouds:
+      <codeblock id="cloudplatform">clouds:
   mycloud:
     codn_username: 
     codn_password: 
