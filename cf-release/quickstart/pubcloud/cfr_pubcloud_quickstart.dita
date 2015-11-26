@@ -2,7 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="cfr_pubcloud_quickstart">
  <title>Quick Start: Deploying to HP Public Cloud</title>
- <shortdesc/>
+ <shortdesc>This section describes the process of deploying <keyword keyref="prodLong"/> to <keyword
+   keyref="pubCloudLong"/>.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>

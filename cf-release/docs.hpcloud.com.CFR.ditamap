@@ -7,7 +7,7 @@
       <topicref href="home/cfr_whats_new.dita"/>
       <topicref href="home/cfr_relnotes.dita"/>
       <topicref href="home/cfr_TP_licensing.dita"/>
-      <topicref href="quickstart/pubcloud/cfr_pubcloud_quickstart.dita" otherprops="pub-cloud">
+      <topicref href="quickstart/pubcloud/cfr_pubcloud_quickstart.dita" otherprops="pubcloud">
          <topicref href="quickstart/pubcloud/cfr_step_1.dita"/>
          <topicref href="quickstart/pubcloud/cfr_step_2.dita"/>
          <topicref href="quickstart/pubcloud/cfr_step_3.dita"/>

@@ -2,7 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="cfr_reference">
  <title>Reference</title>
- <shortdesc></shortdesc>
+ <shortdesc>This section contains reference topics on Terraform variables and Gato
+  commands.</shortdesc>
  <conbody>
   <p></p>
  </conbody>
