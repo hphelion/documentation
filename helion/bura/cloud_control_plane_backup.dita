@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jsc_qps_qt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Backing up the Cloud Control Plane </title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Backing up the Cloud Control Plane </title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section><title>Default Backup and Restore</title><p>As part of the installation procedure in 
-      HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0, automatic backup/restore jobs are uploaded from
+      <keyword keyref="kw-hos-phrase"/>, automatic backup/restore jobs are uploaded from
         Swift into the Freezer scheduler. The backup jobs perform scheduled backups of Helion
         OpenStack control plane data (files/directories/db). The restore jobs can be used to restore
         appropriate control plane data. Additional automatic jobs can be added to backup/restore
         from the secure shell (SSH) server. You must use the following procedure to set up SSH
         backup during installation:</p></section>
     <section><title>Setting up SSH backup</title>
-      <p>By default, during HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 deployment, backup jobs
+      <p>By default, during <keyword keyref="kw-hos-phrase"/> deployment, backup jobs
         are automatically deployed to Swift, the MySQL database, the lifecycle manager, and Swift rings.
         Restore jobs are also deployed for convenience. It is more secure to store those backups
         also outside of the Helion infrastructure. If you provide all the values required in the

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ly3_yyr_st">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting Freezer Services</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Troubleshooting Freezer Services</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>You can use the following logs to troubleshoot Freezer functionality: <table>
         <tgroup cols="2">
           <tbody>
