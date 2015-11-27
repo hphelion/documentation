@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="header_poisoning">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Preventing Host Header Poisoning</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Preventing Host Header Poisoning</title>
   <body>
-    <section> Depending on the environment and context of your HPE Helion OpenStack deployment, it
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section> Depending on the environment and context of your <keyword keyref="kw-hos"/> deployment, it
       may be advisable to configure Horizon to protect against Host header poisoning (see ref. #1
       below) by using Django's ALLOWED_HOSTS setting (see ref. #2 below). To configure Horizon to
       use the ALLOWED_HOSTS setting, take the following steps: <ol id="ol_ctx_f2r_b5">

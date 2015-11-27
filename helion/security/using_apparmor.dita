@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rmq_j1v_4t">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Refining Access Control with AppArmor</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Refining Access Control with AppArmor</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
    <section id="intro">
       <p> AppArmor is a Mandatory Access Control (MAC) system as opposed to a discretionary access
         control system. It is a kernel-level security module for Linux that controls access to
@@ -25,8 +26,8 @@
         not prevented. </p>
     </section>
     
-    <section id="apparmor_helion"><title>AppArmor in HPE Helion OpenStack 2.0</title>
-      <p> AppArmor in HPE Helion OpenStack 2.0 is installed and enabled on the KVM compute nodes by
+    <section id="apparmor_helion"><title>AppArmor in <keyword keyref="kw-hos-phrase"/></title>
+      <p> AppArmor in <keyword keyref="kw-hos-phrase"/> is installed and enabled on the KVM compute nodes by
         default. It runs in enforce mode. It enforces mandatory access control policies for the
         libvirt process. Customers can run 'systemctl status apparmor' command on the compute nodes
         to check that the service is active.</p> In this implementation it is designed to mitigate

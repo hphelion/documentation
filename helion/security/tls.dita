@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="configure_tls">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring TLS for Public Endpoints</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Configuring TLS for Public Endpoints</title>
   <body>
-
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="intro">
       
       <p outputclass="aTest">The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to
         ensure authentication, non-repudiation, confidentiality, and integrity of user
-        communications to the HPE Helion OpenStack services from public endpoints.</p>
+        communications to the <keyword keyref="kw-hos"/> services from public endpoints.</p>
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
         management network. All traffic to OpenStack services coming in on the public endpoints are
         secured using TLS connections.</p>
-      <p>All of the HPE Helion OpenStack 2.0 example cloud models ship with TLS enabled on the public
+      <p>All of the <keyword keyref="kw-hos-phrase"/> example cloud models ship with TLS enabled on the public
         API. Note that because TLS is enabled by default, a test certificate is bundled with the
         release. Having this default cert allows you to bring up a cloud without having to worry
         about certificates. It will not match your IP address, but you can ignore the warnings.
@@ -49,7 +49,7 @@
     </section>
     <section>
       <title>Creating a self-signed certificate</title> If you want to install a self-signed
-      certificate that meets the needs of HPE Helion OpenStack and HPE Helion Development Platform,
+      certificate that meets the needs of <keyword keyref="kw-hos"/> and HPE Helion Development Platform,
       follow these steps to create the cert, and then install it by following the installation
         steps.<ol id="ol_wmt_wsp_tt">
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
@@ -68,7 +68,7 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
           Note that the domain name in the certificate signing request in step 1 and the DNS entry
           in step 2 must match, although the domain do not have to exist. <p>In step 2 you need the
             same IP address listed for both the DNS and the IP entries. The IP address is what is
-            used by HPE Helion Development Platform and the DNS is used by HPE Helion OpenStack.
+            used by HPE Helion Development Platform and the DNS is used by <keyword keyref="kw-hos"/>.
             Note that is you examine the output certificate, the issuer will match the subject
             because the cert is self-signed. The requirement for the DNS entry stems from a
             low-level Python bug.</p>
