@@ -7,7 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
-RewriteRule ^permalink/helion-openstack-mpc/home?$ http://docs.hpcloud.com/#helion/mpc/index_mpc.html  [NE,R=301,L]
+RewriteRule ^permalink/helion-openstack-mpc/home?$ http://15.126.244.7/mpc/#helion/MPC/index_MPC.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.0/landing-page?$ http://docs.hpcloud.com/#helion/index.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.1/landing-page?$ http://docs.hpcloud.com/#helion/index.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/brokenfortest?$ http://dixocs.hpcloud.com/#helion/identity/identity_ldap.html [NE,R=301,L]
