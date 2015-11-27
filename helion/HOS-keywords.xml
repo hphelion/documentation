@@ -11,6 +11,8 @@
   <keydef keys="kw-hos-version202"><topicmeta><keywords><keyword>2.0.2</keyword></keywords></topicmeta></keydef> 
   <keydef keys="kw-hos-version21"><topicmeta><keywords><keyword>2.1</keyword></keywords></topicmeta></keydef>  
  
+  <keydef keys="kw-hos-phrase"><topicmeta><keywords><keyword>HPE Helion OpenStack 2.0</keyword></keywords></topicmeta></keydef>   
+  
   <keydef keys="HOS-conrefs" href="HOS-conrefs.xml" type="concept" format="dita"/>
  
 
