@@ -2,11 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic1564">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Horizon Service Overview</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Horizon Service Overview</title>
   <body>
-    <p>Horizon is the OpenStack service that serves as the basis for the HPE Helion OpenStack
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>Horizon is the OpenStack service that serves as the basis for the <keyword keyref="kw-hos"/>
       dashboards.</p>
-    <p>The dashboards provide a web-based user interface to HPE Helion OpenStack services including
+    <p>The dashboards provide a web-based user interface to <keyword keyref="kw-hos"/> services including
       Compute, Volume Operations, Networking, and Identity.</p>
 
     <section>

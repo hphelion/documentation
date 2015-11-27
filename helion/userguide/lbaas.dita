@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0LBaaS">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Load Balancing as a Service
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Using Load Balancing as a Service
     (LBaaS)</title>
   <body>
-    <p><b>HPE Helion OpenStack 2.0 LBaaS Configuration</b></p>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p><b><keyword keyref="kw-hos-phrase"/> LBaaS Configuration</b></p>
     <p>Load Balancing as a Service (LBaaS) is an advanced networking service that allows load
       balancing of multi-node environments. It provides the ability to spread requests across
       multiple servers thereby reducing the load on any single server. The following examples depict
       usage of the various OpenStack Command Line Interfaces (CLI). The Load Balancer v1 API is also
       accessible via the Horizon web interface if the v1 API is enabled. The Load Balancer v2 API
       does not currently have a representative Horizon web interface. The v2 API is targeted to have
-      a Horizon web interface in a future Helion OpenStack release. This document describes the
+      a Horizon web interface in a future <keyword keyref="kw-hos"/> release. This document describes the
       configuration for LBaaS v1 and v2.</p>
 
-    <p>HPE Helion OpenStack 2.0 can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
+    <p><keyword keyref="kw-hos-phrase"/> can support either LBaaS v1 or LBaaS v2 to allow for wide ranging
       customer requirements. Check with your administrator for the version that is installed before
       starting your configuration. </p>
 
 
     <section id="Configuration">
       <title>Configuration</title>
-      <p>HPE Helion OpenStack 2.0 LBaaS Configuration</p>
+      <p><keyword keyref="kw-hos-phrase"/> LBaaS Configuration</p>
       <sectiondiv id="CreateLBaaSNetwork">
         <p><b>Create Private Network for LBaaS</b></p>
         <p>You can create the new network and router by executing the following command from the
