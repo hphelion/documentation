@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="ts_cinder_config">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Block Storage Backend
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Troubleshooting the Block Storage Backend
     Configuration</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
       <p>We have gathered some of the common issues that occur during the Block Storage
         configuration steps and organized them by product.</p>

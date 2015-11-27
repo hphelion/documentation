@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="verify-the-filesystem-label">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verifying a Swift File System Label</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Verifying a Swift File System Label</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>
       <note type="warning">For a system upgrade <!--rather than an initial deploy--> do NOT clear
         the label before starting the upgrade.</note>

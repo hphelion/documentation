@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_mnk_sq1_5t">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceph Service: Troubleshooting</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Ceph Service: Troubleshooting</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>This page describes troubleshooting scenarios for Ceph.</p>
     <p><b>Issue 1:</b></p>
     <p>If no Ceph monitor nodes are defined for the cloud, then Ceph cloud deployment fails with the

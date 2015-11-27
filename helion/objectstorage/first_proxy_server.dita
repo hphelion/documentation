@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rtc_s3t_mt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Identifying the First Swift Proxy
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Identifying the First Swift Proxy
     Server</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>Perform the following steps to identify the first node which is running the swift-proxy
         service:<ol id="ol_tqx_qjt_mt">
         <li>Log on to the lifecycle manager.</li>
