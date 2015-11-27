@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="add_osdnode">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding an Object Storage Daemon (OSD) Node </title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Adding an Object Storage Daemon (OSD) Node </title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
         href="http://docs.hpcloud.com/helion/blockstorage/ceph/adding_new_osd_node.html"
         scope="external" format="html">Click here</xref> for a frameless version of this page where
@@ -89,8 +90,8 @@ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&#60;node name></
             will not be numbered consecutively if any have previously been removed. This is to
             prevent loss of data; the config processor retains data about removed nodes and keeps
             their ID numbers from being reallocated. See the Persisted Server Allocations section in
-              <xref href="../../input_model.dita#input_model/persistedserverallocations">HPE Helion
-              OpenStack 2.0 Input Model</xref> for information on how this works.</p></li>
+            <xref href="../../input_model.dita#input_model/persistedserverallocations"><keyword keyref="kw-hos-phrase"/>
+              Input Model</xref> for information on how this works.</p></li>
         <li>Run the following series of playbooks complete the deployment of your additional OSD
           node(s) to your Ceph cluster:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible

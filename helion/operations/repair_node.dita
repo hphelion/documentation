@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gcv_r4y_lt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Repairing a Compute Node</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Repairing a Compute Node</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section>
       <p>There are a number of routine operations you must perform in the ongoing running and
         maintenance of your cloud, including the repair of a node when, for example, you need to

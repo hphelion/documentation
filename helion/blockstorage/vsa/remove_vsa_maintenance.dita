@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_e32_tm2_rt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a VSA Node For Maintenance</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Removing a VSA Node For Maintenance</title>
   <body>
     <!--Needs Work-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
       <p>This process is used when you want to remove a storage system/VSA node from a
         cluster/management group for maintenance, using HPE StoreVirtual Management Console
@@ -28,9 +29,9 @@
       <p>Use this process to remove a storage system/VSA node from a cluster/management group for
         maintenance using the HPE StoreVirtual Management Console (CMC). After maintenance, the VSA
         node is added back to the cluster.</p>
-      <p><note type="caution">To make the volumes available even after the VSA storage node goes
+      <p><note type="caution"><p>To make the volumes available even after the VSA storage node goes
           offline, you must ensure that the VSA network RAID configuration/data protection aspects
-          are configured properly prior to removing a VSA node. <ul>
+          are configured properly prior to removing a VSA node.</p> <ul>
             <li>To configure RAID, see the "Using disk RAID with Network RAID in a cluster,"
               "Planning the RAID configuration," and "Data protection" sections of the HP
               StoreVirtual Storage Online help (available in the <b>StoreVirtual Management

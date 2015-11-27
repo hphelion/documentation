@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ndn_4bg_pt">
-  <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
-  <title><?oxy_custom_end?>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Swift Node</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Removing a Swift Node</title>
   <body>
     <p>You can use this process when you want to remove one or more nodes permanently from the Swift
       system. This process has three phases:</p>
