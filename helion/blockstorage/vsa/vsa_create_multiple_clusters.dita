@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="creating_multiple_vsa_clusters">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Multiple VSA Clusters</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating Multiple VSA Clusters</title>
   <body>
     <!--Needs Work-->
-    <p>The HPE Helion OpenStack 2.0 input model comes with one cluster and three VSA nodes. This is
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>The <keyword keyref="kw-hos-phrase"/> input model comes with one cluster and three VSA nodes. This is
       the default configuration available in the input model, but the input model allows you to
       create multiple VSA clusters of same or different types by modifying the YAML file. </p>
     <p>
-      <note type="tip">The term <b>add</b> and <b>update</b> in the document means editing the
+      <note type="tip"><p>The term <b>add</b> and <b>update</b> in the document means editing the
         respective YAML files to add or update the
-          configurations/values.<p><b>Prerequisites</b></p><p>You must have a minimum of three nodes
+          configurations/values.</p><p><b>Prerequisites</b></p><p>You must have a minimum of three nodes
           per VSA cluster.</p></note>
     </p>
     <section>
@@ -161,8 +162,8 @@
         <li>Add a new resource node under  <b>resources</b> in <codeph>control_plane.yml</codeph>
           with  a unique name, resource-prefix, and server-role.</li>
         <li>Modify the <codeph>disk_set</codeph> for AO and without AO. Ensure that you use
-          different files and different <codeph>disk_set</codeph>. <note>In the HPE Helion OpenStack
-            2.0 input model you will find only a <codeph>disks_vsa.yml</codeph> file, which contains
+          different files and different <codeph>disk_set</codeph>. <note>In the <keyword keyref="kw-hos-phrase"/>
+            input model you will find only a <codeph>disks_vsa.yml</codeph> file, which contains
             the information for AO and without AO. You must create a separate YAML file and enter
             the configuration information of AO in that file. For creating non AO disk, refer to
               <xref
