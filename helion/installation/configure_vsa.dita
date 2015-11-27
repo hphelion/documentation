@@ -448,10 +448,10 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
     </section>
     <section id="create_volumetype">
       <title>Create a Volume Type for your Volumes</title>
-      <p>The default volume type created by VSA will be thin provisioned and will have no fault
-        tolerance (RAID 0). You should configure cinder to fully provision volumes, and you may want
-        to configure fault tolerance. Follow the instructions below to create a new volume type
-        which is fully provisioned and fault tolerant:</p>
+      <p>The default volume type will be thin provisioned and will have no fault tolerance (RAID 0).
+        You should configure cinder to fully provision volumes, and you may want to configure fault
+        tolerance. Follow the instructions below to create a new volume type which is fully
+        provisioned and fault tolerant:</p>
       <p id="creating_volumetype">Perform the following steps to create a volume type using the
         Horizon GUI: <ol id="ol_k5n_5xv_5t">
           <li>Log into the Horizon dashboard. See <xref href="../operations/accessing_horizon.dita"

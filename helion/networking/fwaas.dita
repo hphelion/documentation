@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0FWaaS">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Firewall as a Service (FWaaS)</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Using Firewall as a Service (FWaaS)</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
     <p>The Firewall as a Service (FWaaS) provides the ability to assign network-level, port security
         for all traffic entering and existing a tenant network. More information on this service can
@@ -28,11 +29,11 @@
     </section>
     <section id="Prerequisites">
       <title>Prerequisites</title>
-      <p>HPE Helion OpenStack must be installed. </p>
+      <p><keyword keyref="kw-hos"/> must be installed. </p>
       
     </section>
     <section id="Configuration">
-      <title>HPE Helion OpenStack 2.0 FWaaS Configuration</title>
+      <title><keyword keyref="kw-hos-phrase"/> FWaaS Configuration</title>
       
       <p><b>Check for an enabled firewall.</b></p>
       <ol>
@@ -135,10 +136,10 @@ $ ./webserv.sh</codeblock></li>
     
     
     <section>
-      <note type="warning">When using reference implementation, new networks, FIPs and routers
+      <note type="warning"><p>When using reference implementation, new networks, FIPs and routers
         created after the Firewall creation will not be automatically updated with firewall rules.
         Thus, execute the firewall-update command by passing the current and new router Ids such
-        that the rules are reconfigured across all the routers (both current and new). <p>For
+        that the rules are reconfigured across all the routers (both current and new). </p><p>For
           example if router-1 is created before and router-2 is created after the firewall
           creation</p>
         <codeblock>$ neutron firewall-update —router &lt;router-1-id&gt; —router &lt;router-2-id&gt; &lt;firewall-name&gt;</codeblock>

@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> <!--This work by HPE Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="compute_instances">
-    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Compute Instances</title>
+    <title><ph conkeyref="HOS-conrefs/product-title"/>Compute Instances</title>
     <shortdesc>This page allows you to monitor your Compute instances.</shortdesc>
     <conbody>
+        <p conkeyref="HOS-conrefs/applies-to"/>
         <section>
             <title>Search and Sort</title>
             <p>The search bar allows you to filter the alarm definitions you want to view. Type and

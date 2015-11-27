@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_sl2_nht_dt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Swift Troubleshooting</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Swift Troubleshooting</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>You can use this guide to help you identify and resolve basic problems you may be
       experiencing while deploying Swift service. It contains the following troubleshooting
       scenarios:</p>

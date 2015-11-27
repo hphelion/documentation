@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="operations">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Overview</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Operations Overview</title>
   <body>
-    <p>This section contains operations tasks for your HPE Helion OpenStack 2.0 cloud.</p>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>This section contains operations tasks for your <keyword keyref="kw-hos-phrase"/> cloud.</p>
   </body>
 </topic>
