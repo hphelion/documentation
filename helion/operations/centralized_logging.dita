@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="centralized_logging">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Centralized Logging Service</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Centralized Logging Service</title>
   <body>
-
-    <p>A typical HPE Helion OpenStack cloud consists of multiple servers which makes locating a
-      specific log from a single server difficult. The HPE Helion OpenStack Centralized Logging
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>A typical <keyword keyref="kw-hos"/> cloud consists of multiple servers which makes locating a
+      specific log from a single server difficult. The <keyword keyref="kw-hos"/> Centralized Logging
       feature helps the administrator triage and troubleshoot the distributed cloud deployment from
       a single location.</p>
     <p>The Centralized Logging feature collects logs on a central system, rather than leaving the
       logs scattered across the network. The administrator can use a single Kibana interface to view
       log information in charts, graphs, tables, histograms, and other forms.</p>
-    <p>In addition to each of the HPE Helion OpenStack services, Centralized Logging also processes
+    <p>In addition to each of the <keyword keyref="kw-hos"/> services, Centralized Logging also processes
       logs for the following features:</p>
     <ul>
       <li>HAProxy</li>
@@ -53,8 +53,8 @@
     </ul>
     <section id="install">
       <title>Installation</title>
-      <p>The Centralized Logging feature is automatically installed as part of the HPE Helion
-        OpenStack installation. The base logging levels will be tuned during installation according
+      <p>The Centralized Logging feature is automatically installed as part of the <keyword keyref="kw-hos"/>
+        installation. The base logging levels will be tuned during installation according
         to the amount of RAM allocated to your control plane nodes to ensure optimum
         performance.</p>
       <p>No specific configuration is required to use Centralized Logging. However, you can tune or
@@ -118,8 +118,8 @@
         CPU and memory if they are "open," so if they are left unattended these indices could
         continue to consume system resources and eventually deplete them.</p>
       <p>Elasticsearch, by itself, doesn't prevent this from happening.</p>
-      <p>HPE Helion OpenStack uses a tool called "curator" that is developed by the Elasticsearch
-        community to handle these situations. HPE Helion OpenStack ships with an hourly cron job that
+      <p><keyword keyref="kw-hos"/> uses a tool called "curator" that is developed by the Elasticsearch
+        community to handle these situations. <keyword keyref="kw-hos"/> ships with an hourly cron job that
         uses curator in conjunction with several configurable settings. This cron job does the
         following checks:</p>
       <ul>

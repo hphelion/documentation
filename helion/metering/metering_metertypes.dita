@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="topic3051">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Available Meter
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Ceilometer Metering Available Meter
     Types</title>
   <prolog>
     <metadata>
@@ -14,6 +14,7 @@
     </metadata>
   </prolog>
   <body><!--Needs Edit-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p/>
     <p>The Metering service contains three types of meters:</p>
     <dl>
@@ -49,8 +50,8 @@
           href="metering_bestpractice.dita"
         type="section">non-essential meters can be disabled</xref>.</p>
     <section id="helion-openstack-default-meters">
-      <title>Helion OpenStack Default Meters</title>
-      <p>These meters are installed and enabled by default during an HPE Helion OpenStack
+      <title><keyword keyref="kw-hos"/> Default Meters</title>
+      <p>These meters are installed and enabled by default during an <keyword keyref="kw-hos"/>
         installation.</p>
       <p>Detailed information on the Ceilometer API can be found at:
         http://docs.openstack.org/developer/ceilometer/webapi/v2.html.</p>

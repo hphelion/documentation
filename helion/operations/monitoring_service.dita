@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="monitoring">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monitoring Service</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Monitoring Service</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
-      <p>The HPE Helion OpenStack Monitoring service leverages Monasca, which is a multi-tenant,
+      <p>The <keyword keyref="kw-hos"/> Monitoring service leverages Monasca, which is a multi-tenant,
         scalable, fault-tolerant OpenStack monitoring service.</p>
       <p>This document describes the Monasca service and contains the following sections:</p>
       <ul>
@@ -14,7 +15,7 @@
         </li>
         <li>
           <xref type="section" href="#monitoring/differences">Differences Between Upstream and 
-            HPE Helion OpenStack Implementations</xref>
+            <keyword keyref="kw-hos"/> Implementations</xref>
         </li>
         <li>
           <xref type="section" href="#monitoring/diagram">Diagram of Monasca Service</xref>
@@ -31,24 +32,24 @@
       </ul>
     </section>
     <section id="installation"><title>Installation</title>
-      <p>The Monasca service is automatically installed as part of the HPE Helion OpenStack
+      <p>The Monasca service is automatically installed as part of the <keyword keyref="kw-hos"/>
         installation.</p>
       <p>No specific configuration is required to use Monasca. However, you can configure the
         database for storing metrics as detailed in the <xref
           href="../administration/configure_monitoring.dita">Monitoring Configuration</xref>
         document.</p>
     </section>
-    <section id="differences"><title>Differences Between Upstream and HPE Helion OpenStack
+    <section id="differences"><title>Differences Between Upstream and <keyword keyref="kw-hos"/>
         Implementations</title>
-      <p>In the HPE Helion OpenStack 2.0 release, the OpenStack monitoring service, Monasca, is
-        included as the HPE Helion OpenStack monitoring solution with the following exceptions:</p>
+      <p>In the <keyword keyref="kw-hos-phrase"/> release, the OpenStack monitoring service, Monasca, is
+        included as the <keyword keyref="kw-hos"/> monitoring solution with the following exceptions:</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
         <li>Anomaly and Prediction Engine</li>
       </ul>
-      <note>Icinga was supported in previous Helion versions but it has been deprecated in HPE Helion
-        OpenStack 2.0.</note>
+      <note>Icinga was supported in previous <keyword keyref="kw-hos"/> versions but it has been deprecated in 
+        <keyword keyref="kw-hos-phrase"/>.</note>
     </section>
     <section id="diagram">
       <title>Diagram of Monasca Service</title>
@@ -67,7 +68,7 @@
               href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#per-instance-metrics"
               format="html" scope="external">here</xref>.</li>
         </ul></p>
-      <p>For a full list of packaged plugins that are included HPE Helion OpenStack, see <xref
+      <p>For a full list of packaged plugins that are included <keyword keyref="kw-hos"/>, see <xref
           href="https://github.com/stackforge/monasca-agent/blob/master/docs/Plugins.md"
           format="html" scope="external">Monasca Plugins</xref></p>
       <p>You can further customize the monasca-agent to suit your needs, see <xref
@@ -90,7 +91,7 @@
     <section conref="opsconsole_overview.dita#opsconsole/about"/>
     <section conref="opsconsole_overview.dita#opsconsole/connecting"/>
     <section id="servicealarms"><title>Service Alarm Definitions</title>
-      <p>Helion OpenStack comes with some predefined monitoring alarms for the services
+      <p><keyword keyref="kw-hos"/> comes with some predefined monitoring alarms for the services
         installed.</p>
       <p>Full details of all service alarms can be found here: <xref href="alarms.dita">Service
           Alarm Definitions</xref>.</p>

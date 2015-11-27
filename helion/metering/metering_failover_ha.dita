@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_zx2_mmd_5t">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Failover HA
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Ceilometer Metering Failover HA
     Support</title>
   <body>
-    <section> In the HPE Helion OpenStack environment, the Ceilometer metering service supports
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section> In the <keyword keyref="kw-hos"/> environment, the Ceilometer metering service supports
       native Active-Active high-availability (HA) for notification agent and central agent. Agent HA
       support includes workload-balancing/distribution and failover. <p> Tooz is the coordination
         engine that is used to coordinate workload among multiple active agent instances and

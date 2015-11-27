@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3111">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Metering Service (Ceilometer)
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Metering Service (Ceilometer)
     Overview</title>
   <prolog>
     <metadata>
@@ -23,12 +23,13 @@
     </metadata>
   </prolog>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="newfunct">
-      <title>New Metering Functionality in HPE Helion OpenStack 2.0</title>
+      <title>New Metering Functionality in <keyword keyref="kw-hos-phrase"/></title>
       <ul>
         <li> The default meters and other items configured for the Ceilometer API can now be
           modified and additional meters can be added. It is highly recommended that customers test
-          overall HPE Helion OpenStack performance prior to deploying any Ceilometer modifications to
+          overall <keyword keyref="kw-hos"/> performance prior to deploying any Ceilometer modifications to
           ensure the addition of new notifications or polling events does not negatively affect
           overall system performance. </li>
         <li>Ceilometer Central Agent (pollster) is now configured to support HA (Active-Active) </li>
@@ -54,7 +55,7 @@
         <li>The default Ceilometer expiry is configured for 7 days. </li>
         <li>The Ceilometer Meter list API is configured to return no more than 20 with an open
           ended, query sample. </li>
-        <li>The Ceilometer Alarms API is disabled by default. HPE Helion OpenStack 2.0 provides an
+        <li>The Ceilometer Alarms API is disabled by default. <keyword keyref="kw-hos-phrase"/> provides an
           alternative operations monitoring service that will provide support for operations
           monitoring, alerts, and notifications use cases. </li>
         <li>The Ceilometer Post Meter API is disabled by default. </li>
