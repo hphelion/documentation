@@ -437,9 +437,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Run the following command to create a deployment directory:
             <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-          <li>Run the Cinder Reconfigure Playbook:
+          <li>Run the Cinder reconfigure playbook:
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
+          </li>
+          <li>If Ceph has been configured as the Glance backend, run the Glance reconfigure playbook:
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock>
+          </li>
         </ol></p>
     </section>
     <section id="attach_ceph">
