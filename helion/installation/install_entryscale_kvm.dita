@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud
     with KVM</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
         href="http://docs.hpcloud.com/helion/installation/install_entryscale_kvm.html"
         scope="external" format="html">Click here</xref> for a frameless version of this page where
       the links should work.</note>
     <section id="about">
-      <p>This page describes the common installation steps that are required for each of the HPE
-        Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on the Compute
+      <p>This page describes the common installation steps that are required for each of the
+        <keyword keyref="kw-hos"/> Entry-scale cloud models that utilize the KVM hypervisor on the Compute
         nodes. This includes the following example configurations:</p>
       <ul>
         <li>Entry-scale KVM with VSA model</li>
@@ -66,7 +67,7 @@
         your first controller node. The default choice is to use the first controller node as the
         lifecycle manager.</p>
       <ol>
-        <li>Download the HPE Helion OpenStack 2.0.0 product from the <xref
+        <li>Download the <keyword keyref="kw-hos-phrase"/> product from the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
         <li>Boot your lifecycle manager from the ISO contained in the download.</li>
@@ -167,7 +168,7 @@ helion/tech-preview            Directory contains the config input files of the 
                   href="configure_ceph.dita#config_ceph/config_files">Configuring Your Ceph
                   Environment Input Files</xref> for details.</p></li>
           </ol></li>
-        <li>If your HPE Helion OpenStack environment is behind a firewall, you need to set the
+        <li>If your <keyword keyref="kw-hos"/> environment is behind a firewall, you need to set the
           Sherpa proxy shell variables so that the Sherpa service can communicate out to the Helion
           Download Network (HDN). <ol>
             <li>Edit the sherpa.conf.j2 file in the location below:
@@ -225,14 +226,14 @@ git commit -m "My config or other commit message"</codeblock></li>
     </section>
     <section id="provision"><title>Provision Your Baremetal Nodes</title>
       <p>To provision the baremetal nodes in your cloud deployment you can either use the automated
-        operating system installation process provided by HPE Helion OpenStack or you can use the
+        operating system installation process provided by <keyword keyref="kw-hos"/> or you can use the
         3rd party installation tooling of your choice. We will outline both methods below:</p>
       <p id="thirdparty"><b>Using 3rd Party Baremetal Installers</b></p>
       <p>If you do not wish to use the automated operating system installation tooling included with
-        HPE Helion OpenStack 2.0 then the requirements that have to be met using the installation
+        <keyword keyref="kw-hos-version"/> then the requirements that have to be met using the installation
         tooling of your choice are:</p>
       <ul>
-        <li>The operating system must be installed via the HPE Linux for HPE Helion OpenStack ISO
+        <li>The operating system must be installed via the HPE Linux for <keyword keyref="kw-hos"/> ISO
           provided on the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page.</li>
@@ -248,10 +249,10 @@ git commit -m "My config or other commit message"</codeblock></li>
       <p>If you chose this method for installing your baremetal hardware, skip forward to the <xref
           href="install_entryscale_kvm.dita#install_kvm/config_processor">Run the Configuration
           Processor</xref> step.</p>
-      <p>If you would like to use the automated operating system installation tools provided by HP
-        Helion OpenStack 2.0 then complete all of the steps below.</p>
-      <p><b>Using the Automated Operating System Installation Provided by HPE Helion
-        OpenStack</b></p>
+      <p>If you would like to use the automated operating system installation tools provided by 
+        <keyword keyref="kw-hos-version"/> then complete all of the steps below.</p>
+      <p><b>Using the Automated Operating System Installation Provided by 
+        <keyword keyref="kw-hos"/></b></p>
       <p><b>Part One: Deploy Cobbler</b></p>
       <p>This phase of the install process takes the baremetal information that was provided in
           <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
