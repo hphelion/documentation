@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l1p_vpy_jt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Cinder Volume and Backup Services</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Managing Cinder Volume and Backup Services</title>
   <body><!--Needs Work; fnf edit 10/27; intro text to first procedure needs clarifying-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>Due to the single threading required in both <codeph>cinder-volume</codeph> and the drivers,
       the Cinder volume service is run as a singleton in the control plane.</p>
     <section>
       <title>Prerequisite</title>
-      <p>Helion OpenStack cloud must be successfully deployed. </p>
+      <p><keyword keyref="kw-hos"/> cloud must be successfully deployed. </p>
     </section>
     <section>
       <title>Migrating the Cinder Volume and Backup Services</title>

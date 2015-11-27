@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_jv4_q1t_tt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring a Separate iSCSI Network to use
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Configuring a Separate iSCSI Network to use
     with VSA</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>This page describes the procedure to assign a separate iSCSI network to use with VSA nodes.
       You must configure controller and compute nodes along with VSA to use a separate iSCSI
       network.</p>
