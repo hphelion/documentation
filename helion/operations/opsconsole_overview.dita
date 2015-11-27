@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="opsconsole">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Operations Console</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Operations Console</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <!--Needs Work-->
     <section><title>About the Operations Console</title></section>
     <section id="about">
-      <p>The Operations Console (Ops Console) for HPE Helion OpenStack 2.0 is designed for HPE
-        Helion OpenStack Administrators to have a web-based UI they can use to view data about their
+      <p>The Operations Console (Ops Console) for <keyword keyref="kw-hos-phrase"/> is designed for <keyword keyref="kw-hos"/> 
+        Administrators to have a web-based UI they can use to view data about their
         cloud infrastructure. The Ops Console is a web-based GUI that offers the user access to data
         such as monitoring alarms data by service, performance data, compute nodes and instances
         lists, and a drilldown to Kibana for a deep look into logs. The Business Logic Layer is a

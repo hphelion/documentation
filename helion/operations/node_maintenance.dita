@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_s3h_vs3_nt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Adding, Removing, and Repairing
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Adding, Removing, and Repairing
     Nodes</title>
   <body>
     <!--Needs Edit-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
       <p>If you are planning to scale up, have a failed server, or need to remove a node, there are
         a few things to remember. For control plane nodes, right now you need to maintain three.
