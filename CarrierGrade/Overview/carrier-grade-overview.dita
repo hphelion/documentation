@@ -32,16 +32,16 @@
         <li>Compute node software package that includes: <ul>
             <li>Carrier-grade Linux (host operating system [OS] running on the compute nodes)</li>
             <li>Carrier-grade KVM (for virtualization of the compute node)</li>
-            <li>Carrier-grade accelerated virtual switch (AVS), data plane development kit
-              (DPDK)-enabled high-performance virtual switch</li>
+            <li>Carrier-grade virtual switch, data plane development kit (DPDK)-enabled
+              high-performance virtual switch</li>
           </ul></li>
         <li>Management and middleware—composed of high-availability (HA) management; operations,
           administration, and maintenance (OAM); software image management; and fault and
           performance management</li>
         <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for
           performance acceleration and improving the HA framework above and beyond standard
-          VIMs</li>
-        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
+          VIMs.</li>
+        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager.</li>
       </ul>
     </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
@@ -92,8 +92,8 @@
                 <ul>
                   <li>NIC Bonding at the server level </li>
                   <li>HA for KVM instance</li>
-                  <li>Compute Node failure detection and Auto-evacuation in kvm region</li>
-                  <li>Live Migration in kvm region</li>
+                  <li>Compute Node failure detection and Auto-evacuation in the KVM region</li>
+                  <li>Live Migration in the KVM region</li>
                 </ul>
               </entry>
             </row>
@@ -112,14 +112,15 @@
     <section><title>Virtual
         Switching</title><!--<p>Taken from http://blogs.windriver.com/wind_river_blog/2014/10/wanted-virtual-switching-without-compromise.html. Must rewrite</p>--><p>Virtual
         switching is a key function within data centers based on Software Defined Networking (SDN)
-        as well as in telecom infrastructure that leverages Network Functions Virtualization (NFV).
+        as well as telecom infrastructures that leverages Network Functions Virtualization (NFV).
         </p><p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for
         switching network traffic between the core network and the virtualized applications or
-        Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). </p><b>HPE DCN
-        Virtual Routing Switch (VRS)</b>. HPE DCN VRS is..<p><b> Accelerated vSwitch (AVS)</b>. AVS
-        is integrated into the servers in the KVM region. AVS is an optimization of Open vSwitch
-        (OVS) technology for NFV environments. Open vSwitch is a multilayer software switch licensed
-        under the open source Apache 2 license.</p></section>
+        Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). </p><p>Based on
+        your deployment model, you will use either:</p><b>HPE DCN Virtual Routing Switch (VRS)</b>.
+      HPE DCN VRS is..<p><b> Accelerated vSwitch (AVS)</b>. AVS is integrated into the servers in
+        the KVM region. AVS is an optimization of Open vSwitch (OVS) technology for NFV
+        environments. Open vSwitch is a multilayer software switch licensed under the open source
+        Apache 2 license.</p></section>
     
   <section>
       <title>Ethernet Interface Types </title>
@@ -127,19 +128,6 @@
         can choose either method by selecting <codeph>pci-sriov</codeph> or
           <codeph>pci-passthrough</codeph> as the network type when creating interfaces.
         <!--From WR Admin Guide.--></p>
-      <p>When compared with a PCI Passthtrough Ethernet interface, a SR-IOV Ethernet interface: <ul
-          id="ul_u1d_ffp_rt">
-          <li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface, including
-            lower latency packet processing. </li>
-          <li>Scales up more easily in a virtualized environment by providing multiple VFs that can
-            be attached to multiple virtual machine interfaces.</li>
-          <li>Shares the same limitations, including the lack of support for LAG, QoS, ACL, and live
-            migration.</li>
-          <li>Has the same requirements regarding the VLAN configuration of the access switches. </li>
-          <li>Provides a similar configuration workflow.</li>
-        </ul></p>
-      <p>Refer to the KVM Region Administrator Guide for more information on PCI Pass-through and
-        SR-IOV.</p>
       <p><b>PCI Passthrough</b>. A passthrough Ethernet interface is a physical PCI Ethernet NIC on
         a compute node to which a virtual machine is granted direct access. This minimizes packet
         processing delays but at the same time demands special operational considerations. For all
@@ -156,8 +144,8 @@
           <!--From WR admin--><ul id="ul_b3l_y2r_5t">
           <li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface, including
             lower latency packet processing.</li>
-          <li>Scales up more easily in a virtualized environment by providing multiple VFs that can
-            be attached to multiple virtual machine interfaces.</li>
+          <li>Scales up more easily in a virtualized environment by providing multiple Virtual
+            Functions (VF) that can be attached to multiple virtual machine interfaces.</li>
           <li>Shares the same limitations, including the lack of support for LAG, QoS, ACL, and live
             migration.</li>
           <li>Has the same requirements regarding the VLAN configuration of the access
@@ -176,6 +164,9 @@
         region. For more information, see <xref
           href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and Restore
           Configuration Files and MySQL Clusters</xref>.</p>
+      <p>For information on backing up and restoring the KVM region, see the <xref
+          href="../AdministratorGuideWR/carrier-grade-admin-guide.ditamap#jow1404333828882"
+          format="ditamap">KVM-Region Administrator Guide</xref>.</p>
     </section>
     <section>
       <title>Multiple NIC Support</title>
@@ -190,59 +181,35 @@
           href="../OperationsGuide/Logging/CHG-2-logging-overview.dita#topic5937">Centralized
           Logging</xref>.</p>
     </section>
-    <section><title>Installation Options</title>HP Helion OpenStack Carrier Grade has two baremetal
-      installation options depending on your system configuration. It allows you to manage the KVM
-      and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
-        more information on the hypervisor options in the <xref
+    <section><title>Installation Options</title>HP Helion OpenStack Carrier Grade has four
+      deployment models, depending on your system configuration. .<p>You can find more information
+        on the deployment options in the <xref
           href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
-          Overview</xref>.</p>
-      <b>KVM Topology</b>
-      <p>If you install the KVM deployment, you can integrate either HPE Storevirtual (VSA) or HP
-        StoreServ (3PAR) storage in the KVM region.</p><ul id="ul_il4_qfp_rt">
-        <li>With HPE StoreVirtual VSA storage <p>HPE StoreVirtual VSA software is a Virtual Storage
-            Appliance that provides the complete array functionality on top of a Linux KVM
-            environment without external hardware. VSA eliminates the need for external shared
-            storage required to implement Block Storage features.</p></li>
-        <li>With HPE StoreServ (3PAR) storage <p>HPE 3PAR StoreServ is a storage array that supports
-            Fibre Channel (FC) as well as iSCSI protocol.</p></li>
-      </ul><p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and
-        are independent of HP Helion OpenStack Carrier Grade. </p>
-      <b>KVM with DCN Topology</b>
-      <p>The KVM topology can be optimized using HPE DCN Virtual Routing Switch. </p><p>Distributed
-        Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data
-        center (DC) network virtualization and automatically establishes connectivity between
-        compute resources upon their creation.</p><b>KVM + ESX Topology</b>The ESXi/DCN integration
-      enables data-center-to-data-center communications through DCN, which connects to the KVM
-      region through a gateway (VRS-G). <p>HP Helion OpenStack supports VMWare ESX hypervisor. With
-        our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter
-        Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to
-        ESX clusters in a vCenter through Compute proxy nodes.</p><p>Virtual networking between HP
-        Helion Carrier Grade and the ESX servers is handled by HPE Distributed Cloud Networking
-        (DCN) is a software-defined networking (SDN) solution that enhances data center (DC) network
-        virtualization by automatically establishing connectivity between compute resources upon
-        their creation. </p><p>The ESX integration uses the OVSvApp application to connect the
-        vCenter networking to the Network Operations controller to manage workload networks.
-        </p><p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR) storage in the
-        KVM region. </p><p>You must install ESX, 3PAR or VSA before starting the HP Helion
-        OpenStack installation and are independent of HP Helion OpenStack Carrier Grade.
-          </p><p><b>Ironic Baremetal Region</b></p><p>HP Helion OpenStack Carrier Grade leverages
-        the OpenStack Ironic service, which aims to provision bare metal machines instead of virtual
-        machines. For more information, see <xref
-          href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235">Ironic
-          Service Overview</xref>.</p><p><b>Unbonded or Bonded NIC configuration</b></p><p>The HP
-        Helion OpenStack Carrier Grade installation allows for network interface card bonding
-        (bonded NIC). </p></section>
-  
-     
- <section id="distributed-cloud-networking-dcn">
-<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the
-        functionality you need. Visit the <xref
-          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">HP Helion
-          OpenStack Services Overview page</xref> for a complete list of services.</p>
-<p>
-  <xref type="section" href="#topic4010"> Return to Top </xref>
-</p>
+          Overview</xref>.</p></section>
+<section><title>External storage</title>
+  <p>You can integrate either HPE Storevirtual (VSA) or HP
+    StoreServ (3PAR) storage in the KVM region.</p><ul id="ul_il4_qfp_rt">
+      <li>With HPE StoreVirtual VSA storage <p>HPE StoreVirtual VSA software is a Virtual Storage
+        Appliance that provides the complete array functionality on top of a Linux KVM
+        environment without external hardware. VSA eliminates the need for external shared
+        storage required to implement Block Storage features.</p></li>
+      <li>With HPE StoreServ (3PAR) storage <p>HPE 3PAR StoreServ is a storage array that supports
+        Fibre Channel (FC) as well as iSCSI protocol.</p></li>
+    </ul><p>You must install 3PAR or VSA before starting the HP Helion OpenStack installation and
+      are independent of HP Helion OpenStack Carrier Grade. </p>
 </section>
-    <!-- ===================== horizontal rule ===================== -->
-  </body>
+  <section>
+  <title>Ironic Baremetal Region</title>
+    <p>HP Helion OpenStack Carrier Grade leverages the OpenStack
+      Ironic service, which aims to provision bare metal machines instead of virtual machines. For
+      more information, see <xref
+        href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235">Ironic
+        Service Overview</xref>.</p>
+  </section>
+    <section>
+    <title>Unbonded or Bonded NIC configuration</title>
+      <p>The HP
+          Helion OpenStack Carrier Grade installation allows for network interface card bonding
+          (bonded NIC). </p></section>
+</body>
 </topic>

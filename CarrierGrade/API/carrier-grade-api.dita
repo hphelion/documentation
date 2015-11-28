@@ -48,9 +48,48 @@
     <section id="sdk"><title>Software Development Kit</title>
     <p><b>HP Helion OpenStack Carrier Grade Software Development Kit (SDK)</b></p>
     <p>The HP Helion OpenStack Carrier Grade SDK can be used by guest applications to interact
-        programmatically with HP Helion OpenStack Carrier Grade. See the <xref
-          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-SDK-2.0.pdf" format="pdf">Software
-          Development Kit documentation</xref>.</p>
+        programmatically with HP Helion OpenStack Carrier Grade. </p>
+      <p>The HP Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
+        daemons, API libraries, and configuration files that you can include in a guest image to
+        leverage the extended capabilities of HP Helion OpenStack Carrier Grade. Available
+        components include:</p>
+      <ul id="ul_zdh_d51_ds">
+        <li>
+          <p>Accelerated Kernel Network Drivers—Drivers for improved performance of kernel-based
+            networking VNFs</p>
+        </li>
+        <li>
+          <p>Accelerated DPDK Network Drivers—Drivers for high-performance DPDK-based networking
+            VNFs</p>
+        </li>
+        <li>
+          <p>VM Resource Scaling—A service for scaling the capacity of a guest server on demand</p>
+        </li>
+        <li>
+          <p>Guest Heartbeat—A service for health monitoring of guest applications</p>
+        </li>
+        <li>
+          <p>Server Group Messaging—A service for low-bandwidth peer messaging between servers in
+            the same group</p>
+        </li>
+        <li>
+          <p>SNMP MIB—Resources for system alarms management</p>
+        </li>
+        <li>
+          <p>Sample Heat Orchestration Templates—Resources for deploying and managing stacks of
+            applications or application services</p>
+        </li>
+        <li>
+          <p>OpenStack REST API Documentation—Documentation for HP Helion OpenStack Carrier Grade
+            REST APIs and HP Helion OpenStack Carrier Grade extensions to OpenStack REST APIs</p>
+        </li>
+        <li>
+          <p>Custom Branding—Resources for customizing the Horizon GUI</p>
+        </li>
+      </ul>
+      <p>See the <xref
+          href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-SDK-2.0.pdf"
+          format="pdf">Software Development Kit documentation</xref>.</p>
 </section>
 
 
