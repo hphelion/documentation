@@ -29,8 +29,8 @@
     <p><image href="../../../media/CGH-2-inventory-details-memory.png" width="600"
         id="image_p2q_224_ht"/></p>
     <!-- ===================== horizontal rule ===================== -->
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+    
+      <note> This feature applies only to servers in regionone.</note>
     <!-- ===================== horizontal rule ===================== -->
     <p>To view host memory information:</p>
     <p>

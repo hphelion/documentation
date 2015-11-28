@@ -29,8 +29,9 @@
       action, such as instance deletions or failed migration attempts, are recorded in Customer
       Logs. </p>
     <image href="../../../media/CGH-2-fault-log.png" width="600" id="image_hsk_hh2_jt"/>
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+    
+      <note> This feature applies only to servers in regionone.</note>
+    
     <p>Each log describes a single event. The logs are held in a buffer, with older logs discarded
       as needed to release logging space.</p>
     <p>The following types of events are included in the Customer Logs. The severity of the events

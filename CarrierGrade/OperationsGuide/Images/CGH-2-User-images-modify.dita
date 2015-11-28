@@ -34,8 +34,8 @@
             <li><b>Description</b> - Optionally, enter a brief description of the image.</li>
             <li><b>Protected</b> - Select this option to prevent the image from being deleted. Leave
               the option clear to allow the image to be deleted.</li>
-          </ul><p>
-            <note> Fields that cannot be modified are shaded.</p></li>
+          </ul>
+            <note> Fields that cannot be modified are shaded.</note></li>
 </ol>
 <p>5, When complete, click <b>Update Image</b>.</p>
 </section>

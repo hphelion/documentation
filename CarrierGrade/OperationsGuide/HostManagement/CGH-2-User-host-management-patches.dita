@@ -29,8 +29,8 @@
     <p><image href="../../../media/CGH-2-inventory-host-patch.png" width="600" id="image_qbj_dyg_ht"
       /></p>
     <!-- ===================== horizontal rule ===================== -->
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+    
+      <note> This feature applies only to servers in regionone.</note>
     <!-- ===================== horizontal rule ===================== -->
   <section>
       <title>Apply patches</title>  

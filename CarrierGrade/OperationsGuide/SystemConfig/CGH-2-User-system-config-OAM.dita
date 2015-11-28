@@ -28,8 +28,8 @@
     <p>You can change the External OAM subnet, floating IP address, controller addresses, and
       default gateway at any time after installation. </p>
     <image href="../../../media/CGH-2-config-oam.png" width="600" id="image_lmy_2r2_jt"/>
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+
+      <note> This feature applies only to servers in regionone.</note>
     <p>During software installation, the HP Helion OpenStack Carrier Grade is configured with an OAM
       network subnet and related IP addresses. You can change these addresses using the web
       administration interface or the CLI. </p>
@@ -74,12 +74,13 @@
           the standby controller</xref>. Wait for the host to become available. It is updated with
         the new OAM configuration, and its error message is cleared. </li>
       <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/swact">Perform a
-          swact on the active controller</xref>. <p><note> After the swact, the HP Helion
+          swact on the active controller</xref>. 
+        <note> After the swact, the HP Helion
           OpenStack Carrier Grade begins using the new OAM network configuration. If you have
           changed the OAM subnet or the OAM floating IP address, the current web session is
           terminated. To continue using the web administration interface, you must start a new
           session and log in using the new IP address. You may also need to update router tables to
-          establish a connection. </p></li>
+          establish a connection.</note> </li>
       <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/unlock">Lock the
           original controller</xref> (now in standby mode). Wait for the lock operation to be
         completed. e) Unlock the original controller. Wait for it to become available. It is updated

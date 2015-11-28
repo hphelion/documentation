@@ -21,7 +21,7 @@
         Helion OpenStack</p><p>When the ISO image file is complete and ready for use, you use HP
         Helion OpenStack to upload the image to your cloud.</p><p>
         <note> After you upload an image, it is considered <i>golden</i> and you cannot change
-        it.</p><ol>
+        it.</note><ol>
         <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
@@ -44,7 +44,7 @@
               either enter the location URL of the image in the Image Location field. or browse to
               the image file on your system and add it. <note> The Image Location field must
               be a valid and direct URL to the image binary. URLs that redirect or serve error pages
-              will result in unusable images.</li>
+              will result in unusable images.</note></li>
             <li><b>Format</b> - Select the correct format (for example, QCOW2) for the image.</li>
             <li><b>Architecture</b> - Specify the architecture. For example, i386 for a 32-bit
               architecture or x86-64 for a 64-bit architecture.</li>
@@ -62,7 +62,7 @@
         <li>Optionally, you can click <b>Launch</b> to <xref
             href="../Instances/CGH-2-User-Instance-create.dita#topic2817">create a running
             instance</xref> based on this image.</li>
-      </ol></section>
+      </ol></p></section>
   <section id="delete-an-image"> <title>Delete an image</title>
     <p>You can delete images, as needed. A deleted image is no longer available. Any instances launched from the deleted instance are not affected.</p>
 

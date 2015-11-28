@@ -39,9 +39,9 @@
               <li>Optionally, specify a device ID to assign the port to that device.</li>
               <li>Optionally, specify a device name to assign the port to that device.</li>
             </ol>
-          </p><p>
+          </p>
             <note>If you do not know the device ID and name, you can create the port and later
-            edit the port to add the ID and name.</p></li>
+            edit the port to add the ID and name.</note></li>
 <li>Click <b>Create Port</b>.<p>A message appears indicating if the port was successfully created.
             When the port is created, an available fixed IP address out of one the designated
             subnets is associated with the port.</p></li>

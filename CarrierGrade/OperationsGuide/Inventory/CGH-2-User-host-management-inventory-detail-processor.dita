@@ -31,8 +31,8 @@
         <p><image href="../../../media/CGH-2-inventory-details-processor.png" width="600"
                 id="image_ptv_c24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-<note> This feature applies only to servers in regionone.</p>
+
+<note> This feature applies only to servers in regionone.</note>
 <!-- ===================== horizontal rule ===================== -->
 <p>You access the <b>Inventory Detail</b> page by clicking the host name on the <b>Hosts</b> tab of the <b>Systems Inventory</b> page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host.</p>
 <p>This page details:</p>

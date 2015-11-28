@@ -30,8 +30,8 @@
       defined during software installation. After installation, you can make changes using the web
       administration interface or the CLI. For most types of changes, you can do this without
       interrupting system operations.</p>
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+    
+      <note> This feature applies only to servers in regionone.</note>
     <p>You can change the initial configuration as follows: <ul id="ul_gsk_ql2_jt">
         <li>Reconfigure aspects of the External OAM network, including the subnet, controller IP
           addresses, gateway IP address, and floating IP address. </li>

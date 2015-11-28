@@ -29,8 +29,8 @@
 <p>Services in the controller nodes run constantly in active/standby mode to provide continuity in the event of a
 controller failure.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-<note> This feature applies only to servers in regionone.</p>
+
+<note> This feature applies only to servers in regionone.</note>
 <!-- ===================== horizontal rule ===================== -->
 <p>This topic covers the following:</p>
 <ul>

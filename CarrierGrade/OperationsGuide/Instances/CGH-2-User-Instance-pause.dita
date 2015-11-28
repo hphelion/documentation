@@ -14,11 +14,11 @@
  <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/pause/--></p>
 <p>When a user <i>pauses</i> an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.</p>
 <p>Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.</p>
-<p>
+
       <note> Pausing is different from 
   <xref href="CGH-2-User-Instance-suspend.dita#topic1594">suspending an instance</xref>. Suspending stops the instance,
       stores the contents on the disk. the memory and vCPUs become available to create other
-      instances.</p>
+      instances.</note>
 <section id="pause-an-instance"><title>Pause an instance</title><p>To pause an instance:</p><ol>
         <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>

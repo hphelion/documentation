@@ -31,8 +31,8 @@
     <p><image href="../../../media/CGH-2-inventory-details-storage.png" width="600"
         id="image_atp_d24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-<note> This feature applies only to servers in regionone.</p>
+
+<note> This feature applies only to servers in regionone.</note>
 <!-- ===================== horizontal rule ===================== -->
 <p>This page contains the following:</p>
 <ul>
@@ -157,8 +157,8 @@ host-lvg-show hostname
     <li><codeph>hostname</codeph> is the name of the host system</li>
   </ul>
 
-<p>
-<note> The only valid group name is <codeph>nova-local</codeph>.</p>
+
+<note> The only valid group name is <codeph>nova-local</codeph>.</note>
 <p>When disk_uuid indicates the root disk, the physical volume uses a system-designated partition on the root disk. For any other disk, the physical volume uses the entire disk.</p>
 <codeblock><codeph>host-pv-delete hostname nova-local disk_uuid
 host-pv-list hostname

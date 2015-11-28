@@ -29,9 +29,9 @@
                     </ul></li>
 <li>Select the volume to add to an instance and click <b>Edit Attachments</b>.</li>
 <li>In the <b>Manage Volume Attachments</b> dialog box, select an instance.</li>
-<li>Enter the name of the device from which the volume is accessible by the instance. (<note>
+<li>Enter the name of the device from which the volume is accessible by the instance. <note>
           The actual device name might differ from the volume name because of hypervisor
-          settings.)</li>
+          settings.</note></li>
 <li>Click <b>Attach Volume</b>.</li>
 </ol>
 <p>The dashboard shows the instance to which the volume is now attached and the device name. You can view the status of a volume in the Volumes tab of the dashboard. The volume is either Available or In-use. Now you can log in to the instance and mount, format, and use the disk.</p>

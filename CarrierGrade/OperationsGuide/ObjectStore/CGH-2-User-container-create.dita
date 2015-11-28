@@ -23,9 +23,9 @@
         <li>Click the <b>Project</b> dashboard, then the <b>Object Store</b> panel, then the
             <b>Containers</b> tab. </li>
 <li>In the <b>Create Container</b> dialog box, enter a name for the container, set the access level
-          and then click <b>Create Container</b>.<p>
+          and then click <b>Create Container</b>.
             <note> A Public Container will allow anyone with the Public URL to gain access to
-            your objects in the container.</p></li>
+            your objects in the container.</note></li>
 </ol>
 </section>
 <section id="delete-a-container"> <title>Delete a container</title>

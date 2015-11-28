@@ -30,8 +30,8 @@
 <p>The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting guest
       instances. You can manage this pool by managing the hosts. </p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-<note> This feature applies only to servers in regionone.</p>
+
+<note> This feature applies only to servers in regionone.</note>
 <!-- ===================== horizontal rule ===================== -->
 <section id="adjust">
       <p>You can adjust the resources of a compute node while it is offline.</p>

@@ -79,10 +79,10 @@
 <li>Under the <b>Actions</b> column, click <b>Edit Volume</b>, next to the volume you want to edit.
           .</li>
 <li>In the <b>Edit Volume</b> dialog box, modify the name and description.</li>
-<li>Click <b>Edit Volume</b> to confirm.<p>
+<li>Click <b>Edit Volume</b> to confirm.
             <note> You can <xref href="CGH-2-User-volumes-extend.dita#topic797">extend a
               volume</xref> by using the <b>Extend Volume</b> option available in the <b>More</b>
-            drop-down list and entering the new value for volume size.</p></li>
+            drop-down list and entering the new value for volume size.</note></li>
 </ol>
 </section>
 <section id="delete-a-volume"> <title>Delete a volume</title>

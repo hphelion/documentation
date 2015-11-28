@@ -17,9 +17,9 @@
       add a subnet to a network at a later time.</p>
 <p>A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.</p>
 <p>An admin user can create and delete subnets as needed.</p>
-    <p><note> Before you delete a subnet, you must first <xref
+    <note> Before you delete a subnet, you must first <xref
         href="CGH-2-User-network-ports.dita#topic3171">delete all ports</xref>  associated with the
-      subnet.</p>
+      subnet.</note>
 <section id="add-a-subnet"> <title>Add a subnet</title>
 <ol>
         <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP

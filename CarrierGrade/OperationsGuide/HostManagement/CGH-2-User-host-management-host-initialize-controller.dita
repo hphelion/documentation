@@ -31,8 +31,8 @@
 <!-- From the Titanium Software Install Guide -->
 <p>You must assign a host as a second controller to provide redundancy for controller-0.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-<note> This feature applies only to servers in regionone.</p>
+
+<note> This feature applies only to servers in regionone.</note>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before initializing a node, ensure that the following conditions are satisfied:</p>
 <ul>
@@ -45,9 +45,9 @@
 <p>To install and configure <codeph>Controller-1</codeph>:</p>
 <ol>
       <li><xref href="CGH-2-User-host-management.dita#topic11233/poweroff">Power on the node</xref>
-        to be configured as  <codeph>Controller-1</codeph>.<p>
+        to be configured as  <codeph>Controller-1</codeph>.
           <note> To ensure you can correctly identify hosts as you install them, power on and
-          configure each new node one at a time.</p></li>
+          configure each new node one at a time.</note></li>
       <li>
         <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
           OpenStack Horizon Dashboard</xref>.</li>

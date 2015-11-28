@@ -28,17 +28,17 @@
       active use.</p>
     <p> </p>
     <!-- ===================== horizontal rule ===================== -->
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+    
+      <note> This feature applies only to servers in regionone.</note>
     <!-- ===================== horizontal rule ===================== -->
     <p>A HP Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly two
       storage nodes; you cannot add or remove storage nodes. However, you can add disks to a storage
       node to increase capacity, and you can replace a faulty host.</p>
-    <p>
+    
       <note> The storage node pair in a HP Helion OpenStack Carrier Grade system provides
       redundancy for High Availability. A balanced storage capacity is recommended, in which each
       host has sufficient independent resources to meet the operational requirements of the
-      system.</p>
+      system.</note>
     <p>To replace a storage node on an active system:</p>
     <ol>
       <li>

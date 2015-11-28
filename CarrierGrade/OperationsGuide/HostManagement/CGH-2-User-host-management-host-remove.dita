@@ -27,8 +27,8 @@
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/lock/--></p>
 <p>You can lock and unlock a system, for example when you need to make a change to the system.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-<note> This feature applies only to servers in regionone.</p>
+
+<note> This feature applies only to servers in regionone.</note>
 <!-- ===================== horizontal rule ===================== -->
     <p>You can remove a compute node from the pool of available resources. You may need to remove a
       compute node in order to replace a failed host, or to change the configuration of a host. If

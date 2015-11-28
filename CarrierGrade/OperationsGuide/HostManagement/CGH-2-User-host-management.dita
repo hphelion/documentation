@@ -205,10 +205,10 @@ system host-power-off &lt;hostname&gt;</codeblock>
         <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
             <b>Inventory</b> tab. Click the <b>Hosts</b> table.</li>
         <li>In the <b>Hosts</b> list, for the system to reset, select <b>Reset Host</b> from the
-            <b>Edit Hosts</b> menu.<p>
+            <b>Edit Hosts</b> menu.
             <note> This selection is available if board management is configured on the
             system, the host is equipped with an iLO module, and the host is in a powered-on
-            state.</p></li>
+            state.</note></li>
       </ol><p>You can reset a host from the controller's command line, as
       follows:</p><codeblock>system host-reset &lt;hostname&gt;</codeblock> Where &lt;hostname&gt;
       is the name of the system. </section>

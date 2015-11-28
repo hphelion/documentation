@@ -29,8 +29,8 @@
       after installation. During software installation, the HP Helion OpenStack Carrier Grade is
       configured with up to two DNS server IP addresses. </p>
     <image href="../../../media/CGH-2-config-dns.png" width="600" id="image_lmy_2r2_jt"/>
-    <p>
-      <note> This feature applies only to servers in regionone.</p>
+    
+      <note> This feature applies only to servers in regionone.</note>
     <p>To change the DNS configuration:</p>
     <ol>
       <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
