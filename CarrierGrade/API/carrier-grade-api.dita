@@ -26,33 +26,106 @@
       <p>The open-source OpenStack REST API Documentation is currently NOT versioned. There is only
         a master/current version of the OpenStack REST API Documentation containing updates from
         'all' versions of OpenStack.</p>
-    <p><b>Non-KVM Region API</b>. For the API refernece for the non-KVM region, see the <xref
-        href="http://developer.openstack.org/api-ref.html" format="html" scope="external">OpenStack
-        API Complete Reference</xref>.</p>
+  
+  <dl>
+    <dlentry>
+      <dt><b>Non-KVM Region API</b></dt> 
+      <dd>
+        <p>For the API reference for the non-KVM region, see the <xref
+          href="http://developer.openstack.org/api-ref.html" format="html" scope="external">OpenStack API Complete Reference</xref>.</p>
     <p>For the specific OpenStack services supported by HP Helion OpenStack Carrier Grade, see <xref
         href="../Overview/carrier-grade.services-overview.dita#topic4220">Services Overview</xref>.</p> 
+      </dd>
+    </dlentry>
+    <dlentry>
+      <dt><b>KVM Region API</b></dt> 
+      <dd>
+        <p>For the API refernece for the KVM region, see <xref
+                href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">HP
+                Helion OpenStack Carrier Grade: REST API Guide</xref>. This document contains HP
+              Helion OpenStack Carrier Grade extensions to the OpenStack Compute API for use with
+              the servers in the KVM region. <!--From the WR API doc--></p>
       
-    <p><b>KVM Region API</b>. For the API refernece for the KVM region, see <xref
-          href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">HP Helion
-          OpenStack Carrier Grade: REST API Guide</xref>. This document contains HP Helion OpenStack
-        Carrier Grade extensions to the OpenStack Compute API for use with the servers in the KVM
-        region.</p>
-    <p><b><i>For the KVM and ESX<tm tmtype="reg"/> deployments:</i></b></p>
-    <p><b>ESX API</b>. You can use aspects of the VMware vSphere<tm tmtype="reg"/> API, as
+              <p>HP Helion OpenStack Carrier Grade supports the following external REST APIs through
+                its OAM floating IP address:</p>
+              <ul id="ul_ylk_dcv_ds">
+                <li>
+                  <p>OpenStack REST APIs</p>
+                  <ul id="ul_jry_kvz_cs">
+                    <li>
+                      <p>Object Storage API</p>
+                    </li>
+                    <li>
+                      <p>Block Storage API (with HP Helion OpenStack Carrier Grade extensions)</p>
+                    </li>
+                    <li>
+                      <p>Compute API (with HP Helion OpenStack Carrier Grade extensions)</p>
+                    </li>
+                    <li>
+                      <p>Identity API</p>
+                    </li>
+                    <li>
+                      <p>Image Service API</p>
+                    </li>
+                    <li>
+                      <p>Networking API (with HP Helion OpenStack Carrier Grade extensions)</p>
+                    </li>
+                    <li>
+                      <p>Orchestration API</p>
+                    </li>
+                    <li>
+                      <p>Telemetry API (with HP Helion OpenStack Carrier Grade extensions)</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>HP Helion OpenStack Carrier Grade REST APIs</p>
+                  <ul id="ul_xgp_scv_ds">
+                    <li>
+                      <p>SysInv API</p>
+                    </li>
+                    <li>
+                      <p>Patching API</p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <note id="note_N1053E_N104EC_N104E8_N104DF_N104D3_N10040_N1002C_N10024_N10001">
+                <p>HP Helion OpenStack Carrier Grade extensions use the OpenStack Extension
+                  Mechanism to ensure compatibility with existing clients.</p>
+              </note>
+              <p>HTTP or HTTPS protocol can be supported for these external REST APIs.</p>
+      </dd>
+    </dlentry>
+    <dlentry>
+      <dt><b>ESX API</b></dt>
+      <dd>
+      <p>You can use aspects of the VMware vSphere<tm tmtype="reg"/> API, as
         applicable for your license agreement. Refer to the vSphere documentation for more
         information.</p>
-    
-    <p><b>DCN API</b>. You can use aspects of the HPE Distributed Cloud Networking (DCN) API, 
+      </dd>
+    </dlentry>
+    <dlentry>
+      
+      <dt><b>DCN API</b></dt> 
+      <dd>
+      <p>You can use aspects of the HPE Distributed Cloud Networking (DCN) API, 
       as applicable for your license agreement. Refer to the DCN documentation for more information.</p>
-      </section>
-    <section id="sdk"><title>Software Development Kit</title>
-    <p><b>HP Helion OpenStack Carrier Grade Software Development Kit (SDK)</b></p>
-    <p>The HP Helion OpenStack Carrier Grade SDK can be used by guest applications to interact
-        programmatically with HP Helion OpenStack Carrier Grade. </p>
-      <p>The HP Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
-        daemons, API libraries, and configuration files that you can include in a guest image to
-        leverage the extended capabilities of HP Helion OpenStack Carrier Grade. Available
-        components include:</p>
+    </dd></dlentry>
+      </dl></section>
+    
+    <section id="sdk">
+      <title>Software Development Kit (SDK)</title>
+      <p>An SDK can be used by guest applications to interact programmatically with HP Helion
+        OpenStack Carrier Grade. </p>
+      <dl>
+        <dlentry>
+          <dt>HP Helion OpenStack Carrier Grade Software Development Kit (SDK)</dt>          
+          <dd>
+        <p>The HP Helion OpenStack Carrier Grade Software Development Kit (SDK) provides drivers,
+              daemons, API libraries, and configuration files that you can include in a guest image
+              to leverage the extended capabilities of HP Helion OpenStack Carrier Grade. Available
+              components include: <!--From the WR SDK doc--></p>
       <ul id="ul_zdh_d51_ds">
         <li>
           <p>Accelerated Kernel Network Drivers—Drivers for improved performance of kernel-based
@@ -90,7 +163,10 @@
       <p>See the <xref
           href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-SDK-2.0.pdf"
           format="pdf">Software Development Kit documentation</xref>.</p>
-</section>
+    </dd>
+    </dlentry>
+    </dl>
+    </section>
 
 
   </body>
