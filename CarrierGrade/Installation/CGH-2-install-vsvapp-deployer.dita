@@ -92,7 +92,7 @@
 chmod 777 *</codeblock></li>
                 <li>Restart the HTTPD service on toolbox<codeblock/></li>
                 <li>Edit the <codeph>/etc/dhcp/dhcpd.conf</codeph> file:<ol id="ol_ktg_zjp_wt">
-                        <li>Assign asubnet and IP adddress range from the TUL
+                        <li>Assign asubnet and IP address range from the TUL
                             network:<codeblock>#configuring subnet and range on TUL NETWORK
 subnet 10.20.94.0 netmask 255.255.255.0 {
     range 10.20.94.225 10.20.94.250;

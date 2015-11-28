@@ -93,7 +93,7 @@ hlm define -l </codeblock>
     <section>
       <title>hlm-generate</title>
       <p>Execute the configuration processor that generates cloud configuration files needed for
-        cloud deployment. The HP Helion OpenStack configuration processor is a script, called
+        cloud deployment. The HP Helion OpenStack Carrier Grade configuration processor is a script, called
           <codeph>hcfgproc</codeph>, that is incorporated into the installation environment. This
         command generates the necessary configuration for the cloud. </p>
       <p><b>Synopsis</b></p>

@@ -361,7 +361,7 @@ But the CLI, REST API etc should all be same --></p>
           </row>
           <row>
             <entry>attis storage --type STORAGE_TYPE</entry>
-            <entry>shows the the storage configuration with the specified  STORAGE_TYPE</entry>
+            <entry>shows the storage configuration with the specified  STORAGE_TYPE</entry>
           </row>
           <row>
             <entry>attis storage --id STORAGE_ID --update '{"storage_path":""}'</entry>

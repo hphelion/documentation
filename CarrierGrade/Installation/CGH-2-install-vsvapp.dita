@@ -87,7 +87,7 @@
         <section><title>Configure the vCenter Integration Node (Deployment Toolbox)</title>The HPE
             DCN vSphere Solution requires that you install a dedicated virtual machine on an ESX
             server. This VM is called the vCenter Integration Node, and includes the vCenter
-            Deployment Toolbox. You created the the vCenter Integration Node when you imported the
+            Deployment Toolbox. You created the vCenter Integration Node when you imported the
             OVA file above. <p>The vCenter Integration Node VM requires a Virtualized Services
                 Directory (VSD) instance. The instance does not require a VSD license and does not
                 offer VSD functionality. </p><p>To deploy the vCenter Integration Node VM:</p><ol
@@ -113,7 +113,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
         <section>
             <title>Configure the HTTP\DHCP VM for the vCenter Integration Node</title>
             <p>The HPE DCN vSphere Solution requires that you install a dedicated virtual machine on
-                an ESX server for HTTP\DCHP services. You created the the HTTP\DHCP VM when you
+                an ESX server for HTTP\DCHP services. You created the HTTP\DHCP VM when you
                 imported the OVA file above. </p>
             <p>Perform the following step create a VM for HTTP and DHCP services.</p>
             <p>
@@ -283,7 +283,7 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
             <p>After adding the vCenter topology to the vCenter Deployment Toolbox, configure the
                 cluster on vCenter for Agent use.</p>
             <p><b>Note:</b> Make sure that the cluster and hypervisor profiles are properly
-                configured on the the vCenter Deployment Toolbox before adding the cluster to the
+                configured on the vCenter Deployment Toolbox before adding the cluster to the
                 Agency.</p>
             <p>Perform the following steps using the vSphere web client:</p>
             <p>

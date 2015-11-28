@@ -27,7 +27,7 @@
     </section>
     <section id="jsons">The HP Helion OpenStack deployment requires several JSON files.</section>
     <section id="node-prov">
-      <title>Configure the the node-provision.json file</title>
+      <title>Configure the node-provision.json file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
         file supplies input values to the hprovision script, later in the installation.</p>
@@ -137,7 +137,7 @@
         }
         ]
         }</codeblock>
-        <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM address
+        <b>NOTE:</b> The configuration processor assigns the first address of the CLM address
         range to itself for serving python and debian repositories. Make sure that you set the first
         IP address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
     </section>

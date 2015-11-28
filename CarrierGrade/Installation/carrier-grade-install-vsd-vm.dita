@@ -63,7 +63,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
             <ol>
                 <li>Use a web browser to launch the VSD Architect dashboard using the DCM IP and
                     port 8443. For example: <codeblock>https://10.x.x.x:8443/</codeblock></li>
-                <li>Log into the the VSD Architect. The following are the default credentials.
+                <li>Log into the VSD Architect. The following are the default credentials.
                         <codeblock>Default credentials: 
 User Name: csproot 
 Password: csproot
@@ -88,7 +88,7 @@ VSD Server : auto</codeblock><p>The
                 <ol>
                 <li>Use a web browser to launch the VSD Architect dashboard using the DCM IP and
                     port 8443. For example: <codeblock>https://10.x.x.x:8443/</codeblock></li>
-                <li>Log into the the VSD Architect. The following are the default credentials.
+                <li>Log into the VSD Architect. The following are the default credentials.
                     <codeblock>Default credentials: 
 User Name: csproot 
 Password: csproot

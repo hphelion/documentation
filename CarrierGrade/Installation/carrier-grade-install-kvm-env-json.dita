@@ -203,7 +203,7 @@
 </codeblock>
     
     
-    <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python 
+    <p> NOTE: The configuration processor assigns the first address of the CLM address range to itself for serving python 
         and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM Host.</p>
             <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
                     <li><xref href="CGH-2-install-denver.dita#topic10581/conref-json">Denver
