@@ -29,7 +29,7 @@
                     </ul></li>
 <li>Select the volume to add to an instance and click <b>Edit Attachments</b>.</li>
 <li>In the <b>Manage Volume Attachments</b> dialog box, select an instance.</li>
-<li>Enter the name of the device from which the volume is accessible by the instance. (<b>Note:</b>
+<li>Enter the name of the device from which the volume is accessible by the instance. (<note>
           The actual device name might differ from the volume name because of hypervisor
           settings.)</li>
 <li>Click <b>Attach Volume</b>.</li>

@@ -28,7 +28,7 @@
 <p>You can lock and unlock a system, for example when you need to make a change to the system.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <ul>
 <li>

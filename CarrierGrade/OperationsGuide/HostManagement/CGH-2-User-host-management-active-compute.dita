@@ -31,7 +31,7 @@
       instances. You can manage this pool by managing the hosts. </p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <section id="adjust">
       <p>You can adjust the resources of a compute node while it is offline.</p>

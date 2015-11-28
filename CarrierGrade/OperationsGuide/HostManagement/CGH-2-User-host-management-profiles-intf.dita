@@ -28,7 +28,7 @@
       follows:</p>
     <p><image href="../../../media/CGH-2-inventory-intf.png" width="600" id="image_lwy_sm4_ht"/></p>
     <p>
-      <b>Note:</b> This feature applies only to servers in regionone.</p>
+      <note> This feature applies only to servers in regionone.</p>
     <p>To view hardware profles:<ol id="ol_qcc_4l4_ht">
         <li>
           <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion

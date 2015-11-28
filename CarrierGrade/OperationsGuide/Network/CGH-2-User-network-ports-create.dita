@@ -40,7 +40,7 @@
               <li>Optionally, specify a device name to assign the port to that device.</li>
             </ol>
           </p><p>
-            <b>Note:</b>If you do not know the device ID and name, you can create the port and later
+            <note>If you do not know the device ID and name, you can create the port and later
             edit the port to add the ID and name.</p></li>
 <li>Click <b>Create Port</b>.<p>A message appears indicating if the port was successfully created.
             When the port is created, an available fixed IP address out of one the designated

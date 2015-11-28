@@ -32,7 +32,7 @@
         id="image_emq_f24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>On a properly configured compute node, the Interfaces tab presents additional logical interfaces, for a locked node.</p>
 <p>This topic covers the following:</p>
@@ -169,7 +169,7 @@
 <li>Click <b>Create Interface</b>.</li>
 </ol>
 <p>
-<b>Note:</b> Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot be deleted. They can only be <xref type="section" href="#topic6151/editing">modified to use different physical ports</xref> when required.</p>
+<note> Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot be deleted. They can only be <xref type="section" href="#topic6151/editing">modified to use different physical ports</xref> when required.</p>
 </section>
 <section id="editing"> <title>Editing Interface Details</title>
 <p>You can edit existing logical interfaces.</p>

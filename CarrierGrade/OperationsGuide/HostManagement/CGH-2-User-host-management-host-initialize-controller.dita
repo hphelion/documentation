@@ -32,7 +32,7 @@
 <p>You must assign a host as a second controller to provide redundancy for controller-0.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before initializing a node, ensure that the following conditions are satisfied:</p>
 <ul>
@@ -46,7 +46,7 @@
 <ol>
       <li><xref href="CGH-2-User-host-management.dita#topic11233/poweroff">Power on the node</xref>
         to be configured as  <codeph>Controller-1</codeph>.<p>
-          <b>Note:</b> To ensure you can correctly identify hosts as you install them, power on and
+          <note> To ensure you can correctly identify hosts as you install them, power on and
           configure each new node one at a time.</p></li>
       <li>
         <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion

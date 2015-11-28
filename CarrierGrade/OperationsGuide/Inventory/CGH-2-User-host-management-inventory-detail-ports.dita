@@ -32,7 +32,7 @@
         id="image_bgt_g24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Currently none of the port attributes is configurable; they are all read directly from the hardware.</p>
 <p>To view the host ports:</p>

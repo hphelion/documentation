@@ -31,10 +31,10 @@ The HP Helion OpenStack Carrier Grade system uses exactly two controllers; you c
 However, you can replace the primary or secondary disks, and you can replace faulty controller nodes.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> If you are replacing disks in order to increase the controller storage capacity, follow the instructions for Changing Storage Space Allotments on the Controller.</p>
+<note> If you are replacing disks in order to increase the controller storage capacity, follow the instructions for Changing Storage Space Allotments on the Controller.</p>
 <p>To replace a controller node on an active system: </p>
 <ol>
       <li>
@@ -76,7 +76,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
           Allotments on the Controller</p>
         <p>To reinstall the software on a host , click More &gt; Reinstall.</p>
         <p>
-          <b>Note:</b> If the host does not boot from the management network, ensure that the host
+          <note> If the host does not boot from the management network, ensure that the host
           BIOS is configured for PXE boot.</p>
         <p>c. <xref href="CGH-2-User-host-management.dita#topic11233/swact">Perform a swact</xref> by
           clicking <b>More</b> then <b>Swact Host</b> for the active controller.</p>

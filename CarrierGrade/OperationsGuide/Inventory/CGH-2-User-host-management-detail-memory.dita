@@ -30,7 +30,7 @@
         id="image_p2q_224_ht"/></p>
     <!-- ===================== horizontal rule ===================== -->
     <p>
-      <b>Note:</b> This feature applies only to servers in regionone.</p>
+      <note> This feature applies only to servers in regionone.</p>
     <!-- ===================== horizontal rule ===================== -->
     <p>To view host memory information:</p>
     <p>

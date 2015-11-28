@@ -32,7 +32,7 @@
                 id="image_ptv_c24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>You access the <b>Inventory Detail</b> page by clicking the host name on the <b>Hosts</b> tab of the <b>Systems Inventory</b> page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host.</p>
 <p>This page details:</p>

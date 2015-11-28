@@ -39,7 +39,7 @@
     </p>
     <!-- ===================== horizontal rule ===================== -->
     <p>
-      <b>Note:</b> This feature applies only to servers in regionone.</p>
+      <note> This feature applies only to servers in regionone.</p>
     <!-- ===================== horizontal rule ===================== -->
   <section>To view hardware profles:<ol>
         <li>

@@ -32,7 +32,7 @@
         id="image_atp_d24_ht"/></p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>This page contains the following:</p>
 <ul>
@@ -158,7 +158,7 @@ host-lvg-show hostname
   </ul>
 
 <p>
-<b>Note:</b> The only valid group name is <codeph>nova-local</codeph>.</p>
+<note> The only valid group name is <codeph>nova-local</codeph>.</p>
 <p>When disk_uuid indicates the root disk, the physical volume uses a system-designated partition on the root disk. For any other disk, the physical volume uses the entire disk.</p>
 <codeblock><codeph>host-pv-delete hostname nova-local disk_uuid
 host-pv-list hostname

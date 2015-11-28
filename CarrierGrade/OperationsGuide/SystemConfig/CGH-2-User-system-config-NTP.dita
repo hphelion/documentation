@@ -31,7 +31,7 @@
       administration interface or the CLI.</p>
     <image href="../../../media/CGH-2-config-ntp.png" width="600" id="image_lmy_2r2_jt"/>
     <p>
-      <b>Note:</b> This feature applies only to servers in regionone.</p>
+      <note> This feature applies only to servers in regionone.</p>
     <p>Before changing NTP server addresses, review <xref
         href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault Management
         page</xref> and make sure that any existing system alarms are cleared. </p>
@@ -72,7 +72,7 @@
           the standby controller</xref>. Wait for the host to become available. It is updated with
         the new NTP server addresses, and its error message is cleared. </li>
       <li><xref href="../HostManagement/CGH-2-User-host-management.dita#topic11233/swact">Perform a
-          swact on the active controller</xref>. <p><b>Note:</b> After the swact, the HP Helion
+          swact on the active controller</xref>. <p><note> After the swact, the HP Helion
           OpenStack Carrier Grade begins using the new OAM network configuration. If you have
           changed the OAM subnet or the OAM floating IP address, the current web session is
           terminated. To continue using the web administration interface, you must start a new

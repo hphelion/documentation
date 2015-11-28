@@ -14,7 +14,7 @@
     <p>Server Groups is a mechanism to group virtual machines to which a common set of attributes is
       applied.</p>
     <p>
-      <b>Note:</b> This feature applies only to servers in regionone.</p>
+      <note> This feature applies only to servers in regionone.</p>
     <p><image href="../../../media/CGH-2-server-group.png" width="600" id="image_cr5_csv_ht"/></p>
     <p>To create a server group:</p>
 

@@ -20,7 +20,7 @@
       requires two general steps.<p>The first step is to create an ISO image file outside of your HP
         Helion OpenStack</p><p>When the ISO image file is complete and ready for use, you use HP
         Helion OpenStack to upload the image to your cloud.</p><p>
-        <b>Note:</b> After you upload an image, it is considered <i>golden</i> and you cannot change
+        <note> After you upload an image, it is considered <i>golden</i> and you cannot change
         it.</p><ol>
         <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
@@ -42,7 +42,7 @@
               Location and Image File.</li>
             <li><b>Image File or Image Location</b> - Based on your selection for Image Source, you
               either enter the location URL of the image in the Image Location field. or browse to
-              the image file on your system and add it. <b>Note:</b> The Image Location field must
+              the image file on your system and add it. <note> The Image Location field must
               be a valid and direct URL to the image binary. URLs that redirect or serve error pages
               will result in unusable images.</li>
             <li><b>Format</b> - Select the correct format (for example, QCOW2) for the image.</li>

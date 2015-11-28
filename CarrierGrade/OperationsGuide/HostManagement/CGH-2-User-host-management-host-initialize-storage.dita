@@ -29,7 +29,7 @@
 <p>You can assign a new host as a storage node to provide object storage. Storage nodes are required only if the system is configured to use Ceph storage.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<b>Note:</b> This feature applies only to servers in regionone.</p>
+<note> This feature applies only to servers in regionone.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before initializing a node, ensure that the following conditions are satisfied:</p>
 <ul>
@@ -43,7 +43,7 @@
 <ol>
       <li><xref href="CGH-2-User-host-management.dita#topic11233/poweroff">Power on the node</xref>
         to be configured as a storage node.<p>
-          <b>Note:</b> To ensure you can correctly identify hosts as you install them, power on and
+          <note> To ensure you can correctly identify hosts as you install them, power on and
           configure each new node one at a time.</p></li>
       <li>
         <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
@@ -104,7 +104,7 @@
                 <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and
               <codeph>Available</codeph>.</p></li>
         </ol><p>
-          <b>Note:</b> Ensure that you install two storage nodes, as required by the HP Helion
+          <note> Ensure that you install two storage nodes, as required by the HP Helion
           OpenStack Carrier Grade architecture.</p>
       </li>
 </ol>

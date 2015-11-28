@@ -35,7 +35,7 @@
             <li><b>Protected</b> - Select this option to prevent the image from being deleted. Leave
               the option clear to allow the image to be deleted.</li>
           </ul><p>
-            <b>Note:</b> Fields that cannot be modified are shaded.</p></li>
+            <note> Fields that cannot be modified are shaded.</p></li>
 </ol>
 <p>5, When complete, click <b>Update Image</b>.</p>
 </section>

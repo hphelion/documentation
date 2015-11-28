@@ -30,7 +30,7 @@
       using an LVM backend, the space allotted for Cinder volume storage.</p>
     <image href="../../../media/CGH-2-config-ntp.png" width="600" id="image_lmy_2r2_jt"/>
     <p>
-      <b>Note:</b> This feature applies only to servers in regionone.</p>
+      <note> This feature applies only to servers in regionone.</p>
     <p>During software installation, the HP Helion OpenStack Carrier Grade is configured with the
       following storage allotments. <ul id="ul_tlj_t1f_jt">
         <li><b>Database storage</b>. The storage allotment for the OpenStack database. </li>

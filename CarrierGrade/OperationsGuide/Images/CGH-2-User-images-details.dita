@@ -29,7 +29,7 @@
         </ul><p>The available images are listed.</p></li>
 <li>Click the name of the image.
 
-  <p><b>Note:</b> When your cursor is on the image name, the name is underlined.</p></li>
+  <p><note> When your cursor is on the image name, the name is underlined.</p></li>
 
 <li>The Image Details screen shows detailed information about the image, including:<ul>
           <li>name and ID</li>
