@@ -113,7 +113,10 @@
         navtitle="User Guide" locktitle="yes" format="ditamap"/>
     </topicref>
     <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting.dita"
-      navtitle="Troubleshooting" locktitle="yes"/>
+      navtitle="Troubleshooting" locktitle="yes">
+      <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting-install.dita"
+        navtitle="Installation Troubleshooting" locktitle="yes"/>
+    </topicref>
     <topicref href="CarrierGrade/carrier-grade-license.dita">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"

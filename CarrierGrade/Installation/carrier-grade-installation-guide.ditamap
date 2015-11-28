@@ -89,8 +89,6 @@
                 navtitle="Deploying the Lifecycle Manager and Installation Services" locktitle="yes"/>
             <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-kvm-memphis.dita"
-                navtitle="Deploying the Memphis KVM Region" locktitle="yes"/>
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-memphis.dita"
@@ -110,8 +108,8 @@
                 navtitle="Download the Installation Packages" locktitle="yes"/>
             <topicref href="carrier-grade-install-hlm-vm.dita"
                 navtitle="Deploying the Lifecycle Manager and Installation Services" locktitle="yes"/>
-            <topicref href="CGH-2-install-sacramento.dita"
-                navtitle="Deploying the Sacramento KVM Region" locktitle="yes">
+            <topicref href="CGH-2-install-sacramento.dita" navtitle="Deploying the Non-KVM Region"
+                locktitle="yes">
                 <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
