@@ -18,11 +18,8 @@
     <section>
       <ul id="ul_xzh_nmc_mt">
         <li><xref href="#topic10581/baremetal" format="dita"/></li>
-        <li><xref href="#topic10581/install-fails" format="dita"/></li>
         <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
             non-KVM region</xref></li>
-        <li><xref href="#topic10581/vm" format="dita"/></li>
-        <li><xref href="#topic10581/vrs" format="dita"/></li>
         <li><xref href="#topic10581/backup" format="dita"/></li>
       </ul>
     </section>
@@ -38,7 +35,12 @@
     <p>Perform the following steps:</p>
     <p>
       <ol id="ol_avt_1r1_d5">
-        <li>Log in to the Baremetal controller after reboot.<pre>sudo su -</pre></li>
+        <li>From the lifecycle manager VM, log in to the baremetal controller after
+            reboot.<codeblock>ssh cghelion@&lt;BM_Controller_IP&gt;</codeblock><p>The
+              <codeph>BM_Controller_IP</codeph> address can be obtained from the
+              <codeph>nodes.json</codeph> file in <codeph>/var/hlm/clouds/&lt;cloud_name>/</codeph>
+            directory on the lifecycle manager.</p></li>
+        <li>Switch to the root user:<pre>sudo su -</pre></li>
         <li>Execute the following command to manually restart the <codeph>mysql</codeph>
           service:<codeblock>/etc/init.d/mysql bootstrap-pxc</codeblock></li>
       </ol>
@@ -55,77 +57,6 @@
             <li><b>neutron net-list</b> should display the created networks</li>
           </ul></li>
       </ol></section>
-    <section id="install-fails">
-      <title>Installation fails at Ansible playbook</title>
-      <p><b>System Behavior/Message</b></p>
-      <p>The HP Helion OpenStack Carrier Grade installation fails during the HLM deployment (after
-        executing the <codeph>ansible-playbook</codeph> command) with an error similar to the
-        following.</p>
-      <codeblock>
-TASK: [HLM-CREATE-ON-BM | Add hlm to the in-memory inventory of playbook] ***** 
-ok: [192.168.122.1] 
-PLAY [hlm] 
-********************************* GATHERING FACTS ***************************** 
-previous known host file not found 
-fatal: [192.168.122.240] => SSH encountered an unknown error during the connection. 
-We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue 
-TASK: [HLM-CFG | Delete existing interfaces file] 
-***************************** FATAL: no hosts matched or all hosts have already failed -- aborting 
-PLAY RECAP ******************************************************************** 
-to retry, use: --limit @/root/setup_hlm_onBM.retry 
-192.168.122.1 : ok=18 changed=8 unreachable=0 failed=0 
-192.168.122.240 : ok=0 changed=0 unreachable=1 failed=0</codeblock>
-      <p><b>Resolution</b></p>
-      <p>Perform the following steps:</p>
-      <ol id="ol_fqn_wqn_c5">
-        <li>Execute the following command to determine if the HLM VM was created:
-          <codeblock>virsh list –all</codeblock>If the HLM VM appears in the output, delete the VM
-          using the following
-          commands:<codeblock>virsh destroy hlm
-virsh undefined hlm</codeblock></li>
-        <li>Edit the <codeph>/root/infra-ansible-playbooks/setup_hlm_onBM.yml</codeph> file to
-          comment the second role. The file contains two roles: the first one creates the VM and the
-          second one configures the VM.
-          <codeblock>hosts: hlm_kvm_host
-sudo: yes
-user: root
-roles:
-HLM-CREATE-ON-BM
-hosts: hlm
-#sudo: yes
-#user: root
-#roles:
-HLM-CFG</codeblock></li>
-        <li>Again, run the <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>.</li>
-        <li>After the command completes, execute the following command to obtain the vibr0 IP
-          address for the HLM<codeblock>arp | grep aa</codeblock>Copy the IP address you get in the
-          output. 192.168.122.XXX</li>
-        <li>Edit the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to add the vibr0 IP
-          address in the following manner:
-          <codeblock>[vsd]
-10.10.10.10 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
-        
-[hlm]
-192.168.122.240 ansible_ssh_user=root ansible_ssh_pass=cghelion
-        
-[hlm_kvm_host]
-192.168.122.1 #ansible_ssh_user=root ansible_ssh_pass=root</codeblock></li>
-        <li>Edit the <codeph>setup_hlm_onBM.yml</codeph> to comment-out the first role and
-          un-comment the second role.
-          <codeblock>hosts: hlm_kvm_host
-sudo: yes
-user: root
-roles:
-- HLM-CREATE-ON-BM
-hosts: hlm
-sudo: yes
-user: root
-roles:
-HLM-CFG</codeblock></li>
-        <li>Run <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>
-          <codeph>HCG-909</codeph></li>
-      </ol>
-    </section>
     <section id="no-instance">
       <title><b>Unable to create an instance in the non-KVM region</b></title>
       <p>When trying to create a virtual machine instance in the non-KVM region, the user receives a
@@ -134,41 +65,6 @@ HLM-CFG</codeblock></li>
         configured with the proxy, disconnect the host(s) from the cluster or <xref
           href="../Installation/carrier-grade-install-esx-proxy.dita#topic10581">install the ESX
           compute proxy</xref>. <!--CG-1413--></p>
-    </section>
-    <section id="vm">
-      <title>VM fails to get private/Fixed IP address</title>
-      <p>
-        <b>System Behavior/Message</b>
-      </p>
-      <p>After <xref
-          href="../Installation/carrier-grade-install-config-dcn.dita#topic10581/vrsg-config"
-          >configuring the VRS-G</xref> during installation, the VRS-G VM is assigned with private
-        and floating IP ddress, when seen on the VSD dashboard. However, if you launch a console
-        session to the VM, there is no networking.</p>
-      <p>
-        <b>Resolution</b>
-      </p>
-      <p>Make sure the Glance image has the correct properties set. For example, check that the
-        adapter type is <codeph>ide</codeph>. Also, check if gateway and subnet values are correctly
-        assigned to VRSvAPPs. </p>
-    </section>
-    <section id="vrs">
-      <title>VRSvAPPs missing in VSD dashboard</title>
-      <p>
-        <b>System Behavior/Message</b>
-      </p>
-      <p>While performing basic verification of cloud deployment, the VRSvAPPs might not appear in
-        the VSD dashboard and the associated TUL addresses are not pingable from VRS-G node. </p>
-      <p>
-        <b>Resolution</b>
-      </p>
-      <p>The vswitch1 on VRSvAPPs needs to be presented to the Niantics card. Once this was done,
-        VRSvAPPS were synchronized in VSD dashboard. </p>
-      <p>Memphis region deployment is done with following networking changes. </p>
-      <p>Networking changes done are as follows –</p>
-      <p>ETH0 is active</p>
-      <p>ETH1 is off</p>
-      <p>UNTAGGED TUL on NIANTICS on DCN, VRS and WR Computes</p>
     </section>
     <section id="backup">
       <title>Backup storage size should be at least 120GB</title>

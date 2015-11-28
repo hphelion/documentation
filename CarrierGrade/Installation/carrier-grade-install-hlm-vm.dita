@@ -62,8 +62,8 @@ cobbler_pxestartip: 10.x.x.x
 cobbler_pxeendip:   10.x.x.x
 cobbler_pxestaticip: 10.x.x.x
 cobbler_pxenetmask: 255.255.255.0
-cobbler_hlinux_password:  
-cobbler_web_password: 
+cobbler_hlinux_password: cobbler 
+cobbler_web_password: cobbler  
               
 #Set the location of your images that will be used by libvirt
 imagelocation: /var/lib/libvirt/images
