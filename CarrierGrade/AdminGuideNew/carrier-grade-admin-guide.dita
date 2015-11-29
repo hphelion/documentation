@@ -15,9 +15,11 @@
     </metadata>
   </prolog>
   <body>
-    <section>The <i>KVM Region Administrator Guide</i> is addressed to HP Helion OpenStack Carrier
-      Grade administrators responsible for the following areas in the KVM region:<ul
-        id="ul_vzg_qph_ws">
+    <section>The <xref
+        href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
+        format="pdf" scope="external">KVM Region Administrator Guide</xref> is addressed to HP
+      Helion OpenStack Carrier Grade administrators responsible for the following areas in the KVM
+        region:<ul id="ul_vzg_qph_ws">
         <li>
           <p>Creating and maintaining resources used by end users (tenants), such as virtual
             machines, storage pools, network objects, and access credentials.</p>
@@ -28,14 +30,10 @@
             facilities</p>
         </li>
       </ul></section>
-    <p>Click one of the following links <ul id="ul_zwg_vfp_15">
-        <li><xref href="../AdminGuideKVM/CGH-2-KVM-Admin.ditamap#jow1404333828882" format="ditamap"
-            >HP Helion OpenStack Carrier Grade Administrator Guide on-line</xref></li>
-        <li><xref
-            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
-            format="pdf" scope="external">HP Helion OpenStack Carrier Grade Administrator Guide in
-            PDF</xref></li>
-      </ul></p>
+    <p>See: <xref
+        href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
+        format="pdf" scope="external">HP Helion OpenStack Carrier Grade Administrator Guide in
+        PDF</xref></p>
     
   </body>
 </topic>
