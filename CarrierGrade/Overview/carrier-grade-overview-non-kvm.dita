@@ -16,17 +16,18 @@
 </metadata>
 </prolog>
 <body>
-    <p>For installation and maintenance, HP<xref href="carrier-grade-overview-non-kvm.dita"/> Helion
-      OpenStack Carrier Grade consists of three logical or conceptual <i>regions</i>: Non-KVM, KVM,
-      and baremetal. </p>
-    <p>The Non-KVM region contains the lifecycle manager, to deploy and maintain HP Helion OpenStack
-      Carrier Grade; and HP Helion OpenStack, a commercial-grade distribution of OpenStack.</p>
+    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of three logical
+      or conceptual <i>regions</i>: Non-KVM, KVM, and the optional baremetal. </p>
+    <p>A server in the Non-KVM region hosts the lifecycle manager, which contains the installation
+      scripts and configuration files to deploy and maintain HP Helion OpenStack Carrier Grade; and
+      HP Helion OpenStack, a commercial-grade distribution of OpenStack.</p>
     <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
     <section><title>Lifecycle Manager</title>All four deployment models install the lifecycle
-      manager into the non-KVM region.<p>The Non-KVM environment includes a full installation of a
-        lifecycle manager, an application that is used to deploy HP Helion OpenStack Carrier Grade
-        and can be used for ongoing operations and maintenance of the system.</p><ul
-        id="ul_bhj_clv_ls">
+      manager into the non-KVM
+        region.<!-- From: https://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root--><p>The
+        Non-KVM environment includes a full installation of a lifecycle manager, an application that
+        is used to deploy HP Helion OpenStack Carrier Grade and can be used for ongoing operations
+        and maintenance of the system.</p><ul id="ul_bhj_clv_ls">
         <li>
           <p>
             <b>Physical Node Preparation.</b> The lifecycle manager can configure nodes prior to
@@ -36,8 +37,8 @@
         </li>
         <li>
           <p>
-            <b>OS Install.</b> The lifecycle manager can take a PXE bootable node and installs a
-            base operating system.</p>
+            <b>OS Install.</b> The lifecycle manager takes a PXE bootable node and installs a base
+            operating system.</p>
         </li>
         <li>
           <p>
@@ -64,12 +65,9 @@
     <section>
       <title>HP Helion OpenStack</title>
       <p>All four deployment models install HP Helion OpenStack into the non-KVM region.</p>
-      <p>HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack the leading
-        open source cloud computing platform. This distribution, backed by HPE enables customers to
-        more easily build, manage, and use open-source based hybrid cloud in a resilient,
-        maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services
-        and business agility and, as part of the HP Helion portfolio, it is backed by a wide range
-        of related cloud products, services, and professional support.</p>
+      <p>HPE Helion OpenStack2.0 is the latest OpenStack-based infrastructure-as-a-service cloud
+        platform release from HP. It is based on the OpenStack Kilo release and implements core
+        services and features of Kilo while providing new installation and management features.</p>
       <p>HP Helion OpenStack offers many services based on the different OpenStack projects to
         provide the functionality you need. Visit the <xref
           href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">HP Helion
@@ -78,9 +76,32 @@
     <section>
       <title>HP Distributed Cloud Networking (DCN)</title>
       <p>The Tahoe, Memphis, and Sacramento deployment models include HP DCN.</p>
-      <p>The optional HPE DCN is a software-Defined Networking (SDN) solution that enhances data
+      <p>The optional HP DCN is a software-Defined Networking (SDN) solution that enhances data
         center (DC) network virtualization by automatically establishing connectivity between
         compute resources upon their creation. </p>
+      <p>Refer to the HP DCN documentation for more information, system requirements and
+        installation instructions.</p>
+      <p>In general, the main components in the HP DCN solution are: Virtualized Services Directory
+        (VSD) and Virtualized Services Directory Architect (VSD Architect), Virtualized Services
+        Controller (VSC) and Virtual Routing and Switching
+          (VRS).<!-- From HP Distributed Cloud Networking User Guide--><ul id="ul_bs5_xk2_25">
+          <li><b>Virtualized Services Directory (VSD).</b> The HP VSD is a programmable policy and
+            analytics engine. The VSD runs as a number of processes in a virtual machine (VM)
+            environment.</li>
+          <li><b>Virtualized Services Directory Architect (VSD Architect).</b> The VSD Architect is
+            a GUI for management tasks on the VSD.</li>
+          <li><b>Virtualized Services Controller (VSC).</b> The HP VSC is a powerful SDN controller.
+            It functions as the robust network control plane for DCs, maintaining a full view of
+            per-tenant network and service topologies. The VSC runs in a virtual machine
+            environment.</li>
+          <li><b>Virtual Routing and Switching (VRS).</b> The HP VRS component is an enhanced Open
+            vSwitch (OVS) implementation that constitutes the network forwarding plane.<p>For lower
+              bandwidth needs, the software-based Virtual Routing Services Gateway(VRS-G) can be run
+              in a dedicated bare-metal server or as a virtual machine, allowing the incorporation
+              of bare-metal assets as virtualized extensions of the data center, as well as
+              providing an exit gateway for the DVRS’ overlay, floating-IP and shared-services
+              traffic.</p></li>
+        </ul></p>
     </section>
     <section><title>ESX Integration</title>The Memphis, and Sacramento deployment models include
       VMWare ESX<tm tmtype="reg"/>.<p>HP Helion OpenStack Carrier Grade optionally supports VMWare
@@ -88,27 +109,26 @@
         our ESX integration, the cloud can provision and manage an ESX cluster. VMWare Compute Proxy
         is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters
         through Nova Compute proxy nodes. A Compute node scheduler sees each cluster as compute and
-        uses the same for scheduling new instances.</p><p><b>DCN/ESX Integration</b></p><p>This
-        DCN/ESX integration uses the VRSvAPP application to connect the VMware vCenter™ networking
-        to the Network Operations controller to manage workload networks.</p><p>Virtual networking
-        between HP Helion Carrier Grade and the ESX servers is handled by HPE Distributed Cloud
-        Networking (DCN) is a software-defined networking (SDN) solution that enhances data center
-        (DC) network virtualization by automatically establishing connectivity between compute
-        resources upon their creation. </p><p>The ESX integration uses the OVSvApp application to
-        connect the vCenter networking to the Network Operations controller to manage workload
-        networks.</p><p>ESX region uses mixture of best features from OpenStack, ESX and DCN:</p><ul
-        id="ul_p44_snk_ws">
+        uses the same for scheduling new instances.</p><p>Refer to the VMWare documentation for more
+        information, system requirements and installation instructions.</p><p><b>DCN/ESX
+          Integration</b></p><p>This DCN/ESX integration uses the VRSvAPP application to connect the
+        VMware vCenter™ networking to the Network Operations controller to manage workload networks.
+      </p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the
+      Network Operations controller to manage workload networks. HP DCN handles virtual networking
+      between HP Helion OpenStack Carrier Grade and the ESX servers. <p>Together, HP Helion
+        OpenStack Carrier Grade, ESX, and DCN combine to provide the best features from OpenStack,
+        ESX and DCN, including:</p><ul id="ul_p44_snk_ws">
+        <li>Support for inter-region and inter-cloud communication between different data
+          centers.</li>
         <li>OpenStack features with rich services such as Keystone, Glance, Nova, Neutron, Cinder,
           Horizon</li>
         <li>ESX provides foundation for building and managing a virtualized IT infrastructure</li>
         <li>ESX provides reliability and performance</li>
-        <li>ESX hypervisor abstracts processor, memory and storage</li>
+        <li>ESX hypervisors abstract processor, memory and storage</li>
         <li>DCN provides programmable business logic and a powerful policy engine</li>
-        <li>DCN provides open and highly responsive solution that scales and span across
+        <li>DCN provides an open and highly responsive solution that scales and spans across
           multi-tenant DCs</li>
-        <li>Inter-region and Inter-cloud communication between different data centers</li>
-        <li>ESX region uses VMDK driver using multi-backend storage support from Cinder </li>
+        <li>ESX region uses a VMDK driver to offer multi-backend storage support from Cinder </li>
       </ul></section>
-    <section><!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root --></section>
   </body>
 </topic>
