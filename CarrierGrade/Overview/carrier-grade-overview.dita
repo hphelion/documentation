@@ -202,7 +202,7 @@
                 Overview</xref>.<!--Original writing--></p>
           </dd>
         </dlentry>
-        <dlentry>
+        <dlentry id="networking">
           <dt><b>High-Performance Networking</b></dt>
           <dd>
             <p>HP Helion OpenStack Carrier Grade provides significantly improved network performance
