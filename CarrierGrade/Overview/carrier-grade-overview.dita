@@ -215,7 +215,17 @@
               switching network traffic between the core network and the virtualized applications or
               Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). Based on
               your deployment model, you will use either:</p>
-            <p><b>HPE DCN Virtual Routing Switch (VRS).</b> HPE DCN VRS is.. </p>
+            <p><b>HPE DCN Virtual Routing Switch (VRS).</b> HP Distributed Cloud Networking (DCN) is
+              a Software-Defined Networking (SDN) solution that provides data center (DC) network
+              virtualization and automatically establishes connectivity between compute resources
+              upon their creation. </p>
+            <p>Leveraging programmable business logic and a powerful policy engine, the HP DCN
+              provides an open and highly responsive solution that scales to meet the stringent
+              needs of massive multi-tenant DCs. The HP DCN is a software solution that can be
+              deployed over an existing DC IP network fabric. The main components in the HP DCN
+              solution are: Virtualized Services Directory (VSD) and Virtualized Services Directory
+              Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
+              Switching (VRS). </p>
             <p><b>Accelerated vSwitch (AVS).</b> AVS is integrated into the servers in the KVM
               region. AVS is an optimization of Open vSwitch (OVS) technology for NFV environments.
               Open vSwitch is a multilayer software switch licensed under the open source Apache 2
