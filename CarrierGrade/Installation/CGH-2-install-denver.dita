@@ -74,7 +74,7 @@
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
     <section id="environment">
-      <p>Modify the e<codeph>nvironment.json</codeph> file</p>
+      <title id="env-json">Modify the e<codeph>nvironment.json</codeph> file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager.
         Configure the VLANs and network addresses as appropriate for your environment. Set the
@@ -88,7 +88,8 @@
       </p>
       <p>
         <b>Example:</b>
-      </p><p><codeblock>{
+      </p>
+      <p><codeblock>{
         "product": {
         "version": 1
         },
@@ -137,11 +138,11 @@
         }
         ]
         }</codeblock>
-        <b>NOTE:</b> The configuration processor assigns the first address of the CLM address
-        range to itself for serving python and debian repositories. Make sure that you set the first
-        IP address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
+        <b>NOTE:</b> The configuration processor assigns the first address of the CLM address range
+        to itself for serving python and debian repositories. Make sure that you set the first IP
+        address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
     </section>
-    <section><title>Modify the <codeph>definition.json</codeph></title>
+    <section id="def-json"><title>Modify the <codeph>definition.json</codeph></title>
         <p>Modify the <codeph>definition.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
         directory of the lifecycle manager: </p>
       <ol>

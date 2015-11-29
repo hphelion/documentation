@@ -24,7 +24,7 @@
                 
                 <p>This document describes the prerequisite steps required to install HP Helion
                         OpenStack Carrier Grade in a baremetal environment.</p>
-                <section conref="carrier-grade-install-download.dita#topic7148/getinstall"/>
+                <section conref="carrier-grade-install-download.dita#topic7148/getinstall" id="download"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/dcn"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/infoblox"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/esx"/>

@@ -90,7 +90,7 @@
                                         following lines, using values specific to your environment.
                                                   <p><b>Note:</b> The <codeph>export
                                                   no-proxy</codeph> command is
-                                                optional<!-- per Lakshmi email 10/9/15-->:</p><codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+                                                          optional<!-- per Lakshmi email 10/9/15-->:</p><codeblock><codeph>vsc_config_restore.yml ATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
 export no_proxy=localhost,127.0.0.1,&lt;KVM_Host_IP_address>,&lt;provider_network></codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
@@ -270,7 +270,7 @@ StrictHostKeyChecking no </codeblock></li>
                 </section>
                 <section id="vsd">
                         <title>Bring Up Single VSD VM Manually</title>
-                        <p><b>Note:</b> This is not applicable for the <xref
+                        <p><b>Note:</b> This patch is not applicable for the <xref
                                         href="carrier-grade-technical-overview-denver.dita">Denver
                                         deployment</xref>. </p>
                         <p>You must launch a virtual machine for the required HPE DCN Virtualized

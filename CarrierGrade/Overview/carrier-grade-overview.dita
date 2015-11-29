@@ -4,9 +4,9 @@
 <topic xml:lang="en-us" id="topic4010">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Overview</title>
   <shortdesc>HP Helion OpenStack Carrier Grade is a high-performance, high-availability, cloud
-    operating system that enables telecommunications operators to use Commercial-off-the-shelf
-    (COTS) hardware to manage Virtualized Network Functions (VNF) within a carrier grade Network
-    Function Virtualization (NFV) architecture.</shortdesc>
+    operating system based on OpenStack Kilo that enables telecommunications operators to use
+    Commercial-off-the-shelf (COTS) hardware to manage Virtualized Network Functions (VNF) within a
+    carrier grade Network Function Virtualization (NFV) architecture.</shortdesc>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -20,15 +20,14 @@
   <body>
     <p>HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the IT
       cloud, and the high-availability and performance demanded by the Telecommunications industry,
-      into a unique carrier grade, industry-leading solution to deliver a price-performance ratio
-      well above alternative solutions. HP Helion OpenStack Carrier Grade is aligned with the
-      ETSI-NFV architecture.</p>
+      into a unique carrier grade, industry-leading solution. HP Helion OpenStack Carrier Grade is
+      aligned with the ETSI-NFV architecture.</p>
     <section>
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
-      <p>Some key aspects include Linux host operating systems, server virtualization (KVM), network
-        virtualization (vSwitch and SDN controllers), an installer and cloud lifecycle management
-        framework, fault and performance management, and high-availability framework for the
-        OpenStack control plane.</p>
+      <p>HP Helion OpenStack Carrier Grade includes two Linux host operating systems, server
+        virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
+        cloud lifecycle management framework, fault and performance management, and
+        high-availability framework for the OpenStack control plane.</p>
       <p>HP Helion OpenStack Carrier Grade is based on HP Helion OpenStack 2.0 but with
         significantly enhanced and optimized functionality, availability, scale and performance to
         meet the needs of NFV cloud deployments.</p>
@@ -45,10 +44,9 @@
         <li>Management and middleware—composed of high-availability (HA) management; operations,
           administration, and maintenance (OAM); software image management; and fault and
           performance management</li>
-        <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for
-          performance acceleration and improving the HA framework above and beyond standard
-          VIMs.</li>
-        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager.</li>
+        <li>Guest software development kit (SDK) for inclusion in the guest OS of the  virtual
+          network functions (VNF)  for performance acceleration and improving the HA framework above
+          and beyond standard VIMs.</li>
       </ul>
     </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
@@ -110,11 +108,6 @@
     </section>
     <section id="section_N10027_N1001C_N10001">
       <title>Core HP Helion OpenStack Carrier Grade Capabilities</title>
-      <p>HP Helion OpenStack Carrier Grade leverages core virtualization and carrier-grade
-        technologies, Intel DPDK high-performance packet processing, open architectures, and the
-        OpenStack software suite. It extends the OpenStack software suite to implement a unique
-        carrier-grade, high-availability architecture, on which high-performance production systems
-        can be deployed.<!--From the WR admin guide--></p>
       <p>Core capabilities unique to HP Helion OpenStack Carrier Grade include:</p>
       <dl>
         <dlentry>
@@ -128,8 +121,8 @@
                 href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and
                 Restore Configuration Files and MySQL Clusters</xref>.</p>
             <p>For information on backing up and restoring the KVM region, see the <xref
-                href="../AdministratorGuideWR/carrier-grade-admin-guide.ditamap#jow1404333828882"
-                format="ditamap">KVM-Region Administrator Guide</xref>.</p>
+                href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+                Administrator Guide</xref>.</p>
           </dd>
         </dlentry>
         <dlentry>
@@ -154,10 +147,16 @@
           <dt><b>Installation Options</b></dt>
           <dd>
             <p>HP Helion OpenStack Carrier Grade has four deployment models, depending on your
-              system configuration.</p>
+              system configuration. Specific installation templates are included in the download
+              package to facilitate the deployment of your cloud. </p>
             <p>You can find more information on the deployment options in the <xref
                 href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
-                Overview</xref>.<!--Original writing--></p>
+                Overview</xref>.<!--Original writing--><ul id="ul_kg5_h5d_25">
+                <li>KVM only (using the Denver template)</li>
+                <li>KVM with HP Distributed Cloud Networking (using the Tahoe template)</li>
+                <li>KVM + VMware ESX<tm tmtype="reg"/> with DCN (using the Memphis template)</li>
+                <li> KVM + ESX + Ironic with DCN (using the Sacramento Deployment)</li>
+              </ul></p>
           </dd>
         </dlentry>
         <dlentry>
@@ -180,9 +179,9 @@
         <dlentry>
           <dt><b>Ironic Baremetal Region</b></dt>
           <dd>
-            <p>HP Helion OpenStack Carrier Grade leverages the OpenStack Ironic service, which aims
-              to provision bare metal machines instead of virtual machines. For more information,
-              see <xref
+            <p>When using the KVM + ESX + Ironic with DCN Topology, HP Helion OpenStack Carrier
+              Grade leverages the OpenStack Ironic service, which aims to provision bare metal
+              machines instead of virtual machines. For more information, see <xref
                 href="../ServicesOverviews/carrier-grade-services-ironic-overview.dita#topic1235"
                 >Ironic Service Overview</xref>.<!--Original writing--></p>
           </dd>
@@ -207,13 +206,22 @@
           <dt><b>High-Performance Networking</b></dt>
           <dd>
             <p>HP Helion OpenStack Carrier Grade provides significantly improved network performance
-              over the default open source OpenStack solution through a guest application on a
-              virtual machine.<!--From the WR admin guide--></p>
-            <p>At the center of the HP Helion OpenStack Carrier Grade Networking is a
-              DPDK-Accelerated Virtual L2 Switch (AVS), running on the compute node hosts. It
-              provides connectivity between virtual machines on the same compute node, and between
-              virtual machines and external networks. AVS supports a variety of network connectivity
-              options with the hosted virtual machines, as follows: </p>
+              over the default OpenStack solution through a guest application on a virtual
+              machine.<!--From the WR admin guide--></p>
+            <p>Virtual switching is a key function within data centers based on Software Defined
+              Networking (SDN) as well as telecom infrastructures that leverages Network Functions
+              Virtualization (NFV). </p>
+            <p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for
+              switching network traffic between the core network and the virtualized applications or
+              Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). Based on
+              your deployment model, you will use either:</p>
+            <p><b>HPE DCN Virtual Routing Switch (VRS).</b> HPE DCN VRS is.. </p>
+            <p><b>Accelerated vSwitch (AVS).</b> AVS is integrated into the servers in the KVM
+              region. AVS is an optimization of Open vSwitch (OVS) technology for NFV environments.
+              Open vSwitch is a multilayer software switch licensed under the open source Apache 2
+              license. AVS provides connectivity between virtual machines on the same compute node,
+              and between virtual machines and external networks. AVS supports a variety of network
+              connectivity options with the hosted virtual machines, as follows: </p>
             <ul id="ul_mgc_xnp_nn">
               <li>
                 <p>Unmodified guests can use Linux networking and virtio drivers. This provides a
@@ -238,10 +246,10 @@
           </dd>
         </dlentry>
         <dlentry>
-          <dt><b>High-Availability</b></dt>
+          <dt><b>High-Availability Extensions</b></dt>
           <dd>
-            <p>HP Helion OpenStack Carrier Grade provides a number of extensions to OpenStack to
-              deliver highly available hosting of virtual machines,
+            <p>HP Helion OpenStack Carrier Grade (in the KVM region) provides a number of extensions
+              to OpenStack to deliver highly available hosting of virtual machines,
               including:<!--From the WR admin guide--></p>
             <dl>
               <dlentry>
@@ -362,11 +370,36 @@
           </dd>
         </dlentry>
         <dlentry>
+          <dt><b>Performance Management Extensions</b></dt>
+          <dd>
+            <p>The Ceilometer service in the HP Helion OpenStack Carrier Grade features improved
+              performance, scalability, and usability. It has been extended to support a
+              CSV-formatted file backend that provides a more traditional Telco Northbound interface
+              for performance management.<!--From the WR admin guide--></p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt><b>Heat Extensions</b></dt>
+          <dd>
+            <p>The OpenStack Heat orchestration service is enhanced to
+              include:<!--From the WR admin guide--></p>
+            <ul id="ul_n5s_kbh_tp">
+              <li>
+                <p>Support for several missing resource types in the public reference
+                  implementation</p>
+              </li>
+              <li>
+                <p>Helpful example templates illustrating real reference scenarios</p>
+              </li>
+            </ul>
+          </dd>
+        </dlentry>
+        <dlentry>
           <dt><b>Virtual Machine Performance</b></dt>
           <dd>
             <p>HP Helion OpenStack Carrier Grade provides an improved execution environment for
               virtual machines that contributes to their overall performance when deployed on the
-              compute nodes. Enhancements to the execution environment
+              compute nodes in the KVM region. Enhancements to the execution environment
               include:<!--From the WR admin guide--></p>
             <ul id="ul_rx5_gfs_nn">
               <li>
@@ -406,86 +439,41 @@
           </dd>
         </dlentry>
           <dlentry>
-            <dt><b>Virtual
-              Switching</b></dt>
-            <dd>
-        <!--<p>Taken from http://blogs.windriver.com/wind_river_blog/2014/10/wanted-virtual-switching-without-compromise.html. Must rewrite</p>--><p>Virtual
-          switching is a key function within data centers based on Software Defined Networking (SDN)
-          as well as telecom infrastructures that leverages Network Functions Virtualization (NFV).
-          </p>
-              <p>In the NFV scenario, for example, the virtual switch (vSwitch) is responsible for
-          switching network traffic between the core network and the virtualized applications or
-          Virtual Network Functions (VNFs) that are running in Virtual Machines (VMs). </p><p>Based
-          on your deployment model, you will use either:</p>
-              
-              
-              <p><b>HPE DCN Virtual Routing Switch
-                (VRS)</b>. HPE DCN VRS is..</p>
-              <p><b> Accelerated vSwitch (AVS)</b>. AVS is integrated into
-          the servers in the KVM region. AVS is an optimization of Open vSwitch (OVS) technology for
-          NFV environments. Open vSwitch is a multilayer software switch licensed under the open
-          source Apache 2 license.</p>
-            </dd>
-          </dlentry>
-          <dlentry>
-          <dt><b>Ethernet Interface Types</b> </dt>
-        <dd><p>You can connect a VM directly to a physical interface using PCI passthrough or SR-IOV.
-          You can choose either method by selecting <codeph>pci-sriov</codeph> or
-            <codeph>pci-passthrough</codeph> as the network type when creating interfaces.
-          <!--From WR Admin Guide.--></p>
-        <p><b>PCI Passthrough</b>. A passthrough Ethernet interface is a physical PCI Ethernet NIC
-          on a compute node to which a virtual machine is granted direct access. This minimizes
-          packet processing delays but at the same time demands special operational considerations.
-          For all purposes, a PCI passthrough interface behaves as if it were physically attached to
-          the virtual machine.</p>
-        <p>Instructions for configuring SR-IOV are available after for installation, see <xref
-            href="../Installation/CGH-2-install-pci-pass.dita#topic10581">Configuring
-            PCI-Passthrough</xref></p>
-        <p><b>SR-IOV</b>. A Single-Root I/O Virtualization (SR-IOV) Ethernet interface is a physical
-          PCI Ethernet NIC that implements hardware-based virtualization mechanisms to expose
-          multiple virtual network interfaces that can be used by one or more virtual machines
-          simultaneously.</p>
-        <p>When compared with a PCI Passthtrough Ethernet interface, a SR-IOV Ethernet interface:
-            <!--From WR admin--><ul id="ul_b3l_y2r_5t">
-            <li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface,
-              including lower latency packet processing.</li>
-            <li>Scales up more easily in a virtualized environment by providing multiple Virtual
-              Functions (VF) that can be attached to multiple virtual machine interfaces.</li>
-            <li>Shares the same limitations, including the lack of support for LAG, QoS, ACL, and
-              live migration.</li>
-            <li>Has the same requirements regarding the VLAN configuration of the access
-              switches.</li>
-            <li>Provides a similar configuration workflow when used on HP Helion OpenStack Carrier
-              Grade.</li>
-          </ul></p>
-        <p>Instructions for configuring SR-IOV are available after for installation, see <xref
-            href="../Installation/CGH-2-install-sr-iov.dita#topic10581">Configuring
-          SR-IOV</xref>.</p>
-      </dd>
-          </dlentry>
-        <dlentry>
-          <dt><b>Performance Management Extensions</b></dt>
+          <dt><b>Ethernet Interface Types</b>
+          </dt>
           <dd>
-            <p>The Ceilometer service in the HP Helion OpenStack Carrier Grade features improved
-              performance, scalability, and usability. It has been extended to support a
-              CSV-formatted file backend that provides a more traditional Telco Northbound interface
-              for performance management.<!--From the WR admin guide--></p>
-          </dd>
-        </dlentry>
-        <dlentry>
-          <dt><b>Heat Extensions</b></dt>
-          <dd>
-            <p>The OpenStack Heat orchestration service is enhanced to
-              include:<!--From the WR admin guide--></p>
-            <ul id="ul_n5s_kbh_tp">
-              <li>
-                <p>Support for several missing resource types in the public reference
-                  implementation</p>
-              </li>
-              <li>
-                <p>Helpful example templates illustrating real reference scenarios</p>
-              </li>
-            </ul>
+            <p>You can connect a VM directly to a physical interface using PCI passthrough or
+              SR-IOV. You can choose either method by selecting <codeph>pci-sriov</codeph> or
+                <codeph>pci-passthrough</codeph> as the network type when creating interfaces.
+              <!--From WR Admin Guide.--></p>
+            <p><b>PCI Passthrough</b>. A passthrough Ethernet interface is a physical PCI Ethernet
+              NIC on a compute node to which a virtual machine is granted direct access. This
+              minimizes packet processing delays but at the same time demands special operational
+              considerations. For all purposes, a PCI passthrough interface behaves as if it were
+              physically attached to the virtual machine.</p>
+            <p>Instructions for configuring SR-IOV are available after for installation, see <xref
+                href="../Installation/CGH-2-install-pci-pass.dita#topic10581">Configuring
+                PCI-Passthrough</xref></p>
+            <p><b>SR-IOV</b>. A Single-Root I/O Virtualization (SR-IOV) Ethernet interface is a
+              physical PCI Ethernet NIC that implements hardware-based virtualization mechanisms to
+              expose multiple virtual network interfaces that can be used by one or more virtual
+              machines simultaneously.</p>
+            <p>When compared with a PCI Passthtrough Ethernet interface, an SR-IOV Ethernet
+              interface: <!--From WR admin--><ul id="ul_b3l_y2r_5t">
+                <li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface,
+                  including lower latency packet processing;</li>
+                <li>scales up more easily in a virtualized environment by providing multiple Virtual
+                  Functions (VF) that can be attached to multiple virtual machine interfaces;</li>
+                <li>shares the same limitations, including the lack of support for LAG, QoS, ACL,
+                  and live migration;</li>
+                <li>has the same requirements regarding the VLAN configuration of the access
+                  switches;</li>
+                <li>provides a similar configuration workflow when used on HP Helion OpenStack
+                  Carrier Grade.</li>
+              </ul></p>
+            <p>Instructions for configuring SR-IOV are available after for installation, see <xref
+                href="../Installation/CGH-2-install-sr-iov.dita#topic10581">Configuring
+                SR-IOV</xref>.</p>
           </dd>
         </dlentry>
         <dlentry>
