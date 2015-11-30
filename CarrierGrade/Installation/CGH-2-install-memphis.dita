@@ -40,7 +40,7 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-env-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ansible-json"/>
     <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
-      href="carrier-grade-install-kvm-ansible-json-sac.dita">a sample ansible.json file</xref>.</p>
+      href="carrier-grade-install-kvm-ansible-json-mem.dita">a sample ansible.json file</xref>.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-esx-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-dcn-json"/>
