@@ -457,8 +457,9 @@ Password: cghelion</codeblock>
     <section id="conref-create-cloud">
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol id="ol_f1b_cmf_zt">
-        <li>On the KVM Host, use the following script to start the provisioning of the HPE Helion
-          OpenStack cloud: <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
+        <li>On the lifecycle manager, use the following script to start the provisioning of the HPE
+          Helion OpenStack cloud:
+            <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
             takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
             for the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux

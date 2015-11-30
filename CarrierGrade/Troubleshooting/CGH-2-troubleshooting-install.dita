@@ -18,13 +18,14 @@
     <p>This topic describes all the known issues that you might encounter:</p>
     <section>
       <ul id="ul_xzh_nmc_mt">
+        <li><xref href="#topic10581/fail-apache" format="dita"/></li>
         <li><xref href="#topic10581/fail-ntp" format="dita"/></li>
         <li><xref href="#topic10581/install-fails" format="dita"/></li>
         <li><xref href="#topic10581/vm" format="dita"/></li>
         <li><xref href="#topic10581/vrs" format="dita"/></li>
       </ul>
     </section>
-    <section><title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the Reload
+    <section id="fail-apache"><title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the Reload
         apache2 configuration task</title><p><b>System Behavior/Message</b></p><p>The installation
         of HPE Helion OpenStack Carrier Grade (the hlm deploy command) fails, with the following
         message:</p><p>
