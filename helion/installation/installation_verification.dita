@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_verification">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Verifying the Installation</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Verifying the Installation</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/installation_verificiation.html" scope="external" format="html">Click
       here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">

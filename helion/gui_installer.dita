@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_gui">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installing via the GUI </title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installing via the GUI </title>
   <body>
     <!--Needs Edit-->
-    <section> HPE Helion OpenStack 2.0 comes with a UI, the Dayzero Installer, for installing your
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section><keyword keyref="kw-hos-phrase"/> comes with a UI, the Dayzero Installer, for installing your
       cloud. Rather than searching through and editing a number of YAML files to input your specific
       configuration data, finding the correct location, and maintaining the format of the files, the
       UI presents fields in which you may enter your information. </section>
     <section>In addition, rather than having to run a series of commands to execute the cobbler and
-      Ansible scripts that initiate the installation of HPE Helion OpenStack, the UI application runs
+      Ansible scripts that initiate the installation of <keyword keyref="kw-hos"/>, the UI application runs
       them behind the scenes. </section>
     <section>While the UI app does more than simply populate the configuration files that the
       configuration processor uses as input to its processes, it does populate them. Therefore you
@@ -68,7 +69,7 @@
           Linux for HPE Helion, on your nodes (servers) if you prefer. Otherwise, the installer will
           install it for you. <p>If you are installing the operating system on all your nodes
             yourself, note that you must do so using the Linux for HPE Helion image that is included
-            in the HPE Helion OpenStack 2.0 package. You may find the instructions on the following
+            in the <keyword keyref="kw-hos-phrase"/> package. You may find the instructions on the following
             pages helpful even when using your own tools to install the operating systems:</p>
           <ul>
             <li><xref
@@ -105,7 +106,7 @@
       </ol>
     </section>
     <section><title>Run the GUI to install your cloud</title>
-      <p>Now that the OS, HPE Linux for HPE Helion OpenStack, is installed on all your servers
+      <p>Now that the OS, HPE Linux for HPE Helion, is installed on all your servers
         (nodes), or the GUI will perform all deployment tasks for you, you are ready to launch
         it.</p>
       <p>The GUI is found on the lifecycle manager node at: <b>http://&lt;lifecycle
@@ -141,7 +142,7 @@
         >Post-Installation Checklist</xref>.<p>To understand a cloud configuration more thoroughly
         and to learn how to make any changes later, visit these documentation pages: <ul
           id="ul_akt_fv2_lt">
-          <li><xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref></li>
+          <li><xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref></li>
           <li><xref href="installation/using_git.dita">Using Git for Configuration
             Management</xref></li>
         </ul>
