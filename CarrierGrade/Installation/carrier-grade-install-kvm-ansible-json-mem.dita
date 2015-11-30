@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ansible.json File for
-        Memphis/Tahoe</title>
+        Memphis and Tahoe</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
@@ -80,9 +80,9 @@
 </codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581/env">Tahoe
                         deployment</xref></li>
-                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+            <li><xref href="CGH-2-install-memphis.dita#topic10581/ans">Memphis
                         deployment</xref></li>
             </ul></p>
     </body>

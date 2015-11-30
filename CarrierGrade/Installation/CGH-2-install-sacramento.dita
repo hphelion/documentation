@@ -370,9 +370,9 @@ Password: cghelion</codeblock>
         file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the lifecycle manager to
         fit your hardware model. You have to gather the correct PCI SLOT INFO and add ports
         accordingly on the hardware slots or cards used for networking.</p>
-      <p><b>Note:</b> To see a sample <codeph>machine_architecture.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-env-json-bonded.dita#topic4797">Sample enviroment.json
-          File for Installing the KVM + ESX Topology in an Bonded NIC Environment</xref>.</p>
+      <p>Click here to see a  <xref
+          href="carrier-grade-install-kvm-machine-json-bonded.dita#topic4797">sample
+          machine_architecture.json file</xref>.</p>
     </section>
     <section>
       <title>Configure the ironic.json file</title>

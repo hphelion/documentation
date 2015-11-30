@@ -200,9 +200,9 @@
     },
 ]</codeblock>
 </section>
-    <p><i>Return to installing the non-KVM region for the <xref
-        href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
-            href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref>
-        template.</i></p>
+    <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json"
+                        >Sacramento deployment</xref></li>
+            </ul></p>
 </body>
 </topic>

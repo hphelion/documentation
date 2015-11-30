@@ -31,35 +31,33 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-provision"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-node-provision-json"
       id="conref-node-provision-json"/>
-    <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see a <xref
-      href="carrier-grade-install-kvm-node-json-mem.dita">sample node-provision.json file</xref>.</p>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-node-json-mem.dita">sample
+        node-provision.json file</xref>.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-json" id="conref-json"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-def-json"/>
-    <p>To see a sample <codeph>definition.json</codeph> file, <xref
-        href="carrier-grade-install-kvm-def-json-mem.dita">a sample definition.json file</xref></p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-env-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-def-json" id="def"/>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-def-json-mem.dita">a sample
+        definition.json file</xref></p>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-env-json" id="env"/>
     <p>To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul
         id="ul_eln_vcl_25">
         <li><xref href="carrier-grade-install-kvm-env-json-mem.dita">For an Unbonded NIC
             Environment</xref></li>
-        <li><xref href="carrier-grade-install-kvm-env-json-bonded-mem.dita#topic4797">For a Bonded NIC
+        <li><xref href="carrier-grade-install-kvm-env-json-bonded-mem.dita">For a Bonded NIC
             Environment</xref></li>
       </ul></p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ansible-json"/>
-    <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
-        href="carrier-grade-install-kvm-ansible-json-mem.dita">a sample ansible.json
-      file</xref>.</p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-json"/>
-    <p>To see a sample <codeph>ldap.json</codeph> file, see a <xref
-        href="carrier-grade-install-kvm-ldap-json-mem.dita">sample ldap.json file</xref>. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-dcn-json"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ccp-dcn-esx-json"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-wr-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ansible-json" id="ans"/>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-mem.dita">sample
+        ansible.json file</xref>.</p>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-json" id="ldap"/>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ldap-json-mem.dita">sample
+        ldap.json file</xref>. </p>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-dcn-json" id="dcn"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ccp-dcn-esx-json" id="ccp"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-wr-json" id="wr"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-mem.dita">a sample wr.json
-      file</xref>. </p>
-    
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-mach-json"/>
+        file</xref>. </p>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-mach-json" id="mach"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-verify-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
