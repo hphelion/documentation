@@ -34,8 +34,10 @@
       <ul>
         <li>Comment out the "external-name:" line in /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are used)
         </li><li>Assign a name to "external-name:" line in /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is used)
-        </li><li>We recommend keeping TLS on by default as it cannot be changed. But if you want it disabled you need to change "tls-components" 
-          to "components" in network_groups.yml and comment out cert-file.</li></ul>
+        </li></ul>
+      You also need to choose if you want TLS on or off. We recommend keeping TLS on by default as it cannot be changed. But if you want it disabled you need to change "tls-components" to "components" in network_groups.yml and comment out the cert-file.
+      
+      
       
       <!--<p>
         <note type="warning">Here we are configuring and installing a test certificate. It is
