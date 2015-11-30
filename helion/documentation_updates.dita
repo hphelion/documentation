@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="changelog">
-  <title>Updates to HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0 Documentation</title>
+  <title>Updates to <keyword keyref="kw-hos-phrase"/> Documentation</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
-      <p>The HPE Helion OpenStack documentation team continuously updates the documents in this web
+      <p>The <keyword keyref="kw-hos"/> documentation team continuously updates the documents in this web
         deliverable. These updates include anything from fixes for minor typos or style issues, to
         more significant changes such as bug fixes, additions, or deletions. The following table
         shows the significant changes made to this content.</p>
@@ -55,8 +56,8 @@
               </row>
               <row>
                 <entry>11/16/2015</entry>
-                <entry>HPE Helion OpenStack Firewall</entry>
-                <entry>Added new page describing the HPE Helion OpenStack firewall and how to
+                <entry><keyword keyref="kw-hos"/> Firewall</entry>
+                <entry>Added new page describing the <keyword keyref="kw-hos"/> firewall and how to
                   add/remove/edit rules for it. (<xref href="administration/configure_firewall.dita"
                     >Link</xref>)</entry>
               </row>
