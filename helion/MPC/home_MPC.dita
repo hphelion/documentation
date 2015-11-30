@@ -16,7 +16,7 @@
     <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="index_MPC.dita">HPE Helion Managed Private Cloud with Helion <tm tmtype="reg">OpenStack</tm></xref>
+          <xref href="index_MPC.dita">HPE Helion Managed Cloud with HPE Helion <tm tmtype="reg">OpenStack</tm></xref>
         </stentry>
         <stentry>A commercial-grade, managed software solution that enables customers to manage and
           use private cloud services based on HPE Helion <tm tmtype="reg">OpenStack</tm>. This hardened,
