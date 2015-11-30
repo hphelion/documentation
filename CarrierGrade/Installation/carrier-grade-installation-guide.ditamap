@@ -144,13 +144,7 @@
             <topicref href="carrier-grade-install-kvm-tahoe.dita" toc="no"/>
             <topicref href="carrier-grade-install-non-kvm.dita"
                 navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-node-json.dita" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-def-json.dita" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-env-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-esx-json.dita" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-wr-json.dita" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-ldap-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-ccp-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
             <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
@@ -167,5 +161,20 @@
             <topicref href="carrier-grade-install-bonded-nic.dita"/>
             <topicref href="carrier-grade-install-kvm-ansible-json-mem.dita"/>
             <topicref href="carrier-grade-install-kvm-ansible-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-def-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-def-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-esx-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-esx-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-ldap-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-ldap-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-bonded-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-bonded-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-wr-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-node-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-node-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-wr-json-mem.dita"/>
         </topichead>
     </topicref></map>
