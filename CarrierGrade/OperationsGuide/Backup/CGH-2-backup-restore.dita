@@ -121,7 +121,7 @@ But the CLI, REST API etc should all be same --></p>
           <li>Copy/Replace the following files to the
               <codeph>/usr/share/attis-content/playbooks/cg/</codeph> directory on all controller
             nodes:. You should have <xref
-              href="../../Installation/carrier-grade-install-prereqs.dita#topic7148/download"
+              href="../../Installation/carrier-grade-install-download.dita#topic7148/patches"
               >downloaded these files in the Prerequisites</xref>.<ul id="ul_awb_srk_zt">
               <li>vsc_config_backup.yml</li>
               <li>vsc_config_restore.yml </li>

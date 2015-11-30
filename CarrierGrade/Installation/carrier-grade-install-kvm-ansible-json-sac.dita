@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
+
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ansible.json File for
+        Installing the KVM + ESX Topology</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+        </metadata>
+    </prolog>
+    <body>
+        
+        <p>The process for installing the memphis or sacramento deployment requires several JSON
+            files that will be used when deploying the lifecycle manager.</p>
+        <p>The <codeph>ansible.json</codeph> file in the
+                <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager contains
+            the following fields:</p>
+        <table conref="carrier-grade-install-kvm-ansible-json.dita#topic4797/fields"
+            id="table_c3x_vvk_25">
+            <tgroup cols="1">
+                <tbody>
+                    <row>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <p>
+            <codeblock>{
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "ansible-vars",
+            "properties": {
+                "dns_domain_name": "dcn-two.helion.cg",
+                "ext_dns_ip": "10.1.64.20",
+                "dns_address": "10.1.64.20",
+                "vsc_dcm_ip": "10.200.50.31",
+                "vsc_dcm_ip_ha": "10.200.50.32",
+                "vsc_dcm_ip_subnet": "24",
+                "vsc_tul_cidr": "192.168.9.31/24",
+		"vsc_tul_cidr_ha": "192.168.9.32/24",
+                "vsc_tul_ip": "192.168.9.31",
+		"vsc_tul_ip_ha": "192.168.9.32",
+                "vsc_user_name": "admin",
+                "vsc_user_pass": "admin",
+                "vsc_xmpp_name": "vsc:password@vsd1.dcn-two.helion.cg",
+		"vsc_xmpp_name_ha": "vsc:password@vsd1.dcn-two.helion.cg",
+                "vsc_route_mgmt_cidr": [
+                    "10.1.64.0/18",
+                    "10.200.190.0/24"
+                ],
+                "vsc_route_mgmt_gw": "10.200.50.1",
+                "vsd_address": "10.200.50.21",
+                "vsd_name": "vsd1",
+                "vsc_image_name": "vsc_singledisk",
+                "vsc_host_name": "vsc",
+		"vsc_host_name_ha": "vsc",
+                "vsc_ha_enabled": 1,
+		"vsc_bgp_required": 1,
+                "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",
+                "vsd_gateway": "10.200.50.1",
+                "vsd_netmask": "255.255.255.0",
+                "upstream_ntp_servers": [
+                    "10.1.64.20",
+                    "16.110.135.123"
+                ],
+                "compute_virt_type": "kvm",
+                "ssl_cert_file": "ca.crt",
+                "ssl_key_file": "cakey.pem",
+                "ssl_passphrase": "cghelion"
+            }
+        }
+    ]
+}</codeblock>
+        </p>
+        <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                        deployment</xref></li>
+            </ul></p>
+    </body>
+</topic>
