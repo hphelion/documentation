@@ -78,23 +78,19 @@ roles/&lt;patch-name>/defaults/main.yml (ok if empty)</codeblock></p></li>
                             <codeph>/var/hlm/clouds/&lt;cloud-name>/patches/</codeph> directory. The
                         patch files are usually named in the
                             <codeph>patches_&lt;buildbumber>.tar.gz</codeph> format. </p>
-                    <p>The extracted patch files contain a subdirectory for each individual patch,
-                        that contains two scripts, <codeph>hlm_applypatches.sh</codeph> and
-                            <codeph>hlm_rollbackpatches.sh</codeph>. These scripts contain commands
-                        for applying and rolling back patches.</p>
+                    <p>The extracted patch files contain a subdirectory for each individual
+                        patch.</p>
                 </li>
                 <li><b>Applying all patches</b> using following command:
                     <codeblock>cd /var/hlm/clouds/&lt;cloud-name>/patches/ &amp;&amp; ./hlm_applypatches.sh</codeblock></li>
             </ul><ul id="ul_ptc_hw5_c5">
                 <li>
                     <p><b>Applying a specific patch </b>using following command:
-                        <codeblock>hlm patch -c &lt;cloud name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt;</codeblock></p>
+                        <codeblock>hlm patch -c &lt;cloud-name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt;</codeblock></p>
                 </li>
             </ul><ul id="ul_rtc_hw5_c5">
-                <li><b>Rolling back all patches</b> using following
-                    command:<codeblock>cd /var/hlm/clouds/&lt;cloud-name&gt;/patches/ &amp;&amp; ./hlm_rollbackpatches.sh</codeblock></li>
                 <li><b>Rolling back a specific patch</b> using following
-                    command<codeblock>hlm patch -c &lt;cloud name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt; -r</codeblock></li>
+                    command<codeblock>hlm patch -c &lt;cloud-name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt; -r</codeblock></li>
             </ul><p><b><b>Using the lifecycle manager
             CLI</b></b></p><codeblock>hlm patch -c &lt;cloud name> -n  &lt;patch name> -t &lt;tiers>
 
@@ -115,26 +111,22 @@ OPTIONS     --cloud, -c       Specify name of the cloud to act upon.
 
             --tier, -t        Indicate tier to apply or rollback patch. Multiple tiers can be specified using colon (:) seperator.
                               E.g. -t BASE-CCP-T1:BASE:CCP-CPX</codeblock></section>  
-        <section id="update">
-        <title>Update</title>
-        <p>An update is a major hotfix or plugin which need to access variables not available in
-                configuration processor variable repository (such as <codeph>group_vars</codeph> and
-                    <codeph>host_vars</codeph>).</p>
-        <p>An update has following characteristics:</p>
-        <ul id="ul_c5c_hw5_c5">
-            <li>Introduces new variables not available in configuration processor repository
-                (group_vars, host_vars); </li>
-            <li>Can update any file (such as: configuration, INI files, .sh files, and .yml files)
-                    on the lifecycle manager (before the cloud is deployed) or cloud nodes (after
-                    the cloud is deployed);</li>
-            <li>Can update particular package on an existing cloud;</li>
-            <li>Supports rollback;</li>
-            <li>Is idempotent;</li>
-            <li>Is independent of other updates.</li>
-        </ul>
-        <p>A update contains three files:</p>
-        <ul id="ul_i5c_hw5_c5">
-            <li><b>configure.json</b> - Defines variables specific to the environment. These are
+        <section id="update"><title> Update </title><p>An update is a major hotfix or plugin which
+                need to access variables not available in configuration processor variable
+                repository (such as <codeph>group_vars</codeph> and
+                <codeph>host_vars</codeph>).</p><p>An update has following characteristics:</p><ul
+                id="ul_c5c_hw5_c5">
+                <li>Introduces new variables not available in configuration processor repository
+                    (group_vars, host_vars); </li>
+                <li>Can update any file (such as: configuration, INI files, .sh files, and .yml
+                    files) on the lifecycle manager (before the cloud is deployed) or cloud nodes
+                    (after the cloud is deployed);</li>
+                <li>Can update particular package on an existing cloud;</li>
+                <li>Supports rollback;</li>
+                <li>Is idempotent;</li>
+                <li>Is independent of other updates.</li>
+            </ul><p>A update contains three files:</p><ul id="ul_i5c_hw5_c5">
+                <li><b>configure.json</b> - Defines variables specific to the environment. These are
                     typically variables required by the update but not available in the variable
                     repository (group_vars, host_vars) generated by configuration processor.</li>
                 <li><b>metadata.tar.gz</b> - Contains Ansible roles, similar to that of a patch,
@@ -143,19 +135,16 @@ OPTIONS     --cloud, -c       Specify name of the cloud to act upon.
                     variables defined in <codeph>configure.json</codeph>.</li>
                 <li><b>Readme</b> - contains pre-requisites, impacted files, and instructions for
                     applying the update.</li>
-        </ul>
-        <p>Multiple updates cannot be bundled into a single script, because each update requires
-                specific modifications in the <codeph>configure.json</codeph> file.</p>
-        <p><b>How to apply an update</b></p>
-        <p>Each update will contain a README file with full instructions on how to deploy that
-            update. Also, the <xref
-                href="http://docs.hpcloud.com/#CarrierGrade/carrier-grade-index.html" format="html"
-                scope="external">HP Helion OpenStack Carrier Grade documentation site</xref> will
-            also have instructions for deploying each update.</p>
-        <p>In general, the process for applying an update includes:</p>
-        <ul id="ul_d5c_hw5_c5">
-            <li>
-                <p><b>Extracting</b>. You can download and extract patch files from the <xref
+            </ul><p>Multiple updates cannot be bundled into a single script, because each update
+                requires specific modifications in the <codeph>configure.json</codeph>
+                    file.</p><p><b>How to apply an update</b></p><p>Each update will contain a
+                README file with full instructions on how to deploy that update. Also, the <xref
+                    href="http://docs.hpcloud.com/#CarrierGrade/carrier-grade-index.html"
+                    format="html" scope="external">HP Helion OpenStack Carrier Grade documentation
+                    site</xref> will also have instructions for deploying each update.</p><p>In
+                general, the process for applying an update includes:</p><ul id="ul_d5c_hw5_c5">
+                <li>
+                    <p><b>Extracting</b>. You can download and extract patch files from the <xref
                             href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
                             format="html" scope="external">Helion Distribution Network (HDN)</xref>
                         to the lifecycle manager in
@@ -163,8 +152,8 @@ OPTIONS     --cloud, -c       Specify name of the cloud to act upon.
                         directory. The update files are usually named in the
                             <codeph>updates&lt;buildbumber>.tar.gz</codeph> format. The extracted
                         patch files contain a subdirectory for each individual update. </p>
-            </li>
-            <li><p><b>Applying an update</b> using following steps:</p><p>
+                </li>
+                <li><p><b>Applying an update</b> using following steps:</p><p>
                         <ul id="ul_e5c_hw5_c5">
                             <li><b>modify</b> the configuration file,
                                     <codeph>&lt;update-name>/configure.json</codeph>, as stated in
@@ -176,11 +165,39 @@ OPTIONS     --cloud, -c       Specify name of the cloud to act upon.
                         </ul>
                     </p>For example:
                     <codeblock>hlm update -c mycloud -n NOV_HCG-890 -t BASE-CCP-T1:BASE-CPX-CCP</codeblock></li>
-        </ul>
-        <ul id="ul_g5c_hw5_c5">
-            <li><b>Rolling back an update</b> using following
+            </ul><ul id="ul_g5c_hw5_c5">
+                <li><b>Rolling back an update</b> using following
                     command:<codeblock>hlm update -c &lt;cloud name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt; -r</codeblock></li>
-        </ul>
-        </section>
+            </ul>
+            <b>Using the lifecycle manager CLI</b>
+            <p>
+                <codeblock>hlm update -c &lt;cloud name> -n &lt;name> [-v &lt;verbose>] [-r &lt;rollback>] [-t &lt;tier>]
+  
+DESCRIPTION
+Install a update as an add-on on an existing cloud. Requires a well formed
+update created in a format as expected by the update framework
+ 
+OPTIONS      --cloud, -c
+            Specify name of the cloud to act upon.
+ 
+            --name, -n
+            Specify name of update
+     
+            --verbose, -v
+            Produce verbose output. Example: hlm deploy -c &lt;cloudname> -v
+ 
+            --rollback, -r
+            Indicate if you need to rollback existing update.
+ 
+            --tier, -t
+            Indicate tier to apply or rollback patch.</codeblock>
+            </p></section>
+            <section>
+                <title>Update log</title>
+                <p>An update log is maintained in <codeph>update.txt</codeph> in the
+                    <codeph>/var/hlm/clouds/&lt;cloud-name>/updates/</codeph> directory .</p>
+                <p>This file maintains updates applied and rolled-back to the environment and the
+                    corresponding time-stamp.</p>
+            </section>
     </body>
 </topic>
