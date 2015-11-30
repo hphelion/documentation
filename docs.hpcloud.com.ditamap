@@ -18,7 +18,7 @@
   <!--permalink: -->
   <!--permalink: /-->
   <topicref href="helion/MPC/home_MPC.dita"/>
-  <mapref href="docs.hpcloud.com.HOS.MPC.ditamap" />
+  <mapref href="docs.hpcloud.com.HOS.ditamap" />
   <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"/>
 
 </map>

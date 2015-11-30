@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="home_mpc">
-  <title>HPE Helion Managed Cloud with HPE Helion <tm tmtype="reg">OpenStack</tm></title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm></title>
   <titlealts>
-    <searchtitle>HPE Helion Managed Cloud with HPE Helion OpenStack</searchtitle>
+    <searchtitle>HPE Helion OpenStack</searchtitle>
   </titlealts>
   <prolog>
     <metadata>
@@ -19,7 +19,7 @@
   <body>
     <!--Needs Edit-->
     <section id="top"/>
-    <p>HPE Helion Managed Cloud with HPE Helion OpenStack is a private distribution of <tm
+    <p>HPE Helion OpenStack is a private distribution of <tm
         tmtype="reg">OpenStack</tm> cloud software, the leading open source cloud computing
       platform. This HPE Helion distribution, installed and administered by HPE, lets you manage and
       operate open source-based clouds on a resilient, maintainable platform. HPE Helion OpenStack
@@ -27,11 +27,11 @@
       Helion portfolio, it is backed by a wide range of related cloud products, services, and
       professional support.</p>
     <section id="getstart">
-      <title>Get Started with HPE Helion OpenStack</title>
+      <title>Get Started</title>
       <p>The following links and tools will help you understand and run your HPE Helion
         OpenStack cloud.</p>
       <ul>
-        <li><xref href="overview_MPC.dita">HPE Helion Managed Cloud with HPE Helion OpenStack
+        <li><xref href="overview_MPC.dita">HPE Helion OpenStack
             Overview</xref></li>
       </ul>
     </section>

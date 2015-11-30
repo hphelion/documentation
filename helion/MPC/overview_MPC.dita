@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="tech_overview_mpc">
-  <title>HPE Helion Managed Cloud with HPE Helion <tm tmtype="reg">OpenStack</tm>: Overview</title>
+  <title>HPE Helion Managed Cloud with Helion <tm tmtype="reg">OpenStack</tm>: Overview</title>
   <body>
     <!--Needs Edit-->
-    <p>HPE Helion OpenStack Managed Cloud with HPE Helion OpenStack is built on HPE Helion OpenStack 2.0 and is the
+    <p>HPE Helion OpenStack Managed Cloud with Helion OpenStack is built on HPE Helion OpenStack 2.0 and is the
       latest OpenStack-based infrastructure-as-a-service cloud platform release from HP. It is based
       on the OpenStack Kilo release and implements core services and features of Kilo while
       providing new installation and management features.</p>
