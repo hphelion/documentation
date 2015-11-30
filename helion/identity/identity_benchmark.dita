@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="keystone_benchmarking">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Keystone Identity Performance Benchmark</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+
+  
+  <section id="overview"><title>Overview</title>
+  
+  The objective of this performance benchmark is to provide a reference for  HOS Keystone users to know how the system performs in terms of responsiveness under a particular environment and workload. For HOS Keystone, there are several major operations where performance is critical: token creation, token validation, as well as user lookup when a LDAP backend is applied. The rest of operations may occur less frequently. Therefore, this report would focus on the analysis and benchmark for these three items.
+  </section>
+    <section id="testEnv"><title>Performance Test Environment</title> Server Models and
+      Specification Ideally performance test environment should be an exact replica of the
+      production system but it’s not always possible due to its associated cost, time and
+      challenges. For this performance test, HP KS-PERF, as described in Table 1, has been
+      established using 7-node DL360 Gen9 baremetal servers. </section>
+    <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0* 1.0*" id="simpletable_cts_tcm_25">
+      <sthead>
+        <stentry>Server</stentry>
+        <stentry>Nodes</stentry>
+        <stentry>Model</stentry>
+        <stentry>Specification</stentry>
+        <stentry>Operating System</stentry>
+        <stentry>Softrware Versions</stentry>
+      </sthead>
+      <strow>
+        <stentry>
+          <p>KS-Perf Servers</p>
+        </stentry>
+        <stentry>7</stentry>
+        <stentry>
+          <p>HP ProLiant DL360 Gen9)</p>
+        </stentry>
+        <stentry>
+          <ul id="ol_mfn_xcm_25">
+            <li>2 x Intel(R) Xeon(R) CPU E5-2650L v3 @ 1.80GHz</li>
+            <li>132Gb RAM, dual 10Gb NIC in bonding mode</li>
+          </ul>
+        </stentry>
+        <stentry>
+          <p>hLinux cattleprod (3.14.44-1 kernel)</p>
+        </stentry>
+        <stentry><ul><li>HOS2.0</li>
+            <li>HOS 1.1.1</li>
+            <li>MySQL v5.5.41</li>
+          </ul></stentry>
+      </strow>
+      <strow>
+        <stentry>
+          <p>OpenLDAP Server</p>
+        </stentry>
+        <stentry>1</stentry>
+        <stentry>
+          <p>HP SE2170s Gen7</p>
+        </stentry>
+        <stentry>
+          <ul id="ol_scv_2dm_25">
+            <li>2 x Intel(R) Xeon(R) CPU X5650 @ 2.67GHz</li>
+            <li>192Gb RAM, single 1Gb NIC</li>
+          </ul>
+        </stentry>
+        <stentry>
+          <p>Ubuntu 14.04.02 LTS (Trusty)</p>
+        </stentry>
+        <stentry>
+          <p>OpenLDAP v2.4.31</p>
+        </stentry>
+      </strow>
+    </simpletable>
+    <section>Table 1 Server specifications for performance test </section>
+    <section id="Keystone-LDAP"><title>Keystone-LDAP</title> For the test cases with domain specific
+      LDAP backend, an OpenLDAP server employed, as described in Table 1, there are four LDAP
+      domains (i.e. openldap50, openldap5k, openldap50k and openldap500k) carrying different amount
+      of users (i.e. 50, 5k, 50k and 500k) respectively, as depicted in Figure 1 and Table 2. For
+      the test cases with domain specific LDAP backend, an OpenLDAP server employed, as described in
+      Table 1, there are four LDAP domains (i.e. openldap50, openldap5k, openldap50k and
+      openldap500k) carrying different amount of users (i.e. 50, 5k, 50k and 500k) respectively, as
+      depicted in Figure 1 and Table 2. <image
+        href="../../media/keystone/HOSKeystoneDomain-SpecificBackend.png" id="image_eht_kcm_25"/>
+      <p>Figure 1 LDAP users and groups for Keystone domains</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 1.0* 1.0*" id="simpletable_ths_xdm_25">
+        <sthead>
+          <stentry>LDAP</stentry>
+          <stentry>openldap50</stentry>
+          <stentry>openldap5k</stentry>
+          <stentry>openldap50k</stentry>
+          <stentry>openldap500k</stentry>
+        </sthead>
+        <strow>
+          <stentry>
+            <p>User Container</p>
+          </stentry>
+          <stentry>
+            <p>ou=Users50,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_orh_b2m_25">
+              <li>user50_000001 to user50_000050</li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>ou=Users5k,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_urv_b2m_25">
+              <li>user5k_000001 to user50_005000</li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>ou=Users50k,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_nj3_c2m_25">
+              <li>user50k_000001 to user50k_050000</li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>ou=Users500k,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_nr5_c2m_25">
+              <li>user500k_000001 to user500k_500000</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <p>Group Container</p>
+          </stentry>
+          <stentry>
+            <p>ou=Groups50,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_kl5_d2m_25">
+              <li>
+                <p> members of group50_1: </p>
+                <p>user50_000001 to user50_000050 under Users50</p>
+              </li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>ou=Groups5k,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_eff_22m_25">
+              <li>
+                <p> members of group5k_1: </p>
+                <p>user5k_000001 to user5k_000050 under Users5k</p>
+              </li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>ou=Groups50k,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_efq_22m_25">
+              <li>
+                <p>members of group50k_1: </p>
+                <p>user50k_000001 to user50k_000050 under Users50k</p>
+              </li>
+            </ul>
+          </stentry>
+          <stentry>
+            <p>ou=Groups500k,dc=cdl,dc=hp,dc=com</p>
+            <ul id="ul_p52_f2m_25">
+              <li>
+                <p>members of group500k_1: </p>
+                <p>user500k_000001 to user500k_000050 under Users500k</p>
+              </li>
+            </ul>
+          </stentry>
+        </strow>
+      </simpletable><p>Table 2  LDAP user and group data structure for four Keystone domains (i.e. openldap50, openldap5k, openldap50k and openldap500k)
+        
+      </p></section>
+
+    <section id="cache_mech"><title>Cache Mechanism</title>
+  
+  
+  Keystone supports a caching layer that is above the configurable subsystems (e.g. token, identity, etc). HOS Keystone uses the dogpile.cache library allowing for flexible cache backends. The majority of the caching configuration options are set in the [cache] section. However, each section that has the capability to be cached usually has a caching boolean value that will toggle caching for that specific section. For the performance test cases with cached on, the subsystem and the global toggle setting are enabled and  dogpile.cache.memory is employed for this study as configured below:
+  Please be adviced that   dogpile.cache.memory is an experimental cache provider and is not ready ready for production level application.
+  <ul>
+ <li>Edit etc/keystone.conf with the "[caching]" section shown below
+   <codeblock>[cache]
+# enable caching across all of keystone
+enabled = true
+  
+# use in-memory cache
+backend = dogpile.cache.memory</codeblock>
+ </li>
+    <li>Verify subsystem caching enabled
+  <codeblock>[catalog]
+caching = true
+  
+[domain_config]
+caching = true
+  
+[identity]
+caching = true
+  
+[resource]
+caching = true
+  
+[revoke]
+caching = true
+  
+[role]
+caching = true
+  
+[token]
+caching = true</codeblock>
+    </li>
+    <li>Restart Apache2 for the update to take effect.</li></ul>
+  
+  
+  Additional Note:
+  
+  For concurrent test cases with label 1K2P17U, it represents test conditions with 1 Keystone node, 2 processes configured in Apache2 and 17 concurrent users. Similarly, 3K2P50U  3 Keystone nodes, 2 processes configured in Apache2 and 50 concurrent users.
+  
+  where 
+  K: Numbers of Keystone node
+  P: Numbers of processes configured in Apache2 sever
+  U: Numbers of concurrent users
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  </body>
+</topic>
