@@ -85,7 +85,7 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
       </ol> You can now use my-public-cert as your certificate. -->
       <p><b>Installing the Certificate</b></p> Follow the steps below to install the certificate in
       the cloud.</section>
-    <section><b>If you are using a FQDN:</b>
+    <section id="fqdn"><b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use. </li>
         <li> Copy the certificate (containing both public and private keys) to

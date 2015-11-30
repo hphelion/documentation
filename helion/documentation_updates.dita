@@ -27,6 +27,12 @@
             </thead>
             <tbody>
               <row>
+                <entry>11/30/2015</entry>
+                <entry>Security - TLS</entry>
+                <entry>Changed/corrected path to frontend_cacert.pem file (<xref
+                    href="security/tls.dita#configure_tls/fqdn">Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/20/2015</entry>
                 <entry>Security - HTTP</entry>
                 <entry>Added page on header poisoning prevention. (<xref
