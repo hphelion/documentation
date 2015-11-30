@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="example_configurations">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Example Configurations</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Example Configurations</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/example_configurations.html" scope="external" format="html">Click
       here</xref> for a frameless version of this page where the links should work.</note>
-    <p>The HPE Helion OpenStack 2.0 system ships with a collection of pre-qualified example
+    <p>The <keyword keyref="kw-hos-phrase"/> system ships with a collection of pre-qualified example
       configurations. These are designed to help you to get up and running quickly with a minimum
       number of configuration changes.</p>
-    <p>The HPE Helion OpenStack input model allows a wide variety of configuration parameters that
+    <p>The <keyword keyref="kw-hos"/> input model allows a wide variety of configuration parameters that
       may, at first glance, appear daunting. The example configurations are designed to simplify
       this process by providing pre-built and pre-qualified examples that need only a minimum number
       of modifications to get started.</p>
     <section id="contents">
       <ul>
-        <li><xref href="example_configurations.dita#example_configurations/example_configs">HP
-            Helion OpenStack Example Configurations</xref>
+        <li><xref href="example_configurations.dita#example_configurations/example_configs">
+          <keyword keyref="kw-hos"/> Example Configurations</xref>
           <ul>
             <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa">Entry-Scale KVM with VSA Model</xref></li>
             <li><xref href="example_configurations.dita#example_configurations/entryscale_esx">Entry-Scale ESX Model</xref></li>
@@ -52,20 +53,20 @@
                 <li><xref href="example_configurations.dita#example_configurations/disks_lifecycle_manager_yml">Disks_lifecycle_manager.yml</xref></li>
                 <li><xref href="example_configurations.dita#example_configurations/servers_yml">Servers.yml</xref></li>
               </ul></li>
-            <li><xref href="example_configurations.dita#example_configurations/without_dvr">Configuring HPE Helion OpenStack without DVR</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/without_l3agent">Configuring HPE Helion OpenStack with Provider VLANs and Physical Routers Only</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/without_dvr">Configuring <keyword keyref="kw-hos"/> without DVR</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/without_l3agent">Configuring <keyword keyref="kw-hos"/> with Provider VLANs and Physical Routers Only</xref></li>
           </ul></li>
 
       </ul>
     </section>
-    <section id="example_configs"><title>HPE Helion OpenStack Example Configurations</title>
+    <section id="example_configs"><title><keyword keyref="kw-hos"/> Example Configurations</title>
       <p>This section briefly describes the various example configurations and their capabilities.
         It also describes in detail, for the entry-scale-kvm-vsa example, how you can adapt the
         input model to work in your environment.</p>
-      <p>HPE Helion OpenStack 2.0 ships with two classes of sample cloud models: examples and
+      <p><keyword keyref="kw-hos-phrase"/> ships with two classes of sample cloud models: examples and
         tech-preview. The models in the examples directory have been qualified by our Quality
         Engineering team, while the tech-preview models are more experimental.</p>
-      <p>The following pre-qualified examples are shipped with HPE Helion OpenStack 2.0:</p>
+      <p>The following pre-qualified examples are shipped with <keyword keyref="kw-hos-phrase"/>:</p>
       <ul>
         <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
         <li>Entry-scale Swift-only model (entry-scale-swift)</li>
@@ -83,7 +84,7 @@
         is subdivided into a number of dedicated service clusters to provide more processing power
         for individual control plane elements. This enables a greater number of resources to be
         supported (compute nodes, Swift object servers). This model also shows how a segmented
-        network can be expressed in the HPE Helion OpenStack model.</p>
+        network can be expressed in the <keyword keyref="kw-hos"/> model.</p>
     </section>
     <section id="entryscale_kvm_vsa"><title>Entry-Scale KVM with VSA Model</title>
       <p>This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
@@ -120,7 +121,7 @@
         network must be reachable from the EXTERNAL_VM network if you want virtual machines to be
         able to make API calls to the cloud. "Internal Routing" refers to whatever routing you want
         to provide to allow administrators to access the Management network.</p>
-      <p>If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
+      <p>If you are using <keyword keyref="kw-hos"/> to install the operating system, then an IPMI/iLO
         network connected to the IPMI/iLO ports of all servers and routable from the
         lifecycle manager server is also required for BIOS and power management of the nodes during
         the operating system installation process.</p>
@@ -132,12 +133,12 @@
           storage.</li>
       </ul>For details about how to modify this example to match your environment, see <xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA model for your Environment</xref>. </section>
     <section id="entryscale_esx"><title>Entry-Scale ESX Model</title>
-      <p>This example shows how to integrate HPE Helion OpenStack with ESX. The controller
+      <p>This example shows how to integrate <keyword keyref="kw-hos"/> with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
         provided by vCenter. In addition, a number of controller virtual machines are created for
         each vCenter cluster: one ESX Compute virtual machine (which provides the nova-compute proxy
         for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
-        access). These virtual machines are created automatically by HPE Helion OpenStack as part of
+        access). These virtual machines are created automatically by <keyword keyref="kw-hos"/> as part of
         activating the vCenter cluster, and are therefore not defined in the example.</p>
       <p><image href="../media/examples/entry_scale_esx.png"/></p>
       <!-- HP
@@ -152,7 +153,7 @@
         lifecycle manager. This network must be reachable from the Management network.</p>
     </section>
     <section id="entryscale_swift"><title>Entry-Scale Swift Model</title>
-      <p>This example shows how HPE Helion OpenStack can be configured to provide a Swift-only
+      <p>This example shows how <keyword keyref="kw-hos"/> can be configured to provide a Swift-only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
       <p><image href="../media/examples/entry_scale_swift.png"/></p>
       <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
@@ -171,7 +172,7 @@
       <p>In the diagram "External Routing" refers to whatever routing you want to provide to allow
         users to access the External API. "Internal Routing" refers to whatever routing you want to
         provide to allow administrators to access the Management network.</p>
-      <p>If you are using HPE Helion OpenStack to install the operating system, then an IPMI/iLO
+      <p>If you are using <keyword keyref="kw-hos"/> to install the operating system, then an IPMI/iLO
         network connected to the IPMI/iLO ports of all servers and routable from the
         lifecycle manager is also required for BIOS and power management of the node during the
         operating system installation process.</p>
@@ -188,8 +189,8 @@
       <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
     </section>
     <section id="midscale_kvm_vsa"><title>Mid-Scale KVM with VSA Model (Technical Preview)</title>
-      <p>The mid-scale model, which is included as a technology preview in HPE Helion OpenStack 2.0,
-        illustrates two important aspects of configuring HPE Helion OpenStack for increased scale.
+      <p>The mid-scale model, which is included as a technology preview in <keyword keyref="kw-hos-phrase"/>,
+        illustrates two important aspects of configuring <keyword keyref="kw-hos"/> for increased scale.
         The controller services are distributed across a greater number of controllers and a number
         of the networks are configured as multiple L3 segments (implementing per-rack
         networking).</p>
@@ -335,7 +336,7 @@
         will be named as expected by the operating system, and it is possible that different port
         naming will exist on different servers with the same physical configuration.</p>
       <p>To provide a deterministic naming pattern, the input model supports an explicit mapping
-        from PCI bus address to a user specified name. HPE Helion OpenStack uses the prefix
+        from PCI bus address to a user specified name. <keyword keyref="kw-hos"/> uses the prefix
           <b>hed</b> (Helion Ethernet Device) to name such devices to avoid any name clashes with
         the <b>eth</b> names assigned by the operating system.</p>
       <p>The example <codeph>nic_mappings.yml</codeph> file is shown below.</p>
@@ -374,8 +375,8 @@
         models or servers with different network hardware.</p>
       <p>Each mapping lists a set of ports with the following information:</p>
       <ul>
-        <li><b>Logical name</b> - HPE Helion OpenStack uses the form <codeph>hedN</codeph>.</li>
-        <li><b>Type</b> - Only simple-port types are supported in HPE Helion OpenStack 2.0.</li>
+        <li><b>Logical name</b> - <keyword keyref="kw-hos"/> uses the form <codeph>hedN</codeph>.</li>
+        <li><b>Type</b> - Only simple-port types are supported in <keyword keyref="kw-hos-phrase"/>.</li>
         <li><b>Bus-address</b> - The PIC bus address of the port.</li>
       </ul>
       <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the
@@ -553,13 +554,13 @@
       <p><b>role</b> - A string that refers to an entry in <codeph>server_roles.yml</codeph> that
         tells the system how to configure the disks and network interfaces for this server. Roles
         are also used to define which servers can be used for specific purposes. Adding and changing
-        roles is beyond the scope of this walkthrough - for more information, see <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
+        roles is beyond the scope of this walkthrough - for more information, see <xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref>.</p>
       <p><b>server-group</b> - Tells the system how this server is physically related to networks
         and other servers. Server groups are used to ensure that servers in a cluster are selected
         from different physical groups. The example provides a set of server groups that divide the
         servers into three sets called <b>RACK1</b>, <b>RACK2</b>, and <b>RACK3</b>. Modifying the
         server group structure is beyond the scope of this walkthrough - for more information, see
-          <xref href="input_model.dita">HPE Helion OpenStack 2.0 Input Model</xref>.</p>
+        <xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref>.</p>
       <p><b>nic-mapping</b> - The name of a network port mapping definition (for more information,
         see <xref href="example_configurations.dita#example_configurations/nicmappings">Nic_mappings.yml</xref>). You need to set this to the mapping that corresponds to this
         server.</p>
@@ -813,7 +814,7 @@
     <section id="servers_yml"><title>Servers.yml</title>
       <p>The snippet below shows the insertion of an additional server used for hosting the
         lifecycle manager. Provide the address information here for the server you are running on,
-        i.e., the node where you have installed the HPE Helion OpenStack ISO.</p>
+        i.e., the node where you have installed the <keyword keyref="kw-hos"/> ISO.</p>
       <codeblock>
   servers:
      # NOTE: Addresses of servers need to be changed to match your environment.
@@ -832,7 +833,7 @@
        ip-addr: 192.168.10.3
        role: CONTROLLER-ROLE</codeblock>
     </section>
-    <section id="without_dvr"><title>Configuring HPE Helion OpenStack without DVR</title>
+    <section id="without_dvr"><title>Configuring <keyword keyref="kw-hos"/> without DVR</title>
       <p>By default in the KVM model, the Neutron service utilizes distributed routing (DVR). This is the recommended setup. However, if you would like to disable this feature, here are the steps to achieve this.</p>
       <p>On your lifecycle manager, make the following changes:</p>
       <ol>
@@ -854,7 +855,7 @@
    - neutron-metadata-agent</codeblock></li>
       </ol>
     </section>
-    <section id="without_l3agent"><title>Configuring HPE Helion OpenStack with Provider VLANs and Physical Routers Only</title>
+    <section id="without_l3agent"><title>Configuring <keyword keyref="kw-hos"/> with Provider VLANs and Physical Routers Only</title>
       <p>Another option for configuring Neutron is to use provider VLANs and physical routers only, here are the steps to achieve this.</p>
       <p>On your lifecycle manager, make the following changes:</p>
       <ol>

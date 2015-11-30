@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="home">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/></title>
   <titlealts>
-    <searchtitle>HPE Helion OpenStack 2.0: Documentation Home</searchtitle>
+    <searchtitle><keyword keyref="kw-hos-phrase"/>: Documentation Home</searchtitle>
   </titlealts>
   <prolog>
     <metadata>
@@ -18,19 +18,20 @@
   </prolog>
   <body>
     <!--Needs Edit-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="top"/>
-    <p>HPE Helion OpenStack is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm>
+    <p><keyword keyref="kw-hos"/> is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm>
       cloud software, the leading open source cloud computing platform. This HPE Helion
       distribution, backed by HPE lets you build, manage, and operate open source-based clouds on a
-      resilient, maintainable platform. HPE Helion OpenStack enables cost-effective scalability of
+      resilient, maintainable platform. <keyword keyref="kw-hos"/> enables cost-effective scalability of
       IT services and business agility and, as part of the HPE Helion portfolio, it is backed by a
       wide range of related cloud products, services, and professional support.</p>
     <section id="getstart">
-      <title>Get Started with HPE Helion OpenStack</title>
-      <p>The following links and tools will help you understand, deploy, and run your HPE Helion
-        OpenStack 2.0 cloud.</p>
+      <title>Get Started with <keyword keyref="kw-hos"/></title>
+      <p>The following links and tools will help you understand, deploy, and run your <keyword keyref="kw-hos-phrase"/>
+        cloud.</p>
       <ul>
-        <li><xref href="overview.dita">HPE Helion OpenStack 2.0 Overview</xref></li>
+        <li><xref href="overview.dita"><keyword keyref="kw-hos-phrase"/> Overview</xref></li>
         <li><xref href="kilo_features.dita">OpenStack Kilo Features</xref></li>
         <li><xref href="input_model.dita">Input Model</xref></li>
         <li><xref href="example_configurations.dita">Example Configurations</xref></li>
