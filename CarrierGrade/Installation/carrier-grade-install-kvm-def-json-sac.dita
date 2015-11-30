@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample definition.json File for
-    Memphis and Tahoe</title>
+    Sacramento</title>
 <prolog>
     <metadata>
         <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
 <codeblock>{
   "cloud": {
     "environment": "environment.json",
-    "name": "b22",
+    "name": "ftab36",
     "network-config": ".hos/lnet-control-data.json",
     "nickname": "base",
     "properties": "vars",
@@ -38,13 +38,17 @@
       "resource-nodes": [
         {
           "count": 1,
-          "file": ".hos/ccp-cpx.json"
+          "file": ".hos/ccp-compute-proxy.json"
         },
         {
-          "count": 1,
+          "count": 2,
           "file": ".hos/ccp-vrsg.json"
         }
       ]
+    },
+    {
+      "file": ".hos/baremetal.json",
+      "resource-nodes": []
     }
   ],
   "failure-zones": [
@@ -64,12 +68,6 @@
 }</codeblock>
         </section>
     <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-      <li><xref href="CGH-2-install-denver.dita#topic10581/def-json">Denver
-          deployment</xref></li>
-        <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
-          deployment</xref></li>
-        <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
-          deployment</xref></li>
         <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
             deployment</xref></li>
       </ul></p>

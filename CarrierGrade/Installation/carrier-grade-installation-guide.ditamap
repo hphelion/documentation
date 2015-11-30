@@ -146,7 +146,6 @@
                 navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
             <topicref href="carrier-grade-install-kvm-node-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-def-json.dita" toc="no"/>
-            <topicref href="carrier-grade-install-kvm-ansible-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-env-json.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-esx-json.dita" toc="no"/>
@@ -166,5 +165,7 @@
             <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
             <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
             <topicref href="carrier-grade-install-bonded-nic.dita"/>
+            <topicref href="carrier-grade-install-kvm-ansible-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-ansible-json-sac.dita"/>
         </topichead>
     </topicref></map>

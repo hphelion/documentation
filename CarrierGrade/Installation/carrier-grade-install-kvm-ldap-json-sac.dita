@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ldap.json File for
-        Memphis and Tahoe</title>
+        Sacramento</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -27,33 +27,37 @@
                 <codeblock>"ldap_username": "admin", 
 "ldap_password": "admin_001", </codeblock>
             </p>
-            <codeblock>{ 
-    "product": { 
-        "version": 1 
-    }, 
+            <codeblock>{
+    "product": {
+        "version": 1
+    },
 
-    "property-groups": [ 
-        { 
-            "name": "ldap-vars", 
-            "properties": { 
-                "ldap_domain_name": "americas", 
-                "ldap_url": "10.1.2.44", 
-                "ldap_username": "admin", 
-                "ldap_password": "admin_001", 
-                "ldap_domain": "dc=helioncg,dc=local", 
-                "ldap_ou": "CGTestUsers", 
-                "ldap_enabled": 1 
-            } 
-        } 
-    ] 
+    "property-groups": [
+        {
+            "name": "ldap-vars",
+            "properties": {
+                "ldap_domain_name": "americas",
+                "ldap_url": "10.1.64.20",
+                "ldap_username": "admin",
+                "ldap_password": "admin_001",
+                "ldap_domain": "dc=cdl,dc=local",
+                "ldap_ou": "CG-Test-Users",
+                "ldap_nova_password": "nova",
+                "ldap_nova_user": "nova",
+                "ldap_neutron_password": "neutron",
+                "ldap_neutron_user": "neutron",
+                "ldap_cinder_password": "cinder",
+                "ldap_cinder_user": "cinder",
+                "ldap_glance_password": "glance",
+                "ldap_glance_user": "glance",
+                "ldap_enabled": 1
+            }
+        }
+    ]
 }
 </codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
-                        deployment</xref></li>
-                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
-                        deployment</xref></li>
                 <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
                         deployment</xref></li>
             </ul></p>

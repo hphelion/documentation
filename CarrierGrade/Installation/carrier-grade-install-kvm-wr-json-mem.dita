@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample wr.json File for Memphis
+        and Tahoe</title>
+
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+</prolog>
+<body>
+    <p>The process for installing the memphis or sacramento deployment requires several JSON files
+            that will be used when deploying the lifecycle manager.</p>
+        
+<section id="sample-node-provisionjson-file">
+            <p><b>For bonded NIC environments</b>, edit the file as follows:</p>
+            <codeblock>{
+    "lag_interface": "Y",   
+    "lag_mode": 4,
+    "interface_mtu": 1500,
+    "interface_ports": [
+    "eth0, eth1"
+],</codeblock>
+            <p>Make sure the file contains the following lines for the TUL network. Remove any
+                additional TUL entries, if present:</p>
+            <codeblock>"vswitch_type": "nuage_vrs",
+"tul_ip_start_address": "10.20.6.50",
+"tul_ip_end_address": "10.20.6.99",
+"region_name": "regionone",</codeblock>
+            <p><b>For SR-IOV environments,</b> edit the following values.</p>
+            <p><codeph>physnet_VLAN_range_mappings</codeph>: Specify VLAN ranges for SRIOV/PCIPT
+                enabled Tenant Networks in the following format:
+                &lt;physical_network&gt;[:&lt;vlan_min&gt;:&lt;vlan_max&gt;] tuples .
+                <!--From Hrushi email 10/16/15--></p>
+            <p><codeph>pci_vendor_id</codeph>: Specify a comma-separated list of supported Vendor
+                PCI Devices, in the <codeph>vendor_id:product_id</codeph> format. This variable used
+                to define the devices being used for SR-IOV interfaces.
+                <!--From Hrushi email 10/16/15--></p>
+        </section>
+        <section>
+            <title>Sample wr.json file</title>
+            <p>The following represents a sample <codeph>wr.json</codeph> file in the
+                    <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory
+                on the lifecycle manager. The IP addresses are masked for security purposes. Use values
+                appropriate for your environment.</p>
+            <codeblock>{
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "wr-vars",
+            "properties": {
+                "database_storage": 70,
+                "backup_storage": 300,
+                "shared_instance_storage": 250,
+                "vswitch_type": "nuage_vrs",
+                "tul_ip_start_address": "10.x.x.x",
+                "tul_ip_end_address": "10.x.x.x",
+                 "region_name": "regionone",
+                "logical_interface": [
+                    {
+                        "lag_interface": "N",
+                        "lag_mode": 4,
+                        "interface_mtu": 1500,
+                        "interface_ports": [
+                            "eth0"
+                        ],
+                        "network": [
+                            {
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
+                                "name": "management"
+                            },
+                            {
+                                "ip_start_address": "172.x.x.x",
+                                "ip_end_address": "172.x.x.x",
+                                "name": "blockstore"
+                            },
+                            {
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
+                                "name": "api"
+                            }
+                        ]
+                    }
+                ],
+                "pxeboot_cidr": "10.x.x.x/24",
+                "license_file_name": "license.lic"
+                "physnet_VLAN_range_mappings": ["physnet1:1000:1999","physnet2:1001:2000"],
+                "pci_vendor_id": ["8086:10ca","8086:10ed"]
+
+            }
+        }
+    ]
+}</codeblock>
+        </section>
+        <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+                        deployment</xref></li>
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                        deployment</xref></li>
+            </ul></p>
+</body>
+</topic>

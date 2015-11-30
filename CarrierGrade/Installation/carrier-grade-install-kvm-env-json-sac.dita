@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample enviroment.json File for
+        Unbonded Sacramento</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+</prolog>
+<body>
+
+    <p>The process for installing the memphis or sacramento deployment requires several JSON files
+            that will be used when deploying the lifecycle manager.</p>
+<section id="sample-node-provisionjson-file">
+  <p>The following represents a sample <codeph>environment.json</codeph> file in the
+                    <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle
+                manager for an unbonded NIC installation. The IP addresses are masked for security
+                purposes. Use values appropriate for your environment.</p>
+        
+<codeblock>{
+    "product": {
+        "version": 1
+    },
+
+    "node-type": [
+        {
+            "name": "CCN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "type": "vlan",
+                            "segment-id": "222",
+                            "network-address": {
+                                "cidr": "10.1.20.0/24",
+                                "start-address": "10.1.20.10",
+                                "gateway": "10.1.20.1"
+                            }
+                        },
+                        {
+                            "name": "api",
+                            "type": "vlan",
+                            "segment-id": "223",
+                            "network-address": {
+                                "cidr": "10.1.21.0/24",
+                                "start-address": "10.1.21.10"
+                            }
+                        },
+                        {
+                            "name": "blockstore",
+                            "type": "vlan",
+                            "segment-id": "225",
+                            "network-address": {
+                                "cidr": "10.1.23.0/24",
+                                "start-address": "10.1.23.10"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CPN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CPX",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [
+                            "eth0"
+                        ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "DCN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        },
+                        {
+                            "name": "datacenter",
+                            "type": "vlan",
+                            "segment-id": "10",
+                            "network-address": {
+                                "cidr": "10.10.10.0/24",
+                                "start-address": "10.10.10.51",
+                                "gateway": "10.10.10.1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "INTF1",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth1" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "tenant",
+                            "type": "vlan",
+                            "segment-id": "",
+                            "network-address": {
+                                "cidr": "192.168.200.0/24",
+                                "start-address": "192.168.200.2",
+                                "gateway": "192.168.200.1"
+                            }
+
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "VRG",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        }
+                    ]
+                },
+                {
+                    "name": "INTF1",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth1" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "tenant",
+                            "ref": "dcn-INTF1-tenant"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "BAR",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        },
+                        {
+                            "name": "api",
+                             "ref": "ccn-INTF0-api"
+                        },
+                        {
+                            "name": "blockstore",
+                            "ref": "ccn-INTF0-blockstore"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</codeblock>
+    
+    
+    <p> NOTE: The configuration processor assigns the first address of the CLM address range to itself for serving python 
+        and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM Host.</p>
+            <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                    <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                            deployment</xref></li>
+                </ul></p>
+    
+        </section>
+</body>
+</topic>

@@ -165,9 +165,6 @@ Password: cghelion</codeblock>
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
         file supplies input values to the <codeph>hprovision</codeph> script, later in the
         installation. </p>
-      <p><b>Note:</b> To see a sample <codeph>node-provision.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-node-json.dita">Sample node-provision.json
-        File</xref>.</p>
       <ol id="ol_ub2_xfl_zs">
         <li>Change to the <codeph>&lt;cloudname&gt;</codeph>
           directory:<codeblock>cd /var/hlm/clouds/&lt;cloudname&gt;</codeblock></li>
@@ -213,6 +210,8 @@ Password: cghelion</codeblock>
         <li>Save and close the file.</li>
       </ol>
     </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-node-json-sac.dita">sample
+        node-provision.json file</xref>.</p>
     <section id="conref-pxe-boot">
       <title>Configure PXE boot</title>
       <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
@@ -248,9 +247,8 @@ Password: cghelion</codeblock>
         per vCenter; make sure this value is set to
         2<!--set this value to the number of vCenters you have.-->, as shown in the following
         example.</p>
-      <p><b>Note:</b> To see a sample <codeph>definition.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-def-json.dita#topic4797">Sample definition.json File for
-          Installing the KVM + ESX Topology</xref>.<ol id="ol_zzr_khl_zs">
+      <p>
+        <ol id="ol_zzr_khl_zs">
           <li>Set the <codeph>count</codeph> value to 2 for an HA installation under <codeph>control
               planes</codeph>.<codeblock>"control-planes": [
         {
@@ -268,19 +266,22 @@ Password: cghelion</codeblock>
             ]
         }
     ]</codeblock></li>
-        </ol></p>
+        </ol>
+      </p>
     </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-def-json-sac.dita">sample
+        definition.json file</xref></p>
     <section id="conref-env-json">
       <title>Configure the environment.json file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to
         configure the VLANs and network addresses as appropriate for your environment. Configure the
         CLM (management), CAN (api), and BLS (blockstore) networks.</p>
-      <p><b>Note:</b> To see a sample <codeph>environment.json</codeph> file, see one of the
-        following: <ul id="ul_smq_yqt_bt">
-          <li><xref href="carrier-grade-install-kvm-env-json.dita">For an Unbonded NIC
-              Environment</xref>. <p>For each network provide:
-                </p><codeblock>{
+      <p>
+        <ul id="ul_smq_yqt_bt">
+          <li>
+            <p>For each network provide: </p>
+            <codeblock>{
               "name": "management",
               "type": "vlan",
               "segment-id": "1551",
@@ -289,41 +290,45 @@ Password: cghelion</codeblock>
               "start-address": "10.x.x.x",
               "gateway": "10.x.x.x"
               }
-              },        </codeblock><p><b>Note:</b>
-              In the example, the IP addresses are masked for security purposes. Use values
-              appropriate for your environment.</p></li>
-          <li><xref href="carrier-grade-install-kvm-env-json-bonded.dita#topic4797">For a Bonded NIC
-              Environment</xref></li>
-        </ul></p>
+              },        </codeblock>
+            <p><b>Note:</b> In the example, the IP addresses are masked for security purposes. Use
+              values appropriate for your environment.</p>
+          </li>
+        </ul>
+      </p>
     </section>
+    <p>To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul
+        id="ul_eln_vcl_25">
+        <li><xref href="carrier-grade-install-kvm-env-json-sac.dita">For an Unbonded NIC
+            Environment</xref></li>
+        <li><xref href="carrier-grade-install-kvm-env-json-bonded-sac.dita#topic4797">For a Bonded
+            NIC Environment</xref></li>
+      </ul></p>
     <section id="conref-ansible-json">
       <title>Configure the ansible.json file</title>
       <p>Modify the <codeph>ansible.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
         manager.</p>
     </section>
-    <p>To see a sample <codeph>ansible.json</codeph> file, see <xref
-        href="carrier-grade-install-kvm-ansible-json.dita">Sample ansible.json File for Installing
-        the KVM + ESX Topology</xref>.</p>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-sac.dita">a sample
+        ansible.json file</xref>.</p>
     <section id="conref-esx-json">
       <title>Configure the esx.json file</title>
       <p>Modify the <codeph>esx.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the lifecycle manager.
         This file is called by the script that installs the HPE Helion OpenStack cloud, later in the
         installation. </p>
-      <p>To see a sample <codeph>esx.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-esx-json.dita">Sample esx.json File for Installing the KVM
-          + ESX Topology</xref>.</p>
     </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-esx-json-sac.dita">sample esx.json
+        file</xref>.</p>
     <section id="conref-ldap-json">
       <title>Configure the ldap.json file</title>
       <p>Modify the <codeph>ldap.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
         manager.</p>
-      <p>To see a sample <codeph>ldap.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-ldap-json.dita">Sample ldap.json File for Installing the
-          KVM + ESX Topology</xref>. </p>
     </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ldap-json-sac.dita">sample
+        ldap.json file</xref>. </p>
     <section id="conref-dcn-json">
       <title>Configure the dcn.json file</title>
       <p>Modify the <codeph>dcn.json</codeph> file in the
@@ -356,10 +361,9 @@ Password: cghelion</codeblock>
       <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
         lifecycle manager.</p>
-      <p>To see a sample <codeph>wr.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-wr-json.dita">Sample wr.json File for Installing the KVM +
-          ESX Topology</xref>. </p>
     </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-sac.dita">a sample wr.json
+        file</xref>. </p>
     <section id="conref-mach-json">
       <title>Configure the machine_architecture.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
@@ -380,12 +384,13 @@ Password: cghelion</codeblock>
   "product": {
         "version": 1
   },
+
   "property-groups": [
     {
        "name": "ironic-vars",
        "properties": {
-         "ignore_tenant_network" : "True"       
-         }
+         "ignore_tenant_network" : "False"
+       }
     }
   ]
 }</codeblock></p>
@@ -400,22 +405,23 @@ Password: cghelion</codeblock>
   "product": {
         "version": 1
   },
+
   "property-groups": [
     {
        "name": "neutron-vars",
        "properties": {
          "switch_channel_timeout": "180",
-         "vlan_range": "339:340",
+         "vlan_range": "330:339",
          "bm_interface": "eth1",
          "prov_network": {
-            "vlan": "1579",
-            "cidr": "10.200.79.0 /24",
-            "ip_start_address": "10.200.79.50",
-            "ip_end_address": "10.200.79.200",
-            "ip_gateway": "10.200.79.1"
+            "vlan": "330",
+            "cidr": "192.168.150.0/24",
+            "ip_start_address": "192.168.150.50",
+            "ip_end_address": "192.168.150.200",
+            "ip_gateway": "192.168.150.1"
           }
        }
-     }
+    }
   ]
 }</codeblock>
       </p>
