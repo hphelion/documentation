@@ -74,7 +74,7 @@
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
     <section id="environment">
-      <title id="env-json">Modify the e<codeph>nvironment.json</codeph> file</title>
+      <title id="env-json">Modify the <codeph>environment.json</codeph> file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager.
         Configure the VLANs and network addresses as appropriate for your environment. Set the

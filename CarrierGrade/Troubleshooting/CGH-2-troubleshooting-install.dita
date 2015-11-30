@@ -37,11 +37,12 @@ FATAL: all hosts have already failed – aborting </codeblock></p>
     <p><image href="../../media/CGH-2-trouble-ntp-fail.png" id="image_x5k_yxr_d5" width="600"/></p>
     <p><b>Resolution</b></p>
         <ol id="ol_ww5_ryr_d5">
-          <li>Execute the following command on all the nodes, to disable firewall:
+          <li>Execute the following command on all nodes that failed, to disable firewall:
         <codeblock>ufw disable</codeblock></li>
-      <li>Run the following on the lifecycle
-        manager:<codeblock>hlm deploy -c b30 -t accelerate-mode
-hlm deploy -c b30 -r</codeblock></li>
+      <li>Execute the following from the lifecycle manager to remove the Ansible accelerate daemon,
+        which runs on the nodes:<codeblock>hlm deploy -c b30 -t accelerate-mode</codeblock></li>
+      <li>Execute the following command to restart the
+        installation:<codeblock>hlm deploy -c b30 -r</codeblock></li>
         </ol>
     <section id="install-fails">
       <title>Installation fails at Ansible playbook</title>

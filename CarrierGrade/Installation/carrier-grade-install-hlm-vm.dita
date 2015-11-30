@@ -37,8 +37,7 @@
         <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
-            following for a KVM + ESX
-          deployment:</p><codeblock>############################################# Variables for HLM  #################################################################
+            following:</p><codeblock>############################################# Variables for HLM  #################################################################
 #These variables are relevant in both All Virtual and BareMetal scenarios.
               
 #Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
@@ -62,7 +61,7 @@ cobbler_pxestartip: 10.x.x.x
 cobbler_pxeendip:   10.x.x.x
 cobbler_pxestaticip: 10.x.x.x
 cobbler_pxenetmask: 255.255.255.0
-cobbler_hlinux_password: cobbler 
+cobbler_hlinux_password: ohcanada 
 cobbler_web_password: cobbler  
               
 #Set the location of your images that will be used by libvirt
