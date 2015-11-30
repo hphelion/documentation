@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="hdp_servicenet">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating the HPE Helion Development Platform Service Net</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating the HPE Helion Development Platform Service Net</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section>Many of the HPE Helion Developer Platform services require the creation of a VM service
       network in order to access the cloud control plane. This service network is a
-      VLAN-encapsulated provider network which is fully routable to the HPE Helion OpenStack MGMT
+      VLAN-encapsulated provider network which is fully routable to the <keyword keyref="kw-hos"/> MGMT
       network. <note type="important">Create this network before attempting to install the HPE Helion
         Developer Platform. </note><ol>
         <li>SSH to the lifecycle manager using admin credentials.</li>
