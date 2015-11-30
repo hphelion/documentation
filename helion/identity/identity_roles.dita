@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_iq3_nl3_bt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating Domains, Projects, Users, Groups,
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating Domains, Projects, Users, Groups,
     and Roles</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="domains_projects_roles">
       <title>Domains, Projects, Users, Groups, and Roles</title>
       <p>Most large business organizations use an identity system such as Microsoft Active Directory
@@ -48,13 +49,13 @@
         <li>The "admin" UserID (UID) is created during the Keystone installation, has the "admin"
           role assigned to it, and is defined as the "Cloud Admin". This UID is created using the
           "magic" or "secret" admin token found in the default 'keystone.conf' file installed during
-          HP Helion OpenStack keystone installation after the Keystone service has been installed.
+          <keyword keyref="kw-hos"/> keystone installation after the Keystone service has been installed.
           This secret token should be removed after installation and the "admin" password
           changed.</li>
-        <li>The "default" domain is created automatically during the HP Helion OpenStack Keystone
+        <li>The "default" domain is created automatically during the <keyword keyref="kw-hos"/> Keystone
           installation.</li>
         <li>The "default" domain contains all OpenStack service accounts that are installed during
-          the HP Helion OpenStack keystone installation process.</li>
+          the <keyword keyref="kw-hos"/> keystone installation process.</li>
 
         <li>No users but the OpenStack service accounts should be assigned to the "default"
           domain.</li>
@@ -131,7 +132,7 @@
         file.</p><p>Each service has its own service policy file with the
           <b>/etc/[SERVICE_CODENAME]/policy.json</b> file name format where [SERVICE_CODENAME]
         represents a specific OpenStack service name. For example, the OpenStack Nova service would
-        have a policy file called <b>/etc/nova/policy.json</b>.</p><p>HPE Helion OpenStack is
+        have a policy file called <b>/etc/nova/policy.json</b>.</p><p><keyword keyref="kw-hos"/> is
         deployed with 3 redundant control plane servers. If modified, the policy files for each
         service need to be replicated in each control plane server. Service restarts are NOT
         required for policy file changes.</p>
