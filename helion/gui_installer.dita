@@ -147,9 +147,9 @@
             Management</xref></li>
         </ul>
       </p>
-      <note>Because the GUI installer is disabled after deployment is complete, whether you
+      <note><p>Because the GUI installer is disabled after deployment is complete, whether you
         installed your cloud via the GUI or via the command line, if you want to re-enable the GUI
-        later but are not re-installing from scratch, run these commands:
+        later but are not re-installing from scratch, run these commands:</p>
         <codeblock>sudo a2ensite dayzero-apache.conf
 sudo systemctl start dayzero.service</codeblock>
       </note>
