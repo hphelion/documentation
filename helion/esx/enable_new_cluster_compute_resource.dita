@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_l5t_w5f_rt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Enabling a New Cluster as a Compute Resource </title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Enabling a New Cluster as a Compute Resource </title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>When a new cluster is created in vCenter, EON's periodic pooling task fetches the new cluster
       information and updates the inventory. Currently, the state of a new cluster is
         <b>not_imported</b>.</p>

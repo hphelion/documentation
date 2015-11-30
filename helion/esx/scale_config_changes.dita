@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_ijt_dyh_rt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Making SCALE Configuration Changes</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Making SCALE Configuration Changes</title>
   <body><!--Needs Work; fnf edit on 10/27; first sentence needs clarification.-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>This procedure describes how to make the recommended configuration changes to achieve 4K
       instances. <ol id="ol_zwn_lyh_rt">
         <li>Change the directory. The <systemoutput>nova.conf.j2</systemoutput> file is present in
