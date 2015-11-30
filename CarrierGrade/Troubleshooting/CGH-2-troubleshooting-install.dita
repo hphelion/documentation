@@ -24,9 +24,23 @@
         <li><xref href="#topic10581/vrs" format="dita"/></li>
       </ul>
     </section>
+    <section><title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the Reload
+        apache2 configuration task</title><p><b>System Behavior/Message</b></p><p>The installation
+        of HPE Helion OpenStack Carrier Grade (the hlm deploy command) fails, with the following
+        message:</p><p>
+        <codeblock>Job for apache2 service failed</codeblock>
+      </p><p><image href="../../media/CGH-2-trouble-apache-fail.png" id="image_qm3_51n_25"
+          width="600"/></p><b>Resolution</b><p>
+        <ol id="ol_uwf_hbn_25">
+          <li>Execute the following command on each controller to restart apache2:
+            <codeblock>service apache2 restart</codeblock></li>
+          <li>Execute the following command on the lifecycle manager to restart the
+            installation:<codeblock>hlm deploy -c &lt;cloud_name> -r"</codeblock></li>
+        </ol>
+      </p></section>
     <section id="fail-ntp">
-      <title>HPE Helion OpenStack installation (hlm deploy) fails at the install ntp client
-        task</title>
+      <title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the install ntp
+        client task</title>
     </section>
     <p><b>System Behavior/Message</b></p>
     <p>The installation of HPE Helion OpenStack Carrier Grade (the hlm deploy command) fails, with
