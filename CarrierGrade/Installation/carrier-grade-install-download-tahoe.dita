@@ -33,9 +33,8 @@
                 <section conref="carrier-grade-install-download.dita#topic7148/kvm"/>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the Lifecycle Manager and Installation Services</xref>.
-                                
-                        </p>
+                        <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581">Deploying the
+                                        Lifecycle Manager</xref></p>
                 </section>
         </body>
 </topic>

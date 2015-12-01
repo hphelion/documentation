@@ -21,7 +21,7 @@
                 </metadata>
         </prolog>
         <body>
-               
+               <bodydiv id="prereqs">
                 <p>This document describes the prerequisite steps required to install HP Helion
                         OpenStack Carrier Grade in a baremetal environment.</p>
                 <section id="hardware">
@@ -315,10 +315,8 @@ StrictHostKeyChecking no </codeblock></li>
                 </section>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="carrier-grade-install-hlm-vm.dita#topic10581">Deploying the lifecycle manager and installation
-                                                  services</xref>.
-                                
-                        </p>
+                        <p>Download the Installation Packages. </p>
                 </section>
+               </bodydiv>
         </body>
 </topic>

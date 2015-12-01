@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Download the Denver
-                Installation Packages</title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
+                Prerequisites</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Carrier Grade Installation
                         Prerequisites</searchtitle>
@@ -21,20 +21,11 @@
                 </metadata>
         </prolog>
         <body>
-               
-                <p>This document describes the prerequisite steps required to install HP Helion
-                        OpenStack Carrier Grade in a baremetal environment.</p>
-                <section conref="carrier-grade-install-download.dita#topic7148/getinstall"/>
-                <section conref="carrier-grade-install-download.dita#topic7148/infoblox"/>
-                <section conref="carrier-grade-install-download.dita#topic7148/esx"/>
-                <section conref="carrier-grade-install-download.dita#topic7148/checksum"/>
-                <section conref="carrier-grade-install-download.dita#topic7148/extract"/>
-                <section conref="carrier-grade-install-download.dita#topic7148/kvm"/>
+                <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148/prereqs"/>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="CGH-2-install-lifecycle-denver.dita#topic10581">Deploying the
-                                        Lifecycle Manager</xref>
-                        </p>
+                        <p><xref href="CGH-2-install-lifecycle-memphis.dita#topic10581">Deploying
+                                        the lifecycle manager</xref></p>
                 </section>
         </body>
 </topic>
