@@ -66,11 +66,11 @@
       <note>All of the following procedures are performed on the HPE Helion OpenStack Deployer. SSH
       to the Deployer before attempting any of these procedures.</note>
     
-    <section><title>Create the <codeph>clouds.yaml</codeph> Configuration File</title>The installer
+    <section><title>Create the <codeph>clouds.yaml</codeph> Configuration File</title><p>The installer
       retrieves configuration information from a <xref
         href="install_cloudsyaml.dita#topic_wzw_r4w_rt/ol_apx_khy_rt">configuration file</xref>
       located at <codeph>/.config/openstack/clouds.yaml</codeph> Each service has its own section
-      within this file where configuration information is stored.<note type="important">This file
+      within this file where configuration information is stored.</p><note type="important">This file
           <b>must</b> contain at least the <xref href="install_cloudsyaml.dita#id_ufp_fdn_vt"
           >Platform Configuration</xref> information before the HDPI can be installed.
       </note></section>

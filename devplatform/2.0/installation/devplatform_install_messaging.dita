@@ -10,7 +10,7 @@
       <p>
         <ul>
           <li>The HDP Installer 2.0, also known as HDPI, must already <xref href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-          <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml</xref> file.</li>
+          <li>A properly configured <xref href="install_cloudsyaml.dita#id_s4f_hdn_vt">clouds.yaml</xref> file.</li>
           <li>HPE Helion OpenStack 2.0 installation must be completed. </li>
           <li>You must know the NTP server and DNS server IP addresses.</li>
         </ul>

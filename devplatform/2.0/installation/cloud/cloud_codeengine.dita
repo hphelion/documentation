@@ -26,7 +26,7 @@
           <dt>deployer_flavor</dt>
           <dd>The flavor to use for the deployer instance,</dd>
           <dd>Default value: 3</dd>
-          <dd>Do not change this value.</dd>
+          <dd>Do not change this value. Creating a Large deployer (value: 4) may result in a <codeph>No space in directory</codeph> error message.</dd>
         </dlentry>
         <dlentry>
           <dt>deployer_ntp_servers</dt>

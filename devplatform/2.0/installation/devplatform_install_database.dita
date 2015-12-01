@@ -8,7 +8,7 @@
       <ul>
         <li>The HDP Installer 2.0, also known as HDPI, must already <xref
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
+        <li>A properly configured <xref href="install_cloudsyaml.dita#id_h4q_gdn_vt"
             >clouds.yaml</xref> file.</li>
         <li>Configure <xref href="install_dbaas_configureAvailabilityZones.dita#topic_hhh_lm4_xt"
             >Availability Zones</xref>, if your installation requires them.</li>
