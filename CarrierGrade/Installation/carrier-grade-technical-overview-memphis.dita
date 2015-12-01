@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3485">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Tahoe (KVM with DCN)
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Memphis (KVM + ESX with DCN)
     Deployment Architecture Reference</title>
   <prolog>
     <metadata>
@@ -16,15 +16,18 @@
   </prolog>
   <body>
    
-    <p>This page introduces deployment and network architectures of the KVM with DCN deployment of
-      HP Helion OpenStack Carrier Grade.  The KVM with DCN deployment incorprates HPE Distributed
-      Cloud Networking (DCN) virtual network solution. During the installation, use the
-      <codeph>tahoe</codeph> template that comes with the installation package to create the KVM
-      with DCN deployment.</p>
+    <p>This page introduces deployment and network architectures of the Memphis deployment of HP
+      Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
+        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. This deployment also
+      includes support for OpenStack Ironic to install and manage baremetal servers.</p>
+    <p>The Sacramento deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
+      solution. During the installation, use the <codeph>memphis</codeph> template that comes with
+      the installation package to create the KVM + ESX deployment.</p>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
     <section>
     <title>Network/Component Architecture</title>
-    <p><image href="../../media/CGH-2-block-arch-tahoe.png" width="750" id="image_wdn_zbw_mt"/></p>
+    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="750" id="image_wdn_zbw_mt"
+        /></p>
     </section>
       <section id="deploy-arch">
       <title>Deployment architecture</title>
@@ -161,7 +164,8 @@
         the major DCN components, including how to access the various systems, IP addresses, and
         user credentials. </p></section>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
+    <section
+      conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/>
     <section>

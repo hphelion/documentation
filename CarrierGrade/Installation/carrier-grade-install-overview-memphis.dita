@@ -47,51 +47,44 @@
         environment.</p>
       <ol>
         <li>Review the <xref
-            href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita">Technical
+            href="../../CarrierGrade/Installation/carrier-grade-technical-overview-memphis.dita">Technical
             Overview</xref> for information on the HP Helion OpenStack Carrier Grade environment. <ul>
             <li>Review the Cloud Topologies to decide appropriate topology for your use case.</li>
             <li>Review the deployment architecture for different hypervisors</li>
             <li>Review the network architecture for networking needs</li>
           </ul></li>
-        <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
+        <li>Review the <xref href="carrier-grade-support-matrix-memphis.dita#topic1773">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
         <li> Perform any required or optional <xref
-            href="../../CarrierGrade/Installation/carrier-grade-install-prereqs.dita"
+            href="../../CarrierGrade/Installation/CGH-install-prereqs-memphis.dita"
             >installation prerequisites</xref>. </li>
         <li>
           <xref
             href="../../CarrierGrade/Installation/carrier-grade-install-network-prepare.dita"
             >Prepare the network for installation</xref>
         </li>
-        <li>Install the cloud topologies: <ul>
-            <li>KVM + ESX Deployment<p>In this cloud topology, the components required to support
-                ESX hypervisor are installed along with standard services in the non-KVM region
-                first. Then the KVM region is installed.</p><ul>
-                <li>Install <xref href="carrier-grade-install-hlm-vm.dita#topic10581"> the
-                  lifecycle manager and Installation Services</xref>.</li>
-                <li>Install <xref href="carrier-grade-install-non-kvm.dita#topic10581">HP Helion
-                    OpenStack cloud and install the HPE Distributed Cloud Networking (DCN)
-                    components</xref>. You will also install the VMware ESX compute proxy. These
-                  components will be installed into what is called the non-KVM region and connect to
-                  the ESX cluster with DCN networking.</li>
-                <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
-                    >Helion user interface</xref>.</li>
-                <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581">required
-                    DCN components</xref>.</li>
-                <li>Install the <xref href="carrier-grade-install-kvm-cloud.dita#topic1107">carrier
-                    grade cloud</xref>. The carrier grade cloud is deployed into what is called the
-                    <i>KVM region</i>
-                </li>
-              </ul></li>
+        <li>Install the cloud topologies: <p>In this cloud topology, the standard OpenStack services
+          like Keystone, Glance, Cinder, Swift are installed in the non-KVM region first. Then the
+          KVM region is installed. </p><ul id="ul_fxd_x4c_b5">
+            <li>Install <xref href="CGH-2-install-lifecycle-memphis.dita">the Lifecycle
+              Manager</xref>.</li>
+            <li>Install the <xref href="CGH-2-install-memphis.dita">HPE Helion
+              OpenStack cloud</xref>. These components will be installed into what is called the
+              <i>Non-KVM region</i>.</li>
+            <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581">Helion
+              user interface</xref>.</li>
+            <li>Install the <xref href="carrier-grade-install-kvm-memphis.dita">carrier grade cloud</xref>. 
+              The carrier grade cloud is deployed into what is
+              called the <i>KVM region.</i></li>
           </ul></li>
+        
       </ol>
     </section>
 
     <section id="first-step">
       <title>First Step</title>
-      <p>Perform the <xref href="carrier-grade-install-prereqs.dita#topic7148">prerequisite
-          steps</xref> on your KVM Host required to install HP Helion OpenStack Carrier Grade in a
-        baremetal environment.</p>
+      <p>Perform the <xref href="CGH-install-prereqs-memphis.dita">prerequisite steps</xref> required
+        to install HP Helion OpenStack Carrier Grade.</p>
     </section>
   </body>
 </topic>

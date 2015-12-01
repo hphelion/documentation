@@ -15,11 +15,11 @@
     </metadata>
   </prolog>
   <body>
-    <p>This page introduces deployment and network architectures of the KVM + ESX deployment of HP
+    <p>This page introduces deployment and network architectures of the Sacramento deployment of HP
       Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
-        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. This deployment
-      also includes support for OpenStack Ironic to install and manage baremetal servers.</p>
-    <p>The KVM + ESX deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
+        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. This deployment also
+      includes support for OpenStack Ironic to install and manage baremetal servers.</p>
+    <p>The Sacramento deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>sacramento</codeph> template that comes
       with the installation package to create the KVM + ESX deployment.</p>
     <section id="Helion-services">
@@ -232,11 +232,12 @@
       <p>The BM region contains baremetal servers controlled by OpenStack Ironic.</p>
     </section>
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
-      OpenStack Carrier Grade KVM + ESX deployment uses HPE Distributed Cloud Networking to provide
-      virtual networking within the cloud.</p><p>DCN must be deployed before starting the cloud
-        deployment. Please refer to DCN documentation for details. </p>The main components in the HP
-      DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services Directory
-      Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and Switching (VRS).<ul>
+        OpenStack Carrier Grade Sacramento deployment uses HPE Distributed Cloud Networking to
+        provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
+        cloud deployment. Please refer to DCN documentation for details. </p>The main components in
+      the HP DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services
+      Directory Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
+      Switching (VRS).<ul>
         <li>HPE Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
           compute resources and network resources, that is located on a server outside of the HP
           Helion OpenStack Carrier Grade cloud. </li>

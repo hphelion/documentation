@@ -157,9 +157,9 @@
         </table>
         </section>
     <section id="configure-vlan-networking-on-the-kvm-host">
-            <title>Configure VLAN networking on the KVM Host</title>
+            <title>Configure VLAN networking on the lifecycle manager host</title>
             <ol>
-                <li>Launch a terminal and log in to your KVM Host as root:
+                <li>Launch a terminal and log in to your lifecycle manager host as root:
                     <codeblock>sudo su -</codeblock></li>
                 <li>Edit <codeph>/etc/network/interfaces</codeph> file to provide network details on
                     the each interface:<codeblock><codeph>auto lo
@@ -276,7 +276,7 @@ ovs_version: "2.0.2"</codeblock></li>
 <p>The installation process will create a virtual machine for the lifecycle manager.</p>
 <p>Perform the following steps to enable networks that will be associated with lifecycle manager.</p>
 <ol>
-<li>Launch a terminal and log in to your KVM Host as root:<p>
+<li>Launch a terminal and log in to your lifecycle manager host as root:<p>
                         <codeblock>sudo su -</codeblock>
                     </p></li>
 <li>Create the <codeph>br-clm</codeph> network by creating an XML definition file:<p>a. Manually
@@ -431,7 +431,7 @@ ifup br-dcm</codeph></codeblock></li>
                         >prerequisites</xref>.</b></p>
 <!-- Hide this; might not be needed 
 
-1. On the KVM Host, change to the `/root/infra-ansible-playbooks/roles/HLM-CFG/` directory.
+1. On the lifecycle manager host, change to the `/root/infra-ansible-playbooks/roles/HLM-CFG/` directory.
 
         cd /root/infra-ansible-playbooks/roles/HLM-CFG/
 

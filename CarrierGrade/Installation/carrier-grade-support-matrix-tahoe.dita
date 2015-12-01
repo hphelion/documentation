@@ -20,8 +20,7 @@
         document. <ul id="ul_kqv_3ld_b5">
           <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
           <li><xref href="#topic1773/req-specs" format="dita">Required Specifications</xref></li>
-          <li><xref href="#topic1773/esx-dcn-hardware" format="dita">ESX and DCN
-              Specifications</xref></li>
+          <li><xref href="#topic1773/esx-dcn-hardware" format="dita">DCN Specifications</xref></li>
           <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
               Configurations</xref></li>
           <li><xref href="#topic1773/dcn" format="dita">DCN Components</xref></li>
@@ -35,8 +34,11 @@
     </section>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/hardware" id="hardware"/>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/req-specs" id="req-specs"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/esx-dcn-hardware"
-    id="esx-dcn-hardware"/>
+    <section id="esx-dcn-hardware">
+      <title>DCN Specifications</title>
+      <p>Consult the DCN documentation for the supported hardware and required hardware
+        specifications. </p>
+    </section>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/hardware-config"
       id="hardware-config"/>
   <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/dcn" id="dcn"/>
@@ -47,10 +49,9 @@
     <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/os-dcn-esx"
       id="add-guestos"/>
   
-  <section id="next"> <title>Next step</title>
-    <p>Review the <xref href="CGH-install-prereqs-tahoe.dita">Installation Prerequisites</xref>.</p>
-    ho
-  </section>
+  <section id="next">
+      <title>Next step</title> Review the <xref href="CGH-install-prereqs-tahoe.dita">Installation
+        Prerequisites</xref>. </section>
   <!-- ===================== horizontal rule ===================== -->
 
 </body>
