@@ -39,8 +39,8 @@
             </topicref>
             <topicref href="carrier-grade-install-download-denver.dita"
                 navtitle="Download the Installation Packages" locktitle="yes"/>
-            <topicref href="carrier-grade-install-hlm-vm.dita"
-                navtitle="Deploying the Lifecycle Manager and Installation Services" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-denver.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-launch-horizon.dita"
@@ -62,8 +62,8 @@
                 navtitle="Installation Prerequisites" locktitle="yes"/>
             <topicref href="carrier-grade-install-download-tahoe.dita"
                 navtitle="Download the Installation Packages" locktitle="yes"/>
-            <topicref href="carrier-grade-install-hlm-vm.dita"
-                navtitle="Deploying the Lifecycle Manager and Installation Services" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-tahoe.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-tahoe.dita"
@@ -85,8 +85,8 @@
                 navtitle="Installation Prerequisites" locktitle="yes"/>
             <topicref href="carrier-grade-install-download-memphis.dita"
                 navtitle="Download the Installation Packages" locktitle="yes"/>
-            <topicref href="carrier-grade-install-hlm-vm.dita"
-                navtitle="Deploying the Lifecycle Manager and Installation Services" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-memphis.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-launch-horizon.dita"
@@ -106,8 +106,8 @@
                 navtitle="Installation Prerequisites" locktitle="yes"/>
             <topicref href="carrier-grade-install-download.dita"
                 navtitle="Download the Installation Packages" locktitle="yes"/>
-            <topicref href="carrier-grade-install-hlm-vm.dita"
-                navtitle="Deploying the Lifecycle Manager and Installation Services" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-sacramento.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-sacramento.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes">
                 <topicref href="CGH-2-install-infoblox.dita" toc="no"/>

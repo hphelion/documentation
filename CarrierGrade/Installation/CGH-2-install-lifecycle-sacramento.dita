@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Lifecycle
-    Manager and Installation Services</title>
+    Manager in a Sacramento Deployment</title>
 <prolog>
   <metadata>
     <othermeta name="layout" content="default"/>
@@ -13,7 +13,8 @@
     <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
   </metadata>
 </prolog>
-<body id="hlm">
+<body>
+  <bodydiv  id="hlm">
     <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
       bootstrapping the lifecycle manager VM and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
@@ -146,11 +147,11 @@ upstream_ntp_servers:
         </ol>
       </p>
     </section>
+  </bodydiv>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM
+      <p><xref href="CGH-2-install-sacramento.dita">Installing the Non-KVM
           Region</xref></p>
-      <p/>
     </section>
   </body>
 </topic>

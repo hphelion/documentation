@@ -36,6 +36,6 @@
       <p>* Up to 10 VMs per compute node (no over-subscription); 20 core maximum</p> 
         
     </section>
-    <!-- ===================== horizontal rule ===================== -->
+    <p/>
   </body>
 </topic>

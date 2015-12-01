@@ -22,6 +22,10 @@
                 appropriate for your environment. </p>
             <p>Note that the <codeph>port</codeph> field should not be changed from the example. The
                     <codeph>label</codeph> field can be changed, as needed. </p>
+            <p>If you are using <codeph>machine-port-map</codeph> in the
+                    <codeph>environment.json</codeph> file,  the name of the ethernet interface
+                (such as <codeph>bm_interface</codeph>) being mentioned is reviewed by the
+                administrator as the port being assigned for bm-clm:</p>
             <codeblock>{
     "product": {
         "version": 1
