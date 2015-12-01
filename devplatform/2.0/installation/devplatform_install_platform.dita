@@ -30,16 +30,17 @@
         <li>SSH to the HPE Helion OpenStack Deployer. </li>
         
         <li>Create and source the Virtual Environment. In this example,
-            <codeph>&lt;dpi-venv&gt;.gz</codeph> is the name of the installer. This process creates
-          a directory under /opt which is owned by root. This directory requires sudo permissions to
-          create, so the owner of that folder needs to be changed to whatever the user will log in
-          as; in this example, the value is <i>stack</i>. <note>The directory name <b>must</b> match
-            the name of the installer (&lt;dpi-venv&gt;) or HDPI commands will fail. Do not rename
-            the
-          directory.</note><codeblock>sudo mkdir -p /opt/stack/venv/&lt;dpi-venv>
-sudo tar -C /opt/stack/venv/&lt;dpi-venv&gt; -xzf &lt;dpi-venv&gt;.gz
-sudo chown stack.stack /opt/stack/venv/&lt;dpi-venv&gt; 
-source /opt/stack/venv/&lt;dpi-venv&gt;/bin/activate</codeblock></li>
+            <codeph>&lt;dev_platform_installer-devplat_installer-#.#.#&gt;.tgz</codeph> is the name
+          of the installer. This process creates a directory under<codeph> /opt </codeph>which is
+          owned by root. This directory requires sudo permissions to create, so the owner of that
+          folder needs to be changed to whatever the user will log in as; in this example, the value
+          is <i>stack</i>. <note>The directory name <b>must</b> match the name of the installer
+            (&lt;dev_platform_installer-devplat_installer-#.#.#&gt;) or HDPI commands will fail. Do
+            not rename the
+          directory.</note><codeblock>sudo mkdir -p /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#>
+sudo tar -C /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#&gt; -xzf &lt;dev_platform_installer-devplat_installer-#.#.#&gt;.tgz
+sudo chown stack.stack /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#&gt; 
+source /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#&gt;/bin/activate</codeblock></li>
         <li>Test the installation by retrieving a list of installable files.
             <codeblock>openstack hdpi --os-cloud mycloud list</codeblock><note>If further
             troubleshooting information is required, add the <codeph>--debug</codeph> option to the
