@@ -6,7 +6,7 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-        href="http://docs.hpcloud.com/helion/installation/configure_3par.html" scope="external"
+        href="../../helion/installation/configure_3par.html" scope="external"
         format="html">Click here</xref> for a frameless version of this page where the links should
       work.</note>
     <p>This page describes how to configure your 3PAR backend for the Helion Entry-scale Cloud with
