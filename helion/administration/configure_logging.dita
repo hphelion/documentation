@@ -7,7 +7,7 @@
     <!--Needs Work; do all the file names, variables, parameters, etc. need to be surrounded by codeph tags?-->
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-        href="http://docs.hpcloud.com/helion/administration/configure_logging.html" scope="external"
+        href="../../helion/administration/configure_logging.html" scope="external"
         format="html">Click here</xref> for a frameless version of this page where the links should
       work.</note>
     <section id="config">

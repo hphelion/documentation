@@ -4,7 +4,7 @@
   <title><ph conkeyref="HOS-conrefs/product-title"/>Installation Overview</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/installation_overview.html" scope="external" format="html">Click
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="../../helion/installation/installation_overview.html" scope="external" format="html">Click
       here</xref> for a frameless version of this page where the links should work.</note>
     <section id="overview">
       <p>Before jumping into your installation, we recommend taking the time to read through our

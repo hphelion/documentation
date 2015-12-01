@@ -5,7 +5,7 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-        href="http://docs.hpcloud.com/helion/blockstorage/ceph/adding_new_monitor_node.html"
+        href="../../../helion/blockstorage/ceph/adding_new_monitor_node.html"
         scope="external" format="html">Click here</xref> for a frameless version of this page where
       the links should work.</note>
     <section id="about">
