@@ -25,7 +25,8 @@
     hotpools_flavor_names: 'm1.medium'
     project_id: 
     control_plane_database_volume_type: VOLTYPE_HERE
-    guest_instance_volume_type: VOLTYPE_HERE</codeblock></p>
+    guest_instance_volume_type: VOLTYPE_HERE
+    disable_rollback: true</codeblock></p>
       <dl>
         <dlentry><dt>trove_enable_ssl</dt><dd>This variable defines whether SSL is used internally by Trove. HPE Helion OpenStack 2.0
             implements SSL using HAProxy, so in installations of version 2.0 or later, this value
@@ -81,8 +82,11 @@
               <dt>guest_instance_volume_type</dt>
               <dd>This value sets the Cinder volume type. The default value is LVM; if you are using LVM, do not include this parameter. If you are using Ceph for Cinder volumes, set this value to <codeph>ceph</codeph></dd>
           </dlentry>
+          <dlentry>
+              <dt>disable_rollback: true</dt>
+              <dd>This parameter is required and must be set to <codeph>TRUE</codeph>. This setting will prevent a complete installation rollback being triggered in case of stack creation failure.</dd>
+          </dlentry>
           
-      
       </dl></section>
     
   </body>
