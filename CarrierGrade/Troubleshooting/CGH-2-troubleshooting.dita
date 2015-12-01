@@ -21,6 +21,7 @@
         <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
             non-KVM region</xref></li>
         <li><xref href="#topic10581/backup" format="dita"/></li>
+        <li><xref href="#topic10581/glance" format="dita"/></li>
       </ul>
     </section>
     <section id="baremetal">
@@ -79,6 +80,18 @@
               <codeph>backup_storage</codeph> value to 120 or higher.</li>
         </ol>
       </p>
+    </section>
+    <section id="glance">
+      <title>Glance/Swift not recovering after failure</title>
+      <p>The HP Helion OpenStack Carrier Grade Image Operations (Glance) service is based on
+        OpenStack Glance, which uses embedded OpenStack Swift for back-end storage.</p>
+      <p>In the event of an embedded Swift node failing, Swift may take longer to report correctly
+        the addition of new files and containers. This delay can be mitigated by replacing the
+        failed node as soon as possible, or by removing the failed node from the ring. See the swift
+        documentation, <xref
+          href="http://docs.openstack.org/developer/swift/admin_guide.html#handling-server-failure"
+          format="html" scope="external">Swift Administrator's Guide, Handling Server Failure</xref>
+        for further details on coping with single node failure. <!--HCG-771--></p>
     </section>
     <section>
       <title>See Also</title>

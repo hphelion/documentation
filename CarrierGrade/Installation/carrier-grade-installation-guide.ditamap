@@ -95,14 +95,13 @@
             <topicref href="CGH-install-prereqs-sacramento.dita"
                 navtitle="Installation Prerequisites" locktitle="yes">
                 <topicref href="carrier-grade-install-network-prepare.dita" toc="no"
-                    navtitle="Preparing the Network for Installation" locktitle="yes"/>
-                <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"
-                    locktitle="yes"/>
+                    navtitle="Preparing the Network for Installation"/>
+                <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"/>
                 <topicref href="carrier-grade-install-vsd-vm.dita" toc="no"
-                    navtitle="Bringing Up Single VSD VM Manually" locktitle="yes"/>
+                    navtitle="Bringing Up Single VSD VM Manually"/>
                 <topicref href="carrier-grade-install-ldap-enabling.dita" toc="no"
-                    navtitle="Enabling LDAP" locktitle="yes"/>
-                <topicref href="carrier-grade-variables.dita" toc="no"/>
+                    navtitle="Enabling LDAP"/>
+                <topicref href="carrier-grade-install-prereqs.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-download.dita"
                 navtitle="Download the Installation Packages" locktitle="yes"/>
@@ -118,6 +117,8 @@
                 navtitle="Deploying the KVM Region" locktitle="yes">
                 <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
             </topicref>
+            <topicref href="../OperationsGuide/Baremetal/carrier-grade-baremetal-best-practices.dita"
+                navtitle="Baremetal Region Best Practices" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
             locktitle="yes">

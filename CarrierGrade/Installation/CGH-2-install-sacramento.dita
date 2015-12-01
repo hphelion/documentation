@@ -692,9 +692,10 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       </image></section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref></p>
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is an optional component  that 
+        integrates with the OpenStack Neutron networking service, to provide IP Address Management (IPAM) networking services within OpenStack cloud platforms.</p>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
-          Interface</xref></p>
+          Interface</xref></p>. Launch the Horizon interface to load a required security certificate and test the non-KVM deployment.
       <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>

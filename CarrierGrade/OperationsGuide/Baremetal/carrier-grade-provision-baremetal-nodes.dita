@@ -22,19 +22,16 @@
       <title>Provision Baremetal Nodes</title>
       <p>
         <ol id="ol_bns_j1f_xt">
-          <li>Execute the following commands to upload an Ubuntu disk image for provisioning The
-            image will be used in nova boot.
-            <codeblock>glance image-create --name deploy-initrd --is-public True --disk-format ari --container-format ari &lt; ironic-deploy.initramfs
-glance image-create --name deploy-kernel --is-public True --disk-format aki --container-format aki &lt; ironic-deploy.kernel 
-glance image-create --name ubuntu-disk --is-public True --disk-format qcow2 --container-format bare &lt; ubuntu.qcow2</codeblock></li>
+          
           <li>Execute the following commands to create a switch
-            entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock></li>
+              entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock><p>Where
+              &lt;switch ip> is the MAC ID of the specific switch that is being created.</p></li>
           <li>Execute the following commands to create a new
             flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
 nova flavor-key baremetal set "capabilities:boot_option"="local" 
 nova flavor-key baremetal set "capabilities:boot_mode"="bios"</codeblock></li>
           <li>Execute the following commands to register the Ironic
-            node:<codeblock>ironic node-create -d pxe_ipmitool -i ipmi_address=&lt;&lt;ip&gt;&gt; -i
+            node:<codeblock>ironic node-create -d ilo_ipa -i ipmi_address=&lt;&lt;ip&gt;&gt; -i
 ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i 
 ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i 
 deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i 
@@ -125,7 +122,7 @@ neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-po
 | tenant_id                 | c288a2816237465c8ea6efc16dc05b88     |
 +---------------------------+--------------------------------------+</codeblock></p></li>
         <li>View detailed information about a
-            node:<codeblock>ironic --insecure node-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+            node:<codeblock>ironic node-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
             output should appear similar to the
             following:<codeblock>+------------------------+--------------------------------------------------------------------------+
 | Property               | Value                                                                    |
@@ -163,7 +160,7 @@ neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-po
 |                        | u'0', u'capabilities': u'{"boot_option": "local"}'}                      |
 +------------------------+--------------------------------------------------------------------------+</codeblock></p></li>
         <li>View detailed information about a
-            port:<codeblock>ironic --insecure port-show 0142fb06-a425-4b6d-a41e-481a5b54b8a2</codeblock><p>The
+            port:<codeblock>ironic port-show 0142fb06-a425-4b6d-a41e-481a5b54b8a2</codeblock><p>The
             output should appear similar to the
             following:<codeblock>+-----------------------+----------------------------------------------------------------------+
 | Property              | Value                                                                |
@@ -239,7 +236,7 @@ return</codeblock></p></li>
 | 19 | nova-compute     | BMCLOUD-RCP02-T1-M1-NETCLM | nova     | enabled | up    | 2015-10-19T05:39:41.000000 | -               |
 +----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock>
           </p></li>
-        <li>View nformation of a given port.
+        <li>View information of a given port.
             <codeblock>neutron port-show ce2014de-cf35-44a4-9255-2975c99b7f1c</codeblock><p>The
             output should appear similar to the
             following:<codeblock>+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

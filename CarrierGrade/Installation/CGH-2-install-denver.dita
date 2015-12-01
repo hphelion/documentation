@@ -262,7 +262,6 @@
     
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/keystone-neutron-patch"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-config-proc"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hdeploy"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone" id="ldap3"/>

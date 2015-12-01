@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1107">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Baremetal Region Best
+    Practices</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>For security, when working with the baremetal region of the Sacramento deployment, keep in
+      mind the following best practices.</p>
+    <p>
+      <ul id="ol_mnl_cts_25">
+        <li>Providing bare metal resources to an un-trusted third party is not advised as a
+          malicious user can potentially modify hardware firmware. <!--IRONIC-289--></li>
+        <li>Generic cleaning steps presently require the IPA (Agent) based driver AND only wipe the
+          contents from attached disk storage. Advanced cleaning steps such as resetting hardware
+          RAID controllers, or asserting updated firmware requires a customized IPA deployment image
+          with an integrated hardware manager appropriate for the hardware
+          in-use.<!--IRONIC-289--></li>
+        <li>Ironic supports use of configuration drives. A user deploying nodes with Ironic directly
+          must do so by creating a whole configuration drive file. In the case of Nova, individual
+          files can be included in the configuration drive upon instance creation. Sensitive
+          information such as Passwords, Keys, or any other form of credential information SHOULD
+          NOT be included in configuration drives. <!--IRONIC-285--></li>
+        <li>Configuration Drives should only be trusted upon the initial boot of an instance.
+          Cloud-init utilizes a lock file for this purpose. Custom instance images SHOULD NOT rely
+          upon the integrity of a Configuration Drive beyond the initial boot of a host as an
+          administrative user with-in a deployed instance can potentially modify a configuration
+          drive once written to disk and released for use. <!--IRONIC-286--></li>
+      </ul>
+    </p>
+  </body>
+</topic>
