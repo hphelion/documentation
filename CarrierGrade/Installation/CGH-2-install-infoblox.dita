@@ -20,7 +20,7 @@
     <p>Infoblox is an optional component of the Memphis and Sacramento deployments.  </p>
     <p>The Infoblox OpenStack Adapter (IOA) integrates with the OpenStack Neutron networking
       service, to provide IP Address Management (IPAM) networking services within OpenStack cloud
-      platforms.Refer to the Infoblox documentation for operation and maintenance information. </p>
+      platforms. Refer to the Infoblox documentation for operation and maintenance information. </p>
     <p>You will need to purchase a license from Infoblox before installing.</p>
     <p>If you are not installing Infoblox, go to <xref
         href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
@@ -44,7 +44,8 @@
       <ol id="ol_rly_5jz_5t">
         <li>Power on vNIOS VM. </li>
         <li>Login to VM console from vCenter using the default credentials (admin/infoblox)</li>
-        <li>Run command <b>set network</b> to configure IP address of vNIOS </li>
+        <li>Run command <b>set network</b> to configure the static IP address (DCM network)  of
+          vNIOS </li>
         <li>Run the <b>set temp_license</b> command to configure trial license (60 days). Choose
           option 8  Or, obtain a permanent license from Infoblox.</li>
         <li>Point a browser to the default Infoblox URL at
@@ -71,7 +72,7 @@
                   <entry> UserID inOpenStack </entry>
                 </row>
                 <row>
-                  <entry> CMP Type</entry>
+                  <entry>CMP Type</entry>
                   <entry>String </entry>
                   <entry> CMPtypes(OpenStack) </entry>
                 </row>
@@ -81,7 +82,7 @@
                   <entry> Cloud API Owned</entry>
                 </row>
                 <row>
-                  <entry> Is External </entry>
+                  <entry>Is External </entry>
                   <entry> String </entry>
                   <entry> For networks and network containers only </entry>
                 </row>
@@ -219,7 +220,7 @@
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
           your environment: <ul id="ul_ipn_325_xt">
             <li>
-              <codeph>ioa_ipaddress</codeph>: DCM IP of infoblox Openstack Adapter (IOA) VM. </li>
+              <codeph>ioa_ipaddress</codeph>: DCM IP of Infoblox Openstack Adapter (IOA) VM. </li>
             <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
                 <codeph>admin</codeph>.</li>
             <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
