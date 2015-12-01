@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0DNSaaS">
-  <title>HPE Helion Development Platform 2.0: DNSaaS Installation and Configuration</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>DNSaaS Installation and Configuration</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
@@ -244,10 +244,10 @@ EOF
                 Add the following lines at the same indentation level as <codeph>name:
                   extlb</codeph>
                 <codeblock>external-name: your.domain.name
-        cert-file: my-public-cert</codeblock></li>
+cert-file: my-public-cert</codeblock></li>
               <li>Rename the "components" section of the extlb for a "tls-components" section,
                 activating TLS on all external components.
-                <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
+                <codeblock>$ nano ~/helion/my_cloud/definition/data/network_groups.yml</codeblock></li>
               <li>Add changes to git.
                 <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
 $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
