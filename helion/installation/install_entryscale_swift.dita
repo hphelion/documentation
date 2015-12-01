@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_swift">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for HPE Helion Entry-scale Cloud
-    with Swift Only</title>
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for HPE Helion Entry-scale
+    Cloud with Swift Only</title>
   <body>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="http://docs.hpcloud.com/helion/installation/install_entryscale_swift.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+        href="http://docs.hpcloud.com/helion/installation/install_entryscale_swift.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
     <section id="about">
       <p>This page describes the installation step requirements for the HPE Helion Entry-scale Cloud
         with Swift Only model.</p>
@@ -26,28 +27,10 @@
             <li>Copy the example configuration files into the required setup directory and edit them
               to contain the details of your environment:
               <codeblock>cp -r ~/helion/examples/entry-scale-swift/* ~/helion/my_cloud/definition/</codeblock></li>
-            <li>Update the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>
-              file and add the <codeph>swift-rsync</codeph> service to the component-endpoints for
-              the SWIFT network group. For
-              example:<codeblock>    #
-    # SWIFT
-    #
-    # This is the network group that will be used to for
-    # Swift back-end traffic between proxy, container, account
-    # and object servers
-    #
-    - name: SWIFT
-      hostname-suffix: swift
-
-      component-endpoints:
-        - swift-container
-        - swift-account
-        - swift-object
-        - swift-rsync</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
-                  Model</xref>.</p>
+                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0
+                  Input Model</xref>.</p>
               <p>In many cases, the example models provide most of the data you need to create a
                 valid input model. However, there are two important aspects you must plan and
                 configure before starting a deploy as follows:</p>
@@ -57,8 +40,8 @@
                     href="../objectstorage/swift_device_groups.dita#topic_d1s_hht_tt">Swift
                     Requirements for Device Group Drives</xref>.</li>
                 <li>Select an appropriate partition power for your rings. Detailed information about
-                  this is provided at <xref href="../objectstorage/ring_specifications.dita">Swift Ring
-                    Specifications</xref>.</li>
+                  this is provided at <xref href="../objectstorage/ring_specifications.dita">Swift
+                    Ring Specifications</xref>.</li>
               </ul>
             </li>
           </ol>
