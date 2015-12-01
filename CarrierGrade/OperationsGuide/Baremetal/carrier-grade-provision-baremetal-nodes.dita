@@ -25,7 +25,8 @@
           
           <li>Execute the following commands to create a switch
               entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock><p>Where
-              &lt;switch ip> is the MAC ID of the specific switch that is being created.</p></li>
+                <codeph>&lt;switch ip> </codeph>is the MAC ID of the specific switch that is being
+              created.</p></li>
           <li>Execute the following commands to create a new
             flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
 nova flavor-key baremetal set "capabilities:boot_option"="local" 
@@ -43,11 +44,14 @@ ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mod
             network:<codeblock>neutron net-create tenant-network
 neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24</codeblock></li>
           <li>Execute the following command to Provision the baremetal node:
-                <codeblock><b>nova boot --nic net-id=&lt;tenant network id&gt; --image &lt;image&gt; --flavor &lt;flavor></b></codeblock><p>Where:<ul
+                <codeblock>nova boot --nic net-id=&lt;&lt;tenant network id&gt;&gt; --image &lt;&lt;glance image id&gt;&gt; --flavor baremetal --key-name &lt;keypair-name&gt;</codeblock><p>Where:<ul
                 id="ul_x5n_t3r_zt">
-                <li>&lt;tenant network id> is the UUID of the tenant network. </li>
-                <li>&lt;image> is the name or ID of image (see 'nova image-list')</li>
-                <li>&lt;flavor> is the name or ID of flavor (see 'nova flavor-list')</li>
+                <li><codeph>&lt;tenant network id></codeph> is the UUID of the tenant network </li>
+                <li><codeph>&lt;image></codeph> is the name or ID of image (see 'nova
+                  image-list')</li>
+                <li><codeph>&lt;flavor></codeph> is the name or ID of flavor (see 'nova
+                  flavor-list')</li>
+                <li><codeph>&lt;keypair-name></codeph> is the name of the key pair to use</li>
               </ul></p><codeblock>nova image-list
 +--------------------------------------+-----------+--------+--------+
 | ID                                   | Name      | Status | Server |
