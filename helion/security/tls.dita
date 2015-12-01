@@ -17,15 +17,14 @@
         worry about certificates. It will not match your IP address, but you can ignore the
         warnings. Later, when you require a trusted certificate, you can add your own certificate
         and redeploy.</p>
-      <p> Keystone currently doesn't support updating an endpoint. Therefore the public endpoint
-        cannot be changed after the initial deployment This has the following implications:</p>
+      <p> Keystone currently doesn't support updating an endpoint. Therefore <b>the public endpoint
+          cannot be changed after the initial deployment</b>. This has the following
+        implications:</p>
       <ul>
         <li>TLS cannot be turned on/off after the initial deployment</li>
-        <li>The public endpoint ip address or FQDN cannot be changed after deployment.</li>
+        <li>The public endpoint IP address or FQDN cannot be changed after deployment.</li>
       </ul>
-      <p>Therefore, you will have to make one of the choices below. When logging into the lifecycle
-        manager to run the configuration processor and the requisite playbooks, you must decide if
-        you want to configure TLS or disable it and take the action appropriate to your choice:</p>
+      <p>Therefore, you will have to make one of the following choices:</p>
       <ul>
         <li>Comment out the "external-name:" line in
           /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
