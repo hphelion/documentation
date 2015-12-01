@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_dcn">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud
     with HP Distributed Cloud Networking</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
         href="http://docs.hpcloud.com/helion/installation/install_entryscale_dcn.html"
         scope="external" format="html">Click here</xref> for a frameless version of this page where
       the links should work.</note>
     <section id="about">
-      <p>This page describes the installation steps that are required for the HPE Helion OpenStack
+      <p>This page describes the installation steps that are required for the <keyword keyref="kw-hos"/>
         Entry-scale cloud models that utilizes HP Distributed Cloud Networking (DCN) 3.2R4. We
-        explain how to deploy this model during the HPE Helion OpenStack 2.0 deployment.</p>
+        explain how to deploy this model during the <keyword keyref="kw-hos-phrase"/> deployment.</p>
     </section>
     <section id="notes"><title>Notes and Limitations</title>
       <p>The VRS installation is only supported on the KVM hypervisor.</p>
@@ -119,7 +120,7 @@ git commit -m "My config or other commit message"</codeblock></li>
     <section conref="install_entryscale_kvm.dita#install_kvm/deploy"/>
 
     <section id="post_deploy"><title>DCN on an Existing Installation</title>
-      <p>If you have already deployed a HPE Helion OpenStack 2.0 cloud and want to add DCN to it,
+      <p>If you have already deployed a <keyword keyref="kw-hos-phrase"/> cloud and want to add DCN to it,
         follow the steps in the <xref href="install_entryscale_dcn.dita#install_dcn/configure"
           >Configure Your Cloud</xref> section to setup your configuration files and commit them to
         your local git repository. Once you have completed that, then run the following

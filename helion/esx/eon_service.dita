@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_x2x_vy4_lt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: ESX ON-Boarding Service (EON)</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>ESX ON-Boarding Service (EON)</title>
   <body>
     <!--Needs Work; fnf edit on 10/27; overview needs clarification; what's an activate cluster (lower down)?-->
-    <p>The HPE Helion OpenStack 2.0 EON (ESX on boarding) service is an inventory service, which
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>The <keyword keyref="kw-hos-phrase"/> EON (ESX on boarding) service is an inventory service, which
       interacts with the VMware vCenter server, and collects available information from data
       centers, clusters, datastore, dvSwitch and portgroup details. When a cloud administrator wants
-      a particular cluster to be a compute resource in HPE Helion Openstack 2.0, EON provisions the
+      a particular cluster to be a compute resource in <keyword keyref="kw-hos-phrase"/>, EON provisions the
       Nova proxy service VM for each cluster, and OVSvApp service VM, for each ESX host in that
       cluster.</p>
-    <p>The integration of EON with HPE Helion OpenStack 2.0 automates the steps for moving/adding a
+    <p>The integration of EON with <keyword keyref="kw-hos-phrase"/> automates the steps for moving/adding a
       cluster in a compute resource. To use this functionality, you must run a few EON commands.</p>
     <p>Moreover, EON is not installed by default. To install EON service, you must uncomment the
         <systemoutput>eon-deploy.yml</systemoutput> file at

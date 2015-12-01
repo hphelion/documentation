@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="postinstall_checklist">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Common Post-Installation Tasks</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Common Post-Installation Tasks</title>
   <body>
     <!--Needs Work-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="creds"><title>Determining Your User Credentials</title>
       <p>On your lifecycle manager, in the
           <codeph>~/scratch/ansible/next/hos/ansible/group_vars/</codeph> directory you will find

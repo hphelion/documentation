@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rdf_hkp_rt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Customizing Swift Service Configuration Files </title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Customizing Swift Service Configuration Files </title>
   <body>
-    <p>HPE Helion OpenStack 2.0 enables you to modify various Swift service configuration files. The
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p><keyword keyref="kw-hos-phrase"/> enables you to modify various Swift service configuration files. The
       following Swift service configuration files are located on a lifecycle manager
       in the location /<codeph>home/stack/helion/my_cloud/config/swift/</codeph>:<ul
         id="ul_i2n_clp_rt">

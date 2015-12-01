@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_esx">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud
     with ESX</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
       href="http://docs.hpcloud.com/helion/installation/install_entryscale_esx.html" scope="external" format="html">Click
       here</xref> for a frameless version of this page where the links should work.</note>
@@ -442,7 +443,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <section id="import-cluster"><b>Import Cluster </b><p>You can use one or more ESX clusters for
         ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
         OVSvApp nodes are deployed.</p><p>vCenter can have multiple clusters, but the current
-        release of HPE Helion OpenStack supports only sequential import of clusters (one-by-one).
+          release of <keyword keyref="kw-hos"/> supports only sequential import of clusters (one-by-one).
         Therefore, you can import only one cluster at a time using the <codeph>eon
           cluster-import</codeph> command.</p><p>
         <ol>

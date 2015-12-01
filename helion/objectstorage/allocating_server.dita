@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_tq1_xt5_dt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Allocating Object Servers</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Allocating Object Servers</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>A Swift object server is a node that runs the swift-object service (<b>only</b>) and is used
       to store object data. It does not run the swift-proxy, swift-account, or swift-container
       services. <!--The Swift object server type is used to store object data.--></p>

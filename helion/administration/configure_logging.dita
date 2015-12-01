@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="configure_logging">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Configuring the Centralized Logging
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Configuring the Centralized Logging
     Service</title>
   <body>
     <!--Needs Work; do all the file names, variables, parameters, etc. need to be surrounded by codeph tags?-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
         href="http://docs.hpcloud.com/helion/administration/configure_logging.html" scope="external"
         format="html">Click here</xref> for a frameless version of this page where the links should
       work.</note>
     <section id="config">
-      <p>In HPE Helion OpenStack 2.0, you have the option to configure the Centralized Logging
+      <p>In <keyword keyref="kw-hos-phrase"/>, you have the option to configure the Centralized Logging
         service for your specific needs. This topic covers the following:</p>
       <ul>
         <li><xref href="#configure_logging/config_files">Main Configuration Files</xref></li>
@@ -176,7 +177,7 @@
     <section id="elasticsearch_config">
       <title>Elasticsearch Configuration</title>
       <p>Elasticsearch has a number of tunable options exposed in its configuration that we have
-        utilized to tune Elasticsearch in HPE Helion OpenStack so that we favor indexing speed over
+        utilized to tune Elasticsearch in <keyword keyref="kw-hos"/> so that we favor indexing speed over
         search speed. We have also tuned it for optimal performance in low RAM environments. The
         options that we have modified are listed below along with an explanation as to why they were
         modified.</p>
@@ -195,7 +196,7 @@
             <row>
               <entry>Ansible Variable</entry>
               <entry>Configuration Parameter</entry>
-              <entry>Default HPE Helion OpenStack Value</entry>
+              <entry>Default <keyword keyref="kw-hos"/> Value</entry>
               <entry>Elasticsearch Default Value</entry>
               <entry>Comments</entry>
             </row>

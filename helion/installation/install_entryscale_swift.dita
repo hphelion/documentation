@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_swift">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for HPE Helion Entry-scale Cloud
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for HPE Helion Entry-scale Cloud
     with Swift Only</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
       href="http://docs.hpcloud.com/helion/installation/install_entryscale_swift.html" scope="external" format="html">Click
       here</xref> for a frameless version of this page where the links should work.</note>
@@ -46,7 +47,7 @@
         - swift-rsync</codeblock></li>
             <li>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory. <p>Full details of how to
-                do this can be found here: <xref href="../input_model.dita">Helion OpenStack 2.0 Input
+                  do this can be found here: <xref href="../input_model.dita"><keyword keyref="kw-hos-phrase"/> Input
                   Model</xref>.</p>
               <p>In many cases, the example models provide most of the data you need to create a
                 valid input model. However, there are two important aspects you must plan and

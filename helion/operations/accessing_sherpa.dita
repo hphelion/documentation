@@ -2,11 +2,12 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="sherpa_access">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Accessing and Using the Sherpa
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Accessing and Using the Sherpa
     Catalog</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
-      <p>The HPE Helion OpenStack Sherpa service provides a link to the remote web catalog
+      <p>The <keyword keyref="kw-hos"/> Sherpa service provides a link to the remote web catalog
         containing a repository of software available for purchase and download into the HPE Helion
         environment.</p>
       <p>You can make purchases using a self-service account on the public web server. Once a
@@ -17,7 +18,7 @@
     </section>
 
     <section id="prereqs"><title>Prerequisites</title>
-      <p>If the HPE Helion OpenStack environment is behind a firewall, you need to set the Sherpa
+      <p>If the <keyword keyref="kw-hos"/> environment is behind a firewall, you need to set the Sherpa
         proxy shell variables so that the Sherpa service can communicate out to the Helion Download
         Network (HDN). If you did not already set these values during the installation process, here
         is how you can change these post-installation:</p>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="troubleshooting_installation">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Troubleshooting the Installation</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Troubleshooting the Installation</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/installation_troubleshooting.html" scope="external" format="html">Click
       here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">
@@ -66,8 +67,8 @@ FATAL: all hosts have already failed -- aborting</codeblock>
           <codeph>netboot-enabled: True</codeph>, which you can verify which nodes you have that are
         marked as such with this command:</p>
       <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
-      <p>If this is on a fresh install and none of your nodes have been imaged with the HPE Helion
-        OpenStack ISO, then you should be able to remove all of your nodes from Cobbler and re-run
+      <p>If this is on a fresh install and none of your nodes have been imaged with the <keyword keyref="kw-hos"/>
+        ISO, then you should be able to remove all of your nodes from Cobbler and re-run
         the <codeph>cobbler-deploy.yml</codeph> playbook. You can do so with these commands:</p>
       <ol>
         <li>Get a list of your nodes in Cobbler:

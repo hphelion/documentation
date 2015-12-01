@@ -5,38 +5,37 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="intro">
-      
-      <p outputclass="aTest">The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to
-        ensure authentication, non-repudiation, confidentiality, and integrity of user
-        communications to the <keyword keyref="kw-hos"/> services from public endpoints.</p>
-      <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on the
-        management network. All traffic to OpenStack services coming in on the public endpoints are
-        secured using TLS connections.</p>
-      <p>All of the <keyword keyref="kw-hos-phrase"/> example cloud models ship with TLS enabled on the public
-        API. Note that because TLS is enabled by default, a test certificate is bundled with the
-        release. Having this default cert allows you to bring up a cloud without having to worry
-        about certificates. It will not match your IP address, but you can ignore the warnings.
-        Later, when you require a trusted certificate, you can add your own certificate and
-        redeploy.</p> 
-      
-      <p>
-        Keystone currently doesn't support updating an endpoint. Therefore the public 
-        endpoint cannot be changed after the initial deployment
-        
-        This has the following implications:</p>
-        <ul>
-       <li>TLS cannot be turned on/off after the initial deployment</li>
-        <li>The public endpoint ip address or FQDN cannot be changed after deployment.</li></ul>
+      <p outputclass="aTest">The Transport Layer Security (TLS) protocol, successor to SSL, provides
+        the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of
+        user communications to the <keyword keyref="kw-hos"/> services from public endpoints.</p>
+      <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on
+        the management network. All traffic to OpenStack services coming in on the public endpoints
+        are secured using TLS connections.</p>
+      <p>All of the <keyword keyref="kw-hos-phrase"/> example cloud models ship with TLS enabled on
+        the public API. Note that because TLS is enabled by default, a test certificate is bundled
+        with the release. Having this default cert allows you to bring up a cloud without having to
+        worry about certificates. It will not match your IP address, but you can ignore the
+        warnings. Later, when you require a trusted certificate, you can add your own certificate
+        and redeploy.</p>
+      <p> Keystone currently doesn't support updating an endpoint. Therefore the public endpoint
+        cannot be changed after the initial deployment This has the following implications:</p>
+      <ul>
+        <li>TLS cannot be turned on/off after the initial deployment</li>
+        <li>The public endpoint ip address or FQDN cannot be changed after deployment.</li>
+      </ul>
       <p>Therefore, you will have to make one of the choices below. When logging into the lifecycle
         manager to run the configuration processor and the requisite playbooks, you must decide if
         you want to configure TLS or disable it and take the action appropriate to your choice:</p>
-        
       <ul>
-        <li>Comment out the "external-name:" line in /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are used)
-        </li><li>Assign a name to "external-name:" line in /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is used)
-        </li><li>We recommend keeping TLS on by default as it cannot be changed. But if you want it disabled you need to change "tls-components" 
-          to "components" in network_groups.yml and comment out cert-file.</li></ul>
-      
+        <li>Comment out the "external-name:" line in
+          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
+          used) </li>
+        <li>Assign a name to "external-name:" line in
+          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is used)
+        </li>
+      </ul> You also need to choose if you want TLS on or off. We recommend keeping TLS on by
+      default as it cannot be changed. But if you want it disabled you need to change
+      "tls-components" to "components" in <b>network_groups.yml</b> and comment out the cert-file.
       <!--<p>
         <note type="warning">Here we are configuring and installing a test certificate. It is
           recommended that you create and sign certifcates properly for a production environment.
@@ -86,14 +85,14 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
       </ol> You can now use my-public-cert as your certificate. -->
       <p><b>Installing the Certificate</b></p> Follow the steps below to install the certificate in
       the cloud.</section>
-    <section><b>If you are using a FQDN:</b>
+    <section id="fqdn"><b>If you are using a FQDN:</b>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use. </li>
         <li> Copy the certificate (containing both public and private keys) to
             <b>helion/my_cloud/config/tls/certs/ </b></li>
-        <li id="private1">Replace the contents of
-            <b>~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with
-          the new CA certificate chain file (if applicable)</li>
+        <li id="private1">Replace the contents of <b>
+            /home/stack/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with the
+          new CA certificate chain file (if applicable)</li>
         <li>Edit <b>network_groups.yml </b>(as part of the general set of edits they have to make to
           the example) to set the values for "external-name" and "cert-file" </li>
         <li>Commit your changes to git:

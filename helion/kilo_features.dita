@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0KiloFeatures">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: OpenStack Kilo Features</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>OpenStack Kilo Features</title>
   <body><!--Needs Edit-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="KiloFeatures">
-      <title>HPE Helion OpenStack 2.0 Kilo Features</title>
+      <title><keyword keyref="kw-hos-phrase"/> Kilo Features</title>
       
       <!-- 
         
@@ -14,7 +15,7 @@
         -->
       
       <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as identified below) 
-        are enabled in the HPE Helion OpenStack 2.0 standard settings and are included 
+        are enabled in the <keyword keyref="kw-hos-phrase"/> standard settings and are included 
         in Helion standard product support.
       </p>
       

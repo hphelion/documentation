@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_rvj_21c_jt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Proxy, Account, and Container
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating a Proxy, Account, and Container
     (PAC) Cluster for Object Storage</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>To create a cluster for Swift proxy, account, and container (PAC) servers, you must identify
       the control plane and node type/role: </p>
     <ul id="ul_r4r_r1c_jt">

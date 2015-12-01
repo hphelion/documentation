@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_m43_2j3_bt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Reconfiguring the Identity Service</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Reconfiguring the Identity Service</title>
   <body>
-
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section>
       <title>Updating the Keystone Identity Service</title>
-      <p>HPE Helion <tm tmtype="reg">OpenStack</tm> allows you to perform updates on 
+      <p><keyword keyref="kw-hos"/> allows you to perform updates on 
       the following parts of the Identity service configuration::</p>
     </section>
       
@@ -43,8 +43,8 @@
               format="html" scope="external">Keystone Kilo documentation</xref> for full
             descriptions of all settings: This is a Jinja2 template, which expects certain template
             variables to be set. Do not change values inside double curly braces: {{ }}. </p>
-          <note>HPE Helion OpenStack 2.0 has the token expiration setting as below, which is
-            different from the upstream value "3600":
+       <note><p><keyword keyref="kw-hos-phrase"/> has the token expiration setting as below, which is
+            different from the upstream value "3600":</p>
             <codeblock>[token] 
 expiration = 14400</codeblock></note>
         </li>
@@ -88,7 +88,7 @@ $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
     <section><title>Fernet Token</title>
       
       
-      <p>HPE Helion OpenStack 2.0 supports UUID tokens by default. Fernet Tokens are available as an
+      <p><keyword keyref="kw-hos-phrase"/> supports UUID tokens by default. Fernet Tokens are available as an
         experimental feature. You can switch to using Fernet tokens instead of UUID tokens by
         following the above steps. The benefit of using Fernet tokens is that tokens are not
         persisted in a database, which is helpful if you want to deploy Keystone Identity service as
@@ -100,7 +100,7 @@ $ ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</codeblock></li>
         39 queries per fernet token validation, while UUID causes only 2 queries per token
         validation.</p>
       
-      <note>Tempest doesn't work with Fernet Tokens in HPE Helion OpenStack 2.0. If Fernet tokens are
+      <note>Tempest doesn't work with Fernet Tokens in <keyword keyref="kw-hos-phrase"/>. If Fernet tokens are
         enabled, please don't run token tests in Tempest.</note>
     </section>
     <section><title>Keystone Identity Auditing</title>Identity Service auditing can be enabled as
