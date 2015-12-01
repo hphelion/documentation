@@ -22,6 +22,27 @@
       uses AVS networking, follow these instructions. If you are installing a different deployment,
       disregard these instructions. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hos-install"/>
+    <section id="conref-provision">
+      <title>Provision the new cloud</title>
+      <ol id="ol_kwm_c1k_zt">
+        <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
+            <codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where::
+              <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p><p>The cloud
+            name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
+              character:<ul id="ul_lz5_rbf_bt">
+              <li>
+                <p>Cannot start or end with the <codeph>-</codeph> character;</p>
+              </li>
+              <li>
+                <p>Must be greater than 0 characters;</p>
+              </li>
+              <li>
+                <p>No restriction on the number of letters or digits (0 or more).</p>
+              </li>
+            </ul></p><p>The command creates the <codeph>/var/hlm/clouds/&lt;cloudname></codeph>
+            directory, which contains several JSON template files. </p></li>
+      </ol>
+    </section>
     <section>
       <title>Configuring JSON files</title>
     </section>

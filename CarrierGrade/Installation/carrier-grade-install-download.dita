@@ -558,7 +558,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry><b>File Name</b></entry>
                                                   <entry><b>Copy to location on the KVM
                                                   Host</b></entry>
-                                                  <entry><b>Description</b></entry>
+                                                  <entry><b>Notes</b></entry>
                                                 </row>
                                         </thead>
                                         <tbody>
@@ -603,7 +603,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p>TEMPL-CPV9.ova</p>
                                                   </entry>
                                                   <entry>Uploaded to the ESX Cluster</entry>
-                                                  <entry> </entry>
+                                                  <entry>For Denver and Tahoe deployments, disregard
+                                                  this file.</entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>
