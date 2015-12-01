@@ -34,11 +34,10 @@
     <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/storage" id="storage"/>
     <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/guestOS" id="guestos"/>
 
-  <section id="next">
-      <title>Next step</title>
-      <p>Review the <xref href="carrier-grade-technical-overview.dita">Technical
-        Overview</xref>.</p>
-    </section>
+  <section id="next"> <title>Next step</title>
+    <p>Review the <xref href="CGH-install-prereqs-denver.dita">Installation Prerequisites</xref>.</p>
+    
+  </section>
   <!-- ===================== horizontal rule ===================== -->
 
 </body>

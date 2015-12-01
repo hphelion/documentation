@@ -163,6 +163,11 @@
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/> 
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/>
+    <section>
+      <title>Next Step</title>
+      <p>Review the <xref href="carrier-grade-support-matrix-tahoe.dita#topic1773">Support
+          Matrix</xref></p>
+    </section> 
   </body>
 </topic>

@@ -384,13 +384,10 @@
       <p>Board Management CTL (IPMI Control) Network External access to the board management
         network, the board management modules are assigned IP addresses accessible from the OAM
         network, and the controller uses the OAM network to connect to them.</p></section>
-    <section id="next">
-      <title>Next step</title>
-      <p><xref href="carrier-grade-install-prereqs.dita#topic7148">Installation
-        Prerequisites</xref></p>
-      <p>
-        <xref type="section" href="#topic3485"> Return to Top </xref>
-      </p>
+    <section>
+      <title>Next Step</title>
+      <p>Review the <xref href="carrier-grade-support-matrix-sacramento.dita#topic1773">Support
+          Matrix</xref></p>
     </section>
   </body>
 </topic>
