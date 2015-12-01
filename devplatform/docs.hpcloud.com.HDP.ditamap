@@ -170,7 +170,6 @@
         navtitle="Continuous Integration and Deployment" locktitle="yes" otherprops="continuous">
         <topicref href="2.0/codeEngine/engine_walkthrough.dita"
           navtitle="Create an Automated Build-Test-Deploy Cycle" locktitle="yes"/>
-        <topicref href="2.0/codeEngine/engine_initial_configuration.dita" toc="no"/>
         <topicref href="2.0/codeEngine/engine_troubleshooting.dita" navtitle="Troubleshooting"
           locktitle="yes"/>
         <topicref href="2.0/codeEngine/engine_logging.dita" navtitle="Log Files" locktitle="yes"/>
