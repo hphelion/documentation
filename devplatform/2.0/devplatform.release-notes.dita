@@ -129,10 +129,14 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
       <title>Known Issues</title>
       <dl>
         <dlentry>
+          <dt>Redis Errors Appear in Horizon UI</dt>
+          <dd>In the Horizon UI, the Users and Databases tabs display errors for Redis instances. This is due to a bug in Horizon UI, and can be ignored. Functionality of Redis instances is not impacted by this UI problem.</dd>
+        </dlentry>
+        <dlentry>
           <dt>Alarms appear in "No Service Defined" Panel</dt>
           <dd>If the Message Broker sends alarms for MySQL or Zookeeper, they appear in the "No
-            Service Defined" panel of the Opsconsole, not the Messaging as a Service panel. This is
-            a known issue.</dd>
+            Service Defined" panel, not the Messaging as a Service panel. This is a known
+            issue.</dd>
         </dlentry>
         <dlentry>
           <dt>Creating an ALS cluster results in error: 413 Request Entity Too Large</dt>
