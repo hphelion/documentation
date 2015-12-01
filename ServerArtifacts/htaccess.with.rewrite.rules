@@ -7,6 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
 #
 #
+RewriteRule ^helion/devplatform/2.0/ALS/client/download?$ http://docs.hpcloud.com/#devplatform/2.0/helion/CLI/ALS_Client_Downloads.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack-mpc/home(.*)$ http://15.126.244.7/mpc/$1 [r=301,nc]
 RewriteRule ^permalink/helion-openstack/2.0/landing-page?$ http://docs.hpcloud.com/#helion/index.html  [NE,R=301,L]
 RewriteRule ^permalink/helion-openstack/2.1/landing-page?$ http://docs.hpcloud.com/#helion/index.html  [NE,R=301,L]
