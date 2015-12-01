@@ -24,10 +24,11 @@
       </ol>
     </section>
 
-    <section id="prereqs"><title>Prerequisites</title>
-      <p>You should have one or more baremetal servers that meet the minimum hardware requirements
+    <section outputclass="headerH" id="prereqs"><title>Prerequisites</title>
+      <sectiondiv outputclass="insideSection"><p>You should have one or more baremetal servers that meet the minimum hardware requirements
         for a Compute node which are documented in the <xref href="../hardware.dita">Hardware
           Support Matrix</xref>.</p>
+      </sectiondiv>
     </section>
 
     <section id="steps"><title>Adding a Compute Node</title>
