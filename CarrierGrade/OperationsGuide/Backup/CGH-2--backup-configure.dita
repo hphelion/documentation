@@ -37,13 +37,13 @@ But the CLI, REST API etc should all be same --></p>
     <p>HPE recommends that you use an SCP or NFS server so that backup files are automatically moved
       to an off-appliance location in case of a catastrophic failure of the cloud controllers. You
       can use the FILE option if you want to manually mount shared storage on all three nodes of the
-      Management appliance. </p>
+      cloud controller. </p>
     <p>IMPORTANT: If you do not set a storage location, the backup will not succeed. In the backup
       job list, you will see that SSH connection to the storage path failed, and the state is
       Failed. </p>
     <section><title>Set the location where the backup file is stored </title>Perform the following
-      steps on any node of the Management appliance trio. For information about the attis CLI, see
-      the <xref href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>. <ol
+      steps on any cloud controller node. For information about the attis CLI, see the <xref
+        href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>. <ol
         id="ol_mnv_3mx_pt">
         <li>Log into HLM node</li>
         <li>SSH to any controller nodes from HLM using controller credentials (default username:
@@ -51,8 +51,10 @@ But the CLI, REST API etc should all be same --></p>
         <li>Switch to the root user by running sudo –i. </li>
         <li>Set the type of backup storage location. <ul id="ul_nxl_kmx_pt">
             <li>To set the backup storage location to an SCP server, run: attis storage --use SCP </li>
-            <li>To set the backup storage location to an NFS server, run: attis storage --use NFS </li></ul></li>
-            <li>List the storage details.
+            <li>To set the backup storage location to an NFS server, run: attis storage --use NFS
+            </li>
+          </ul></li>
+        <li>List the storage details.
           <codeblock>root@ma1:~# attis storage
 +--------------------------------------+------+----------+ 
 | id                                   |type  |selected  |
@@ -61,8 +63,8 @@ But the CLI, REST API etc should all be same --></p>
 |d6210603-01b1-4d76-9068-e3ffa44a449e  |NFS   |False     | 
 |7abb6f30-3f10-4918-9f8d-a58b157d59b9  |SCP   |True      |
 +--------------------------------------+------+----------+ </codeblock></li>
-              <li>View the storage parameters that you will need to update by selecting the storage
-          ID of the selected type. Example:
+        <li>View the storage parameters that you will need to update by selecting the storage ID of
+          the selected type. Example:
           <codeblock>root@ma1:~# attis storage --id 7abb6f30-3f10-4918-9f8d-a58b157d59b9
 +--------------------------------------+------+----------+ 
 | id                                   |type  |selected  |
@@ -77,7 +79,7 @@ But the CLI, REST API etc should all be same --></p>
 | c0a5c549-&lt;...>| 7abb6f30-&lt;...> | server               |                         |
 | e34ac1b2-&lt;...>| 7abb6f30-&lt;...> | private_key_filepath | /home/attis/.ssh/id_rsa |
 +---------------+----------------+----------------------+-------------------------+</codeblock></li>
-              <li>Set the attis configuration of the storage type you entered in step 4 by entering:
+        <li>Set the attis configuration of the storage type you entered in step 4 by entering:
             <codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id from the table> </codeblock><p>where
             parameter in an SCP configuration is:</p><ul>
             <li>user: User to SSH into the remote SCP server.</li>
@@ -87,24 +89,24 @@ But the CLI, REST API etc should all be same --></p>
             <li>private_key_filepath: Private key used to SSH to the remote SCP server. By default
                 <codeph>/home/attis/.ssh/id_rsa</codeph> on the controller is prepopulated. <p>SCP
                 Example: To specify the details of an SCP server to use for backup file storage:
-                </p><codeblock>attis storage --update '{"storage_path":"/mybackupDirOnRemoteMachine","private_key_filepath":"/home/attis/.ssh/is_rsa","server":"hostofscplocation","user":"remotescpuser"}' --id &lt;copy the storage_id from attis storage&gt; </codeblock><p>NFS
+                </p><codeblock>attis storage --update '{"storage_path":"/mybackupDirOnRemoteMachine","private_key_filepath":"/home/attis/.ssh/id_rsa","server":"hostofscplocation","user":"remotescpuser"}' --id &lt;copy the storage_id from attis storage&gt; </codeblock><p>NFS
                 Example To specify the details of an NFS server to use for backup file storage: </p><p>
-                <codeblock>attis storage --update '{"server":"NFS server ip", "client_mount_path": "name of storage mount on management appliance", "storage_path":"mybackupDironRemoteMachine"}' --id &lt;copy the storage_id from attis storage></codeblock>
+                <codeblock>attis storage --update '{"server":"NFS server ip", "client_mount_path": "name of storage mount on cloud controller", "storage_path":"mybackupDironRemoteMachine"}' --id &lt;copy the storage_id from attis storage></codeblock>
               </p><p>IMPORTANT: If you select SCP, you must copy the public key text located at
                   <codeph>/home/attis/.ssh/id_rsa.pub</codeph> on each of the three controller nodes
                 and paste it into the authorized_keys file of the SCP server. </p><p>If you want to
                 generate a new key for setting up trust between attis and the SCP server, copy the
                 private key to each controller node. Then use the attis command storage --update to
                 update the private_key_filepath.</p></li>
-          </ul></li> 
-              <li>Stop the Attis server on each of the three controller nodes.
+          </ul></li>
+        <li>Stop the Attis server on each of the three controller nodes.
           <codeblock>service attis-server stop </codeblock></li>
         <li>Make sure that Attis server has stopped, then restart the
           server<codeblock>service attis-server start</codeblock></li>
       </ol></section>
     <section><title>Additional information</title><p><b>Tree Structure</b></p><p>Attis implements
           <b>tree-structure</b> for certain backup/restore configurations. </p><p>For example, if
-        you wants to back up <codeph>/opt</codeph> and <codeph>/root</codeph> folders on the HLM
+        you want to back up <codeph>/opt</codeph> and <codeph>/root</codeph> folders on the HLM
         host, run:
         <codeblock><codeph>attis backup --config-id &lt;ID_of_HLM_Appliance_Data_Backup></codeph></codeblock></p><p>The
         root config <b>HLM_Appliance_Data_Backup</b> includes children config
@@ -115,7 +117,7 @@ But the CLI, REST API etc should all be same --></p>
           Configuration</b></p><p>The default storage option is set to SCP. You can start running
         Attis jobs once you’ve configured SCP storage parameters using the command
         below:<codeblock>attis storage --update '{"parameter":"new value", "parameter":"new value"}' --id &lt;storage_id of SCP option&gt;</codeblock></p>If
-      you decide to choose File or NFS option, you have to first
+      you decide to choose <codeph>FILE</codeph> or <codeph>NFS</codeph> option, you have to first
         run:<codeblock>attis storage --use FILE (to choose FILE option)
 attis storage --use NFS (to choose NFS option)</codeblock><p>
         Then configure the storage parameter using the same
@@ -136,7 +138,7 @@ ssh-copy-id vsd_user@vsd_address</codeblock><p><b>Note:</b>
             service.<codeblock>service vsd restart</codeblock></li>
         </ol><b>Backing up and Restoring the VSC</b>
       </p><p>If VSC username/password is set other than defaults, modify <i>vsc_user_name</i> or/and
-          <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn_.st</codeph> file before running VSC
+          <i>vsc_user_pass</i> in the <codeph>/etc/attis/dcn.lst</codeph> file before running VSC
         backup or restore. </p><b>KVM Region Controller</b><p>If the KVM region controller
         username/password is set other than defaults, use the Attis CLI to update those values in
         the KVM region controller

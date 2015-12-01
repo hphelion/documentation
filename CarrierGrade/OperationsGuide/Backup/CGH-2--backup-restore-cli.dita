@@ -38,10 +38,10 @@ But the CLI, REST API etc should all be same --></p>
         node.</p>
       <p> Be aware that keys and passwords for other OpenStack services are stored in configuration
         files on cloud infrastructure nodes, protected by filesystem controls. Protect servers from
-        authorized access to protect against exposure of credentials in configuration files. Attis
-        backups contain copies of these credentials as well, protected from snooping via backup
-        encryption, but exposure of the Attis backup key could result in unauthorized exposure of
-        credentials stored in backups.</p>
+        unauthorized access and protect against exposure of credentials in configuration files.
+        Attis backups contain copies of these credentials as well, protected from snooping via
+        backup encryption, but exposure of the Attis backup key could result in unauthorized
+        exposure of credentials stored in backups.</p>
     </section>
     <section/>
     <p><b>Synopsis</b></p>

@@ -32,7 +32,7 @@ But the CLI, REST API etc should all be same --></p>
     <p>The installation also includes the Percona XtraDB application, which takes care of
       synchronization of the data between nodes if one of the nodes goes down and comes back later.
       You can use Percona XtraDB to backup and restore the MySQL nodes that the HP Helion OpenStack
-      Carrier Grade installs on all in the non-KVM region.</p>
+      Carrier Grade installs in the non-KVM region.</p>
     <section>
       <title>IMPORTANT: Attis Administrator Responsibilites for Protecting Credentials</title>
       <p> Attis performs encrypted backup and restore of system data. The key for encryption and
@@ -42,10 +42,10 @@ But the CLI, REST API etc should all be same --></p>
         node.</p>
       <p> Be aware that keys and passwords for other OpenStack services are stored in configuration
         files on cloud infrastructure nodes, protected by filesystem controls. Protect servers from
-        authorized access to protect against exposure of credentials in configuration files. Attis
-        backups contain copies of these credentials as well, protected from snooping via backup
-        encryption, but exposure of the Attis backup key could result in unauthorized exposure of
-        credentials stored in backups.</p>
+        unauthorized access and protect against exposure of credentials in configuration files.
+        Attis backups contain copies of these credentials as well, protected from snooping via
+        backup encryption, but exposure of the Attis backup key could result in unauthorized
+        exposure of credentials stored in backups.</p>
     </section>
     <section>
       <title>What gets backed up</title>
@@ -61,10 +61,6 @@ But the CLI, REST API etc should all be same --></p>
           <li>All files under the <codeph>/root/</codeph> folder on the HLM host. This backs up all
             the source code, packages, hlinux netboot, infra-ansible-playbooks, SSH keys, as well as
             cloud folders.</li>
-          <li>All files under <codeph>/etc/default/openvswitch-switch/</codeph> on the controllers
-            for KVM + ESX deployments</li>
-          <li>All files under <codeph>/etc/default/openvswitch-switch/</codeph> on the VSD host for
-            KVM + ESX deployments</li>
           <li>bog.cfg and config.cfg files on the VSC switch.</li>
           <li>KVM-region backups from the backup utility  </li>
           <li>MySQL databases and Neutron, Nova, Ironic files under /etc on the baremetal controller
@@ -113,30 +109,6 @@ But the CLI, REST API etc should all be same --></p>
       <p>For more information on the Attis backup and restore CLI see <xref
           href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
     </section>
-    <section>
-        <title>Before backing up or restoring the KVM region</title>
-      <p>Before performing your first backup of the KVM region, perform this one-time task.</p>
-      <p>
-        <ol id="ol_b4k_nrk_zt">
-          <li>Copy/Replace the following files to the
-              <codeph>/usr/share/attis-content/playbooks/cg/</codeph> directory on all controller
-            nodes:. You should have <xref
-              href="../../Installation/carrier-grade-install-download.dita#topic7148/patches"
-              >downloaded these files in the Prerequisites</xref>.<ul id="ul_awb_srk_zt">
-              <li>vsc_config_backup.yml</li>
-              <li>vsc_config_restore.yml </li>
-              <li>wr_cc_system_backup.yml</li>
-              <li>wr_cc_system_restore.yml </li>
-            </ul></li>
-          <li>Run the following command to correct the <codeph>target_temp_folder</codeph> parameter
-            in the <codeph>WR_Appliance_system_files_Backup</codeph> and
-              <codeph>WR_Appliance_system_files_Restore</codeph> configuration
-            files.<codeblock>cd /home/attis-access to /home/attis
-attis config --id 13b370f8-79f1-11e5-9587-d72dee4aa55b --update-parameter '{"target_temp_folder":"/home/attis"}'
-attis config --id 1cdcf21c-79f1-11e5-8da3-c76cce2f76d6 --update-parameter '{"target_temp_folder":"/home/attis"}'</codeblock></li>
-        </ol>
-      </p>
-    </section>
     <section><title>Backing up the HP Helion OpenStack Carrier Grade</title>
       <p>To back up an HP Helion OpenStack Carrier Grade appliance (for example, the lifecycle
         manager, a controller, the VSC, the VSD and so forth), use the following steps:</p>
@@ -174,13 +146,13 @@ export OS_USERNAME=admin
 export OS_PASSWORD=1234 
 export OS_AUTH_URL=http://127.0.0.1:5000/v2.0</codeblock>Optionally
           you can pass the authentication values when you execute a CLI command
-          <codeblock>--os-tenant-name "admin" --os-username "admin" --os-password "1234" --os-auth-url "http://192.168.56.103:35357/v2.0"</codeblock></li>
+          <codeblock>--os-tenant-name "admin" --os-username "admin" --os-password "1234" --os-auth-url "http://127.0.0.1:5000/v2.0"</codeblock></li>
         <li>Execute the following command to start the
             backup:<codeblock>attis restore --config-id CONFIG_ID --backup-id BACKUP_ID</codeblock><p>Where </p><p>
             <ul id="ul_wlq_wm3_pt">
               <li><codeph>config-id CONFIG_ID</codeph> authenticates using the ID configuration
                 file.</li>
-              <li><codeph>backup-id BACKUP_ID</codeph> is the name of the backup from which you want
+              <li><codeph>backup-id BACKUP_ID</codeph> is the ID of the backup from which you want
                 to perform the restore. Use the <codeph>attis backuplog</codeph> command to get a
                 list of backup jobs.</li>
             </ul>
