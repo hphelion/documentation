@@ -115,13 +115,17 @@
       <topicref href="CarrierGrade/Troubleshooting/CGH-2-troubleshooting-install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
     </topicref>
-    <topicref href="CarrierGrade/carrier-grade-license.dita">
+    <topicref href="CarrierGrade/carrier-grade-license.dita"
+      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
         locktitle="yes"/>
+      <topicref href="CarrierGrade/carrier-grade-dcn-license-osrb.dita"/>
+    </topicref>
+    <topicref href="CarrierGrade/carrier-grade-end-user-license.dita"
+      navtitle="Software License Terms" locktitle="yes">
       <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="yes"
         navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
-      <topicref href="CarrierGrade/carrier-grade-dcn-license-osrb.dita"/>
       <topicref href="CarrierGrade/carrier-grade-dcn-eula.dita"/>
     </topicref>
     <topichead navtitle="Files in map not TOC" toc="no">
