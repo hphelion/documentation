@@ -26,29 +26,10 @@
                         OpenStack Carrier Grade in a baremetal environment.</p>
                 <section id="getinstall">
                         <title>Download and unpack the installation packages</title>
-                        <p>Before you begin, you must download the required HP Helion OpenStack
-                                installation package(s). For the 10/16 POC release, the installation
-                                packages are located using FTP at <xref
-                                        href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar"
-                                        format="html" scope="external">HP Helion OpenStack Carrier
-                                        Grade V2.0</xref>. HPE internal network access is
-                                required.<codeblock><xref href="http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar" format="html" scope="external">http://16.78.71.141/uploads/hcg-2-0-beta/hcg-2-0-beta.tar</xref></codeblock></p>
-                        <p>The FTP download, <codeph>hcg-2-0-beta.tar</codeph>, contains all of the
-                                files you will need to install and configure HP Helion OpenStack
-                                Carrier Grade. This is a large file that might take a significant
-                                amount of time to download, depending upon the speed of your
-                                network.</p>
-                        <p><b>Note:</b> For deployments using  ESX and DCN, you will need to obtain
-                                the and install the VMware ESX<tm tmtype="reg"/> and HPE Distributed
-                                Cloud Networking (DCN) software through those entities. </p>
                         <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
-                        <p>The <codeph>hcg-2-0-beta.tar</codeph> file contains the installation
-                                files for HP Helion OpenStack Carrier Grade in the
-                                        <codeph>/uploads/hcg-2-0-beta/</codeph> directory. </p>
                         <p>
                                 <ol id="ol_nkj_qg4_yt">
-                                        <li>Extract the <codeph>hcg-2-0-beta.tar</codeph> file:<ul
-                                                  id="ul_hh2_rg4_yt">
+                                        <li>Extract the file:<ul id="ul_hh2_rg4_yt">
                                                   <li>HCG2.0Beta.tar.gz</li>
                                                   <li>HCG2.0Beta.tar.gz.md5</li>
                                                   <li>HCG2.0BetaDCN.tar.gz</li>
@@ -56,25 +37,27 @@
                                                   <li>HCG2.0BetaInfobloxPlugin.tar.gz</li>
                                                   <li>HCG2.0BetaInfobloxPlugin.tar.gz.md5</li>
                                                 </ul></li>
-                                        <li>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file: <ul
-                                                  id="ul_zcx_pzy_st">
-                                                  <li>cg-hlm.qcow2 </li>
-                                                  <li>cg-hlm.qcow2.md5</li>
-                                                  <li>cg-hos-misc.tar.gz</li>
-                                                  <li>cg-hos-misc.tar.gz.md5</li>
+                                        <li>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file:
+                                                  <!--updated from status page 12/2--><ul
+                                                  id="ol_tnd_wc1_f5">
                                                   <li>cg-hos-src.tar.gz</li>
                                                   <li>cg-hos-src.tar.gz.md5</li>
                                                   <li>cg-infra-src.tar.gz</li>
                                                   <li>cg-infra-src.tar.gz.md5</li>
-                                                  <li>cg-ironic-deploy-images.tar.gz </li>
+                                                  <li>cg-hos-misc.tar.gz</li>
+                                                  <li>cg-hos-misc.tar.gz.md5</li>
+                                                  <li>cg-hlm.qcow2</li>
+                                                  <li>cg-hlm.qcow2.md5</li>
+                                                  <li>cg-ironic-deploy-images.tar.gz</li>
                                                   <li>cg-ironic-deploy-images.tar.gz.md5</li>
-                                                  <li>TEMPL-CPV9.ova</li>
                                                 </ul><p>The <b>WR-HCG-2_0</b> directory contains
                                                   files required to install the KVM region. The
                                                   installation instructions indicate when and how to
-                                                  deploy the files: <ul id="ul_elg_f34_yt">
-                                                  <li>cg-windriver-iso.tar.gz</li>
-                                                  <li>cg-windriver-iso.tar.gz.md5</li>
+                                                  deploy the files:
+                                                  <!--updated from FTP server 12/2--><ul
+                                                  id="ul_elg_f34_yt">
+                                                  <li>bootimage_avs_only.iso</li>
+                                                  <li>bootimage_full.iso</li>
                                                   </ul></p><p>The following files are included in
                                                   the installation download packages and will become
                                                   available during the installation of the Lifecycle
@@ -94,10 +77,11 @@
                                                   You will copy these files to the
                                                   <codeph>/home/wrsroot/</codeph> directory of
                                                   <codeph>controller-0</codeph> in the KVM region
-                                                  during the installation process. </p><p id="patches">The
-                                                  <b>Patches</b> folder contains patches for the
-                                                  Attic backup and restore service and the OpenStack
-                                                  Ironic service:<table id="table_ich_gs5_mt">
+                                                  during the installation process. </p><p
+                                                  id="patches">The <b>Patches</b> folder contains
+                                                  patches for the Attic backup and restore service
+                                                  and the OpenStack Ironic service:<table
+                                                  id="table_ich_gs5_mt">
                                                   <tgroup cols="2">
                                                   <colspec colnum="1" colname="col2"/>
                                                   <colspec colnum="2" colname="col3"/>
@@ -107,40 +91,37 @@
                                                   <entry><b>Files within the folder</b></entry>
                                                   </row>
                                                   <row>
-                                                  <entry>Attis</entry>
+                                                  <entry>HCG-941</entry>
                                                   <entry>
                                                   <ul id="ul_e5y_zk4_yt">
-                                                  <li>1cb299775c75_insert_wr_appliance_config.py</li>
-                                                  <li>vsc_config_backup.yml</li>
-                                                  <li>vsc_config_restore.yml</li>
-                                                  <li>wr_cc_system_backup.yml</li>
-                                                  <li>wr_cc_system_restore.yml</li>
+                                                  <li>haproxy-FND-RMQ-BAR-VIP.patch</li>
+                                                  <li>kenobi-config-proc-rmb-bar.patch</li>
+                                                  <li>kenobi-node-config-rmb-bar.patch</li>
                                                   </ul>
                                                   </entry>
                                                   </row>
                                                   <row>
-                                                  <entry>horizon update</entry>
+                                                  <entry>HCG-972</entry>
                                                   <entry>
                                                   <ul id="ul_xsg_xvn_zt">
-                                                  <li>cg-horizon-update.tar.gz</li>
-                                                  <li>cg-hos-update.patch</li>
+                                                  <li>HCG-941</li>
                                                   </ul>
                                                   </entry>
                                                   </row>
                                                   <row>
-                                                  <entry>Ironic build tarball patch</entry>
+                                                  <entry>interface-lro</entry>
                                                   <entry>
                                                   <ul id="ul_hvv_dl4_yt">
-                                                  <li>processtarball.yml</li>
+                                                  <li>kcp-interface-lro.patch</li>
+                                                  <li>kcp-interface-lro2.patch</li>
                                                   </ul>
                                                   </entry>
                                                   </row>
                                                   <row>
-                                                  <entry>keystone neutron patch</entry>
+                                                  <entry>migration_support_for_PCI-PT_vNICs</entry>
                                                   <entry>
                                                   <ul id="ul_ov5_svn_zt">
-                                                  <li>knc-keystone-role.patch</li>
-                                                  <li>knc-neutron-role.patch</li>
+                                                  <li>NEU_COM_855.tar.gz</li>
                                                   </ul>
                                                   </entry>
                                                   </row>
@@ -162,11 +143,11 @@
                                                   <li>5930-Nuage-D2423.ipe</li>
                                                   <li>itoolbox1.ova</li>
                                                   <li>nuage-metadata-agent_3.2.4-133_all.deb</li>
-                                                  <li>nuagenetlib_0.0.0-1729-kilo_all.deb</li>
                                                   <li>nuage-openstack-neutron_2015.1.1745_all.deb</li>
                                                   <li>nuage-openvswitch-common_3.2.4-133_amd64.deb</li>
                                                   <li>nuage-openvswitch-switch_3.2.4-133_amd64.deb</li>
                                                   <li>nuage-python-openvswitch_3.2.4-133_all.deb </li>
+                                                <li>nuagenetlib_0.0.0-1729-kilo_all.deb</li>
                                                   <li>VRS_3.2.4-135_10062015.ovf</li>
                                                   <li>VRS_3.2.4-135_10062015-disk1.vmdk</li>
                                                   <li>vsc_singledisk.qcow2</li>
@@ -242,11 +223,11 @@
                                         </ul></li>
                                 <li>Move or copy the compressed installation packages to the KVM
                                                 host.<ul id="ul_cqm_tzc_ws">
-                                                <li>DCN-VRS-GW-3.0R7</li>
-                                                <li>DCN-VSC-3.0R7</li>
-                                                <li>DCN-VRS-VMware-3.0R7.zip (copy to VSD
+                                                <li>DCN-VRS-GW-3.2R4</li>
+                                                <li>DCN-VSC-3.2R4</li>
+                                                <li>DCN-VRS-VMware-3.2R4.zip (copy to VSD
                                                   server)</li>
-                                                <li>DCN-VSD-QCOW-3.0R8 (copy to VSD server)</li>
+                                                <li>DCN-VSD-QCOW-3.2R4 (copy to VSD server)</li>
                                         </ul></li>
                                 <li>Create the <codeph>~/cg/dcn</codeph> directory on the KVM
                                         Host.</li>
@@ -270,25 +251,22 @@
                                                   </thead>
                                                   <tbody>
                                                   <row>
-                                                  <entry>DCN-VRS-GW-3.0R7</entry>
-                                                  <entry>
-                                                  <p>
-                                                  <codeph>DCN-VRS-3.0.7-125-ubuntu.14.04.tar.gz
-                                                  </codeph></p>
-                                                  <p>Untarring this file will extract::</p>
-                                                  <p><codeph>nuage-openvswitch-common_3.0.7-125_amd64.deb</codeph></p>
-                                                  <p><codeph>nuage-openvswitch-switch_3.0.7-125_amd64.deb</codeph></p>
-                                                  <p><codeph>nuage-python-openvswitch_3.0.7-125_all.deb</codeph></p>
+                                                  <entry>DCN-VRS-GW-3.2R4</entry>
+                                                  <entry><p>
+                                                  <codeph/></p><p>Untarring this file will
+                                                  extract::</p><codeph>nuage-openvswitch-common_3.2.4-133_amd64.deb
+                                                  </codeph><p><codeph>nuage-openvswitch-switch_3.2.4-133_amd64.deb
+                                                  </codeph></p><codeph>nuage-python-openvswitch_3.2.4-133_all.deb</codeph>
                                                   </entry>
                                                   <entry>~/cg/dcn</entry>
                                                   </row>
                                                   <row>
-                                                  <entry>DCN-VRS-VMware-3.0R7</entry>
+                                                  <entry>DCN-VRS-VMware-3.2R4</entry>
                                                   <entry/>
                                                   <entry>~/cg/dcn</entry>
                                                   </row>
                                                   <row>
-                                                  <entry>DCN-VSC-3.0R7</entry>
+                                                  <entry>DCN-VSC-3.2R4</entry>
                                                   <entry>
                                                   <p><codeph> DCN-VSC-07-OEM-125.tar.gz</codeph></p>
                                                   <p>Untarring this file will extract::</p>
@@ -299,13 +277,13 @@
                                                   <entry>~/cg/dcn</entry>
                                                   </row>
                                                   <row>
-                                                  <entry> DCN-VRS-VMware-3.0R7.zip</entry>
+                                                  <entry> DCN-VRS-VMware-3.2R4.zip</entry>
                                                   <entry>Unzipping this file extracts the VRS VM
                                                   template for the VRSvApp installation.</entry>
                                                   <entry>Any location. Copy to VSD VM.</entry>
                                                   </row>
                                                   <row>
-                                                  <entry>DCN-VSD-QCOW-3.0R8.zip</entry>
+                                                  <entry>DCN-VSD-QCOW-3.2R4.zip</entry>
                                                   <entry>
                                                   <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
                                                   <p>Then untarring this file will extract a patch
