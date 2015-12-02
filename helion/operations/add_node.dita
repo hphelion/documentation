@@ -20,7 +20,7 @@
             Zone</xref></li>
         <li><xref href="add_node.dita#add_node/servernames">Notes about Server Names and
           IDs</xref></li>
-      </ol>
+      </ol> 
     </section>
 
     <section outputclass="headerH" id="prereqs"><title>Prerequisites</title>
@@ -31,7 +31,7 @@
     </section>
 
     <section outputclass="headerH" id="steps"><title>Adding a Compute Node</title>
-      <sectiondiv><p>These steps will show you how to add the new
+      <sectiondiv outputclass="insideSection"><p>These steps will show you how to add the new
           Compute node to your <codeph>servers.yml</codeph> file and then run the playbooks that
           update your cloud configuration. You will run these playbooks from the lifecycle
           manager.</p>
