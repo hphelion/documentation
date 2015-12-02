@@ -608,7 +608,7 @@ Saved the current configuration to mainboard device successfully.
       </ul><p>The README with the patch download contains information on files changed by these
         patches.</p><p>To prevent this condition, execute the following commands:<ol
           id="ol_imr_fgt_25">
-          <li>Copy the patch file to  <codeph>~/</codeph> . </li>
+          <li>Copy the patch file to  <codeph>~/</codeph> on the lifecycle manager. </li>
           <li>Change to the kenobi-configuration-processor
             directory:<codeblock>cd ~/kenobi-configuration-processor </codeblock></li>
           <li>Execute the following command to install the first patch:
