@@ -39,8 +39,8 @@
               <entry>Removed "swift-rsync" workaround as it's no longer needed (DOCS-2252)</entry>
             </row>
             <row>
-              <entry/>
-              <entry/>
+              <entry>Installation Verification</entry>
+              <entry>Added Tempest instructions back in (DOCS-2242)</entry>
             </row>
           </tbody>
         </tgroup>
