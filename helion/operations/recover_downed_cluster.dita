@@ -31,9 +31,12 @@
         sequence number. When you find the node with the highest sequence number, you will need to
         run the bootstrap on that node. </p>
       <ol>
-        <li>SSH into each control node. <note type="important">In this example, two nodes have the
-            same sequence number which means you can run the bootstrap on either node but you can
-            only run the bootstrap command once and only on one node. </note>
+        <li>SSH into each controller node and use the commands below to get the log sequence number: <codeblock>sudo /usr/bin/mysqld_safe --wsrep-recover
+sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1</codeblock>
+          <p>Here is an example showing the output from a three controller node cluster:</p>
+          <note type="important">In this example, two nodes have the same sequence number which
+            means you can run the bootstrap on either node but you can only run the bootstrap
+            command once and only on one node.</note>
           <codeblock>stack@padawan-ccp-c1-m1-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover
 stack@padawan-ccp-c1-m1-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
 151119 14:37:12 InnoDB: Shutdown completed; log sequence number 165002105 
@@ -56,8 +59,8 @@ sudo service mysql restart</codeblock>
         <li>Log onto the other two controller nodes and run mysql start.
           <codeblock>sudo service mysql start</codeblock>
         </li>
-        <li>Log onto the node running the helion lifecycle manager service (deployer node) and
-          execute the hlm-start playbook for the 3 controller nodes.
+        <li>Log into the lifecycle manager and execute the hlm-start playbook for the 3 controller
+          nodes.
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt</codeblock>
         </li>
