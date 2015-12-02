@@ -29,7 +29,7 @@
             <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph"
                 >Entry-Scale KVM with Ceph Model</xref></li>
             <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa"
-                >Mid-Scale KVM with VSA Model</xref></li>
+                >Mid-Scale KVM with VSA Model (Technical Preview)</xref></li>
           </ul></li>
         <li><xref
             href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
