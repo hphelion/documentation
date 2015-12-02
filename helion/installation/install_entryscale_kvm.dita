@@ -56,6 +56,10 @@
           on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
         <li>You may see the terms deployer and lifecycle manager used interchangeably. These are
           referring to the same nodes in your environment.</li>
+        <li>When running the Ansible playbook in this installation guide, if a runbook fails you
+          will see in the error response to use the <codeph>--limit</codeph> switch when retrying a
+          playbook. This should be avoided. You can simply re-run any playbook without this
+          switch.</li>
       </ul>
     </section>
     <section id="prereqs">
