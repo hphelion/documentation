@@ -32,11 +32,14 @@
     </section>
 
     <section id="prereqs"><title>Pre-requisites</title>
-      <p>The verification tests rely on you having a cloud image in your image (Glance) repository.
-        There is an ansible playbook that will assist in this process by downloading a Cirros linux
-        image from the internet and upload it to your repository. See <xref
-          href="../administration/upload_image.dita">Uploading an Image for Use</xref> for details
-        on how to complete this step.</p>
+      <p>The verification tests rely on you having an external network setup and a cloud image in
+        your image (Glance) repository. There are ansible playbooks that will assist in this
+        process. See the following pages:</p>
+      <ul>
+        <li><xref href="../administration/create_extnet.dita">Creating an External
+          Network</xref></li>
+        <li><xref href="../administration/upload_image.dita">Uploading an Image for Use</xref></li>
+      </ul>
     </section>
 
     <section id="tempest"><title>Tempest Integration Tests</title>
@@ -55,7 +58,7 @@
       <p>In certain cases Tempest might fail to clean-up some of test resources after a test is
         complete, for example in case of failed tests.</p>
     </section>
-    <section id="running"><title>Running the Rests</title>
+    <section id="running"><title>Running the Tests</title>
       <p>To run the default set of Tempest tests:</p>
       <ol>
         <li>Log in to the lifecycle manager.</li>
