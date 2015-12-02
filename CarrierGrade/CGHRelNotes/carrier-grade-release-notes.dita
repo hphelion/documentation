@@ -245,6 +245,14 @@
                 for other uses, a glance-api restart is required.</p></section>
         <section id="problems">
             <title>Known Problems and Limitations</title>
+            <p><b>VMware VMK No Memory Error</b>
+            </p>
+            <p>When powering on the ESX Compute Proxy VM, you might receive a
+                    <systemoutput>VMK_NO_MEMORY</systemoutput> error. This is a known problem with
+                HP server and ESXi 5.x.</p>
+            <p>To fix this issue, upgrade to HP AMS version 10.0.1 and above. See <xref
+                    href="../Installation/CGH-2-install-vmware-workaround.dita#topic10581">Fixing
+                    the VMware VMK_NO_MEMORY Error</xref>.</p>
             <p><!--From jow1404333831397.xml and added info --></p>
             <p><b>Use the CLI with the KVM Region </b></p>
             <p>When working with the servers in the KVM region, do not use the Horizon interface.

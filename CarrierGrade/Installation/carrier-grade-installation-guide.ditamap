@@ -15,8 +15,7 @@
             </vrmlist>
         </prodinfo>
     </topicmeta>
-    <topicref href="carrier-grade-install-overview.dita" navtitle="Installation Guide"
-        locktitle="yes">
+    <topicref href="carrier-grade-install-overview.dita" navtitle="Installation" locktitle="yes">
         <topicref href="carrier-grade-install-overview-denver.dita"
             navtitle="Deploying the Denver Template" locktitle="yes">
             <topicref href="carrier-grade-technical-overview-denver.dita"
@@ -117,7 +116,8 @@
                 navtitle="Deploying the KVM Region" locktitle="yes">
                 <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
             </topicref>
-            <topicref href="../OperationsGuide/Baremetal/carrier-grade-baremetal-best-practices.dita"
+            <topicref
+                href="../OperationsGuide/Baremetal/carrier-grade-baremetal-best-practices.dita"
                 navtitle="Baremetal Region Best Practices" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
@@ -128,7 +128,8 @@
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-verify-vrsg.dita"
                 navtitle="Verifying the VRS-G Node" locktitle="yes"/>
-            <topicref href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+            <topicref
+                href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
                 navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
             <topicref href="carrier-grade-install-5930-switch.dita"
                 navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports"

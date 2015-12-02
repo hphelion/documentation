@@ -313,10 +313,8 @@ StrictHostKeyChecking no </codeblock></li>
                                 </li>
                         </ul>
                 </section>
-                <section id="next-step">
-                        <title>Next Step</title>
-                        <p>Download the Installation Packages. </p>
-                </section>
                </bodydiv>
+                <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                        id="conref-vmware-workaround"/>
         </body>
 </topic>

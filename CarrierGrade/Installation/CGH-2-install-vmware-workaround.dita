@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: vmWare Installation
-    Workaround</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Fixing the VMware
+    VMK_NO_MEMORY Error</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -16,8 +16,8 @@
   </prolog>
   <body>
     <p>When powering on the ESX Compute Proxy VM, you might receive a <codeph>VMK_NO_MEMORY</codeph>
-      error. This is a known problem with HP server and ESXi 5.x. </p>
-    <p>For more information on the known problem, see the vmWare Knowledge Base: <xref
+      error. This is a known problem with HP servers and ESXi 5.x. </p>
+    <p>For more information on the known problem, see the VMware Knowledge Base: <xref
         href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2085618"
         format="html" scope="external"
         >http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2085618</xref></p>
@@ -41,12 +41,40 @@
         format="html" scope="external"
         >https://h20566.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_b05d4c644fb742aa87cb5f5da1&amp;lang=en-us&amp;cc=us</xref>.
       This page also contains installation instructions.</p>
-    <p>Return to installing the non-KVM region for: <ul id="ul_f3y_ggv_25">
-        <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-vmware-workaround"
-            >Memphis</xref>
-        </li>
-        <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
-            >Sacramento</xref></li>
-      </ul></p>
+    <table frame="none" rowsep="0" colsep="0" id="table_wcv_y4z_25">
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <tbody>
+          <row>
+            <entry>Return to the prerequisites for:</entry>
+            <entry>Return to installing the non-KVM region for: </entry>
+          </row>
+          <row>
+            <entry>
+              <ul id="ul_us2_dpz_25">
+                <li><xref href="CGH-install-prereqs-memphis.dita#topic7148/conref-vmware-workaround"
+                    >Memphis</xref></li>
+                <li><xref
+                    href="CGH-install-prereqs-sacramento.dita#topic10581/conref-vmware-workaround"
+                    >Sacramento</xref></li>
+              </ul>
+            </entry>
+            <entry>
+              <p>
+                <ul id="ul_f3y_ggv_25">
+                  <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-vmware-workaround"
+                      >Memphis</xref>
+                  </li>
+                  <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                      >Sacramento</xref></li>
+                </ul>
+              </p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p/>
   </body>
 </topic>

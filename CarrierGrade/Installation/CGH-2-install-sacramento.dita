@@ -438,10 +438,10 @@ Password: cghelion</codeblock>
     </section>
     <section id="conref-vmware-workaround">
       <title>Deploy the vmWare Installation Workaround</title>
-      <p>When powering on the ESX Compute Proxy VM, you might receive a
-          <codeph>VMK_NO_MEMORY</codeph> error. This is a known problem with HP server and ESXi 5.x.
-        To prevent this issue, you need to upgrade the version of the HP Agentless Management
-        Service (AMS) that comes with the HP servers. </p>
+      <p>During the installation process, when powering on the ESX Compute Proxy VM, you might
+        receive a <codeph>VMK_NO_MEMORY</codeph> error. This is a known problem with HP server and
+        ESXi 5.x. To prevent this issue, you need to upgrade the version of the HP Agentless
+        Management Service (AMS) that comes with the HP servers. </p>
       <p>For more information, see <xref href="CGH-2-install-vmware-workaround.dita#topic10581"
           >vmWare Installation Workaround</xref>.</p>
     </section>
@@ -689,13 +689,31 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
         href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
       </image></section>
+    <section>
+      <title>Change permissions on baremetal nodes</title>
+      <p>The Ironic configuration files contain credentials that could be abused, potentially
+        exposing customer data.</p>
+      <p>By default, the Ironic configuration files are protected using a chmod permissions of
+          <codeph>600</codeph> or <codeph>700</codeph>. We strongly recommend that you change the
+        permissions to <codeph>400</codeph>. </p>
+      <ol id="ol_eml_5qz_25">
+        <li>Log in to the Baremetal controller.<pre>ssh root@&lt;ip-address&gt;</pre></li>
+        <li>Execute the following command to change the permission on the ironic-api configuration
+          file:<codeblock>chmod 400 /etc/ironic/ironic-api.conf</codeblock></li>
+        <li>Execute the following command to change the permission on the ironic-conductor
+          configuration file:<codeblock>chmod 400 /etc/ironic/ironic-conductor.conf</codeblock></li>
+      </ol>
+    </section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is an optional component  that 
-        integrates with the OpenStack Neutron networking service, to provide IP Address Management (IPAM) networking services within OpenStack cloud platforms.</p>
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is
+        an optional component that integrates with the OpenStack Neutron networking service, to
+        provide IP Address Management (IPAM) networking services within OpenStack cloud platforms. </p>
       <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
-          Interface</xref></p>. Launch the Horizon interface to load a required security certificate and test the non-KVM deployment.
-      <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
+          Interface</xref>. Launch the Horizon interface to load a required security certificate and
+        test the non-KVM deployment.
+        <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
+      </p>
     </section>
   </body>
 </topic>
