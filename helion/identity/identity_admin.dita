@@ -15,7 +15,7 @@
           with the admin endpoint of keystone. If the admin endpoint is not accessible from your
           network, please change OS_AUTH_URL to point to the public endpoint.</note></p>
     </section>
-    <section> Here are some examples:
+    <section> Here are some examples: 
       <codeblock>
 # Set environment variables needed for Keystone administration
 stack@hLinux:~$ source keystone.osrc 
