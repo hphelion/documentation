@@ -16,9 +16,9 @@
   </prolog>
   <body>
     
-    <p>This page introduces deployment and network architectures of the KVM-only deployment of HPE
+    <p>This page introduces deployment and network architectures of the Denver deployment of HPE
       Helion OpenStack Carrier Grade. During the installation, use the <codeph>denver</codeph>
-      template that comes with the installation package to create the KVM deployment. </p>
+      template that comes with the installation package. </p>
     <p><b>Note:</b> The Denver deployment is for proof-of-concept (POC) only and is not intended for
       production environments.</p>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
@@ -160,7 +160,8 @@
       
     </section>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
+    <section
+      conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/> 
  <section>

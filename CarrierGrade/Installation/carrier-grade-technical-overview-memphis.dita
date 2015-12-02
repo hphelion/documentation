@@ -20,9 +20,9 @@
       Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
         tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. This deployment also
       includes support for OpenStack Ironic to install and manage baremetal servers.</p>
-    <p>The Sacramento deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
+    <p>The Memphis deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>memphis</codeph> template that comes with
-      the installation package to create the KVM + ESX deployment.</p>
+      the installation package.</p>
     <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
     <section>
     <title>Network/Component Architecture</title>

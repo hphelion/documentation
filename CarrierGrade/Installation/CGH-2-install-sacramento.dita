@@ -465,7 +465,7 @@ Password: cghelion</codeblock>
           /></p>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph>
           file is generated. The <codeph>nodes.json</codeph> file will have entries for your
             environment:<ul id="ul_zyc_b4k_zt">
-            <li>Denver:3 controllers;</li>
+            <li>Denver: 3 controllers;</li>
             <li>Tahoe: 3 controllers, 1 DCN Hosts;</li>
             <li>Memphis: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
             <li>Sacramento: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
@@ -685,7 +685,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
       <p>Verify that the domain name and DNS server are listed in the
           <codeph>/etc/resolv.conf</codeph> file on all the cloud
-        nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><image
+        nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><p/><image
         href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
       </image></section>

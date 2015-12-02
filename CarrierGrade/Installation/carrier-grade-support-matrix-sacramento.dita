@@ -39,8 +39,8 @@
       <title>Supported Hardware</title>
       <p>The following servers are supported for the KVM Host, and for the controllers and compute
         servers.</p>
-      <p><b id="hlm">KVM Host</b> The KVM Host is a single server with at least a 40 GB disk size
-        and 8,192 MB RAM.</p>
+      <p><b id="hlm">Lifecycle Manager Host</b> The lifecycle maager host is a single server with at
+        least a 40 GB disk size and 8,192 MB RAM.</p>
       <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
         for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
@@ -241,8 +241,8 @@
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported
           Hardware</xref> lists, must be configured as follows for HP Helion OpenStack Carrier
         Grade.</p>
-      <p>One (1) <b>KVM Host</b>. You must have a server with a 40GB Disk and 8,192 MB RAM for the
-        KVM Host. This server will also host the VSD VM.</p>
+      <p>One (1) <b>Lifecycle Manager Host</b>. You must have a server with a 40GB Disk and 8,192 MB
+        RAM for the KVM Host. This server will also host the VSD VM.</p>
       <p id="non-kvm-hos">Three (3) <b>HP Helion OpenStack Controllers.</b> You must have three (3)
         baremetal systems to install the HP Helion OpenStack controllers that meet the following
         requirements: </p>
@@ -317,8 +317,8 @@
           system to install the baremetal region controllers.</li>
       </ul></p>
   </section>
-  <section id="software"><title>Software Requirements</title><p><b>KVM Host</b>. The KVM Host
-        requires the Ubuntu Server 14.04.2 LTS operating system. </p>
+  <section id="software"><title>Software Requirements</title><p><b>Lifecycle Manager Host</b>. The lifecycle manager host requires the Ubuntu Server 14.04.2 LTS
+        operating system. </p>
     <p><b>Non-KVM Region Controllers</b>. The servers should be baremetal. The HP Helion OpenStack
         Carrier Grade installation process installs the required software.</p>
     <p><b>KVM Region Controllers</b>. The servers should be baremetal. The HP Helion OpenStack

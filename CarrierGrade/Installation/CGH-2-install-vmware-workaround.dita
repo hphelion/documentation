@@ -41,9 +41,12 @@
         format="html" scope="external"
         >https://h20566.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_b05d4c644fb742aa87cb5f5da1&amp;lang=en-us&amp;cc=us</xref>.
       This page also contains installation instructions.</p>
-    <p><i>Return to installing the non-KVM region for the <xref
-      href="CGH-2-install-memphis.dita#topic10581/conref-vmware-workaround">memphis</xref> or <xref
-        href="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround">sacramento</xref>
-        template.</i></p>
+    <p>Return to installing the non-KVM region for: <ul id="ul_f3y_ggv_25">
+        <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-vmware-workaround"
+            >Memphis</xref>
+        </li>
+        <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+            >Sacramento</xref></li>
+      </ul></p>
   </body>
 </topic>

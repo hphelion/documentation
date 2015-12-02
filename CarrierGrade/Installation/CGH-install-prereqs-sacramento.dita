@@ -280,7 +280,7 @@ StrictHostKeyChecking no </codeblock></li>
                                         Up Single VSD VM Manually</xref>.</p>
                 </section>
                 <section id="prepbare">
-                        <title>Prepare the baremetal systems</title>
+                        <title>Prepare the servers</title>
                         <p>Perform the following tasks on each server you will use as a compute
                                 server or controller in the non-KVM and KVM regions:</p>
                         <ul id="ul_jy1_tvp_rs">

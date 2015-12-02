@@ -17,9 +17,10 @@
     <p>This document describes the process for installing HP Helion OpenStack Carrier Grade.</p>
     <section id="about-the-installation">
       <title>About the installation</title>
-      <p>The HP Helion OpenStack Carrier Grade installation installs a virtual machine for the lifecycle manager, 
-        creates a base HP Helion OpenStack cloud, configures network virtualization through HP
-        Distributed Cloud Networking (DCN), and deploys a carrier grade cloud.</p>
+      <p>The HP Helion OpenStack Carrier Grade Sacramento Deployment installs a virtual machine for
+        the lifecycle manager, creates a base HP Helion OpenStack cloud, configures network
+        virtualization through HP Distributed Cloud Networking (DCN), and deploys a carrier grade
+        cloud.</p>
       <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
           >Horizon graphical interface</xref> or using the CLIs of the respective <xref

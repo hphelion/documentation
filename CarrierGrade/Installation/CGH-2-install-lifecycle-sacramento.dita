@@ -103,15 +103,6 @@ upstream_ntp_servers:
       <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
     </section>
-    <section>
-      <title>Deploying the Ironic Patch</title>
-      <p>A YML file needs to be added to the <codeph>/root/infra-ansible-playbooks</codeph>
-        directory before running the ansible-playbook command. You should have downloaded the
-          <codeph>processtarball.yml</codeph> file <xref
-            href="carrier-grade-install-download.dita#topic7148/patches">in the Prerequisites</xref>. </p>
-      <p>Copy the <codeph>processtarball.yml</codeph> file to following location on HML
-        host:<codeblock>/root/infra-ansible-playbooks/roles/HLM-CFG/tasks/processtarball.yml</codeblock></p>
-    </section>
     <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the Lifecycle Manager Virtual Machine</title>
       <p>Use the following steps on the KVM Host to deploy the lifecycle manager on the KVM Host using Ansible

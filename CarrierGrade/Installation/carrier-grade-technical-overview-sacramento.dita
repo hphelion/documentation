@@ -21,7 +21,7 @@
       includes support for OpenStack Ironic to install and manage baremetal servers.</p>
     <p>The Sacramento deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>sacramento</codeph> template that comes
-      with the installation package to create the KVM + ESX deployment.</p>
+      with the installation package.</p>
     <section id="Helion-services">
       <title>Services overview</title>
       <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
@@ -326,14 +326,11 @@
       <title>Network Requirements</title>
       <p>The networking environment incorporates several types of network:</p>
       <ul>
-        <li><xref href="#topic3485/internal-management-network" format="dita">the internal
-          management network</xref></li>
-        <li><xref href="#topic3485/oam-network" format="dita">the OAM network</xref></li>
-        <li><xref href="#topic3485/provider-network" format="dita">one or more provider
-          networks</xref></li>
-        <li><xref href="#topic3485/infrastructure-network" format="dita">an optional infrastructure
-          network</xref></li>
-        <li><xref href="#topic3485/board-network" format="dita">an optional board management network.</xref> </li>
+        <li>the internal management network</li>
+        <li>the OAM network</li>
+        <li>one or more provider networks</li>
+        <li>an optional infrastructure network</li>
+        <li>an optional board management network.</li>
       </ul>
       <p>Operational requirements for each network are described in the following sections.</p>
       
