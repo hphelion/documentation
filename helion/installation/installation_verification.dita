@@ -156,7 +156,7 @@ ansible-playbook -i hosts/verb_hosts tempest-run.yml</codeblock>
       <p>To use this, follow these steps:</p>
       <ol>
         <li>
-          <p>Login to the deployer node.</p>
+          <p>Log in to the lifecycle manager.</p>
         </li>
         <li>
           <p>Edit the <codeph>/opt/stack/tempest/etc/tempest.conf</codeph> file</p>
@@ -205,20 +205,15 @@ api_v3 = false</codeblock>
         the whitelist.</p>
       <p>To run whitelist and blacklist tests:</p>
       <ol>
-        <li>
-          <p>Login to the deployer node.</p>
-        </li>
-        <li>
-          <p>Go the ansible folder:</p>
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock>
-        </li>
-        <li>
-          <p>Make sure you can access the cloud:</p>
-          <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+        <li>Log in to the lifecycle manager. </li>
+        <li>Make sure you can access the cloud:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
 source /etc/environment</codeblock>
         </li>
-        <li><p>Run the tests:</p>
-          <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml  -e run_filter &lt;run_filter_name></codeblock></li>
+        <li>Run the tests:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts tempest-run.yml  -e run_filter &lt;run_filter_name></codeblock></li>
       </ol>
       <p>Note that the run_filter_name is the name of the run_filter file except for the extension.
         For instance, to run using the filter from the file /opt/stack/tempest/run_filters/ci.txt,
