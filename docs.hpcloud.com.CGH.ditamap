@@ -109,18 +109,18 @@
       <topicref
         href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" toc="no"/>
     </topichead>
-    <topicref href="CarrierGrade/carrier-grade-license.dita"
+    <topicref href="CarrierGrade/2.0/carrier-grade-license.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes" toc="no">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
         navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
         locktitle="yes"/>
-      <topicref href="CarrierGrade/carrier-grade-dcn-license-osrb.dita"/>
+      <topicref href="CarrierGrade/2.0/carrier-grade-dcn-license-osrb.dita"/>
     </topicref>
-    <topicref href="CarrierGrade/carrier-grade-end-user-license.dita"
+    <topicref href="CarrierGrade/2.0/carrier-grade-end-user-license.dita"
       navtitle="Software License Terms" locktitle="yes" toc="no">
       <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="yes"
         navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
-      <topicref href="CarrierGrade/carrier-grade-dcn-eula.dita"/>
+      <topicref href="CarrierGrade/2.0/carrier-grade-dcn-eula.dita"/>
     </topicref>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
