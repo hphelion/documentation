@@ -20,7 +20,7 @@
         <b>/media/cdrom</b>; for example:
       <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151009-hlm.2015-11-13T07:32:19_caf1ffc.iso /media/cdrom  </codeblock>
       Unpack the following
-      tarball:<codeblock>tar faxv /media/cdrom/hos-2.0.1/hos-2.0.1.manifest-20151113T062512Z.tar</codeblock>
+      tarball:<codeblock>tar faxv /media/cdrom/hos/hos-2.0.1-20151113T062512Z.tar</codeblock>
       Run the included initialization script to update the deployer:
       <codeblock>~/hos-2.0.1/hos-init.bash</codeblock> Run the configuration processor:
       <codeblock>cd ~/helion/hos/ansible
