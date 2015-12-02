@@ -17,7 +17,7 @@
         worry about certificates. It will not match your IP address, but you can ignore the
         warnings. Later, when you require a trusted certificate, you can add your own certificate
         and redeploy.</p>
-      <p> Keystone currently doesn't support updating an endpoint. Therefore <b>the public endpoint
+      <p>Keystone currently doesn't support updating an endpoint. Therefore <b>the public endpoint
           cannot be changed after the initial deployment</b>. This has the following
         implications:</p>
       <ul>
@@ -27,14 +27,15 @@
       <p>Therefore, you will have to make one of the following choices:</p>
       <ul>
         <li>Comment out the "external-name:" line in
-          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that IP addresses are
-          used) </li>
-        <li>Assign a name to "external-name:" line in
-          /home/stack/helion/my_cloud/definition/data/network_groups.yml (so that an FQDN is used)
-        </li>
+            <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> (so that IP
+          addresses are used) </li>
+        <li>Assign a name to the "external-name:" line in
+            <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> (so that an FQDN
+          is used) </li>
       </ul> You also need to choose if you want TLS on or off. We recommend keeping TLS on by
       default as it cannot be changed. But if you want it disabled you need to change
-      "tls-components" to "components" in <b>network_groups.yml</b> and comment out the cert-file.
+      "tls-components" to "components" in <codeph>network_groups.yml</codeph> and comment out the
+      cert-file.
       <!--<p>
         <note type="warning">Here we are configuring and installing a test certificate. It is
           recommended that you create and sign certifcates properly for a production environment.
@@ -45,14 +46,15 @@
             Production Environments</xref>.</note>
       </p>-->
     </section>
-    <section>
-      <title>Creating a self-signed certificate</title> If you want to install a self-signed
-      certificate that meets the needs of <keyword keyref="kw-hos"/> and HPE Helion Development Platform,
-      follow these steps to create the cert, and then install it by following the installation
-        steps.<ol id="ol_wmt_wsp_tt">
+    <section id="selfsigned_cert">
+      <title>Creating a self-signed certificate</title>
+      <p>If you want to install a self-signed certificate that meets the needs of <keyword
+          keyref="kw-hos"/> and HPE Helion Development Platform, follow these steps to create the
+        cert, and then install it by following the installation steps.</p>
+      <ol id="ol_wmt_wsp_tt">
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
-        -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
+-subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
         </li>
         <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
           above and provide your IP
@@ -66,8 +68,8 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
           Note that the domain name in the certificate signing request in step 1 and the DNS entry
           in step 2 must match, although the domain do not have to exist. <p>In step 2 you need the
             same IP address listed for both the DNS and the IP entries. The IP address is what is
-            used by HPE Helion Development Platform and the DNS is used by <keyword keyref="kw-hos"/>.
-            Note that is you examine the output certificate, the issuer will match the subject
+            used by HPE Helion Development Platform and the DNS is used by <keyword keyref="kw-hos"
+            />. Note that is you examine the output certificate, the issuer will match the subject
             because the cert is self-signed. The requirement for the DNS entry stems from a
             low-level Python bug.</p>
         </li>
@@ -82,18 +84,25 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
           <codeblock>cat my-public-cert.key my-public-cert.crt > my-public-cert</codeblock></li>
             
       </ol> You can now use my-public-cert as your certificate. -->
-      <p><b>Installing the Certificate</b></p> Follow the steps below to install the certificate in
-      the cloud.</section>
-    <section id="fqdn"><b>If you are using a FQDN:</b>
+    </section>
+    <section id="install_cert"><title>Installing the Certificate</title>
+      <p>Follow the steps below to install the certificate in the cloud:</p>
+      <ul>
+        <li><xref href="#configure_tls/fqdn">If you are using a FQDN</xref></li>
+        <li><xref href="#configure_tls/ipaddress">If you are using IP addresses for external
+            URLs</xref></li>
+      </ul>
+    </section>
+    <section id="fqdn"><p><b>If you are using a FQDN:</b></p>
       <ol id="ol_ngj_qfq_rt">
         <li> Create or obtain a certificate to match the domain name you are going to use. </li>
         <li> Copy the certificate (containing both public and private keys) to
-            <b>helion/my_cloud/config/tls/certs/ </b></li>
-        <li id="private1">Replace the contents of <b>
-            /home/stack/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with the
-          new CA certificate chain file (if applicable)</li>
-        <li>Edit <b>network_groups.yml </b>(as part of the general set of edits they have to make to
-          the example) to set the values for "external-name" and "cert-file" </li>
+            <codeph>helion/my_cloud/config/tls/certs/ </codeph></li>
+        <li id="private1">Replace the contents of <codeph>
+            /home/stack/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with
+          the new CA certificate chain file (if applicable)</li>
+        <li>Edit <codeph>network_groups.yml </codeph>(as part of the general set of edits they have
+          to make to the example) to set the values for "external-name" and "cert-file" </li>
         <li>Commit your changes to git:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -106,49 +115,95 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             <li>A site deploy play</li>
             <li>An upgrade play</li>
             <li>or redeploy FND_CLU like so:
-              <codeblock>ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
             </li>
           </ul>
         </li>
         <li>Continue with the deployment as usual.</li>
       </ol>
-      <b>If you are using IP addresses for external ULRs: </b><ol id="ol_y3j_qfq_rt">
-        <li>Edit <b>network_groups.yml</b> to comment out the "external-name" line </li>
-        <li>Commit your changes to git and run the configuration processor as in steps 4 and 5
-          above</li>
+    </section>
+    <section id="ipaddress"><p><b>If you are using IP addresses for external URLs:</b></p>
+      <ol id="ol_y3j_qfq_rt">
+        <li>Edit the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file and
+          under the <codeph>EXTERNAL-API</codeph> section comment out the
+            <codeph>external-name</codeph> line. <p>Here is an example of what it will look
+            like:</p>
+          <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+            
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         #You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+         <codeph>#external-name:</codeph></codeblock></li>
+        <li>Commit your changes to git:
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Note the IP address used for the public URLs (from
-          <b>my_cloud/info/address_info.ym</b>l) </li>
-        <li>Create or obtain a certificate tied to this address </li>
+            <codeph>~/helion/my_cloud/info/address_info.ym</codeph>l)</li>
+        <li>Create or obtain a certificate tied to this address</li>
         <li>Copy the certificate (containing both public and private keys) to
-            <b>helion/my_cloud/config/tls/certs/ </b></li>
-        <li id="private2">Replace the contents of<b>
-            ~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</b> with
-          the new CA certificate chain file (if applicable) </li>
-        <li>Edit <b>network_groups.yml </b>to set the value for the name of the "cert-file"</li>
+            <codeph>~/helion/my_cloud/config/tls/certs/ </codeph></li>
+        <li id="private2">Replace the contents of<codeph>
+            ~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph>
+          with the new CA certificate chain file (if applicable) </li>
+        <li>Edit <codeph>network_groups.yml</codeph> to set the value for the name of the
+          "cert-file"</li>
         <li>Again, commit your changes to git and run the configuration processor as in steps 4 and
           5 above</li>
         <li>Continue with the deployment as usual</li>
-      </ol> Note that the certificate that is installed by default, "my-public-cert", is linked to
-      the name "myhelion.test". It is possible to deploy the system without generating or
-      configuring a new certificate and come back and change it later, but access to the public URLS
-      will have to use the "--insecure" flag to avoid "certificate mismatch" errors.</section>
-    <section> Here is the relevant section of
-      <b>network_groups.yml</b>.<codeblock> load-balancers: 
-   - provider: ip-cluster
-     name: extlb   # This is the external load balancer.
+      </ol>
+      <p>Note that the certificate that is installed by default, "my-public-cert", is linked to the
+        name "myhelion.test". It is possible to deploy the system without generating or configuring
+        a new certificate and come back and change it later, but access to the public URLS will have
+        to use the "--insecure" flag to avoid "certificate mismatch" errors.</p>
+    </section>
+    <section>
+      <p>Here is the relevant section of the <codeph>network_groups.yml</codeph> file:</p>
+      <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+        
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
          # If external-name is set then public urls in keystone
-         # will use this name instead of the IP address.
-         # You must either set this to a name that can be resolved in your network
+         # will use this name instead of the IP address
+         #You must either set this to a name that can be resolved in your network
          # or comment out this line to use IP addresses
+         #external-name:
+        
+         tls-components:
+            - default
+         roles:
+            - public
+         <codeph>cert-file: joel-public-cert
+         # This is the name of the certificate that will be used on load balancer.
+         # Replace this with name of file in "~helion/my_cloud/config/tls/certs/".
+         # This is the certificate that matches your setting for external-name
+         #
+         # Note that it is also possible to have per service certificates:
+         #
+         # cert-file:
+         # default: my-public-cert
+         # horizon: my-horizon-cert
+         # nova-api: my-nova-cert
+         #
+         #</codeph></codeblock>
+    </section>
 
-         external-name:
 
-     tls-components:
-        - default
-     roles:
-        - public
-          cert-file: my-public-cert   # this cert should match the FQDN for authenticated TLS to work. 
-                                      # The bundled test certificate is for myhelion.test</codeblock></section>
+
+
     <section id="TLS_termination">
       <title>Definitions</title>
       <dl>
@@ -160,40 +215,44 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <dt>external-name:</dt>
           <dd>This name will be used in place of the external VIP address. This name can be an FQDN.
             This will be registered in the public endpoints of the services. As noted above,
-            myhelion.test should be changed to your FQDN.</dd>
+              <codeph>myhelion.test</codeph> should be changed to your FQDN.</dd>
         </dlentry>
         <dlentry>
           <dt>tls-components:</dt>
           <dd>This list of services will be put behind TLS. Note this is only being done for the
             load balancer in question, which is the external load balancer. The components in
-            'default' are those services defined under service-components in data/control_plane.yml.
-            If you want to have a finer granularity, you can replace default with a list of
-            individual components, such as: <codeblock>tls-components: - 'horizon' </codeblock></dd>
+            'default' are those services defined under service-components in
+              <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph>. If you want to
+            have a finer granularity, you can replace default with a list of individual components,
+            such as: <codeblock>tls-components: - 'horizon' </codeblock></dd>
         </dlentry>
         <dlentry>
           <dt>cert-file:</dt>
-          <dd> the default my-public-cert is already part of the playbook but you can specify your
-            own name. When you specify your own you also need to have the certificate copied in
-              <b>~/helion/my_cloud/config/tls/certs</b> on the lifecycle manager, as noted above. </dd>
+          <dd>The default <codeph>my-public-cert</codeph> is already part of the playbook but you
+            can specify your own name. When you specify your own you also need to have the
+            certificate copied in <codeph>~/helion/my_cloud/config/tls/certs</codeph> on the
+            lifecycle manager, as noted above.</dd>
         </dlentry>
       </dl>
-      <note>Do not enable TLS to the internal load balancer. </note>
+      <note>Do not enable TLS on the internal load balancer.</note>
     </section>
-    
-    
 
-    <section><title>Disabling TLS</title>If you don't want to use TLS, then you should change "tls-components" to "components"
-      in <b>network_groups.yml</b>. Additionally, if you have a <b>network_groups.yml</b> file from
-      a previous installation, you won't have TLS enabled unless you change "components" to
-      "tls-components" in that file. </section>
+
+
+    <section><title>Disabling TLS</title>
+      <p>If you don't want to use TLS, then you should change "tls-components" to "components" in
+          <codeph>network_groups.yml</codeph>. Additionally, if you have a
+          <codeph>network_groups.yml</codeph> file from a previous installation, you won't have TLS
+        enabled unless you change "components" to "tls-components" in that file.</p>
+    </section>
     <section id="configure_cipher">
       <title>Configuring the cipher suite for public endpoints</title> We have set the default
       cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>. This is a recommended
       setting from the <xref
         href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html"
         format="html" scope="external">OpenStack documentation site</xref>. You may override this.
-      To do so, open <b>config/haproxy/defaults.yml</b> and edit it. The parameters can be found
-      under haproxy_globals list.
+      To do so, open <codeph>config/haproxy/defaults.yml</codeph> and edit it. The parameters can be
+      found under haproxy_globals list.
       <codeblock>- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</codeblock>
       Make the changes as needed. It's best to keep the two options identical. </section>
@@ -259,9 +318,9 @@ DNS:servername-api.ftc.hp.com</codeblock>
           <codeblock>bash hlm_cert_generate.sh &lt;public FQDN></codeblock>
         </li>
       </ol>
-      <b>Installing the new certificate into a running cloud</b>
+      <codeph>Installing the new certificate into a running cloud</codeph>
       <ol>
-        <li>Copy the generated my-public-cert to <b>~/helion/my_cloud/config/tls/certs/</b>
+        <li>Copy the generated my-public-cert to <codeph>~/helion/my_cloud/config/tls/certs/</codeph>
         </li>
         <li>Commit the changes, run the config processor and deploy cluster playbook.
           <codeblock>cd ~/helion/hos/ansible
@@ -281,23 +340,23 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
         </li>
       </ol>  
     </section>-->
-    
-    
-  
-    
-    
-    
+
+
+
+
+
+
     <!--<section><title>Accessing public endpoints from an external machine</title>
       <ol id="ol_q1b_djg_rt">
         <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
           hosts file </li>
         <li>Install the CA certificate that signed the test server certificate. This file can be
-          found in the lifecycle manager under <b>roles/tls-trust/files/frontend_cacert.pem</b>. </li>
+          found in the lifecycle manager under <codeph>roles/tls-trust/files/frontend_cacert.pem</codeph>. </li>
         <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
         <li>Run the playbook below to install the certificate.
           <codeblock>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml</codeblock></li>
-      </ol></section>--> 
- <!--
+      </ol></section>-->
+    <!--
     <section><title>Testing public endpoints using the test certificate with a virtual cloud</title>
       The following write up is for people trying to test the public endpoints using the bundled
       test certificate with a virtual cloud. There are three use cases here. <ul id="ul_z51_djg_rt">
@@ -309,12 +368,12 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
         <li>Have a name resolver for myhelion.test - It could /etc/hosts or dnsmasq reading from a
           hosts file </li>
         <li>Install the CA certificate that signed the test server certificate. This file can be
-          found in the lifecycle manager under <b>roles/tls-trust/files/frontend_cacert.pem</b>. This file is
+          found in the lifecycle manager under <codeph>roles/tls-trust/files/frontend_cacert.pem</codeph>. This file is
           not symlinked via the config directory to customers because we generally don't need the CA
           certificate signing the external certificate inside the cloud. </li>
       </ol>
    
-      <b>Accessing public endpoints from the machine hosting the virtual cloud</b>
+      <codeph>Accessing public endpoints from the machine hosting the virtual cloud</codeph>
       <ol id="ol_ddb_djg_rt">
         <li>Make an entry for the VIP inside the /etc/hosts file pointing to myhelion.test </li>
         <li>Copy the CA certificate from the
@@ -324,8 +383,8 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
       </ol>
       
     </section>
-    <section><title><b>Accessing public endpoints from a machine other than the machine hosting the virtual
-      cloud</b></title>Start by repeating what was done for the machine hosting the virtual cloud. But this
+    <section><title><codeph>Accessing public endpoints from a machine other than the machine hosting the virtual
+      cloud</codeph></title>Start by repeating what was done for the machine hosting the virtual cloud. But this
       time your /etc/hosts entry for myhelion.test should point to the IP address of the host
       running the virtual cloud. After this you need to have something tunnelling the packets to the
       VIP. This is easily accomplished with haproxy in tunnel mode. (mode tcp). But you need to have
@@ -333,7 +392,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
       example if I want to do 'nova list' I may need port 5000 (keystone) and port 8774 (nova-api),
         <ol id="ol_ofb_djg_rt">
         <li>Install haproxy with apt-get </li>
-        <li>Open<b> /etc/haproxy/haproxy.cfg</b> and append the following sections to the existing
+        <li>Open<codeph> /etc/haproxy/haproxy.cfg</codeph> and append the following sections to the existing
           content:
           <codeblock>listen keystone-5000
       option ssl-hello-chk
