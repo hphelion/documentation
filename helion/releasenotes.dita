@@ -5,12 +5,12 @@
   <body>
     <!--Needs Edit-->
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="../helion/releasenotes.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/releasenotes.html" scope="external" format="html">Click
+        here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">
-      <p>This document provides an overview of the features contained within 
-        <keyword keyref="kw-hos-phrase"/>, including known issues and workarounds for this
-        release:</p>
+      <p>This document provides an overview of the features contained within <keyword
+          keyref="kw-hos-phrase"/>, including known issues and workarounds for this release:</p>
       <ul>
         <li><xref href="releasenotes.dita#release_notes/features">Features Available in this
             Release</xref></li>
@@ -21,31 +21,30 @@
 
     <section id="features"><title>Features Available in this Release</title>
       <p><b>New GUI Installer</b></p>
-      <p><keyword keyref="kw-hos-phrase"/> introduces a GUI installer for configuring and installing the
-        operating system, the cloud, and OpenStack services. It provides an easy way to populate the
-        configuration files needed to define the <xref href="input_model.dita">Input Model</xref>,
-        and uses them to configure and install your cloud. For help using the installer, see the
-        page <xref href="gui_installer.dita"/>.</p>
+      <p><keyword keyref="kw-hos-phrase"/> introduces a GUI installer for configuring and installing
+        the operating system, the cloud, and OpenStack services. It provides an easy way to populate
+        the configuration files needed to define the <xref href="input_model.dita">Input
+          Model</xref>, and uses them to configure and install your cloud. For help using the
+        installer, see the page <xref href="gui_installer.dita"/>.</p>
       <p><b>Transport Layer Security (TLS) Support</b>
-      </p><p>TLS is now supported for public endpoints. See <xref
-          href="security/tls.dita">Enabling TLS for Public Endpoints</xref> for
-        more information.</p>
+      </p><p>TLS is now supported for public endpoints. See <xref href="security/tls.dita">Enabling
+          TLS for Public Endpoints</xref> for more information.</p>
       <p><b>Encryption of sensitive data</b></p>
       <p>In this release, connection details and passwords are encrypted and or protected. See <xref
           href="security/encrypted_storage.dita">Encryption of Passwords and Sensitive Data
         </xref>for more information.</p>
       <p><b>AppArmor enabled</b></p>
-      <p>AppArmor in <keyword keyref="kw-hos-phrase"/> is installed and enabled on the KVM compute nodes by
-        default. It runs in enforce mode. It enforces mandatory access control policies for the
-        libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor in
-          <keyword keyref="kw-hos-phrase"/></xref> for more information.</p>
+      <p>AppArmor in <keyword keyref="kw-hos-phrase"/> is installed and enabled on the KVM compute
+        nodes by default. It runs in enforce mode. It enforces mandatory access control policies for
+        the libvirt process. See <xref href="security/using_apparmor.dita#topic_rmq_j1v_4t">AppArmor
+          in <keyword keyref="kw-hos-phrase"/></xref> for more information.</p>
       <p><b>The lifecycle manager only supports American English language</b></p>
       <p>The lifecycle manager installation process prompts you to select a language. The only
         supported language at this time is American English.</p>
       <p><b>Local Git repository for config tracking</b></p>
-      <p>In <keyword keyref="kw-hos-phrase"/>, a local git repository is used to track configuration changes
-        as well as acting as a repository for the configuration processor to gather configuration
-        settings from. The operations work as explained below: <ul>
+      <p>In <keyword keyref="kw-hos-phrase"/>, a local git repository is used to track configuration
+        changes as well as acting as a repository for the configuration processor to gather
+        configuration settings from. The operations work as explained below: <ul>
           <li>Operations under <codeph>~/helion</codeph> are under the aegis of git. You’ll need to
             commit any config into git (on the "site" branch) before the configuration processor can
             run it. The script that runs the config processor now guards against uncommitted
@@ -61,10 +60,10 @@
         settings. An explanation can be found <xref href="installation/using_git.dita">in this
           topic</xref>.</p>
       <p><b>New UEFI support</b></p>
-      <p><keyword keyref="kw-hos-phrase"/> includes support for UEFI (which replaces the BIOS on newer
-        servers), while continuing to support Legacy BIOS. Select the required mode on each node
-        through its BIOS settings before beginning the install process. The installer will detect
-        and use the mode you have selected for each node.</p>
+      <p><keyword keyref="kw-hos-phrase"/> includes support for UEFI (which replaces the BIOS on
+        newer servers), while continuing to support Legacy BIOS. Select the required mode on each
+        node through its BIOS settings before beginning the install process. The installer will
+        detect and use the mode you have selected for each node.</p>
       <p><b>Updated <keyword keyref="kw-hos"/> Services</b></p>
       <p>We have included the core set of OpenStack services from the <xref
           href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo" scope="external" format="html"
@@ -73,59 +72,58 @@
       <p>You can now choose between Ceph, VSA, and 3PAR for Block Storage backends.</p>
       <p>See: <xref href="blockstorage/blockstorage_overview.dita">Block Storage Overview</xref> for
         more details</p>
-      
-      <dl><dlentry>
-        <dt>DNSaaS 2.0</dt>
-        <dd>
-          <b>New Features</b>
-          <ul>
-            <li>New API V2 <ul>
-              <li>Adds Zones that replaces Domains from V1.</li>
-              <li>Adds RecordSets that replaces Records from V1. </li>
-            </ul></li>
-            <li>Scalability and Resilience improvements <ul>
-              <li>New service PoolManager that handles coordination / resiliency.</li>
-              <li>New service MiniDNS.</li>
-            </ul></li>
-            <li>Support for wildcard records.</li>
-            <li>Support for Secondary Zones.</li>
-          </ul>
-          <b>Known Issues</b>
-          <ul>
-            <li>Selecting a flavor larger than m1.medium for the Deployer or Control Plane nodes
-              fails due to a failure to re-size LVM. The recommended flavors for the Deployer and
-              Control Plane nodes are m1.small or m1.medium.</li>
-          </ul>
-          <b>Not included in the release</b>
-          <ul>
-            <li>Backend support for BIND9 / DynECT / Akamai is not included in this release.</li>
-            <li>Support for Ceilometer is not included in this release.</li>
-            <li>There is currently no backup and restore functionality.</li>
-          </ul>
-          <b>Bugfixes</b>
-          <ul>
-            <li>API TTL input validation.</li>
-            <li>Improve error message on API actions.</li>
-            <li>Launchpad 1471161 <ul>
-              <li>CVE-2015-5695 Quotas were being bypassed.</li>
-              <li>CVE-2015-5694 does not enforce the DNS protocol limit concerning record set
-                sizes.</li>
-            </ul></li>
-            <li>Launchpad 1471158: Incorrect regular expressions used for schema validation.</li>
-            <li>Launchpad 1497031: Authenticated Denial of Service in Blacklists.</li>
-          </ul></dd>
-      </dlentry></dl>     
-      
-      
+      <dl>
+        <dlentry>
+          <dt>DNSaaS 2.0</dt>
+          <dd>
+            <b>New Features</b>
+            <ul>
+              <li>New API V2 <ul>
+                  <li>Adds Zones that replaces Domains from V1.</li>
+                  <li>Adds RecordSets that replaces Records from V1. </li>
+                </ul></li>
+              <li>Scalability and Resilience improvements <ul>
+                  <li>New service PoolManager that handles coordination / resiliency.</li>
+                  <li>New service MiniDNS.</li>
+                </ul></li>
+              <li>Support for wildcard records.</li>
+              <li>Support for Secondary Zones.</li>
+            </ul>
+            <b>Known Issues</b>
+            <ul>
+              <li>Selecting a flavor larger than m1.medium for the Deployer or Control Plane nodes
+                fails due to a failure to re-size LVM. The recommended flavors for the Deployer and
+                Control Plane nodes are m1.small or m1.medium.</li>
+            </ul>
+            <b>Not included in the release</b>
+            <ul>
+              <li>Backend support for BIND9 / DynECT / Akamai is not included in this release.</li>
+              <li>Support for Ceilometer is not included in this release.</li>
+              <li>There is currently no backup and restore functionality.</li>
+            </ul>
+            <b>Bugfixes</b>
+            <ul>
+              <li>API TTL input validation.</li>
+              <li>Improve error message on API actions.</li>
+              <li>Launchpad 1471161 <ul>
+                  <li>CVE-2015-5695 Quotas were being bypassed.</li>
+                  <li>CVE-2015-5694 does not enforce the DNS protocol limit concerning record set
+                    sizes.</li>
+                </ul></li>
+              <li>Launchpad 1471158: Incorrect regular expressions used for schema validation.</li>
+              <li>Launchpad 1497031: Authenticated Denial of Service in Blacklists.</li>
+            </ul></dd>
+        </dlentry>
+      </dl>
       <p><b>Neutron FWaaS, LBaaS and VPNaaS Extensions</b></p>
       <p>We have implemented networking extensions firewall, load balancing, and virtual private
         networks. Here is a description of each of these: <ul>
           <li>
             <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
-              balancing feature set. <keyword keyref="kw-hos-phrase"/> installs by default LBaaS version 2
-              which uses an implementation of haproxy but third-party load balancers can be deployed
-              as well. If a third-party driver doesn’t support LBaaS V2, then installing LBaaS V1
-              instead of V2 is possible.</p>
+              balancing feature set. <keyword keyref="kw-hos-phrase"/> installs by default LBaaS
+              version 2 which uses an implementation of haproxy but third-party load balancers can
+              be deployed as well. If a third-party driver doesn’t support LBaaS V2, then installing
+              LBaaS V1 instead of V2 is possible.</p>
             <ul>
               <li>For more information, see: <xref href="networking/lbaas_admin.dita">Load Balancer
                   (LBaaS) Configuration</xref></li>
@@ -134,8 +132,8 @@
           <li>
             <p>FWaaS (Firewall-as-a-Service) is a Neutron extension that introduces a firewall
               feature set. The included reference implementation is using iptables to filter traffic
-              but third-party firewalls can be deployed with this extension into 
-              <keyword keyref="kw-hos"/> as well.</p>
+              but third-party firewalls can be deployed with this extension into <keyword
+                keyref="kw-hos"/> as well.</p>
             <ul>
               <li>For more information, see: <xref href="networking/fwaas.dita">Firewall (FWaaS)
                   Configuration</xref></li>
@@ -152,10 +150,10 @@
             </ul>
           </li>
           <li>
-            <p>Multiple networks is a feature in <keyword keyref="kw-hos-phrase"/> that enables bridging of
-              multiple external physical networks to a Neutron network. Using this functionality a
-              tenant can dictate the path taken by the data in the physical network outside the
-              cloud. It can also be used for multi-homing to two physical networks.</p>
+            <p>Multiple networks is a feature in <keyword keyref="kw-hos-phrase"/> that enables
+              bridging of multiple external physical networks to a Neutron network. Using this
+              functionality a tenant can dictate the path taken by the data in the physical network
+              outside the cloud. It can also be used for multi-homing to two physical networks.</p>
             <ul>
               <li>For more information, see: <xref href="networking/multinetwork.dita">Multiple
                   External Network Configuration</xref></li>
@@ -173,33 +171,35 @@
           For example, traffic can be separated into management, tenant, external, and service
           networks.</li>
       </ul>
-      <p><b>NIC Mapping Feature</b></p> The new NIC mappings feature in <keyword keyref="kw-hos"/> allows
-      the cloud administrator to map network interface names to PCI bus addresses. This is important
-      because for well-understood reasons, Linux can sometimes name the network interfaces in a
-      pseudo-random order. So in a cluster of identical machines, the <b>eth3</b> device can appear
-      as <b>eth4</b> on one or more machines in the cluster. Once this erroneous name is determined
-      by the operating system, it will use persistence rules to ensure that the NIC device is called
-        <b>eth4</b> thereafter. This makes cluster configuration using Helion quite difficult if not
-      impossible, if most machines understand the Management Network to be <b>eth3</b>, but some
-      subset of machines understand that network to be on <b>eth4</b> ( and whatever was on eth4 is
-      similarly swapped to <b>eth3</b>). <p>To resolve this, and to ensure that all NIC devices have
-        consistent naming across the entire cloud, <keyword keyref="kw-hos-phrase"/> includes NIC Mapping
-        facilities. This is a mechanism in the Input Model to define a specific NIC interface for a
-        given PCI address for a given class of machine. Generally, when all of the network
-        interfaces are defined in the <xref href="input_model.dita#input_model/co_nicmappings"
-          type="section">Input Model</xref>, it is advisable to use the traditional naming, ie
-          <b>ethN</b>. However, if one or more interfaces are not defined in the Input Model
-        (perhaps because the Ansible network is not defined, or because there is a customer-specific
-        network which is outside the scope of Helion), then it is recommended that a different
-        naming convention is used, to prevent the definitions from colliding with existing
-        configuration data. For example, the NIC mapping definitions could use <b>hos0</b> through
-          <b>hosN</b> rather than <b>eth0</b> through <b>ethN</b>, bearing in mind that the new
-        naming must be consistent across the entire Input Model.</p>
+      <p><b>NIC Mapping Feature</b></p> The new NIC mappings feature in <keyword keyref="kw-hos"/>
+      allows the cloud administrator to map network interface names to PCI bus addresses. This is
+      important because for well-understood reasons, Linux can sometimes name the network interfaces
+      in a pseudo-random order. So in a cluster of identical machines, the <b>eth3</b> device can
+      appear as <b>eth4</b> on one or more machines in the cluster. Once this erroneous name is
+      determined by the operating system, it will use persistence rules to ensure that the NIC
+      device is called <b>eth4</b> thereafter. This makes cluster configuration using Helion quite
+      difficult if not impossible, if most machines understand the Management Network to be
+        <b>eth3</b>, but some subset of machines understand that network to be on <b>eth4</b> ( and
+      whatever was on eth4 is similarly swapped to <b>eth3</b>). <p>To resolve this, and to ensure
+        that all NIC devices have consistent naming across the entire cloud, <keyword
+          keyref="kw-hos-phrase"/> includes NIC Mapping facilities. This is a mechanism in the Input
+        Model to define a specific NIC interface for a given PCI address for a given class of
+        machine. Generally, when all of the network interfaces are defined in the <xref
+          href="input_model.dita#input_model/co_nicmappings" type="section">Input Model</xref>, it
+        is advisable to use the traditional naming, ie <b>ethN</b>. However, if one or more
+        interfaces are not defined in the Input Model (perhaps because the Ansible network is not
+        defined, or because there is a customer-specific network which is outside the scope of
+        Helion), then it is recommended that a different naming convention is used, to prevent the
+        definitions from colliding with existing configuration data. For example, the NIC mapping
+        definitions could use <b>hos0</b> through <b>hosN</b> rather than <b>eth0</b> through
+          <b>ethN</b>, bearing in mind that the new naming must be consistent across the entire
+        Input Model.</p>
       <p><b>Monasca-based Monitoring</b></p><p>Monasca is a multi-tenant, scalable, fault-tolerant,
         monitoring service. It uses a REST API for high-speed metrics processing and querying, and
-        has a streaming alarm and notification engine. In the <keyword keyref="kw-hos-phrase"/> release, the
-        OpenStack monitoring standard, Monasca, is supported as the <keyword keyref="kw-hos"/> monitoring
-        solution with the following exceptions (which are not implemented):</p>
+        has a streaming alarm and notification engine. In the <keyword keyref="kw-hos-phrase"/>
+        release, the OpenStack monitoring standard, Monasca, is supported as the <keyword
+          keyref="kw-hos"/> monitoring solution with the following exceptions (which are not
+        implemented):</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
@@ -207,8 +207,8 @@
       </ul>
       <p>Monitoring is integrated for the following services: Logging, Neutron, Swift, Ceilometer,
         Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder, Monitoring of Monasca, Nova, HPE Linux for HP
-        Helion.</p><p>Learn more about Monasca here: <xref
-          href="operations/monitoring_service.dita">Monasca Overview</xref></p>
+        Helion.</p><p>Learn more about Monasca here: <xref href="operations/monitoring_service.dita"
+          >Monasca Overview</xref></p>
       <p><b>Monitoring Configuration Options Available for Metrics Database</b></p><p>In this
         release you will have the option to specify which database platform you want to use for the
         metrics database. The default option with the installation is Vertica. The opensource
@@ -228,8 +228,8 @@
         
         -->
       <p>Core features in the <tm tmtype="reg">OpenStack</tm> Foundation’s Kilo release (as
-        identified below) are enabled in the <keyword keyref="kw-hos-phrase"/> standard settings and are
-        included in Helion standard product support. </p>
+        identified below) are enabled in the <keyword keyref="kw-hos-phrase"/> standard settings and
+        are included in Helion standard product support. </p>
       <p>Non-core services (listed in the Features tables below) are provided as-is. Some non-core
         services are included in this release to provide early access to features that HPE may
         support fully in future releases, but HPE cannot guarantee that support will be provided or
@@ -317,13 +317,27 @@
     <section id="known_issues">
       <title>Known Issues in this Release</title>
       <!-- INSTALLATION -->
+      <p><b>The Use of the --limit When Ansible Playbooks Fail Should Be Avoided</b></p>
+      <p>When an Ansible playbook fails, the error will display some text that looks similar to
+        this:</p>
+      <codeblock>'to retry, use: --limit @/home/stack/site.retry'</codeblock>
+      <p>However, in the HPE Helion OpenStack environment this switch is not needed, you can simply
+        rerun the same playbook with no additional content.</p>
+      <p>In addition, the use of the <codeph>--limit</codeph> switch can cause issues with Vertica
+        where it will change the dbadmin SSH key which will cause various issues with your
+        environment.</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations:</p>
       <ul>
         <li>Only one Swift zone is supported.</li>
       </ul>
-      <p><b>Rsync Requests are Blocked by the Firewall on Systems with a Dedicated Swift Network</b></p>
-      <p>When a dedicated network is used for the Swift backend network traffic, requests by the Swift replication process to rsync are blocked by the firewall. To resolve this issue, add the <codeph>swift-rsync</codeph> service to the <codeph>component-endpoints</codeph> in the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file before deploying for the SWIFT network group.</p>
+      <p><b>Rsync Requests are Blocked by the Firewall on Systems with a Dedicated Swift
+        Network</b></p>
+      <p>When a dedicated network is used for the Swift backend network traffic, requests by the
+        Swift replication process to rsync are blocked by the firewall. To resolve this issue, add
+        the <codeph>swift-rsync</codeph> service to the <codeph>component-endpoints</codeph> in the
+          <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file before
+        deploying for the SWIFT network group.</p>
       <p>For example:</p>
       <codeblock>
   #
@@ -433,8 +447,8 @@ ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
         </li>
         <li>Logging Dashboard <ul id="ul_jfb_d45_tt">
             <li>There is no auto-logon function, users must use the credentials in the <xref
-              href="operations/centralized_logging.dita#centralized_logging/interface">Logging Overview</xref>
-              to access the UI.</li>
+                href="operations/centralized_logging.dita#centralized_logging/interface">Logging
+                Overview</xref> to access the UI.</li>
             <li>The Kibana console intermittently will not function correctly if Kibana is on a
               different network than the Operations Console. If both Kibana and the Operations
               Console are on the same network then this issue should not present itself.</li>
@@ -596,10 +610,11 @@ rabbit: ./roles/rabbitmq/templates/rabbitmq-server.logrotate.j2</codeblock>
       <!-- BLOCK STORAGE -->
       <p><b>Issue: Kilo functionality not supported by the Kilo version of
         python-cinderclient</b></p>
-      <p>The version of the python-cinderclient available in <keyword keyref="kw-hos-phrase"/> does not
-        support some functionality available from the cinder services, including incremental backup
-        and private volume types.</p> If you install a new version of python-cinderclient, and if
-      you have OS_ENDPOINT_TYPE defined, you must also define CINDER_ENDPOINT_TYPE. For example: <codeblock>export CINDER_ENDPOINT_TYPE=${OS_ENDPOINT_TYPE}</codeblock>
+      <p>The version of the python-cinderclient available in <keyword keyref="kw-hos-phrase"/> does
+        not support some functionality available from the cinder services, including incremental
+        backup and private volume types.</p> If you install a new version of python-cinderclient,
+      and if you have OS_ENDPOINT_TYPE defined, you must also define CINDER_ENDPOINT_TYPE. For
+      example: <codeblock>export CINDER_ENDPOINT_TYPE=${OS_ENDPOINT_TYPE}</codeblock>
       <p>The workaround for this is the following:</p>
       <ol>
         <li>Create a new virtual environment in a suitable directory:
@@ -618,9 +633,9 @@ virtualenv cinder_venv</codeblock></li>
 cinder --version</codeblock></li>
       </ol>
       <p><b>In the Cinder CLI no more than 1000 Cinder volumes can be displayed</b></p>
-      <p>Due to a known issue with the version of the OpenStack python-cinderclient in 
-        <keyword keyref="kw-hos-phrase"/> (1.1.3), the maximum number of volumes that can be displayed is 1000. The
-        fixed client is 1.3.1. The workaround is to use python-cinderclient 1.3.1.</p>
+      <p>Due to a known issue with the version of the OpenStack python-cinderclient in <keyword
+          keyref="kw-hos-phrase"/> (1.1.3), the maximum number of volumes that can be displayed is
+        1000. The fixed client is 1.3.1. The workaround is to use python-cinderclient 1.3.1.</p>
       <!-- HORIZON -->
       <p><b>Cannot open Launch Instance from Volume on Horizon Dashboard</b></p>
       <p>User cannot open the Launch Instance wizard from a newly created bootable volume’s actions
@@ -662,8 +677,8 @@ cinder --version</codeblock></li>
       <p>These steps will need to be performed after reinstall or upgrade.</p>
       <!-- HEAT -->
       <p><b>Heat autoscaling not supported</b></p>
-      <p>In <keyword keyref="kw-hos-phrase"/>, the auto-scaling in Heat is not supported because the alarm
-        creation in Ceilometer is disabled.</p>
+      <p>In <keyword keyref="kw-hos-phrase"/>, the auto-scaling in Heat is not supported because the
+        alarm creation in Ceilometer is disabled.</p>
       <!-- BAREMETAL -->
       <p><b>Restarting lifecycle manager leaves Apache2 down</b></p>
       <p>If you restart your lifecycle management node, note that Apache2 will not restart on its
@@ -705,11 +720,11 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
         delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</p>
       <!-- NETWORKING -->
       <p><b>IPv6 Traffic Not Supported</b></p>
-      <p>The <keyword keyref="kw-hos-phrase"/> release includes firewall rules to prevent non-essential
-        traffic from accessing the physical systems. However, these rules are limited to IPv4
-        traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will need to
-        block IPv6 at your router, or within the infrastructure.</p><p> You can disable IPv6 on your
-        operating systems by adding the following lines to <b>/etc/sysctl.conf</b>:
+      <p>The <keyword keyref="kw-hos-phrase"/> release includes firewall rules to prevent
+        non-essential traffic from accessing the physical systems. However, these rules are limited
+        to IPv4 traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will
+        need to block IPv6 at your router, or within the infrastructure.</p><p> You can disable IPv6
+        on your operating systems by adding the following lines to <b>/etc/sysctl.conf</b>:
         <codeblock>net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>

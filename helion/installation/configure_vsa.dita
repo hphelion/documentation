@@ -6,8 +6,9 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="../../helion/installation/configure_vsa.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+        href="http://docs.hpcloud.com/helion/installation/configure_vsa.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
     <section id="about">
       <p>This page describes how to configure your VSA backend for the Helion Entry-scale with KVM
         Cloud model. It consists of the following steps:</p>
@@ -44,11 +45,11 @@
         </ul>
       </p></section>
     <section id="notes"><title>Notes</title>
-      <p>The license for the StoreVirtual VSA license is bundled with <keyword keyref="kw-hos"/> and comes
-        with a free trial which allows a maximum limit of 50 TB per node. Hence the total amount of
-        the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend
-        the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which
-        means configured storage on a VSA cluster can be as much as 800 TB.</p>
+      <p>The license for the StoreVirtual VSA license is bundled with <keyword keyref="kw-hos"/> and
+        comes with a free trial which allows a maximum limit of 50 TB per node. Hence the total
+        amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB.
+        To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16
+        nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
       <p>
         <note type="important">You can deploy VSA with Adaptive Optimization (AO) or without. The
           deployment process for each of these options is similar, you just need to make a change in
@@ -80,8 +81,8 @@
       <p><b>RDP/VNC connect method</b></p>
       <p><b>Setup the Local Firewall</b></p>
       <p>If you are going to use this method you will need to open up ports 5900-5905 in your
-        <keyword keyref="kw-hos"/> firewall to ensure this traffic is allowed. These steps walk you through
-        this process:</p>
+          <keyword keyref="kw-hos"/> firewall to ensure this traffic is allowed. These steps walk
+        you through this process:</p>
       <ol>
         <li>Log in to your lifecycle manager.</li>
         <li>Edit your <codeph>~/helion/my_cloud/definition/data/firewall_rules.yml</codeph> file and
@@ -182,12 +183,11 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
         following example provides the steps to install Xming and launch CMC. Another alternative
         (not shown in the documentation) is <xref href="http://mobaxterm.mobatek.net/"
           scope="external" format="html">MobaXterm</xref>. <ol>
-          <li>Download and install <b>Xming</b> on a Windows machine that can access the
-            lifecycle manager. You can download Xming from <xref
-              href="http://sourceforge.net/projects/xming/" format="html" scope="external"
-              >Sourceforge.net</xref>.</li>
-          <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for
-            lifecycle manager. You can do this in PuTTY by: <ol>
+          <li>Download and install <b>Xming</b> on a Windows machine that can access the lifecycle
+            manager. You can download Xming from <xref href="http://sourceforge.net/projects/xming/"
+              format="html" scope="external">Sourceforge.net</xref>.</li>
+          <li>Select <b>Enable X11 forwarding</b> checkbox on the PuTTy session for lifecycle
+            manager. You can do this in PuTTY by: <ol>
               <li>Navigate to the <codeph>Connection -> SSH -> X11</codeph> option in PuTTy</li>
               <li>Click the <codeph>Enable X11 forwarding box to ensure it has a checkmark in
                   it</codeph></li>
@@ -264,8 +264,8 @@ tcp6       0      0 :::5903                 :::*                    LISTEN      
       <p>You will use the information you input to the CMC utility to configure your Cinder backend
         to use your VSA environment.</p>
       <p>To update your Cinder configuration to add VSA storage you must modify the
-          <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file on your
-        lifecycle manager as follows:</p>
+          <codeph>~/helion/my_cloud/config/cinder/cinder.conf.j2</codeph> file on your lifecycle
+        manager as follows:</p>
       <ol>
         <li>Log in to the lifecycle manager.</li>
         <li>Make the following changes to the
@@ -351,12 +351,12 @@ hplefthand_debug: false</codeblock>
                   </tbody>
                 </tgroup>
               </table>
-              <p>[OPTIONAL] <keyword keyref="kw-hos-phrase"/> supports VSA deployment for KVM hypervisor only
-                but it can be used as pre-deployed (or out of the band deployed) Lefthand storage
-                boxes or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It also supports
-                Cinder configuration of physical Lefthand storage device and VSA appliances.
-                Depending upon your setup, you will have to edit the below section if your
-                StoreVirtual Storage array is running LeftHand OS lower than version 11:</p>
+              <p>[OPTIONAL] <keyword keyref="kw-hos-phrase"/> supports VSA deployment for KVM
+                hypervisor only but it can be used as pre-deployed (or out of the band deployed)
+                Lefthand storage boxes or VSA appliances (running on ESX/hyper-v/KVM hypervisor). It
+                also supports Cinder configuration of physical Lefthand storage device and VSA
+                appliances. Depending upon your setup, you will have to edit the below section if
+                your StoreVirtual Storage array is running LeftHand OS lower than version 11:</p>
               <codeblock>[&lt;unique-section-name>]
 volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
 volume_backend_name=lefthand-cliq
@@ -374,8 +374,8 @@ san_ssh_port=16022
 san_clustername=&lt;vsa-cluster-name>
 volume_backend_name=&lt;vsa-backend-name></codeblock>
               <note type="attention"><p>Similar to your <codeph>hplefthand_password</codeph> in the
-                previous example, encryption for your <codeph>san_password</codeph> is supported. If
-                you chose to use encryption you would use the syntax below to express that: </p><codeblock>san_password= {{ '&#60;encrypted san_password>' | hos_user_password_decrypt }}</codeblock>
+                  previous example, encryption for your <codeph>san_password</codeph> is supported.
+                  If you chose to use encryption you would use the syntax below to express that: </p><codeblock>san_password= {{ '&#60;encrypted san_password>' | hos_user_password_decrypt }}</codeblock>
                 <p>See <xref href="../security/encrypted_storage.dita">Encryption of Passwords and
                     Sensitive Data</xref> for more details.</p></note></li>
           </ol></li>
@@ -461,10 +461,12 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
             menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
                 <p><image href="../../media/blockstorage/create_voltype1.png"/></p></li>
           <li>Select the <b>Volume Types</b> tab and then click the <b>Create Volume Type</b> button
-            to display a dialog box. <p><image href="../../media/blockstorage/create_voltype2.png"/></p>
+            to display a dialog box. <p><image href="../../media/blockstorage/create_voltype2.png"
+              /></p>
           </li>
           <li>Enter a unique name for the volume type and then click the <b>Create Volume Type</b>
-            button to complete the action. <p><image href="../../media/blockstorage/create_voltype3.png"/></p></li>
+            button to complete the action. <p><image
+                href="../../media/blockstorage/create_voltype3.png"/></p></li>
         </ol></p>
       <p>The newly created volume type will be displayed in the <b>Volume Types</b> list confirming
         its creation.</p>
@@ -479,18 +481,19 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
               >Accessing Horizon</xref> for details.</li>
           <li>Ensure that you are scoped to your <b>admin</b> Project. Then under the <b>Admin</b>
             menu in the navigation pane, click on <b>Volumes</b> under the <b>System</b> subheading.
-            <p><image href="../../media/blockstorage/associate_voltype1.png"/></p></li>
+                <p><image href="../../media/blockstorage/associate_voltype1.png"/></p></li>
           <li>Click the <b>Volume Type</b> tab to list the volume types. <p><image
-            href="../../media/blockstorage/associate_voltype2.png"/></p></li>
+                href="../../media/blockstorage/associate_voltype2.png"/></p></li>
           <li>In the <b>Actions</b> column of the Volume Type you created earlier, click the
             drop-down option and select <b>View Extra Specs</b> which will bring up the <b>Volume
-              Type Extra Specs</b> options. <p><image href="../../media/blockstorage/associate_voltype3.png"
-              /></p></li>
+              Type Extra Specs</b> options. <p><image
+                href="../../media/blockstorage/associate_voltype3.png"/></p></li>
           <li>Click the <b>Create</b> button on the <b>Volume Type Extra Specs</b> screen. <p><image
-            href="../../media/blockstorage/extraspecs1.png"/></p></li>
-          <li>In the <b>Key</b> field, enter one of the key values in the table in the next section. In the
-              <b>Value</b> box, enter it's corresponding value. Once you have completed that, click the <b>Create</b> button to create the extra
-            volume type specs. <p><image href="../../media/blockstorage/extraspecs2.png"/></p></li>
+                href="../../media/blockstorage/extraspecs1.png"/></p></li>
+          <li>In the <b>Key</b> field, enter one of the key values in the table in the next section.
+            In the <b>Value</b> box, enter it's corresponding value. Once you have completed that,
+            click the <b>Create</b> button to create the extra volume type specs. <p><image
+                href="../../media/blockstorage/extraspecs2.png"/></p></li>
         </ol></p>
       <p>Once the volume type is mapped to the backend, you can create volumes with this volume
         type.</p>
@@ -504,8 +507,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
           format="html" scope="external">here</xref>.</p>
       <p>The following Cinder Volume Type extra-specs options enable control over the VSA storage
         provisioning type (thin or full) and specify protection for your volume backend:</p>
-      <p><table
-          frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
+      <p><table frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>
@@ -521,9 +523,8 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
               <row>
                 <entry>volume_backend_name</entry>
                 <entry><i>volume backend name</i></entry>
-                <entry>The name of the backend to which you want to associate the
-                  volume type, which you also specified earlier in the <codeph>cinder.conf.j2</codeph>
-                  file.</entry>
+                <entry>The name of the backend to which you want to associate the volume type, which
+                  you also specified earlier in the <codeph>cinder.conf.j2</codeph> file.</entry>
               </row>
               <row>
                 <entry>hplh:provisioning (optional)</entry>
@@ -555,7 +556,7 @@ ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock></li>
             </tbody>
           </tgroup>
         </table></p>
-     <p>Here is what a completed list of extra specs may look like:</p>
+      <p>Here is what a completed list of extra specs may look like:</p>
       <p><image href="../../media/blockstorage/extraspecs_vsa.png"/></p>
     </section>
 

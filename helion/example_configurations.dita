@@ -4,57 +4,91 @@
   <title><ph conkeyref="HOS-conrefs/product-title"/>Example Configurations</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="../helion/example_configurations.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/example_configurations.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
     <p>The <keyword keyref="kw-hos-phrase"/> system ships with a collection of pre-qualified example
       configurations. These are designed to help you to get up and running quickly with a minimum
       number of configuration changes.</p>
-    <p>The <keyword keyref="kw-hos"/> input model allows a wide variety of configuration parameters that
-      may, at first glance, appear daunting. The example configurations are designed to simplify
-      this process by providing pre-built and pre-qualified examples that need only a minimum number
-      of modifications to get started.</p>
+    <p>The <keyword keyref="kw-hos"/> input model allows a wide variety of configuration parameters
+      that may, at first glance, appear daunting. The example configurations are designed to
+      simplify this process by providing pre-built and pre-qualified examples that need only a
+      minimum number of modifications to get started.</p>
     <section id="contents">
       <ul>
         <li><xref href="example_configurations.dita#example_configurations/example_configs">
-          <keyword keyref="kw-hos"/> Example Configurations</xref>
+            <keyword keyref="kw-hos"/> Example Configurations</xref>
           <ul>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa">Entry-Scale KVM with VSA Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_esx">Entry-Scale ESX Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_swift">Entry-Scale Swift Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph">Entry-Scale KVM with Ceph Model</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa">Mid-Scale KVM with VSA Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_kvm_vsa"
+                >Entry-Scale KVM with VSA Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_esx"
+                >Entry-Scale ESX Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_swift"
+                >Entry-Scale Swift Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/entryscale_ceph"
+                >Entry-Scale KVM with Ceph Model</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/midscale_kvm_vsa"
+                >Mid-Scale KVM with VSA Model (Technical Preview)</xref></li>
           </ul></li>
-        <li><xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA Model for Your Environment</xref>
+        <li><xref
+            href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
+            >Modifying the Entry-scale KVM with VSA Model for Your Environment</xref>
           <ul>
-            <li><xref href="example_configurations.dita#example_configurations/localizing_inputmodel">Localizing the Input Model</xref>
+            <li><xref
+                href="example_configurations.dita#example_configurations/localizing_inputmodel"
+                >Localizing the Input Model</xref>
               <ul>
-                <li><xref href="example_configurations.dita#example_configurations/networks">Networks.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/nicmappings">Nic_mappings.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/netinterfaces">Net_interfaces.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/networkgroups">Network_groups.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/servers">Servers.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/networks"
+                    >Networks.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/nicmappings"
+                    >Nic_mappings.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/netinterfaces"
+                    >Net_interfaces.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/networkgroups"
+                    >Network_groups.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/servers"
+                    >Servers.yml</xref></li>
               </ul></li>
-            <li><xref href="example_configurations.dita#example_configurations/customizing_inputmodel">Customizing the Input Model</xref>
+            <li><xref
+                href="example_configurations.dita#example_configurations/customizing_inputmodel"
+                >Customizing the Input Model</xref>
               <ul>
-                <li><xref href="example_configurations.dita#example_configurations/disks_controller">Disks_controller.yml</xref>
+                <li><xref href="example_configurations.dita#example_configurations/disks_controller"
+                    >Disks_controller.yml</xref>
                   <ul>
-                    <li><xref href="example_configurations.dita#example_configurations/filesystems">File Systems Storage</xref></li>
-                    <li><xref href="example_configurations.dita#example_configurations/swiftstorage">Swift Storage</xref></li>
+                    <li><xref href="example_configurations.dita#example_configurations/filesystems"
+                        >File Systems Storage</xref></li>
+                    <li><xref href="example_configurations.dita#example_configurations/swiftstorage"
+                        >Swift Storage</xref></li>
                   </ul></li>
-                <li><xref href="example_configurations.dita#example_configurations/disks_vsa">Disks_vsa.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/disks_compute">Disks_compute.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/disks_vsa"
+                    >Disks_vsa.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/disks_compute"
+                    >Disks_compute.yml</xref></li>
               </ul></li>
             <li><xref href="example_configurations.dita#example_configurations/standalone">Using a
                 Standalone Lifecycle-Manager Node</xref>
               <ul>
-                <li><xref href="example_configurations.dita#example_configurations/control_plane_yml">Control_plane.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/server_roles_yml">Server_roles.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/net_interfaces_yml">Net_interfaces.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/disks_lifecycle_manager_yml">Disks_lifecycle_manager.yml</xref></li>
-                <li><xref href="example_configurations.dita#example_configurations/servers_yml">Servers.yml</xref></li>
+                <li><xref
+                    href="example_configurations.dita#example_configurations/control_plane_yml"
+                    >Control_plane.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/server_roles_yml"
+                    >Server_roles.yml</xref></li>
+                <li><xref
+                    href="example_configurations.dita#example_configurations/net_interfaces_yml"
+                    >Net_interfaces.yml</xref></li>
+                <li><xref
+                    href="example_configurations.dita#example_configurations/disks_lifecycle_manager_yml"
+                    >Disks_lifecycle_manager.yml</xref></li>
+                <li><xref href="example_configurations.dita#example_configurations/servers_yml"
+                    >Servers.yml</xref></li>
               </ul></li>
-            <li><xref href="example_configurations.dita#example_configurations/without_dvr">Configuring <keyword keyref="kw-hos"/> without DVR</xref></li>
-            <li><xref href="example_configurations.dita#example_configurations/without_l3agent">Configuring <keyword keyref="kw-hos"/> with Provider VLANs and Physical Routers Only</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/without_dvr"
+                >Configuring <keyword keyref="kw-hos"/> without DVR</xref></li>
+            <li><xref href="example_configurations.dita#example_configurations/without_l3agent"
+                >Configuring <keyword keyref="kw-hos"/> with Provider VLANs and Physical Routers
+                Only</xref></li>
           </ul></li>
 
       </ul>
@@ -63,10 +97,11 @@
       <p>This section briefly describes the various example configurations and their capabilities.
         It also describes in detail, for the entry-scale-kvm-vsa example, how you can adapt the
         input model to work in your environment.</p>
-      <p><keyword keyref="kw-hos-phrase"/> ships with two classes of sample cloud models: examples and
-        tech-preview. The models in the examples directory have been qualified by our Quality
+      <p><keyword keyref="kw-hos-phrase"/> ships with two classes of sample cloud models: examples
+        and tech-preview. The models in the examples directory have been qualified by our Quality
         Engineering team, while the tech-preview models are more experimental.</p>
-      <p>The following pre-qualified examples are shipped with <keyword keyref="kw-hos-phrase"/>:</p>
+      <p>The following pre-qualified examples are shipped with <keyword keyref="kw-hos-phrase"
+        />:</p>
       <ul>
         <li>Entry-scale KVM with VSA model (entry-scale-kvm-vsa)</li>
         <li>Entry-scale Swift-only model (entry-scale-swift)</li>
@@ -80,11 +115,11 @@
       <ul>
         <li>Mid-scale KVM with VSA model (mid-scale-kvm-vsa)</li>
       </ul>
-      <p>In this model, the cloud control plane
-        is subdivided into a number of dedicated service clusters to provide more processing power
-        for individual control plane elements. This enables a greater number of resources to be
-        supported (compute nodes, Swift object servers). This model also shows how a segmented
-        network can be expressed in the <keyword keyref="kw-hos"/> model.</p>
+      <p>In this model, the cloud control plane is subdivided into a number of dedicated service
+        clusters to provide more processing power for individual control plane elements. This
+        enables a greater number of resources to be supported (compute nodes, Swift object servers).
+        This model also shows how a segmented network can be expressed in the <keyword
+          keyref="kw-hos"/> model.</p>
     </section>
     <section id="entryscale_kvm_vsa"><title>Entry-Scale KVM with VSA Model</title>
       <p>This model provides a KVM-based cloud with VSA for volume storage, and has been tested to a
@@ -101,7 +136,8 @@
         storage device, such as a 3PAR array, which would reduce the minimum server count to
         four.</p>
       <p><image href="../media/examples/entry_scale_kvm_vsa.png"/></p>
-      <p><xref href="../media/examples/entry_scale_kvm_vsa_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_lg.png" scope="external" format="html"
+          >Download a high-resolution version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
@@ -121,8 +157,8 @@
         network must be reachable from the EXTERNAL_VM network if you want virtual machines to be
         able to make API calls to the cloud. "Internal Routing" refers to whatever routing you want
         to provide to allow administrators to access the Management network.</p>
-      <p>If you are using <keyword keyref="kw-hos"/> to install the operating system, then an IPMI/iLO
-        network connected to the IPMI/iLO ports of all servers and routable from the
+      <p>If you are using <keyword keyref="kw-hos"/> to install the operating system, then an
+        IPMI/iLO network connected to the IPMI/iLO ports of all servers and routable from the
         lifecycle manager server is also required for BIOS and power management of the nodes during
         the operating system installation process.</p>
       <p>The example uses the following disk configurations:</p>
@@ -131,21 +167,24 @@
         <li><b>VSA</b> - One operating system disk and two disks for VSA storage.</li>
         <li><b>Compute</b> - One operating system disk and one disk for virtual machine ephemeral
           storage.</li>
-      </ul>For details about how to modify this example to match your environment, see <xref href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa">Modifying the Entry-scale KVM with VSA model for your Environment</xref>. </section>
+      </ul>For details about how to modify this example to match your environment, see <xref
+        href="example_configurations.dita#example_configurations/modify_entryscale_kvm_vsa"
+        >Modifying the Entry-scale KVM with VSA model for your Environment</xref>. </section>
     <section id="entryscale_esx"><title>Entry-Scale ESX Model</title>
       <p>This example shows how to integrate <keyword keyref="kw-hos"/> with ESX. The controller
         configuration is essentially the same as in the KVM example, but the resource nodes are
         provided by vCenter. In addition, a number of controller virtual machines are created for
         each vCenter cluster: one ESX Compute virtual machine (which provides the nova-compute proxy
         for vCenter) and one OVSvApp virtual machine per cluster member (which provides network
-        access). These virtual machines are created automatically by <keyword keyref="kw-hos"/> as part of
-        activating the vCenter cluster, and are therefore not defined in the example.</p>
+        access). These virtual machines are created automatically by <keyword keyref="kw-hos"/> as
+        part of activating the vCenter cluster, and are therefore not defined in the example.</p>
       <p><image href="../media/examples/entry_scale_esx.png"/></p>
       <!-- HP
         <p><image href="../media/examples/entry_scale_esx_hpe.png"/></p>
         <p><xref href="../media/examples/entry_scale_esx_hpe_lg.png" scope="external" format="html">Download a high-res version</xref></p>
         -->
-      <p><xref href="../media/examples/entry_scale_esx_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_esx_lg.png" scope="external" format="html"
+          >Download a high-resolution version</xref></p>
       <p>The physical networking configuration is also largely the same as the KVM example, with the
         exception of the GUEST network which uses tenant VLANs as the Neutron networking model
         rather than VxLAN.</p>
@@ -156,7 +195,8 @@
       <p>This example shows how <keyword keyref="kw-hos"/> can be configured to provide a Swift-only
         configuration, consisting of three controllers and one or more Swift object servers.</p>
       <p><image href="../media/examples/entry_scale_swift.png"/></p>
-      <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_swift_lg.png" scope="external" format="html"
+          >Download a high-resolution version</xref></p>
       <p>The example requires the following networks:</p>
       <ul>
         <li><b>External API</b> - This is the network that users will use to make requests to the
@@ -172,8 +212,8 @@
       <p>In the diagram "External Routing" refers to whatever routing you want to provide to allow
         users to access the External API. "Internal Routing" refers to whatever routing you want to
         provide to allow administrators to access the Management network.</p>
-      <p>If you are using <keyword keyref="kw-hos"/> to install the operating system, then an IPMI/iLO
-        network connected to the IPMI/iLO ports of all servers and routable from the
+      <p>If you are using <keyword keyref="kw-hos"/> to install the operating system, then an
+        IPMI/iLO network connected to the IPMI/iLO ports of all servers and routable from the
         lifecycle manager is also required for BIOS and power management of the node during the
         operating system installation process.</p>
       <p>In the example the controllers use one disk for the operating system and two disks for
@@ -186,21 +226,24 @@
         compute configuration are essentially the same as in the KVM example, but the backend Cinder
         storage is provided by Ceph.</p>
       <p><image href="../media/examples/entry_scale_kvm_ceph.png"/></p>
-      <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_kvm_ceph_lg.png" scope="external" format="html"
+          >Download a high-resolution version</xref></p>
     </section>
     <section id="midscale_kvm_vsa"><title>Mid-Scale KVM with VSA Model (Technical Preview)</title>
-      <p>The mid-scale model, which is included as a technology preview in <keyword keyref="kw-hos-phrase"/>,
-        illustrates two important aspects of configuring <keyword keyref="kw-hos"/> for increased scale.
-        The controller services are distributed across a greater number of controllers and a number
-        of the networks are configured as multiple L3 segments (implementing per-rack
-        networking).</p>
+      <p>The mid-scale model, which is included as a technology preview in <keyword
+          keyref="kw-hos-phrase"/>, illustrates two important aspects of configuring <keyword
+          keyref="kw-hos"/> for increased scale. The controller services are distributed across a
+        greater number of controllers and a number of the networks are configured as multiple L3
+        segments (implementing per-rack networking).</p>
       <p><image href="../media/examples/mid_scale_kvm_vsa.png"/></p>
       <p><image href="../media/examples/mid_scale_kvm_vsa_notes.png"/></p>
-      <p><xref href="../media/examples/mid_scale_kvm_vsa_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/mid_scale_kvm_vsa_lg.png" scope="external" format="html"
+          >Download a high-resolution version</xref></p>
       <p>The distribution of services across controllers is only one possible configuration, and
         other combinations can also be expressed.</p>
     </section>
-    <section id="modify_entryscale_kvm_vsa"><title>Modifying the Entry-Scale KVM with VSA Model for Your Environment</title>
+    <section id="modify_entryscale_kvm_vsa"><title>Modifying the Entry-Scale KVM with VSA Model for
+        Your Environment</title>
       <p>This section covers the changes that need to be made to the input model to deploy and run
         this cloud model in your environment.</p>
       <p>This section is written from the perspective of the <codeph>entry-scale-kvm-vsa</codeph>
@@ -375,8 +418,10 @@
         models or servers with different network hardware.</p>
       <p>Each mapping lists a set of ports with the following information:</p>
       <ul>
-        <li><b>Logical name</b> - <keyword keyref="kw-hos"/> uses the form <codeph>hedN</codeph>.</li>
-        <li><b>Type</b> - Only simple-port types are supported in <keyword keyref="kw-hos-phrase"/>.</li>
+        <li><b>Logical name</b> - <keyword keyref="kw-hos"/> uses the form
+          <codeph>hedN</codeph>.</li>
+        <li><b>Type</b> - Only simple-port types are supported in <keyword keyref="kw-hos-phrase"
+          />.</li>
         <li><b>Bus-address</b> - The PIC bus address of the port.</li>
       </ul>
       <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the
@@ -554,22 +599,25 @@
       <p><b>role</b> - A string that refers to an entry in <codeph>server_roles.yml</codeph> that
         tells the system how to configure the disks and network interfaces for this server. Roles
         are also used to define which servers can be used for specific purposes. Adding and changing
-        roles is beyond the scope of this walkthrough - for more information, see <xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref>.</p>
+        roles is beyond the scope of this walkthrough - for more information, see <xref
+          href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref>.</p>
       <p><b>server-group</b> - Tells the system how this server is physically related to networks
         and other servers. Server groups are used to ensure that servers in a cluster are selected
         from different physical groups. The example provides a set of server groups that divide the
         servers into three sets called <b>RACK1</b>, <b>RACK2</b>, and <b>RACK3</b>. Modifying the
         server group structure is beyond the scope of this walkthrough - for more information, see
-        <xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref>.</p>
+          <xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref>.</p>
       <p><b>nic-mapping</b> - The name of a network port mapping definition (for more information,
-        see <xref href="example_configurations.dita#example_configurations/nicmappings">Nic_mappings.yml</xref>). You need to set this to the mapping that corresponds to this
+        see <xref href="example_configurations.dita#example_configurations/nicmappings"
+          >Nic_mappings.yml</xref>). You need to set this to the mapping that corresponds to this
         server.</p>
       <p><b>mac-addr</b> - The MAC address of the interface associated with this server that will be
         used for PXE boot.</p>
       <p><b>ilo-ip</b> - The IP address of the iLO or IPMI port for this server.</p>
       <p><b>ilo-user and ilo-password</b> - The login details used to access the iLO or IPMI port of
         this server. The iLO password value can be provided as an OpenSSL encrypted string. (For
-        instructions on how to generate encrypted passwords, see <xref href="installation/install_entryscale_kvm.dita#install_kvm/configuration"/>.</p>
+        instructions on how to generate encrypted passwords, see <xref
+          href="installation/install_entryscale_kvm.dita#install_kvm/configuration"/>.</p>
     </section>
     <section id="customizing_inputmodel"><title>Customizing the Input Model</title>
       <p>This section covers additional changes that you can make to further adapt the example to
@@ -646,14 +694,16 @@
                  - account
                  - container
                        - object-0</codeblock>
-      <p>For instruction to configure additional Swift storage, see <xref href="objectstorage/allocating_disk_drives.dita"/>.</p>
+      <p>For instruction to configure additional Swift storage, see <xref
+          href="objectstorage/allocating_disk_drives.dita"/>.</p>
     </section>
     <section id="disks_vsa"><title>Disks_vsa.yml</title>
       <p>VSA storage is configured as a device-group and has a syntax that allows disks to be
         allocated for data storage or for adaptive optimization (caching). As a best practice, you
         should use solid state drives for adaptive optimization. The example disk configuration for
         VSA nodes has two disks, one for data and one of adaptive optimization. (For more
-        information, see <xref href="installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao">VSA with
+        information, see <xref
+          href="installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao">VSA with
           AO or without AO</xref>.)</p>
       <codeblock>
    device-groups:
@@ -698,7 +748,8 @@
       <p>All of the examples described above host the lifecycle manager on one of the control nodes.
         It is also possible to deploy this service on a dedicated node, as shown below: </p>
       <p><image href="../media/examples/entry_scale_kvm_vsa_shared.png"/></p>
-      <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external" format="html">Download a high-resolution version</xref></p>
+      <p><xref href="../media/examples/entry_scale_kvm_vsa_shared_lg.png" scope="external"
+          format="html">Download a high-resolution version</xref></p>
       <p>A typical use case for wanting to run the dedicated lifecycle manager is to be able to test
         the deployment of different configurations without having to re-install the first server.
         Some administrators might also prefer the additional security of keeping all of the
@@ -773,7 +824,9 @@
           network-groups:
              - MANAGEMENT</codeblock>
       <p>This assumes that the server uses the same physical networking layout as the other servers
-        in the example. For details on how to modify this to match your configuration, see <xref href="example_configurations.dita#example_configurations/netinterfaces">Net_interfaces.yml</xref>.</p>
+        in the example. For details on how to modify this to match your configuration, see <xref
+          href="example_configurations.dita#example_configurations/netinterfaces"
+          >Net_interfaces.yml</xref>.</p>
     </section>
     <section id="disks_lifecycle_manager_yml"><title>Disks_lifecycle_manager.yml</title>
       <p>In the examples, disk-models are provided as separate files (this is just a convention, not
@@ -834,44 +887,50 @@
        role: CONTROLLER-ROLE</codeblock>
     </section>
     <section id="without_dvr"><title>Configuring <keyword keyref="kw-hos"/> without DVR</title>
-      <p>By default in the KVM model, the Neutron service utilizes distributed routing (DVR). This is the recommended setup. However, if you would like to disable this feature, here are the steps to achieve this.</p>
+      <p>By default in the KVM model, the Neutron service utilizes distributed routing (DVR). This
+        is the recommended setup. However, if you would like to disable this feature, here are the
+        steps to achieve this.</p>
       <p>On your lifecycle manager, make the following changes:</p>
       <ol>
-        <li>In the <codeph>~/helion/my_cloud/config/neutron/neutron.conf.j2</codeph> file, change the line below from:
-          <codeblock>router_distributed = {{ router_distributed }}</codeblock>
-        <p>to:</p>
+        <li>In the <codeph>~/helion/my_cloud/config/neutron/neutron.conf.j2</codeph> file, change
+          the line below from: <codeblock>router_distributed = {{ router_distributed }}</codeblock>
+          <p>to:</p>
           <codeblock>router_distributed = False</codeblock></li>
-        <li>In the <codeph>~/helion/my_cloud/config/neutron/ml2_conf.ini.j2</codeph> file, change the line below from:
-          <codeblock>enable_distributed_routing = True</codeblock>
+        <li>In the <codeph>~/helion/my_cloud/config/neutron/ml2_conf.ini.j2</codeph> file, change
+          the line below from: <codeblock>enable_distributed_routing = True</codeblock>
           <p>to:</p>
           <codeblock>enable_distributed_routing = False</codeblock></li>
-        <li>In the <codeph>~/helion/my_cloud/config/neutron/l3_agent.ini.j2</codeph> file, change the line below from:
-          <codeblock>agent_mode = {{ neutron_l3_agent_mode }}</codeblock>
+        <li>In the <codeph>~/helion/my_cloud/config/neutron/l3_agent.ini.j2</codeph> file, change
+          the line below from: <codeblock>agent_mode = {{ neutron_l3_agent_mode }}</codeblock>
           <p>to:</p>
           <codeblock>agent_mode = legacy</codeblock></li>
-        <li>In the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file, remove the following values from the Compute resource <codeph>service-components</codeph> list:
+        <li>In the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file, remove
+          the following values from the Compute resource <codeph>service-components</codeph> list:
           <codeblock>
    - neutron-l3-agent
    - neutron-metadata-agent</codeblock></li>
       </ol>
     </section>
-    <section id="without_l3agent"><title>Configuring <keyword keyref="kw-hos"/> with Provider VLANs and Physical Routers Only</title>
-      <p>Another option for configuring Neutron is to use provider VLANs and physical routers only, here are the steps to achieve this.</p>
+    <section id="without_l3agent"><title>Configuring <keyword keyref="kw-hos"/> with Provider VLANs
+        and Physical Routers Only</title>
+      <p>Another option for configuring Neutron is to use provider VLANs and physical routers only,
+        here are the steps to achieve this.</p>
       <p>On your lifecycle manager, make the following changes:</p>
       <ol>
-        <li>In the <codeph>~/helion/my_cloud/config/neutron/neutron.conf.j2</codeph> file, change the line below from:
-          <codeblock>router_distributed = {{ router_distributed }}</codeblock>
+        <li>In the <codeph>~/helion/my_cloud/config/neutron/neutron.conf.j2</codeph> file, change
+          the line below from: <codeblock>router_distributed = {{ router_distributed }}</codeblock>
           <p>to:</p>
           <codeblock>router_distributed = False</codeblock></li>
-        <li>In the <codeph>~/helion/my_cloud/config/neutron/ml2_conf.ini.j2</codeph> file, change the line below from:
-          <codeblock>enable_distributed_routing = True</codeblock>
+        <li>In the <codeph>~/helion/my_cloud/config/neutron/ml2_conf.ini.j2</codeph> file, change
+          the line below from: <codeblock>enable_distributed_routing = True</codeblock>
           <p>to:</p>
           <codeblock>enable_distributed_routing = False</codeblock></li>
-        <li>In the <codeph>~/helion/my_cloud/config/neutron/dhcp_agent.ini.j2</codeph> file, change the line below from:
-          <codeblock>enable_isolated_metadata = {{ neutron_enable_isolated_metadata }}</codeblock>
+        <li>In the <codeph>~/helion/my_cloud/config/neutron/dhcp_agent.ini.j2</codeph> file, change
+          the line below from: <codeblock>enable_isolated_metadata = {{ neutron_enable_isolated_metadata }}</codeblock>
           <p>to:</p>
           <codeblock>enable_isolated_metadata = True</codeblock></li>
-        <li>In the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file, remove the following values from the Compute resource <codeph>service-components</codeph> list:
+        <li>In the <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph> file, remove
+          the following values from the Compute resource <codeph>service-components</codeph> list:
           <codeblock>
   - neutron-l3-agent
   - neutron-metadata-agent</codeblock></li>

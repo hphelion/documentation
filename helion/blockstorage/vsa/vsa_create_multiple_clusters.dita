@@ -5,14 +5,14 @@
   <body>
     <!--Needs Work-->
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <p>The <keyword keyref="kw-hos-phrase"/> input model comes with one cluster and three VSA nodes. This is
-      the default configuration available in the input model, but the input model allows you to
-      create multiple VSA clusters of same or different types by modifying the YAML file. </p>
+    <p>The <keyword keyref="kw-hos-phrase"/> input model comes with one cluster and three VSA nodes.
+      This is the default configuration available in the input model, but the input model allows you
+      to create multiple VSA clusters of same or different types by modifying the YAML file. </p>
     <p>
       <note type="tip"><p>The term <b>add</b> and <b>update</b> in the document means editing the
-        respective YAML files to add or update the
-          configurations/values.</p><p><b>Prerequisites</b></p><p>You must have a minimum of three nodes
-          per VSA cluster.</p></note>
+          respective YAML files to add or update the
+            configurations/values.</p><p><b>Prerequisites</b></p><p>You must have a minimum of three
+          nodes per VSA cluster.</p></note>
     </p>
     <section>
       <title>Cloud Configuration Changes to Create More Than One Cluster </title>
@@ -54,7 +54,7 @@
       ilo-user: Administrator
       mac-addr: 5C:B9:01:78:2D:00
 
-- id: vsa4
+    - id: vsa4
       ip-addr: 192.168.62.18
       role: VSA-ROLE-1
       server-group: RACK1
@@ -159,14 +159,14 @@
         optimization (AO) enabled and another without adoptive optimization.</p>
       <ol id="ol_ugh_z2x_jt">
         <li>Add new nodes in <codeph>severs.yml</codeph> with a unique name.</li>
-        <li>Add a new resource node under  <b>resources</b> in <codeph>control_plane.yml</codeph>
-          with  a unique name, resource-prefix, and server-role.</li>
+        <li>Add a new resource node under <b>resources</b> in <codeph>control_plane.yml</codeph>
+          with a unique name, resource-prefix, and server-role.</li>
         <li>Modify the <codeph>disk_set</codeph> for AO and without AO. Ensure that you use
-          different files and different <codeph>disk_set</codeph>. <note>In the <keyword keyref="kw-hos-phrase"/>
-            input model you will find only a <codeph>disks_vsa.yml</codeph> file, which contains
-            the information for AO and without AO. You must create a separate YAML file and enter
-            the configuration information of AO in that file. For creating non AO disk, refer to
-              <xref
+          different files and different <codeph>disk_set</codeph>. <note>In the <keyword
+              keyref="kw-hos-phrase"/> input model you will find only a
+              <codeph>disks_vsa.yml</codeph> file, which contains the information for AO and without
+            AO. You must create a separate YAML file and enter the configuration information of AO
+            in that file. For creating non AO disk, refer to <xref
               href="../../installation/configure_vsa.dita#config_vsa/deploy-vsa-with-ao-without-ao"
             />.</note></li>
         <li>Update <codeph>server_roles.yml</codeph> with new VSA nodes and appropriate

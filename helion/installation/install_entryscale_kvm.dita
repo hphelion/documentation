@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud
-    with KVM</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud with
+    KVM</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-        href="../../helion/installation/install_entryscale_kvm.html"
+        href="http://docs.hpcloud.com/helion/installation/install_entryscale_kvm.html"
         scope="external" format="html">Click here</xref> for a frameless version of this page where
       the links should work.</note>
     <section id="about">
       <p>This page describes the common installation steps that are required for each of the
-        <keyword keyref="kw-hos"/> Entry-scale cloud models that utilize the KVM hypervisor on the Compute
-        nodes. This includes the following example configurations:</p>
+          <keyword keyref="kw-hos"/> Entry-scale cloud models that utilize the KVM hypervisor on the
+        Compute nodes. This includes the following example configurations:</p>
       <ul>
         <li>Entry-scale KVM with VSA model</li>
         <li>Entry-scale KVM with Ceph model</li>
@@ -40,6 +40,8 @@
             Overview</xref>.</li>
         <li>Review the <xref href="../hardware.dita">recommended minimum hardware
             requirements</xref> that we have listed.</li>
+        <li>Review the <xref href="../releasenotes.dita">Release Notes</xref> to make yourself aware
+          of any known issues and limitations.</li>
         <li>The installation process can occur in different phases. For example, you can install the
           control plane only and then add Compute nodes afterwards if you would like.</li>
         <!-- consider including steps to achieve this -->
@@ -52,6 +54,12 @@
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
           on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
+        <li>You may see the terms deployer and lifecycle manager used interchangeably. These are
+          referring to the same nodes in your environment.</li>
+        <li>When running the Ansible playbook in this installation guide, if a runbook fails you
+          will see in the error response to use the <codeph>--limit</codeph> switch when retrying a
+          playbook. This should be avoided. You can simply re-run any playbook without this
+          switch.</li>
       </ul>
     </section>
     <section id="prereqs">
@@ -226,15 +234,15 @@ git commit -m "My config or other commit message"</codeblock></li>
     </section>
     <section id="provision"><title>Provision Your Baremetal Nodes</title>
       <p>To provision the baremetal nodes in your cloud deployment you can either use the automated
-        operating system installation process provided by <keyword keyref="kw-hos"/> or you can use the
-        3rd party installation tooling of your choice. We will outline both methods below:</p>
+        operating system installation process provided by <keyword keyref="kw-hos"/> or you can use
+        the 3rd party installation tooling of your choice. We will outline both methods below:</p>
       <p id="thirdparty"><b>Using 3rd Party Baremetal Installers</b></p>
       <p>If you do not wish to use the automated operating system installation tooling included with
-        <keyword keyref="kw-hos-version"/> then the requirements that have to be met using the installation
-        tooling of your choice are:</p>
+          <keyword keyref="kw-hos-version"/> then the requirements that have to be met using the
+        installation tooling of your choice are:</p>
       <ul>
-        <li>The operating system must be installed via the HPE Linux for <keyword keyref="kw-hos"/> ISO
-          provided on the <xref
+        <li>The operating system must be installed via the HPE Linux for <keyword keyref="kw-hos"/>
+          ISO provided on the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page.</li>
         <li>Each node must have SSH keys in place that allow the user who will be doing the
@@ -249,10 +257,10 @@ git commit -m "My config or other commit message"</codeblock></li>
       <p>If you chose this method for installing your baremetal hardware, skip forward to the <xref
           href="install_entryscale_kvm.dita#install_kvm/config_processor">Run the Configuration
           Processor</xref> step.</p>
-      <p>If you would like to use the automated operating system installation tools provided by 
-        <keyword keyref="kw-hos-version"/> then complete all of the steps below.</p>
-      <p><b>Using the Automated Operating System Installation Provided by 
-        <keyword keyref="kw-hos"/></b></p>
+      <p>If you would like to use the automated operating system installation tools provided by
+          <keyword keyref="kw-hos-version"/> then complete all of the steps below.</p>
+      <p><b>Using the Automated Operating System Installation Provided by <keyword keyref="kw-hos"
+          /></b></p>
       <p><b>Part One: Deploy Cobbler</b></p>
       <p>This phase of the install process takes the baremetal information that was provided in
           <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this

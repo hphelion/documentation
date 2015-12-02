@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_esx">
-  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud
-    with ESX</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud with
+    ESX</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="../../helion/installation/install_entryscale_esx.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
-    <p>This document describes the procedure for the deployment of an ESX cloud using input model and
-      adding more ESX hosts to an already activated cluster.</p>
+        href="http://docs.hpcloud.com/helion/installation/install_entryscale_esx.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
+    <p>This document describes the procedure for the deployment of an ESX cloud using input model
+      and adding more ESX hosts to an already activated cluster.</p>
     <p> It contains the following topics:<ul id="ul_wrs_dwq_lt">
         <li><xref href="#install_esx/prereqs" format="dita">Prerequisites</xref></li>
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
@@ -221,7 +222,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               <li>vCenter Username - the admin privilege username for the vCenter.</li>
               <li>vCenter Password - the password for the above username.</li>
               <li>vCenter Port - the vCenter server port. By default it is 443. <note
-                type="important">Please do not change the vCenter Port unless you are certain it is required to do so.</note></li>
+                  type="important">Please do not change the vCenter Port unless you are certain it
+                  is required to do so.</note></li>
             </ul></p><p><b>Sample
             Output:</b><codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
 +------------+--------------------------------------+
@@ -263,7 +265,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol></section>
     <section id="register-network"><b>Register ESX Cloud Network Configuration</b>
       <p>This involves getting a sample network information template. Fill the details of the
-        template and use that template to register the cloud network configuration for the vCenter.</p>
+        template and use that template to register the cloud network configuration for the
+        vCenter.</p>
       <p>
         <ol>
           <li>Execute the following command to get the network information
@@ -443,8 +446,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
     <section id="import-cluster"><b>Import Cluster </b><p>You can use one or more ESX clusters for
         ESX Cloud Deployment. When an Import Cluster is invoked, required ESX Compute Proxy and
         OVSvApp nodes are deployed.</p><p>vCenter can have multiple clusters, but the current
-          release of <keyword keyref="kw-hos"/> supports only sequential import of clusters (one-by-one).
-        Therefore, you can import only one cluster at a time using the <codeph>eon
+        release of <keyword keyref="kw-hos"/> supports only sequential import of clusters
+        (one-by-one). Therefore, you can import only one cluster at a time using the <codeph>eon
           cluster-import</codeph> command.</p><p>
         <ol>
           <li> Import the cluster for the EON database under the given vCenter. <codeblock><codeph># eon cluster-import --vcenter-id &lt;vCenter ID> --cluster-name &lt;Cluster Name> --cluster-moid &lt;Cluster Moid></codeph></codeblock>where:<p>

@@ -5,13 +5,13 @@
   <body>
     <!--Needs Edit-->
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <section><keyword keyref="kw-hos-phrase"/> comes with a UI, the Dayzero Installer, for installing your
-      cloud. Rather than searching through and editing a number of YAML files to input your specific
-      configuration data, finding the correct location, and maintaining the format of the files, the
-      UI presents fields in which you may enter your information. </section>
+    <section><keyword keyref="kw-hos-phrase"/> comes with a UI, the Dayzero Installer, for
+      installing your cloud. Rather than searching through and editing a number of YAML files to
+      input your specific configuration data, finding the correct location, and maintaining the
+      format of the files, the UI presents fields in which you may enter your information. </section>
     <section>In addition, rather than having to run a series of commands to execute the cobbler and
-      Ansible scripts that initiate the installation of <keyword keyref="kw-hos"/>, the UI application runs
-      them behind the scenes. </section>
+      Ansible scripts that initiate the installation of <keyword keyref="kw-hos"/>, the UI
+      application runs them behind the scenes. </section>
     <section>While the UI app does more than simply populate the configuration files that the
       configuration processor uses as input to its processes, it does populate them. Therefore you
       can inspect the files whenever you like, or before reconfiguring your cloud. </section>
@@ -60,7 +60,7 @@
           </ul></li>
         <li>Choose your <xref href="example_configurations.dita">cloud model/example</xref>
           template. No action other than an understanding of your needs is necessary at this point.
-          You will indicate which model you wish to deploy in a GUI screen. Note, however,  that the
+          You will indicate which model you wish to deploy in a GUI screen. Note, however, that the
           only VSA options for the <i>Entry-scale KVM with VSA</i> model is to have 0 or 3 VSA
           nodes. Note also that you cannot run the deployer/lifecycle manager on a dedicated node
           using the GUI installer; it can only run in the control plane using the models exposed in
@@ -69,28 +69,25 @@
           Linux for HPE Helion, on your nodes (servers) if you prefer. Otherwise, the installer will
           install it for you. <p>If you are installing the operating system on all your nodes
             yourself, note that you must do so using the Linux for HPE Helion image that is included
-            in the <keyword keyref="kw-hos-phrase"/> package. You may find the instructions on the following
-            pages helpful even when using your own tools to install the operating systems:</p>
+            in the <keyword keyref="kw-hos-phrase"/> package. You may find the instructions on the
+            following pages helpful even when using your own tools to install the operating
+            systems:</p>
           <ul>
-            <li><xref
-                href="installation/install_entryscale_kvm.dita#install_kvm"
-                >Operating system install help for KVM-based clouds</xref></li>
-            <li><xref
-                href="installation/install_entryscale_esx.dita#install_esx"
-                >Operating system install help for ESX-based clouds</xref></li>
+            <li><xref href="installation/install_entryscale_kvm.dita#install_kvm">Operating system
+                install help for KVM-based clouds</xref></li>
+            <li><xref href="installation/install_entryscale_esx.dita#install_esx">Operating system
+                install help for ESX-based clouds</xref></li>
           </ul>
           <note>When following the guidance for operating system installation on those pages, stop
             before the sections for <b>Running the configuration processor</b>. The GUI installer
             will run those steps, and in the case where you have the GUI also install the operating
             systems, it will run all the previous steps (playbooks) as well.</note></li>
-        
+
       </ol>
-      
     </section>
-      <section id="gui_use"><title>Get ready to run the GUI installer</title> Two final steps you
-      must take before running the GUI installer, whether you are allowing it to install the
-      operating systems on your nodes, or you are performing that task yourself using your own
-      tools: <ol>
+    <section id="gui_use"><title>Get ready to run the GUI installer</title> Two final steps you must
+      take before running the GUI installer, whether you are allowing it to install the operating
+      systems on your nodes, or you are performing that task yourself using your own tools: <ol>
         <li> For ESX installations, at this point you must modify the<b>
             ~/helion/hos/ansible/hlm-deploy.yml</b> to uncomment the line containing eon-deploy.yml.
           You must then comment out the line containing ceph-deploy.yml, vsa-deploy.yml, and
@@ -106,9 +103,8 @@
       </ol>
     </section>
     <section><title>Run the GUI to install your cloud</title>
-      <p>Now that the OS, HPE Linux for HPE Helion, is installed on all your servers
-        (nodes), or the GUI will perform all deployment tasks for you, you are ready to launch
-        it.</p>
+      <p>Now that the OS, HPE Linux for HPE Helion, is installed on all your servers (nodes), or the
+        GUI will perform all deployment tasks for you, you are ready to launch it.</p>
       <p>The GUI is found on the lifecycle manager node at: <b>http://&lt;lifecycle
           manager_IP>:79/dayzero</b></p>
       <p>To create a secure tunnel/port forwarding into Apache from the lifecycle manager to be able
@@ -142,27 +138,28 @@
         >Post-Installation Checklist</xref>.<p>To understand a cloud configuration more thoroughly
         and to learn how to make any changes later, visit these documentation pages: <ul
           id="ul_akt_fv2_lt">
-          <li><xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input Model</xref></li>
+          <li><xref href="input_model.dita"><keyword keyref="kw-hos-phrase"/> Input
+            Model</xref></li>
           <li><xref href="installation/using_git.dita">Using Git for Configuration
             Management</xref></li>
         </ul>
       </p>
       <note><p>Because the GUI installer is disabled after deployment is complete, whether you
-        installed your cloud via the GUI or via the command line, if you want to re-enable the GUI
-        later but are not re-installing from scratch, run these commands:</p>
+          installed your cloud via the GUI or via the command line, if you want to re-enable the GUI
+          later but are not re-installing from scratch, run these commands:</p>
         <codeblock>sudo a2ensite dayzero-apache.conf
 sudo systemctl start dayzero.service</codeblock>
       </note>
     </section>
-<section><title>Final Steps</title>
+    <section><title>Final Steps</title>
+      <ul>
+        <li>The public Horizon Dashboard connection is over TLS, thus please use HTTPS:// to
+          navigate to Horizon with the IP address the installer presents once install is
+          complete.</li>
+        <li><xref href="installation/configure_ceph.dita#config_ceph">Visit the Ceph configuration
+            page for Ceph post-install steps</xref>.</li>
 
-<ul><li>The public Horizon Dashboard connection is over TLS, thus please use HTTPS:// to navigate to
-          Horizon with the IP address the installer presents once install is complete.</li>
-<li><xref href="installation/configure_ceph.dita#config_ceph">Visit the Ceph configuration page for
-            Ceph post-install steps</xref>.</li>
-
-</ul>
-
-</section>
+      </ul>
+    </section>
   </body>
 </topic>
