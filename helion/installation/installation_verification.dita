@@ -24,12 +24,10 @@
             </li>
           </ul>
         </li>
-        <li>Storage Verification <ul>
-            <li><xref href="#install_verification/volume_verify">Verifying Your Block Storage
-                Backend</xref></li>
-            <li><xref href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
-                Setup</xref></li>
-          </ul></li>
+        <li><xref href="#install_verification/volume_verify">Verifying Your Block Storage
+            Backend</xref></li>
+        <li><xref href="#install_verification/swift_verify">Validate Your Object Storage (Swift)
+            Setup</xref></li>
       </ul>
     </section>
 
@@ -60,21 +58,15 @@
     <section id="running"><title>Running the Rests</title>
       <p>To run the default set of Tempest tests:</p>
       <ol>
-        <li>
-          <p>Login to the deployer node.</p>
+        <li>Log in to the lifecycle manager.</li>
+        <li>Ensure you can access your cloud:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
         </li>
-        <li>
-          <p>Navigate to the ansible folder:</p>
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock>
-        </li>
-        <li>
-          <p>Ensure you can access your cloud:</p>
-          <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
-            source /etc/environment</codeblock>
-        </li>
-        <li>
-          <p>Run the tests:</p>
-          <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml</codeblock>
+        <li>Run the tests:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts tempest-run.yml</codeblock>
         </li>
       </ol>
       <p>Optionally, you can <xref type="section" href="#tempest/custom">customize Tempest to run
@@ -90,12 +82,12 @@
       <p>To access the results after the run:</p>
       <ol>
         <li>
-          <p>Login to the deployer node.</p>
+          <p>Log in to the lifecycle manager.</p>
         </li>
         <li>
           <p>Change to the <codeph>tempest</codeph> directory and list the test results:</p>
           <codeblock>cd /opt/stack/tempest
-            ./venv/bin/testr last</codeblock>
+./venv/bin/testr last</codeblock>
         </li>
       </ol>
       <p>See <xref href="https://testrepository.readthedocs.org/en/latest/" scope="external"
@@ -171,28 +163,25 @@
           <p>Clear the comment character <codeph>#</codeph> and set a line to <codeph>true</codeph>
             to test that service or <codeph>false</codeph> to not test that service.</p>
           <p>Example:</p>
-          <codeblock>
-            cinder = true
-            neutron = false</codeblock>
+          <codeblock>cinder = true
+neutron = false</codeblock>
         </li>
         <li>
           <p>To test specific features, edit any of the <codeph>*_feature_enabled</codeph> sections
             to enable or disable tests on specific features of a service.</p>
-          <codeblock>
-            [volume-feature-enabled]
-            [compute-feature-enabled]
-            [identity-feature-enabled]
-            [image-feature-enabled]
-            [network-feature-enabled]
-            [object-storage-feature-enabled]</codeblock>
+          <codeblock>[volume-feature-enabled]
+[compute-feature-enabled]
+[identity-feature-enabled]
+[image-feature-enabled]
+[network-feature-enabled]
+[object-storage-feature-enabled]</codeblock>
           <p>Clear the comment character <codeph>#</codeph> and set a line to <codeph>true</codeph>
             to run a test or <codeph>false</codeph> to not run that test.</p>
           <p>Example:</p>
-          <codeblock>
-            #Is the v2 identity API enabled (boolean value)
-            api_v2 = true
-            #Is the v3 identity API enabled (boolean value)
-            api_v3 = false</codeblock>
+          <codeblock>#Is the v2 identity API enabled (boolean value)
+api_v2 = true
+#Is the v3 identity API enabled (boolean value)
+api_v3 = false</codeblock>
         </li>
         <li>Then run tests normally</li>
       </ol>
@@ -222,9 +211,8 @@
         </li>
         <li>
           <p>Make sure you can access the cloud:</p>
-          <codeblock>
-            ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
-            source /etc/environment</codeblock>
+          <codeblock>ansible-playbook -i hosts/verb_hosts cloud-client-setup.yml
+source /etc/environment</codeblock>
         </li>
         <li><p>Run the tests:</p>
           <codeblock>ansible-playbook -i hosts/verb_hosts tempest-run.yml  -e run_filter &lt;run_filter_name></codeblock></li>
@@ -238,12 +226,11 @@
       <p>Example:</p>
       <p>The following entries run API tests, exclude tests that are less relevant for deployment
         validation, such as negative, admin, cli and thirdparty (EC2) tests:</p>
-      <codeblock>
-        +tempest\.api\.*
-        *[Aa]dmin.*
-        *[Nn]egative.*
-        - tempest\.cli.*
-        - tempest\.thirdparty\.*</codeblock>
+      <codeblock>+tempest\.api\.*
+*[Aa]dmin.*
+*[Nn]egative.*
+- tempest\.cli.*
+- tempest\.thirdparty\.*</codeblock>
     </section>
     <!--
     <section id="issues">
