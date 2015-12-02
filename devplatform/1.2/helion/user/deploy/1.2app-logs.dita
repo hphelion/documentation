@@ -52,7 +52,10 @@ Console</i>
     </p>
 <section id="helion-logs">
       <title>helion logs</title>
-      <p>To view an application log stream, use the <xref
+      <p><note id="must_exist">The file being monitored must already exist <b>before</b> apptail
+          begins monitoring. Use the application code, the buildpack, a pre-staging hook or a
+          post-staging hook to create the file before the app instance is created.</note>To view an
+        application log stream, use the <xref
           href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-information.dita#topic17778/command-logs"
           type="section">
           <i>helion logs</i>

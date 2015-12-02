@@ -5,17 +5,17 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-        href="http://docs.hpcloud.com/helion/operations/add_node.html" scope="external"
-        format="html">Click here</xref> for a frameless version of this page where the links should
-      work.</note>
-    
+        href="http://docs.hpcloud.com/helion/operations/recover_downed_cluster.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
+
     <section id="about">
-      <p>You may have a need to recover your system if you have lost power or control nodes running clustering software have gone down.</p>
+      <p>You may have a need to recover your system if you have lost power or control nodes running
+        clustering software have gone down.</p>
       <p>The steps involved are:</p>
       <ol>
         <li><xref href="add_node.dita#add_node/prereqs">Prerequisites</xref></li>
         <li><xref href="add_node.dita#add_node/recover">Recovering the Cluster</xref></li>
- 
       </ol>
     </section>
 
@@ -26,15 +26,17 @@
     <section id="recover"><title>Recovering the Cluster</title>
       <p>You will need to power on all of the control planes before bootstrapping the MySQL cluster.
         To bootstrap a downed MySQL cluster, you will need to discover the last node to go down and
-        run bootstrap on that node. Since the cluster didn't go down cleanly, you will need to
-        SSH into each control node and run the following commands to find the node with the highest
+        run bootstrap on that node. Since the cluster didn't go down cleanly, you will need to SSH
+        into each control node and run the following commands to find the node with the highest
         sequence number. When you find the node with the highest sequence number, you will need to
         run the bootstrap on that node. </p>
       <ol>
-        <li>SSH into each control node.  
-          <note type="important">In this example, two nodes have the same sequence number which 
-            means you can run the bootstrap on either node but you can only run the bootstrap 
-            command once and only on one node. </note>
+        <li>SSH into each controller node and use the commands below to get the log sequence number: <codeblock>sudo /usr/bin/mysqld_safe --wsrep-recover
+sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1</codeblock>
+          <p>Here is an example showing the output from a three controller node cluster:</p>
+          <note type="important">In this example, two nodes have the same sequence number which
+            means you can run the bootstrap on either node but you can only run the bootstrap
+            command once and only on one node.</note>
           <codeblock>stack@padawan-ccp-c1-m1-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover
 stack@padawan-ccp-c1-m1-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
 151119 14:37:12 InnoDB: Shutdown completed; log sequence number 165002105 
@@ -53,15 +55,19 @@ stack@padawan-ccp-c1-m3-mgmt:~$ sudo grep --text 'log sequence number' /var/log/
 sudo /etc/init.d/mysql bootstrap-pxc
 sudo service mysql restart</codeblock>
         </li>
-      
+
         <li>Log onto the other two controller nodes and run mysql start.
-          <codeblock>sudo service mysql start</codeblock> </li>
-        <li>Log onto the node running the helion lifecycle manager service (deployer node) and execute 
-          the hlm-start playbook for the 3 controller nodes.
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-start.yml  --limit=padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt</codeblock>
+          <codeblock>sudo service mysql start</codeblock>
         </li>
-        <li>Now run the hlm-start playbook for all nodes.  When this playbook completes, all services should be started.
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-start.yml</codeblock>
+        <li>Log into the lifecycle manager and execute the hlm-start playbook for the 3 controller
+          nodes.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt</codeblock>
+        </li>
+        <li>Now run the hlm-start playbook for all nodes. When this playbook completes, all services
+          should be started.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-start.yml</codeblock>
         </li>
       </ol>
     </section>
