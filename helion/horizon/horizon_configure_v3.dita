@@ -23,7 +23,7 @@
       below). When Keystone v3 is enabled, all User, Project, and Domain management must be done via
       the CLI. The Identity panel will not be visible in Horizon.</p>
 <p>Steps to switch Horizon from Keystone v2 to Keystone v3:</p>
-<ol>
+<ol> 
 <li>In each controller node, navigate to the <codeph>local_settings.py</codeph> file located in
           <codeph>/opt/stack/service/horizon-20151019T060521Z/etc/local_settings.py </codeph>  Note
         change build label from 20151019T060521Z if necessary for your build.</li>
