@@ -4,13 +4,14 @@
   <title><ph conkeyref="HOS-conrefs/product-title"/>Installation Overview</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="../../helion/installation/installation_overview.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="../../helion/installation/installation_overview.html" scope="external" format="html"
+        >Click here</xref> for a frameless version of this page where the links should work.</note>
     <section id="overview">
       <p>Before jumping into your installation, we recommend taking the time to read through our
           <xref href="../example_configurations.dita">Example Configurations</xref> documentation to
-        get an overview of the sample configurations <keyword keyref="kw-hos-phrase"/> offers. We have highly
-        tuned example configurations for each of these Cloud models:</p>
+        get an overview of the sample configurations <keyword keyref="kw-hos-phrase"/> offers. We
+        have highly tuned example configurations for each of these Cloud models:</p>
       <ul>
         <li><xref href="../example_configurations.dita#example_configurations/entryscale_kvm_vsa"
             >Entry-scale KVM with VSA model</xref></li>
@@ -58,8 +59,8 @@
         <li>You need to use availability zones or the server groups functionality of the cloud
           model. See the <xref href="../input_model.dita#input_model">Input Model page</xref> for
           more information. </li>
-        <li>You want to customize the cloud configuration beyond the tuned defaults that HPE provides
-          out of the box. </li>
+        <li>You want to customize the cloud configuration beyond the tuned defaults that HPE
+          provides out of the box. </li>
         <li>You need deeper customizations than are possible to express using the GUI.</li>
       </ul>
     </section>
