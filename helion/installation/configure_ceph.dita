@@ -6,8 +6,9 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="../../helion/installation/configure_ceph.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+        href="http://docs.hpcloud.com/helion/installation/configure_ceph.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
     <p>This page describes how to configure your Ceph backend for the Helion Entry-scale with KVM
       Cloud model. It consists of the following steps:</p>
     <ul>
@@ -17,12 +18,12 @@
           Backend</xref></li>
       <li><xref href="configure_ceph.dita#config_ceph/attach_ceph">Configure Nova to Allow
           Attachment of Ceph Volumes to Instances</xref></li>
-      <li><xref href="configure_ceph.dita#config_ceph/create_voltype">Create a Volume Type for
-        your Volumes</xref></li>
-      <li><xref href="configure_ceph.dita#config_ceph/associate_voltype">Associate the Volume
-        Type to the Backend</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/create_voltype">Create a Volume Type for your
+          Volumes</xref></li>
+      <li><xref href="configure_ceph.dita#config_ceph/associate_voltype">Associate the Volume Type
+          to the Backend</xref></li>
       <li><xref href="configure_ceph.dita#config_ceph/extra_specs">Extra Specification
-        Options</xref></li>
+          Options</xref></li>
       <li><xref href="configure_ceph.dita#config_ceph/post_install">Verifying your Ceph
           backend</xref></li>
     </ul>
@@ -49,7 +50,7 @@
             <p>Begin inputting your environment information into the configuration files in the
                 <codeph>~/helion/my_cloud/definition</codeph> directory.</p>
             <p>Full details of how to do this can be found here: <xref href="../input_model.dita"
-              ><keyword keyref="kw-hos-phrase"/></xref>.</p></li>
+                  ><keyword keyref="kw-hos-phrase"/></xref>.</p></li>
           <li>Edit the <codeph>~/helion/my_cloud/definition/data/disks_osd.yml</codeph> file and
             enter the details for the additional disks meant for OSD data and journal filesystems.
               <p>A sample <codeph>disks_osd.yml</codeph> is as follows:</p>
@@ -230,8 +231,8 @@ git commit -m "&lt;commit message>"</codeblock></li>
       <title>Configure Ceph as the Backend</title>
       <p>You can use Ceph as either the backend for volumes or volume backups or both. These steps
         will show you how to do this.</p>
-      <p>Perform the following procedure on the lifecycle manager to configure Ceph as
-        a volume backend:</p>
+      <p>Perform the following procedure on the lifecycle manager to configure Ceph as a volume
+        backend:</p>
       <p><b>Prerequisites</b></p>
       <p>In order for Ceph to be used as a backend for volumes, the nodes running these services
         should have the Ceph client installed on them. Use the
@@ -415,9 +416,8 @@ default_store = {{ glance_default_store }}</codeblock></li>
                   <codeblock>sudo ceph auth get-or-create client.glance | sudo tee -a  /etc/ceph/ceph.client.glance.keyring</codeblock></p>
                 <p><b>OR</b></p>
               </li>
-              <li>You can copy the keyring from the lifecycle manager to
-                  <codeph>/etc/ceph</codeph> folder on all the controller nodes: <p>For Ceph as your
-                  volume backend:
+              <li>You can copy the keyring from the lifecycle manager to <codeph>/etc/ceph</codeph>
+                folder on all the controller nodes: <p>For Ceph as your volume backend:
                   <codeblock>scp /etc/ceph/ceph.client.cinder.keyring</codeblock></p>
                 <p>For Ceph as your volume backup backend:
                   <codeblock>scp /etc/ceph/ceph.client.cinder-backup.keyring</codeblock></p>
@@ -442,7 +442,8 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</codeblock>
           </li>
-          <li>If Ceph has been configured as the Glance backend, run the Glance reconfigure playbook:
+          <li>If Ceph has been configured as the Glance backend, run the Glance reconfigure
+            playbook:
             <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</codeblock>
           </li>
@@ -513,19 +514,20 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
 ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</codeblock></li>
       </ol>
     </section>
-    
+
     <section conref="configure_vsa.dita#config_vsa/create_volumetype" id="create_voltype"/>
     <section conref="configure_vsa.dita#config_vsa/associate_volumetype" id="associate_voltype"/>
-    
+
     <section id="extra_specs"><title>Extra Specification Options</title>
       <p>Ceph supports volumes creation with additional attributes. All these attributes can be
         specified using the extra specs options for your volume type. The administrator is expected
-        to define appropriate extra spec for Ceph volume type as per the guidelines provided at <xref
+        to define appropriate extra spec for Ceph volume type as per the guidelines provided at
+          <xref
           href="http://docs.openstack.org/kilo/config-reference/content/ceph-rados.html#d6e2255"
           format="html" scope="external">here</xref>.</p>
-      <p>The following Cinder Volume Type extra-specs option specifies the volume backend name that is used:</p>
-        <p><table frame="all"
-          rowsep="1" colsep="1" id="table_ntq_swv_yt">
+      <p>The following Cinder Volume Type extra-specs option specifies the volume backend name that
+        is used:</p>
+      <p><table frame="all" rowsep="1" colsep="1" id="table_ntq_swv_yt">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1"/>
             <colspec colname="c2" colnum="2"/>

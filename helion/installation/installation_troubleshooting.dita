@@ -4,27 +4,37 @@
   <title><ph conkeyref="HOS-conrefs/product-title"/>Troubleshooting the Installation</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="../../helion/installation/installation_troubleshooting.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/installation/installation_troubleshooting.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
     <section id="about">
       <p>We have gathered some of the common issues that occur during installation and organized
         them by when they occur during the installation. These sections will coincide with the steps
         labeled in the installation instructions.</p>
       <ul>
-        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deployer_setup">Issues during Lifecycle-manager Setup</xref></li>
-        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cobbler">Issues while Provisioning your Baremetal Nodes</xref></li>
-        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/config_processor">Issues while Updating Configuration Files</xref></li>
-        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cloud">Issues while Deploying the Cloud</xref></li>
-        <li><xref href="blockstorageconfig_troubleshooting.dita">Issues during Block Storage Backend Configuration</xref></li>
+        <li><xref
+            href="installation_troubleshooting.dita#troubleshooting_installation/deployer_setup"
+            >Issues during Lifecycle-manager Setup</xref></li>
+        <li><xref
+            href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cobbler"
+            >Issues while Provisioning your Baremetal Nodes</xref></li>
+        <li><xref
+            href="installation_troubleshooting.dita#troubleshooting_installation/config_processor"
+            >Issues while Updating Configuration Files</xref></li>
+        <li><xref href="installation_troubleshooting.dita#troubleshooting_installation/deploy_cloud"
+            >Issues while Deploying the Cloud</xref></li>
+        <li><xref href="blockstorageconfig_troubleshooting.dita">Issues during Block Storage Backend
+            Configuration</xref></li>
       </ul>
     </section>
     <section id="deployer_setup"><title>Issues during Lifecycle-manager Setup</title>
-      <p><b>Issue: Running the hos-init.bash script when configuring
-          your lifecycle manager does not complete</b></p>
-      <p>Part of what the <codeph>~/hos-2.0.0/hos-init.bash</codeph> script does is install git and so if your
-        DNS nameserver(s) is not specified in your <codeph>/etc/resolv.conf</codeph> file, is not
-        valid, or is not functioning properly on your lifecycle manager then it won't be able
-        to complete.</p>
+      <p><b>Issue: Running the hos-init.bash script when configuring your lifecycle manager does not
+          complete</b></p>
+      <p>Part of what the <codeph>~/hos-2.0.0/hos-init.bash</codeph> script does is install git and
+        so if your DNS nameserver(s) is not specified in your <codeph>/etc/resolv.conf</codeph>
+        file, is not valid, or is not functioning properly on your lifecycle manager then it won't
+        be able to complete.</p>
       <p>To resolve this issue, double check your nameserver in your
           <codeph>/etc/resolv.conf</codeph> file and then re-run the script.</p>
     </section>
@@ -67,9 +77,10 @@ FATAL: all hosts have already failed -- aborting</codeblock>
           <codeph>netboot-enabled: True</codeph>, which you can verify which nodes you have that are
         marked as such with this command:</p>
       <codeblock>sudo cobbler system find --netboot-enabled=1</codeblock>
-      <p>If this is on a fresh install and none of your nodes have been imaged with the <keyword keyref="kw-hos"/>
-        ISO, then you should be able to remove all of your nodes from Cobbler and re-run
-        the <codeph>cobbler-deploy.yml</codeph> playbook. You can do so with these commands:</p>
+      <p>If this is on a fresh install and none of your nodes have been imaged with the <keyword
+          keyref="kw-hos"/> ISO, then you should be able to remove all of your nodes from Cobbler
+        and re-run the <codeph>cobbler-deploy.yml</codeph> playbook. You can do so with these
+        commands:</p>
       <ol>
         <li>Get a list of your nodes in Cobbler:
           <codeblock>sudo cobbler system list</codeblock></li>
@@ -171,8 +182,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
 
     <section id="deploy_cloud"><title>Issues while Deploying the Cloud</title>
-      <p><b>Issue: If the site.yml playbook fails, you can query the log for the
-          reason</b></p>
+      <p><b>Issue: If the site.yml playbook fails, you can query the log for the reason</b></p>
       <p>Ansible is good about outputting the errors into the command line output, however if you'd
         like to view the full log for any reason the location is:</p>
       <p>
