@@ -317,6 +317,15 @@
     <section id="known_issues">
       <title>Known Issues in this Release</title>
       <!-- INSTALLATION -->
+      <p><b>The Use of the --limit When Ansible Playbooks Fail Should Be Avoided</b></p>
+      <p>When an Ansible playbook fails, the error will display some text that looks similar to
+        this:</p>
+      <codeblock>'to retry, use: --limit @/home/stack/site.retry'</codeblock>
+      <p>However, in the HPE Helion OpenStack environment this switch is not needed, you can simply
+        rerun the same playbook with no additional content.</p>
+      <p>In addition, the use of the <codeph>--limit</codeph> switch can cause issues with Vertica
+        where it will change the dbadmin SSH key which will cause various issues with your
+        environment.</p>
       <p><b>Installing Swift</b></p>
       <p>Swift installs with the following limitations:</p>
       <ul>

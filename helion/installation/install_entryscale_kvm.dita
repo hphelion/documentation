@@ -40,6 +40,8 @@
             Overview</xref>.</li>
         <li>Review the <xref href="../hardware.dita">recommended minimum hardware
             requirements</xref> that we have listed.</li>
+        <li>Review the <xref href="../releasenotes.dita">Release Notes</xref> to make yourself aware
+          of any known issues and limitations.</li>
         <li>The installation process can occur in different phases. For example, you can install the
           control plane only and then add Compute nodes afterwards if you would like.</li>
         <!-- consider including steps to achieve this -->
@@ -52,6 +54,8 @@
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
           on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
+        <li>You may see the terms deployer and lifecycle manager used interchangeably. These are
+          referring to the same nodes in your environment.</li>
       </ul>
     </section>
     <section id="prereqs">
