@@ -140,7 +140,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
          # will use this name instead of the IP address
          #You must either set this to a name that can be resolved in your network
          # or comment out this line to use IP addresses
-         <codeph>#external-name:</codeph></codeblock></li>
+         <b>#external-name:</b></codeblock></li>
         <li>Commit your changes to git:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
@@ -186,7 +186,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             - default
          roles:
             - public
-         <codeph>cert-file: joel-public-cert
+         <b>cert-file: joel-public-cert
          # This is the name of the certificate that will be used on load balancer.
          # Replace this with name of file in "~helion/my_cloud/config/tls/certs/".
          # This is the certificate that matches your setting for external-name
@@ -198,7 +198,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
          # horizon: my-horizon-cert
          # nova-api: my-nova-cert
          #
-         #</codeph></codeblock>
+         #</b></codeblock>
     </section>
 
 
