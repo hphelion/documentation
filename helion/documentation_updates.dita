@@ -5,10 +5,10 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="about">
-      <p>The <keyword keyref="kw-hos"/> documentation team continuously updates the documents in this web
-        deliverable. These updates include anything from fixes for minor typos or style issues, to
-        more significant changes such as bug fixes, additions, or deletions. The following table
-        shows the significant changes made to this content.</p>
+      <p>The <keyword keyref="kw-hos"/> documentation team continuously updates the documents in
+        this web deliverable. These updates include anything from fixes for minor typos or style
+        issues, to more significant changes such as bug fixes, additions, or deletions. The
+        following table shows the significant changes made to this content.</p>
       <p>The table is sortable. </p>
     </section>
     <section id="changelog"><title>Documentation Revision History</title>
@@ -27,6 +27,14 @@
             </thead>
             <tbody>
               <row>
+                <entry>12/2/2015</entry>
+                <entry>Logging Configuration</entry>
+                <entry>Updated information related to changing the logging level for the Monasca
+                  service (<xref
+                    href="administration/configure_logging.dita#configure_logging/service_config"
+                    >Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>11/30/2015</entry>
                 <entry>Security - TLS</entry>
                 <entry>Changed/corrected path to frontend_cacert.pem file (<xref
@@ -36,7 +44,7 @@
                 <entry>11/20/2015</entry>
                 <entry>Security - HTTP</entry>
                 <entry>Added page on header poisoning prevention. (<xref
-                  href="security/header_poisoning.dita">Link</xref>)</entry>
+                    href="security/header_poisoning.dita">Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/19/2015</entry>
@@ -70,8 +78,7 @@
               <row>
                 <entry>11/10/2015</entry>
                 <entry>Security - ArcSight </entry>
-                <entry>Added ArcSight page (<xref href="security/arcsight.dita"
-                    >Link</xref>)</entry>
+                <entry>Added ArcSight page (<xref href="security/arcsight.dita">Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/09/2015</entry>
@@ -89,8 +96,7 @@
                 <entry>11/05/2015</entry>
                 <entry>Security - TLS </entry>
                 <entry>Amended Private CA FQDN certificates steps to include copying both keys
-                  (<xref href="security/tls.dita#configure_tls/ol_ngj_qfq_rt"
-                  >Link</xref>)</entry>
+                    (<xref href="security/tls.dita#configure_tls/ol_ngj_qfq_rt">Link</xref>)</entry>
               </row>
               <row>
                 <entry>11/03/2015</entry>
@@ -103,7 +109,7 @@
                 <entry>11/03/2015</entry>
                 <entry>Security - TLS</entry>
                 <entry>Added TLS steps required for Private CA certificates (<xref
-                  href="security/tls.dita#configure_tls/private1">Link </xref>and <xref
+                    href="security/tls.dita#configure_tls/private1">Link </xref>and <xref
                     href="security/tls.dita#configure_tls/private2">Link</xref>)</entry>
               </row>
               <row>
