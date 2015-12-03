@@ -206,13 +206,10 @@ HLM-CFG</codeblock></li>
       <p>
         <b>Resolution</b>
       </p>
-      <p>The vswitch1 on VRSvAPPs needs to be presented to the Niantics card. Once this was done,
-        VRSvAPPS were synchronized in VSD dashboard. </p>
-      <p>Memphis region deployment is done with following networking changes. </p>
-      <p>Networking changes done are as follows –</p>
-      <p>ETH0 is active</p>
-      <p>ETH1 is off</p>
-      <p>UNTAGGED TUL on NIANTICS on DCN, VRS and WR Computes</p>
+      <p>This issue occurs if the VRSvAPP is not configured correctly. </p>
+      <p>Make sure all properties are populated corectly for the VRSvAPP VMs running in the ESX
+        environment. Make sure there is a one-to-one mapping between each ESX host and a
+        VRSvAPP.</p>
     </section>
     <section>
       <title>See Also</title>
