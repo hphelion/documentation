@@ -17,8 +17,8 @@
 </p>
 <p>The HPE Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.</p>
 <p>The following topics explain how to install and configure the HPE Helion Development Platform.</p>
-<p>
-<b>NOTE</b>: If you are installing the HPE Helion Development Platform <b>Community</b> edition, follow the <xref href="../devplatform/1.0devplatform_community_install.dita" >HPE Helion Development Community Installation and Configuration</xref> instructions instead.</p>
+<!--<p>
+<b>NOTE</b>: If you are installing the HPE Helion Development Platform <b>Community</b> edition, follow the <xref href="../devplatform/1.0devplatform_community_install.dita" >HPE Helion Development Community Installation and Configuration</xref> instructions instead.</p>-->
 <ul>
 <li>
 <xref type="section" href="#topic15281/prerequisites">Prerequisites</xref>

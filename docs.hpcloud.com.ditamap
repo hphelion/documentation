@@ -1416,8 +1416,6 @@
       <topicref href="devplatform/1.0devplatform_commercial_install.dita"
         navtitle="Commercial Installation and Configuration" locktitle="yes">
         <!--permalink: /helion/devplatform/install/community/-->
-        <topicref href="devplatform/1.0devplatform_community_install.dita" locktitle="yes"
-          navtitle="Community Installation and Configuration "/>
         <!--permalink: /helion/devplatform/marketplace/-->
         <topicref href="devplatform/1.0devplatform.marketplace.install.dita" locktitle="yes"
           navtitle="The Marketplace (Beta) "/>
