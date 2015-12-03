@@ -186,7 +186,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
             - default
          roles:
             - public
-         <b>cert-file: joel-public-cert
+         <b>cert-file: my-public-cert
          # This is the name of the certificate that will be used on load balancer.
          # Replace this with name of file in "~helion/my_cloud/config/tls/certs/".
          # This is the certificate that matches your setting for external-name
