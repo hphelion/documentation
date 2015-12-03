@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"  "topic.dtd" >
 <topic xml:lang="en-us" id="release_notes">
-  <title><ph conkeyref="HOS-conrefs/product-title"/>Release Notes</title>
+  <title><ph conkeyref="HOS-conrefs/product-title-20"/>Release Notes</title>
   <body>
     <!--Needs Edit-->
     <p conkeyref="HOS-conrefs/applies-to"/>
@@ -10,7 +10,7 @@
         here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">
       <p>This document provides an overview of the features contained within <keyword
-          keyref="kw-hos-phrase"/>, including known issues and workarounds for this release:</p>
+          keyref="kw-hos-phrase-20"/>, including known issues and workarounds for this release:</p>
       <ul>
         <li><xref href="releasenotes.dita#release_notes/features">Features Available in this
             Release</xref></li>

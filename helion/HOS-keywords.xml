@@ -5,14 +5,17 @@
     
   <keydef keys="kw-hos"><topicmeta><keywords><keyword>HPE Helion OpenStack</keyword></keywords></topicmeta></keydef>   
   <keydef keys="kw-hos-tm"><topicmeta><keywords><keyword>HPE Helion <tm tmtype="reg">OpenStack</tm></keyword></keywords></topicmeta>        </keydef>
-  <keydef keys="kw-hos-version"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef> 
-  <keydef keys="kw-hos-version20"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef>  
-  <keydef keys="kw-hos-version201"><topicmeta><keywords><keyword>2.0.1</keyword></keywords></topicmeta></keydef> 
-  <keydef keys="kw-hos-version202"><topicmeta><keywords><keyword>2.0.2</keyword></keywords></topicmeta></keydef> 
-  <keydef keys="kw-hos-version21"><topicmeta><keywords><keyword>2.1</keyword></keywords></topicmeta></keydef>  
- 
-  <keydef keys="kw-hos-phrase"><topicmeta><keywords><keyword>HPE Helion OpenStack 2.0</keyword></keywords></topicmeta></keydef>   
+  <keydef keys="kw-hos-version"><topicmeta><keywords><keyword>2.1</keyword></keywords></topicmeta></keydef> 
+  <keydef keys="kw-hos-version-20"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef>  
+  <keydef keys="kw-hos-version-201"><topicmeta><keywords><keyword>2.0.1</keyword></keywords></topicmeta></keydef> 
+  <keydef keys="kw-hos-version-202"><topicmeta><keywords><keyword>2.0.2</keyword></keywords></topicmeta></keydef> 
+  <keydef keys="kw-hos-version-21"><topicmeta><keywords><keyword>2.1</keyword></keywords></topicmeta></keydef>  
+  <keydef keys="kw-hos-version-20-21"><topicmeta><keywords><keyword>2.0, 2.1</keyword></keywords></topicmeta></keydef>  
+  <keydef keys="kw-hos-version-21-20"><topicmeta><keywords><keyword>2.1, 2.0</keyword></keywords></topicmeta></keydef>  
   
+  <keydef keys="kw-hos-phrase"><topicmeta><keywords><keyword>HPE Helion OpenStack 2.1</keyword></keywords></topicmeta></keydef>   
+  <keydef keys="kw-hos-phrase-20"><topicmeta><keywords><keyword>HPE Helion OpenStack 2.0</keyword></keywords></topicmeta></keydef>
+  <keydef keys="kw-hos-phrase-21"><topicmeta><keywords><keyword>HPE Helion OpenStack 2.1</keyword></keywords></topicmeta></keydef>
   <keydef keys="HOS-conrefs" href="HOS-conrefs.xml" type="concept" format="dita"/>
  
 

@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="home">
-  <title><ph conkeyref="HOS-conrefs/product-title"/></title>
+  <title><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-20-21"></keyword></title>
   <titlealts>
     <searchtitle><keyword keyref="kw-hos-phrase"/>: Documentation Home</searchtitle>
   </titlealts>
@@ -18,7 +18,7 @@
   </prolog>
   <body>
     <!--Needs Edit-->
-    <p conkeyref="HOS-conrefs/applies-to"/>
+    <!--<p conkeyref="HOS-conrefs/applies-to"/>-->
     <section id="top"/>
     <p><keyword keyref="kw-hos"/> is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm>
       cloud software, the leading open source cloud computing platform. This HPE Helion
@@ -28,15 +28,16 @@
       wide range of related cloud products, services, and professional support.</p>
     <section id="getstart">
       <title>Get Started with <keyword keyref="kw-hos"/></title>
-      <p>The following links and tools will help you understand, deploy, and run your <keyword keyref="kw-hos-phrase"/>
+      <p>The following links and tools will help you understand, deploy, and run your <keyword keyref="kw-hos"/>
         cloud.</p>
       <ul>
-        <li><xref href="overview.dita"><keyword keyref="kw-hos-phrase"/> Overview</xref></li>
+        <li><xref href="overview.dita"><keyword keyref="kw-hos"/> Overview</xref></li>
         <li><xref href="kilo_features.dita">OpenStack Kilo Features</xref></li>
         <li><xref href="input_model.dita">Input Model</xref></li>
         <li><xref href="example_configurations.dita">Example Configurations</xref></li>
         <li><xref href="hardware.dita">Recommended Minimum Hardware Requirements</xref></li>
-        <li><xref href="releasenotes.dita">Release Notes</xref></li>
+        <li><xref href="releasenotes21.dita"><keyword keyref="kw-hos"/> 2.1 Release Notes</xref></li>
+        <li><xref href="releasenotes.dita"><keyword keyref="kw-hos"/> 2.0 Release Notes</xref></li>
         <li><xref href="faq.dita">Frequently Asked Questions</xref></li>
         <li><xref href="installation/installation_overview.dita">Installation</xref></li>
       </ul>
