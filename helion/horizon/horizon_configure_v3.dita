@@ -37,6 +37,6 @@
         endpoint:</p><codeblock>OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST</codeblock></li>
 <li>Restart the Apache server in each controller
         nodes:<codeblock>sudo service apache2 restart</codeblock></li>
-</ol>
+</ol> 
 </body>
 </topic>
