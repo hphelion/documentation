@@ -10,7 +10,7 @@
       
 <ol><li> Log in to the lifecycle manager for your HPE Helion OpenStack environment with admin
         privileges.</li>
-      <li> Source the service.osrc file: <pre>. service.osrc</pre></li>
+      <li> Source the service.osrc file: <pre>source service.osrc</pre></li>
       <li>Obtain the Auth token for the admin tenant.<codeblock>nova credentials</codeblock>The
         output should look similar to the
           following:<codeblock>+------------------+--------------------------------------+
@@ -30,10 +30,10 @@
 +-----------+----------------------------------+</codeblock><ol
           id="ol_c2w_t4b_f5">
           <li>Make a note of the <codeph>id</codeph> value in the Token table. You will need it in
-            next step for the value of &lt;AUTH_TOKEN&gt;</li>
+            next step for the value of &lt;AUTH_TOKEN&gt;.</li>
           <li>Make a note of the <codeph>tenant_id</codeph> value in the Token table. You will need
-            it in next step for the value of &lt;ADMIN_TENANT_ID&gt;</li>
-        </ol>. </li>
+            it in next step for the value of &lt;ADMIN_TENANT_ID&gt;.</li>
+        </ol></li>
       <li>Run the <codeph>curl</codeph> command to update the Trove quota for the tenant that needs
         it. The command uses the following
         format:<codeblock>curl -i &lt;SERVICE_URL&gt;/v1.0/&lt;ADMIN_TENANT_ID&gt;/mgmt/quotas/&lt;TENANT_ID&gt; -X PUT -H "X-Auth-Project-Id: &lt;ADMIN_TENANT_ID&gt;" -H "User-Agent: python-troveclient" -H "Content-Type: application/json" -H "Accept: application/json" -H "X-Auth-Token: &lt;AUTH_TOKEN&gt;" -d '{"quotas": {"instances": &lt;INSTANCEQUOTA&gt;, "backups": &lt;BACKUPQUOTA&gt;, "volumes": &lt;VOLUMEQUOTA&gt;}}'</codeblock>Provide
@@ -41,8 +41,8 @@
         &lt;AUTH_TOKEN&gt;, &lt;INSTANCEQUOTA&gt;, &lt;BACKUPQUOTA&gt; and &lt;VOLUMEQUOTA&gt;
         parameters as appropriate for your environment's configuration. For example:
         <codeblock>curl -i 'https://mycloud.example.com/v1.0/bb3252a8ea6b3223841783e11bd3e7dc/mgmt/quotas/6dfec2a6315df3a980b7d10c3d49ec' -X PUT -H "X-Auth-Project-Id: bb3252a8ea6b3223841783e11bd3e7dc" -H "User-Agent: python-troveclient" -H "Content-Type: application/json" -H "Accept: application/json" -H "X-Auth-Token: 80eaa95d334a443b9b111f7fcca49cae" -d '{"quotas": {"instances": 1000, "backups": 1000, "volumes": 10000}}'</codeblock></li>
-      <li>When the command finishes, you should see output similar to the following, which indicates
-        the command has executed
+      <li>When the command finishes, you should see output similar to the following, indicating the
+        command has executed
         successfully.<codeblock>HTTP/1.1 200 OK 
 Content-Type: application/json 
 Content-Length: 66 
