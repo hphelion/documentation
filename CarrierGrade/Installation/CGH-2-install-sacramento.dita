@@ -228,7 +228,7 @@ Password: cghelion</codeblock>
         files that can be copied and pasted into your environment.</p>
       <p><b>Important:</b> Do not store backup of the JSON files inside your cloud directory or any
         where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create a backup folder
-        on <codeph>/root/</codeph> directory or on a remote system.</p>
+        on <codeph>/root/</codeph> directory or on a remote system. <!--HCG-681--></p>
     </section>
     <section id="conref-def-json">
       <title>Configure the definition.json file</title>

@@ -145,5 +145,12 @@
       this installation process.<p>Start <xref
           href="carrier-grade-install-overview-sacramento.dita#topic1925">installing the Sacramento
           deployment</xref>.</p></section>
+    <section>
+      <title>Installation Troubleshooting</title>
+      <p>Check with the <xref
+          href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581">Installation
+          Troubleshooting page</xref> for tips and work-arounds in case you run into issues while
+        installing.</p>
+    </section>
   </body>
 </topic>

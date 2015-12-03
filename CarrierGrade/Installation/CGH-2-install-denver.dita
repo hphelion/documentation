@@ -46,7 +46,11 @@
     <section>
       <title>Configuring JSON files</title>
     </section>
-    <section id="jsons">The HP Helion OpenStack deployment requires several JSON files.</section>
+    <section id="jsons">The HP Helion OpenStack deployment requires several JSON
+          files.<p><b>Important:</b> Do not store backup of the JSON files inside your cloud
+        directory or any where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create
+        a backup folder on <codeph>/root/</codeph> directory or on a remote system.
+        <!--HCG-681--></p></section>
     <section id="node-prov">
       <title>Configure the node-provision.json file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the
