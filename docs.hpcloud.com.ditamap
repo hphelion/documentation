@@ -1774,7 +1774,7 @@
       <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
     </topicref>
   </topichead>
-  <mapref href="docs.hpcloud.com.CGH.ditamap"/>
+  <mapref href="docs.hpcloud.com.CGH.20.ditamap"/>
   <topicref href="euca/euca-landing-page.dita" navtitle="HPE Helion Eucalyptus" locktitle="yes">
     <topicref href="euca/euca.thirdparty.licensing.dita"
       navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>

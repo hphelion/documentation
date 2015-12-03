@@ -34,14 +34,17 @@
         navtitle="Technical Overview" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/Overview/carrier-grade.services-overview.dita"
         navtitle="Services Overview" locktitle="yes" otherprops="overviewsvc">
-        <topicref href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-compute-overview.dita"
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-compute-overview.dita"
           navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-networking-overview.dita"
           navtitle="Networking Service (Neutron) Overview" locktitle="yes"/>
-        <topicref href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
           navtitle="Image Operations (Glance) Overview" locktitle="yes"/>
-        <topicref href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-volume-overview.dita"
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-volume-overview.dita"
           navtitle="Block Storage Operations (Cinder) Overview" locktitle="yes"/>
         <topicref
           href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
@@ -52,11 +55,14 @@
         <topicref
           href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-metering-overview.dita"
           navtitle="Metering Service (Ceilometer) Overview" locktitle="yes"/>
-        <topicref href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
           navtitle="Ironic Service Overview" locktitle="yes"/>
-        <topicref href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
           navtitle="Horizon Service Overview" locktitle="yes" otherprops="overviewhoriz">
-          <topicref href="CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+          <topicref
+            href="CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
             navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
           <topicref
             href="CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
