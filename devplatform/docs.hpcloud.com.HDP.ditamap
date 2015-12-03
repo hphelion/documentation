@@ -26,6 +26,8 @@
     <topicref href="2.0/database/devplatform.database-create-loadbalancer.dita"/>
     <topicref href="2.0/database/devplatform.database-ALS.dita" locktitle="yes"
       navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
+    <topicref href="2.0/database/devplatform.database-increase-quota.dita"
+      navtitle="Increasing Trove Internal Quotas" locktitle="yes"/>
   </topichead>
   <!-- shim files, remove when publishing-->
  </map>
