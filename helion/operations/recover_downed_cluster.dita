@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="recover_downed_cluster">
-  <title><ph conkeyref="HOS-conrefs/product-title"/>Recovering a Downed Cluster</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Recovering a Control Plane after outage</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
@@ -10,8 +10,8 @@
       the links should work.</note>
 
     <section id="about">
-      <p>You may have a need to recover your system if you have lost power or control nodes running
-        clustering software have gone down.</p>
+      <p>You may have a need to recover your system if you have lost power or the control nodes have
+        gone down.</p>
       <p>The steps involved are:</p>
       <ol>
         <li><xref href="add_node.dita#add_node/prereqs">Prerequisites</xref></li>
@@ -20,7 +20,7 @@
     </section>
 
     <section id="prereqs"><title>Prerequisites</title>
-      <p>You must be able to power on all of the control planes before continuing.</p>
+      <p>You must be able to power on all of the control nodes before continuing.</p>
     </section>
 
     <section id="recover"><title>Recovering the Cluster</title>
@@ -37,22 +37,21 @@ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1</codeb
           <note type="important">In this example, two nodes have the same sequence number which
             means you can run the bootstrap on either node but you can only run the bootstrap
             command once and only on one node.</note>
-          <codeblock>stack@padawan-ccp-c1-m1-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover
-stack@padawan-ccp-c1-m1-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
+          <codeblock>stack@helion-cp-c1-m1-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover
+stack@helion-cp-c1-m1-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
 151119 14:37:12 InnoDB: Shutdown completed; log sequence number 165002105 
 
-stack@padawan-ccp-c1-m2-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover 
-stack@padawan-ccp-c1-m2-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
+stack@helion-cp-c1-m2-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover 
+stack@helion-cp-c1-m2-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
 151119 14:53:22 Percona XtraDB (http://www.percona.com) 5.5.41-37.0 started; log sequence number 165252407
 
-stack@padawan-ccp-c1-m3-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover
-stack@padawan-ccp-c1-m3-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
+stack@helion-cp-c1-m3-mgmt:~$ sudo /usr/bin/mysqld_safe --wsrep-recover
+stack@helion-cp-c1-m3-mgmt:~$ sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1 
 151119 14:53:22 Percona XtraDB (http://www.percona.com) 5.5.41-37.0 started; log sequence number 165252407 
 151119 14:53:23 InnoDB: Shutdown completed; log sequence number 165252407 </codeblock>
         </li>
-        <li>Bootstrap the cluster.
-          <codeblock>ssh padawan-ccp-c1-m2-mgmt
-sudo /etc/init.d/mysql bootstrap-pxc
+        <li>SSH into the node with the highest sequence and bootstrap the cluster.
+          <codeblock>sudo /etc/init.d/mysql bootstrap-pxc
 sudo service mysql restart</codeblock>
         </li>
 
@@ -62,7 +61,9 @@ sudo service mysql restart</codeblock>
         <li>Log into the lifecycle manager and execute the hlm-start playbook for the 3 controller
           nodes.
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=padawan-ccp-c1-m1-mgmt,padawan-ccp-c1-m2-mgmt,padawan-ccp-c1-m3-mgmt</codeblock>
+ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=&lt;host_var name&gt;</codeblock>
+          <p>Here is an example using the above command using the example in the previous step.</p>
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=helion-cp-c1-m1-mgmt,helion-cp-c1-m2-mgmt,helion-cp-c1-m3-mgmt</codeblock>
         </li>
         <li>Now run the hlm-start playbook for all nodes. When this playbook completes, all services
           should be started.
