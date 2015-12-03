@@ -708,7 +708,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
           <codeph>600</codeph> or <codeph>700</codeph>. We strongly recommend that you change the
         permissions to <codeph>400</codeph>. </p>
       <ol id="ol_eml_5qz_25">
-        <li>Log in to the Baremetal controller.<pre>ssh root@&lt;ip-address&gt;</pre></li>
+        <li>Log in to the Baremetal controller.<pre>ssh cghelion@&lt;BM_Controller_IP&gt;</pre></li>
         <li>Execute the following command to change the permission on the ironic-api configuration
           file:<codeblock>chmod 400 /etc/ironic/ironic-api.conf</codeblock></li>
         <li>Execute the following command to change the permission on the ironic-conductor

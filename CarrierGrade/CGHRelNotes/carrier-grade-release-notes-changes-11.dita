@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic6108">
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Changes and Additions from
+        Version 1.1</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p><b>Product Description and Purpose</b></p>
+        <p>HP Helion OpenStack Carrier Grade (HOSCG) is a product that satisfies stringent
+            performance and uptime requirements from Telecom service providers. This is built
+            upon:</p>
+        <ul id="ul_yyt_whc_f5">
+            <li>Helion OpenStack 2.0 (Keystone, Glance, Cinder, Neutron, Horizon, Heat, Ceilometer,
+                HA Architecture, Logging, Monitoring, Installer), </li>
+            <li>Wind River Titanium (which includes Nova among other OpenStack services, Accelerated
+                Virtual Switch and Wind River Linux underneath), </li>
+            <li>DCN (HP resells Nuage VSP) as SDN Controller with its own vswitch - Virtual Routing
+                and Switching (VRS) supporting ESX and KVM hypervisors</li>
+        </ul>
+        <p>Telefonica is the largest stake holder in driving features and requirements for HCG 2.0,
+            and we have come up with two Stock Keeping Units (SKUs). They are primarily based on
+            vSwitch choices - Wind River AVS or DCN VRS. DCN VRS SKU addresses most of Telefonica's
+            requirements whereas AVS SKU is for customers who are focused on Virtualized
+            Infrastructure Manager (VIM) key features like line rate performance and high
+            availability and they are not much serious about automating networking end to end,
+            multi-dc, multi-hypervisor etc. A brief description of these SKUs is as follows:</p>
+        <ul id="ul_zyt_whc_f5">
+            <li><b>HCG-AVS</b> refers to the SKU that customers buy when they want AVS as their
+                choice of vSwitch for their WR KVM compute nodes. This SKU supports only the WR KVM
+                hypervisor.</li>
+            <li><b>HCG-VRS</b> refers to the SKU that customers buy when they want VRS as their
+                choice of vSwitch for their WR KVM compute nodes. This SKU supports both WR KVM and
+                VMware ESXi hypervisors as well as limited support for baremetal as a service.</li>
+        </ul>
+        <p><b>Primary Users</b></p>
+        <p>Telecom companies (such as Telefonica and Nokia) desiring cloud-based Network Function
+            Virtualization (NFV).</p>
+        <p><b>Differences from HCG 1.1 Architecture</b></p>
+        <p>HCG 2.0 Architecture is built upon HCG 1.1 with the following key differences:</p>
+        <ol id="ol_azt_whc_f5">
+            <li>WR computes can support vSwitch of your choice - AVS or VRS: To enable this feature,
+                we are replacing AVS with VRS based on the product SKU being selected. The
+                architecture toggles between Neutron being a shared service (HCG-VRS) to dedicated
+                service per region (HCG-AVS). The architecture for both products is documented on
+                this one architecture page. Both products share many components. Many of the
+                interfaces have not changed since HCG 1.1 other than being renumbered as part of
+                cleaning up this page. </li>
+            <li>Baremetal Region to provide baremetal provisioning as a service: We extended the
+                architecture by adding another control plane (single node) running identical
+                services plus ironic but in different region - nova, neutron and ironic</li>
+            <li>VxLAN to VLAN bridging: We are now using HPN 5930/7900 switches in the architecture
+                as enabler for providing VxLAN to VLAN switching. This is specifically for VMs with
+                virtio vNICs to communicate with baremetal ports like SR-IOV, PCI-PT and Host
+                Port.</li>
+            <li>Enhance Standard control plane for Backup, Logging and Monitoring services for
+                Standard region services: Added and enhanced new services like Icinga,
+                Elastic-Logstash-Kibana (ELK), Attis services. </li>
+            <li>Infoblox as IPAM plugin: Neutron has now a plugin to support IP reservation through
+                Infoblox appliance. Architecturally, it is an enhancement to Neutron Service running
+                in each region.</li>
+        </ol>
+        <p><b>Added Components</b></p>
+        <ul id="ul_bzt_whc_f5">
+            <li><b>Standard Controller</b> (Controller running on hLinux): Standard IaaS control
+                plane very similar to HOS. The main difference is that DCN/Nuage is used for
+                networking rather than OVS to enable cloud-to-cloud communication. Icinga has also
+                been upgraded to Icinga2 to enable more monitoring features. Many components of this
+                region are shared with the WR Region.</li>
+            <li><b>ESX Compute</b>: Standard IaaS compute node using DCN/Nuage components for
+                networking. <b>The product has evolved such that there will be no compute nodes
+                    based on hLinux KVM for 2.0. One offering will not have any ESX compute nodes
+                    and also no DCN nodes. Another offering will have vCenter based ESX compute
+                    nodes.</b> This component has sub component <b>DCN VRS</b> (Virtualized Routing
+                &amp; Switching). It provide L2/L3 capabilities to enable VMs to communicate within
+                the cloud and for remote cloud communication.</li>
+            <li><b>WR Compute</b>: Realtime compute node with Wind River (WR) networking components.
+                Wind River Linux with a modified, realtime KVM run on these nodes. A change for 2.0
+                is that one of the HCG products will ship with DCN VRS and the other will ship with
+                AVS networking configured.</li>
+            <li><b>BM Controller</b>: Ironic server and compute proxy along with dependent services
+                such as DHCP and DNS run on this single node to control requests for bare metal
+                compute nodes. The bare metal controller and compute nodes run in their own region
+                of the cloud.</li>
+            <li><b>BM Node</b>: Bare metal node to be allocated and used on demand similar to a VM.
+                They are managed by the BM Controller.</li>
+            <li><b>5930 Switch</b>: HP Networking hardware switch to provide VxLAN to VLAN Bridging
+                for SR-IOV, PC-PT or Baremtal Host ports. It also provides DHCP services to these
+                baremetal ports. We have plans to use this for external network connectivity to
+                replace software gateway VRS-G.</li>
+            <li><b>Infoblox</b>: 3rd party product requested by Telefonica to support IPAM. Infoblox
+                will be optional for other customers and is not expected to be used.</li>
+        </ul>
+        <p><b>Components from version 1.1</b></p>
+        <ul id="ul_qst_13c_f5">
+            <li><b>HLM:</b> Helion Lifecycle Manager deploys and manages the Standard Region
+                consisting of the Standard Controller running shared services and the nodes required
+                to run DCN. HLM will deploy and manage the WR region using a delegation model with
+                some configuration rather than at the sub-component level as is done in the Standard
+                Region.</li>
+            <li><b>DCN VSC</b> (Virtualized Services Controller): DCN/Nuage component to route
+                traffic between VMs and coordinate with VSD for remote cloud communication.</li>
+            <li><b>DCN VRS-G</b> (Virtualized Routing &amp; Switching Gateway): DCN/Nuage gateway to
+                enable VMs to communicate outside the cloud and for remote cloud communication.</li>
+            <li><b>DCN VSD </b>(Virtualized Services Directory): DCN/Nuage component to coordinate
+                communication between clouds and manage L2 and L3 security policies.</li>
+            <li><b>StoreVirtual/3PAR</b>: Hardware storage array used as backend for Cinder. Support
+                for 3PAR has a similar architecture as StoreVirtual on iSCSI, not Fibre.</li>
+            <li><b>WR Controller</b>: Realtime control plane for compute and networking. This is a
+                substantial subset of the Wind River Titanium Server (TiS). Wind River has modified
+                versions of most of the OpenStack components in this control plane.</li>
+            <li><b>Orchestrator</b>: This could be any application consuming the cloud services. The
+                NFV team has created NFV Director but some customers will use their own
+                applications.</li>
+        </ul>
+        <p/>
+        <p><b>Data</b></p>
+        <p>The following items are unchanged from version 1.1</p>
+        <table id="table_czt_whc_f5">
+            <tgroup cols="6">
+                <colspec colnum="1" colname="col1"/>
+                <colspec colnum="2" colname="col2"/>
+                <colspec colnum="3" colname="col3"/>
+                <colspec colnum="4" colname="col4"/>
+                <colspec colnum="5" colname="col5"/>
+                <colspec colnum="6" colname="col6"/>
+                <thead>
+                    <row>
+                        <entry>Data name</entry>
+                        <entry>Confidentiality</entry>
+                        <entry>Integrity</entry>
+                        <entry>Availability</entry>
+                        <entry>Backup?</entry>
+                        <entry>Description</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Cloud Definition</entry>
+                        <entry>Confidential</entry>
+                        <entry>High</entry>
+                        <entry>Low</entry>
+                        <entry>Yes</entry>
+                        <entry>Control plane and network topology and mapping to data center (input
+                            to HLM)</entry>
+                    </row>
+                    <row>
+                        <entry>Cloud Configuration</entry>
+                        <entry>Confidential</entry>
+                        <entry>High</entry>
+                        <entry>Low</entry>
+                        <entry>Yes</entry>
+                        <entry>Configuration of services in cloud (output from HLM)</entry>
+                    </row>
+                    <row>
+                        <entry>MySQL database</entry>
+                        <entry>Confidential</entry>
+                        <entry>High</entry>
+                        <entry>High</entry>
+                        <entry>Yes</entry>
+                        <entry>Contains user preferences. Backup to Swift daily.</entry>
+                    </row>
+                    <row>
+                        <entry>Logs</entry>
+                        <entry>Confidential</entry>
+                        <entry>High</entry>
+                        <entry>Medium</entry>
+                        <entry>Yes</entry>
+                        <entry>Logs from all services</entry>
+                    </row>
+                    <row>
+                        <entry>Credentials</entry>
+                        <entry>Confidential</entry>
+                        <entry>High</entry>
+                        <entry>High</entry>
+                        <entry>Yes</entry>
+                        <entry>Inter-service authentication uses the credentials for each
+                            service</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <p><b>Service Architecture Diagram</b></p>
+        <p><b>1. VRS SKU</b></p>
+        <p><b>Control Plane Interfaces</b></p>
+        <p>
+            <image href="../../media/CGH-2-control-plane-intf.png" id="image_mrd_1jc_f5"/></p>
+        <p><b>Data Plane Interfaces </b></p>
+        <image href="../../media/CGH-2-data-plane-intf.png" id="image_tlh_2jc_f5"/>
+        <p><b>2. AVS SKU</b></p>
+        <p><b>Control and Data Planes Interfaces</b></p>
+        <p>
+            <image href="../../media/CGH-2-ctrl-data-plane-intf.png" id="image_yyy_hjc_f5"/></p>
+        <p>Dotted lines show different security domains. New components are shown with yellow
+            fill.</p>
+        <p>Lines between components show interactions. Colors of these lines help classify the
+            interactions into the following categories:</p>
+        <ul id="ul_yls_r3c_f5">
+            <li><b>Purple:</b> HLM, bi-directional</li>
+            <li><b>Gold:</b> Distributed Cloud Networking (DCN) / Nuage, bi-directional</li>
+            <li><b>Red:</b> API access to the cloud</li>
+            <li><b>Green:</b> Storage</li>
+            <li><b>Black:</b> Compute control, bi-directional</li>
+            <li><b>Blue:</b> Shared component access</li>
+        </ul>
+        <p><b>Interfaces</b></p>
+        <p>Highlighted items are new to Version 2.0</p>
+        <table id="table_zls_r3c_f5">
+            <tgroup cols="11">
+                <colspec colnum="1" colname="col1"/>
+                <colspec colnum="2" colname="col2"/>
+                <colspec colnum="3" colname="col3"/>
+                <colspec colnum="4" colname="col4"/>
+                <colspec colnum="5" colname="col5"/>
+                <colspec colnum="6" colname="col6"/>
+                <colspec colnum="7" colname="col7"/>
+                <colspec colnum="8" colname="col8"/>
+                <colspec colnum="9" colname="col9"/>
+                <colspec colnum="10" colname="col10"/>
+                <colspec colnum="11" colname="col11"/>
+                <thead>
+                    <row>
+                        <entry>Interface</entry>
+                        <entry>Network name</entry>
+                        <entry>Network protocol</entry>
+                        <entry>Requestor</entry>
+                        <entry>Request</entry>
+                        <entry>Request credentials</entry>
+                        <entry>Request authorization</entry>
+                        <entry>Listener</entry>
+                        <entry>Response</entry>
+                        <entry>Response credentials</entry>
+                        <entry>Description of operation</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>1a</entry>
+                        <entry>CTL</entry>
+                        <entry>IPMI</entry>
+                        <entry>HLM</entry>
+                        <entry>Power on</entry>
+                        <entry>iLO username, password</entry>
+                        <entry>Admin-only access to iLO</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>Authorized/Unauthorized</entry>
+                        <entry>none</entry>
+                        <entry>Power on node</entry>
+                    </row>
+                    <row>
+                        <entry>1b</entry>
+                        <entry>PXE</entry>
+                        <entry>DHCP</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>IP address request</entry>
+                        <entry>Registered MAC address</entry>
+                        <entry>(network isolation only)</entry>
+                        <entry>HLM</entry>
+                        <entry>IP address</entry>
+                        <entry>none</entry>
+                        <entry>Request IP address</entry>
+                    </row>
+                    <row>
+                        <entry>1c</entry>
+                        <entry>PXE</entry>
+                        <entry>TFTP</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>Image request</entry>
+                        <entry>Registered MAC address</entry>
+                        <entry>(network isolation only)</entry>
+                        <entry>HLM</entry>
+                        <entry>Image</entry>
+                        <entry>none</entry>
+                        <entry>Request an image</entry>
+                    </row>
+                    <row>
+                        <entry>1d</entry>
+                        <entry>PXE</entry>
+                        <entry>SSH</entry>
+                        <entry>HLM</entry>
+                        <entry>Network config</entry>
+                        <entry>SSH key pair</entry>
+                        <entry>HLM admin</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>success/failure</entry>
+                        <entry>SSH key pair</entry>
+                        <entry>Setup cloud networking</entry>
+                    </row>
+                    <row>
+                        <entry>1e</entry>
+                        <entry>CLM</entry>
+                        <entry>SSH</entry>
+                        <entry>HLM</entry>
+                        <entry>Node configuration</entry>
+                        <entry>SSH key pair</entry>
+                        <entry>HLM admin</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>success/failure</entry>
+                        <entry>SSH key pair</entry>
+                        <entry>Configure node</entry>
+                    </row>
+                    <row>
+                        <entry>1f</entry>
+                        <entry>CLM</entry>
+                        <entry>RPC</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>Package request</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>HLM</entry>
+                        <entry>Package</entry>
+                        <entry>none</entry>
+                        <entry>Request a package</entry>
+                    </row>
+                    <row>
+                        <entry>2 - 4</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>HLM</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>DCN VSC (KVM Host), Standard Controller, ESX Compute</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>Same as 1a through 1f above</entry>
+                    </row>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                    <row>
+                        <entry>5</entry>
+                        <entry>CAN</entry>
+                        <entry>HTTPS</entry>
+                        <entry>Orchestrator</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>Keystone and policy.json</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>server certificate</entry>
+                        <entry>Keystone, Cinder, Glance, Swift, Nova. Neutron, Heat, Ceilometer,
+                            Horizon,</entry>
+                    </row>
+                    <row>
+                        <entry>6</entry>
+                        <entry>CAN</entry>
+                        <entry>HTTPS</entry>
+                        <entry>Orchestrator</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>Keystone token</entry>
+                        <entry>Keystone and policy.json</entry>
+                        <entry>WR Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>server certificate</entry>
+                        <entry>Nova, Heat, Ceilometer, Patching, Sysinv, Power_mgmt</entry>
+                    </row>
+                    <row>
+                        <entry>7</entry>
+                        <entry>BLS</entry>
+                        <entry>HTTP</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>VSA control</entry>
+                        <entry>username, password</entry>
+                        <entry>storage admin</entry>
+                        <entry>StoreVirtual, 3PAR</entry>
+                        <entry>Authorized/Unauthorized</entry>
+                        <entry>none</entry>
+                        <entry>Volume Create/Delete</entry>
+                    </row>
+                    <row>
+                        <entry>8</entry>
+                        <entry>BLS</entry>
+                        <entry>iSCSI, CHAP</entry>
+                        <entry>ESX Compute</entry>
+                        <entry>Storage access</entry>
+                        <entry>username, password</entry>
+                        <entry>storage admin</entry>
+                        <entry>StoreVirtual, 3PAR</entry>
+                        <entry>Storage blocks</entry>
+                        <entry>none</entry>
+                        <entry>Volume attach or Create Volume from Image</entry>
+                    </row>
+                    <row>
+                        <entry>9</entry>
+                        <entry>BLS</entry>
+                        <entry>iSCSI, CHAP</entry>
+                        <entry>WR Compute</entry>
+                        <entry>Storage access</entry>
+                        <entry>username, password</entry>
+                        <entry>storage admin</entry>
+                        <entry>StoreVirtual, 3PAR</entry>
+                        <entry>Storage blocks</entry>
+                        <entry>none</entry>
+                        <entry>Volume attach</entry>
+                    </row>
+                    <row>
+                        <entry>10a</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>Management control &amp; images</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>ESX Compute</entry>
+                        <entry>Inter-service response</entry>
+                        <entry>none</entry>
+                        <entry>Inter-service communication</entry>
+                    </row>
+                    <row>
+                        <entry>10b</entry>
+                        <entry>CLM</entry>
+                        <entry>RPC/HTTP</entry>
+                        <entry>ESX Compute</entry>
+                        <entry>Management control &amp; images</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>Inter-service response</entry>
+                        <entry>none</entry>
+                        <entry>Inter-service communication, rabbitmq and SQL updates</entry>
+                    </row>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                    <row>
+                        <entry>11a</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP</entry>
+                        <entry>WR Controller</entry>
+                        <entry>Management control</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>WR Compute</entry>
+                        <entry>Inter-service response</entry>
+                        <entry>none</entry>
+                        <entry>Inter-service communication</entry>
+                    </row>
+                    <row>
+                        <entry>11b</entry>
+                        <entry>CLM</entry>
+                        <entry>RPC/HTTP</entry>
+                        <entry>WR Compute</entry>
+                        <entry>Management control</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>WR Controller</entry>
+                        <entry>Inter-service response</entry>
+                        <entry>none</entry>
+                        <entry>Inter-service communication, rabbitmq and SQL updates</entry>
+                    </row>
+                    <row>
+                        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                        <entry>12a</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP</entry>
+                        <entry>WR Controller</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>Keystone and policy.json</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>none</entry>
+                        <entry>Keystone, Glance, Cinder, Swift, Neutron. HCG 2.0 change.</entry>
+                        <?oxy_custom_end?>
+                    </row>
+                    <row>
+                        <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                        <entry>12b*</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>Keystone token</entry>
+                        <entry>Keystone and policy.json</entry>
+                        <entry>WR Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>none</entry>
+                        <entry>Horizon to WR Nova. HCG 2.0 change.</entry>
+                        <?oxy_custom_end?>
+                    </row>
+                    <row>
+                        <entry>13</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP or RPC</entry>
+                        <entry>WR Compute</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>none</entry>
+                        <entry>Keystone</entry>
+                    </row>
+                    <row>
+                        <entry>14</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>WR Compute</entry>
+                        <entry>Send packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>VM traffic to gateway. Tenant Networks are isolated through
+                            VxLANs.</entry>
+                    </row>
+                    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                    <row>
+                        <entry>15</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>WR Compute (DCN VRS)</entry>
+                        <entry>Send packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>WR Compute (DCN VRS)</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>VM Traffic within Cloud. Tenant Networks are isolated through VxLANs.
+                            HCG 2.0 change.</entry>
+                    </row>
+                    <?oxy_custom_end?>
+                    <row>
+                        <entry>16</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>ESX Compute</entry>
+                        <entry>Send packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>VM traffic to gateway. Tenant Networks are isolated through VxLANs
+                            tunnels. </entry>
+                    </row>
+                    <row>
+                        <entry>17</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>ESX Compute (DCN VRS)</entry>
+                        <entry>Send packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>ESX Compute (DCN VRS)</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>VM Traffic within Cloud. Tenant Networks are isolated through VxLANs
+                            tunnels.</entry>
+                    </row>
+                    <row>
+                        <entry>18</entry>
+                        <entry>TUL</entry>
+                        <entry>OpenFlow</entry>
+                        <entry>DCN VSC</entry>
+                        <entry>Control command</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>ESX Compute (DCN VRS)</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Similar to HOS 1.1 VxLAN tenant overlay network.</entry>
+                    </row>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                    <row>
+                        <entry>19</entry>
+                        <entry>TUL</entry>
+                        <entry>OpenFlow</entry>
+                        <entry>DCN VSC</entry>
+                        <entry>Control command</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Similar to HOS 1.1 VxLAN tenant overlay network.</entry>
+                    </row>
+                    <row>
+                        <entry>20</entry>
+                        <entry>TUL</entry>
+                        <entry>
+                            <p>OpenFlow/</p>
+                            <p>BGP(intradc)</p>
+                            <p>/MPLS(interdc)</p>
+                        </entry>
+                        <entry><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>DCN
+                            VSC (DCN 3.2 can be enabled to use TLS, once enabled used for both
+                            OpenFlow and XMPP) <?oxy_custom_end?></entry>
+                        <entry>Control command</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Remote Cloud VSC</entry>
+                        <entry> none</entry>
+                        <entry>none </entry>
+                        <entry>Bidirectional (remote cloud can be intradc or interdc)</entry>
+                    </row>
+                    <row>
+                        <entry>21</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>ESX Compute (DCN VRS)</entry>
+                        <entry>Send Packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Remote ESX Compute (DCN VRS)/VRS-G</entry>
+                        <entry> none</entry>
+                        <entry> none </entry>
+                        <entry>Bidirectional; Tenant Networks are isolated through VxLANs
+                            tunnels.</entry>
+                    </row>
+                    <row>
+                        <entry>22</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>DCN VRS-G</entry>
+                        <entry>Send Packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Remote ESX Compute / Remote DCN VRS-G</entry>
+                        <entry> none</entry>
+                        <entry> none </entry>
+                        <entry>Tenant traffic isolated through VxLAN tunnels.</entry>
+                    </row>
+                    <row>
+                        <entry>23a</entry>
+                        <entry>DCM</entry>
+                        <entry>XMPP</entry>
+                        <entry>Remote DCN VSC
+                            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(HCG2.0/DCN
+                            3.2 VSC can be configured for TLS<b>)</b><?oxy_custom_end?></entry>
+                        <entry>Management data</entry>
+                        <entry>username, password</entry>
+                        <entry>none</entry>
+                        <entry>DC DCN VSD
+                            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(HCG2.0/DCN
+                            3.2 VSC with TLS can establish encrypted XMPP
+                            session)<?oxy_custom_end?></entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Management traffic. Policy enforcement. Status Update</entry>
+                    </row>
+                    <row>
+                        <entry>23b</entry>
+                        <entry>DCM</entry>
+                        <entry>XMPP</entry>
+                        <entry>DC DCN VSD
+                            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(HCG2.0/DCN
+                            3.2 PKI service generate,store,revoke all VSP system certs, signed by
+                            VSD Root CA).<?oxy_custom_end?></entry>
+                        <entry>Management data</entry>
+                        <entry>username, password</entry>
+                        <entry>none</entry>
+                        <entry>Remote DCN VSC</entry>
+                        <entry>none</entry>
+                        <entry> cert </entry>
+                        <entry>Management traffic. Policy enforcement. Status Update</entry>
+                    </row>
+                    <row>
+                        <entry>24</entry>
+                        <entry>DCM</entry>
+                        <entry>HTTP</entry>
+                        <entry>Standard Controller (DCN Neutron plugin)(APIs)</entry>
+                        <entry>Control command</entry>
+                        <entry>username, password</entry>
+                        <entry>none</entry>
+                        <entry>DC DCN VSD</entry>
+                        <entry>none </entry>
+                        <entry> none </entry>
+                        <entry>API Requests</entry>
+                    </row>
+                    <row>
+                        <entry>25a</entry>
+                        <entry>DCM</entry>
+                        <entry>XMPP</entry>
+                        <entry>DCN VSC (HCG2.0/DCN 3.2 VSC can be configured for TLS)</entry>
+                        <entry>Management data</entry>
+                        <entry>username, password</entry>
+                        <entry>none</entry>
+                        <entry>DC DCN VSD
+                            <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>(HCG2.0/DCN
+                            3.2 VSC with TLS can establish encrypted XMPP
+                            session)<?oxy_custom_end?></entry>
+                        <entry>none</entry>
+                        <entry> none </entry>
+                        <entry>Management traffic. Policy enforcement. Status Update</entry>
+                    </row>
+                    <row>
+                        <entry>25b</entry>
+                        <entry>DCM</entry>
+                        <entry>XMPP</entry>
+                        <entry>DC DCN VSD (HCG2.0/DCN 3.2 PKI service generate,store,revoke all VSP
+                            system certs, signed by VSD Root CA).</entry>
+                        <entry>Management data</entry>
+                        <entry>username, password</entry>
+                        <entry>none</entry>
+                        <entry>DCN VSC</entry>
+                        <entry>none</entry>
+                        <entry> cert </entry>
+                        <entry>Management traffic. Policy enforcement. Status Update</entry>
+                    </row>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                    <row>
+                        <entry>26</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>ESX Compute</entry>
+                        <entry>Send Packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>ToR Switch 5930</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Tenant traffic isolated through VxLAN tunnels.New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>27</entry>
+                        <entry>TUL</entry>
+                        <entry>OpenFlow</entry>
+                        <entry>DCN VSC</entry>
+                        <entry>Control command</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>ToR Switch 5930</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Similar to HOS 1.1 VxLAN tenant overlay network. New in HCG
+                            2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>28</entry>
+                        <entry>TUL</entry>
+                        <entry>OpenFlow</entry>
+                        <entry>DCN VSC</entry>
+                        <entry>Control command</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>WR Compute (DCN RVS)</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Similar to HOS 1.1 VxLAN tenant overlay network. New in HCG
+                            2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>29</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>WR Compute</entry>
+                        <entry>Send Packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>ToR Switch 5930</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>VM traffic to gateway. Tenant Networks are isolated through VLANs.New
+                            in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>30</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>BM Node</entry>
+                        <entry>Send Packets</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>ToR Switch 5930</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>VM traffic to gateway. Tenant Networks are isolated through VLANs,
+                            New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>31</entry>
+                        <entry>CTL</entry>
+                        <entry>SSH</entry>
+                        <entry>BM Controller</entry>
+                        <entry>Control Command</entry>
+                        <entry>username, password</entry>
+                        <entry>root user w/ network-admin/network-operator role</entry>
+                        <entry>ToR Switch 5930</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Controls the VLAN configuration on the BM node's switch port. Switch
+                            between provisioning VLAN to Tenant VLAN. New in HCG 2.0.</entry>
+                    </row>
+                    <?oxy_custom_end?>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                    <row>
+                        <entry>32</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>WR Compute (DCN VRS)</entry>
+                        <entry>Data</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>Remote DCN VRS/DCN VRS-G</entry>
+                        <entry> none</entry>
+                        <entry> none </entry>
+                        <entry>Bidirectional; Tenant Networks are isolated through VxLANs tunnels.
+                            New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>33</entry>
+                        <entry>DCM</entry>
+                        <entry>HTTP</entry>
+                        <entry>Orchestrator</entry>
+                        <entry>Control command</entry>
+                        <entry>username, password</entry>
+                        <entry>none</entry>
+                        <entry>DC DCN VSD</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>API requests. Happens outside HCG.</entry>
+                    </row>
+                    <row>
+                        <entry>34</entry>
+                        <entry>CAN</entry>
+                        <entry>HTTPS</entry>
+                        <entry>Orchestrator</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>Keystone and policy.json</entry>
+                        <entry>BM Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>server certificate</entry>
+                        <entry>Keystone, Cinder, Glance, Swift, Nova. Neutron, Heat, Ceilometer,
+                            Horizon. New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>35</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>HLM</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>BM Controller</entry>
+                        <entry>as above for 1</entry>
+                        <entry>as above for 1</entry>
+                        <entry>Same as 1a - 1f above. New in HCG 2.0.</entry>
+                    </row>
+                    <?oxy_custom_end?>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                    <row>
+                        <entry>36</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP</entry>
+                        <entry>BM Controller</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry> </entry>
+                        <entry>Standard Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>none</entry>
+                        <entry>Keystone, Glance, Swift. New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>37</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP or RPC</entry>
+                        <entry>BM Node</entry>
+                        <entry>OpenStack service request</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry> </entry>
+                        <entry>Standard Controller</entry>
+                        <entry>OpenStack service response</entry>
+                        <entry>none</entry>
+                        <entry>Keystone, Glance and Swift. New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>39a</entry>
+                        <entry>CLM</entry>
+                        <entry>HTTP</entry>
+                        <entry>BM Controller</entry>
+                        <entry>Management control</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>BM Node</entry>
+                        <entry>Inter-service response</entry>
+                        <entry>none</entry>
+                        <entry>Inter-service communication. New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>39b</entry>
+                        <entry>CLM</entry>
+                        <entry>RPC/HTTP</entry>
+                        <entry>BM Node</entry>
+                        <entry>Management control</entry>
+                        <entry>username, password or Keystone token</entry>
+                        <entry>service accounts</entry>
+                        <entry>BM Controller</entry>
+                        <entry>Inter-service response</entry>
+                        <entry>none</entry>
+                        <entry>Inter-service communication, rabbitmq and SQL updates. New in HCG
+                            2.0.</entry>
+                    </row>
+                    <?oxy_custom_end?>
+                    <row>
+                        <entry>40</entry>
+                        <entry>DCM</entry>
+                        <entry>RPC</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>Data Center utility requests: user creds, hostname, email msg</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>DC Utilities: AD, DNS, SMTP</entry>
+                        <entry>user auth, IP address, email sent ack</entry>
+                        <entry>none</entry>
+                        <entry>Active Directory, DNS, SMTP.</entry>
+                    </row>
+                    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+                    <row>
+                        <entry>41</entry>
+                        <entry>TUL</entry>
+                        <entry>Any</entry>
+                        <entry>WR Compute (AVS)</entry>
+                        <entry>Data</entry>
+                        <entry>none</entry>
+                        <entry>none</entry>
+                        <entry>WR Compute (AVS)</entry>
+                        <entry>Any</entry>
+                        <entry>none</entry>
+                        <entry>Bidirectional; Tenant Networks are isolated through VxLANs tunnels or
+                            VLAN segmentation</entry>
+                    </row>
+                    <row>
+                        <entry>42</entry>
+                        <entry>DCM</entry>
+                        <entry>HTTPS</entry>
+                        <entry>Standard Controller</entry>
+                        <entry>IP reservation request</entry>
+                        <entry>username/ password</entry>
+                        <entry>none</entry>
+                        <entry>Infoblox</entry>
+                        <entry>Infoblox API response</entry>
+                        <entry>Server certificate</entry>
+                        <entry>IPAM - sends a request to reserve an IP for newly created neutron
+                            port. New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>43</entry>
+                        <entry>DCM</entry>
+                        <entry>HTTPS</entry>
+                        <entry>Remote Standard Controller</entry>
+                        <entry>IP reservation request</entry>
+                        <entry>username/ password</entry>
+                        <entry>none</entry>
+                        <entry>Infoblox</entry>
+                        <entry>Infoblox API response</entry>
+                        <entry>Server certificate</entry>
+                        <entry>IPAM - sends a request to reserve an IP for newly created neutron
+                            port. New in HCG 2.0.</entry>
+                    </row>
+                    <row>
+                        <entry>44</entry>
+                        <entry>DCM</entry>
+                        <entry>HTTPS</entry>
+                        <entry>BM Controller</entry>
+                        <entry>IP reservation request</entry>
+                        <entry>username/ password</entry>
+                        <entry>none</entry>
+                        <entry>Infoblox</entry>
+                        <entry>Infoblox API response</entry>
+                        <entry>Server certificate</entry>
+                        <entry>IPAM - sends a request to reserve an IP for newly created neutron
+                            port. New in HCG 2.0.</entry>
+                    </row>
+                    <?oxy_custom_end?>
+                    <row>
+                        <entry><b>Interface</b></entry>
+                        <entry><b>Network name</b></entry>
+                        <entry><b>Network protocol</b></entry>
+                        <entry><b>Requestor</b></entry>
+                        <entry><b>Request</b></entry>
+                        <entry><b>Request credentials</b></entry>
+                        <entry><b>Request authorization</b></entry>
+                        <entry><b>Listener</b></entry>
+                        <entry><b>Response</b></entry>
+                        <entry><b>Response credentials</b></entry>
+                        <entry><b>Description of operation</b></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <p><b>Dependencies</b></p>
+        <p>The following dependencies are new to Version 2.0:</p>
+        <ul id="ul_ams_r3c_f5">
+            <li>Helion OpenStack 2.0</li>
+            <li>Helion Lifecycle Management (HLM) - Pre 2.0</li>
+            <li>Nuage/DCN 3.2</li>
+            <li>Wind River Titanium 15.09</li>
+            <li>Infoblox</li>
+            <li>HPN 5930/7900 OVSDB Firmware</li>
+        </ul>
+        <p><b>Sequence Diagrams</b></p>
+        <p><image href="../../media/CGH-2-sequence-deploy.png" id="image_dbh_nkc_f5" width="800"
+            /></p>
+        <p><image href="../../media/CGH-2-sequence-resource.png" id="image_kcc_skc_f5" width="800"
+            /></p>
+        <p><b>Implementation</b></p>
+        <p><b>1. VRS SKU</b></p>
+        <p><image href="../../media/CGH-2-VRS-SKU.png" id="image_jh5_dlc_f5" width="800"/></p>
+        <p>2. AVS SKU</p>
+        <p><image href="../../media/CGH-2-AVS-SKU.png" id="image_rb2_hlc_f5"/></p>
+        <p><image href="../../media/CGH-2-Network-ALU-chart.png" id="image_abr_llc_f5"/></p>
+        <p>See also Architecture section at <xref
+                href="https://wiki.hpcloud.net/display/HCG/CG+Helion+Product+Documentation"
+                format="html" scope="external">CG Helion Product Documentation</xref>
+        </p>
+        <p><b>Summary of Controls</b></p>
+        <p>Summary of controls spanning multiple components and interfaces:</p>
+        <ul id="ul_gms_r3c_f5">
+            <li><b>Audit:</b> OpenStack services, mySQL, RabbitMQ, HLM CP, Ansible, Cobbler perform
+                logging. Logs are collected by the centralized logging service.</li>
+            <li>
+                <p><b>Authentication: </b>Authentication via Keystone tokens at APIs. Password
+                    authentication to Nuage components and StoreVirtual.</p>
+            </li>
+            <li><b>Authorization</b>: OpenStack provides admin and non-admin roles that are
+                indicated in session tokens. Processes run at minimum privilege. Processes run as
+                unique user/group definitions. Appropriate filesystem controls prevent other
+                processes from accessing service’s files. IPtables and ACLs at the network perimeter
+                ensure that no unneeded ports are open.</li>
+            <li><b>Availability:</b> Redundant hosts, clustered DB, clustered MQ, fail-over.
+                Monitoring via centralized monitoring service.</li>
+            <li>
+                <p><b>Confidentiality:</b> Network connections for outside access to APIs over TLS.
+                    Network separation via VLANs. Data and config files protected via filesystem
+                    controls. Separation of customer traffic on the TUL network via Open Flow
+                    (VxLANs).</p>
+            </li>
+            <li><b>Integrity:</b> Network connections for outside access to APIs over TLS. Network
+                separation via VLANs. Data and config files are protected by filesystem controls.
+            </li>
+        </ul>
+        <p> </p>
+    </body>
+</topic>

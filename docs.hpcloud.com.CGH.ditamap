@@ -71,6 +71,7 @@
       navtitle="Release Notes" locktitle="yes" otherprops="relnotes">
       <topicref href="CarrierGrade/CGHRelNotes/jow1430312565268.xml"
         navtitle="Applying Customer-Specific Branding (optional)" locktitle="yes"/>
+      <topicref navtitle="Changes and Additions from Version 1.1" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"
       format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation"/>
