@@ -21,9 +21,9 @@
         cloud. You can also optionally install a baremetal region that leverages the OpenStack
         Ironic service.</p>
       <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
-          href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+          href="../../CarrierGrade2.0/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
           >Horizon graphical interface</xref> or using the CLIs of the respective <xref
-          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">services</xref> to
+          href="../../CarrierGrade2.0/Overview/carrier-grade.services-overview.dita">services</xref> to
         manage hypervisors and provision virtual machines.</p>
     </section>
     <section>

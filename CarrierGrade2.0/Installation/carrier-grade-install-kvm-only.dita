@@ -267,7 +267,7 @@ Password: cghelion</codeblock></p></li>
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-              href="../../CarrierGrade/Installation/carrier-grade-install-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
+              href="../../CarrierGrade2.0/Installation/carrier-grade-install-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
 </ol>
 </section>
 <section id="pxe-boot"> <title>Configure PXE boot</title>

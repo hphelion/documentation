@@ -203,7 +203,7 @@ fi
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
                         <p>For information on installing NTP on the KVM Host, see <xref
-                                        href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita"
+                                        href="../../CarrierGrade2.0/Installation/carrier-grade-install-NTP.dita"
                                         >Installing an NTP Server</xref>.</p>
                 </section>
                 <section id="ssh">

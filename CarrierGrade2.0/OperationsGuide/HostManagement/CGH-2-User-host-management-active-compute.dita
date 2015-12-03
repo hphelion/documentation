@@ -43,7 +43,7 @@
         <li>
           <p>
             <xref
-              href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+              href="../../../CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
               >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
           <ul>
             <li>Use the IP address for the appropriate region where you want to make the change,
@@ -60,7 +60,7 @@
         <li>
           <p>
             <xref
-              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
+              href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
               >Lock the host to be modified</xref> by clicking <b>More</b> then <b>Lock Host</b> for
             the controller.</p>
           <p>Wait for the procedure to be completed.</p>
@@ -90,7 +90,7 @@
         <li>
           <p>
             <xref
-              href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
+              href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
               >Unlock the host</xref>.</p>
           <p>The host is rebooted a second time.</p>
         </li>

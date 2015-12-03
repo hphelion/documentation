@@ -30,7 +30,7 @@
         <b>System</b> tabs. These tabs provide administrators and users with a graphical interface
       to access, provision and automate cloud-based resources.</p>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on using the dashboards, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
+<p>For information on using the dashboards, see <xref href="../../CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
 </section>
 <!-- 
   <section id="horizon-dashboard-examples"> <title>Horizon Dashboard Examples</title>

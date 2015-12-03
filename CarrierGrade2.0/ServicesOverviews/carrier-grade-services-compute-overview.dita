@@ -39,7 +39,7 @@ The HP Helion OpenStack compute service can be configured to [write metadata to 
     <section id="UI">
       <title>Using the dashboards</title>
       <p>You can use the <xref
-          href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
+          href="../../CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
           >HP Helion Dashboard</xref> to work with the Compute service.</p>
     </section>
     <section id="API">

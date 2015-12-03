@@ -38,7 +38,7 @@
 * You can replace a failed compute node host with an equivalent.</p>
 <p>
 <b>Caution:</b> When replacing or adjusting a host, ensure that the overall resource pool still meets the requirements for your system.</p>
-<p>Complete instructions for adding a compute node are provided in <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita" >Initializing and Configuring Compute Nodes</xref>.</p>
+<p>Complete instructions for adding a compute node are provided in <xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita" >Initializing and Configuring Compute Nodes</xref>.</p>
 <p>In this topic:</p>
 <ul>
 <li>
@@ -70,13 +70,13 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to be removed</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
+<xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to be removed</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
 
 <p>Wait for the procedure to be completed.</p>
 </li>
 <li>
 <p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita" >Delete the host</xref> from the HPE Helion OpenStack Carrier Grade system. Click <b>More</b> then <b>Delete Host</b> for the host.</p>
+  <xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita" >Delete the host</xref> from the HPE Helion OpenStack Carrier Grade system. Click <b>More</b> then <b>Delete Host</b> for the host.</p>
 </li>
 <li>
 <p>Power down the host and remove the hardware from the cluster.</p>
@@ -89,7 +89,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack Horizon Dashboard</xref>.</p>
+<xref href="../../../CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
@@ -103,13 +103,13 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to be modified</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
+<xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to be modified</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
 
 <p>Wait for the procedure to be completed.</p>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power down the host</xref>.</p>
+<xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power down the host</xref>.</p>
 </li>
 <li>
 <p>Make any required resource changes (for example, BIOS changes required for proper operation).</p>
@@ -118,7 +118,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power on the host</xref> and wait for it to reboot fully.</p>
+<xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power on the host</xref> and wait for it to reboot fully.</p>
 
 <p>When the host is fully rebooted, it is shown as Locked, Enabled, and Available in the Hosts list.</p>
 
@@ -126,7 +126,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref>.</p>
+<xref href="../../../CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref>.</p>
 
 <p>The host is rebooted a second time.</p>
 </li>
