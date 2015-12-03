@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"  "topic.dtd" >
+<topic xml:lang="en-us" id="upgrade21">
+  <title>Upgrade from <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/></title>
+  <body>
+    <section>
+      <title>How to upgrade from <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/>.</title>
+    </section>
+  </body>
+</topic>
