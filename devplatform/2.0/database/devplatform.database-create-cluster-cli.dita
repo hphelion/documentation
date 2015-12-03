@@ -8,12 +8,13 @@
       <li>Log in to the installer node for your HPE Helion OpenStack environment and source the service.osrc file:
         <codeblock>. service.osrc</codeblock></li>
       <li>Use the <codeph>trove cluster-create</codeph> command to create the new database. The syntax is as follows:
-      <codeblock>trove cluster-create &lt;name&gt; &lt;datastore&gt; &lt;datastore_version&gt; [--instance &lt;flavor=flavor_name_or_id,volume=volume&gt;]</codeblock>
+      <codeblock>trove cluster-create &lt;name&gt; &lt;datastore&gt; &lt;datastore_version&gt; [--instance &lt;flavor=flavor_name_or_id,volume=volume&gt;,nic-net-id=&lt;network-uuid&gt;]</codeblock>
         <ul><li>To view the valid <b>datastore</b> values, use <codeph>trove datastore-list</codeph>.</li>
         <li>To view the valid <b>datastore_version</b> values, use <codeph>trove datastore-version-list &lt;datastore&gt;</codeph>, where <b>datastore</b> is the
           name of the datastore (e.g. <b>mysql</b>.)</li>
         </ul>
         <note>MongoDB instances require a minimum volume size of 5.</note>
+        <note>All of the nodes in a cluster should be created on the same network, so that the cluster can communicate between the nodes for replication.</note>
       </li>
       <li>To verify that the cluster was created, use the <codeph>trove cluster-list</codeph> command.
       </li>
@@ -25,18 +26,18 @@
     <section id="examples"><title>Examples</title>
       <ul>
         <li><b>Example 1:</b> Create a MySql cluster called MyCluster with three database instances of flavor m1.medium and volume size 3
-        <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=3 --instance flavor=3,volume=3 --instance flavor=3,volume=3 </codeblock></li>
+          <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=3,nic=net-id=&lt;network-uuid&gt; --instance flavor=3,volume=3,nic=net-id=&lt;network-uuid&gt; --instance flavor=3,volume=3,nic=net-id=&lt;network-uuid&gt; </codeblock></li>
         <li><b>Example 2:</b> Create a Redis cluster called MyRedisCluster with two database instances of flavor m1.large and volume size 4
-        <codeblock>trove cluster-create MyRedisCluster redis 3.0 --instance flavor=4,volume=4 --instance flavor=4,volume=4</codeblock></li>
+          <codeblock>trove cluster-create MyRedisCluster redis 3.0 --instance flavor=4,volume=4,nic=net-id=&lt;network-uuid&gt; --instance flavor=4,volume=4,nic=net-id=&lt;network-uuid&gt;</codeblock></li>
         <li><b>Example 3:</b> Create a MongoDB cluster called MyMongoDBCluster with three database instances of flavor m1.large and volume size 2 
-        <codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=5 --instance flavor=4,volume=5 --instance flavor=4,volume=5</codeblock></li>
+          <codeblock>trove cluster-create MyMongoDBCluster mongodb 3.0 --instance flavor=4,volume=5,nic=net-id=&lt;network-uuid&gt; --instance flavor=4,volume=5,nic=net-id=&lt;network-uuid&gt; --instance flavor=4,volume=5,nic=net-id=&lt;network-uuid&gt;</codeblock></li>
         <li><b>Example 4:</b> Create a Vertica Preview cluster called MyVerticaCluster with three database instances of flavor m1.large and volume size 2
-        <codeblock>trove cluster-create MyVerticaCluster vertica_preview 7.1 --instance flavor=4,volume=2 --instance flavor=4,volume=2 --instance flavor=4,volume=2</codeblock></li>
+          <codeblock>trove cluster-create MyVerticaCluster vertica_preview 7.1 --instance flavor=4,volume=2,nic=net-id=&lt;network-uuid&gt; --instance flavor=4,volume=2,nic=net-id=&lt;network-uuid&gt; --instance flavor=4,volume=2,nic=net-id=&lt;network-uuid&gt;</codeblock></li>
       </ul>
       <p>For High Availability (HA), it is recommended that the database instances be created on specific Availability Zones (AZ). The following example shows how to create instances on specific AZs:</p>
       <ul>
         <li><b>Example 5:</b> Create a MySql cluster with instances in specific availability zones
-        <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=10,<ph outputclass="codehighlight">availability_zone=AZ1</ph> --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ2</ph> --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ3</ph></codeblock></li>
+          <codeblock>trove cluster-create MyCluster mysql-cluster 5.5 --instance flavor=3,volume=10,<ph outputclass="codehighlight">availability_zone=AZ1</ph>,nic=net-id=&lt;network-uuid&gt; --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ2</ph>,nic=net-id=&lt;network-uuid&gt; --instance flavor=3,volume=3,<ph outputclass="codehighlight">availability_zone=AZ3</ph>,nic=net-id=&lt;network-uuid&gt;</codeblock></li>
       </ul>
     </section>
     <note>
