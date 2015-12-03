@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="changelog21">
+  <title>Updates to <keyword keyref="kw-hos-phrase-21"/> Documentation</title>
+  <body>
+    <!--<p conkeyref="HOS-conrefs/applies-to"/>-->
+    <section id="about">
+      <p>The <keyword keyref="kw-hos"/> documentation team continuously updates the documents in
+        this web deliverable. These updates include anything from fixes for minor typos or style
+        issues, to more significant changes such as bug fixes, additions, or deletions. The
+        following table shows the significant changes made to this content.</p>
+      <p>The table is sortable. </p>
+    </section>
+    <section id="changelog"><title>Documentation Revision History</title>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="changelog_tb2" outputclass="tablesorter">
+          <tgroup cols="3">
+            <colspec colname="c2" colnum="1"/>
+            <colspec colname="c3" colnum="2"/>
+            <colspec colname="c4" colnum="3"/>
+            <thead>
+              <row>
+                <entry>Date &nbsp; &nbsp; (mm/dd/yyyy)</entry>
+                <entry>Component</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>12/18/2015</entry>
+                <entry>-</entry>
+                <entry>Initial Creation</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+    </section>
+  </body>
+</topic>              
