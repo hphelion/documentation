@@ -124,6 +124,36 @@ $ openstack endpoint create database public 'http://<i>&lt;public-VIP-IP-address
         <dlentry><dt>“mysql cluster 5.5” listed as option in Launch Instance dialog</dt>  
           <dd>When <b>Launch Instance</b> is selected in the <b>Project->Database->Instances</b> panel in Horizon, a <b>Datastore</b> option of <b>mysql-cluster</b> version <b>5.5</b> is displayed. Selecting this option  
             creates a standard <b>mysql</b> cluster.</dd></dlentry>  
+        <dlentry><dt>Workaround for installations with TLS (Transport Layer Security) disabled</dt>
+          <dd><p>When TLS is disabled, there is no file to specify for the <i>ephemeral_ca_cert</i> file. Instead, an empty file needs to be specified, and the endpoint URLs must be changed from https to http:</p>
+            <ol>
+              <li><codeph>touch /tmp/empty-file</codeph></li>
+              <li>in <codeph>~/.config/openstack/clouds.yaml</codeph> database section, specify:
+                <codeblock>database:
+  ephemeral_ca_cert: /tmp/empty-file
+                </codeblock></li>
+            </ol>
+            <p>Next, after installing Database Service on the Lifecycle Manager (deployer) node, do the following:</p>
+            <ol>
+              <li>List database endpoints:
+                <codeblock>stack@ma-ccp-c0-m1-mgmt:~$ openstack endpoint list | grep database
+                  6962276204934327a09501c0e44fca08	region1	database	database	True	internal	https://10.241.127.69:8779/v1.0/$(tenant_id)s
+                  a042121327374301b5106bec388e6146	region1	database	database	True	admin	https://10.241.127.69:8779/v1.0/$(tenant_id)s
+                  c02dbcc653824bd4baa7ac2bfe1d4fab	region1	database	database	True	public	https://10.241.127.69:8779/v1.0/$(tenant_id)s
+                </codeblock></li>
+              <li>Modify the endpoint URLs:
+                <codeblock>stack@ma-ccp-c0-m1-mgmt:~$ openstack endpoint set --url 'http://10.241.127.69:8779/v1.0/$(tenant_id)s' 6962276204934327a09501c0e44fca08
+                  stack@ma-ccp-c0-m1-mgmt:~$ openstack endpoint set --url 'http://10.241.127.69:8779/v1.0/$(tenant_id)s' a042121327374301b5106bec388e6146
+                  stack@ma-ccp-c0-m1-mgmt:~$ openstack endpoint set --url 'http://10.241.127.69:8779/v1.0/$(tenant_id)s' c02dbcc653824bd4baa7ac2bfe1d4fab
+                </codeblock></li>
+              <li>Verify the endpoint URLs: 
+                <codeblock>stack@ma-ccp-c0-m1-mgmt:~$ openstack endpoint list | grep database
+                  6962276204934327a09501c0e44fca08	region1	database	database	True	internal	http://10.241.127.69:8779/v1.0/s
+                  a042121327374301b5106bec388e6146	region1	database	database	True	admin	http://10.241.127.69:8779/v1.0/s
+                  c02dbcc653824bd4baa7ac2bfe1d4fab	region1	database	database	True	public	http://10.241.127.69:8779/v1.0/s
+                </codeblock></li>
+            </ol>
+          <p></p></dd></dlentry>
       </dl></section>  
       <section>
       <title>Known Issues</title>
