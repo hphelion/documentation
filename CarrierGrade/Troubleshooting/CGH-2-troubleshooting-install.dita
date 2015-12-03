@@ -18,6 +18,7 @@
     <p>This topic describes all the known issues that you might encounter:</p>
     <section>
       <ul id="ul_xzh_nmc_mt">
+        <li><xref href="#topic10581/ansible-accelerate" format="dita"/></li>
         <li><xref href="#topic10581/fail-apache" format="dita"/></li>
         <li><xref href="#topic10581/fail-ntp" format="dita"/></li>
         <li><xref href="#topic10581/install-fails" format="dita"/></li>
@@ -25,6 +26,53 @@
         <li><xref href="#topic10581/vrs" format="dita"/></li>
       </ul>
     </section>
+    <section id="ansible-accelerate"><title>Installation fails due to Ansible errors</title><b>System
+        Behavior/Message</b><p>The installation fails during <codeph>hlm deploy</codeph>, and you
+        see any of the following errors:</p><p>
+        <ul id="ul_ill_x1d_f5">
+          <li>Any error with the following message: <codeph>Failed to launch the accelerated daemon
+              on 10.10.2.102 (reason: failed to connect to the local socket file) </codeph>. For
+            example:<codeblock>GATHERING FACTS *************************************************************** 
+fatal: [BASE-CCP-T1-M1-NETCLM] =&gt; Failed to launch the accelerated daemon on 10.10.2.102 (reason: failed to connect to the local socket file) 
+ok: [BASE-CCP-T1-M2-NETCLM] 
+ok: [BASE-CCP-T1-M3-NETCLM]</codeblock></li>
+          <li>Any error mentioning 10001 port</li>
+          <li>Any error that contains the <codeph>"OSError: [Errno 17] File exists:
+              '/root/.fireball.keys'"</codeph> string. For
+            example:<codeblock>fatal: [BASE-CCP-T1-M1-NETCLM] => Traceback (most recent call last): 
+. 
+. 
+. 
+OSError: [Errno 17] File exists: '/root/.fireball.keys'</codeblock></li>
+        </ul>
+      </p><p> These are errors internal to Ansible and are random in
+          occurrence.</p><p><b>Resolution</b></p><i><b>Secnario 1</b></i><p>If you experience one of
+        these errors on any tiers except the HP Helion OpenStack controller tiers (which is
+          <codeph>T1</codeph> in the Denver deployment and <codeph>T2</codeph> in Tahoe, Memphis and
+        Sacramento deployments), do the following:</p><p>
+        <ol id="ol_mmf_mbd_f5">
+          <li>Kill the ansible run if its still going on using <codeph>Ctrl C</codeph>.</li>
+          <li>Execute the following from the lifecycle manager to remove the Ansible accelerate
+            daemon, which runs on the
+            nodes:<codeblock>hlm deploy -c &lt;cloudname> -t accelerate-mode</codeblock></li>
+          <li>Execute the following command to restart the
+            installation:<codeblock>hlm deploy -c &lt;cloudname> -r</codeblock></li>
+        </ol>
+      </p><p><i><b>Secnario 2</b></i></p><p>If you hit this issue at the very beginning of the HP
+        Helion OpenStack controller tiers (which is <codeph>T1</codeph> in the Denver deployment and
+          <codeph>T2</codeph> in Tahoe, Memphis and Sacramento deployments), <b>before</b> the
+          <codeph>FND-MDB</codeph> or the <codeph>FND-RMQ</codeph> roles have run, do the
+        following:</p><ol>
+        <li>Kill the ansible run if its still going on using <codeph>Ctrl C</codeph>.</li>
+        <li>Execute the following from the lifecycle manager to remove the Ansible accelerate
+          daemon, which runs on the
+          nodes:<codeblock>hlm deploy -c &lt;cloudname> -t accelerate-mode</codeblock></li>
+        <li>Execute the following command to restart the
+          installation:<codeblock>hlm deploy -c &lt;cloudname> -r</codeblock></li>
+      </ol><p><i><b>Secnario 3</b></i></p><p>If you hit this issue at HP Helion OpenStack controller
+        tiers (which is <codeph>T1</codeph> in the Denver deployment and <codeph>T2</codeph> in
+        Tahoe, Memphis and Sacramento deployments), <b>after</b> the <codeph>FND-MDB</codeph> or the
+          <codeph>FND-RMQ</codeph> roles have run, follow the steps in Scenario 1.</p></section>
     <section id="fail-apache"><title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the Reload
         apache2 configuration task</title><p><b>System Behavior/Message</b></p><p>The installation
         of HPE Helion OpenStack Carrier Grade (the hlm deploy command) fails, with the following
@@ -55,7 +103,8 @@ FATAL: all hosts have already failed – aborting </codeblock></p>
           <li>Execute the following command on all nodes that failed, to disable firewall:
         <codeblock>ufw disable</codeblock></li>
       <li>Execute the following from the lifecycle manager to remove the Ansible accelerate daemon,
-        which runs on the nodes:<codeblock>hlm deploy -c b30 -t accelerate-mode</codeblock></li>
+        which runs on the
+        nodes:<codeblock>hlm deploy -c &lt;cloudname> -t accelerate-mode</codeblock></li>
       <li>Execute the following command to restart the
         installation:<codeblock>hlm deploy -c b30 -r</codeblock></li>
         </ol>
