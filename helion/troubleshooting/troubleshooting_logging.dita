@@ -35,7 +35,7 @@
           are not yet consumed by the logstash workers might be lost.</li>
       </ul>
     </section>
-
+<!-- specific to 2.1
     <section id="kibana_visualization"><title>Error When Creating a Kibana Visualization</title>
       <p>When creating a visualization in Kibana you may get an error similiar to this:
         <codeblock>"logstash-*" index pattern does not contain any of the following field types: number</codeblock></p>
@@ -49,5 +49,6 @@
         <li>Re-create the visualization.</li>
       </ol>
     </section>
+    -->
   </body>
 </topic>
