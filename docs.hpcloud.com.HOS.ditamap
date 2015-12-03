@@ -257,6 +257,8 @@
         locktitle="yes" otherprops="operations_node">
         <topicref href="helion/operations/replace_controller.dita"
           navtitle="Replacing a Controller Node" locktitle="yes"/>
+        <topicref href="helion/operations/recover_downed_cluster.dita"
+          navtitle="Recover a Downed Cluster after outage" locktitle="yes"/>
         <!-- COMPUTE -->
         <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node"
           locktitle="yes"/>
