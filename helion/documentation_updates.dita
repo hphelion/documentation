@@ -20,7 +20,7 @@
             <colspec colname="c4" colnum="3"/>
             <thead>
               <row>
-                <entry>Date &nbsp; &nbsp; (mm/dd/yyyy)</entry>
+                <entry>Date &#160; &#160; (mm/dd/yyyy)</entry>
                 <entry>Component</entry>
                 <entry>Description</entry>
               </row>
