@@ -3,8 +3,88 @@
 <topic xml:lang="en-us" id="upgrade21">
   <title>Upgrade from <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/></title>
   <body>
+    
     <section>
-      <title>How to upgrade from <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/>.</title>
+      <title>Performing the Upgrade from <keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/></title>
+      <keyword keyref="kw-hos-phrase-20"/> shipped with example configuration files, and you were able to modify them to suit your
+      needs. </section>
+    <section><note type="caution">The configuration you specified will remain unchanged through the upgrade
+      process; <b>however</b>, if you made any configuration changes by passing parameters to any
+      Ansible playbooks using the -e option, you should find the affected files and make the
+      required changes directly in the files in <b>helion/my_cloud</b> and commit them to the git
+      repository so that those changes are tracked and applied during the upgrade process.
+      Otherwise they will not be applied.</note></section>
+    <section>You may also install <keyword keyref="kw-hos-phrase-21"/> as a full install. Those instructions
+      are found in the installation guide.</section>
+    <section>To begin the upgrade process, log in to the lifecyce manager node as the user you
+      created during the <keyword keyref="kw-hos-phrase-20"/> deployment, and mount the install media at
+      <b>/media/cdrom</b>; for example:
+      <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151009-hlm.2015-11-13T07:32:19_caf1ffc.iso /media/cdrom  </codeblock>
+      Unpack the following
+      tarball:<codeblock>tar faxv /media/cdrom/hos/hos-2.0.1-20151113T062512Z.tar</codeblock>
+      Run the included initialization script to update the deployer:
+      <codeblock>~/hos-2.0.1/hos-init.bash</codeblock> Run the configuration processor:
+      <codeblock>cd ~/helion/hos/ansible
+        ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+      Run the ready deployment playbook:
+      <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> Run the
+      upgrade playbook:
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+        ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
     </section>
+    <section id="rebooting"><title>Rebooting Your Nodes</title>To complete the upgrade and for Linux for HPE Helion
+      updates to take effect, you must reboot all your nodes. The instructions for rebooting
+      controller, compute, and storage nodes are found below. </section>
+    
+    <section id="rebootCompute"><title>Rebooting Compute Nodes</title>
+      <ol>
+        <li>Disable provisioning:
+          <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>If
+          the node has existing instances running on it and the nature of the maintenance will
+          impact these instances, the recommended approach is to stop these instances prior to the
+          maintenance activity or migrate them to other compute nodes if possible: </li>
+        <li>Stop nova:<codeblock>nova stop &lt;instance uuid></codeblock></li>
+        <li> Then start them again after the repair:
+          <codeblock>nova start &lt;instance uuid></codeblock> If 'nova start' fails, try
+          <codeblock>nova reboot --hard &lt;instance uuid></codeblock>
+        </li>
+        <li>Re-enable provisioning when the node is fixed
+          <codeblock>nova service-enable &lt;node name></codeblock> If the maintenance includes disk
+          replacements that would cause loss of data in <b>/var/lib/nova</b>, then moving or
+          deleting the instances will be necessary. It may be possible to migrate instances to a
+          different compute node. </li>
+        <li>Migrate the instances off the node by running the following command for all of the
+          instances:<codeblock>nova live-migration --block-migrate &lt;instance uuid> [&lt;target compute host>]</codeblock>
+          <note>The <codeph>[&lt;target compute host>]</codeph> option is optional. If you do not specify a target host then the nova scheduler will choose a node for you.</note><!--See
+      HNOV-240 for details of alternative instance backup mechanism.--></li>
+        <li>When the node is ready to be restored, the process for re-introducing it will depend on
+          the actions performed to repair it. If it was simply rebooted to introduce new software,
+          etc. then running the <b>hlm-start.yml</b> playbook will suffice. If needed, use
+          <b>bm-power-up.yml </b>playbook to restart the node. Specify just the node(s) you want
+          to start in the 'nodelist' parameter arguments, i.e.
+          nodelist=&lt;node1>[,&lt;node2>][,&lt;node3>]
+          <codeblock>cd ~/helion/hos/ansible
+            ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-up.yml -e nodelist=cpn-0004</codeblock>
+        </li>
+        <li>Execute the <b>hlm-start.yml </b>playbook. Specifying the node(s) you want to start in
+          the 'limit' parameter arguments. This parameter accepts wildcard arguments and also
+          '@&lt;filename>' to process all hosts listed in the file.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+            ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit hlm004-ccp-comp0004-mgmt</codeblock>
+        </li>
+        <li>If the node has undergone repairs that impact disk contents, then running the
+          <b>bm-reimage.yml</b> and <b>hlm-deploy.yml </b>playbooks will be required.
+          Run:<codeblock>cd ~/helion/hos/ansible
+            ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0004</codeblock>
+        </li>
+        <li>Then execute the <b>site.yml</b> playbook.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+            ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0004-mgmt</codeblock>
+        </li>
+        <li>Finally, re-enable provisioning.
+          <codeblock>nova service-enable &lt;node name> nova-compute</codeblock></li>
+      </ol>
+    </section>          
+    
   </body>
 </topic>

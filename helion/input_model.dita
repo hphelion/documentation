@@ -1308,6 +1308,15 @@
                 <entry>Options, e.g. <codeph>-O large_file</codeph> to pass to the mkfs
                   command.</entry>
               </row>
+              <row outputclass="row-applies-to-21">
+                <entry namest="c1" nameend="c2">This attribute only applies to <keyword keyref="kw-hos-phrase-21"/></entry>
+               </row>
+              <row outputclass="row-applies-to-21">
+                <entry>mode (optional)</entry>
+                <entry>The <codeph>mode</codeph> changes the root file system mode bits, which can
+                  be either a symbolic representation or an octal number representing the bit patten
+                  for the new mode bits.</entry>
+              </row>
               <row>
                 <entry>mount (optional)</entry>
                 <entry>Mount point for the file system.</entry>
