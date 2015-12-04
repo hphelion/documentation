@@ -201,6 +201,62 @@
                     <p>HTTPS support is added for REST API access</p>
                 </li>
             </ul>
+            <p><b>Differences from HCG 1.1 Architecture</b></p>
+            <p>HCG 2.0 Architecture is built upon HCG 1.1 with the following key differences:</p>
+            <ol id="ol_azt_whc_f5">
+                <li>WR computes can support vSwitch of your choice - AVS or VRS: To enable this
+                    feature, we are replacing AVS with VRS based on the product SKU being selected.
+                    The architecture toggles between Neutron being a shared service (HCG-VRS) to
+                    dedicated service per region (HCG-AVS). The architecture for both products is
+                    documented on this one architecture page. Both products share many components.
+                    Many of the interfaces have not changed since HCG 1.1 other than being
+                    renumbered as part of cleaning up this page. </li>
+                <li>Baremetal Region to provide baremetal provisioning as a service: We extended the
+                    architecture by adding another control plane (single node) running identical
+                    services plus ironic but in different region - nova, neutron and ironic</li>
+                <li>VxLAN to VLAN bridging: We are now using HPN 5930/7900 switches in the
+                    architecture as enabler for providing VxLAN to VLAN switching. This is
+                    specifically for VMs with virtio vNICs to communicate with baremetal ports like
+                    SR-IOV, PCI-PT and Host Port.</li>
+                <li>Enhance Standard control plane for Backup, Logging and Monitoring services for
+                    Standard region services: Added and enhanced new services like Icinga,
+                    Elastic-Logstash-Kibana (ELK), Attis services. </li>
+                <li>Infoblox as IPAM plugin: Neutron has now a plugin to support IP reservation
+                    through Infoblox appliance. Architecturally, it is an enhancement to Neutron
+                    Service running in each region.</li>
+            </ol>
+            <p><b>Added Components</b></p>
+            <ul id="ul_bzt_whc_f5">
+                <li><b>Standard Controller</b> (Controller running on hLinux): Standard IaaS control
+                    plane very similar to HOS. The main difference is that DCN/Nuage is used for
+                    networking rather than OVS to enable cloud-to-cloud communication. Icinga has
+                    also been upgraded to Icinga2 to enable more monitoring features. Many
+                    components of this region are shared with the WR Region.</li>
+                <li><b>ESX Compute</b>: Standard IaaS compute node using DCN/Nuage components for
+                    networking. <b>The product has evolved such that there will be no compute nodes
+                        based on hLinux KVM for 2.0. One offering will not have any ESX compute
+                        nodes and also no DCN nodes. Another offering will have vCenter based ESX
+                        compute nodes.</b> This component has sub component <b>DCN VRS</b>
+                    (Virtualized Routing &amp; Switching). It provide L2/L3 capabilities to enable
+                    VMs to communicate within the cloud and for remote cloud communication.</li>
+                <li><b>WR Compute</b>: Realtime compute node with Wind River (WR) networking
+                    components. Wind River Linux with a modified, realtime KVM run on these nodes. A
+                    change for 2.0 is that one of the HCG products will ship with DCN VRS and the
+                    other will ship with AVS networking configured.</li>
+                <li><b>BM Controller</b>: Ironic server and compute proxy along with dependent
+                    services such as DHCP and DNS run on this single node to control requests for
+                    bare metal compute nodes. The bare metal controller and compute nodes run in
+                    their own region of the cloud.</li>
+                <li><b>BM Node</b>: Bare metal node to be allocated and used on demand similar to a
+                    VM. They are managed by the BM Controller.</li>
+                <li><b>5930 Switch</b>: HP Networking hardware switch to provide VxLAN to VLAN
+                    Bridging for SR-IOV, PC-PT or Baremtal Host ports. It also provides DHCP
+                    services to these baremetal ports. We have plans to use this for external
+                    network connectivity to replace software gateway VRS-G.</li>
+                <li><b>Infoblox</b>: 3rd party product requested by Telefonica to support IPAM.
+                    Infoblox will be optional for other customers and is not expected to be
+                    used.</li>
+            </ul>
         </section>
         <section id="usage"><title>Usage
                 Caveats</title><p><!--From WR jow1404333831397.xml--></p><b>Backup files in cloud

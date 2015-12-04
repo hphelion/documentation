@@ -451,9 +451,11 @@ Password: cghelion</codeblock>
         installation process uses. For security, you must generate a random password that will be
         passed to the installation process, rather than entering an explicit password through the
           <codeph>group_vars/all</codeph> file.</p>
+      <p>You downloaded the patch file, <codeph>knc-cobbler-random.patch</codeph>, during the
+        prerequisites.</p>
       <p>
         <ol id="ol_cqf_s4k_f5">
-          <li>Copy the patches file to the  <codeph>~/</codeph> directory. </li>
+          <li>Copy the patch file to the <codeph>~/</codeph> directory. </li>
           <li>Change to the ~/cg-hlm directory: <codeblock>cd ~/cg-hlm</codeblock></li>
           <li>Execute the following command to deploy the patch:
             <codeblock>patch -p1 -b &lt; ../cg-hlm-cobbler-random.patch</codeblock></li>

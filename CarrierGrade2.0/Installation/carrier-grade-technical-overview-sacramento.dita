@@ -479,6 +479,33 @@
         network, the board management modules are assigned IP addresses accessible from the OAM
         network, and the controller uses the OAM network to connect to them.</p></section>
     <section>
+      <title>Summary of Controls</title>
+      <p>Summary of controls spanning multiple components and interfaces:</p>
+      <ul id="ul_gms_r3c_f5">
+        <li><b>Audit:</b> OpenStack services, mySQL, RabbitMQ, HLM CP, Ansible, Cobbler perform
+          logging. Logs are collected by the centralized logging service.</li>
+        <li>
+          <p><b>Authentication: </b>Authentication via Keystone tokens at APIs. Password
+            authentication to Nuage components and StoreVirtual.</p>
+        </li>
+        <li><b>Authorization</b>: OpenStack provides admin and non-admin roles that are indicated in
+          session tokens. Processes run at minimum privilege. Processes run as unique user/group
+          definitions. Appropriate filesystem controls prevent other processes from accessing
+          service’s files. IPtables and ACLs at the network perimeter ensure that no unneeded ports
+          are open.</li>
+        <li><b>Availability:</b> Redundant hosts, clustered DB, clustered MQ, fail-over. Monitoring
+          via centralized monitoring service.</li>
+        <li>
+          <p><b>Confidentiality:</b> Network connections for outside access to APIs over TLS.
+            Network separation via VLANs. Data and config files protected via filesystem controls.
+            Separation of customer traffic on the TUL network via Open Flow (VxLANs).</p>
+        </li>
+        <li><b>Integrity:</b> Network connections for outside access to APIs over TLS. Network
+          separation via VLANs. Data and config files are protected by filesystem controls. </li>
+      </ul>
+      <p/>
+    </section>
+    <section>
       <title>Next Step</title>
       <p>Review the <xref href="carrier-grade-support-matrix-sacramento.dita#topic1773">Support
           Matrix</xref></p>
