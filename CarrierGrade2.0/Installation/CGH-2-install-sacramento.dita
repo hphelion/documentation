@@ -134,11 +134,11 @@ Password: cghelion</codeblock>
       <ol id="ol_kwm_c1k_zt">
         <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
             <codeblock>hlm define -t sacramento &lt;cloudname&gt;</codeblock><p>Where::
-              <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p><p>The cloud
-            name can be any combination of up to 63 digits, letters, and the <codeph>-</codeph>
-              character:<ul id="ul_lz5_rbf_bt">
+              <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p>
+          <p id="cloudname">The cloud
+            name can be any combination of up to 40 digits, letters:<ul id="ul_lz5_rbf_bt">
               <li>
-                <p>Cannot start or end with the <codeph>-</codeph> character;</p>
+                <p>Cannot contain with the <codeph>-</codeph> character;</p>
               </li>
               <li>
                 <p>Must be greater than 0 characters;</p>

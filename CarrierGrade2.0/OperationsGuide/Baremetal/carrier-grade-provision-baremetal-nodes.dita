@@ -41,8 +41,7 @@
           <li>Execute the following commands to create a switch
               entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock><p>Where:
                 <ul id="ul_osf_bjh_f5">
-                <li><codeph>&lt;switch ip> </codeph>is the switch ID of the specific switch that is
-                  being created.</li>
+                <li><codeph>&lt;switch ip> </codeph> is the IP Address of the switch.</li>
                 <li><codeph>id</codeph> is the MAC address of the switch being created</li>
               </ul></p></li>
           <li>Execute the following commands to create a new
