@@ -79,6 +79,7 @@
         file</xref>. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-mach-json" id="mach"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-verify-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581/cobbler"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-config-proc"/>

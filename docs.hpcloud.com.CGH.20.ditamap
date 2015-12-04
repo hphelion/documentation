@@ -84,7 +84,6 @@
       format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation"/>
     <topicref href="CarrierGrade2.0/carrier-grade-administration.dita" navtitle="Administration"
       locktitle="yes">
-      <mapref href="CarrierGrade2.0/AdminGuideKVM/CGH-2-KVM-Admin.ditamap" toc="no"/>
       <topicref href="CarrierGrade2.0/AdminGuideNew/carrier-grade-admin-guide.dita"
         navtitle="KVM Region Administrator Guide" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/OperationsGuide/Logging/CHG-2-logging-overview.dita"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5937">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0 Carrier Grade Beta: Centralized Logging
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Centralized Logging
     Overview</title>
 <prolog>
 <metadata>
@@ -68,6 +68,7 @@
 <li>
         <xref type="section" href="#topic5937/kibana">Kibana configuration</xref>
       </li>
+  <li><xref type="section" href="#topic5937/password" /></li>
       <li>
         <xref type="section" href="#topic5937/interface">Logging into Kibana</xref>
       </li>
@@ -170,6 +171,20 @@ Availability</entry>
       <note>Kibana is client-side software. To operate properly, the browser must be able to access
         port 81 on the HLM host.</note>
 </section>
+    <section id="password"><title>Changing the default Kibana password</title>Follow these steps to change the
+      default password of the Kibana web interface. <p>
+        <ol id="ol_jqr_4tk_f5">
+          <li>Log into one of the controller nodes.</li>
+          <li>Delete the Kibana password
+            file.<codeblock>rm /etc/logstash/kibana.htpasswd</codeblock></li>
+          <li>Execute the followinf command:
+              <codeblock>htpasswd -b -c /etc/logstash/kibana.htpasswd kibana &lt;new-password&gt;</codeblock><p>Where
+              &lt;new-password> is the new Kibana password</p></li>
+          <li>Execute the following command to restart the apache2
+            service<codeblock>service apache2 restart</codeblock></li>
+          <li>Repeat these steps on all controllers.</li>
+        </ol>
+      </p></section>
 <section id="interface"> <title>Logging into Kibana</title>
 <p>Launch a web browser on the seed cloud host to the following IP address, using the CLM virtual IP
         address for the controller you want to monitor:</p>
@@ -178,12 +193,10 @@ Availability</entry>
   <b>Example:</b>
 </p>
 <codeblock><codeph>http://192.0.2.2:81</codeph></codeblock>
-<p>Log in with the user name/password <codeph>kibana</codeph>/<codeph>kibana</codeph>.</p>
+<p>Log in with the user name/password. The user name is <codeph>kibana</codeph> and the password is
+        the password you created in the previous section.</p>
       <!--<p>To retrieve the CLM IP:</p><ol><li>From the HLM host log in to a controller as super user: <codeblock><codeph>ssh heat-admin@&lt;undercloud IP&gt; 
 sudo su - </codeph></codeblock></li><li>Enter the following command to display the password: <b>NEED COMMAND OR REMOVE</b><codeblock><codeph>cat </codeph></codeblock><p>Make note of the password.</p></li></ol>-->
-<p>Because centralized logging is separate service from the Horizon dashboards, there is separate
-        username/password authentication. By default, the Horizon dashboard username and password
-        will not work with Kibana.</p>
 </section>
 <section id="info"> <title>For more information</title>
 <p>For information the centralized logging components, use the following links:</p>

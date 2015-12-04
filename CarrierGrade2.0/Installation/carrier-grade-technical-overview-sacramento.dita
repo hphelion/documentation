@@ -45,11 +45,9 @@
         /></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
-    <section id="networkarch">
-      <title>Network architecture</title>
-      <p>The following information describes the network configuration, which must be configured by
-        the network administrator.</p>
-      <table>
+    <section id="networkarch"><title>Network architecture</title><p>The following information
+        describes the network configuration, which must be configured by the network
+        administrator.</p><table>
         <tgroup cols="2">
           <colspec colname="col1"/>
           <colspec colname="col2"/>
@@ -110,12 +108,13 @@
             <row>
               <entry> VLAN-TUL</entry>
               <entry>Tenant Underlay Network for the baremetal region/PCI-Passthrough/SR-IOV
-                interfaces. This is a set of tagged VLANs.  </entry>
+                interfaces. This is a set of tagged VLANs. </entry>
             </row>
           </tbody>
         </tgroup>
       </table>
-      <!-- <row>
+    </section>
+        <!-- <row>
 <row>
 <entry> WR-BLS </entry>
 <entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
@@ -123,7 +122,6 @@
 
 
 -->
-    </section>
     <section id="interfaces">
       <title>Interfaces</title>
       <p>The following are the interfaces being used, based on the technical architecture diagram.
@@ -213,24 +211,122 @@
         network</p>
     </section>
     <section>
+      <title>Service Architecture Diagram</title>
+      <p>For service architecture diagrams with interface details, see <xref
+          href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture
+          Diagrams</xref></p>
+    </section>
+    <section>
       <title>Regions</title>
-      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two
-        logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
-        the installation process. The <xref
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+        or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
+        installation process. The <xref
           href="carrier-grade-technical-overview-sacramento.dita#topic3485/deploy-arch">Deployment
           Architecture diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
-      <p>The Non-KVM region contains the lifecycle manager, to deploy and
-        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
-        distribution of OpenStack. The ESX and DCN components and servers also reside in the
-        non-KVM zone.  </p>
+      <p>The Non-KVM region contains the lifecycle manager, to deploy and maintain HP Helion
+        OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade distribution of
+        OpenStack. The ESX and DCN components and servers also reside in the non-KVM zone. </p>
       <p><b>KVM</b></p>
       <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
-        of a software platform, providing ultra-reliability and exceptional performance
-        efficiencies for telecommunications networks. </p>
+        of a software platform, providing ultra-reliability and exceptional performance efficiencies
+        for telecommunications networks. </p>
       <p><b>BM Region</b></p>
       <p>The BM region contains baremetal servers controlled by OpenStack Ironic.</p>
     </section>
+    <section id="components">
+      <title>Components</title>
+      <ul id="ul_ddb_ryh_f5">
+        <li><b>Lifecycle manager</b> The lifecycle manager deploys and manages HP Helion OpenStack
+          Carrier Grade, consisting of a controller running shared services and the nodes required
+          to run DCN (as needed).</li>
+        <li><b>Controller</b>. Standard IaaS control plane to enable cloud-to-cloud communication. </li>
+        <li><b>StoreVirtual/3PAR</b>: Hardware storage array used as backend for Cinder. Support for
+          3PAR has a similar architecture as StoreVirtual on iSCSI, not Fibre.</li>
+        <li><b>KVM Region Controller</b>: Real-time control plane for compute and networking.
+          Contains modified versions of most of the OpenStack components.</li>
+        <li><b>KVM Region Compute</b>: Realtime compute node with networking components.</li>
+        <li><b>Baremetal Controller</b>: For Sacramento deployments, an Ironic server and compute
+          proxy along with dependent services such as DHCP and DNS run on this single node to
+          control requests for bare metal compute nodes. The baremetal controller and compute nodes
+          run in their own region of the cloud.</li>
+        <li><b>Baremetal Node</b>: For Sacramento deployments, a baremetal node to be allocated and
+          used on demand similar to a VM. They are managed by the BM Controller.</li>
+        <li><b>5930 Switch</b>: For Sacramento deployments, an optional HP Networking hardware
+          switch to provide VxLAN to VLAN Bridging for SR-IOV, PC-PT or baremtal host ports. It also
+          provides DHCP services to these baremetal ports. This switch can be used for external
+          network connectivity to replace software gateway VRS-G.</li>
+        <li><b>Infoblox</b>: An optional third party product to support IPAM. </li>
+        <li><b>Orchestrator</b>: This could be any application consuming the cloud services.
+          <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
+      </ul>
+    </section>
+    <section id="data"><title>Data</title>
+    <table id="table_czt_whc_f5">
+      <tgroup cols="6">
+        <colspec colnum="1" colname="col1"/>
+        <colspec colnum="2" colname="col2"/>
+        <colspec colnum="3" colname="col3"/>
+        <colspec colnum="4" colname="col4"/>
+        <colspec colnum="5" colname="col5"/>
+        <colspec colnum="6" colname="col6"/>
+        <thead>
+          <row>
+            <entry>Data name</entry>
+            <entry>Confidentiality</entry>
+            <entry>Integrity</entry>
+            <entry>Availability</entry>
+            <entry>Backup?</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Cloud Definition</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>Low</entry>
+            <entry>Yes</entry>
+            <entry>Control plane and network topology and mapping to data center (input to
+              HLM)</entry>
+          </row>
+          <row>
+            <entry>Cloud Configuration</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>Low</entry>
+            <entry>Yes</entry>
+            <entry>Configuration of services in cloud (output from HLM)</entry>
+          </row>
+          <row>
+            <entry>MySQL database</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>High</entry>
+            <entry>Yes</entry>
+            <entry>Contains user preferences. Backup to Swift daily.</entry>
+          </row>
+          <row>
+            <entry>Logs</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>Medium</entry>
+            <entry>Yes</entry>
+            <entry>Logs from all services</entry>
+          </row>
+          <row>
+            <entry>Credentials</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>High</entry>
+            <entry>Yes</entry>
+            <entry>Inter-service authentication uses the credentials for each service</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </section>
+    
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
         OpenStack Carrier Grade Sacramento deployment uses HPE Distributed Cloud Networking to
         provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the

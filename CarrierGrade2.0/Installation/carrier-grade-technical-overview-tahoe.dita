@@ -122,6 +122,12 @@
         network</p>
     </section>
     <section>
+      <title>Service Architecture Diagram</title>
+      <p>For service architecture diagrams with interface details, see <xref
+          href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture
+          Diagrams</xref></p>
+    </section>
+    <section>
       <title>Regions</title>
       <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two
         logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
@@ -138,8 +144,26 @@
         of a software platform, providing ultra-reliability and exceptional performance efficiencies
         for telecommunications networks. </p>
     </section>
+    <section id="components">
+      <title>Components</title>
+      <ul id="ul_ddb_ryh_f5">
+        <li><b>Lifecycle manager</b> The lifecycle manager deploys and manages HP Helion OpenStack
+          Carrier Grade, consisting of a controller running shared services and the nodes required
+          to run DCN (as needed).</li>
+        <li><b>Non-KVM Region Controller</b>. Standard IaaS control plane to enable cloud-to-cloud
+          communication. </li>
+        <li><b>StoreVirtual/3PAR</b>: Hardware storage array used as backend for Cinder. Support for
+          3PAR has a similar architecture as StoreVirtual on iSCSI, not Fibre.</li>
+        <li><b>KVM Region Controller</b>: Real-time control plane for compute and networking.
+          Contains modified versions of most of the OpenStack components.</li>
+        <li><b>KVM Region Compute</b>: Realtime compute node with networking components.</li>
+        <li><b>Orchestrator</b>: This could be any application consuming the cloud services.
+          <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
+      </ul>
+    </section>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/data"/>
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
-        OpenStack Carrier Grade KVM + DCN deployment uses HPE Distributed Cloud Networking to
+        OpenStack Carrier Grade Tahoe deployment uses HPE Distributed Cloud Networking to
         provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
         cloud deployment. Please refer to DCN documentation for details. </p>The main components in
       the HP DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services

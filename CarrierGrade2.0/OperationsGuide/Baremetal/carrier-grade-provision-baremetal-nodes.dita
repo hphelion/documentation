@@ -19,30 +19,51 @@
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions to provision baremetal nodes. </p>
     <section>
+      <title>Change Ironic configuration file permissions on baremetal nodes</title>
+      <p>The Ironic configuration files contain credentials that could be abused, potentially
+        exposing customer data.</p>
+      <p>By default, the Ironic configuration files are protected using a chmod permissions of
+          <codeph>600</codeph> or <codeph>700</codeph>. We strongly recommend that you change the
+        permissions to <codeph>400</codeph>. </p>
+      <ol id="ol_eml_5qz_25">
+        <li>Log in to the Baremetal controller.<pre>ssh cghelion@&lt;BM_Controller_IP&gt;</pre></li>
+        <li>Execute the following command to change the permission on the ironic-api configuration
+          file:<codeblock>chmod 400 /etc/ironic/ironic-api.conf</codeblock></li>
+        <li>Execute the following command to change the permission on the ironic-conductor
+          configuration file:<codeblock>chmod 400 /etc/ironic/ironic-conductor.conf</codeblock></li>
+      </ol>
+    </section>
+    <section>
       <title>Provision Baremetal Nodes</title>
       <p>
         <ol id="ol_bns_j1f_xt">
           
           <li>Execute the following commands to create a switch
-              entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock><p>Where
-                <codeph>&lt;switch ip> </codeph>is the MAC ID of the specific switch that is being
-              created.</p></li>
+              entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock><p>Where:
+                <ul id="ul_osf_bjh_f5">
+                <li><codeph>&lt;switch ip> </codeph>is the switch ID of the specific switch that is
+                  being created.</li>
+                <li><codeph>id</codeph> is the MAC address of the switch being created</li>
+              </ul></p></li>
           <li>Execute the following commands to create a new
             flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
 nova flavor-key baremetal set "capabilities:boot_option"="local" 
 nova flavor-key baremetal set "capabilities:boot_mode"="bios"</codeblock></li>
-          <li>Execute the following commands to register the Ironic
-            node:<codeblock>ironic node-create -d ilo_ipa -i ipmi_address=&lt;&lt;ip&gt;&gt; -i
-ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i 
-ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i 
-deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i 
-deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt; -i cpu_arch=amd64 
-ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
-          <li>Execute the following command to register the port for the baremetal
+          <li>Register the ironic node using pxe_ipmitool, agent_ipmitool, or agent_ilo drivers. <ul
+              id="ul_g2k_gsh_f5">
+              <li><b>pxe_ipmitool driver</b><p>Execute the following commands to register the Ironic
+                  node:</p><codeblock>ironic node-create -d ilo_ipa -i ipmi_address=&lt;&lt;ip&gt;&gt; -i ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt;  -i cpu_arch=amd64</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+              <li><b>agent_ipmitool driver</b><p>Execute the following commands to register the
+                  Ironic
+                node:</p><codeblock>ironic node-create -d agent_ipmitool -i ipmi_address=&lt;&lt;ip>> -i ipmi_username=&lt;user> -i ipmi_password=&lt;password> -i ipmi_terminal_port=&lt;terminal_port> -p cpus=&lt;cpus> -p memory_mb=&lt;memory> -p local_gb=&lt;disk_space> -i deploy_kernel=&lt;glance_deploy_kernel_id> -i deploy_ramdisk=&lt;glance deploy ram disk id> i cpu_arch=&lt;cpu_arch></codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+              <li><b>agent_ilo driver</b><p>Execute the following commands to register the Ironic
+                  node:</p><codeblock>ironic node-create -d agent_ilo -i ilo_address==&lt;&lt;ip&gt;&gt; -i ilo_username=&lt;user&gt; -i ilo_password=&lt;pass&gt; -p cpus=&lt;cpus&gt; -p memory_mb=&lt;memory&gt; -p local_gb=&lt;disk_space&gt; -i ilo_deploy_iso=&lt;glance deploy iso image&gt; -i cpu_arch=&lt;cpu_arch&gt;</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+            </ul></li>  
+              <li>Execute the following command to register the port for the baremetal
             node:<codeblock>ironic port-create -a &lt;&lt;node_mac_id&gt;&gt; --local-link-connection switch_id="&lt;&lt;switch_id&gt;&gt;" --local-link-connection port_id="&lt;&lt;switch_port&gt;&gt;" --local-link-connection switch_info="ToR" -n &lt;&lt;node_id&gt;&gt;</codeblock></li>
           <li>Execute the following commands to create a tenant
             network:<codeblock>neutron net-create tenant-network
-neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-pool start=192.68.61.100,end=192.68.61.200 tenant-network 192.68.61.0/24</codeblock></li>
+neutron subnet-create --name tenant-subnet --gateway &lt;ip-address> --allocation-pool start=&lt;ip-address>,end=&lt;ip-address> tenant-network &lt;ip-address/prefix></codeblock></li>
           <li>Execute the following command to Provision the baremetal node:
                 <codeblock>nova boot --nic net-id=&lt;&lt;tenant network id&gt;&gt; --image &lt;&lt;glance image id&gt;&gt; --flavor baremetal --key-name &lt;keypair-name&gt;</codeblock><p>Where:<ul
                 id="ul_x5n_t3r_zt">
@@ -64,6 +85,8 @@ neutron subnet-create --name tenant-subnet --gateway 192.68.61.1 --allocation-po
         <section>
       <title>View System Details</title>
       <ol id="ol_yz4_452_xt">
+        <li>SSH into the provisioned node::
+          <codeblock>ssh &lt;instance_username>@&lt;instance_ip> -i &lt;nova_key_pair.pem></codeblock></li>
         <li>View the active servers:<codeblock>nova list</codeblock><p>The output should appear
             similar to the
             following:<codeblock>+--------------------------------------+-------+--------+------------+-------------+----------------------------+

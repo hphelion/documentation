@@ -63,7 +63,7 @@
           <codeph>5930-D2413-1111.ipe</codeph>. <p>FTP Access : <xref
             href="ftp://cmwbits:MN6cz=YK@h2.usa.hp.com" format="html" scope="external"
             >ftp://cmwbits:MN6cz=YK@h2.usa.hp.com</xref></p><p><b>Note: </b>This package is updated,
-          so do not use the one shipped with HCG Beta tarball</p></li>
+          so do not use the one shipped with HCG tarball</p></li>
       <li>Validate that the firmware has been updated successfully: Display Boot-Loader to confirm
         firmware is applied currently or will be next boot. For
         example:<codeblock>dis boot-loader

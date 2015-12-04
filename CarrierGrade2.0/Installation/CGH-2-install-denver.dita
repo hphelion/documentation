@@ -284,7 +284,7 @@
         errors using the tool of your preference. For example, using the Python json.tool: </p>
       <codeblock>python -m json.tool &lt;filename>.json</codeblock>
     </section>
-    
+    <section conref="CGH-2-install-sacramento.dita#topic10581/cobbler"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-config-proc"/>

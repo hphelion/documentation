@@ -445,16 +445,47 @@ Password: cghelion</codeblock>
       <p>For more information, see <xref href="CGH-2-install-vmware-workaround.dita#topic10581"
           >vmWare Installation Workaround</xref>.</p>
     </section>
+    <section id="cobbler">
+      <title>Deploy the Randomize Cobbler Password Patch </title>
+      <p>Cobbler is a build and deployment system that the HP Helion OpenStack Carrier Grade
+        installation process uses. For security, you must generate a random password that will be
+        passed to the installation process, rather than entering an explicit password through the
+          <codeph>group_vars/all</codeph> file.</p>
+      <p>
+        <ol id="ol_cqf_s4k_f5">
+          <li>Copy the patches file to the  <codeph>~/</codeph> directory. </li>
+          <li>Change to the ~/cg-hlm directory: <codeblock>cd ~/cg-hlm</codeblock></li>
+          <li>Execute the following command to deploy the patch:
+            <codeblock>patch -p1 -b &lt; ../cg-hlm-cobbler-random.patch</codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
+            directory:<codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
+          <li>Execute the following
+            command:<codeblock>./hlm_initcobbler.sh 192.168.100.2 255.255.255.0 192.168.100.100 192.168.100.200 </codeblock>or
+            something similar if PXE network is different. </li>
+          <li>Execute the following command: <codeblock>./hlm_importiso.sh</codeblock></li>
+          <li>Change to the <codeph>~/kenobi-node-configuration</codeph>
+            directory:<codeblock>cd ~/kenobi-node-configuration </codeblock></li>
+          <li>Execute the following
+            command:<codeblock>patch -p1 -b &lt; ../knc-cobbler-random.patch </codeblock></li>
+          <li>Chnage to the <codeph>~/cg-hlm/hlm-build</codeph> directory:
+            <codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
+          <li>Execute the following command to integrate the changes into the
+            environment:<codeblock>./hlm_prepare-env.sh</codeblock></li>
+        </ol>
+      </p>
+      <p>The root user can retrieve the randomized password in the
+          <codeph>/var/hlm/clouds/.cobbler</codeph> file.</p>
+    </section>
     <section id="conref-create-cloud">
       <title>Provision the cloud nodes and bring the cloud nodes up</title>
       <ol id="ol_f1b_cmf_zt">
         <li>On the lifecycle manager, use the following script to start the provisioning of the HPE
           Helion OpenStack cloud:
             <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
-              <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created. The script
-            takes approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers
-            for the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux
-            operating system. The script also PXE boots the nodes specified in
+              <codeph>&lt;cloudname></codeph> is the name of the cloud you created. The script takes
+            approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers for
+            the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux operating
+            system. The script also PXE boots the nodes specified in
               <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process.
             The script also creates the <codeph>nodes.json</codeph> file in the directory.
             </p><p>You can log in to the iLO server management tool for each of the nodes to monitor
@@ -700,21 +731,6 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
         href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
       </image></section>
-    <section>
-      <title>Change permissions on baremetal nodes</title>
-      <p>The Ironic configuration files contain credentials that could be abused, potentially
-        exposing customer data.</p>
-      <p>By default, the Ironic configuration files are protected using a chmod permissions of
-          <codeph>600</codeph> or <codeph>700</codeph>. We strongly recommend that you change the
-        permissions to <codeph>400</codeph>. </p>
-      <ol id="ol_eml_5qz_25">
-        <li>Log in to the Baremetal controller.<pre>ssh cghelion@&lt;BM_Controller_IP&gt;</pre></li>
-        <li>Execute the following command to change the permission on the ironic-api configuration
-          file:<codeblock>chmod 400 /etc/ironic/ironic-api.conf</codeblock></li>
-        <li>Execute the following command to change the permission on the ironic-conductor
-          configuration file:<codeblock>chmod 400 /etc/ironic/ironic-conductor.conf</codeblock></li>
-      </ol>
-    </section>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is

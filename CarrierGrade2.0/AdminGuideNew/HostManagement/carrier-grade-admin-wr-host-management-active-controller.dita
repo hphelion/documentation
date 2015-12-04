@@ -70,7 +70,8 @@ However, you can replace the primary or secondary disks, and you can replace fau
 
 <p>Wait until the controller is reported as Locked, Enabled, and Available.</p>
 
-<p>b. If required, <xref href="../../../CarrierGrade2.0/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HPE Helion OpenStack Carrier Grade</xref> on the controller.</p>
+<p>b. If required, <xref href="../../Installation/carrier-grade-install-overview.dita#topic1925"
+            >reinstall HPE Helion OpenStack Carrier Grade</xref> on the controller.</p>
 
 <p>Wait for the host to be reported as Locked, Disabled, and Online.</p>
 
@@ -106,7 +107,8 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section"  >Power up the new or modified controller</xref>.</p>
 </li>
 <li>
-<p>If required, <xref href="../../../CarrierGrade2.0/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HPE Helion OpenStack Carrier Grade</xref> on the controller.</p>
+<p>If required, <xref href="../../Installation/carrier-grade-install-overview.dita#topic1925"
+            >reinstall HPE Helion OpenStack Carrier Grade</xref> on the controller.</p>
 </li>
 </ol>
 <p>The updated controllers are now in service. The controller that was formerly active is now the standby controller.</p>

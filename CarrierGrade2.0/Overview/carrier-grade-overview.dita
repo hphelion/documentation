@@ -49,6 +49,9 @@
           and beyond standard VIMs.</li>
       </ul>
     </section>
+    <section><title>Primary Users</title>Telecom companies desiring cloud-based Network Function
+      Virtualization (NFV).
+      <!--From https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
       <title>Standard Features</title>
       <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
@@ -226,12 +229,21 @@
               solution are: Virtualized Services Directory (VSD) and Virtualized Services Directory
               Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
               Switching (VRS). </p>
+            <p>VRS is included in the Tahoe, Memphis and Sacramento deployments of HP Helion Carrier
+              Grade. The <xref
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                Overview</xref> describes these deployments. </p>
             <p><b>Accelerated vSwitch (AVS).</b> AVS is integrated into the servers in the KVM
               region. AVS is an optimization of Open vSwitch (OVS) technology for NFV environments.
               Open vSwitch is a multilayer software switch licensed under the open source Apache 2
               license. AVS provides connectivity between virtual machines on the same compute node,
-              and between virtual machines and external networks. AVS supports a variety of network
-              connectivity options with the hosted virtual machines, as follows: </p>
+              and between virtual machines and external networks. AVS is for customers who are
+              focused on Virtualized Infrastructure Manager (VIM) key features like line rate
+              performance and high
+              availability.<!-- Final sentence from https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV-->
+            </p>
+            <p>AVS supports a variety of network connectivity options with the hosted virtual
+              machines, as follows: </p>
             <ul id="ul_mgc_xnp_nn">
               <li>
                 <p>Unmodified guests can use Linux networking and virtio drivers. This provides a
@@ -253,6 +265,9 @@
               Neutron Virtual Router L3 Forwarding (AVR). Accelerated forwarding is used between
               directly attached tenant networks and subnets, as well as for gateway, SNAT, and
               floating IP functionality.</p>
+            <p>AVS is included in the Denver deployment of HP Helion Carrier Grade. The <xref
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                Overview</xref> describes these deployments. </p>
           </dd>
         </dlentry>
         <dlentry>
