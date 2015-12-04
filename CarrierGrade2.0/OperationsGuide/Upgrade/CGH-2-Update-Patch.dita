@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Patching and Update
-        Process</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Updating an Existing
+        Cloud</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
@@ -18,177 +18,209 @@
         <p>This document provides a general description of the HP Helion OpenStack Carrier Grade
             patching and update processes.
             <!--https://wiki.hpcloud.net/pages/viewpage.action?pageId=56139004--></p>
-        <p>Instructions for deploying a specific patch or update are provided in README file that
-            comes with the patch or update. Also, the <xref
-                href="http://docs.hpcloud.com/#CarrierGrade/carrier-grade-index.html" format="html"
-                scope="external">HP Helion OpenStack Carrier Grade documentation site</xref> will
-            also have instructions for deploying patches and updates.</p>
+        <p>Update Existing HLM:</p>
+        <p>If you have an existing HLM and you want to upgrade it to a newer CGHOS build, you can do
+            so without tearing it apart.</p>
+        <p>This will help you to maintain all your existing cloud definitions and generated
+            configuration remain intact while the Debian Repository and HLM code has been updated to
+            the latest version.</p>
+        <p><b>Taking Back-Up and Preparing for Upgrade</b></p>
         <p>
-            <ul id="ul_i3c_rjv_c5">
-                <li><xref
-                        href="../../OperationsGuide/Upgrade/CGH-2-Update-Patch.dita#topic10581/patch"
-                        >Patches</xref></li>
-                <li><xref
-                        href="../../OperationsGuide/Upgrade/CGH-2-Update-Patch.dita#topic10581/update"
-                        >Updates</xref></li>
+            <ol id="ol_r4c_tcp_f5">
+                <li>
+                    <pre>Take a backup of desired_state under your current cloud folder ==&gt; If you have any custom machine_architecture.json =&gt; ensure you have a backup for this file ==&gt; /opt/share/hlm/1/site/machine_architecture.json</pre>
+                    <ol id="ol_s4c_tcp_f5">
+                        <li>
+                            <pre>cd /var/hlm/clouds/&lt;cloudname&gt; </pre>
+                        </li>
+                        <li>
+                            <pre>cp -r desired_state desired_state-working-beta</pre>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <pre>Take a backup of log files  mv  /var/log/hlm/&lt;cloudname&gt; /var/log/hlm/&lt;cloudname&gt;-backup</pre>
+                </li>
+                <li>
+                    <pre>Do not rename the cloud</pre>
+                </li>
+                <li>
+                    <pre>Ensure accelerate process is not running under "root" user on any of the cloud nodes.  If you do find such process - kill it</pre>
+                </li>
+                <li>
+                    <pre>Reconcile any differences between Json files of the new build and the one that you have under cloud folder. Since you will be using the same jsons of the under your current cloud folder, you must ensure that if there were any new additions/subtractions into the new build's jsons</pre>
+                </li>
+            </ol>
+        </p>
+        <p><b>Confirm health of existing cloud</b></p>
+        <p>
+            <ol id="ol_vmg_5cp_f5">
+                <li>
+                    <pre>MySQL</pre>
+                    <ol id="ol_wmg_5cp_f5">
+                        <li>
+                            <pre>service MySQL status (should be active)</pre>
+                        </li>
+                        <li>
+                            <pre>mysql</pre>
+                        </li>
+                        <li>
+                            <pre>show status like 'wsrep%';</pre>
+                        </li>
+                        <li>
+                            <pre>corfirm above command returned a wsrep_cluster_size that is appropriate for the build</pre>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <pre>RabbitMQ</pre>
+                    <ol id="ol_xmg_5cp_f5">
+                        <li>
+                            <pre>service rabbitmq-server status (should be active)</pre>
+                        </li>
+                        <li>
+                            <pre>rabbitmqctl status</pre>
+                        </li>
+                        <li>
+                            <pre>rabbitmqctl cluster_status</pre>
+                            <ol id="ol_ymg_5cp_f5">
+                                <li>
+                                    <pre>should list all nodes in cluster under 'running_nodes'</pre>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <pre>rabbitctl list_users</pre>
+                            <ol id="ol_zmg_5cp_f5">
+                                <li>
+                                    <pre>should list all users</pre>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <pre>Apache</pre>
+                    <ol id="ol_ang_5cp_f5">
+                        <li>
+                            <pre>service apache2 status (should be active)</pre>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <pre>keystone</pre>
+                    <ol id="ol_bng_5cp_f5">
+                        <li>
+                            <pre>source stackrc</pre>
+                        </li>
+                        <li>
+                            <pre>keystone user-list (should return list of users)</pre>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <pre>Take a general inventory of all your existing networks, instances, subnets etc to compare your setup post upgrade.</pre>
+                </li>
+            </ol>
+        </p>
+        <p><b>Gotchas!</b></p>
+        <p>
+            <ol id="ol_lxn_vcp_f5">
+                <li>
+                    <pre>If you get hung while running deploy, Kill the ansible process by pressing "ctrl c" and then try hlm deploy with rerun option</pre>
+                </li>
+                <li>
+                    <pre>On bonded nic setups, sometimes there are network lags and you might get timeouts or failures or ssh disconnect issue. Running hlm deploy with rerun usually solves the issue.</pre>
+                </li>
+                <li>
+                    <pre>Ensure the machine_architecture.json that you backed up is copied again under /opt/share/hlm/1/site/</pre>
+                </li>
+            </ol>
+        </p>
+        <p><b>Upgrade Existing HLM with New Build</b></p>
+        <p>
+            <ol id="ol_dbm_wcp_f5">
+                <li>
+                    <pre>Remove old bits from ~/cg/  on KVM Host</pre>
+                </li>
+                <li>
+                    <pre>Copy the new build bits  cg-hos-misc.tar.gz  cg-hos-src.tar.gz under ~/cg/ on KVM Host</pre>
+                </li>
+                <li>
+                    <pre>Do not update your  ~/infra-ansible-playbooks unless you know for sure the new bits have some code changes to infra-ansible-playbooks. Usually the change list is generated with each build.</pre>
+                </li>
+                <li>
+                    <pre>Go to your ~/infra-ansible-playbooks folder. If you updated the infra playbooks too with new code, then update your group_vars/all file accordingly.</pre>
+                </li>
+                <li>
+                    <pre>Run ansible-playbook -i hosts update_hlm_onBM.yml</pre>
+                </li>
+                <li>
+                    <pre>The above step has updated your HLM debian repo with latest deb and also has updated your HLM and Ansible code.</pre>
+                </li>
+            </ol>
+        </p>
+        <p><b>Upgrade Cloud Configuration with Existing Cloud Definitions (No JSON Changes in the
+                cloud definition for adding tiers or nodes. But adding variables is fine.)</b></p>
+        <p>Once you have updated your HLM to be on the latest version of the CGHOS Build, you still
+            have your existing cloud configurations (sitting under desired_state folder) </p>
+        <p>that has not been updated to the newercode.</p>
+        <p>You will have to perform some steps in order to get your existing cloud definitions
+            updated to the latest. </p>
+        <p>If you are not interested in your existing cloud definition and updating the existing
+            cloud itself from the current HLM, you can of course ignore these steps and create a new
+            cloud altogether.</p>
+        <p><b>Update Cloud Configuration with Existing Cloud Definition (No JSON file
+            Changes)</b></p>
+        <p>
+            <ol id="ol_btc_zcp_f5">
+                <li>
+                    <pre>Since you have a deployed cloud, you already have the cloud definition and configuration sitting under /var/hlm/clouds/&lt;yourcloud&gt;</pre>
+                </li>
+                <li>
+                    <pre>In this case, we are NOT modifying any Cloud Definition JSON files. We are only updating the cloud configuration related to ansible roles and varibles.</pre>
+                </li>
+                <li>
+                    <pre>Take a backup of your old configurations for "just in case" scenarios. </pre>
+                </li>
+                <li>
+                    <pre>Run copy command =&gt;  cp /var/hlm/clouds/&lt;yourcloud&gt;/desired_state /var/hlm/clouds/&lt;yourcloud&gt;/desired_state_build&lt;oldbuild&gt;</pre>
+                </li>
+                <li>
+                    <pre>Run =&gt; cd ~</pre>
+                </li>
+                <li>
+                    <pre>Run =&gt; hlm generate -c &lt;yourcloud&gt;</pre>
+                </li>
+                <li>
+                    <pre>Run =&gt; hlm deploy -c &lt;yourcloud&gt;</pre>
+                </li>
+                <li>
+                    <pre>The above will update your whole cloud to the new bits  </pre>
+                </li>
+            </ol>
+        </p>
+        <p><b>Update Cloud Configuration with NEW Cloud Definitions (JSON Changes for adding tiers)
+                [NOT FOR GA]</b></p>
+        <p>Since you have a deployed cloud, you already have the cloud definition and configuration
+            sitting under /var/hlm/clouds/&lt;yourcloud> </p>
+        <p>Following things cannot be updated in JSON files:</p>
+        <p>
+            <ul id="ul_h23_2dp_f5">
+                <li>No changes pertaining to networking, new networks cannot be added or old
+                    networks cannot be removed</li>
+                <li>No changes pertaining to removal of existing tiers</li>
+                <li>No changes pertaining to removal of existing roles on tiers </li>
             </ul>
         </p>
-        <section id="patch"><title><b>Patches</b></title>A patch is minor hotfix that addresses a
-            particular defect for a specific build.<p>A patch has following characteristics:</p><ul
-                id="ul_mtc_hw5_c5">
-                <li>Can update any file (such as: configuration, INI files, .sh files, and .yml
-                    files) on the lifecycle manager (before the cloud is deployed) or cloud nodes
-                    (after the cloud is deployed);</li>
-                <li>Can update a particular package on existing cloud;</li>
-                <li>Supports rollback;</li>
-                <li>Is idempotent;</li>
-                <li> Is sequential;</li>
-                <li>Does not introduce new variables to what the configuration processor has already
-                    generated (such as <codeph>group_vars</codeph>, and
-                    <codeph>host_vars</codeph>).</li>
-            </ul><p>A patch consists of two files: <codeph>metadata.tar.gz</codeph> and
-                    <codeph>Readme</codeph>
-            </p><p>
-                <ul id="ul_pk4_qz5_c5">
-                    <li><b>metadata.tar.gz</b> - contains Ansible roles required for the patch</li>
-                    <li>
-                        <p><b>Readme</b> - contains pre-requisites, impacted files, instruction to
-                            apply the patch</p>
-                    </li>
-                </ul>
-            </p><p>Multiple patches can be bundled into a single script and all the patches can be
-                applied or rolled-back using this script.</p><p><b>How to apply a
-                patch</b></p><p>Each patch will contain a README file with full instructions on how
-                to deploy that patch. Also, the <xref
-                    href="http://docs.hpcloud.com/#CarrierGrade/carrier-grade-index.html"
-                    format="html" scope="external">HP Helion OpenStack Carrier Grade documentation
-                    site</xref> will also have instructions for deploying each patch.</p><p>In
-                general, the process for applying a patch includes:</p><ul id="ul_ntc_hw5_c5">
-                <li>
-                    <p><b>Extracting</b>. You can download and extract patch files from the <xref
-                            href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                            format="html" scope="external">Helion Distribution Network (HDN)</xref>
-                        to the lifecycle manager in the
-                            <codeph>/var/hlm/clouds/&lt;cloud-name>/patches/</codeph> directory. The
-                        patch files are usually named in the
-                            <codeph>patches_&lt;buildbumber>.tar.gz</codeph> format. </p>
-                    <p>The extracted patch files contain a subdirectory for each individual
-                        patch.</p>
-                </li>
-                <li><b>Applying all patches</b> using following command:
-                    <codeblock>cd /var/hlm/clouds/&lt;cloud-name>/patches/ &amp;&amp; ./hlm_applypatches.sh</codeblock></li>
-            </ul><ul id="ul_ptc_hw5_c5">
-                <li>
-                    <p><b>Applying a specific patch </b>using following command:
-                        <codeblock>hlm patch -c &lt;cloud-name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt;</codeblock></p>
-                </li>
-            </ul><ul id="ul_rtc_hw5_c5">
-                <li><b>Rolling back a specific patch</b> using following
-                    command<codeblock>hlm patch -c &lt;cloud-name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt; -r</codeblock></li>
-            </ul><p><b><b>Using the lifecycle manager
-            CLI</b></b></p><codeblock>hlm patch -c &lt;cloud name> -n  &lt;patch name> -t &lt;tiers>
-
-root@cg-hlm:~/cg-hlm/hlm-build# hlm patch --help 
- 
-NAME         hlm-patch - Install a patch on cloud
-SYNOPSIS     hlm patch -c &lt;cloud name> -n &lt;name> [-v &lt;verbose>] [-r &lt;rollback>] [-t &lt;tier>]
-
-DESCRIPTION  Install a patch as an addon on an existing cloud. Requires a well formed         patch created in a format as expected by the patch framework
-
-OPTIONS     --cloud, -c       Specify name of the cloud to act upon.
-
-            --name, -n        Specify name of patch
-
-            --verbose, -v     Produce verbose output. Example: hlm deploy -c &lt;cloudname> -v
-
-            --rollback, -r    Indicate if you need to rollback existing patch.
-
-            --tier, -t        Indicate tier to apply or rollback patch. Multiple tiers can be specified using colon (:) seperator.
-                              E.g. -t BASE-CCP-T1:BASE:CCP-CPX</codeblock></section>  
-        <section id="update"><title> Updates </title><p>An update is a major hotfix or plugin which
-                need to access variables not available in configuration processor variable
-                repository (such as <codeph>group_vars</codeph> and
-                <codeph>host_vars</codeph>).</p><p>An update has following characteristics:</p><ul
-                id="ul_c5c_hw5_c5">
-                <li>Introduces new variables not available in configuration processor repository
-                    (group_vars, host_vars); </li>
-                <li>Can update any file (such as: configuration, INI files, .sh files, and .yml
-                    files) on the lifecycle manager (before the cloud is deployed) or cloud nodes
-                    (after the cloud is deployed);</li>
-                <li>Can update particular package on an existing cloud;</li>
-                <li>Supports rollback;</li>
-                <li>Is idempotent;</li>
-                <li>Is independent of other updates.</li>
-            </ul><p>A update contains three files:</p><ul id="ul_i5c_hw5_c5">
-                <li><b>configure.json</b> - Defines variables specific to the environment. These are
-                    typically variables required by the update but not available in the variable
-                    repository (group_vars, host_vars) generated by configuration processor.</li>
-                <li><b>metadata.tar.gz</b> - contains Ansible roles required for the update.</li>
-                <li><b>Readme</b> - contains pre-requisites, impacted files, and instructions for
-                    applying the update.</li>
-            </ul><p>Multiple updates cannot be bundled into a single script, because each update
-                requires specific modifications in the <codeph>configure.json</codeph>
-                    file.</p><p><b>How to apply an update</b></p><p>Each update will contain a
-                README file with full instructions on how to deploy that update. Also, the <xref
-                    href="http://docs.hpcloud.com/#CarrierGrade/carrier-grade-index.html"
-                    format="html" scope="external">HP Helion OpenStack Carrier Grade documentation
-                    site</xref> will also have instructions for deploying each update.</p><p>In
-                general, the process for applying an update includes:</p><ul id="ul_d5c_hw5_c5">
-                <li>
-                    <p><b>Extracting</b>. You can download and extract patch files from the <xref
-                            href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                            format="html" scope="external">Helion Distribution Network (HDN)</xref>
-                        to the lifecycle manager in
-                            the<codeph>/var/hlm/clouds/&lt;cloud-name&gt;/updates/</codeph>
-                        directory. The update files are usually named in the
-                            <codeph>updates&lt;buildbumber>.tar.gz</codeph> format. The extracted
-                        patch files contain a subdirectory for each individual update. </p>
-                </li>
-                <li><p><b>Applying an update</b> using following steps:</p><p>
-                        <ul id="ul_e5c_hw5_c5">
-                            <li><b>modify</b> the configuration file,
-                                    <codeph>&lt;update-name>/configure.json</codeph>, as stated in
-                                the README file included with the patch</li>
-                            <li><b>apply </b>the update using following
-                                command<codeblock>hlm update -c &lt;cloud name&gt; -n  &lt;update name&gt; -t &lt;tiers&gt;</codeblock>You
-                                can specify multiple tiers using <codeph>-t
-                                    &lt;tier1>:&lt;tier2></codeph>.</li>
-                        </ul>
-                    </p>For example:
-                    <codeblock>hlm update -c mycloud -n NOV_HCG-890 -t BASE-CCP-T1:BASE-CPX-CCP</codeblock></li>
-            </ul><ul id="ul_g5c_hw5_c5">
-                <li><b>Rolling back an update</b> using following
-                    command:<codeblock>hlm update -c &lt;cloud name&gt; -n  &lt;patch name&gt; -t &lt;tiers&gt; -r</codeblock></li>
+        <p>In this case, we can modify the Cloud Definition JSON files but are limited to modify
+            only following things:</p>
+        <p>
+            <ul id="ul_rvb_fdp_f5">
+                <li>Add new roles to existing Tier (See an expandable sections below for steps)</li>
+                <li>Add new Ansible variables</li>
+                <li>Add a new Tier</li>
             </ul>
-            <b>Using the lifecycle manager CLI</b>
-            <p>
-                <codeblock>hlm update -c &lt;cloud name> -n &lt;name> [-v &lt;verbose>] [-r &lt;rollback>] [-t &lt;tier>]
-  
-DESCRIPTION
-Install a update as an add-on on an existing cloud. Requires a well formed
-update created in a format as expected by the update framework
- 
-OPTIONS      --cloud, -c
-            Specify name of the cloud to act upon.
- 
-            --name, -n
-            Specify name of update
-     
-            --verbose, -v
-            Produce verbose output. Example: hlm deploy -c &lt;cloudname> -v
- 
-            --rollback, -r
-            Indicate if you need to rollback existing update.
- 
-            --tier, -t
-            Indicate tier to apply or rollback patch.</codeblock>
-            </p></section>
-            <section>
-                <title>Update log</title>
-                <p>An update log is maintained in <codeph>update.txt</codeph> in the
-                    <codeph>/var/hlm/clouds/&lt;cloud-name>/updates/</codeph> directory .</p>
-                <p>This file maintains updates applied and rolled-back to the environment and the
-                    corresponding time-stamp.</p>
-            </section>
+        </p>
     </body>
 </topic>

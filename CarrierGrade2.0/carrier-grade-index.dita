@@ -37,7 +37,7 @@
 <li>
           <xref href="Overview/carrier-grade-overview.dita#topic4010" type="section" />
         </li>
-        <li><xref href="CGHRelNotes/jow1404333830215.xml#topic6108"/></li>
+        <li><xref href="CGHRelNotes/carrier-grade-release-notes.dita#topic6108"/></li>
 </ul>
 </section>
 <section id="getstart"> <title>Getting started with HP Helion OpenStack Carrier Grade</title>
@@ -47,7 +47,7 @@
           <p><xref
               href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
               format="pdf" scope="external">Administrator Guide</xref></p>
-          <p>The <xref href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+          <p>The <xref href="AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
               Administrator Guide</xref> is addressed to HP Helion OpenStack Carrier Grade
             administrators responsible for the following areas:</p>
           <ul>

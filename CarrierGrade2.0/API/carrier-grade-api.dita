@@ -41,10 +41,11 @@
       <dt><b>KVM Region API</b></dt> 
       <dd>
         <p>For the API refernece for the KVM region, see <xref
-                href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">HP
-                Helion OpenStack Carrier Grade: REST API Guide</xref>. This document contains HP
-              Helion OpenStack Carrier Grade extensions to the OpenStack Compute API for use with
-              the servers in the KVM region. <!--From the WR API doc--></p>
+                href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf"
+                format="pdf" scope="external">HP Helion OpenStack Carrier Grade: REST API
+                Guide</xref>. This document contains HP Helion OpenStack Carrier Grade extensions to
+              the OpenStack Compute API for use with the servers in the KVM region.
+              <!--From the WR API doc--></p>
       
               <p>HP Helion OpenStack Carrier Grade supports the following external REST APIs through
                 its OAM floating IP address:</p>

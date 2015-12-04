@@ -140,12 +140,12 @@ hlm define -l </codeblock>
       <p/>
     </section>
     <section><title>hlm provision</title><p>Provision nodes to be used in a cloud. </p><p>Before
-        executing the command, <xref
-          href="../Installation/carrier-grade-install-kvm-node-json.dita">edit the
-            <codeph>node-provision.json</codeph> file</xref> in the <codeph>&lt;cloudname></codeph>
-        directory of the HLM VM for an existing cloud. This command provisions/installs the
-        operation system on the servers specified in the <codeph>node-provision.json</codeph>
-        file.</p><b>Synopsis</b>
+        executing the command, edit the <codeph>node-provision.json</codeph> file in the
+          <codeph>&lt;cloudname></codeph> directory of the HLM VM for an existing cloud. This
+        command provisions/installs the operation system on the servers specified in the
+          <codeph>node-provision.json</codeph> file. See the <xref
+          href="../Installation/carrier-grade-install-overview.dita#topic1925">installation
+          documentation</xref> for your deployment.</p><b>Synopsis</b>
       <codeblock>hlm provision -c &lt;cloud name> [-n &lt;"node1 node2">] [-d &lt;"node1 node2">] [-p]</codeblock><p><b>Arguments</b></p><p><codeph>--cloud,
           -c</codeph> -- Specify the name of the cloud to provision. </p><p><codeph>--nodes,
           -n</codeph> -- Indicate that specified nodes will be provisioned to the specified cloud.

@@ -462,7 +462,8 @@ Password: cghelion</codeblock>
           <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
             directory:<codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
           <li>Execute the following
-              command:<codeblock>./hlm_initcobbler.sh [&lt;ip address&gt; &lt;netmask&gt; &lt;dhcp begin range&gt; &lt;dhcp end range&gt;]</codeblock><p>For
+              command:<codeblock>./hlm_initcobbler.sh &lt;ip address&gt; &lt;netmask&gt; &lt;dhcp begin range&gt; &lt;dhcp end range&gt;    </codeblock><p>Where
+                <codeph>&lt;ip address></codeph> is the PXE IP of the HLM node.</p><p>For
               example:</p><codeblock>./hlm_initcobbler.sh 192.168.100.2 255.255.255.0 192.168.100.100 192.168.100.200 </codeblock>or
             something similar if PXE network is different. </li>
           <li>Execute the following command: <codeblock>./hlm_importiso.sh</codeblock></li>
@@ -633,32 +634,22 @@ Saved the current configuration to mainboard device successfully.
 [FTC-R146340-5930A]quit
 &lt;FTC-R146340-5930A&gt;</codeblock>
     </section>
-    <section id="ironic-patch"><title>Deploy the Baremetal Region (Ironic) Patch</title><p>After HP
-        Helion OpenStack Carrier Grade is fully deployed, there were occasions where the Compute
-        (Nova) service was down on some controllers in the Baremetal region. After restarting, the
-        service would still not come up or would come up for a short time before going down. It was
-        determined that the baremetal controllers were configured to use the guest account with the
-        Nova service, not the <codeph>nova</codeph> user. <!--HCG-941--></p>You should have
-      downloaded the following patch files during the prerequisites:<ul id="ul_awq_db1_f5">
-        <li>haproxy-FND-RMQ-BAR-VIP.patch</li>
-        <li>kenobi-config-proc-rmb-bar.patch</li>
-        <li>kenobi-node-config-rmb-bar.patch</li>
+    <section id="ironic-patch"><title>Deploy the Horizon Provider Network Patch</title><p>
+        <!--HCG-991--></p>You should have downloaded the following patch files during the
+        prerequisites:<ul id="ul_awq_db1_f5">
+        <li>providernet-tab-missing-in-horizon.patch</li>
       </ul><p>The README with the patch download contains information on files changed by these
         patches.</p><p>To prevent this condition, execute the following commands:<ol
           id="ol_imr_fgt_25">
-          <li>Copy the patch file to  <codeph>~/</codeph> on the lifecycle manager. </li>
-          <li>Change to the kenobi-configuration-processor
-            directory:<codeblock>cd ~/kenobi-configuration-processor </codeblock></li>
-          <li>Execute the following command to install the first patch:
-            <codeblock>patch -p1 &lt; ../kenobi-config-proc-rmb-bar.patch</codeblock></li>
-          <li>Change to the kenobi-node-configuration
+          <li>Copy the patch file to <codeph>~/</codeph> on the lifecycle manager. </li>
+          <li>Change to the <codeph>kenobi-node-configuration</codeph>
             directory:<codeblock>cd ~/kenobi-node-configuration</codeblock></li>
           <li>Execute the following command to install the second patch
-            <codeblock>patch -p1 &lt; ../haproxy-FND-RMQ-BAR-VIP.patch </codeblock></li>
-          <li>Execute the following command to install the third patch
-            <codeblock>patch -p1 &lt; ../kenobi-node-config-rmb-bar.patch </codeblock></li>
+            <codeblock>patch -p1 &lt; providernet-tab-missing-in-horizon.patch</codeblock></li>
+          <li>Change to the  <codeph>~/cg-hlm/hlm-build</codeph> directory
+            <codeblock>cd ~/cg-hlm/hlm-build</codeblock></li>
           <li>Execute the following command to integrate the changes into the
-            environment:<codeblock>hlm_prepare-env.sh</codeblock>When you execute the <codeph>hlm
+            environment:<codeblock>./hlm_prepare-env.sh</codeblock>When you execute the <codeph>hlm
               generate</codeph> command is executed, the changes will be included. </li>
         </ol></p></section>
     <section id="conref-config-proc">
