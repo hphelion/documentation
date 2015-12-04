@@ -44,7 +44,7 @@
         <xref href="#centralized_logging/monitoring">Monitoring Centralized Logging</xref>
       </li>
       <li>
-        <xref href="#centralized_logging/troubleshooting_issues">Troubleshooting Centralized Logging
+        <xref href="../troubleshooting/troubleshooting_logging.dita">Troubleshooting Centralized Logging
           Issues</xref>
       </li>
       <li>
@@ -349,24 +349,7 @@
       <p>To look for sufficient Disk space, filter for "Disk"</p>
       <p>To look for sufficient RAM Memory, filter for "Memory"</p>
     </section>
-    <section id="troubleshooting_issues"><title>Troubleshooting Centralized Logging Issues</title>
-      <p><b>Situations In Which Logs Might Not Be Collected</b></p>
-      <p>Centralized logging might not collect log data under the following circumstances:</p>
-      <ul>
-        <li>If the Beaver service is not running on one or more of the nodes (controller or
-          compute), logs from these nodes will not be collected.</li>
-        <li>Beaver watches the log files for any additions and only pushes the incremental log
-          records for centralized logging. It does not parse all the existing log records in the log
-          files that were added <b>before</b> Beaver started watching those files. Similarly, if
-          Beaver was stopped for some reason and then started again later, the logs that were added
-          during the time span that Beaver was not running will not be collected for centralized
-          logging.</li>
-        <li>The logging service uses a RabbitMQ queue and this queue is not persistent. This means,
-          if the RabbitMQ service on the master node is restarted for some reason, all messages that
-          are not yet consumed by the logstash workers might be lost.</li>
-      </ul>
-    </section>
-    <section id="info">
+     <section id="info">
       <title>For More Information</title>
       <p>For information the centralized logging components, use the following links:</p>
       <ul>

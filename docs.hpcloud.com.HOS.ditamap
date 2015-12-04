@@ -413,6 +413,8 @@
         navtitle="Troubleshooting the Ceilometer Metering Service" locktitle="yes"/>
       <topicref href="helion/blockstorage/ceph/troubleshooting.dita"
         navtitle="Troubleshooting the Ceph Service" locktitle="yes"/>
+      <topicref href="helion/troubleshooting/troubleshooting_logging.dita"
+        navtitle="Troubleshooting the Centralized Logging Service" locktitle="yes"/>
     </topicref>
     <!-- BEGIN - USER GUIDE -->
     <topicref href="helion/userguide/userguide_index.dita" navtitle="User Guide" locktitle="yes"
