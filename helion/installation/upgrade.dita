@@ -33,10 +33,61 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
         </section>
-    <section><title>Rebooting Your Nodes</title>To complete the upgrade and for Linux for HPE Helion
+    <section id="rebooting"><title>Rebooting Your Nodes</title>To complete the upgrade and for Linux for HPE Helion
       updates to take effect, you must reboot all your nodes. The instructions for rebooting
       controller, compute, and storage nodes are found below. </section>
+    
+    <section id="rebootCompute"><title>Rebooting Compute Nodes</title>
+      <ol>
+        <li>Disable provisioning:
+          <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>If
+          the node has existing instances running on it and the nature of the maintenance will
+          impact these instances, the recommended approach is to stop these instances prior to the
+          maintenance activity or migrate them to other compute nodes if possible: </li>
+        <li>Stop nova:<codeblock>nova stop &lt;instance uuid></codeblock></li>
+        <li> Then start them again after the repair:
+          <codeblock>nova start &lt;instance uuid></codeblock> If 'nova start' fails, try
+          <codeblock>nova reboot --hard &lt;instance uuid></codeblock>
+        </li>
+        <li>Re-enable provisioning when the node is fixed
+          <codeblock>nova service-enable &lt;node name></codeblock> If the maintenance includes disk
+          replacements that would cause loss of data in <b>/var/lib/nova</b>, then moving or
+          deleting the instances will be necessary. It may be possible to migrate instances to a
+          different compute node. </li>
+        <li>Migrate the instances off the node by running the following command for all of the
+          instances:<codeblock>nova live-migration --block-migrate &lt;instance uuid> [&lt;target compute host>]</codeblock>
+          <note>The <codeph>[&lt;target compute host>]</codeph> option is optional. If you do not specify a target host then the nova scheduler will choose a node for you.</note><!--See
+      HNOV-240 for details of alternative instance backup mechanism.--></li>
+        <li>When the node is ready to be restored, the process for re-introducing it will depend on
+          the actions performed to repair it. If it was simply rebooted to introduce new software,
+          etc. then running the <b>hlm-start.yml</b> playbook will suffice. If needed, use
+          <b>bm-power-up.yml </b>playbook to restart the node. Specify just the node(s) you want
+          to start in the 'nodelist' parameter arguments, i.e.
+          nodelist=&lt;node1>[,&lt;node2>][,&lt;node3>]
+          <codeblock>cd ~/helion/hos/ansible
+~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-up.yml -e nodelist=cpn-0004</codeblock>
+        </li>
+        <li>Execute the <b>hlm-start.yml </b>playbook. Specifying the node(s) you want to start in
+          the 'limit' parameter arguments. This parameter accepts wildcard arguments and also
+          '@&lt;filename>' to process all hosts listed in the file.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit hlm004-ccp-comp0004-mgmt</codeblock>
+        </li>
+        <li>If the node has undergone repairs that impact disk contents, then running the
+          <b>bm-reimage.yml</b> and <b>hlm-deploy.yml </b>playbooks will be required.
+          Run:<codeblock>cd ~/helion/hos/ansible
+~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=cpn-0004</codeblock>
+        </li>
+        <li>Then execute the <b>site.yml</b> playbook.
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit hlm004-ccp-comp0004-mgmt</codeblock>
+        </li>
+        <li>Finally, re-enable provisioning.
+          <codeblock>nova service-enable &lt;node name> nova-compute</codeblock></li>
+      </ol>
+    </section>          
+    
+
       </body>
     </topic>
-
 
