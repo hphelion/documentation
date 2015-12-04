@@ -26,9 +26,9 @@
         <li><xref href="#topic10581/vrs" format="dita"/></li>
       </ul>
     </section>
-    <section id="ansible-accelerate"><title>Installation fails due to Ansible errors</title><b>System
-        Behavior/Message</b><p>The installation fails during <codeph>hlm deploy</codeph>, and you
-        see any of the following errors:</p><p>
+    <section id="ansible-accelerate"><title>Installation fails due to Ansible
+        errors</title><b>System Behavior/Message</b><p>The installation fails during <codeph>hlm
+          deploy</codeph>, and you see any of the following errors:<!--HCG-984--></p><p>
         <ul id="ul_ill_x1d_f5">
           <li>Any error with the following message: <codeph>Failed to launch the accelerated daemon
               on 10.10.2.102 (reason: failed to connect to the local socket file) </codeph>. For

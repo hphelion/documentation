@@ -37,9 +37,9 @@
         <li>Log into the KVM Host using the default credentials</li>
         <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
             environment. For information on each variable, refer to the comments in the file with
-            each variable. Make sure the Cobbler passwords are blank. You will deploy a patch during
-            the installation to randomize the password. <p>The <codeph>group_vars/all</codeph> file
-              should appear similar to the
+            each variable. <p><b>Note:</b> Make sure the Cobbler passwords are blank. You will
+              deploy a patch during the installation to randomize the password.</p><p>The
+                <codeph>group_vars/all</codeph> file should appear similar to the
             following:</p><codeblock>############################################# Variables for HLM  #################################################################
 #These variables are relevant in both All Virtual and BareMetal scenarios.
               

@@ -634,9 +634,10 @@ Saved the current configuration to mainboard device successfully.
 [FTC-R146340-5930A]quit
 &lt;FTC-R146340-5930A&gt;</codeblock>
     </section>
-    <section id="ironic-patch"><title>Deploy the Horizon Provider Network Patch</title><p>
-        <!--HCG-991--></p>You should have downloaded the following patch files during the
-        prerequisites:<ul id="ul_awq_db1_f5">
+    <section id="providernet-patch"><title>Deploy the Horizon Provider Network Patch</title><p>Because of
+        a configuration issue with the Ansible roles, the Provider Networks tab in the Horizon
+        interface will be hidden unless you deploy the following patch. <!--HCG-991--></p>You should
+      have downloaded the following patch files during the prerequisites:<ul id="ul_awq_db1_f5">
         <li>providernet-tab-missing-in-horizon.patch</li>
       </ul><p>The README with the patch download contains information on files changed by these
         patches.</p><p>To prevent this condition, execute the following commands:<ol
