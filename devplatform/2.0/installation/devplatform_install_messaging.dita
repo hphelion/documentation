@@ -142,7 +142,8 @@ stack@messaging-deployer:~/helion/my_cloud/definition/data$ nano network_groups.
                     <codeph>tls-components:</codeph> list.</li>
             <li>Un-comment the <codeph>tls-components:</codeph> list.</li>
             <li>provide the TLS certificate file name in
-                  the <codeph>cert-file</codeph>: field. This name will have to match the name of the cert-file placed in <codeph>~/helion/my_cloud/config/tls/certs/</codeph> (e.g. <b>msgaas-cert</b>).</li></ol></li>
+                  the <codeph>cert-file</codeph>: field. This name will have to match the name of the cert-file placed in <codeph>~/helion/my_cloud/config/tls/certs/</codeph> (e.g. <b>msgaas-cert</b>).
+              <note>The certificate file must contain both the certificate and the private key data.</note></li></ol></li>
           <li> Using Git, persist these changes. This information is required for the Pre-Install playbook,
               which is executed later in this installation
               process.<codeblock>stack@messaging-deployer:/helion/my_cloud/definition/data/pass-through$ cd ~/helion
@@ -284,6 +285,43 @@ msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0
 msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
 localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
           </ol></li></ol></section>
+    <section>
+      <title>Finding the IP address for nodes in a name-based installation</title>
+      <p>If you used name-based TLS in step 5.f.1, you can find the IP address of the service
+        endpoint by doing one of the following:</p>
+      <ol>
+        <li>Connect to the application lifecycle (deployer) node</li>
+        <li>Execute the following command to get the service endpoint address from the Hosts file:
+          <codeblock>cat /etc/hosts</codeblock>
+          This will produce output similar to the following:
+          <codeblock>
+    # Cloud: entry-scale-kvm-ceph
+            
+    # Localhost Information
+    127.0.0.1      localhost
+            
+    #
+    # Network Group: EXTERNAL-API
+    #
+    # Network: EXTERNAL-API-NET
+    <codeph outputclass="codehighlight">10.241.151.2     helion-cp1-c1-m1-extapi</codeph>
+    10.241.151.3     helion-cp1-c1-m2-extapi
+    10.241.151.4     helion-cp1-c1-m3-extapi
+          </codeblock></li>
+        <li>Execute the following command to get the service endpoint address from Neutron:
+        <codeblock>source service.osrc
+neutron floatingip-list</codeblock>
+          This will produce output similar to the following:
+          <codeblock>+--------------------------------------+------------------+---------------------+---------+
+| id                                   | fixed_ip_address | floating_ip_address | port_id |
++--------------------------------------+------------------+---------------------+---------+
+| 6c7dc113-e6ce-4b31-bc20-c71eae8f21f4 |                  | <codeph outputclass="codehighlight">10.241.150.3</codeph>        |         |
+| 70babfb9-ff57-4cfb-ac19-e263105e41ce |                  | 10.241.150.5        |         |
+| 88ac0e65-e96b-4e53-9e16-8cbbba31efbe |                  | 10.241.150.4        |         |
++--------------------------------------+------------------+---------------------+---------+
+          </codeblock></li>
+      </ol>
+    </section>
     <section><title>Verifying the Installation</title><ol>
         <li>Set endpoint type to internal (Cannot access public endpoint from messaging deployer)
           API.<codeblock>export OS_ENDPOINT_TYPE=internalURL
