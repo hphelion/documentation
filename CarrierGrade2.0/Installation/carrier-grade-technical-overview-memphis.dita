@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3485">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Memphis (KVM + ESX with DCN)
+    Deployment Architecture Reference</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+   
+    <p>This page introduces deployment and network architectures of the Memphis deployment of HP
+      Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
+        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. This deployment also
+      includes support for OpenStack Ironic to install and manage baremetal servers.</p>
+    <p>The Memphis deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
+      solution. During the installation, use the <codeph>memphis</codeph> template that comes with
+      the installation package.</p>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
+    <section>
+    <title>Network/Component Architecture</title>
+    <p><image href="../../media/CGH-2-block-arch-memphis.png" width="750" id="image_wdn_zbw_mt"
+        /></p>
+    </section>
+      <section id="deploy-arch">
+      <title>Deployment architecture</title>
+      <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
+        Carrier Grade.</p>
+      <p><image href="../../media/CGH-2-deploy-arch-sacramento.png" id="image_g3z_dx1_xt"
+          width="800"/></p>
+      <p>The following sections describe essential aspects of this diagram.</p>
+    </section>
+    <section id="interfaces">
+      <title>Interfaces</title>
+      <p>The following are the interfaces being used, based on the technical architecture diagram.
+        You can use more than two interfaces and specific networks to physical networks.</p>
+      <ul>
+        <li>Intf0 is mapped to Port1/Bonded Pair</li>
+        <li>Intf1 is mapped to Port2/Bonded Pair</li>
+        <li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
+      </ul>
+    </section>
+    <section id="routing-acls">
+      <title>Routing ACLs</title>
+      <p>Configure the following routing access lists.</p>
+      <table id="table_vzn_jz1_xt">
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <thead>
+            <row>
+              <entry> From </entry>
+              <entry> To </entry>
+              <entry> Reason </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> CLM </entry>
+              <entry> DCM </entry>
+              <entry> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CTL </entry>
+              <entry> Access iLO network for managing the lifecycle of the node </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> EXT </entry>
+              <entry> Access external networks, for example to download patches </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CAN </entry>
+              <entry> Accessing OpenStack APIs </entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry> CLM </entry>
+              <entry>
+                <p>VSC IP to lifecycle manager CLM VM IP (only during deployment)</p>
+                <p>VSD IP to ESX host CLM IP (during VRS-vAp deployment)</p>
+              </entry>
+            </row>
+            <row>
+              <entry> VxTUL1 </entry>
+              <entry> VxTUL2 </entry>
+              <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry> DCM1 </entry>
+              <entry> DCM2 </entry>
+              <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CLM</entry>
+              <entry>Image copy from Glance to baremetal; post-provisioning, remove the untagged
+                network from the provisioned node </entry>
+            </row>
+            <row>
+              <entry>BL-CTL</entry>
+              <entry>CLM</entry>
+              <entry>Temporary access for media mounts from Swift</entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CTL</entry>
+              <entry>Power off/on nodes through IPMI, and congifure switch </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>CLM, PXE, BLS, WR-PXE, WR-INFRA, WR-TUL should use RFC 1918 non-routable IPs to prevent
+        access to the CLM network from DCM, CTL, or EXT.</p>
+      <p>DCM, CAN/WR-OAM, EXT, WR-EXT should use routable IPs. DCM is restricted to the corporate
+        network</p>
+    </section>
+    <section>
+      <title>Service Architecture Diagram</title>
+      <p>For service architecture diagrams with interface details, see <xref
+          href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture
+          Diagrams</xref></p>
+    </section>
+    <section>
+      <title>Regions</title>
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two
+        logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
+        the installation process. The <xref
+          href="carrier-grade-technical-overview-memphis.dita#topic3485/deploy-arch">Deployment
+          Architecture diagram</xref> shows an illustration of these two zones. </p>
+      <p><b>Non-KVM</b></p>
+      <p>The Non-KVM region contains the lifecycle manager, to deploy and
+        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+        distribution of OpenStack. The DCN components and servers also reside in the non-KVM zone. </p>
+      <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+        of a software platform, providing ultra-reliability and exceptional performance
+        efficiencies for telecommunications networks. </p>
+    </section>
+    <section id="components">
+      <title>Components</title>
+      <ul id="ul_ddb_ryh_f5">
+        <li><b>Lifecycle manager</b> The lifecycle manager deploys and manages HP Helion OpenStack
+          Carrier Grade, consisting of a controller running shared services and the nodes required
+          to run DCN (as needed).</li>
+        <li><b>Non-KVM Region Controller</b>. Standard IaaS control plane to enable cloud-to-cloud
+          communication. </li>
+        <li><b>StoreVirtual/3PAR</b>: Hardware storage array used as backend for Cinder. Support for
+          3PAR has a similar architecture as StoreVirtual on iSCSI, not Fibre.</li>
+        <li><b>KVM Region Controller</b>: Real-time control plane for compute and networking.
+          Contains modified versions of most of the OpenStack components.</li>
+        <li><b>KVM Region Compute</b>: Realtime compute node with networking components.</li>
+        <li><b>Infoblox</b>: An optional third party product to support IPAM. </li>
+        <li><b>Orchestrator</b>: This could be any application consuming the cloud services.
+          <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
+      </ul>
+    </section>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/data"/>
+    <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
+      OpenStack Carrier Grade Memphis deployment uses HPE Distributed Cloud Networking to
+      provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
+        cloud deployment. Please refer to DCN documentation for details. </p>The main components in
+      the HPE DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services
+      Directory Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
+      Switching (VRS).<ul>
+        <li>HPE Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
+          compute resources and network resources, that is located on a server outside of the HP
+          Helion OpenStack Carrier Grade cloud. </li>
+        <li>HPE Networks Virtualized Services Directory Architect (VSD Architect). The VSD Architect
+          is a browser-based interface for management tasks on the VSD.</li>
+        <li>HPE Virtual Services Controller (VSC): The VSC is a virtual machine application running
+          all the control plane tasks, maintaining a full view of per-tenant network and service
+          topologies. The VSC should be installed on the KVM Host system within the HP Helion
+          OpenStack Carrier Grade cloud.</li>
+        <li>HPE Distributed Virtual Routing and Switching (VRS): The HPE VRS is the software agent
+          that runs in each Hypervisor (HV). The HPE VRS component is an enhanced Open vSwitch (OVS)
+          implementation that constitutes the network forwarding plane.</li>
+      </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
+        the major DCN components, including how to access the various systems, IP addresses, and
+        user credentials. </p></section>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
+    <section
+      conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/>
+    <section>
+      <title>Next Step</title>
+      <p>Review the <xref href="carrier-grade-support-matrix-memphis.dita#topic1773">Support
+          Matrix</xref></p>
+    </section>
+  </body>
+</topic>

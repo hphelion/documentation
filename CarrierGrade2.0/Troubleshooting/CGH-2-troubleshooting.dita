@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Troubleshooting</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This topic describes all the known issues that you might encounter:</p>
+    <section>
+      <ul id="ul_xzh_nmc_mt">
+        <li><xref href="#topic10581/baremetal" format="dita"/></li>
+        <li><xref href="#topic10581/no-instance" format="dita">Unable to create an instance in the
+            non-KVM region</xref></li>
+        <li><xref href="#topic10581/backup" format="dita"/></li>
+        <li><xref href="#topic10581/glance" format="dita"/></li>
+        <li><xref href="#topic10581/two-controllers" format="dita"/></li>
+      </ul>
+    </section>
+    <section id="baremetal">
+      <title>Baremetal Control plane RDBMS recovery after reboot</title>
+      <p><!--https://rndwiki.corp.hpecorp.net/confluence/pages/viewpage.action?title=Baremetal+Control+plane+RDBMS+recovery+after+reboot++-+HCG2.0&spaceKey=cloudos--></p>
+    </section>
+    <p><b>System Behavior/Message</b></p>
+    <p>The controller in the baremetal region of the Sacaramento deployment is designed to be a
+      single control plane. If the controller reboots, the MySQL database installed into the
+      controller crashes and the <codeph>mysql</codeph> service does not restart. </p>
+    <p><b>Resolution</b></p>
+    <p>Perform the following steps:</p>
+    <p>
+      <ol id="ol_avt_1r1_d5">
+        <li>From the lifecycle manager VM, log in to the baremetal controller after
+            reboot.<codeblock>ssh cghelion@&lt;BM_Controller_IP&gt;</codeblock><p>The
+              <codeph>BM_Controller_IP</codeph> address can be obtained from the
+              <codeph>nodes.json</codeph> file in <codeph>/var/hlm/clouds/&lt;cloud_name>/</codeph>
+            directory on the lifecycle manager.</p></li>
+        <li>Switch to the root user:<pre>sudo su -</pre></li>
+        <li>Execute the following command to manually restart the <codeph>mysql</codeph>
+          service:<codeblock>/etc/init.d/mysql bootstrap-pxc</codeblock></li>
+      </ol>
+    </p>
+    <section><b>Validation</b><ol id="ol_c5j_qr1_d5">
+        <li>Execute the following command to check status of mysql service:
+          <codeblock>service mysql status</codeblock>This status should be <codeph>active</codeph>. </li>
+        <li>Log in to MySQL.  <pre>sudo su -</pre></li>
+        <li>Execute the following command to log into the MySQL database:
+          <codeblock>mysql</codeblock></li>
+        <li>Exit after logging in:<codeblock>exit</codeblock></li>
+        <li>Check that the previous data is intact: Example commands: <ul id="ol_d5j_qr1_d5">
+            <li><b>ironic node-list</b> should display the nodes registered before reboot</li>
+            <li><b>neutron net-list</b> should display the created networks</li>
+          </ul></li>
+      </ol></section>
+    <section id="no-instance">
+      <title><b>Unable to create an instance in the non-KVM region</b></title>
+      <p>When trying to create a virtual machine instance in the non-KVM region, the user receives a
+          <codeph>No valid host found</codeph> error. Check that all ESX host machines in the
+        cluster are configured with the ESX compute proxy. If one or more hosts in the cluster is
+        configured with the proxy, disconnect the host(s) from the cluster or <xref
+          href="../Installation/carrier-grade-install-esx-proxy.dita#topic10581">install the ESX
+          compute proxy</xref>. <!--CG-1413--></p>
+    </section>
+    <section id="backup">
+      <title>Backup storage size should be at least 120GB</title>
+      <p>If you experience the following error, you can edit the <codeph>region_config</codeph> file
+        for the KVM region to increase the default storage.</p>
+      <p><image href="../../media/CGH-trouble-storage.png" width="400" id="image_ehc_qjc_mt"/></p>
+      <p>
+        <ol id="ol_vcj_rjc_mt">
+          <li>Log into the KVM region controller-0.</li>
+          <li>Edit the <codeph>./&lt;cloud name&gt;/clouds/&lt;cloud
+              name&gt;/001/stage/windriver-config/region_config</codeph> file to update the
+              <codeph>backup_storage</codeph> value to 120 or higher.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="glance">
+      <title>Glance/Swift not recovering after failure</title>
+      <p>The HP Helion OpenStack Carrier Grade Image Operations (Glance) service is based on
+        OpenStack Glance, which uses embedded OpenStack Swift for back-end storage.</p>
+      <p>In the event of an embedded Swift node failing, Swift may take longer to report correctly
+        the addition of new files and containers. This delay can be mitigated by replacing the
+        failed node as soon as possible, or by removing the failed node from the ring. See the swift
+        documentation, <xref
+          href="http://docs.openstack.org/developer/swift/admin_guide.html#handling-server-failure"
+          format="html" scope="external">Swift Administrator's Guide, Handling Server Failure</xref>
+        for further details on coping with single node failure. <!--HCG-771--></p>
+    </section>
+    <section id="two-controllers">
+      <title>Two controllers have failed</title>
+      <p>A restore procedure is required when two controllers have failed. HA Services are not
+        guaranteed to be resilient after a second failure. See <xref
+          href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and Restore
+          Configuration Files and MySQL Clusters</xref>.</p>
+    </section>
+    <section>
+      <title>See Also</title>
+      <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref
+          href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HP Helion
+          OpenStack 1.1: Troubleshooting</xref>.</p>
+    </section>
+  </body>
+</topic>

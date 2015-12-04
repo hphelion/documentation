@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic15959">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installing Infoblox<tm
+      tmtype="reg"/></title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack"/>
+      <othermeta name="product-version" content="HP Helion OpenStack 1.1"/>
+      <othermeta name="role" content="All"/>
+      <othermeta name="role" content="Amanda F"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack"/>
+      <othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><!--https://wiki.hpcloud.net/display/HCG/Infoblox-+HCG+2.0+integration--></p>
+    <p>Infoblox is an optional component of the Memphis and Sacramento deployments.  </p>
+    <p>The Infoblox OpenStack Adapter (IOA) integrates with the OpenStack Neutron networking
+      service, to provide IP Address Management (IPAM) networking services within OpenStack cloud
+      platforms. Refer to the Infoblox documentation for operation and maintenance information. </p>
+    <p>You will need to purchase a license from Infoblox before installing.</p>
+    <p>If you are not installing Infoblox, go to <xref
+        href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+        Interface</xref>.</p>
+    <section>
+      <p><b>Deploy and Configure Infoblox Openstack Adapter (IOA) VM in ESX</b></p>
+      <p>Infoblox <tm tmtype="tm">vNIOS</tm> (Network Infrastructure Operating System) for <tm tmtype="reg">VMware</tm> allows deployment of
+        a virtualized instance of an Infoblox appliance. You can use ESX vCenter to import the
+        template and deploy the Infoblox IOA VM.</p>
+      <p>To deploy the template in ESX:<ol id="ol_ezn_ybt_xs">
+          <li>Launch the VMware vCenter client.</li>
+          <li>Click <b>File</b>, then <b>Deploy OVF Template</b>.</li>
+          <li>In the <b>Deploy OVF Template</b> wizard, browse to the location of the your template
+            file. You should have received a template file when you purchased Infoblox.</li>
+          <li>Click <b>Next</b> and complete the wizard:</li>
+          <li>Review the details for the installation and click <b>Finish</b>.</li>
+        </ol></p>
+    </section>
+    <section>
+      <title>Configure Extensible Attributes </title>
+      <ol id="ol_rly_5jz_5t">
+        <li>Power on vNIOS VM. </li>
+        <li>Login to VM console from vCenter using the default credentials (admin/infoblox)</li>
+        <li>Run command <b>set network</b> to configure the static IP address (DCM network)  of
+          vNIOS </li>
+        <li>Run the <b>set temp_license</b> command to configure trial license (60 days). Choose
+          option 8  Or, obtain a permanent license from Infoblox.</li>
+        <li>Point a browser to the default Infoblox URL at
+            <codeph>https://10.200.51.240/ui/</codeph>.</li>
+        <li>Log into the Infoblox portal using the default credentials admin/infoblox. <p>When you
+            login for the first time you will be prompted for intial setup select options. Proceed
+            through the setup wizard.</p></li>
+        <li>Go to <b>Administration > Extensible Attributes</b> and click <b>Configure Extensible
+            Attributes</b>.</li>
+        <li>Create the following extensible attributes: <table id="table_mvd_rfz_5t">
+            <tgroup cols="3">
+              <colspec colnum="1" colname="col1"/>
+              <colspec colnum="2" colname="col2"/>
+              <colspec colnum="3" colname="col3"/>
+              <tbody>
+                <row>
+                  <entry>Name</entry>
+                  <entry>Type </entry>
+                  <entry>Comments </entry>
+                </row>
+                <row>
+                  <entry>Account</entry>
+                  <entry>String </entry>
+                  <entry> UserID inOpenStack </entry>
+                </row>
+                <row>
+                  <entry>CMP Type</entry>
+                  <entry>String </entry>
+                  <entry> CMPtypes(OpenStack) </entry>
+                </row>
+                <row>
+                  <entry>Cloud API Owned</entry>
+                  <entry>String </entry>
+                  <entry> Cloud API Owned</entry>
+                </row>
+                <row>
+                  <entry>Is External </entry>
+                  <entry> String </entry>
+                  <entry> For networks and network containers only </entry>
+                </row>
+                <row>
+                  <entry>Is Shared </entry>
+                  <entry>String </entry>
+                  <entry>For networks and network containers only </entry>
+                </row>
+                <row>
+                  <entry>IP Type</entry>
+                  <entry>String </entry>
+                  <entry> Typeof IP address </entry>
+                </row>
+                <row>
+                  <entry>Network Encap </entry>
+                  <entry>String </entry>
+                  <entry> </entry>
+                </row>
+                <row>
+                  <entry>Network ID </entry>
+                  <entry>String </entry>
+                  <entry>NetworkID inOpenStack </entry>
+                </row>
+                <row>
+                  <entry>Network Name </entry>
+                  <entry>String </entry>
+                  <entry>Networkname </entry>
+                </row>
+                <row>
+                  <entry>PhysicalNetworkName </entry>
+                  <entry>String </entry>
+                  <entry> </entry>
+                </row>
+                <row>
+                  <entry> Port Attached Device - Device ID </entry>
+                  <entry>String </entry>
+                  <entry> </entry>
+                </row>
+                <row>
+                  <entry>Port Attached Device - Device Owner </entry>
+                  <entry>String </entry>
+                  <entry> </entry>
+                </row>
+                <row>
+                  <entry>Port ID </entry>
+                  <entry>String </entry>
+                  <entry> </entry>
+                </row>
+                <row>
+                  <entry>Segmentation ID </entry>
+                  <entry>String </entry>
+                  <entry> </entry>
+                </row>
+                <row>
+                  <entry>Subnet ID </entry>
+                  <entry>String </entry>
+                  <entry>Subnet ID in OpenStack </entry>
+                </row>
+                <row>
+                  <entry>Subnet Name </entry>
+                  <entry>String </entry>
+                  <entry>Subnet name in OpenStack </entry>
+                </row>
+                <row>
+                  <entry>Tenant ID </entry>
+                  <entry>String </entry>
+                  <entry>TenantID in OpenStack </entry>
+                </row>
+                <row>
+                  <entry>Tenant Name </entry>
+                  <entry>String</entry>
+                  <entry>Tenant Name in OpenStack </entry>
+                </row>
+                <row>
+                  <entry>VLAN ID </entry>
+                  <entry>Integer</entry>
+                  <entry>The VLANID in OpenStack </entry>
+                </row>
+                <row>
+                  <entry>VM ID </entry>
+                  <entry>String </entry>
+                  <entry>InstanceID in OpenStack </entry>
+                </row>
+                <row>
+                  <entry>VM Name </entry>
+                  <entry>String </entry>
+                  <entry>Virtual machine instance name inOpenStack </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></li>
+      </ol>
+    </section>
+    <section>
+      <title id="Infoblox-HCG2.0integration-Applypatch">Deploy the Infoblox Plug-Ins </title>
+      <p>An Infoblox plug-in needs to be installed on the KVM Host. For the Sacramento deployment,
+        the plug in also needs to be installed on the baremetal controller.</p>
+      <p><b>To deploy the plug-in on the KVM Host:</b></p>
+      <ol id="ul_ovd_rfz_5t">
+        <li>Log into the KVM Host.</li>
+        <li>Copy the <codeph>infoblox.tar.gz</codeph> patch to:
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph>.</li>
+        <li>Change to the <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph> directory.<p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the cloud.</p></li>
+        <li>Use the following command to extract the
+          patch<codeblock>tar -zvxf infoblox.tar.gz</codeblock></li>
+        <li>Modify the
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
+          your environment: <ul id="ul_ubj_3h5_xt">
+            <li>
+              <codeph>ioa_ipaddress</codeph>: DCM IP of infoblox Openstack Adapter (IOA) VM. </li>
+            <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
+                <codeph>admin</codeph>.</li>
+            <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
+                <codeph>admin</codeph> is <codeph>infoblox</codeph>.</li>
+            <li><codeph>certfile_path</codeph>: certfile path as defined in <codeph>stackrc</codeph>
+              file.</li>
+            <li><codeph>region_name</codeph>: Region Name where the plugin will be deployed: Memphis
+              or Sacramento.</li>
+          </ul></li>
+        <li>Execute following command to apply patch:
+            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox</codeblock><p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the HP Helion OpenStack
+              cloud.</p><p><b>To deploy the plug-in on the baremetal region controller:</b></p></li>
+      </ol>
+      <ol>
+        <li>Log into the baremetal controller.</li>
+        <li>Copy the <codeph>infoblox.tar.gz</codeph> patch to:
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph>.</li>
+        <li>Change to the <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph> directory.<p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the cloud.</p></li>
+            <li>Use the following command to extract the
+              patch<codeblock>tar -zvxf infoblox.tar.gz</codeblock></li>
+            <li>Modify the
+            <codeph>/var/hlm/clouds/&lt;cloudname>/plugins/infoblox/configure.json</codeph> based on
+          your environment: <ul id="ul_ipn_325_xt">
+            <li>
+              <codeph>ioa_ipaddress</codeph>: DCM IP of Infoblox Openstack Adapter (IOA) VM. </li>
+            <li><codeph>ioa_username</codeph>: Username to login to IOA. Default username is
+                <codeph>admin</codeph>.</li>
+            <li><codeph>ioa_password</codeph>: Password to login to IOA. Default password for user
+                <codeph>admin</codeph> is <codeph>infoblox</codeph>.</li>
+            <li><codeph>certfile_path</codeph>: certfile path as defined in <codeph>stackrc</codeph>
+              file.</li>
+            <li><codeph>region_name</codeph>: Region Name where the plugin will be deployed: Memphis
+              or Sacramento.</li>
+          </ul></li>
+            <li>Execute following command to apply patch:
+            <codeblock>hlm plugin -c &lt;cloud-name&gt; -n infoblox</codeblock><p>Where
+              <codeph>&lt;cloudname></codeph> is the name of the HP Helion OpenStack cloud.
+          </p></li>
+          
+      </ol>
+    </section>
+    <section><p><b>Edit configuration files</b></p><p>Edit the following configuration files on the
+        lifecycle manager and on the baremetal controller.</p><p><b>To modify the configutation files on the
+          lifecycle manager:</b></p><ol id="ol_wkc_4s4_xt">
+        <li>Log into the lifecycle manager.</li>
+        <li>Modify the <codeph>/etc/neutron/neutron.conf</codeph> file with values appropriate for
+          your environment. For
+          example:<codeblock>[keystone_authtoken]
+auth_url = http://BUILD19-CCP-T2-VIP-INTF0-1551:35357
+
+[DEFAULT]
+
+ipam_driver = neutron.ipam.drivers.infoblox.infoblox_ipam.InfobloxIPAM
+infoblox_members_config = /etc/neutron/infoblox_members.conf
+conditional_config = /etc/neutron/infoblox_conditional.conf
+use_host_records_for_ip_allocation = False
+bind_dns_records_to_fixed_address = record:a,record:aaaa,record:ptr
+unbind_dns_records_from_fixed_address = record:a,record:aaaa,record:ptr
+delete_dns_records_associated_with_fixed_address = record:a,record:aaaa,record:ptr,record:txt
+subnet_shared_for_creation = true
+subnet_shared_for_deletion = true
+infoblox_wapi = https://10.200.51.240/wapi/v2.0/
+infoblox_username = admin
+infoblox_password = infoblox
+
+nova_admin_username = nova
+nova_admin_password = {{ NOV_API.consumes_KEY_API.vars.keystone_nova_password }}
+nova_admin_tenant_id = {{ tenant_id.stdout }}
+nova_admin_tenant_name = services
+
+[nova]
+# PEM encoded client certificate cert file
+certfile = /etc/stunnel/ssl/hlm/certs/ca.crt
+
+# Name of nova region to use. Useful if keystone manages more than one region.
+
+region_name = Memphis</codeblock></li>
+        <li>Modify the <codeph>/etc/neutron/infoblox_conditional.conf</codeph> file with values
+          apprapriate for your environment. For example:
+          <codeblock>[
+   {
+        "condition": "subnet_range:10.100.1.0/24",
+        "is_external": false,
+        "network_view": "management",
+        "disable_dhcp": true,
+        "dhcp_members": "infoblox.localdomain",
+        "require_dhcp_relay": false,
+        "domain_suffix_pattern": "{subnet_name}.cloud.global.com",
+        "hostname_pattern": "{instance_name}-{ip_address}"
+    },
+    {
+        "condition": "tenant",
+        "is_external": false,
+        "network_view": "{tenant_name}",
+        "disable_dhcp": true,
+        "dhcp_members": "infoblox.localdomain",
+        "require_dhcp_relay": false,
+        "domain_suffix_pattern": "{subnet_name}.cloud.global.com",
+        "hostname_pattern": "{instance_name}-{ip_address}"
+    },
+    {
+        "condition": "global",
+        "is_external": true,
+        "network_view": "default",
+        "disable_dhcp": true,
+        "dhcp_members": "infoblox.localdomain",
+        "require_dhcp_relay": false,
+        "domain_suffix_pattern": "{subnet_name}.cloud.global.com",
+        "hostname_pattern": "{instance_name}-{ip_address}"
+    }
+]</codeblock></li>
+        <li>Create the <codeph>/etc/neutron/infoblox_members.conf</codeph> file with the following
+          line to include IOA VM IP address. <p>
+            <codeblock>[{"ipv4addr": "10.200.51.240", "name": "infoblox.localdomain"}]</codeblock>
+          </p><p>
+            <b>Note:</b> In this example, 10.200.51.240 is the CLM IP of the IOA VM running in the
+            ESX environment which was provided during IOA configuration.</p></li>
+      </ol><b>To modify the configutation files on the baremetal controller:</b><ol
+        id="ol_unp_vh5_xt">
+        <li>Log into the baremetal controller.</li>
+        <li>Modify the <codeph>/etc/neutron/neutron.conf</codeph> file with values appropriate for
+          your environment. See the previous example.</li>
+        <li>Modify the <codeph>/etc/neutron/infoblox_conditional.conf</codeph> file with values
+          apprapriate for your environment. See the previous example. </li>
+        <li>Create the <codeph>/etc/neutron/infoblox_members.conf</codeph> file with the following
+          line to include IOA VM IP address. <p>
+            <codeblock>[{"ipv4addr": "10.200.51.240", "name": "infoblox.localdomain"}]</codeblock>
+          </p><p>
+            <b>Note:</b> In this example, 10.200.51.240 is the CLM IP of the IOA VM running in the
+            ESX environment which was provided during IOA configuration.</p></li>
+      </ol></section>
+    <section>
+      <p><b>Verification</b></p>
+      <p>
+        <ol id="ol_lhr_rt4_xt">
+          <li>Point a browser to the default Infoblox URL at
+              <codeph>https://10.200.51.240/ui/</codeph>.</li>
+          <li>Log into the Infoblox portal using the default credentials admin/infoblox. </li>
+          <li>Go to <b>Administration > Network views</b>. The subnet pool should be listed.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+        Interface</xref></p>
+    </section>
+  </body>
+</topic>

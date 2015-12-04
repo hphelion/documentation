@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3485">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sacramento Deployment
+    Technical Overview</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This page introduces deployment and network architectures of the Sacramento deployment of HP
+      Helion OpenStack Carrier Grade. This deployment supports the integration of VMware ESX<tm
+        tmtype="reg"/> storage into HP Helion OpenStack Carrier Grade using HP. This deployment also
+      includes support for OpenStack Ironic to install and manage baremetal servers.</p>
+    <p>The Sacramento deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
+      solution. During the installation, use the <codeph>sacramento</codeph> template that comes
+      with the installation package.</p>
+    <section id="Helion-services">
+      <title>Services overview</title>
+      <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
+        Each service works through an API (application programming interface) that allows services
+        to work together and allows users to interact with the services. For a complete description
+        of these services, see the <xref
+          href="../../CarrierGrade2.0/Overview/carrier-grade.services-overview.dita">Services
+          Overview</xref> page.</p>
+    </section>
+    <section>
+      <title>Network/Component Architecture</title>
+    <p><image href="../../media/CGH-2-block-arch-sacramento.png" width="750" id="image_wdn_zbw_mt"
+      /></p>
+    </section>
+    <section id="deploy-arch">
+      <title>Deployment architecture</title>
+      <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
+        Carrier Grade.</p>
+      <p>
+        <image href="../../media/CGH-2-deploy-arch-sacramento.png" id="image_g3z_dx1_xt" width="800"
+        /></p>
+      <p>The following sections describe essential aspects of this diagram.</p>
+    </section>
+    <section id="networkarch"><title>Network architecture</title><p>The following information
+        describes the network configuration, which must be configured by the network
+        administrator.</p><table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry> Network </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> CLM</entry>
+              <entry>Cloud Management Network and Object Store Network. Shared between the non-KVM
+                and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> PXE</entry>
+              <entry>Boot/initial configuration network. Untagged </entry>
+            </row>
+            <row>
+              <entry> CAN</entry>
+              <entry>Consumer Access Network. Shared between the non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> EXT </entry>
+              <entry> External network (FIP network for the non-KVM region) region). </entry>
+            </row>
+            <row>
+              <entry> CTL </entry>
+              <entry>IPMI/iLO network. Shared between the non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> BLS</entry>
+              <entry>Block Storage Network. Shared between the non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry>Data Center Management network (accessible to the non-KVM and KVM region).
+              </entry>
+            </row>
+            <row>
+              <entry> VxLAN-TUL </entry>
+              <entry> VxLAN Tenant Underlay Network for the non-KVM region; routed across multi-DC
+                for VxLAN 12 extension </entry>
+            </row>
+            <row>
+              <entry> WR-PXE</entry>
+              <entry>Boot/initial configuration network for the KVM region. Untagged </entry>
+            </row>
+            <row>
+              <entry>BM-CTL</entry>
+              <entry>Dedicated iLO network for the baremetal region</entry>
+            </row>
+            <row>
+              <entry>BM-CLM</entry>
+              <entry>Boot/Initial Configuration Network for the baremetal region</entry>
+            </row>
+            <row>
+              <entry> VLAN-TUL</entry>
+              <entry>Tenant Underlay Network for the baremetal region/PCI-Passthrough/SR-IOV
+                interfaces. This is a set of tagged VLANs. </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+        <!-- <row>
+<row>
+<entry> WR-BLS </entry>
+<entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
+</row>
+
+
+-->
+    <section id="interfaces">
+      <title>Interfaces</title>
+      <p>The following are the interfaces being used, based on the technical architecture diagram.
+        You can use more than two interfaces and specific networks to physical networks.</p>
+      <ul>
+        <li>Intf0 is mapped to Port1/Bonded Pair</li>
+        <li>Intf1 is mapped to Port2/Bonded Pair</li>
+        <li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
+      </ul>
+    </section>
+    <section id="routing-acls">
+      <title>Routing ACLs</title>
+      <p>Configure the following routing access lists.</p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <thead>
+            <row>
+              <entry> From </entry>
+              <entry> To </entry>
+              <entry> Reason </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> CLM </entry>
+              <entry> DCM </entry>
+              <entry> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CTL </entry>
+              <entry> Access iLO network for managing the lifecycle of the node </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> EXT </entry>
+              <entry> Access external networks, for example to download patches </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CAN </entry>
+              <entry> Accessing OpenStack APIs </entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry> CLM </entry>
+              <entry>
+                <p>VSC IP to lifecycle manager CLM VM IP (only during deployment)</p>
+                <p>VSD IP to ESX host CLM IP (during VRS-vAp deployment)</p>
+              </entry>
+            </row>
+            <row>
+              <entry> VxTUL1 </entry>
+              <entry> VxTUL2 </entry>
+              <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry> DCM1 </entry>
+              <entry> DCM2 </entry>
+              <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CLM</entry>
+              <entry>Image copy from Glance to baremetal; post-provisioning, remove the untagged
+                network from the provisioned node </entry>
+            </row>
+            <row>
+              <entry>BL-CTL</entry>
+              <entry>CLM</entry>
+              <entry>Temporary access for media mounts from Swift</entry>
+            </row>
+            <row>
+              <entry>BL-CLM</entry>
+              <entry>CTL</entry>
+              <entry>Power off/on nodes through IPMI, and congifure switch </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>CLM, PXE, BLS, WR-PXE, WR-INFRA, WR-TUL should use RFC 1918 non-routable IPs to prevent
+        access to the CLM network from DCM, CTL, or EXT.</p>
+      <p>DCM, CAN/WR-OAM, EXT, WR-EXT should use routable IPs. DCM is restricted to the corporate
+        network</p>
+    </section>
+    <section>
+      <title>Service Architecture Diagram</title>
+      <p>For service architecture diagrams with interface details, see <xref
+          href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture
+          Diagrams</xref></p>
+    </section>
+    <section>
+      <title>Regions</title>
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+        or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
+        installation process. The <xref
+          href="carrier-grade-technical-overview-sacramento.dita#topic3485/deploy-arch">Deployment
+          Architecture diagram</xref> shows an illustration of these two zones. </p>
+      <p><b>Non-KVM</b></p>
+      <p>The Non-KVM region contains the lifecycle manager, to deploy and maintain HP Helion
+        OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade distribution of
+        OpenStack. The ESX and DCN components and servers also reside in the non-KVM zone. </p>
+      <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+        of a software platform, providing ultra-reliability and exceptional performance efficiencies
+        for telecommunications networks. </p>
+      <p><b>BM Region</b></p>
+      <p>The BM region contains baremetal servers controlled by OpenStack Ironic.</p>
+    </section>
+    <section id="components">
+      <title>Components</title>
+      <ul id="ul_ddb_ryh_f5">
+        <li><b>Lifecycle manager</b> The lifecycle manager deploys and manages HP Helion OpenStack
+          Carrier Grade, consisting of a controller running shared services and the nodes required
+          to run DCN (as needed).</li>
+        <li><b>Controller</b>. Standard IaaS control plane to enable cloud-to-cloud communication. </li>
+        <li><b>StoreVirtual/3PAR</b>: Hardware storage array used as backend for Cinder. Support for
+          3PAR has a similar architecture as StoreVirtual on iSCSI, not Fibre.</li>
+        <li><b>KVM Region Controller</b>: Real-time control plane for compute and networking.
+          Contains modified versions of most of the OpenStack components.</li>
+        <li><b>KVM Region Compute</b>: Realtime compute node with networking components.</li>
+        <li><b>Baremetal Controller</b>: For Sacramento deployments, an Ironic server and compute
+          proxy along with dependent services such as DHCP and DNS run on this single node to
+          control requests for bare metal compute nodes. The baremetal controller and compute nodes
+          run in their own region of the cloud.</li>
+        <li><b>Baremetal Node</b>: For Sacramento deployments, a baremetal node to be allocated and
+          used on demand similar to a VM. They are managed by the BM Controller.</li>
+        <li><b>5930 Switch</b>: For Sacramento deployments, an optional HP Networking hardware
+          switch to provide VxLAN to VLAN Bridging for SR-IOV, PC-PT or baremtal host ports. It also
+          provides DHCP services to these baremetal ports. This switch can be used for external
+          network connectivity to replace software gateway VRS-G.</li>
+        <li><b>Infoblox</b>: An optional third party product to support IPAM. </li>
+        <li><b>Orchestrator</b>: This could be any application consuming the cloud services.
+          <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
+      </ul>
+    </section>
+    <section id="data"><title>Data</title>
+    <table id="table_czt_whc_f5">
+      <tgroup cols="6">
+        <colspec colnum="1" colname="col1"/>
+        <colspec colnum="2" colname="col2"/>
+        <colspec colnum="3" colname="col3"/>
+        <colspec colnum="4" colname="col4"/>
+        <colspec colnum="5" colname="col5"/>
+        <colspec colnum="6" colname="col6"/>
+        <thead>
+          <row>
+            <entry>Data name</entry>
+            <entry>Confidentiality</entry>
+            <entry>Integrity</entry>
+            <entry>Availability</entry>
+            <entry>Backup?</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Cloud Definition</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>Low</entry>
+            <entry>Yes</entry>
+            <entry>Control plane and network topology and mapping to data center (input to
+              HLM)</entry>
+          </row>
+          <row>
+            <entry>Cloud Configuration</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>Low</entry>
+            <entry>Yes</entry>
+            <entry>Configuration of services in cloud (output from HLM)</entry>
+          </row>
+          <row>
+            <entry>MySQL database</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>High</entry>
+            <entry>Yes</entry>
+            <entry>Contains user preferences. Backup to Swift daily.</entry>
+          </row>
+          <row>
+            <entry>Logs</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>Medium</entry>
+            <entry>Yes</entry>
+            <entry>Logs from all services</entry>
+          </row>
+          <row>
+            <entry>Credentials</entry>
+            <entry>Confidential</entry>
+            <entry>High</entry>
+            <entry>High</entry>
+            <entry>Yes</entry>
+            <entry>Inter-service authentication uses the credentials for each service</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </section>
+    
+    <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
+        OpenStack Carrier Grade Sacramento deployment uses HPE Distributed Cloud Networking to
+        provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
+        cloud deployment. Please refer to DCN documentation for details. </p>The main components in
+      the HP DCN solution are: Virtualized Services Directory (VSD) and Virtualized Services
+      Directory Architect (VSD-A), Virtualized Services Controller (VSC) and Virtual Routing and
+      Switching (VRS).<ul>
+        <li>HPE Virtualized Service Directory (VSD) - The VSD is a policy engine for managing users,
+          compute resources and network resources, that is located on a server outside of the HP
+          Helion OpenStack Carrier Grade cloud. </li>
+        <li>HPE Networks Virtualized Services Directory Architect (VSD Architect). The VSD Architect
+          is a browser-based interface for management tasks on the VSD.</li>
+        <li>HPE Virtual Services Controller (VSC): The VSC is a virtual machine application running
+          all the control plane tasks, maintaining a full view of per-tenant network and service
+          topologies. The VSC should be installed on the KVM Host system within the HP Helion
+          OpenStack Carrier Grade cloud.</li>
+        <li>HPE Distributed Virtual Routing and Switching (VRS): The HPE VRS is the software agent
+          that runs in each Hypervisor (HV). The HPE VRS component is an enhanced Open vSwitch (OVS)
+          implementation that constitutes the network forwarding plane.</li>
+      </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
+        the major DCN components, including how to access the various systems, IP addresses, and
+        user credentials. </p></section>
+    <section id="eth-int">
+      <title>Ethernet Interfaces</title>
+      <p>All hosts in the server connect to at least the internal management network using an
+        Ethernet interface. The ports used for this connection must support network booting and must
+        be configured to be used as the primary booting device for normal operations.</p>
+      <p>Typically this means that they must be on-board ports, since in most BIOS/UEFI
+        implementations only on-board ports can be configured for network booting. You can use ports
+        on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
+      <p>The following table illustrates the number and type of Ethernet ports required in two
+        different installation scenarios. </p>
+      <p>
+        <b>NOTE:</b> The following table assumes that each interface is connected to a single
+        network. An Ethernet interface can be shared by more than one network.</p>
+      <table id="table_wpt_x4b_ws">
+        <tgroup cols="3">
+          <thead>
+            <row>
+              <entry>Personality</entry>
+              <entry>Basic Scenario</entry>
+              <entry>LAG Scenario</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Controller Node</entry>
+              <entry>
+                <ul id="ul_xpt_x4b_ws">
+                  <li> One 10G on-board interface (Internal management network)</li>
+                </ul>
+              </entry>
+              <entry>
+                <ul id="ul_ypt_x4b_ws">
+                  <li>Two 10G on-board interfaces (Internal management network)</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Compute Node</entry>
+              <entry>
+                <ul id="ul_zpt_x4b_ws">
+                  <li>One 10G on-board interface (Internal management network)</li>
+                  <li>Two 10G (Intel 82599) interfaces per Provider Network</li>
+                </ul>
+              </entry>
+              <entry>
+                <ul id="ul_aqt_x4b_ws">
+                  <li>Two 10G on-board interfaces (Internal management network)</li>
+                  <li>Two 10G (Intel 82599) interfaces per Provider Network</li>
+                </ul>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>In the basic scenario, a single Ethernet port is used to attach the host to each of the
+        networks. In the LAG scenario, two Ethernet ports are used for each connection.</p>
+    </section>
+    <section id="board-management-modules">
+      <title>Board Management Modules</title>
+      <p>For out-of-band reset and power-on/power-off capabilities, DL360 or DL380 servers equipped
+        with HPE iLO (Integrated Lights Out) board management modules are required. Each module must
+        be connected using port-based VLAN to a switch that has access to the internal management
+        network.</p>
+    </section>
+    <section id="usb-interface">
+      <title>USB Interface</title>
+      <p>For the controller, a USB interface is required for backup and restore operations, and for
+        software installation if a DVD is not available.</p>
+    </section>
+    <section id="net">
+      <title>Network Requirements</title>
+      <p>The networking environment incorporates several types of network:</p>
+      <ul>
+        <li>the internal management network</li>
+        <li>the OAM network</li>
+        <li>one or more provider networks</li>
+        <li>an optional infrastructure network</li>
+        <li>an optional board management network.</li>
+      </ul>
+      <p>Operational requirements for each network are described in the following sections.</p>
+      
+      <title id="internal-management-network">Internal Management Network</title>
+      <p>The internal management network must be implemented as a single, dedicated, Layer 2
+        broadcast domain for the exclusive use of each server cluster. Sharing of this network by
+        more than one server cluster is not a supported configuration.</p><p>During the server
+          software installation process, several network services such as DHCP, and PXE, are expected
+          to run over the internal management network. These services are used to bring up the
+          different hosts to an operational state. Therefore, it is mandatory that this network be
+          operational and available in advance, to ensure a successful installation.</p><p>On each
+            host, the internal management network can be implemented using a 10 Gb Ethernet port. In
+            either case, requirements for this port are:</p><ul>
+              <li>must be capable of PXE-booting</li>
+              <li>can be used by the motherboard as a primary boot device</li>
+            </ul>
+      <title id="oam-network">CAN/OAM Network</title>
+      <p>You should ensure that the following services are available on the CAN/OAM Network:</p><ul>
+        <li>
+          <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the
+            CAN/OAM Network.</p>
+          <p>The server can operate without a configured DNS service. However, a DNS service should
+            be in place to ensure that links to external references in the current and future
+            versions of the web administration interface work as expected.</p>
+        </li>
+        <li>
+          <p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the server
+            controller nodes to synchronize their local clocks with a reliable external time
+            reference. However, it is strongly suggested that this service be available, among other
+            things, to ensure that system-wide log reports present a unified view of the day-to-day
+            operations.</p>
+        </li>
+      </ul><p>The server compute nodes always use the controller nodes as the time server for the
+        entire cluster. </p>
+      <title id="provider-network">Provider Network</title>
+      <p>There are no specific requirements for network services to be available on the provider
+        network. However, you must ensure that all network services required by the guests running
+        in the compute nodes are available. For configuration purposes, the compute nodes themselves
+        are entirely served by the services provided by the controller nodes over the internal
+        management network.</p>
+      <title id="infrastructure-network">Infrastructure Network</title>
+      <p>This is an optional network.</p><p>As with the internal management network, the
+        infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain
+        for the exclusive use of each server cluster.</p><p>Sharing of this network by more than one
+          server cluster is not a supported configuration.</p><p>The infrastructure network can be
+            implemented as a 10 Gb Ethernet network. In its absence, all infrastructure traffic is
+            carried over the internal management network.</p>
+      <title id="board-network">Board Management Network</title>
+      <p>Board Management CTL (IPMI Control) Network External access to the board management
+        network, the board management modules are assigned IP addresses accessible from the OAM
+        network, and the controller uses the OAM network to connect to them.</p></section>
+    <section>
+      <title>Summary of Controls</title>
+      <p>Summary of controls spanning multiple components and interfaces:</p>
+      <ul id="ul_gms_r3c_f5">
+        <li><b>Audit:</b> OpenStack services, mySQL, RabbitMQ, HLM CP, Ansible, Cobbler perform
+          logging. Logs are collected by the centralized logging service.</li>
+        <li>
+          <p><b>Authentication: </b>Authentication via Keystone tokens at APIs. Password
+            authentication to Nuage components and StoreVirtual.</p>
+        </li>
+        <li><b>Authorization</b>: OpenStack provides admin and non-admin roles that are indicated in
+          session tokens. Processes run at minimum privilege. Processes run as unique user/group
+          definitions. Appropriate filesystem controls prevent other processes from accessing
+          service’s files. IPtables and ACLs at the network perimeter ensure that no unneeded ports
+          are open.</li>
+        <li><b>Availability:</b> Redundant hosts, clustered DB, clustered MQ, fail-over. Monitoring
+          via centralized monitoring service.</li>
+        <li>
+          <p><b>Confidentiality:</b> Network connections for outside access to APIs over TLS.
+            Network separation via VLANs. Data and config files protected via filesystem controls.
+            Separation of customer traffic on the TUL network via Open Flow (VxLANs).</p>
+        </li>
+        <li><b>Integrity:</b> Network connections for outside access to APIs over TLS. Network
+          separation via VLANs. Data and config files are protected by filesystem controls. </li>
+      </ul>
+      <p/>
+    </section>
+    <section>
+      <title>Next Step</title>
+      <p>Review the <xref href="carrier-grade-support-matrix-sacramento.dita#topic1773">Support
+          Matrix</xref></p>
+    </section>
+  </body>
+</topic>

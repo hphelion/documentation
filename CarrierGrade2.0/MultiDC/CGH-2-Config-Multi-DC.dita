@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring a Multiple Data
+    Center Environment (Multi-DC)</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This document describes the process to configure HP Helion OpenStack Carrier Grade to work in
+      an environment with multiple data centers (multi-DC). After following these steps. you will be
+      able to communicate between cloud VM’s and across different multiple regions. </p>
+    <p>These instructions are based on HP Helion OpenStack Carrier Grade (Memphis Topology) and the
+      current version of HP DCN. This document is intended for users who are familiar with the
+      installation and configuration of HP Helion OpenStack Carrier Grade cloud and knowledge of
+      configuring DCN components.</p>
+    <section><title>PreReq and config steps</title><p>Before starting this document, make sure the
+        following conditions are met:</p><ul>
+        <li>Assuming the Memphis clouds are up and functional on 2 different data centers.</li>
+        <li>Make sure you can talk between 2 clouds and they are routable from the DCM network</li>
+        <li>VSC on management Network on both the testbeds.</li>
+      </ul><p><b>Shut down the VSD</b></p><p>Decide on which VSD will be acting as a common that
+        will control both data centers. </p><p>Shutdown the VSD that will not be used from the
+        VSD:</p><ol id="ol_dhy_ql4_c5">
+        <li>Execute the following these steps<codeblock>service vsd stop </codeblock></li>
+        <li>After all the services are shutdown gracefully, execute the following command to shut
+          down the server: <codeblock>shutdown –hy now</codeblock></li>
+        <li>Execute the following command to make sure the VSD that you do not need is in shutdown
+            state:<codeblock>virsh list --all</codeblock><p>For
+          example:</p><codeblock>root@LR4TB1:~# virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+37    hlm                            running
+ -     tempest                        shut off
+ -     vsd1                           shut off
+</codeblock></li>
+      </ol><p><b>Update the non-KVM controllers</b></p><p>Update all your non-KVM region controller
+        nodes with the VSD domain name that is managing the clouds. On each controller node:</p><ol
+        id="ol_h1c_5m4_c5">
+        <li>Edit the <codeph>/etc/neutron/plugins/nuage/nuage_plugin.ini</codeph> to update the
+          entry as shown:
+          <codeblock>[DATABASE]
+connection = mysql://neutron:BfevkqJevNEm@BASE-CCP-T2-VIP-FND-MDB-NETCLM:3306/neutron
+[RESTPROXY]
+default_net_partition_name = Helion_Nuage_Integration
+auth_resource = /me
+server = vsd1.dcn-two.helion.cg:8443
+organization = csp
+serverauth = OSadmin:OSadmin
+serverssl = True
+base_uri = /nuage/api/v3_2</codeblock></li>
+        <li>Execute the following command to re-start the controller
+          node:<codeblock>service neutron-server restart</codeblock></li>
+        <li>Check the status by running:<codeblock>service neutron-server status</codeblock></li>
+      </ol><p><b>Update the VSC with the new VSD domain name on all the VSC’s in the multi DC
+          setup.</b></p><ol id="ol_tpz_gn4_c5">
+        <li>From the <codeph>vsc</codeph> prompt, go to configure mode and set the vsd domain as
+          shown in the below
+          example.<codeblock>configure vswitch-controller xmpp-server "&lt;vscname>:password@&lt;vsd domain name>” </codeblock>For
+          example:
+          <codeblock>vswitch-controller xmpp-server "tb1vsc1:password@&lt;vsd1.dcn-one.helion.cg"</codeblock></li>
+        <li>Save the
+          changes:<codeblock>admin save
+Writing configuration to cf1:\config.cfg
+Saving configuration ... OK
+Completed.     </codeblock></li>
+        <li>Execute the following command to verify the
+            changes:<codeblock>admin display-config</codeblock><p>For example, your xmpp-server will
+            have the same vsd domain name.
+            <codeblock> xmpp-server "tb1vsc1:password@vsd1.dcn-two.helion.cg"</codeblock></p></li>
+      </ol><p><b>Change the existing route entries</b></p>Change the existing route entries on all
+      the VSC across datecenters so they can ping the VSD and compute node’s TUL IP across both the
+      testbeds. Manually go to each VSC on both dtacenters and add a new route entry to point to the
+      common VSD.<p>For example: </p><p>Delete the existing route entries:
+        <codeblock>bof# no static-route 10.1.2.0/24 next-hop 10.10.4.1
+bof# no static-route 10.10.2.0/24 next-hop 10.10.4.1
+</codeblock>Add
+        the route entries to support cloud2 DCM network:
+        <codeblock>bof# save cf1:
+Writing BOF to cf1:/bof.cfg ... OK
+Completed.
+bof# show bof</codeblock></p><p><b>Verify
+          connection from VSC to VSD</b></p><p>Management interface of VSC should reach VSD. You can
+        check this by pinging the VSD FQDN from the VSC. </p><p>For example:
+        <codeblock>ping router "management" 10.20.5.1
+PING 10.20.5.1 56 data bytes
+64 bytes from 10.20.5.1: icmp_seq=1 ttl=255 time=1.83ms.
+64 bytes from 10.20.5.1: icmp_seq=2 ttl=255 time=1.66ms.</codeblock></p><p><b>Verify
+          the VSC</b></p><p>Use the VSD dashboard to make sure the VSC from each cloud is present in
+        VSD. You might see the VSD in down or in RED status. This is a cosmetic issue and will not
+        affect the functionality.</p><p><b>Configure BGP on each VSC</b></p><p>Configure BGP on each
+        VSC in both the clouds accordingly as shown:</p><p>
+        <ul id="ul_kdk_vq4_c5">
+          <li>Configure all the other VSC instances as neighbors on each of VSC.<p>For example, if
+              you have four VSC across two clouds [in a HA mode]. On <codeph>Cloud1/vsc1</codeph>
+              add: <codeblock>cloud1/vsc2 &amp; cloud2-vsc/1&amp;vsc2</codeblock></p></li>
+        </ul>
+        <ul id="ul_ikb_pq4_c5">
+          <li>Check the <codeph>admin-display config</codeph> output provided
+                below:<p><b>Cloud1/VSC1:</b></p><codeblock># TiMOS-DC-C-3.2.S-current cpm/i386 NUAGE VSC Copyright (c) 2000-2015 Alcatel-Lucent.
+# All rights reserved. All use subject to applicable license agreements.
+# Built on Wed Nov 4 13:21:16 PST 2015 [0d0e61] by builder in /build/workspace/sros-pullrequest/panos/main
+ 
+# Generated MON NOV 16 19:16:34 2015 UTC
+ 
+exit all
+configure
+#--------------------------------------------------
+echo "System Configuration"
+#--------------------------------------------------
+    system
+        name "tb1vsc1"
+        snmp
+        exit
+        time
+            ntp
+                server 10.1.2.44
+                server 16.110.135.123
+                no shutdown
+            exit
+            sntp
+                shutdown
+            exit
+            zone UTC
+        exit
+        thresholds
+            rmon
+            exit
+        exit
+    exit
+#--------------------------------------------------
+echo "System Security Configuration"
+#--------------------------------------------------
+    system
+    exit
+#--------------------------------------------------
+echo "Log Configuration"
+#--------------------------------------------------
+    log
+    exit
+#--------------------------------------------------
+echo "System Security Cpm Hw Filters and PKI Configuration"
+#--------------------------------------------------
+    system
+        security
+        exit
+    exit
+#--------------------------------------------------
+echo "QoS Policy Configuration"
+#--------------------------------------------------
+    qos
+    exit
+#--------------------------------------------------
+echo "Card Configuration"
+#--------------------------------------------------
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+    exit
+#--------------------------------------------------
+echo "LAG Configuration"
+#--------------------------------------------------
+    lag 98
+        description "Multichassis interconnect LAG"
+        encap-type dot1q
+        qos
+        exit
+        lacp active administrative-key 36864
+        no shutdown
+    exit
+#--------------------------------------------------
+echo "Virtual Switch Controller Configuration"
+#--------------------------------------------------
+    vswitch-controller
+        xmpp-server "tb1vsc1:password@vsd1.dcn-two.helion.cg"
+        open-flow
+        exit
+        xmpp
+        exit
+        ovsdb
+        exit
+    exit
+#--------------------------------------------------
+echo "Management Router Configuration"
+#--------------------------------------------------
+    router management
+    exit
+ 
+#--------------------------------------------------
+echo "Router (Network Side) Configuration"
+#--------------------------------------------------
+    router
+        interface "control"
+            address 10.10.5.31/24
+            no shutdown
+        exit
+        interface "system"
+            no shutdown
+        exit
+        vxlan
+        exit
+        autonomous-system 1000
+#--------------------------------------------------
+echo "Static Route Configuration"
+#--------------------------------------------------
+        static-route 10.20.6.0/24 next-hop 10.10.5.1
+#--------------------------------------------------
+echo "Web Portal Protocol Configuration"
+#--------------------------------------------------
+    exit
+ 
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+        customer 1 create
+            description "Default customer"
+        exit
+    exit
+#--------------------------------------------------
+echo "Router (Service Side) Configuration"
+#--------------------------------------------------
+    router
+#--------------------------------------------------
+echo "BGP Configuration"
+#--------------------------------------------------
+        bgp
+            family ipv4 vpn-ipv4 evpn
+            connect-retry 2
+            min-route-advertisement 1
+            router-id 10.10.5.31
+            rapid-update evpn
+            group "multidc"
+                med-out 100
+                peer-as 1000
+                neighbor 10.10.5.32
+                exit
+                neighbor 10.20.6.31
+                exit
+                neighbor 10.20.6.32
+                exit
+            exit
+            no shutdown
+        exit
+    exit
+ 
+#--------------------------------------------------
+echo "System Time NTP Configuration"
+#--------------------------------------------------
+    system
+        time
+            ntp
+            exit
+        exit
+    exit
+ 
+exit all
+ 
+# Finished MON NOV 16 19:16:39 2015 UTC</codeblock><p><b>Cloud2/VSC1</b><codeblock># TiMOS-DC-C-3.2.S-current cpm/i386 NUAGE VSC Copyright (c) 2000-2015 Alcatel-Lucent.
+# All rights reserved. All use subject to applicable license agreements.
+# Built on Wed Nov 4 13:21:16 PST 2015 [0d0e61] by builder in /build/workspace/sros-pullrequest/panos/main
+ 
+# Generated MON NOV 16 19:18:04 2015 UTC
+ 
+exit all
+configure
+#--------------------------------------------------
+echo "System Configuration"
+#--------------------------------------------------
+    system
+        name "vsc1"
+        snmp
+        exit
+        time
+            ntp
+                server 10.1.2.44
+                server 16.110.135.123
+                no shutdown
+            exit
+            sntp
+                shutdown
+            exit
+            zone UTC
+        exit
+        thresholds
+            rmon
+            exit
+        exit
+    exit
+#--------------------------------------------------
+echo "System Security Configuration"
+#--------------------------------------------------
+    system
+    exit
+#--------------------------------------------------
+echo "Log Configuration"
+#--------------------------------------------------
+    log
+    exit
+#--------------------------------------------------
+echo "System Security Cpm Hw Filters and PKI Configuration"
+#--------------------------------------------------
+    system
+        security
+        exit
+    exit
+#--------------------------------------------------
+echo "QoS Policy Configuration"
+#--------------------------------------------------
+    qos
+    exit
+#--------------------------------------------------
+echo "Card Configuration"
+#--------------------------------------------------
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+    exit
+#--------------------------------------------------
+echo "LAG Configuration"
+#--------------------------------------------------
+    lag 98
+        description "Multichassis interconnect LAG"
+        encap-type dot1q
+        qos
+        exit
+        lacp active administrative-key 36864
+        no shutdown
+    exit
+#--------------------------------------------------
+echo "Virtual Switch Controller Configuration"
+#--------------------------------------------------
+    vswitch-controller
+        xmpp-server "vsc1:password@vsd1.dcn-two.helion.cg"
+        open-flow
+        exit
+        xmpp
+        exit
+        ovsdb
+        exit
+    exit
+#--------------------------------------------------
+echo "Management Router Configuration"
+#--------------------------------------------------
+    router management
+    exit
+ 
+#--------------------------------------------------
+echo "Router (Network Side) Configuration"
+#--------------------------------------------------
+    router
+        interface "control"
+            address 10.20.6.31/24
+            no shutdown
+        exit
+        interface "system"
+            no shutdown
+        exit
+        vxlan
+        exit
+        autonomous-system 1000
+#--------------------------------------------------
+echo "Static Route Configuration"
+#--------------------------------------------------
+        static-route 10.10.5.0/24 next-hop 10.20.6.1
+#--------------------------------------------------
+echo "Web Portal Protocol Configuration"
+#--------------------------------------------------
+    exit
+ 
+#--------------------------------------------------
+echo "Service Configuration"
+#--------------------------------------------------
+    service
+        customer 1 create
+            description "Default customer"
+        exit
+    exit
+#--------------------------------------------------
+echo "Router (Service Side) Configuration"
+#--------------------------------------------------
+    router
+#--------------------------------------------------
+echo "BGP Configuration"
+#--------------------------------------------------
+        bgp
+            family ipv4 vpn-ipv4 evpn
+            connect-retry 2
+            min-route-advertisement 1
+            router-id 10.20.6.31
+            rapid-update evpn
+            group "multidc"
+                med-out 100
+                peer-as 1000
+                neighbor 10.10.5.31
+                exit
+                neighbor 10.10.5.32
+                exit
+                neighbor 10.20.6.32
+                exit
+            exit
+            no shutdown
+        exit
+    exit
+ 
+#--------------------------------------------------
+echo "System Time NTP Configuration"
+#--------------------------------------------------
+    system
+        time
+            ntp
+            exit
+        exit
+    exit
+ 
+exit all
+ 
+# Finished MON NOV 16 19:18:07 2015 UTC</codeblock></p></li>
+          <li>
+            <p>Execute the following command to obtain the status of the VSD. Make sure you see the
+              state is <codeph>Functional</codeph></p>
+            <p>
+              <codeblock>show vswitch-controller xmpp-server
+ </codeblock>
+            </p>
+            <p>The output appears similar to the
+              following:<codeblock>===============================================================================
+XMPP Server Table
+===============================================================================
+XMPP FQDN                       Last changed since State
+ User Name
+-------------------------------------------------------------------------------
+vsd1.dcn-two.helion.cg          5d 19:09:54        Functional
+ tb1vsc1
+-------------------------------------------------------------------------------
+No. of XMPP server's: 1</codeblock></p>
+          </li>
+          <li><p>Execute the following command to obtain the BGP status. Mae sure the <codeph>BGP
+                Oper</codeph> state is <codeph>Up</codeph>, and the <codeph>Total Peers</codeph>
+              count is same as what was configured. </p><p>
+              <codeblock>show router bgp summary</codeblock>
+            </p><p>The output should appear similar to the following
+              excerpt:<codeblock>===============================================================================
+ BGP Router ID:10.10.5.31       AS:1000        Local AS:1000
+===============================================================================
+BGP Admin State         : Up          BGP Oper State              : Up
+Total Peer Groups       : 1           Total Peers                 : 3</codeblock></p>Also,
+            make sure all the VSC instances are listed in the BGP summary section as highlighted
+            below.<codeblock>===============================================================================
+BGP Summary
+===============================================================================
+Neighbor
+                   AS PktRcvd InQ  Up/Down   State|Rcv/Act/Sent (Addr Family)
+                      PktSent OutQ
+-------------------------------------------------------------------------------
+10.10.5.32
+                1000    18675    0 03d18h10m 0/0/0 (IPv4)
+                        24701    0           0/0/0 (VpnIPv4)
+                                             133/59/133 (evpn)
+10.20.6.31
+                1000    12722    0 03d18h10m 0/0/0 (IPv4)
+                        12915    0           0/0/0 (VpnIPv4)
+                                             45/37/133 (evpn)
+10.20.6.32
+                1000    12380    0 03d18h10m 0/0/0 (IPv4)
+                        12837    0           0/0/0 (VpnIPv4)
+                                             45/7/133 (evpn)</codeblock></li>
+          <li>
+            <p>Execute the following command on each VSC instance to determine if the VRSvApp, VRG,
+              and KVM compute nodes can be seen from each VSC: </p>
+            <p>
+              <codeblock>show vswitch-controller vswitches
+</codeblock>
+            </p>
+            <p>The output should appear similar to the
+              following:<codeblock>===============================================================================
+VSwitch Table
+===============================================================================
+vswitch-instance               Personality Uptime        Num VM/hostIf/BridgeIf
+-------------------------------------------------------------------------------
+va-10.10.5.106/1               VRS_G       5d 19:08:04   0/1/0
+va-10.10.5.107/1               VRS_G       5d 19:08:22   0/1/0
+va-10.10.5.231/1               VRS         4d 21:37:43   12/0/0
+va-10.10.5.236/1               VRS         5d 19:08:20   1/0/0
+va-10.10.5.237/1               VRS         5d 19:08:18   3/0/0
+va-10.10.5.240/1               VRS         5d 19:08:20   3/0/0
+va-10.10.5.241/1               VRS         5d 19:08:23   4/0/0
+-------------------------------------------------------------------------------
+No. of virtual switches: 7
+===============================================================================</codeblock></p>
+            <p/>
+          </li>
+        </ul>
+      </p></section>
+    <section>
+      <title>Onboard the new gateway</title>
+      <p>Onboard the new gateway on the VSD from newly added Cloud and add vlan.<ol
+          id="ol_tr3_lrt_c5">
+          <li>From the lifecycle manager, SSH to the VRS-G nodes using the default username and password.<p>
+              <codeblock>User Name: cghelion
+Password: cghelion</codeblock>
+            </p></li>
+          <li>Execute the following command to switch to the root
+            user:<codeblock>sudo su -</codeblock></li>
+          <li>Execute the following command using your external VLAN ID:<p>
+              <codeblock>nuage-vlan-config mod eth0 Access &lt;vlad-id-range&gt;</codeblock>
+            </p><p>For example, if your VLAN ID is
+            209:</p><codeblock>nuage-vlan-config mod eth0 Access 200-250</codeblock></li>
+          <li>Execute the following command to view the current configuration for the VLAN<p>
+              <codeblock>nuage-vlan-config dump</codeblock>
+            </p>The output should appear similar to the following, based on the previous
+            example:<codeblock> bond0|N eth1|N eth0|A:200-250</codeblock></li>
+        </ol></p>
+    </section>
+    <p>You need to use the HPE DCN Virtualized Services Directory Architect (VSD) interface to add,
+      or onboard, the gateway..</p>
+    <p><i>For more information on performing this task, refer to the latest DCN documentation
+      </i></p>
+    <p>
+      <ol conref="../Installation/carrier-grade-install-config-dcn.dita#topic10581/onboard-gateway"
+        id="ol_tcn_k5t_c5">
+        <li/>
+      </ol>
+    </p>
+    <section
+      conref="../Installation/carrier-grade-install-config-dcn.dita#topic10581/subnet-and-FIP"/>
+    <section>
+      <title>Run a cURL script to enable floating IPs on the VRS-G</title>
+      
+      <p>This script creates the uplink on the VRS-G, which is a requirement for the EXT-NET to
+        function with HP Helion OpenStack Carrier Grade. </p>
+      <ol id="ol_ks4_zhj_1t">
+        <li>From the KVM Host, copy the following code to create a cURL script.</li>
+        <li>Modify the cURL script for your environment:<ul id="ul_bzs_r1c_1t">
+            <li>FIP_NAME is the one that is retrieved from previous step.</li>
+            <li>GW_NAME is the redundant gateway name.</li>
+            <li>All the UPLINK info are from the core switch on their specific testbed</li>
+          </ul>
+<codeblock> ==========
+#!/bin/bash
+set -x
+#
+# Starting with VSP 3.0R2, there is an officially supported way to enable FIP using
+# a VSG or VRS-G uplink port
+#
+ 
+# Parameters
+VLAN="209"
+#VSD_IP="10.20.5.21"
+VSD_IP="10.10.4.21"
+FIP_NAME="fiptb2" # unique name show in VSD created for external network floating ip pool
+GW_NAME="10.20.6.126" # use the ip of the VRSG node created on VSD / VSC
+PORT_NAME="eth0" # pyshical nic use don VRSG node for trunk/ tagged external trafic
+ 
+#
+# IANA has reserved 192.0.0.0/29 for DS-lite transition
+#
+UPLINK_SUBNET="10.20.9.0"
+UPLINK_MASK="255.255.255.192"
+VRSG_IP="10.20.9.2"  #DUncan Modified :P
+UPLINK_GW="10.20.9.1"                         # ROUTER IP ON SWITCH main switch 10.1.64.21
+UPLINK_GW_MAC="bc:ea:fa:1d:b0:80"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+#UPLINK_GW_MAC="78:48:59:4f:fb:3c"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+ 
+if [ $# -eq 1 ]; then # remote install
+echo "Performing remote install to root@'$1' (requires PermitRootLogin=yes in sshd config)..."
+ssh root@$1 'bash -s ' &lt; $0
+exit 0
+elif [ $# -ne 0  ]; then
+cat &lt;&lt;END
+Usage (as root) $0 [remote IP]
+END
+exit -1
+fi
+ 
+# Install required software packages, if not already
+if [ -e /usr/bin/yum ]; then
+ 
+[[ `which jq` != "" ]] || yum install -y jq
+QEMU_KVM="/usr/libexec/qemu-kvm"
+QEMU_USR="qemu:qemu"
+LIBVIRTD="libvirtd"
+else
+[[ `which jq` != "" ]] || apt-get install -y jq
+QEMU_KVM="/usr/bin/kvm"
+QEMU_USR="libvirt-qemu:kvm"
+LIBVIRTD="libvirt-bin"
+fi
+ 
+# Determine Domain name for the Floating IP pool ( based on pool name )
+APIKEY=`curl -ks -H "X-Nuage-Organization: csp" -H "Content-Type: application/json" -H "Authorization: XREST Y3Nwcm9vdDpjc3Byb290" https://$VSD_IP:8443/nuage/api/v3_0/me | jq -r '.[0].APIKey'`
+TOKEN=`echo -n "csproot:$APIKEY" | base64`
+ZONE_ID=`curl -ks -H "X-Nuage-Organization: CSP" -H "X-Nuage-Filter: name=='$FIP_NAME'" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].parentID'`
+if [ "$ZONE_ID" == "" ]; then
+echo "Error: Floating IP pool named '$FIP_NAME' not found"
+exit 1
+fi
+ 
+# Lookup VLAN to use
+GW_ID=`curl -ks -H "X-Nuage-Filter: name=='$GW_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/gateways | jq -r '.[0].ID'`
+PORT_ID=`curl -ks -H "X-Nuage-Filter: name=='$PORT_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/gateways/$GW_ID/ports | jq -r '.[0].ID'`
+VLAN_ID=`curl -ks -H "X-Nuage-Filter: value==$VLAN" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/ports/$PORT_ID/vlans | jq -r '.[0].ID'`
+if [ "$VLAN_ID" == "" ]; then
+echo "Error: VLAN on gateway '$GW_NAME' with port '$PORT_NAME' and value '$VLAN' not found"
+exit 1
+fi
+echo "VLAN $VLAN ID: $VLAN_ID"
+ 
+ 
+# Get/Create uplink subnet
+SUBNET_ID=`curl -ks -H "X-Nuage-Filter: type=='UPLINK_SUBNET'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" \
+ -H "Authorization: XREST $TOKEN" https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].ID'`
+#if [ "$SUBNET_ID" == "" ]; then
+echo "Creating new FIP uplink subnet in ZONE $ZONE_ID"
+curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources -d "{ \
+        \"name\": \"FIP uplink subnettb2\", \ 
+    \"description\": \"uplink subnettb2\", \
+    \"address\": \"$UPLINK_SUBNET\", \
+    \"netmask\": \"$UPLINK_MASK\", \
+    \"gateway\": \"$VRSG_IP\", \
+    \"type\": \"UPLINK_SUBNET\", \
+    \"uplinkInterfaceIP\" : \"$UPLINK_GW\", \
+    \"uplinkInterfaceMAC\" : \"$UPLINK_GW_MAC\", \
+    \"sharedResourceParentID\" : \"$ZONE_ID\", \
+    \"uplinkGWVlanAttachmentID\" : \"$VLAN_ID\", \
+    \"uplinkVPortName\" : \"uplink vport1\" \
+ }"
+#else
+#echo "FIP uplink subnet already exists: $SUBNET_ID"
+#fi
+                                                                               
+ 
+=====================================================</codeblock></li>
+        <li>Modify the cURL script for your environment. You will run the cURL script a second time.
+          Save the script file under a different name. <p>Edit the following sections/fields:</p><ul
+            id="ul_z2x_tvt_c5">
+            <li>Update the <b>Parameters</b>
+              section:<codeblock># Parameters
+VLAN="209"
+#VSD_IP="10.20.5.21"
+VSD_IP="10.10.4.21"
+FIP_NAME="fiptb2" # unique name show in VSD created for external network floating ip pool
+GW_NAME="10.20.6.126" # use the ip of the VRSG node created on VSD / VSC
+PORT_NAME="eth0" # pyshical nic use don VRSG node for trunk/ tagged external trafic</codeblock></li>
+          </ul><ul id="ul_r22_wvt_c5">
+            <li>Update the IANA
+              section:<codeblock># IANA has reserved 192.0.0.0/29 for DS-lite transition
+#
+UPLINK_SUBNET="10.20.9.0"
+UPLINK_MASK="255.255.255.192"
+VRSG_IP="10.20.9.2"  #DUncan Modified :P
+UPLINK_GW="10.20.9.1"                         # ROUTER IP ON SWITCH main switch 10.1.64.21
+UPLINK_GW_MAC="bc:ea:fa:1d:b0:80"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+#UPLINK_GW_MAC="78:48:59:4f:fb:3c"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21</codeblock></li>
+            <li>Update the name and description of the uplink
+              subnet:<codeblock># Get/Create uplink subnet
+SUBNET_ID=`curl -ks -H "X-Nuage-Filter: type=='UPLINK_SUBNET'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" \
+ -H "Authorization: XREST $TOKEN" https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].ID'`
+#if [ "$SUBNET_ID" == "" ]; then
+echo "Creating new FIP uplink subnet in ZONE $ZONE_ID"
+curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources -d "{ \
+    \"name\": \"FIP uplink subnettb2\", \ 
+    \"description\": \"uplink subnettb2\", \</codeblock></li>
+          </ul><p> </p></li>
+      </ol>
+    </section>
+    <section>
+      <title>Configure the KVM region to communicate across the multi-DC environment</title>
+      <p>In order for the KVM compute nodes [compute proxy and WR computes] to communicate across
+        data centers, you need to add a static route entry to TUL network on all the KVM region
+        compute nodes</p>
+      <p>You can use the <codeph>system host-route-add</codeph> command on the KVM region computes.
+        This command can be run only when you have more than one KVM compute, as the existing VM on
+        the computes will get migrated to another compute and the node needs to be locked when this
+        command is run. </p>
+      <p>Perform the following tasks on each compute node in the KVM region:</p>
+      <p>
+        <ol id="ol_nt1_xxt_c5">
+          <li>Execute the following command to get the ID of each
+            hosts:<codeblock>system host-list</codeblock></li>
+          <li>Execute the following command to lock one of the computes:
+            <codeblock>system host-lock &lt;id of the node></codeblock></li>
+          <li>Execute the following command to add the static route:
+            <codeblock>system host-route-add compute-# &lt;name> &lt;network> &lt;prefix-length> &lt;gateway-ip> &lt;metric=1></codeblock>For
+            example:
+            <codeblock>system host-route-add compute-0 vrs0 10.10.0.0 16 1.2.3.1 1</codeblock></li>
+          <li>Use the following command to view the routes:<codeblock>route -n</codeblock><p>The
+              output should appear similar to the
+            following:</p><codeblock>Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.20.3.1       0.0.0.0         UG    0      0        0 eth0.203
+10.20.2.0       0.0.0.0         255.255.255.0   U     0      0        0 eth0
+10.20.3.0       0.0.0.0         255.255.255.0   U     0      0        0 eth0.203
+10.20.6.0       0.0.0.0         255.255.255.0   U     0      0        0 eth2
+169.254.0.0     169.254.0.1     255.255.128.0   UG    0      0        0 alubr0
+169.254.0.0     0.0.0.0         255.255.0.0     U     0      0        0 alubr0
+169.254.128.0   169.254.0.1     255.255.128.0   UG    0      0        0 alubr0
+172.16.73.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0.73</codeblock></li>
+        </ol>
+      </p>
+    </section>
+    <p>You can now communicate between cloud VM’s and across multiple regions.</p>
+  </body>
+</topic>

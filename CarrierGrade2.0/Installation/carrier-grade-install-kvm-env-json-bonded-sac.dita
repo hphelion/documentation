@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample environment.json File
+        for Bonded Sacramento</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The process for installing the Memphis or Sacramento deployment requires several JSON files
+            that will be used when deploying the lifecycle manager.</p>
+<section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>environment.json</codeph> file for a bonded
+                NIC installation. The IP addresses are masked for security purposes. Use values
+                appropriate for your environment. </p>
+            <p>Note that the <codeph>port</codeph> field should not be changed from the example. The
+                    <codeph>label</codeph> field can be changed, as needed. </p>
+            <codeblock>{
+    "product": {
+        "version": 1
+    },
+    "node-type": [
+        {
+            "name": "CCN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "machine-port-map": [
+                        {
+                            "vendor": "HP",
+                            "model": "ProLiant DL360 Gen9",
+                            "interface-ports": [
+                                {
+                                    "port": "port5",
+                                    "label": "ctrl-1"
+                                },
+                                {
+                                    "port": "port6",
+                                    "label": "ctrl-2"
+                                }
+                            ]
+                        }
+                    ],
+                    "bond-options": {
+                        "bond-mode": 4,
+                        "bond-miimon": 100,
+                        "bond-updelay": 200,
+                        "bond-lacp-rate": 1,
+                        "mtu": 9000,
+                        "bond-slaves": "ctrl-1 ctrl-2"
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "type": "vlan",
+                            "segment-id": "123",
+                            "extra_intf_cmds": [
+                                "pre-up route delete default"
+                            ],
+                            "network-address": {
+                                "cidr": "192.168.123.0/24",
+                                "start-address": "192.168.123.100",
+                                "gateway": "192.168.123.1"
+                            }
+                        },
+                        {
+                            "name": "api",
+                            "type": "vlan",
+                            "segment-id": "124",
+                            "network-address": {
+                                "cidr": "192.168.124.0/24",
+                                "start-address": "192.168.123.100"
+                            }
+                        },
+                        {
+                            "name": "blockstore",
+                            "type": "vlan",
+                            "segment-id": "125",
+                            "network-address": {
+                                "cidr": "192.168.125.0/24",
+                                "start-address": "192.168.125.100"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "DCN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "machine-port-map": [
+                        {
+                            "vendor": "HP",
+                            "model": "ProLiant DL360 Gen9",
+                            "interface-ports": [
+                                {
+                                    "port": "port5",
+                                    "label": "ctrl-1"
+                                },
+                                {
+                                    "port": "port6",
+                                    "label": "ctrl-2"
+                                }
+                            ]
+                        }
+                    ],
+                    "bond-options": {
+                        "bond-mode": 4,
+                        "bond-miimon": 100,
+                        "bond-updelay": 200,
+                        "bond-lacp-rate": 1,
+                        "mtu": 9000,
+                        "bond-slaves": "ctrl-1 ctrl-2"
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        },
+                        {
+                            "name": "datacenter",
+                            "type": "vlan",
+                            "segment-id": "126",
+                            "network-address": {
+                                "cidr": "192.168.126.0/24",
+                                "start-address": "192.168.126.100",
+                                "gateway": "192.168.126.1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "INTF1",
+                    "machine-port-map": [
+                        {
+                            "vendor": "HP",
+                            "model": "ProLiant DL360 Gen9",
+                            "interface-ports": [
+                                {
+                                    "port": "port7",
+                                    "label": "data-1"
+                                },
+                                {
+                                    "port": "port8",
+                                    "label": "data-2"
+                                }
+                            ]
+                        }
+                    ],
+                    "bond-options": {
+                        "bond-mode": 4,
+                        "bond-miimon": 100,
+                        "bond-updelay": 200,
+                        "mtu": 9000,
+                        "bond-slaves": "data-1 data-2"
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "tenant",
+                            "type": "vlan",
+                            "segment-id": "",
+                            "network-address": {
+                                "cidr": "192.168.127.0/24",
+                                "start-address": "192.168.127.100"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "VRG",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "machine-port-map": [
+                        {
+                            "vendor": "HP",
+                            "model": "ProLiant DL360 Gen9",
+                            "interface-ports": [
+                                {
+                                    "port": "port5",
+                                    "label": "ctrl-1"
+                                },
+                                {
+                                    "port": "port6",
+                                    "label": "ctrl-2"
+                                }
+                            ]
+                        }
+                    ],
+                    "bond-options": {
+                        "bond-mode": 4,
+                        "bond-miimon": 100,
+                        "bond-updelay": 200,
+                        "bond-lacp-rate": 1,
+                        "mtu": 9000,
+                        "bond-slaves": "ctrl-1 ctrl-2"
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        }
+                    ]
+                },
+                {
+                    "name": "INTF1",
+                    "machine-port-map": [
+                        {
+                            "vendor": "HP",
+                            "model": "ProLiant DL360 Gen9",
+                            "interface-ports": [
+                                {
+                                    "port": "port7",
+                                    "label": "data-1"
+                                },
+                                {
+                                    "port": "port8",
+                                    "label": "data-2"
+                                }
+                            ]
+                        }
+                    ],
+                    "bond-options": {
+                        "bond-mode": 4,
+                        "bond-miimon": 100,
+                        "bond-updelay": 200,
+                        "bond-lacp-rate": 1,
+                        "mtu": 9000,
+                        "bond-slaves": "data-1 data-2"
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "tenant",
+                            "ref": "dcn-INTF1-tenant"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CPX",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [
+                            "eth0"
+                        ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "BAR",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "machine-port-map": [
+                        {
+                            "vendor": "HP",
+                            "model": "ProLiant DL360 Gen9",
+                            "interface-ports": [
+                                {
+                                    "port": "port5",
+                                    "label": "ctrl-1"
+                                },
+                                {
+                                    "port": "port6",
+                                    "label": "ctrl-2"
+                                }
+                            ]
+                        }
+                    ],
+                    "bond-options": {
+                        "bond-mode": 4,
+                        "bond-miimon": 100,
+                        "bond-updelay": 200,
+                        "bond-lacp-rate": 1,
+                        "mtu": 9000,
+                        "bond-slaves": "ctrl-1 ctrl-2"
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "management",
+                            "ref": "ccn-INTF0-management"
+                        },
+                        {
+                            "name": "api",
+                             "ref": "ccn-INTF0-api"
+                        },
+                        {
+                            "name": "blockstore",
+                            "ref": "ccn-INTF0-blockstore"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+</codeblock>
+            <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM
+                address range to itself for serving python and debian repositories. Make sure that
+                you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM
+                Host.</p>
+</section>
+    <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+        <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-env-json">Sacramento
+                        deployment</xref></li>
+    </ul></p>
+        
+</body>
+</topic>

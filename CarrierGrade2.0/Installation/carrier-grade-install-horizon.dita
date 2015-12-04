@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Applying the Horizon
+    Patch</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+    <p>This patch is intended to update the Horizon package for windriver/rebranding changes. </p>
+    <p>After HPE Helion OpenStack Carrier Grade is fully deployed, and is up and running, follow
+      these steps to update the new Horizon package on your cloud: <ol id="ol_cfx_jck_nt">
+        <li>Login to your KVM Host as root: </li>
+        <li>Delete the existing horizon debian from the CG repo<p>
+            <codeblock>rm -f /var/cache/hlm/repo/debian/hoscg-horizon-2015.1.2.481-1.deb </codeblock>
+          </p></li>
+        <li>Copy the new Horizon debian you downloaded to
+            <codeph>/var/cache/hlm/repo/debian</codeph> on KVM Host. You should have downloaded the
+          hoscg-horizon-2015.1.2.487-1.deb file in the prerequisites.</li>
+        <li>cd /var/cache/hlm/repo/debian d. Execute the following to generate the package index. =>
+          /root/cg-hlm/dev-tools/dpkg-scanpackages --multiversion . /dev/null | gzip -9c >
+          Packages.gz 2. Perform the following steps on all the controller nodes a. Purge/install
+          Horizon package: => apt-get update; apt-get purge hoscg-horizon; apt-get install
+          hoscg-horizon b. Execute these two commands on terminal: =>
+          DJANGO_SETTINGS_MODULE=openstack_dashboard.settings
+          /opt/stack/venvs/horizon/bin/django-admin collectstatic (Types 'yes' when prompted) =>
+          DJANGO_SETTINGS_MODULE=openstack_dashboard.settings
+          /opt/stack/venvs/horizon/bin/django-admin compress c. Restart apache service: => service
+          apache2 restart</li>
+      </ol></p>
+    
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
+        installation</xref>.</p>
+    <p>Return to <xref href="carrier-grade-install-kvm-esx.dita#topic10581/patches">the KVM + ESX
+        installation</xref>.</p>
+  </body>
+</topic>

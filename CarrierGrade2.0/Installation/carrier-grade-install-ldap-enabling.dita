@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Enabling LDAP</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+  </metadata>
+</prolog>
+<body>
+    <p><!--Based on https://wiki.hpcloud.net/pages/viewpage.action?pageId=53516567--></p>
+    <p>The HPE Helion OpenStack Identity service can use Lightweight Directory Access Protocol
+      (LDAP) to integrate your organization's existing directory service and user account management
+      processes. LDAP integration can be performed during the HPE Helion OpenStack installation
+      process.</p>
+    <section><title>Enabling LDAP Before HP Helion OpenStack Carrier Grade is Installed</title><p>If
+        HP Helion OpenStack Carrier Grade is not installed, use the following steps to enable
+        LDAP.</p><b>Configure LDAP Before installation</b><p>
+        <ol id="ol_v43_k1q_yt">
+          <li>Set up the LDAP server, before installing HP Helion OpenStack Carrier GRade. The LDAP
+            server needs to be running, and reachable by the nodes.</li>
+          <li>Create admin and service accounts. The service accounts need to have suitably named
+            users and passwords created in the correct group on the LDAP server, with suitable
+            permissions for the admin user.</li>
+          <li>Edit the definitions.json file several variables are needed under ansible-vars, to
+            proceed with an LDAP enabled
+            cloud.<codeblock>"ldap_url": "10.1.64.20" (url of the LDAP server)
+"ldap_username": "admin" (username of the admin account)
+"ldap_password": "admin" (password of the admin account)
+"ldap_domain": "dc=cdl,dc=local" (domain of the LDAP server)
+"ldap_ou": "CG-Test-Users" (OU to be used for this cloud)
+"ldap_enabled": 1 (variable to determine if the LDAP enabling steps are done)</codeblock></li>
+        </ol>
+      </p><p><b>Install HP Helion OpenStack Carrier Grade</b>
+      </p>Once the variables are set correctly, the cloud can be deployed as normal via hdeploy.
+      This should cause the cloud to be deployed as normal, followed by the LDAP enabling roles that
+      will follow.</section>
+    <section><title>Enabling LDAP After HP Helion OpenStack Carrier Grade is Installed</title><p>If
+        HP Helion OpenStack Carrier Grade is already installed, use the following steps to enable
+        LDAP.</p>Deploy LDAP support after cloud deployment</section>
+    <ol id="ol_lhc_5hq_yt">
+      <li>Set Variables as above</li>
+      <li>Edit the <codeph>/&lt;Cloud Name>/clouds/&lt;Cloud
+          Name>/001/stage/ansible/top_level_playbooks/commit/</codeph> to comment-out roles.</li>
+      <li>Edt the: <codeph>/&lt;Cloud Name>/clouds/&lt;Cloud Name>/001/stage/ansible/</codeph> to
+        comment-out roles.</li>
+      <li>Edit the <codeph>build-CCP-T&lt;1-3>.yml</codeph> to comment out all roles that except
+        LDP-CCN.</li>
+      <li>Change build-CCP-CPN.yml as above</li>
+      <li>Before you run, if this code has been run in the past and you are running it again due to
+        a failure of some kind, you need to check the assignments database and delete any records
+        that have an actor_id that is not a GUID.<p>For
+          example:<codeblock>Actor_id = ‘admin’
+Actor_id = ‘ceilometer’
+Actor_id = ‘cinder’  </codeblock></p><p>The
+          roles need to be removed. Leaving only the records with a 16 digit hex number for
+            <codeph>actor_id</codeph>. The playbook will attempt to create these records and it will
+          fail if they exist already.</p></li>
+      <li>Deploy Cloud using hdeploy. </li>
+    </ol>
+    <p/>
+    <section>
+      <title>Troubleshooting</title>
+      <p>If you have any issues with the enablement, see the following troubleshooting tips.</p>
+    </section>
+    <p>
+      <ul id="ul_ahp_2dq_yt">
+        <li>Verify users in LDAP server; sometimes users can be created without privileges, typos in
+          username or passwords.</li>
+        <li>Check <codeph>/etc/keystone/keystone.conf</codeph> on controller nodes to make sure the
+          playbook ran correctly and finished setting all LDAP settings with the variables set
+            above.<ul id="ul_vfd_jdq_yt">
+            <li>If anything differs, or does not exist, the LDAP code was not run or the variables
+              were not set correctly.</li>
+            <li>These values can be set manually if there was a typo, or the LDAP section of the
+              ansible playbooks can be run by themselves.</li>
+          </ul></li>
+        <li>Check <codeph>/etc/glance/glance-cache.conf</codeph>, <codeph>glance-api.conf</codeph>,
+          and <codeph>glance-registry.conf</codeph> to make sure the admin_user, and admin_password
+          match what is in the LDAP server.<ul id="ul_bnx_kdq_yt">
+            <li>If anything differs, or does not exist, the LDAP code was not run or the variables
+              were not set correctly.</li>
+            <li>These values can be set manually if there was a typo, or the LDAP section of the
+              ansible playbooks can be run by themselves.</li>
+          </ul></li>
+        <li>Check <codeph>/etc/cinder/cinder.conf</codeph> to make sure the admin_user, and
+          admin_password match what is in the LDAP server.<ul id="ul_wv3_rdq_yt">
+            <li>If anything differs, or does not exist, the LDAP code was not run or the variables
+              were not set correctly.</li>
+            <li>These values can be set manually if there was a typo, or the LDAP section of the
+              ansible playbooks can be run by themselves.</li>
+          </ul></li>
+        <li>Check <codeph>/etc/nova/nova.conf</codeph> to make sure the neutron_admin_user,
+          neutron_admin_password, admin_user, admin_password, match what is in the LDAP server.<ul
+            id="ul_v2v_wdq_yt">
+            <li>If anything differs, or doesn’t exist the LDAP code either wasn’t run, or the
+              variables weren’t set correctly.</li>
+            <li>These values can be set manually if there was a typo, or the LDAP section of the
+              ansible playbooks can be run by themselves.</li>
+          </ul></li>
+        <li>Log into MySQL and select the Keystone database. Execute the <codeph>select * from
+            assignments;</codeph> query to confirm that there are entries for each user in the
+          table. These users should have the LDAP username in the <codeph>actor_id</codeph> column,
+          and there should be two for each user (with 6 for admin). If this is not the case, the
+          MysSQL script did not run in the playbook and should be run again.</li>
+      </ul>
+    </p>
+    <p> </p>
+  <p>Return installing the non-KVM region for: <ul id="ul_n3r_dfx_wt">
+        <li><xref href="CGH-2-install-denver.dita#topic10581/ldap3">denver template</xref></li>
+        <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap3">tahoe template</xref></li>
+        <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">memphis template</xref></li>
+    <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone">sacramento template</xref></li>
+      </ul></p>
+  </body>
+</topic>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Post-Installation
+    Tasks</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+  </metadata>
+</prolog>
+<body>
+    <p>After HP Helion OpenStack Carrier Grade is fully installed and deployed, perform the tasks in
+      this section. </p>
+    <section>
+      <title>Verify the VSC VMs</title>
+      <p>The installation process creates virtual machines for VSC. VSC VMs are installed and are
+        operational. </p>
+      <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581"
+        />.</p>
+    </section>
+  <section><title>Verify the VRS-G Node</title>
+    <p>The installation creates a VRS-G node as part of the cloud
+      deployment. Use the following command to verify that the VRS-G is active.</p>
+  </section>
+    <section id="next-step">
+      <title>Verify LDAP</title>
+      <p>You should verify that LDAP is functioning correctly.</p>
+      <p>For more information, see <xref href="carrier-grade-install-ldap-verify.dita#topic10581"
+          >Verifying the LDAP Deployment</xref></p>
+    </section>
+    <section>
+      <title>Provision Baremetal Nodes for the Sacramento Deployment</title>
+        <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
+        region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
+        instructions to provision baremetal nodes.</p>
+      <p>For more information, see <xref
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
+    </section>
+  <section><title>Configure a 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</title> This
+      document provides a sequence of events to understand how VMs with vNIC type PCI-PT or SRIOV is
+      orchestrated to provide: <ul>
+        <li>IP assignment to the vNICs from the tenant network pool</li>
+        <li>vNICs are part of VSD managed subnet (VxLAN segment) to allow communication between a VM
+          with virtio vNIC, a VM with SRIOV vNIC and a VM with PCI-PT vNIC in the same l2
+          domain.</li>
+      </ul><p>For more information, see: <xref
+          href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581"
+          >Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</xref></p>
+    </section>
+  </body>
+</topic>

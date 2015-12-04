@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4214XX">
+    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Managing Hardware Inventory</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+             <othermeta name="product" content="carrier-grade"/>
+            <othermeta name="product-version1" content="HPE Helion OpenStack"/>
+            <othermeta name="product-version2" content="HPE Helion OpenStack 1.1"/>
+            <othermeta name="role1" content="Systems Administrator "/>
+            <othermeta name="role2" content="Cloud Architect "/>
+            <othermeta name="role3" content="Storage Administrator "/>
+            <othermeta name="role4" content="Network Administrator "/>
+            <othermeta name="role5" content="Service Developer "/>
+            <othermeta name="role6" content="Cloud Administrator "/>
+            <othermeta name="role7" content="Application Developer "/>
+            <othermeta name="role8" content="Network Engineer "/>
+            <othermeta name="authors" content="Paul F"/>
+
+        </metadata>
+    </prolog>
+    <body>
+<!--UNDER REVISION-->
+                                                                        
+<!-- permalink: /helion/openstack/carrier/admin/host/management/inventory/ --> 
+ 
+<!-- From the Titanium Server Admin Guide -->
+
+
+<p> The maintenance and inventory component of HPE Helion OpenStack Carrier Grade allows the administrator to install, configure, and manage the hosts of the HPE Helion OpenStack Carrier Grade cluster.
+
+To access the System Inventory page on the web management interface, click the Inventory option of the Admin tab on the side panel. </p>
+
+<ul>
+    <li>Working with Cluster Systems (/helion/openstack/carrier/admin/host/management/inventory/clusters/)</li>
+    <li>Working with Hosts (/helion/openstack/carrier/admin/host/management/inventory/host/)</li>
+    <li>The Life Cycle of a Host System (/helion/openstack/carrier/admin/host/management/lifecycle/)</li>
+    <li>Working with Hardware Profiles (/helion/openstack/carrier/admin/host/management/inventory/hardware/)</li>
+</ul>
+    </body>
+</topic>

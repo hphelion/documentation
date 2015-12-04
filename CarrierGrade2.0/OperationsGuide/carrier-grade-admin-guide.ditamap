@@ -1,0 +1,255 @@
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    
+    <title> HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Administrator Guide</title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HPE Helion</copyrholder>
+        </copyright>
+        <prodinfo>
+            <prodname >HPE Helion OpenStack Carrier Grade</prodname>
+            <vrmlist>
+                <vrm release="1.1" version=""/>
+            </vrmlist>
+        </prodinfo>
+        <!-- bookid ixia_locid="133">
+            <edition ixia_locid="134">Patch 0003</edition>
+        </bookid -->
+    </topicmeta>
+    <topicref href="CGH-2-User-Overview.dita">
+        <topicref href="CGH-2-User-Network-Reqs.dita"/>
+        <topicref href="CGH-2-Linux-Accounts.dita"/>
+        <topicref href="Dashboard/CGH-2-User-Dasboard-Controls.dita">
+            <topicref href="Dashboard/CGH-2-User-Dashboard-launch.dita"
+                navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
+            <topicref href="Dashboard/CGH-2-User-Dashboard-how-works.dita"
+                navtitle="How to Use the Helion Dashboard" locktitle="yes"/>
+            <topicref href="Dashboard/CGH-2-User-region-selector.dita" navtitle="Selecting a Region"
+                locktitle="yes"/>
+            <topicref href="Dashboard/CGH-2-User-Dasboard-Project.dita"
+                navtitle=" Helion Dashboard Project Panel" locktitle="yes"/>
+            <topicref href="Dashboard/CGH-2-User-Dasboard-Admin.dita"
+                navtitle=" Helion Dashboard Admin Panel" locktitle="yes"/>
+            <topicref href="Dashboard/CGH-2-User-Dasboard-Identity.dita"
+                navtitle=" Helion Dashboard Identity Panel" locktitle="yes"/>
+        </topicref>
+        <!-- 
+        <topicref href="jow1404333731418.xml">
+            <topicmeta>
+                <navtitle>Configuration Planning</navtitle>
+            </topicmeta>
+            
+            <topicref collection-type="family" href="jow1404333731990.xml">
+                <topicref href="jow1423169316542.xml"/>
+                <topicref href="jow1423173019489.xml"/>
+                <topicref href="jow1404333732592.xml"/>
+                <topicref href="jow1404333736207.xml"/>
+                <topicref href="psa1413402160578.xml"/>
+                <topicref href="psa1428687672712.xml"/>
+            </topicref>
+            <topicref collection-type="unordered" href="jow1404333674324.xml">
+                <topicref href="jow1404333738594.xml"/>
+                Tenant Networks
+                <topicref href="jow1404333739174.xml"/>
+                <topicref href="jow1429628777191.xml">
+                    <topicref href="jow1429629394435.xml"/>
+                    <topicref href="jow1429631834947.xml"/>
+                    <topicref href="jow1429637676342.xml"/>
+                </topicref>
+                <topicref href="psa1412702861873.xml"/>
+                <topicref href="psa1428328539397.xml"/>
+                <topicref href="jow1404333739778.xml"/>
+                <topicref href="jow1404333745550.xml"/>
+                <topicref href="jow1404333744498.xml"/>
+                <topicref href="jow1404333749374.xml"/>
+            </topicref>
+            <topicref href="jow1432395626956.xml"/>
+            <topicref href="jow1404333749994.xml">
+                 Local Storage for VMs 
+                topicref href="jow1426183574960.xml"
+                <topicref href="jow1426183480976.xml"/>
+            </topicref>
+            <mapref format="ditamap" href="jow1425584355871.ditamap"/>
+        </topicref>
+        <topicref href="jow1413726521641.xml">
+            <topicmeta>
+                <navtitle>System Configuration Management</navtitle>
+            </topicmeta>
+            <topicref href="jow1413726817770.xml"/>
+            <topicref href="jow1413726916641.xml"/>
+            <topicref href="jow1413727006955.xml"/>
+            <topicref href="jow1413727043334.xml"/>
+            <topicref href="jow1413727075983.xml"/>
+            <topicref href="jow1413729179585.xml">
+                Adding an Infrastructure Network Using the CLI : ToC entry suppressed
+                <topicref href="jow1420473404578.xml" toc="no"/>
+            </topicref>
+        </topicref> -->
+        <topicref href="Overview/CGH-2-User-system-overview.dita" navtitle="Viewing System Status"
+            locktitle="yes"/>
+        <topicref href="Inventory/CGH-2-User-host-management-resource.dita"
+            navtitle="Managing Resource Usage" locktitle="yes"/>
+        <topicref href="Inventory/CGH-2-User-host-management-inventory.dita"
+            navtitle="Managing Inventory" locktitle="yes">
+            <topicref href="Inventory/CGH-2-User-host-management-hardware-inventory.dita"
+                navtitle="Managing Systems" locktitle="yes">
+                <topicref href="Inventory/CGH-2-User-host-management-clusters.dita"
+                    navtitle="About Clusters" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-inventory.cluster.dita"
+                    navtitle="Working with Clusters" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-hostaggregate.dita"
+                    navtitle="Working with Host Aggregates" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-host-initialize-compute.dita"
+                    navtitle="Initializing and Configuring Compute Nodes" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-host-initialize-controller.dita"
+                    navtitle="Initializing and Configuring Controller1" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-host-initialize-storage.dita"
+                    navtitle="Initializing and Configuring Storage Nodes" locktitle="yes"/>
+            </topicref>
+            <topicref href="Inventory/CGH-2-User-host-management.dita" navtitle="Managing Hosts"
+                locktitle="yes">
+                <topicref href="Inventory/CGH-2-User-host-management-controller-HA.dita"
+                    navtitle="Working with Highly Available Controller Nodes" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-host-lock.dita"
+                    navtitle="Locking and Unloacking a Host" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-lifecycle.dita"
+                    navtitle="Life Cycle of a Host System" locktitle="yes"/>
+            </topicref>
+            <topicref href="Inventory/CGH-2-User-host-management-active.dita"
+                navtitle="Managing Hosts on an Active System" locktitle="yes">
+                <topicref href="Inventory/CGH-2-User-host-management-active-storage.dita"
+                    navtitle="Replacing Active Storage Nodes" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-active-controller.dita"
+                    navtitle="Replacing Active Controller Nodes" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-host-remove.dita"
+                    navtitle="Deleting an Active Host System" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-active-compute.dita"
+                    navtitle="Adjusting Resources on a Compute Node" locktitle="yes"/>
+            </topicref>
+            <topichead navtitle="Working with Patches"/>
+            <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-storage.dita"
+                navtitle="Working with Storage Profiles" locktitle="yes"/>
+            <topicref href="Inventory/CGH-2-User-host-management-detail-memory.dita"
+                navtitle="Working with Memory Profiles" locktitle="yes"/>
+            <topicref href="Inventory/CGH-2-User-host-management-detail.dita"
+                navtitle="Working with Inventory Details" locktitle="yes">
+                <topicref href="Inventory/CGH-2-User-host-management-host-hardware.dita"
+                    navtitle="Managing CPU Profiles" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-processor.dita"
+                    navtitle="Working with CPU Profiles" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-detail-interfaces.dita"
+                    navtitle="Working with Interface Details" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-storage.dita"
+                    navtitle="Working with Host Storage" locktitle="yes"/>
+                <topicref href="Inventory/CGH-2-User-host-management-inventory-detail-ports.dita"
+                    navtitle="Viewing Port Details" locktitle="yes"/>
+            </topicref>
+        </topicref>
+        <topichead navtitle="Managing Hypervisors"/>
+        <topicref href="Inventory/CGH-2-User-host-management-hostaggregate.dita"
+            navtitle="Managing Host Aggregates" locktitle="yes"/>
+        <topicref href="Instances/CGH-2-User-Instance-Overview.dita" navtitle="Managing Instances"
+            locktitle="yes">
+            <topicref href="Instances/CGH-2-User-Instance-create.dita"
+                navtitle="Creating Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-pause.dita"
+                navtitle="Pausing and Un-pausing Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-reboot.dita"
+                navtitle="Rebooting Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-rebuild.dita"
+                navtitle="Rebuilding Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-snapshot-create.dita"
+                navtitle="Creating an Instance Snapshot" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-suspend.dita"
+                navtitle="Suspending and Resuming Instances" locktitle="yes"/>
+            <topicref href="Instances/CGH-2-User-Instance-terminate.dita"
+                navtitle="Terminating Instances" locktitle="yes"/>
+        </topicref>
+        <topicref href="Volumes/CGH-2-User-volumes-managing.dita" navtitle="Managing Volumes"
+            locktitle="yes">
+            <topicref href="Volumes/CGH-2-User-volumes-admin.dita"
+                navtitle="Creating and Deleting Volume Types" locktitle="yes"/>
+            <topicref href="Volumes/CGH-2-User-volumes-attach.dita"
+                navtitle="Attaching and Detaching Volume Instances" locktitle="yes"/>
+            <topicref href="Volumes/CGH-2-User-volumes-create.dita"
+                navtitle="Creating, Editing, and Deleting Volumes" locktitle="yes"/>
+            <topicref href="Volumes/CGH-2-User-volumes-extend.dita"
+                navtitle="Extending the Size of a Volume" locktitle="yes"/>
+        </topicref>
+        <topicref href="Flavor/CGH-2-User-flavors.dita" navtitle="Managing Compute Flavors"
+            locktitle="yes">
+            <topicref href="Flavor/CGH-2-User-flavors-access.dita"
+                navtitle="Managing Access to a Flavor" locktitle="yes"/>
+        </topicref>
+        <topicref href="Images/CGH-2-User-image.dita" navtitle="Managing Images" locktitle="yes">
+            <topicref href="Images/CGH-2-User-images-create.dita" navtitle="Creating Images"
+                locktitle="yes"/>
+            <topicref href="Images/CGH-2-User-images-delete.dita" navtitle="Deleting Images"
+                locktitle="yes"/>
+            <topicref href="Images/CGH-2-User-images-details.dita" navtitle="Viewing Image Details"
+                locktitle="yes"/>
+            <topicref href="Images/CGH-2-User-images-modify.dita" navtitle="Modifying Images"
+                locktitle="yes"/>
+            <topicref href="Images/CGH-2-User-images-protect.dita" navtitle="Protecting Images"
+                locktitle="yes"/>
+            <topicref href="Images/CGH-2-User-images-snapshot-public.dita"
+                navtitle="Making an Image Public" locktitle="yes"/>
+        </topicref>
+        <topicref href="Network/CGH-2-User-network.dita" navtitle="Managing Networks"
+            locktitle="yes">
+            <topicref href="Network/CGH-2-User-network-admin.create.dita"
+                navtitle="Creating Externally Available Networks" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-create.dita"
+                navtitle="Creating or Deleting Networks" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-disable.dita"
+                navtitle="Enabling or Disabling Networks" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-ports.dita"
+                navtitle="Adding or Removing Ports" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-shared.dita"
+                navtitle="Crating a Shared Network" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-subnet.dita"
+                navtitle="Adding and Removing Subnets" locktitle="yes"/>
+            <topicref href="Network/CGH-2-User-network-viewing.dita"
+                navtitle="Viewing Your Networks" locktitle="yes"/>
+        </topicref>
+        <topicref href="Routers/CGH-2-User-routers-managing.dita" navtitle="Managing Routers"
+            locktitle="yes">
+            <topicref href="Routers/CGH-2-User-routers-create.dita" navtitle="Creating a Router"
+                locktitle="yes"/>
+            <topicref href="Routers/CGH-2-User-routers-connect.dita"
+                navtitle="Connecting a Network to a Router" locktitle="yes"/>
+            <topicref href="Routers/CGH-2-User-routers-delete.dita" navtitle="Deleting a Router"
+                locktitle="yes"/>
+        </topicref>
+        <topichead navtitle="Defaults"/>
+        <topichead navtitle=" Fault Management"/>
+        <topichead navtitle="System Configuration"/>
+        <topichead navtitle="System Information"/>
+        <topichead navtitle="Managing Identity"/>
+        <topicref href="Identity/CGH-2-User-Identity-managing.dita" navtitle="Managing Identity"
+            locktitle="yes">
+            <topicref href="Identity/CGH-2-User-Identity-managing-users.dita"
+                navtitle="Managing Users" locktitle="yes">
+                <topicref href="Identity/CGH-2-User-Identity-users-create.dita"
+                    navtitle="Creating and Deleting Users" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-users.enable.dita"
+                    navtitle="Disabling and Enabling Users" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-users-password.dita"
+                    navtitle="Changing a User Password" locktitle="yes"/>
+            </topicref>
+            <topicref href="Identity/CGH-2-User-Identity-managing-projects.dita"
+                navtitle="Managing Projects" locktitle="yes">
+                <topicref href="Identity/CGH-2-User-Identity-projects-primary.dita"
+                    navtitle="Specifying a Primary Project for a User" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-projects-create.dita"
+                    navtitle="Creating and Deleting Projects" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-projects-view.dita"
+                    navtitle="Viewing Projects in a Domain" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-add-users-projects.dita"
+                    navtitle="Adding and Removing Users to a Project" locktitle="yes"/>
+                <topicref href="Identity/CGH-2-User-Identity-quotas.dita"
+                    navtitle="Setting Project Quotas" locktitle="yes"/>
+            </topicref>
+        </topicref>
+    </topicref></map>

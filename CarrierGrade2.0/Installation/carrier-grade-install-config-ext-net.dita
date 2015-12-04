@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Creating a Shared L3
+    Management Network</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HPE Helion Openstack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HPE Helion Openstack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After <xref href="carrier-grade-install-kvm-esx.dita#topic10581">the HPE Helion OpenStack
+        cloud is installed</xref>, in order for the management network to function across the </p>
+    <p>You must perform the following tasks using CLI commands, the HPE Helion OpenStack Carrier
+      Grade Horizon interface, and the HPE Virtualized Services Directory Architect (VSD Architect)
+      interface. </p>
+    <p><b>Note:</b> If you are deploying the <xref
+        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM
+      deployment</xref>, you do not need to perform these tasks. </p>
+    <p>The following diagram illustrates the general workflow of the post-installation
+      configuration.</p>
+    <image href="../../media/CGH-install-post-workflow.png" width="600" id="image_bgh_tlq_nt"/>
+    <section id="org">
+      <title>Create New Organization in VSD</title>
+      <p>Create an organization in VSD. </p>
+      <p>
+        <ol id="ol_ew2_pnq_nt">
+          <li>Launch the VSD architect:<ul id="ul_urx_ftv_mt">
+              <li>Using Chrome or Safari, navigate to
+                  <codeph>https://&lt;VSD_address>:8443/</codeph> and enter user name, password and
+                organization. See the DCN documentation if you need to locate the IP address for the VSD.<p>
+                  <codeblock>User Name: Csproot 
+Password: csproot 
+Org: csp 
+VSD Server : auto </codeblock>
+                </p></li>
+              <li>Click the arrow icon to log in.</li>
+            </ul></li>
+          <li>Right click <b>Helion_Nuage_Integration</b> to create a new organization.</li>
+          <li>Enter a name, description, and password for the organization. </li>
+          <li>Click <b>Create</b>.</li>
+        </ol>
+      </p>
+    </section>
+    
+    <section>
+      <title>Add VLAN to VRS-G network device</title>
+      <p>VRS‐G configuration includes setting up the port and VLAN ranges that are to be available
+        to access the VSD. By default, the VRS‐G boots with all its ports configured as the network
+        type, and therefore it has no VLANs available. </p>
+      <p>Use the following command to change <codeph>eth0</codeph> from network to access and allow
+        VLANs.</p>
+      <ol>
+        <li>From the lifecycle manager, SSH to the VRS-G nodes using the default username and password.<p>
+            <codeblock>User Name: cghelion
+Password: cghelion</codeblock>
+          </p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+        <li>Execute the following command, using your VLAN ID.
+              <codeblock>nuage-vlan-config mod eth0 Access &lt;vlad-id-range></codeblock><p><image
+              href="../../media/CGH-2-vlan-configure.png" id="image_p2c_s4v_2t"/></p><p>For example,
+            if your VLAN ID is
+          1508:</p><codeblock>nuage-vlan-config mod eth0 Access 1500-2000</codeblock></li>
+      </ol>
+    </section>
+    <section id="vrsg-config">
+      <title>Configure the VRS-G </title>
+      <p>The HPE Helion OpenStack Carrier Grade installation creates the required VRS-G gateway. You
+        need to use the HPE DCN Virtualized Services Directory Architect (VSD) interface to add the
+        gateway and configure the <codeph>eth0</codeph> port.</p>
+      <p><i>For more information on performing this task, refer to the latest DCN documentation
+        </i></p>
+      <ol>
+        <li><xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">Log into the
+            VSD dashboard</xref>.</li>
+        <li>Click <b>Platform Configuration</b>, then the <b>Infrastructure</b> tab, then click the
+            <b>Data Center Gateways</b> icon. The new gateway appears in the <b>Pending Gateways</b>
+          list on the left.</li>
+        <li>Click the blue arrow next to one of the new gateways to manage that gateway.<p><image
+              href="../../media/CGH-2-install-nuage-gateway-alpha.png" id="image_rgy_5fz_xs"
+              width="350"/></p></li>
+        <li>Add a port for the gateway by clicking <b>Create a Port</b> in the second panel from the
+          left. <!--Do not see Create a Port for VRS-G--></li>
+        <li>Enter the information as required, specifying <codeph>eth0</codeph> in the <b>Physical
+            Name</b> field and entering the VLAN ID for the external network. Also, change the
+            <b>Type</b> field to <codeph>Access</codeph>.<p><image href="../../media/CGH-install-gateway-port.png" id="image_w3p_sgz_xs" width="250"/></p></li>
+        <li>Click <b>Create</b>.<p>The VLAN and other ports will appear similar to
+          the following:</p><p><image href="../../media/CGH-install-vcenter-vlan.png"
+            id="image_sgn_mh1_1t"/></p></li>
+        <!-- Hide for alpha <li>Click the blue arrow next to the second new gateway.</li>
+        <li>Perform the same steps to add a port entering the same information. Both gateways must
+          be configured in an identical manner.</li>-->
+      </ol>
+    </section>
+    <!--<section><title>Create a redundancy group for the VRS-G</title>
+Hide for alpha
+ <i>For more information on performing this task, refer to the latest DCN documentation </i> <p>In order to achieve high availability for the VRS-G, you must create a redundancy group using the VSD dashboard.</p><p>A redundancy group will designate one of the two gateways as the authoritative (active) gateway and the other as the secondary (passive) gateway. You can change which gateway is authoritative either at that point or at a later tine, by selecting the group and clicking the pencil icon.</p><p> Redundancy groups can be created out of two instantiated gateways of the VRS-G type. Both instances must either:</p><ul><li>Come from the same template</li><li>Be instantiated </li></ul><p>In addition, the two gateways that make up a redundancy group must have exactly the same port and VLAN configuration. </p><p>To create a redundancy group, using the VSD dashboard: </p><ol><li>Select the two peers and click on the redundancy group icon.<p><image href="../../media/CGH-install-vsd-redundancy.png" id="image_q5q_5j1_1t"/></p></li></ol></section><section/>-->
+    <section><title>Assign permissions to the VRS-G</title> There are two types of permissions,
+        <b>Use Permissions</b> and <b>Extend Permissions</b>. Use Permissions allow members in the
+      assigned group to use an object. Extend Permissions allow the members of an assigned group to
+      use an object and to allow other groups to use the object. For this installation, you can
+      select <b>Use Permission</b>. <p><i>For more information on performing this task, refer to the
+          latest DCN documentation </i></p><p>To assign
+        permissions:<!-- Cannot see select groups for VRS-G--></p><ol id="ol_x4q_vl1_1t">
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+            dashboard</xref>.</li>
+        <li>Select the gateway you created and click <b>Add a Permission</b>.</li>
+        <li>The <b>Select Groups</b> dialog appears. The default permission, <codeph>allowed to use
+            the object</codeph> is displayed at the bottom of the popup.</li>
+        <li>Select an organization and click <b>Select</b>. Members of this group will be able to
+          use the gateway.</li>
+      </ol></section>
+    <section>
+      <title>Create a subnet for the floating IP</title>
+      <p>Use the following steps to create a subnet for the floating IP.</p>
+      <p><b>Note:</b> You will need the floating IP subnet name during the installation when you
+        create and edit a cURL script. </p>
+      <p><i>For more information on performing these tasks, refer to the DCN documentation </i></p>
+      <ol>
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+            dashboard</xref>, click <b>Platform Configuration</b>, then <b>Shared Network</b> tab. </li>
+        <li>Click the + icon to create a floating IP pool subnet.<p><image
+              href="../../media/CGH-2-install-nuage-ipsub-alpha.png" width="600"
+              id="image_vgv_lqw_mt"/></p></li>
+        <li>Click <b>Create</b> and default route information generated.<p><image
+              href="../../media/CGH-2-install-VSD-add-IP-sub.png" id="image_kvz_fgs_nt" width="250"
+            /></p></li>
+        <li>For the floating IP subnet, right-click and select <b>Edit</b> to get the subnet name.
+              <p><image href="../../media/CGH-install-vsd-fip.png" id="image_okn_sjz_xs"
+            /></p><p>Make note of this name, as you will use it to tun the cURL script in the
+            following step.</p></li>
+      </ol>
+    </section>
+    <section>
+      <title>Run a cURL script to enable floating IPs on the VRS-G</title>
+    </section>
+    <section>
+      <p>This script creates the uplink on the VRS-G, which is a requirement for the EXT-NET to
+        function with HPE Helion OpenStack Carrier Grade. </p>
+      <ol id="ol_ks4_zhj_1t">
+        <li>From the KVM Host, copy the following code to create a cURL script.</li>
+        <li>Modify the cURL script for your environment:<ul id="ul_bzs_r1c_1t">
+            <li>FIP_NAME is the one that is retrieved from previous step.</li>
+            <li>GW_NAME is the redundant gateway name.</li>
+            <li>All the UPLINK info are from the core switch on their specific testbed</li>
+          </ul><codeblock># IANA has reserved 192.0.0.0/29 for DS-lite transition
+#
+UPLINK_SUBNET="10.20.9.0"
+UPLINK_MASK="255.255.255.192"
+VRSG_IP="10.20.9.2"  #DUncan Modified :P
+UPLINK_GW="10.20.9.1"                         # ROUTER IP ON SWITCH main switch 10.1.64.21
+UPLINK_GW_MAC="bc:ea:fa:1d:b0:80"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+#UPLINK_GW_MAC="78:48:59:4f:fb:3c"       # VLAN 1209 MAC address not VRSG is from main switch 10.1.64.21
+
+if [ $# -eq 1 ]; then # remote install
+echo "Performing remote install to root@'$1' (requires PermitRootLogin=yes in sshd config)..."
+ssh root@$1 'bash -s ' &lt; $0
+exit 0
+elif [ $# -ne 0  ]; then
+cat &lt;&lt;END
+Usage (as root) $0 [remote IP]
+END
+exit -1
+fi
+
+# Install required software packages, if not already
+if [ -e /usr/bin/yum ]; then
+[[ `which jq` != "" ]] || yum install -y jq
+\
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].parentID'`
+if [ "$ZONE_ID" == "" ]; then
+echo "Error: Floating IP pool named '$FIP_NAME' not found"
+exit 1
+fi
+
+# Lookup VLAN to use
+GW_ID=`curl -ks -H "X-Nuage-Filter: name=='$GW_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/gateways | jq -r '.[0].ID'`
+PORT_ID=`curl -ks -H "X-Nuage-Filter: name=='$PORT_NAME'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN"
+ \
+ https://$VSD_IP:8443/nuage/api/v3_0/gateways/$GW_ID/ports | jq -r '.[0].ID'`
+VLAN_ID=`curl -ks -H "X-Nuage-Filter: value==$VLAN" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/ports/$PORT_ID/vlans | jq -r '.[0].ID'`
+if [ "$VLAN_ID" == "" ]; then
+echo "Error: VLAN on gateway '$GW_NAME' with port '$PORT_NAME' and value '$VLAN' not found"
+exit 1
+fi
+echo "VLAN $VLAN ID: $VLAN_ID"
+
+# Get/Create uplink subnet
+SUBNET_ID=`curl -ks -H "X-Nuage-Filter: type=='UPLINK_SUBNET'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" \
+# Get/Create uplink subnet
+SUBNET_ID=`curl -ks -H "X-Nuage-Filter: type=='UPLINK_SUBNET'" -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" \
+ -H "Authorization: XREST $TOKEN" https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources | jq -r '.[0].ID'`
+#if [ "$SUBNET_ID" == "" ]; then
+echo "Creating new FIP uplink subnet in ZONE $ZONE_ID"
+curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "Authorization: XREST $TOKEN" \
+ https://$VSD_IP:8443/nuage/api/v3_0/sharednetworkresources -d "{ \
+        \"name\": \"FIP uplink subnet\", \
+    \"description\": \"uplink subnet\", \
+    \"address\": \"$UPLINK_SUBNET\", \
+    \"netmask\": \"$UPLINK_MASK\", \
+    \"gateway\": \"$VRSG_IP\", \
+    \"type\": \"UPLINK_SUBNET\", \
+    \"uplinkInterfaceIP\" : \"$UPLINK_GW\", \
+    \"uplinkInterfaceMAC\" : \"$UPLINK_GW_MAC\", \
+    \"sharedResourceParentID\" : \"$ZONE_ID\", \
+    \"uplinkGWVlanAttachmentID\" : \"$VLAN_ID\", \
+    \"uplinkVPortName\" : \"uplink vport1\" \
+ }"
+#else
+#echo "FIP uplink subnet already exists: $SUBNET_ID"
+#fi
+##########</codeblock></li>
+        <li>Save and close the script.</li>
+        <li>Execute the cURL script <codeblock>bash +x &lt;script_name>.sh</codeblock><p>Where:
+            &lt;script_name> is the name of the cURL script you created.</p></li>
+        <li>Use the VSD dashboard to confirm that uplink port appears <ol id="ol_gdy_f3s_nt">
+            <li>Click <b>Monitoring Console</b>.</li>
+            <li>Click <b>Nuage-VSP</b>, then the VSC-1, then the VRS-G node under VRs. The IP
+              address for the VRS-G VR is in the cURL script, if needed. </li>
+          </ol><p><image href="../../media/CGH-install-curl.png" id="image_d2h_mcc_1t" width="700"
+            /></p></li>
+      </ol>
+    </section>
+    <section><title>Create a Layer 3 Domain Template</title><p>A domain is a single Layer 3 space. A
+        Domain Template contains components to define a domain, including domain zones, subnet
+        pools, and security policies. A domain template can be used to create a domain instance. You
+        can either use the default template or create a new L3 Domain Template.</p><i>For more
+        information on performing these tasks, refer to the DCN documentation </i><p> To create a
+        Layer 3 Domain Template:<ol id="ol_bft_2ks_nt">
+          <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+              dashboard</xref>, click <b>Platform Configuration</b>.</li>
+          <li>Click the organization you created previously. </li>
+          <li>Click the <b>Networks</b> tab.<p>A default L3 Template is created for the
+              organization. You can edit this template or create a new template.</p></li>
+          <li>Select the template and click the <b>Designer</b> tab.</li>
+          <li>Double-click <b>Zone Template</b> and <b>Public Zone Template</b> in the Object
+            Library to add the zones to the template.</li>
+          <li>Click the <b>Policies</b> tab.</li>
+          <li>Click the blue <b>Ingress Security Policies</b> icon. </li>
+          <li>Click the + icon to create a new policy <p><image
+                href="../../media/CGH-2-install-vsd-ingress.png" id="image_omr_kps_nt" width="250"
+              /></p><ol id="ol_mgg_rns_nt">
+              <li>Enter a name and description for the policy.</li>
+              <li>Select <b>Forward IP traffic by default</b>. </li>
+              <li>Select <b>Enable this policy</b>.</li>
+              <li>Click <b>Create</b>.</li>
+            </ol></li>
+          <li>Select the ingress policy you created.</li>
+          <li>Click the + icon to create a new ingress policy entry. </li>
+          <li>Click <b>Apply Policy Changes</b>. The policy is effective only when it is
+                applied.<p><image href="../../media/CGH-2-install-VSD-apply.png"
+                id="image_smb_3rs_nt" width="600"/></p></li>
+          <li>Click the blue <b>Egress Security Policies</b> icon. </li>
+          <li>Click the + icon to create a new policy <p><image
+                href="../../media/CGH-2-install-vsd-egress.png" width="250" id="image_f3v_lrs_nt"
+              /></p><ol id="ol_g3v_lrs_nt">
+              <li>Enter a name and description for the policy.</li>
+              <li>Select <b>Deploy Implicit Rules</b> and <b>Forward IP Traffic by Default</b>. </li>
+              <li>Make sure <b>Make This Policy Active</b> is selected.</li>
+              <li>Select <b>Enable this policy</b>.</li>
+              <li>Click <b>Create</b>.</li>
+            </ol></li>
+          <li>Select the egress policy you created.</li>
+          <li>Click the + icon to create a new ingress policy entry. </li>
+          <li>Click <b>Apply Policy Changes</b>. The policy is effective only when it is
+            applied.</li>
+        </ol></p><p>When the domain template is created, the domain template can be used to create a
+        domain instance.</p></section>
+    <section><title>Instantiate a Layer 3 Domain Template</title>After defining a Domain Template,
+      the domain template can be used to create a domain instance. A domain instance is created from
+      a domain template and must be assigned a unique name as well as a unique Route Target and
+      Route Distinguisher. A domain instance inherits all the properties from the domain template.
+      Therefore after instantiation, the domain instance will have the Zones, Subnets and security
+      policies defined in the Domain Template. All the naming for those elements are the same as the
+      names defined on the Domain Template.<p><i>For more information on performing these tasks,
+          refer to the DCN documentation </i></p><p>To instantiate a domain template:</p><ol
+        id="ol_rbc_51t_nt">
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+            dashboard</xref>, click <b>Platform Configuration</b>.</li>
+        <li>Select the domain template you created.</li>
+        <li>Click the <b>Instantiate</b> icon.<p><image
+              href="../../media/CGH-2-install-vsd-instantate.png" id="image_bz3_fyx_nt" width="400"
+              /><ol id="ol_g5m_nyx_nt">
+              <li>Enter a name and description for the instance.</li>
+              <li>Click <b>Instantiate</b>.</li>
+            </ol></p></li>
+        <li>Select the new instance under <b>My L3 Domains</b> and click the <b>Designer</b>
+          tab.</li>
+        <li>Double-click <b>Zone Template 0</b> in the Object Library to add the zone to the
+          instance.</li>
+        <li>Double-click <b>Subnet</b> in the Object Library to add a subnet to the zone. <p><image
+              href="../../media/CGH-2-install-vsd-instantate-subnet.png" id="image_gjb_gzx_nt"
+              width="400"/></p></li>
+        <li>Launch a new browser session and enter VSD debug mode:<p>
+            <codeblock>https://&lt;vsd ip&gt;:8443/?debug</codeblock>
+          </p></li>
+        <li>Select the new subnet and  pickup UUID from debug log:. <!--For example: How do to find this??-->
+          <codeblock>HEAD https://10.20.5.21:8443/nuage/api/v3_2/subnets/239f0521-973c-44d9-98d8-4442185f5b45/vports (200):Debug log can be checked on web Console of Dev Tools on Browser:</codeblock></li>
+      </ol></section>
+    <section>
+      <title>Operations to be Performed on the non-KVM controller0</title>
+      <p>Perform the following steps on the on the non-KVM controller0. </p>
+      <ol id="ol_eyg_g4y_nt">
+        <li>Login to non-KVM controller0 <!--What is HCG OpenStack controller--><p>
+            <codeblock>sudo su -</codeblock>
+          </p></li>
+        <li>Source the stackrc file: <pre>source stackrc</pre></li>
+        <li> Map the organization created in VSD to HCG artifact:<ol id="ol_tdh_s4y_nt">
+            <li>Create a net partition with same organization name that <xref href="#topic10581/org"
+                format="dita">you created in VSD</xref>.<p>
+                <codeblock>neutron nuage-netpartition-create &lt;org_name></codeblock>
+              </p><p>Where <codeph>&lt;org_name></codeph> is the name of the organization you
+                created in VSD.</p></li>
+            <li>Create a local network <p>
+                <codeblock>neutron net-create localnet1
+neutron net-show localnet1</codeblock>
+              </p></li>
+            <li>Create subnet for the network created above<p>
+                <codeblock>neutron subnet-create --name localnet1subnet1 localnet1 &lt;localnet-ip> --allocation-pool 
+start=10.51.77.50,end=10.51.77.250 --nuagenet &lt;UUID> --net-partition &lt;partition-name> --enable-dhcp</codeblock>
+              </p><p>Where:<ul id="ul_vgx_3qy_nt">
+                  <li><codeph>&lt;localnet-ip></codeph> is the network range that was provided for
+                    vsdsubnet during l3 domain creation. For example:
+                    <codeph>10.51.77.0/24</codeph>. </li>
+                  <li><codeph>&lt;UUID></codeph> is the UUID of the subnet created in VSD. For
+                    example: <codeph>239f0521-973c-44d9-98d8-4442185f5b45</codeph>.</li>
+                  <li><codeph>&lt;partition-name></codeph> is the name of the partition created in
+                    the previous steps.</li>
+                </ul></p></li>
+          </ol></li>
+      
+        <li>Launch a VM. <p>
+            <codeblock>nova boot --flavor m1.tiny --image cirrosvmdk --security-groups default --nic net-id=&lt;Private NetworkID&gt; cirvm1</codeblock>
+          </p><p><b>Note:</b> This VM will be detected and displayed in VSD</p></li>
+      </ol>
+    </section>
+    <section>
+      <title>Operations to be performed on VSD</title>
+      <ol id="ol_jx4_b5y_nt">
+        <li>In <xref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita#topic1160">the VSD
+            dashboard</xref>, click <b>Platform Configuration</b>.</li>
+        <li>Click the organization you created previously. </li>
+        <li>Click the <b>Networks</b> tab.</li>
+        <li>Double-click the L3 domain you instantiated. Click the domain icon in the design area,
+          if needed.<p><image href="../../media/CGH-2-install-vsd-L3-icon.png" id="image_x5z_lfz_nt"
+              width="200"/></p></li>
+        <li>Allocate floating IPs from the IP pool:<ol id="ol_i1q_qgz_nt">
+            <li>Click the floating IP icon in the top right corner.<p><image
+                  href="../../media/CGH-2-install-vsd-L3-fip-icon.png" id="image_ijq_vfz_nt"
+                  width="250"/></p></li>
+            <li>Select the <codeph>+</codeph> icon to add a floating IP to allocation pool.</li>
+            <li>In the <b>Claim Floating IP from Shared Network</b>, select one of the network
+              ranges. </li>
+            <li>Click <b>Select</b>.<p>The floating IP network range is displayed as a list item in
+                the panel on the right.</p></li>
+          </ol></li>
+        <li>Associate floating IP for the selected VM:<ol id="ol_fdm_13z_nt">
+            <li>Select the Vport icon for the virtual machine you want to assign the floating
+                  IP.<p><image href="../../media/CGH-2-install-vsd-vport-icon.png"
+                  id="image_gqd_dkz_nt" width="250"/></p></li>
+            <li>Click the floating IP icon in the top right corner.</li>
+            <li>To select a floating IP address, click the link icon on the lower left. A list of
+              ranges appears. </li>
+            <li>Select a range from which your floating IP address is to be assigned and click
+                <b>Select</b>.</li>
+            <li>To assign the IP address to the VM, click the <b>Update</b> button at the bottom of
+              the panel.</li>
+            <li>Verify that the IP address was associated to the VPort by referring to the VM
+                  details.<p><image href="../../media/CGH-2-install-vsd-vport-fip.png"
+                  id="image_gkv_vkz_nt"/></p></li>
+          </ol></li>
+        <li>Verify FIP functionality by using tools such as Ping and SSH from outside the cloud
+          server using the floating IP address. </li>
+      </ol>
+    </section>
+<!--    <section>
+      <title>Enable GRE in iptables</title>
+       CG-1265 
+      <p>If an environment uses more than one VRS-G node, you must enable Generic Routing
+        Encapsulation (GRE) in the IP tables. The following commands show you how to use the UFW
+        tool to configure the IP tables.</p>
+      <ol>
+        <li>On each VRS-G node, navigate to the <codeph>/etc/ufw/before.rules</codeph> file.</li>
+        <li>Add the following lines to the file, before the <codeph>COMMIT</codeph> line:
+          <codeblock>-A ufw-before-input -p 47 -j ACCEPT</codeblock></li>
+        <li>Save and close the file.</li>
+        <li>Execute the following command to restart the UFW service.</li>
+      </ol>
+    </section>
+-->    
+    <section id="next-step">
+      <title>Next Step</title>
+
+<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>
+    </section>
+  </body>
+</topic>

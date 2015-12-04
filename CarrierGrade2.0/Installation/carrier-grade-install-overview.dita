@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1925">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation </title>
+  <titlealts>
+    <searchtitle>HP Helion OpenStack Carrier Grade 2.0: Installation Overivew</searchtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+
+    <p>This document describes the process for installing HP Helion OpenStack Carrier Grade.</p>
+    <section id="about-the-installation">
+      <title>About the installation</title>
+      <p>The HP Helion OpenStack Carrier Grade installation installs a virtual machine for the
+        lifecycle manager VM, creates a base HP Helion OpenStack cloud, and deploys a carrier grade
+        cloud. You can also optionally install a baremetal region that leverages the OpenStack
+        Ironic service.</p>
+      <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
+          href="../../CarrierGrade2.0/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+          >Horizon graphical interface</xref> or using the CLIs of the respective <xref
+          href="../../CarrierGrade2.0/Overview/carrier-grade.services-overview.dita">services</xref> to
+        manage hypervisors and provision virtual machines.</p>
+    </section>
+    <section>
+      <title>Before you begin</title>
+      <p>Before you begin, make sure you review the Technical Overview and Support Matrix for your
+        deployment model:<ul id="ul_d1l_dr4_25">
+          <li><xref href="carrier-grade-technical-overview.dita#topic3485">Technical
+            Overview</xref></li>
+          <li><xref href="carrier-grade-support-matrix2.dita#topic1773">Support Matrix</xref></li>
+        </ul></p>
+      <p>See the following section for information on deployment models.</p>
+    </section>
+    <section id="install-option"><title>Deployment Models</title><p>HP Helion OpenStack Carrier
+        Grade has four deployment models depending on your system configuration. For each deployment
+        model, a template is included in the installation package to facilitate the installation.
+        </p><p id="components">The following table indicates the components required for each
+        deployment type. If your deployment indicates Yes in a column, you must install that
+        component. If a column is blank, you can disregard that component. <table frame="all"
+          rowsep="1" colsep="1" id="table_iqg_gyd_xt">
+          <tgroup cols="5">
+            <colspec colname="c2" colnum="1" colwidth="1.0*"/>
+            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <colspec colname="c3" colnum="4" colwidth="1.0*"/>
+            <colspec colname="newCol5" colnum="5" colwidth="1*"/>
+            <thead>
+              <row>
+                <entry>Deployment</entry>
+                <entry>KVM</entry>
+                <entry>HP DCN</entry>
+                <entry>VMware ESX</entry>
+                <entry>Ironic Baremetal</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Denver</entry>
+                <entry>Yes</entry>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Tahoe</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry/>
+                <entry/>
+              </row>
+              <row>
+                <entry>Memphis</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Sacramento</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+                <entry>Yes</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+    </section>
+      <section>
+      <b>KVM Topology using the Denver Deployment</b><p>If installing the Denver template, you are
+        installing the KVM region and HP Helion OpenStack Carrier Grade <xref
+          href="../Overview/carrier-grade-overview.dita#topic4010/networking">Accelerated vSwitch
+          (AVS)</xref> networking. </p><p>You can also integrate HPE Storevirtual (VSA) or HPE
+        StoreServ (3PAR) storage in the KVM region. </p><p>You must install 3PAR or VSA before
+        starting the HP Helion OpenStack installation and are independent of HP Helion OpenStack
+        Carrier Grade. During the installation, you will integrate the storage into HP Helion
+        OpenStack Carrier Grade. See the <xref href="CGH-2-install-denver.dita#topic10581/storage"
+          >installation instructions</xref> for the 3PAR and/or VSA parameters you will
+        need.</p><p>Start <xref href="carrier-grade-install-overview-denver.dita#topic1925"
+          >installing the Denver deployment</xref>.</p><p id="tahoe"><b>KVM with DCN Topology using
+          the Tahoe Deployment</b></p><p>If you are installing the Tahoe deployment, you are
+        installing the KVM region and <xref
+          href="../Overview/carrier-grade-overview.dita#topic4010/networking">HP Distributed Cloud
+          Networking VRS networking (DCN VRS)</xref>. </p><p>You can also integrate HPE Storevirtual
+        (VSA) or HPE StoreServ (3PAR) storage in the KVM region. </p><p>You must install DCN, 3PAR
+        or VSA before starting the HP Helion OpenStack installation and are independent of HP Helion
+        OpenStack Carrier Grade. During the installation, you will integrate the storage into HP
+        Helion OpenStack Carrier Grade. See the <xref
+          href="CGH-2-install-tahoe.dita#topic10581/storage">installation instructions</xref> for
+        the 3PAR and/or VSA parameters you will need.</p><p>Start <xref
+          href="carrier-grade-install-overview-tahoe.dita#topic1925">installing the Tahoe
+          deployment</xref>.</p><p id="memphis"><b>KVM + ESX with DCN Topology using the Memphis
+          Deployment</b></p><p>If you are installing the Memphis deployment, you are installing the
+        KVM region and VMware ESX storage. The networking uses <xref
+          href="../Overview/carrier-grade-overview.dita#topic4010/networking">HP DCN VRS</xref>.
+        This deployment allows you to manage the KVM and VMware ESX<tm tmtype="reg"/>
+        hypervisors.</p><p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR)
+        storage in the KVM region. </p><p>You must install DCN, ESX, and 3PAR and/or VSA before
+        starting the HP Helion OpenStack installation and are independent of HP Helion OpenStack
+        Carrier Grade. During the installation, you will integrate the storage into HP Helion
+        OpenStack Carrier Grade. See the <xref href="CGH-2-install-memphis.dita#topic10581/storage"
+          >installation instructions</xref> for the 3PAR and/or VSA parameters you will
+        need.</p><p>You will need to perform tasks to integrate ESX and DCN with HP Helion OpenStack
+        Carrier Grade. These steps are described during this installation process.</p>Start <xref
+        href="carrier-grade-install-overview-memphis.dita#topic1925">installing the Memphis
+        deployment</xref>.<p id="sacramento"><b>KVM + ESX + Ironic with DCN Topology using the
+          Sacramento Deployment</b></p><p>If you are installing the Sacramento deployment, you are
+        installing the KVM region, VMware ESX storage, and a baremetal region (controlled by
+        OpenStack Ironic). The networking uses <xref
+          href="../Overview/carrier-grade-overview.dita#topic4010/networking">HP DCN VRS</xref>.
+        This deployment allows you to manage the KVM and VMware ESX<tm tmtype="reg"/>
+        hypervisors.</p><p>You can also integrate HPE Storevirtual (VSA) or HPE StoreServ (3PAR)
+        storage in the KVM region. </p><p>You must install DCN, ESX, and 3PAR and/or VSA before
+        starting the HP Helion OpenStack installation and are independent of HP Helion OpenStack
+        Carrier Grade. During the installation, you will integrate the storage into HP Helion
+        OpenStack Carrier Grade. See the <xref
+          href="CGH-2-install-sacramento.dita#topic10581/backend">installation instructions</xref>
+        for the 3PAR and/or VSA parameters you will need.</p>You will need to perform tasks to
+      integrate ESX and DCN with HP Helion OpenStack Carrier Grade. These steps are described during
+      this installation process.<p>Start <xref
+          href="carrier-grade-install-overview-sacramento.dita#topic1925">installing the Sacramento
+          deployment</xref>.</p></section>
+    <section>
+      <title>Installation Troubleshooting</title>
+      <p>Check with the <xref
+          href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581">Installation
+          Troubleshooting page</xref> for tips and work-arounds in case you run into issues while
+        installing.</p>
+    </section>
+  </body>
+</topic>

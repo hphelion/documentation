@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0:
+        Configuring SR-IOV</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p>An SR-IOV Ethernet interface is a physical PCI Ethernet NIC that implements
+            hardware-based virtualization mechanisms to expose multiple virtual network interfaces
+            that can be used by one or more virtual machines simultaneously.</p>
+        <p>With SR-IOV based NICs, the traditional virtual bridge is no longer required. Each SR-IOV
+            port is associated with a virtual function (VF).</p>
+        <p>The process for configuring SR-IOV includes creating a VLAN provider network and subnet,
+            then attaching VMs to that network.</p>
+        <section>
+            <p><b>Configure WR Compute Nodes</b>
+                <!--Beta only!! Remove for GA--></p>
+            <ol id="ol_qnf_5sg_tt">
+                <li>Log into the KVM region <codeph>controller-0</codeph> node with root
+                    privileges.</li>
+                <li>Identify the compute node with Niantic NIC and configure the node.
+                        <codeblock>system host-port-list &lt;compute-name> </codeblock><p>The
+                        Niantic NIC is displayed in the device column as <codeph>82599ES 10-Gigabit
+                            SFI/SFP+ </codeph>.</p><p>For
+                        example:<codeblock>system host-port-list tb4c1
++--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+
+| uuid                                 | name | type     | pci address  | device | processor | accelerated | device type                                    |
++--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+
+| c64c1a38-8583-4912-bb48              | eth0 | ethernet | 0000:04:00.0 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 93595f54-1125-4c4d-b1e9              | eth1 | ethernet | 0000:04:00.1 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| b51cfd2f-6986-44a2-bfba              | eth2 | ethernet | 0000:05:00.0 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 077ae91a-62df-4f82-a7bc              | eth3 | ethernet | 0000:05:00.1 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| cdfdc700-bf4b-4850-83c5              | eth4 | ethernet | 0000:08:00.0 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| fb3f8504-2dfd-4aec-8963              | eth5 | ethernet | 0000:08:00.1 | 0      | 0         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 8d49e7c4-b88f-4ada-969b              | eth6 | ethernet | 0000:81:00.0 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 318b6db3-2fa9-4a30-9ecd              | eth7 | ethernet | 0000:81:00.1 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 4e8f8a8f-18ad-4e40-bde8              | eth8 | ethernet | 0000:84:00.0 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
+| 8cc8cfb5-8794-451d-bf36              | eth9 | ethernet | 0000:84:00.1 | 0      | 1         | True        | 82599ES 10-Gigabit SFI/SFP+ Network Connection |
++--------------------------------------+------+----------+--------------+--------+-----------+-------------+------------------------------------------------+</codeblock></p></li>
+                <li>Use the following commands to configure the NIC interface for SR-IOV.<p>
+                        <codeblock>system host-lock &lt;compute-name>
+system host-if-modify -nt pci-sriov -N &lt;number-VFs> -p &lt;provider-network> &lt;compute-name> &lt;interface>
+system host-unlock &lt;compute-name></codeblock>
+                    </p><p>Where:<ul id="ul_znr_lqx_5t">
+                            <li><codeph>&lt;compute-name></codeph> is the compute node with the
+                                Niantic NIC</li>
+                            <li><codeph>&lt;number-VFs></codeph> is the number of VFs to use</li>
+                            <li><codeph>&lt;provider-network></codeph> is the physical network VLAN
+                                range presented to this port</li>
+                            <li><codeph>&lt;interface-name></codeph> is the name Niantic NIC</li>
+                        </ul></p>In this example, Ethernet interface <codeph>eth8</codeph> is
+                    assigned the network type SR-IOV, enabled to use 16 VFs, and configured as
+                    connected to provider network
+                    <codeph>physnet1</codeph>.<codeblock>system host-lock mem17-compute0
+system host-if-modify -nt pci-sriov -N 16 -p physnet1 mem17-compute0 eth8
+system host-unlock mem17-compute0</codeblock></li>
+            </ol>
+        </section>
+        <section>
+            <p><b>Create a Provider Network</b></p>
+            <p>Virtual machine instances (VMs) with SR-IOV interfaces require a VLAN provider
+                network that is managed by the HPE Networking Service (Neutron), not managed by HP
+                DCN VSD. Provider networks are the payload-carrying networks used implicitly by end
+                users when they move traffic over their tenant networks.
+                <!--2nd sentence from WR admin--></p>
+            <p>To create provider network: </p>
+            <ol id="ol_wvw_cyq_5t">
+                <li>Log into the KVM region <codeph>controller-0</codeph> node with root
+                    privileges.</li>
+                <li>Execute the following command to create the network:<p>
+                        <codeblock>neutron net-create &lt;network-name> --provider:network_type vlan --provider:segmentation_id &lt;segmentation_id&gt;  --provider:&lt;physical_network_name&gt;</codeblock>
+                    </p><p>Where:<ul id="ul_ydx_pzq_5t">
+                            <li><codeph>&lt;network-name></codeph> is the name of the network</li>
+                            <li><codeph>&lt;segmentation_id></codeph> is the VLAN ID</li>
+                            <li><codeph>&lt;physical_network_name></codeph> is name of the physical
+                                network over which the virtual network is implemented. </li>
+                        </ul></p><p>The following example creates a neutron provider network with
+                        VLAN ID 810 and uses
+                    <codeph>physnet1</codeph>:</p><pre>neutron net-create sriov-net-810 --provider:network_type vlan --provider:segmentation_id 810  --provider:physical_network physnet1</pre></li>
+                <li>Execute the following command to create a
+                    subnet:<codeblock>neutron subnet-create --name &lt;subnet-name> &lt;network-name> &lt;CIDR> --disable-dhcp --no-gateway  --allocation-pool start=&lt;IP_ADDR>,end=&lt;IP_ADDR></codeblock>
+                        Where:<ul id="ul_krk_m1r_5t">
+                        <li><codeph>&lt;subnet-name></codeph> is the name of the network or
+                            subnet</li>
+                        <li><codeph>&lt;CIDR></codeph> is the CIDR of subnet to create</li>
+                        <li><codeph>&lt;IP_ADDR></codeph> is the start and end allocation pool IP
+                            addresses for this subnet (This option can be repeated). </li>
+                    </ul><p>The following example creates a subnet for the network just
+                        created:<codeblock>neutron subnet-create --name subnet-810 hrushi-sriov-net-810 31.31.31.0/24 --disable-dhcp --no-gateway  --allocation-pool start=31.31.31.100,end=31.31.31.200 </codeblock></p></li></ol> </section>
+        <section><title>Launch a Virtual Machine</title><p>You can now crate virtual machine
+                instances using SR-IOV. There are two options to launch a VM using SRIOV: <ul
+                    id="ul_xvw_cyq_5t">
+                    <li><b>Option A</b> Create a neutron port with vNIC type direct and launch a VM
+                        using that port. See the example below: <p>
+                            <codeblock>neutron port-create &lt;network-name> --vnic-type direct
+nova boot &lt;vm-name> --image &lt;image-name> --flavor &lt;flavor-name> --nic port-id=&lt;port-uuid></codeblock>
+                        </p><p>Where:<ul id="ul_xnt_1tx_5t">
+                                <li><codeph>network-name</codeph> is the name of the network to
+                                    create the port</li>
+                                <li><codeph>vm-name</codeph> is the name of the virtual machine name
+                                    to create</li>
+                                <li><codeph>image-name</codeph> is the name of the image to use when
+                                    creating the VM (see <codeph>nova image-list</codeph>).</li>
+                                <li><codeph>flavor-name</codeph> is the name of the flavor to use
+                                    when creating the VM (see <codeph>nova
+                                    flavor-list</codeph>).</li>
+                                <li><codeph>port-uuid</codeph> is the UUID of the port to attach to
+                                    the NIC.</li>
+                            </ul></p><codeblock>neutron port-create 125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe --vnic-type direct
+nova boot sriov-fixed --image wrl --flavor 2 --nic port-id=abd5b42a-e8f5-4297-91ba-707c01195cc7 </codeblock></li>
+                    <li><b>Option B</b> Launch a VM with vif-model as <i>pci-sriov</i>. See the
+                        example below:
+                                <codeblock>nova boot &lt;vm-name> --image &lt;image-name> --flavor &lt;flavor-name> --nic port-id=&lt;port-uuid></codeblock><p><b>Example:</b></p><codeblock>nova boot sriov-vif-model --image wr-new --flavor m1.small --nic net-id=125e6f3c-e1aa-49c8-a20a-0ede67d9b6fe,vif-model=pci-sriov</codeblock></li>
+                </ul></p><p><b>NOTE:</b> The SR-IOV vNIC is not assigned an IP address
+                automatically. The IP will be provided through the ToR switch and orchestrated by
+                NFV-D. If you do not use the Orchestrator must manually assign IP. </p>Also see the
+                <xref
+                href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
+                format="pdf" scope="external">HP Helion OpenStack® Carrier Grade 2.0:
+                Administrator Guide</xref>.</section>
+
+
+        <p><b>Related links</b></p>
+        <p>For more information, see <xref
+                href="https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking"
+                format="html" scope="external">SR-IOV Passthrough for Networking</xref> in the
+            OpenStack wiki.</p>
+
+    </body>
+
+</topic>

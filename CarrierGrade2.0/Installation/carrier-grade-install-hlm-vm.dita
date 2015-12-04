@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Lifecycle
+    Manager and Installation Services</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+  </metadata>
+</prolog>
+<body id="hlm">
+    <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
+      bootstrapping the lifecycle manager VM and installation services. </p>
+    <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
+      required installation processes.</p>
+    <section><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
+        Grade maintains a local Debian repository on the KVM Host from where Debain packages are
+        installed. Before starting the installation, make sure the Debian files you <xref
+          href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded in the
+          Prerequisites</xref> are present in the repository: </p>Copy the following Debian packages
+      to the <codeph>/root/cg/dcn</codeph> directory. When you run the ansible-playbook command,
+      these files will be picked up and moved into the repository. <ul id="ul_wwn_13h_xt">
+        <li><xref href="carrier-grade-install-download.dita#topic7148/libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</xref></li>
+        <li><xref href="carrier-grade-install-download.dita#topic7148/setproc">python-setproctitle_1.1.8-1_amd64.deb</xref></li>
+      </ul></section>
+    <section id="prepare">
+      <title>Prepare the system for deployment</title>
+      <p>Use the following steps to prepare the server on which the lifecycle manager will be deployed (the KVM
+        Host):</p>
+      <ol>
+        <li>Log into the KVM Host using the default credentials</li>
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
+          environment. For information on each variable, refer to the comments in the file with each
+          variable. <p>The <codeph>group_vars/all</codeph> file should appear similar to the
+            following:</p><codeblock>############################################# Variables for HLM  #################################################################
+#These variables are relevant in both All Virtual and BareMetal scenarios.
+              
+#Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
+ovs_cloud_only:  0
+              
+#Set this to 'bm' if cloud is being deployed over baremetal.
+#Set this to 'av' if the cloud is all virtual
+cloud_type: 'bm'
+              
+#These are hlm related variables that must be changed according to your Baremetal Env
+hlm_login_id:       root
+hlm_password:       cghelion
+              
+#The following variables are for CLM network IP details for HLM
+hlm_clmstaticip:    10.x.x.x
+hlm_clmnetmask:     255.255.255.0
+hlm_clmgateway:     10.x.x.x
+              
+#The variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
+cobbler_pxestartip: 10.x.x.x
+cobbler_pxeendip:   10.x.x.x
+cobbler_pxestaticip: 10.x.x.x
+cobbler_pxenetmask: 255.255.255.0
+cobbler_hlinux_password: ohcanada 
+cobbler_web_password: cobbler  
+              
+#Set the location of your images that will be used by libvirt
+imagelocation: /var/lib/libvirt/images
+              
+#Set the location of your infra-ansible-playbooks
+ansible_dir: ~/infra-ansible-playbooks
+              
+##################################################################################################################################
+              
+############################################# Variables for DCN ##################################################################
+#Set the location of dcn bits on KVM
+#There must be 4 debs, 2 tar.gz files, 1 vsc qcow2
+#You must copy your VSD qcow2 to the imagelocation on the KVM if you want to provision it on the same KVM as the HLM
+dcn_dir: ~/cg/dcn
+##################################################################################################################################
+              
+############################################# Variables for VSD ##################################################################
+#Ignore these variables if VSD is created manually. This section is relevant only for DCN cloud - in both BM and All Virtual cases
+#These variables are used for VSD Configuration
+#If you have already configured a VSD and ignore the following variables
+              
+dns_domain_name: dcn-one.helion.cg
+dns_address: 10.x.x.x
+vsd_address: 10.x.x.x
+vsd_gateway: 10.x.x.x
+vsd_netmask: 255.255.255.0
+vsd_name: vsd1
+vsdimagename: VSD-3.0.0_HP_r3.0_36
+upstream_ntp_servers:
+- 10.x.x.x
+- 16.x.x.x
+###################################################################################################################################</codeblock></li>
+        <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter
+          the IP address of the <codeph>vibr0</codeph> interface in the
+            <codeph>hlm_kvm_host</codeph> field, as shown in the following example. </li>
+      </ol>
+      <codeblock>  [hlm_kvm_host]
+  192.168.122.1 </codeblock>
+    </section>
+    <section>
+      <title>Deploying the Ironic Patch</title>
+      <p>A YML file needs to be added to the <codeph>/root/infra-ansible-playbooks</codeph>
+        directory before running the ansible-playbook command. You should have downloaded the
+          <codeph>processtarball.yml</codeph> file <xref
+            href="carrier-grade-install-download.dita#topic7148/patches">in the Prerequisites</xref>. </p>
+      <p>Copy the <codeph>processtarball.yml</codeph> file to following location on HML
+        host:<codeblock>/root/infra-ansible-playbooks/roles/HLM-CFG/tasks/processtarball.yml</codeblock></p>
+    </section>
+    <section id="deploy-the-hlm-and-vsd-vm">
+      <title>Deploy the Lifecycle Manager Virtual Machine</title>
+      <p>Use the following steps on the KVM Host to deploy the lifecycle manager on the KVM Host using Ansible
+        playbooks.</p>
+      <ol>
+        <li>Execute the following command: <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock>
+          <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the KVM Host, decrypt, 
+            and extract the files.</li>
+            <li>Execute the <codeph>updatepackages</codeph> command.</li>
+            <li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul> GET WHAT THESE SCRIPTS DO AND UNCOMMENT-->
+          <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
+            <alt>Sample Ansible Playbook run output</alt>
+          </image></li>
+        <li>Locate the IP address for the lifecycle manager in the
+            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the KVM Host under
+          <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the lifecycle manager
+          VM during the HP Helion OpenStack Carrier Grade installation process.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Configure Networking for the Baremetal Region</title>
+      <p>If you are deploying the baremetal region, perform the following tasks:</p>
+      <p>
+        <ol id="ol_uvk_chg_vt">
+          <li>Execute the following command to add a BM-CTL route:
+              <codeblock>route add default gw &lt;ip-address> dev &lt;int></codeblock><p>Where
+                <codeph>&lt;ip-address></codeph> is the gateway and <codeph>&lt;eth></codeph> is the
+              Ethernet interface.</p><p>For
+              example:<codeblock>route add default gw 192.168.122.1 dev eth0</codeblock></p></li>
+          <li>Make sure that the vNet corresponding to eth0 is part of virbr0 bridge on the KVM
+            Host.</li>
+          <li>Verify that all iLO ips of the controller blades/DLs are pingable from KVM Host.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM
+          Region</xref></p>
+      <p/>
+    </section>
+  </body>
+</topic>

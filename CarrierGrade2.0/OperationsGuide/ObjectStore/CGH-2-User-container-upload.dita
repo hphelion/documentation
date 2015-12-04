@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1681">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Uploading and Downloading
+    Objects</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Object_Storage/1.1commercial.dashboard.container.upload.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/container/upload/--></p>
+<p>An object is the basic storage entity that represents a file you store in the OpenStack Object Storage system. When you upload data to OpenStack Object Storage, the data is stored as-is (no compression or encryption) and consists of a location (container), the object's name, and any metadata consisting of key/value pairs</p>
+<section id="uploading-an-object-into-a-container"> <title>Uploading an object into a container</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Project</b> dashboard, then the <b>Object Store</b> panel, then the
+            <b>Containers</b> tab. </li>
+<li>Select the container in which you want to store your object.</li>
+<li>Click <b>Upload Object</b>.</li>
+<li>The <b>Upload Object To Container: &lt;name&gt;</b> dialog box is displayed. &lt;name&gt; is the
+          name of the container to which you are uploading the object.</li>
+<li>Enter a name for the object.</li>
+<li>Browse to and select the file that you want to upload.</li>
+<li>Click <b>Upload Object</b> to confirm.</li>
+</ol>
+</section>
+<section id="downloading-objects-from-a-container"> <title>Downloading objects from a container</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Project</b> dashboard, then the <b>Object Store</b> panel, then the
+            <b>Containers</b> tab. </li>
+<li>Select the container from which you want to download the object.</li>
+<li>Click <b>Download</b> next to the object to download the file to your local drive.</li>
+</ol>
+</section>
+</body>
+</topic>

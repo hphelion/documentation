@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Apply the VSD License</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p><i>Return to installing the non-KVM region for the <xref
+      href="CGH-2-install-memphis.dita#topic10581/conref-vsd-license">memphis</xref> or <xref
+        href="CGH-2-install-sacramento.dita#topic10581/conref-vsd-license">sacramento</xref>
+        template.</i></p>
+    <p>You should have received a license file when you purchased DCN. You need to apply that
+      license on the KVM Host. If you do not have the license file, through the DCN post-sales
+      process, you received a confirmation email. Use a browser and go to the link in the email to
+      obtain the license.</p>
+    <section conref="carrier-grade-install-vsd-vm.dita#topic7646/vsd-apply-license"/>
+    <section>
+      <p><i>Return to installing the non-KVM region for the <xref
+        href="CGH-2-install-memphis.dita#topic10581/conref-vsd">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581/conref-vsd">sacramento</xref>
+          template.</i></p>
+    </section>
+  </body>
+</topic>

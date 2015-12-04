@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2685">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+<!-- From HP/WR OpenStack Summit press release  http://www.windriver.com/news/press/pr.html?ID=13261-->
+<p>HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack, the leading open
+      source cloud computing platform.</p>
+<p>HP Helion OpenStack Carrier Grade provides communications service providers (CSPs) with an open
+      source based cloud platform that meets their demanding reliability requirements.</p>
+<section id="installing-hp-openstack-carrier-grade"> <title>Installing HPE OpenStack Carrier Grade</title>
+<p>Use the following links to begin installing HPE OpenStack Carrier Grade:</p>
+<ul>
+<li>
+  <p><xref href="Installation/carrier-grade-install-overview.dita#topic1925"/>
+          </p>
+
+<p>Start with this document for complete instructions on how to install your HP Helion OpenStack
+            cloud, including system requirements, prerequisites, and deployment models</p>
+</li>
+</ul>
+</section>
+<section id="learnabout"> <title>Learning about HP Helion OpenStack Carrier Grade</title>
+<p>Use the following links to review some high-level overview information about HP Helion OpenStack
+        Carrier Grade:</p>
+<ul>
+<li>
+          <xref href="Overview/carrier-grade-overview.dita#topic4010" type="section" />
+        </li>
+        <li><xref href="CGHRelNotes/jow1404333830215.xml#topic6108"/></li>
+</ul>
+</section>
+<section id="getstart"> <title>Getting started with HP Helion OpenStack Carrier Grade</title>
+<p>Use the following links and tools to begin working with HP Helion OpenStack Carrier Grade:</p>
+<ul>
+        <li>
+          <p><xref
+              href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
+              format="pdf" scope="external">Administrator Guide</xref></p>
+          <p>The <xref href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+              Administrator Guide</xref> is addressed to HP Helion OpenStack Carrier Grade
+            administrators responsible for the following areas:</p>
+          <ul>
+            <li>
+              <p>Creating and maintaining resources used by end users (tenants), such as virtual
+                machines, storage pools, network objects, and access credentials.</p>
+            </li>
+            <li>
+              <p>Operating and maintaining components of the HP Helion OpenStack Carrier Grade
+                product, such as clusters, nodes, system software, licensing files, and backup and
+                restore facilities</p>
+            </li>
+          </ul>
+          <p>The Administer Guide also contains specific tasks, such as logging, backup/restore,
+            switch configuration, and configuring a multiple data center environment. </p>
+        </li>
+        <li><xref href="OperationsGuide/CGH-2-User-Overview.dita#jow1404333560080">Operations
+            Guide</xref><p>The Operations Guide introduces the Horizon interface with specific
+            information on how to use Horizon to operate HP Helion OpenStack Carrier Grade on a
+            day-to-day basis. </p></li>
+        <li><xref href="Overview/carrier-grade.services-overview.dita#topic4220">Services
+            Overview</xref>
+          <p>These topics describe the supported OpenStack Service and contain links to the
+            respective OpenStack CLI and API documentation.</p></li>
+        <li>
+          <xref href="API/carrier-grade-api.dita#topic15959">API and SDK Reference</xref>
+          <p>The API and SDK reference provides links to supported API and custom OpenStack API
+            extensions. The page also links to the HP Helion OpenStack Carrier Grade Software
+            Development Kit (SDK) documentation.</p></li>
+      </ul>
+</section>
+</body>
+</topic>

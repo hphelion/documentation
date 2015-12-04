@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1333">
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Working with Cluster Systems</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-clusters.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/clusters/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The HPE Helion OpenStack Carrier Grade cluster is represented internally by a unique object referred to as the system.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HPE Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Systems</b> tab.</p>
+</li>
+</ol>
+<p>Information about this object is available from the Systems tab on the System Inventory page, as illustrated below.</p>
+<p>By default, the name of the system object is its internal UUID, and it has no description. This can be changed from the <b>Edit Host</b> window, accessible by clicking <b>Edit System</b>.</p>
+<p>After committing the changes, the Systems tab is displayed with the updated information.</p>
+<p>The new name displays on the top left corner of the web management interface, and on the welcome message when logging in to the nodes using an SSH client.</p>
+<p>
+  <xref type="section" href="#topic1333"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

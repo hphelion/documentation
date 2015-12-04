@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic7148">
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
+                Prerequisites</title>
+        <titlealts>
+                <searchtitle>HP Helion OpenStack Carrier Grade Installation
+                        Prerequisites</searchtitle>
+        </titlealts>
+        <prolog>
+                <metadata>
+                        <othermeta name="layout" content="default"/>
+                        <othermeta name="product-version"
+                                content="HP Helion OpenStack Carrier Grade 2.0"/>
+                        <othermeta name="role" content="Storage Administrator"/>
+                        <othermeta name="role" content="Storage Architect"/>
+                        <othermeta name="role" content="Michael B"/>
+                        <othermeta name="product-version1"
+                                content="HP Helion OpenStack Carrier Grade 2.0"/>
+                </metadata>
+        </prolog>
+        <body>
+                <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148/prereqs"/>
+                <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                        id="conref-vmware-workaround"/>
+                <section id="next-step">
+                        <title>Next Step</title>
+                        <p><xref href="CGH-2-install-lifecycle-memphis.dita#topic10581">Deploying
+                                        the lifecycle manager</xref></p>
+                </section>
+        </body>
+</topic>

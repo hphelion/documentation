@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
+    Troubleshooting</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This topic describes all the known issues that you might encounter:</p>
+    <section>
+      <ul id="ul_xzh_nmc_mt">
+        <li><xref href="#topic10581/ansible-accelerate" format="dita"/></li>
+        <li><xref href="#topic10581/fail-apache" format="dita"/></li>
+        <li><xref href="#topic10581/fail-ntp" format="dita"/></li>
+        <li><xref href="#topic10581/install-fails" format="dita"/></li>
+        <li><xref href="#topic10581/vm" format="dita"/></li>
+        <li><xref href="#topic10581/vrs" format="dita"/></li>
+      </ul>
+    </section>
+    <section id="ansible-accelerate"><title>Installation fails due to Ansible errors</title><b>System
+        Behavior/Message</b><p>The installation fails during <codeph>hlm deploy</codeph>, and you
+        see any of the following errors:</p><p>
+        <ul id="ul_ill_x1d_f5">
+          <li>Any error with the following message: <codeph>Failed to launch the accelerated daemon
+              on 10.10.2.102 (reason: failed to connect to the local socket file) </codeph>. For
+            example:<codeblock>GATHERING FACTS *************************************************************** 
+fatal: [BASE-CCP-T1-M1-NETCLM] =&gt; Failed to launch the accelerated daemon on 10.10.2.102 (reason: failed to connect to the local socket file) 
+ok: [BASE-CCP-T1-M2-NETCLM] 
+ok: [BASE-CCP-T1-M3-NETCLM]</codeblock></li>
+          <li>Any error mentioning 10001 port</li>
+          <li>Any error that contains the <codeph>"OSError: [Errno 17] File exists:
+              '/root/.fireball.keys'"</codeph> string. For
+            example:<codeblock>fatal: [BASE-CCP-T1-M1-NETCLM] => Traceback (most recent call last): 
+. 
+. 
+. 
+OSError: [Errno 17] File exists: '/root/.fireball.keys'</codeblock></li>
+        </ul>
+      </p><p> These are errors internal to Ansible and are random in
+          occurrence.</p><p><b>Resolution</b></p><i><b>Secnario 1</b></i><p>If you experience one of
+        these errors on any tiers except the HP Helion OpenStack controller tiers (which is
+          <codeph>T1</codeph> in the Denver deployment and <codeph>T2</codeph> in Tahoe, Memphis and
+        Sacramento deployments), do the following:</p><p>
+        <ol id="ol_mmf_mbd_f5">
+          <li>Kill the ansible run if its still going on using <codeph>Ctrl C</codeph>.</li>
+          <li>Execute the following from the lifecycle manager to remove the Ansible accelerate
+            daemon, which runs on the
+            nodes:<codeblock>hlm deploy -c &lt;cloudname> -t accelerate-mode</codeblock></li>
+          <li>Execute the following command to restart the
+            installation:<codeblock>hlm deploy -c &lt;cloudname> -r</codeblock></li>
+        </ol>
+      </p><p><i><b>Secnario 2</b></i></p><p>If you hit this issue at the very beginning of the HP
+        Helion OpenStack controller tiers (which is <codeph>T1</codeph> in the Denver deployment and
+          <codeph>T2</codeph> in Tahoe, Memphis and Sacramento deployments), <b>before</b> the
+          <codeph>FND-MDB</codeph> or the <codeph>FND-RMQ</codeph> roles have run, do the
+        following:</p><ol>
+        <li>Kill the ansible run if its still going on using <codeph>Ctrl C</codeph>.</li>
+        <li>Execute the following from the lifecycle manager to remove the Ansible accelerate
+          daemon, which runs on the
+          nodes:<codeblock>hlm deploy -c &lt;cloudname> -t accelerate-mode</codeblock></li>
+        <li>Execute the following command to restart the
+          installation:<codeblock>hlm deploy -c &lt;cloudname> -r</codeblock></li>
+      </ol><p><i><b>Secnario 3</b></i></p><p>If you hit this issue at HP Helion OpenStack controller
+        tiers (which is <codeph>T1</codeph> in the Denver deployment and <codeph>T2</codeph> in
+        Tahoe, Memphis and Sacramento deployments), <b>after</b> the <codeph>FND-MDB</codeph> or the
+          <codeph>FND-RMQ</codeph> roles have run, follow the steps in Scenario 1.</p></section>
+    <section id="fail-apache"><title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the Reload
+        apache2 configuration task</title><p><b>System Behavior/Message</b></p><p>The installation
+        of HPE Helion OpenStack Carrier Grade (the hlm deploy command) fails, with the following
+        message:</p><p>
+        <codeblock>Job for apache2 service failed</codeblock>
+      </p><p><image href="../../media/CGH-2-trouble-apache-fail.png" id="image_qm3_51n_25"
+          width="600"/></p><b>Resolution</b><p>
+        <ol id="ol_uwf_hbn_25">
+          <li>Execute the following command on each controller to restart apache2:
+            <codeblock>service apache2 restart</codeblock></li>
+          <li>Execute the following command on the lifecycle manager to restart the
+            installation:<codeblock>hlm deploy -c &lt;cloud_name> -r"</codeblock></li>
+        </ol>
+      </p></section>
+    <section id="fail-ntp">
+      <title>HP Helion OpenStack Carrier Grade installation (hlm deploy) fails at the install ntp
+        client task</title>
+    </section>
+    <p><b>System Behavior/Message</b></p>
+    <p>The installation of HPE Helion OpenStack Carrier Grade (the hlm deploy command) fails, with
+      the following
+      message:<codeblock>TASK: [Install ntp client] ****************************************************
+Failed to launch the accelerated daemon on 10.200.187.105 (reason: failed to connect to the local socket file)
+FATAL: all hosts have already failed – aborting </codeblock></p>
+    <p><image href="../../media/CGH-2-trouble-ntp-fail.png" id="image_x5k_yxr_d5" width="600"/></p>
+    <p><b>Resolution</b></p>
+        <ol id="ol_ww5_ryr_d5">
+          <li>Execute the following command on all nodes that failed, to disable firewall:
+        <codeblock>ufw disable</codeblock></li>
+      <li>Execute the following from the lifecycle manager to remove the Ansible accelerate daemon,
+        which runs on the
+        nodes:<codeblock>hlm deploy -c &lt;cloudname> -t accelerate-mode</codeblock></li>
+      <li>Execute the following command to restart the
+        installation:<codeblock>hlm deploy -c b30 -r</codeblock></li>
+        </ol>
+    <section id="install-fails">
+      <title>Installation fails at Ansible playbook</title>
+      <p><b>System Behavior/Message</b></p>
+      <p>The HP Helion OpenStack Carrier Grade installation fails during the HLM deployment (after
+        executing the <codeph>ansible-playbook</codeph> command) with an error similar to the
+        following.</p>
+      <codeblock>
+TASK: [HLM-CREATE-ON-BM | Add hlm to the in-memory inventory of playbook] ***** 
+ok: [192.168.122.1] 
+PLAY [hlm] 
+********************************* GATHERING FACTS ***************************** 
+previous known host file not found 
+fatal: [192.168.122.240] => SSH encountered an unknown error during the connection. 
+We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue 
+TASK: [HLM-CFG | Delete existing interfaces file] 
+***************************** FATAL: no hosts matched or all hosts have already failed -- aborting 
+PLAY RECAP ******************************************************************** 
+to retry, use: --limit @/root/setup_hlm_onBM.retry 
+192.168.122.1 : ok=18 changed=8 unreachable=0 failed=0 
+192.168.122.240 : ok=0 changed=0 unreachable=1 failed=0</codeblock>
+      <p><b>Resolution</b></p>
+      <p>Perform the following steps:</p>
+      <ol id="ol_fqn_wqn_c5">
+        <li>Execute the following command to determine if the HLM VM was created:
+          <codeblock>virsh list –all</codeblock>If the HLM VM appears in the output, delete the VM
+          using the following
+          commands:<codeblock>virsh destroy hlm
+virsh undefined hlm</codeblock></li>
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/setup_hlm_onBM.yml</codeph> file to
+          comment the second role. The file contains two roles: the first one creates the VM and the
+          second one configures the VM.
+          <codeblock>hosts: hlm_kvm_host
+sudo: yes
+user: root
+roles:
+HLM-CREATE-ON-BM
+hosts: hlm
+#sudo: yes
+#user: root
+#roles:
+HLM-CFG</codeblock></li>
+        <li>Again, run the <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>.</li>
+        <li>After the command completes, execute the following command to obtain the vibr0 IP
+          address for the HLM<codeblock>arp | grep aa</codeblock>Copy the IP address you get in the
+          output. 192.168.122.XXX</li>
+        <li>Edit the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to add the vibr0 IP
+          address in the following manner:
+          <codeblock>[vsd]
+10.10.10.10 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
+        
+[hlm]
+192.168.122.240 ansible_ssh_user=root ansible_ssh_pass=cghelion
+        
+[hlm_kvm_host]
+192.168.122.1 #ansible_ssh_user=root ansible_ssh_pass=root</codeblock></li>
+        <li>Edit the <codeph>setup_hlm_onBM.yml</codeph> to comment-out the first role and
+          un-comment the second role.
+          <codeblock>hosts: hlm_kvm_host
+sudo: yes
+user: root
+roles:
+- HLM-CREATE-ON-BM
+hosts: hlm
+sudo: yes
+user: root
+roles:
+HLM-CFG</codeblock></li>
+        <li>Run <codeph>ansible-playbook –i hosts setup_hlm_onBM.yml</codeph>
+          <codeph>HCG-909</codeph></li>
+      </ol>
+    </section>
+    <section id="vm">
+      <title>VM fails to get private/Fixed IP address</title>
+      <p>
+        <b>System Behavior/Message</b>
+      </p>
+      <p>After <xref
+          href="../Installation/carrier-grade-install-config-dcn.dita#topic10581/vrsg-config"
+          >configuring the VRS-G</xref> during installation, the VRS-G VM is assigned with private
+        and floating IP ddress, when seen on the VSD dashboard. However, if you launch a console
+        session to the VM, there is no networking.</p>
+      <p>
+        <b>Resolution</b>
+      </p>
+      <p>Make sure the Glance image has the correct properties set. For example, check that the
+        adapter type is <codeph>ide</codeph>. Also, check if gateway and subnet values are correctly
+        assigned to VRSvAPPs. </p>
+    </section>
+    <section id="vrs">
+      <title>VRSvAPPs missing in VSD dashboard</title>
+      <p>
+        <b>System Behavior/Message</b>
+      </p>
+      <p>While performing basic verification of cloud deployment, the VRSvAPPs might not appear in
+        the VSD dashboard and the associated TUL addresses are not pingable from VRS-G node. </p>
+      <p>
+        <b>Resolution</b>
+      </p>
+      <p>This issue occurs if the VRSvAPP is not configured correctly. </p>
+      <p>Make sure all properties are populated corectly for the VRSvAPP VMs running in the ESX
+        environment. Make sure there is a one-to-one mapping between each ESX host and a
+        VRSvAPP.</p>
+    </section>
+    <section>
+      <title>See Also</title>
+      <p>For troubleshooting tips related to the HP Helion OpenStack cloud, see <xref
+          href="../../commercial/GA1/1.1commercial.troubleshooting.dita#topic2105">HP Helion
+          OpenStack 1.1: Troubleshooting</xref>.</p>
+    </section>
+  </body>
+</topic>

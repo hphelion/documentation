@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Non-KVM Region
+    Cloud in a Sacramento Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">lifecycle manager VM is
+        installed</xref>, the next task in installing the <xref
+        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
+        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
+      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
+      proxy. </p>
+    <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
+      region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
+      instructions. If you are installing a different deployment, disregard these instructions. </p>
+    <section id="conref-network"><title>HPE Distributed Cloud Networking
+        Requirements</title><p>Before starting the HPE Helion OpenStack Carrier Grade installation,
+        the VMware vSphere application and HPE Distributed Cloud Networking components must be fully
+        installed and functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud
+        Networking (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
+        documentation for details. </p><p>For a quick overview of the DCN components, see the
+        appropriate <xref href="carrier-grade-technical-overview.dita#topic3485">Deployment
+          Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
+        id="ul_hnw_pry_zs">
+        <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
+        <li>VSD should be deployed in HA mode (3+1 VSDs). </li>
+        <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
+            href="carrier-grade-technical-overview.dita#topic3485">architecture diagram</xref>.</li>
+        <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
+          commands. </li>
+        <li>Make sure all the VSD services are in PASS state.</li>
+        <li><xref href="#topic10581/conref-vsd-license" format="dita">Apply the VSD license</xref>
+          based on single or clustered VSD setup. </li>
+        <li><xref href="#topic10581/conref-admin-user" format="dita">Create the required VSD
+            users</xref>.</li>
+      </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
+          Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
+        record for <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to
+        the DCN documentation examples of <codeph>BIND</codeph> commands and instructions for
+        testing the DNS configuration, such as shown in the following example:</p><p><image
+          href="../../media/CGH-2-install-DNS-config.png" width="400" id="image_eyr_z5z_jt"
+      /></p>Make sure that reverse DNS resolution <b>is not enabled</b> the for xmpp Host
+          record:<p><image href="../../media/CGH-2-install-DNS-config-example.png" width="400"
+          id="image_ugq_rvz_jt"/></p></section>
+    <section id="conref-esx">
+      <title>ESXi requirements</title>
+      <p>ESX should be deployed before starting the cloud deployment. For more information, refer to
+        the VMware product documentation.</p>
+      <p>In production cloud deployments:</p>
+      <ul id="ul_ejv_35y_zs">
+        <li>ESX Cluster is installed and functional with external storage connected to all the hosts
+          that are part of ESX cluster</li>
+        <li>ESX Cluster with two (2) or more hosts installed with ESXi 5.5 U2 and above</li>
+        <li>ESX Cluster should have HA, DRS &amp; Vmotion Enabled</li>
+        <li>ESX Cluster should have Shared Storage</li>
+        <li>vCenter is working with the supported versions. One vCenter is
+          supported<!-- with HCG 2.0 Build#9-->.</li>
+        <li>The CLM and TUL networks must be available to all ESX hosts VMNICs</li>
+      </ul>
+      <p><b>ESX Network Configuration Requriements</b></p>
+      <p>In production cloud deployments, you will need to create the following three (3) port
+        groups.</p>
+      <ul id="ul_mdl_r5y_zs">
+        <li>Cloud Lab Management (CLM VLAN)</li>
+        <li>DVRS Datapath (TUL VLAN)</li>
+        <li>Trunk Network (All VLANS)</li>
+      </ul>
+      <p>The names are case sensitive.</p>
+      <p>In the VMware vCenter client, the port group list should appear as follows:</p>
+      <p><image href="../../media/CGH-install-ESX-ports.png" id="image_os2_2vy_zs"/></p>
+    </section>
+    <section id="conref-vmware">
+      <title>Deploy the VMware vSphere Distributed Switch</title>
+      <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
+        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581">Deploying
+          the VMware vSphere Distributed Switch</xref>. </p>
+    </section>
+    <section id="conref-vapp">
+      <title>Deploy the VRSvApp</title>
+      <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
+          href="CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p>
+    </section>
+    <section id="conref-vsd">
+      <title>Verify VSD is running</title>
+      <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
+        following command:</p>
+      <codeblock>service vsd status</codeblock>
+      <p>You should see the status as below from VSD VM.</p>
+      <p>
+        <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"/></p>
+    </section>
+    <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
+      license file when you purchased DCN. You need to apply that license on the KVM Host. For more
+      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
+    <section id="conref-admin-user">
+      <title>Create an OSadmin user for VSD</title>
+      <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581">Create an
+          OSadmin User for VSD</xref>.</p>
+    </section>
+    <section id="conref-hos-install">
+      <title>Launch the HPE Helion OpenStack cloud</title>
+      <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
+          href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the Lifecycle Manager VM
+          and Installation Services</xref>:</p>
+      <ol id="ol_ncd_wff_zt">
+        <li>Log into the lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where:
+            HLM_VM_IP is the CLM IP of the lifecycle manager. Locate the IP address for the
+            lifecycle manager in the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph>
+            file under <codeph>hlm_clmstaticip</codeph> field.</p><p>Use the default credentials: </p><p>
+            <codeblock>User Name: root
+Password: cghelion</codeblock>
+          </p><p><b>Important:</b> After logging in with the default password, make sure you change
+            the password for the <codeph>cghelion</codeph> user. </p><p><image
+              href="../../media/CGH-2-login-hlm.png" width="400" id="image_nnb_fyb_3t"/></p></li>
+        <li>Execute the following command to switch to the root
+          user:<codeblock>sudo su -</codeblock></li>
+        <li>Change to the home directory.<codeblock>cd ~</codeblock></li>
+      </ol>
+    </section>
+    <section id="conref-provision">
+      <title>Provision the new cloud</title>
+      <ol id="ol_kwm_c1k_zt">
+        <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
+            <codeblock>hlm define -t sacramento &lt;cloudname&gt;</codeblock><p>Where::
+              <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p>
+          <p id="cloudname">The cloud
+            name can be any combination of up to 40 digits, letters:<ul id="ul_lz5_rbf_bt">
+              <li>
+                <p>Cannot contain with the <codeph>-</codeph> character;</p>
+              </li>
+              <li>
+                <p>Must be greater than 0 characters;</p>
+              </li>
+              <li>
+                <p>No restriction on the number of letters or digits (0 or more).</p>
+              </li>
+            </ul></p><p>The command creates the <codeph>/var/hlm/clouds/&lt;cloudname></codeph>
+            directory, which contains several JSON template files. </p></li>
+      </ol>
+    </section>
+    <section id="conref-node-provision-json">
+      <title>Configure the node-provision JSON file</title>
+      <p>Modify the <codeph>node-provision.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
+        file supplies input values to the <codeph>hprovision</codeph> script, later in the
+        installation. </p>
+      <ol id="ol_ub2_xfl_zs">
+        <li>Change to the <codeph>&lt;cloudname&gt;</codeph>
+          directory:<codeblock>cd /var/hlm/clouds/&lt;cloudname&gt;</codeblock></li>
+        <li>Edit <codeph>node-provision.json</codeph> file to change only the following fields:
+            <table id="table_i3b_mgf_zt">
+            <tgroup cols="2">
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Field</entry>
+                  <entry colsep="1" rowsep="1">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Pxe-mac-address</entry>
+                  <entry>Specify the MAC address of the interface you want to PXE boot onto. This is
+                    not same as iLO* MAC address.</entry>
+                </row>
+                <row>
+                  <entry>pm_ip</entry>
+                  <entry>Specify the power management IP address (iLO IP address).</entry>
+                </row>
+                <row>
+                  <entry>pm_user</entry>
+                  <entry>Create a power management user name (iLO user name).</entry>
+                </row>
+                <row>
+                  <entry>pm_pass</entry>
+                  <entry>Create a power management password (iLO password).</entry>
+                </row>
+                <row>
+                  <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
+                  <entry>The values in these fields are added to the <codeph>nodes.json</codeph>
+                    file used during cloud deployment. </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table><p>*iLO is HPE Integrated Lights-Out, a server management tool embedded with the
+            ProLiant servers. Consult your iLO documentation for information on how to locate the
+            iLO IP address, user name, and password.</p></li>
+        <li>Save and close the file.</li>
+      </ol>
+    </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-node-json-sac.dita">sample
+        node-provision.json file</xref>.</p>
+    <section id="conref-pxe-boot">
+      <title>Configure PXE boot</title>
+      <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE
+        boot on the servers to set the correct boot order. Execute the following on the lifecycle
+        manager:</p>
+      <ol id="ol_d5m_dhf_zt">
+        <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
+            <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the
+            <codeph>&lt;cloudname></codeph> directory where you have the
+            <codeph>node-provision.json</codeph> file.</li>
+        <li>Execute the following script:
+          <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
+      </ol>
+      <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to
+          <codeph>Network Device 1</codeph> on all the servers listed in
+          <codeph>node-provision.json</codeph> file.</p>
+    </section>
+    <section id="conref-json">
+      <title>Configuring JSON files</title>
+      <p>The process for installing the HP Helion OpenStack Carrier Grade deployments requires
+        several JSON files that will be used when deploying the lifecycle manager.</p>
+      <p>The following sections details the files that need to be configured and contain sample JSON
+        files that can be copied and pasted into your environment.</p>
+      <p><b>Important:</b> Do not store backup of the JSON files inside your cloud directory or any
+        where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create a backup folder
+        on <codeph>/root/</codeph> directory or on a remote system. <!--HCG-681--></p>
+    </section>
+    <section id="conref-def-json">
+      <title>Configure the definition.json file</title>
+      <p>Modify the <codeph>definition.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to
+        define the number of ESX compute proxies required in your environment. You need one proxy
+        per vCenter; make sure this value is set to
+        2<!--set this value to the number of vCenters you have.-->, as shown in the following
+        example.</p>
+      <p>
+        <ol id="ol_zzr_khl_zs">
+          <li>Set the <codeph>count</codeph> value to 2 for an HA installation under <codeph>control
+              planes</codeph>.<codeblock>"control-planes": [
+        {
+            "file": ".hos/ccp-dcn-esx.json",
+            "resource-nodes": [
+                {
+                    "file": ".hos/ccp-cpx.json",
+                    "count": 2
+                },
+                {
+                    "file": ".hos/ccp-vrsg.json",
+                    "count": 1
+                }
+ 
+            ]
+        }
+    ]</codeblock></li>
+        </ol>
+      </p>
+    </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-def-json-sac.dita">sample
+        definition.json file</xref></p>
+    <section id="conref-env-json">
+      <title>Configure the environment.json file</title>
+      <p>Modify the <codeph>environment.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager to
+        configure the VLANs and network addresses as appropriate for your environment. Configure the
+        CLM (management), CAN (api), and BLS (blockstore) networks.</p>
+      <p>
+        <ul id="ul_smq_yqt_bt">
+          <li>
+            <p>For each network provide: </p>
+            <codeblock>{
+              "name": "management",
+              "type": "vlan",
+              "segment-id": "1551",
+              "network-address": {
+              "cidr": "10.x.x.x/24",
+              "start-address": "10.x.x.x",
+              "gateway": "10.x.x.x"
+              }
+              },        </codeblock>
+            <p><b>Note:</b> In the example, the IP addresses are masked for security purposes. Use
+              values appropriate for your environment.</p>
+          </li>
+        </ul>
+      </p>
+    </section>
+    <p>To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul
+        id="ul_eln_vcl_25">
+        <li><xref href="carrier-grade-install-kvm-env-json-sac.dita">For an Unbonded NIC
+            Environment</xref></li>
+        <li><xref href="carrier-grade-install-kvm-env-json-bonded-sac.dita#topic4797">For a Bonded
+            NIC Environment</xref></li>
+      </ul></p>
+    <section id="conref-ansible-json">
+      <title>Configure the ansible.json file</title>
+      <p>Modify the <codeph>ansible.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
+        manager.</p>
+    </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-sac.dita">a sample
+        ansible.json file</xref>.</p>
+    <section id="conref-esx-json">
+      <title>Configure the esx.json file</title>
+      <p>Modify the <codeph>esx.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory on the lifecycle manager.
+        This file is called by the script that installs the HPE Helion OpenStack cloud, later in the
+        installation. </p>
+    </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-esx-json-sac.dita">sample esx.json
+        file</xref>.</p>
+    <section id="conref-ldap-json">
+      <title>Configure the ldap.json file</title>
+      <p>Modify the <codeph>ldap.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
+        manager.</p>
+    </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ldap-json-sac.dita">sample
+        ldap.json file</xref>. </p>
+    <section id="conref-dcn-json">
+      <title>Configure the dcn.json file</title>
+      <p>Modify the <codeph>dcn.json</codeph> file in the
+          <codeph>/opt/share/hlm/1/site/services/dcn.json</codeph> directory of the lifecycle
+        manager to remove <b>both</b> instances of the following code:
+        <codeblock>      {
+          "description": "Ingress 47 GRE",
+          "firewall": {
+            "direction": "in",
+            "protocol": "gre"
+            },
+           "port": 47,
+            "scope": "private"
+      },    </codeblock></p>
+    </section>
+    <section id="conref-ccp-dcn-esx-json">
+      <title>Configure the ccp-dcn-esx.json file</title>
+      <p>Modify the <codeph>member-count</codeph> field in the <codeph>ccp-dcn-esx.json</codeph> in
+        the <codeph>/var/hlm/clouds/&lt;cloudname&gt;/.hos/</codeph> directory of the lifecycle
+        manager. Make sure the <codeph>member-count</codeph> field in the <codeph>tiers</codeph>
+        section is set to <b>1</b> as shown:</p>
+      <p><!--By default it will be “2”, change to “1” for Build#15.--></p>
+      <codeblock>"tiers": [
+  {
+    "id": "1",
+    "member-count": 1,      </codeblock>
+    </section>
+    <section id="conref-wr-json">
+      <title>Configure the wr.json file</title>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
+        lifecycle manager.</p>
+    </section>
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-sac.dita">a sample wr.json
+        file</xref>. </p>
+    <section id="conref-mach-json">
+      <title>Configure the machine_architecture.json file</title>
+      <p><b>For bonded NIC environments</b>, modify the <codeph>machine_architecture.json</codeph>
+        file in the <codeph>/opt/share/hlm/1/site/</codeph> directory of the lifecycle manager to
+        fit your hardware model. You have to gather the correct PCI SLOT INFO and add ports
+        accordingly on the hardware slots or cards used for networking.</p>
+      <p>Click here to see a  <xref
+          href="carrier-grade-install-kvm-machine-json-bonded.dita#topic4797">sample
+          machine_architecture.json file</xref>.</p>
+    </section>
+    <section>
+      <title>Configure the ironic.json file</title>
+      <p>Modify the <codeph>ironic.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory to set
+          <codeph>ignore_tenant_network</codeph> to <codeph>True</codeph>. Where
+          <codeph>&lt;cloudname></codeph> is the name of your
+        cloud.<codeblock>{
+  "product": {
+        "version": 1
+  },
+
+  "property-groups": [
+    {
+       "name": "ironic-vars",
+       "properties": {
+         "ignore_tenant_network" : "False"
+       }
+    }
+  ]
+}</codeblock></p>
+    </section>
+    <section>
+      <title>Configure the neutron-bm.json file</title>
+      <p>Modify the <codeph>neutron-bm.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory to to specify networking
+        information. Where <codeph>&lt;cloudname></codeph> is the name of your cloud.</p>
+      <p>
+        <codeblock>{
+  "product": {
+        "version": 1
+  },
+
+  "property-groups": [
+    {
+       "name": "neutron-vars",
+       "properties": {
+         "switch_channel_timeout": "180",
+         "vlan_range": "330:339",
+         "bm_interface": "eth1",
+         "prov_network": {
+            "vlan": "330",
+            "cidr": "192.168.150.0/24",
+            "ip_start_address": "192.168.150.50",
+            "ip_end_address": "192.168.150.200",
+            "ip_gateway": "192.168.150.1"
+          }
+       }
+    }
+  ]
+}</codeblock>
+      </p>
+    </section>
+    <section id="conref-verify-json">
+      <title>Verify the JSON files</title>
+      <p>After editing the JSON files, validate each JSON file to make sure there are no syntax
+        errors using the tool of your preference. For example, using the Python json.tool: </p>
+      <codeblock>python -m json.tool &lt;filename>.json</codeblock>
+    </section>
+    <section id="conref-esx-proxy">
+      <title>Configure the ESX Compute Proxy</title>
+      <p>The HPE Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a
+        driver that enables the Compute service to communicate with a VMware vCenter server. The HPE
+        Helion OpenStack Compute Service (Nova) requires this driver to interface with VMware ESX
+        hypervisor APIs. You can download the proxy installation files from the <xref
+          href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+          scope="external">Helion Download Network</xref>.
+        <!-- Review with Michael Duncan all JSON files and proxy re: bonded set up --></p>
+      <p>For instructions on installing the ESX compute proxy, see <xref
+          href="carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX Compute
+        Proxy</xref>.</p>
+    </section>
+    <section id="conref-vmware-workaround">
+      <title>Deploy the vmWare Installation Workaround</title>
+      <p>During the installation process, when powering on the ESX Compute Proxy VM, you might
+        receive a <codeph>VMK_NO_MEMORY</codeph> error. This is a known problem with HP server and
+        ESXi 5.x. To prevent this issue, you need to upgrade the version of the HP Agentless
+        Management Service (AMS) that comes with the HP servers. </p>
+      <p>For more information, see <xref href="CGH-2-install-vmware-workaround.dita#topic10581"
+          >vmWare Installation Workaround</xref>.</p>
+    </section>
+    <section id="cobbler">
+      <title>Deploy the Randomize Cobbler Password Patch </title>
+      <p>Cobbler is a build and deployment system that the HP Helion OpenStack Carrier Grade
+        installation process uses. For security, you must generate a random password that will be
+        passed to the installation process, rather than entering an explicit password through the
+          <codeph>group_vars/all</codeph> file.</p>
+      <p>You downloaded the patch file, <codeph>knc-cobbler-random.patch</codeph>, during the
+        prerequisites.</p>
+      <p>
+        <ol id="ol_cqf_s4k_f5">
+          <li>Copy the patch file to the <codeph>~/</codeph> directory. </li>
+          <li>Change to the ~/cg-hlm directory: <codeblock>cd ~/cg-hlm</codeblock></li>
+          <li>Execute the following command to deploy the patch:
+            <codeblock>patch -p1 -b &lt; ../cg-hlm-cobbler-random.patch</codeblock></li>
+          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
+            directory:<codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
+          <li>Execute the following
+            command:<codeblock>./hlm_initcobbler.sh 192.168.100.2 255.255.255.0 192.168.100.100 192.168.100.200 </codeblock>or
+            something similar if PXE network is different. </li>
+          <li>Execute the following command: <codeblock>./hlm_importiso.sh</codeblock></li>
+          <li>Change to the <codeph>~/kenobi-node-configuration</codeph>
+            directory:<codeblock>cd ~/kenobi-node-configuration </codeblock></li>
+          <li>Execute the following
+            command:<codeblock>patch -p1 -b &lt; ../knc-cobbler-random.patch </codeblock></li>
+          <li>Chnage to the <codeph>~/cg-hlm/hlm-build</codeph> directory:
+            <codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
+          <li>Execute the following command to integrate the changes into the
+            environment:<codeblock>./hlm_prepare-env.sh</codeblock></li>
+        </ol>
+      </p>
+      <p>The root user can retrieve the randomized password in the
+          <codeph>/var/hlm/clouds/.cobbler</codeph> file.</p>
+    </section>
+    <section id="conref-create-cloud">
+      <title>Provision the cloud nodes and bring the cloud nodes up</title>
+      <ol id="ol_f1b_cmf_zt">
+        <li>On the lifecycle manager, use the following script to start the provisioning of the HPE
+          Helion OpenStack cloud:
+            <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
+              <codeph>&lt;cloudname></codeph> is the name of the cloud you created. The script takes
+            approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers for
+            the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux operating
+            system. The script also PXE boots the nodes specified in
+              <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process.
+            The script also creates the <codeph>nodes.json</codeph> file in the directory.
+            </p><p>You can log in to the iLO server management tool for each of the nodes to monitor
+            the boot process. Consult yout iLO documentation for information on how to log into iLO.
+          </p></li>
+        <li>Make sure the nodes are booted up using iLO. For example:<p><image
+              href="../../media/CGH-2-install-cobbler.png" width="600" id="image_c5k_d4b_kt"
+          /></p>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph>
+          file is generated. The <codeph>nodes.json</codeph> file will have entries for your
+            environment:<ul id="ul_zyc_b4k_zt">
+            <li>Denver: 3 controllers;</li>
+            <li>Tahoe: 3 controllers, 1 DCN Hosts;</li>
+            <li>Memphis: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
+            <li>Sacramento: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
+          </ul></li>
+        <li>Verify that each node in the <codeph>nodes.json</codeph> file is installed and active.
+            <ol id="ol_g1b_cmf_zt">
+            <li>Ping proxy node from lifecycle manager with the IP using IP specified in
+                <codeph>nodes.json</codeph> file.</li>
+            <li>SSH to the compute proxy node from the lifecycle manager using IP specified in
+                <codeph>nodes.json</codeph> file.</li>
+          </ol></li>
+      </ol>
+    </section>
+    <section id="conref-back-end">
+      <title>Configure the back-end drivers</title>
+      <p>Configure the back-end drivers to enable management of the OpenStack Block Storage volumes
+        on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HPE Block Storage
+        (Cinder) service allows you to configure multiple storage back-ends. Use the following steps
+        to configure back-end support:</p>
+      <ol id="ul_btr_l52_xs">
+        <li>Change to the <codeph>/cinder/blocks</codeph> directory:
+          <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
+            <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
+          contains several sample Cinder configuration files that you can edit, depending upon which
+          storage method(s) you are using.</li>
+        <li>Depending upon the type of storage you are using, edit the
+            <codeph>cinder_conf.multiBackendSample</codeph> file. This sample file provides all the
+          variables needed to use ESX in the non-KVM region and HPE StoreVirtual VSA and/or HPE
+          StoreServ (3PAR) attched to the KVM region.<p>Use the <codeph>enabled_backends</codeph>
+            variable to list each of the back-ends you are using. You must specify at least one
+            back-end for the non-KVM region and one or more for the KVM region.</p><table
+            id="backend">
+            <tgroup cols="3">
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Region/Hypervisor</entry>
+                  <entry colsep="1" rowsep="1">Volume Backend</entry>
+                  <entry colsep="1" rowsep="1">Backend Name</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>KVM</entry>
+                  <entry>3PAR </entry>
+                  <entry>hp3par</entry>
+                </row>
+                <row>
+                  <entry>KVM</entry>
+                  <entry>VSA</entry>
+                  <entry>hplefthand</entry>
+                </row>
+                <row>
+                  <entry>Non-KVM </entry>
+                  <entry>ESX Datastores</entry>
+                  <entry>vmdk </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select both
+            if you have respective storage arrays </p><p id="storage">A typical
+              <codeph>cinder_conf</codeph> that enables all three back ends appears similar to the
+            following
+          example:</p><codeblock>[DEFAULT]
+enabled_backends=vmdk, hp3par, hplefthand
+...                                
+          
+[hp3par]
+volume_backend_name=&lt;mybackendname1>
+hp3par_api_url=https://&lt;management_ip>:8080/api/v1
+hp3par_username=&lt;username>
+hp3par_password=&lt;password>
+hp3par_cpg=&lt;cpg>
+san_ip=&lt;san_ip>
+san_login=&lt;username>
+san_password=&lt;password>
+hp3par_iscsi_ips=&lt;iscsi_target_ips seperated by ,>
+volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
+hp3par_debug=False
+hp3par_iscsi_chap_enabled=false
+hp3par_snapshot_retention=48
+hp3par_snapshot_expiration=72
+                            
+[hplefthand]
+volume_backend_name=&lt;mybackendname2>
+hplefthand_username = &lt;username>
+hplefthand_password = &lt;password>
+hplefthand_clustername = &lt;Cluster Name>
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos 
+volume_driver = cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver
+hplefthand_debug = false
+
+[vmdk]
+volume_backend_name = &lt;mybackendname3>
+vmware_host_ip = &lt;hostip>
+vmware_host_username = &lt;username>
+vmware_host_password = &lt;password>
+#vmware_volume_folder = &lt;volumes_folder>
+#vmware_image_transfer_timeout_secs = 7200
+#vmware_task_poll_interval = 0.5
+#vmware_max_objects_retrieval = 100
+volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock></li>
+        <li>Save the file to <codeph>cinder_conf</codeph>.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Configure baremetal node ports into access mode</title>
+      <p>Ensure that the switch ports connected to baremetal instance nodes are in access mode. This
+        is a pre-requisite before provisioning baremetal instances. </p>
+      <p>The following example assumes you are using an HP FlexFabric 5930 Switch:
+        <codeblock>system-view
+interface &lt;interface-name&gt; &lt;port&gt;
+port link-type access 
+save force quit 
+quit </codeblock></p>
+      <p><b>Example:</b></p>
+      <codeblock>&lt;FTC-R146340-5930A&gt;system-view
+System View: return to User View with Ctrl+Z.
+[FTC-R146340-5930A]interface Ten-GigabitEthernet 1/0/9:4
+[FTC-R146340-5930A-Ten-GigabitEthernet1/0/9:4]port link-type access
+[FTC-R146340-5930A-Ten-GigabitEthernet1/0/9:4]save force
+Validating file. Please wait...
+Saved the current configuration to mainboard device successfully.
+[FTC-R146340-5930A-Ten-GigabitEthernet1/0/9:4]quit
+[FTC-R146340-5930A]quit
+&lt;FTC-R146340-5930A&gt;</codeblock>
+    </section>
+    <section id="ironic-patch"><title>Deploy the Baremetal Region (Ironic) Patch</title><p>After HP
+        Helion OpenStack Carrier Grade is fully deployed, there were occasions where the Compute
+        (Nova) service was down on some controllers in the Baremetal region. After restarting, the
+        service would still not come up or would come up for a short time before going down. It was
+        determined that the baremetal controllers were configured to use the guest account with the
+        Nova service, not the <codeph>nova</codeph> user. <!--HCG-941--></p>You should have
+      downloaded the following patch files during the prerequisites:<ul id="ul_awq_db1_f5">
+        <li>haproxy-FND-RMQ-BAR-VIP.patch</li>
+        <li>kenobi-config-proc-rmb-bar.patch</li>
+        <li>kenobi-node-config-rmb-bar.patch</li>
+      </ul><p>The README with the patch download contains information on files changed by these
+        patches.</p><p>To prevent this condition, execute the following commands:<ol
+          id="ol_imr_fgt_25">
+          <li>Copy the patch file to  <codeph>~/</codeph> on the lifecycle manager. </li>
+          <li>Change to the kenobi-configuration-processor
+            directory:<codeblock>cd ~/kenobi-configuration-processor </codeblock></li>
+          <li>Execute the following command to install the first patch:
+            <codeblock>patch -p1 &lt; ../kenobi-config-proc-rmb-bar.patch</codeblock></li>
+          <li>Change to the kenobi-node-configuration
+            directory:<codeblock>cd ~/kenobi-node-configuration</codeblock></li>
+          <li>Execute the following command to install the second patch
+            <codeblock>patch -p1 &lt; ../haproxy-FND-RMQ-BAR-VIP.patch </codeblock></li>
+          <li>Execute the following command to install the third patch
+            <codeblock>patch -p1 &lt; ../kenobi-node-config-rmb-bar.patch </codeblock></li>
+          <li>Execute the following command to integrate the changes into the
+            environment:<codeblock>hlm_prepare-env.sh</codeblock>When you execute the <codeph>hlm
+              generate</codeph> command is executed, the changes will be included. </li>
+        </ol></p></section>
+    <section id="conref-config-proc">
+      <title>Deploy the HPE Helion OpenStack cloud</title>
+      <ol id="ol_bst_mmf_zt">
+        <li>Run the HPE Helion OpenStack Carrier Grade configuration processor:
+            <codeblock>hlm generate –c &lt;cloudname&gt;</codeblock><p>This command runs the
+            configuration processor, a script (<codeph>hcfgproc</codeph>) that is incorporated into
+            the installation environment. This command generates the necessary configuration for the
+            cloud. </p><p><image href="../../media/CGH-2-install-proc-done.png" width="600"
+              id="image_sqd_rpb_kt"/></p><p>When the command completes, you will see the following:
+            message:</p><codeblock>#################################################################################
+The cloud &lt;cloudname> was generated successfully.
+################################################################################</codeblock><p>To
+            view the complete output of the command, see <xref
+              href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
+              command</xref>.</p></li>
+        <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
+            <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
+          correct.</li>
+        <li>Initialize network interfaces on all the cloud nodes using the following command:
+            <codeblock>hlm netinit –c &lt;cloud name&gt;</codeblock><p>Where:
+              <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>After
+            this command completes, all cloud nodes and CLM network interfaces are configured. The
+            output for the command should appear similar to the following:</p><p><image
+              href="../../media/CGH-2-install-hnetinit-output.png" id="image_tft_r11_1t" width="400"
+            /></p><p>The <codeph>hlm netinit</codeph> command also runs a ping on the cloud nodes.
+              </p><p><image href="../../media/CGH-2-install-hnetinit-ping.png" width="300"
+              id="image_qrd_3gw_rt"/></p></li>
+      </ol>
+    </section>
+    <section id="conref-hdeploy">
+      <title>Deploy HPE Helion OpenStack</title>
+      <ol id="ol_jxp_dnf_zt">
+        <li>Use the following command to deploy the HPE Helion OpenStack cloud:
+            <codeblock>hlm deploy –c &lt;cloudname&gt;</codeblock><p>This command takes a
+            significant period of time. When this command is complete, the non-KVM cloud
+            installation is complete. Use the following sections to configure the Horizon interface,
+            configure networking, and configure the ESX environment. </p></li>
+        <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
+      </ol>
+    </section>
+    <section id="conref-ldap-keystone">
+      <title>Configure LDAP to enable CLI and use Keystone v3</title>
+      <p>By default, the HPE Helion OpenStack Carrier Grade services are configured to use Keystone
+        v2 authorization. The services need to be modified to use Keystone v3. Users will not be
+        able to execute OpenStack CLI commands until the specific changes are made on all three
+        controller nodes in the non-KVM region. </p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581"
+          >Configuring LDAP CLI Support</xref></p>
+    </section>
+    <section id="conref-vsc-vm">
+      <title>Verify the VSC VMs</title>
+      <p>The installation process creates virtual machines for VSC. Use the following steps to
+        verify that the VSC VMs are installed and are operational:</p>
+      <ol id="ol_fkv_xjj_1t">
+        <li>SSH to your VSC VM from KVM Host using the DCM IP. The default username and password:
+            <codeph>admin/admin</codeph><p>
+            <codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock>
+          </p></li>
+        <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
+        <li>Execute the following commands to verify the VMs are active:
+          <codeblock>show vswitch-controller vsd
+show vswitch-controller xmpp-server
+ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
+      </ol>
+    </section>
+    <section id="conref-vrs-g"><title>Verify the VRS-G Node</title> The installation creates a VRS-G
+      node as part of the cloud deployment. Use the following command to verify that the VRS-G is
+      active: <codeblock>show vswitch-controller vswitches  </codeblock><p>The output for the
+        command should appear similar to the following image:</p>
+      <image href="../../media/CGH-2-verify-vrsg-alpha.png" width="400" id="image_ip4_jnq_nt"/>
+      <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
+      <p>Verify that the domain name and DNS server are listed in the
+          <codeph>/etc/resolv.conf</codeph> file on all the cloud
+        nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><p/><image
+        href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
+        <alt>Verify VRS-G </alt>
+      </image></section>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is
+        an optional component that integrates with the OpenStack Neutron networking service, to
+        provide IP Address Management (IPAM) networking services within OpenStack cloud platforms. </p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+          Interface</xref>. Launch the Horizon interface to load a required security certificate and
+        test the non-KVM deployment.
+        <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
+      </p>
+    </section>
+  </body>
+</topic>

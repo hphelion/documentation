@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1404333563834" xml:lang="en-us">
+
+
+    <title>Linux User Accounts</title>
+
+
+    <shortdesc>Linux user accounts are available on all hosts for administration, operation, and
+        general hosting purposes. They have no relation with the cloud user tenant accounts created
+        using the web management interface, the CLI commands, or the APIs.</shortdesc>
+
+
+    <prolog>
+
+
+        <author>Pedro Sanchez</author>
+
+
+        <author>Jim Owens</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <p>You can log in remotely as a Linux user by using an SSH connection and specifying the OAM
+            floating IP address as the target. This establishes a connection to the currently active
+            controller. If the OAM floating IP address moves from one controller node to another,
+            the SSH session is blocked. To ensure access to a particular controller regardless of
+            its current role, specify the controller physical address instead.</p>
+
+
+        <section id="section_N10025_N1001D_N10001">
+            <title>The wrsroot Account</title>
+            <p>This is a local, per-host, account created automatically in the KVM region when a new
+                host is provisioned. On controller nodes, this account is available even before the
+                    <b>region_config</b> script is executed during the installation. </p>
+            <p>The default initial password is <b>wrsroot</b>.</p>
+            <ul id="ul_aqh_b41_pq">
+
+
+                <li>
+                    <p>The initial password must be changed immediately when you log in to
+                            <b>controller-0</b> for the first time. For details, see <xref
+                            href="http://docs-staging.hpcloud.com/DRAFT/#CarrierGrade/Installation/carrier-grade-install-pb-overview.html"
+                            format="html" scope="external">Installing HPE Helion OpenStack Carrier
+                            Grade</xref>..</p>
+                </li>
+
+
+                <li>
+                    <p>After five consecutive unsuccessful login attempts, further attempts are
+                        blocked for about five minutes.</p>
+                </li>
+
+
+            </ul>
+            <p>Subsequent password changes must be executed on the active controller to ensure that
+                they propagate to all other hosts in the cluster. Otherwise, they remain local to
+                the host where they were executed, and are overwritten on the next reboot to match
+                the password on the active controller.</p>
+            <p>From the <b>wrsroot</b> account, you can execute commands requiring different
+                privileges.</p>
+            <ul id="ul_hlh_f2c_5p">
+
+
+                <li>
+                    <p>You can execute non-root level commands as a regular Linux user directly.</p>
+                    <p>If you do not have sufficient privileges to execute a command as a regular
+                        Linux user, you may receive a permissions error, or in some cases, the
+                        command may be reported as not found.</p>
+                </li>
+
+
+                <li>
+                    <p>You can execute root-level commands as the <b>root</b> user.</p>
+                    <p>To become the root user, use the <i>sudo</i> command to elevate your
+                        privileges, followed by the command to be executed. </p>
+                    <p>If a password is requested, provide the password for the <b>wrsroot</b>
+                        account.</p>
+                </li>
+
+
+                <li>
+                    <p>You can execute OpenStack administrative commands as the Keystone
+                            <b>admin</b> user. </p>
+                    <p>Source the script <filepath>/etc/nova/openrc</filepath> while working on the
+                        active controller to acquire Keystone administrative privileges.</p>
+                    <codeblock><systemoutput>$ </systemoutput><userinput>source /etc/nova/openrc</userinput>
+
+
+<systemoutput>[wrsroot@controller-0 ~(keystone_admin)]$ </systemoutput></codeblock>
+                    <p>The system prompt changes to indicate the new acquired privileges.</p>
+                    <note id="note_N100F4_N100C7_N1007A_N1002A_N10022_N10001">
+                        <p>The default Keystone prompt includes the host name and the current
+                            working path. For simplicity, this guide uses the following generic
+                            prompt instead:</p>
+                        <codeblock><systemoutput>~(keystone_admin)$ </systemoutput></codeblock>
+                    </note>
+                </li>
+
+
+            </ul>
+        </section>
+
+
+        <section id="section_N10094_N1001D_N10001">
+            <title>Local User Accounts</title>
+            <p>You can manage regular Linux user accounts on any host in the cluster using standard
+                Linux commands. New accounts created on one host are not automatically propagated to
+                other hosts. </p>
+            <p>Password changes are not enforced automatically on first login, and they are not
+                propagated by the system (with the exception of the <b>wrsroot</b> account, for
+                which passwords changed on the active controller are propagated to other hosts.) Any
+                special considerations for these accounts, if any, must be configured manually.</p>
+            <p>Local user accounts can be added to the <term>sudoers</term> list using the
+                    <i>visudo</i> command. They can also source the script
+                    <filepath>/etc/nova/openrc</filepath> to become OpenStack administrators when
+                working on the active controller. </p>
+        </section>
+
+
+        <section id="section_N100E3_N1001A_N10001">
+            <title>LDAP User Accounts</title>
+            <p>You can create regular Linux user accounts using the HPE Helion OpenStack Carrier
+                Grade LDAP service. LDAP accounts are centrally managed; changes made on any host
+                are propagated automatically to all hosts on the cluster. </p>
+            <p>In other respects, LDAP user accounts behave as any local user account. They can be
+                added to the sudoers list, and can acquire OpenStack administration credentials when
+                executing on the active controller.</p>
+            <p>LDAP user accounts share the following set of attributes:</p>
+            <ul id="ul_d4q_g5c_5p">
+
+
+                <li>
+                    <p>The initial password is the name of the account.</p>
+                </li>
+
+
+                <li>
+                    <p>The initial password must be changed immediately upon first login.</p>
+                </li>
+
+
+                <li>
+                    <p>Requirements for new passwords include:</p>
+                    <ul id="ul_ipq_g5c_5p">
+
+
+                        <li>
+                            <p>to be at least eight characters long</p>
+                        </li>
+
+
+                        <li>
+                            <p>to have at least one lowercase character</p>
+                        </li>
+
+
+                        <li>
+                            <p>to differ in at least three characters from the previous password</p>
+                        </li>
+
+
+                        <li>
+                            <p>not to be evidently trivial to guess, such as a2345678, or a reversed
+                                version of the old password</p>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <p>Login sessions are logged out automatically after about 15 minutes of
+                        inactivity.</p>
+                </li>
+
+
+                <li>
+                    <p>The accounts block following five consecutive unsuccessful login attempts.
+                        They unblock automatically after a period of about five minutes.</p>
+                </li>
+
+
+                <li>
+                    <p>Home directories are created dynamically on first login. Note that home
+                        directories for local user accounts are created when the accounts are
+                        created.</p>
+                </li>
+
+
+                <li>
+                    <p>All authentication attempts are recorded on the file
+                            <filepath>/var/log/auth.log</filepath> of the target host.</p>
+                </li>
+
+
+                <li>
+                    <p>Home directories and passwords are backed up and restored by the system
+                        backup utilities.</p>
+                </li>
+
+
+            </ul>
+            <p>The following LDAP user accounts are available by default on newly deployed hosts,
+                regardless of their personality:</p>
+            <dl>
+
+
+                <dlentry>
+
+
+                    <dt>admin</dt>
+
+
+                    <dd>
+                        <p>A cloud administrative account, comparable in purpose to the default
+                                <b>admin</b> account used in the web management interface.</p>
+                        <p>This user account operates on a restricted Linux shell, with very limited
+                            access to native Linux commands. However, the shell is preconfigured to
+                            have administrative access to OpenStack commands, including the
+                            available HPE Helion OpenStack Carrier Grade CLI extensions.</p>
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry>
+
+
+                    <dt>operator</dt>
+
+
+                    <dd>
+                        <p>A host administrative account. It has access to all native Linux commands
+                            and is included in the sudoers list.</p>
+                    </dd>
+
+
+                </dlentry>
+
+
+            </dl>
+            <p>For increased security, the <b>admin</b> and <b>operator</b> accounts must be used
+                from the console ports of the hosts; no SSH access is allowed.</p>
+        </section>
+
+
+        <section id="section_N1019F_N1001D_N10001">
+            <title>Managing LDAP User Accounts</title>
+            <p>Although the scope of operations for the LDAP user accounts is local, that is, they
+                operate on the target host exclusively, management of these accounts operates at the
+                cluster level. This means that operations such as password change, and addition or
+                removal of users, are applied to the entire cluster. For example, a password change
+                executed while logged into controller-0, is effective immediately on all other hosts
+                in the cluster.</p>
+            <p>Centralized management is implemented using two LDAP servers, one running on each
+                controller node. LDAP server synchronization is automatic using the native LDAP
+                content synchronization protocol.</p>
+            <p>A set of LDAP commands is available to operate on LDAP user accounts. The commands
+                are installed in the directory <filepath>/usr/local/sbin</filepath>, and are
+                available to any user account in the sudoers list. Included commands are
+                    <i>lsldap</i>, <i>ldapadduser</i>, <i>ldapdeleteuser</i>, and several others
+                starting with the prefix <i>ldap</i>. Use the command option <option>--help</option>
+                on any command to display a brief help message, as illustrated below.</p>
+            <codeblock><systemoutput>$ </systemoutput><userinput>ldapadduser --help</userinput>
+
+
+<systemoutput>Usage : /usr/local/sbin/ldapadduser &lt;username&gt; &lt;groui | gid&gt; [uid]</systemoutput>
+
+
+<systemoutput>$ </systemoutput><userinput>ldapdeleteuser --help</userinput>
+
+
+<systemoutput>Usage : /usr/local/sbin/ldapdeleteuser &lt;username | uid&gt;</systemoutput></codeblock>
+        </section>
+
+
+    </body>
+
+
+</topic>

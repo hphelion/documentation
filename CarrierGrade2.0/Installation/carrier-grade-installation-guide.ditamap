@@ -1,0 +1,184 @@
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
+        Guide</title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
+        <prodinfo>
+            <prodname >HP Helion OpenStack Carrier Grade</prodname>
+            <vrmlist>
+                <vrm release="1.1" version=""/>
+            </vrmlist>
+        </prodinfo>
+    </topicmeta>
+    <topicref href="carrier-grade-install-overview.dita" navtitle="Installation" locktitle="yes">
+        <topicref href="carrier-grade-install-overview-denver.dita"
+            navtitle="Deploying the Denver Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-denver.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-denver.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
+            <topicref href="CGH-install-prereqs-denver.dita" navtitle="Installation Prerequisites"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-download-denver.dita"
+                navtitle="Download the Installation Packages" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-denver.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the Non-KVM Region"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-launch-horizon.dita"
+                navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-kvm-denver.dita"
+                navtitle="Deploying the KVM Region" locktitle="yes">
+                <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
+            </topicref>
+        </topicref>
+        <topicref href="carrier-grade-install-overview-tahoe.dita"
+            navtitle="Deploying the Tahoe Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-tahoe.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-tahoe.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
+            <topicref href="CGH-install-prereqs-tahoe.dita" navtitle="Installation Prerequisites"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-download-tahoe.dita"
+                navtitle="Download the Installation Packages" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-tahoe.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the Non-KVM Region"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-kvm-tahoe.dita"
+                navtitle="Deploying the KVM Region" locktitle="yes"/>
+            <topicref href="carrier-grade-install-launch-horizon.dita"
+                navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-kvm-tahoe.dita"
+                navtitle="Deploying the KVM Region" locktitle="yes"/>
+        </topicref>
+        <topicref href="carrier-grade-install-overview-memphis.dita"
+            navtitle="Deploying the Memphis Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-memphis.dita"
+                navtitle="Technical Overview" locktitle="yes"/>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-memphis.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
+            <topicref href="CGH-install-prereqs-memphis.dita" navtitle="Installation Prerequisites"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-download-memphis.dita"
+                navtitle="Download the Installation Packages" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-memphis.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Non-KVM Region"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-launch-horizon.dita"
+                navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-kvm-memphis.dita"
+                navtitle="Deploying the KVM Region" locktitle="yes"/>
+        </topicref>
+        <topicref href="carrier-grade-install-overview-sacramento.dita"
+            navtitle="Deploying the Sacramento Template" locktitle="yes">
+            <topicref href="carrier-grade-technical-overview-sacramento.dita"
+                navtitle="Technical Overview" locktitle="yes">
+                <topicref href="carrier-grade-technical-overview-intf.dita"/>
+            </topicref>
+            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-support-matrix-sacramento.dita" navtitle="Support Matrix"
+                locktitle="yes"/>
+            <topicref href="CGH-install-prereqs-sacramento.dita"
+                navtitle="Installation Prerequisites" locktitle="yes">
+                <topicref href="carrier-grade-install-network-prepare.dita" toc="no"
+                    navtitle="Preparing the Network for Installation"/>
+                <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"/>
+                <topicref href="carrier-grade-install-vsd-vm.dita" toc="no"
+                    navtitle="Bringing Up Single VSD VM Manually"/>
+                <topicref href="carrier-grade-install-ldap-enabling.dita" toc="no"
+                    navtitle="Enabling LDAP"/>
+                <topicref href="carrier-grade-install-prereqs.dita" toc="no"/>
+            </topicref>
+            <topicref href="carrier-grade-install-download.dita"
+                navtitle="Download the Installation Packages" locktitle="yes"/>
+            <topicref href="CGH-2-install-lifecycle-sacramento.dita"
+                navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-sacramento.dita" navtitle="Deploying the Non-KVM Region"
+                locktitle="yes">
+                <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
+            </topicref>
+            <topicref href="carrier-grade-install-launch-horizon.dita"
+                navtitle="Launching the Horizon Interface" locktitle="yes"/>
+            <topicref href="carrier-grade-install-kvm-sacramento.dita"
+                navtitle="Deploying the KVM Region" locktitle="yes">
+                <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
+            </topicref>
+            <topicref
+                href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+                navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
+            <topicref href="carrier-grade-install-5930-switch.dita"
+                navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports"
+                locktitle="yes"/>
+            <topicref
+                href="../OperationsGuide/Baremetal/carrier-grade-baremetal-best-practices.dita"
+                navtitle="Baremetal Region Best Practices" locktitle="yes"/>
+        </topicref>
+        <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
+            locktitle="yes">
+            <topicref href="carrier-grade-install-ldap-verify.dita"
+                navtitle="Verifying the LDAP Deployment" locktitle="yes" toc="yes"/>
+            <topicref href="carrier-grade-install-verify-vsc.dita" navtitle="Verifying the VSC VMs"
+                locktitle="yes"/>
+            <topicref href="carrier-grade-install-verify-vrsg.dita"
+                navtitle="Verifying the VRS-G Node" locktitle="yes"/>
+        </topicref>
+        <topicref href="CGH-2-install-sr-iov.dita" navtitle="Configuring SR-IOV" locktitle="yes"/>
+        <topicref href="CGH-2-install-pci-pass.dita" navtitle="Configuring PCI-Passthrough"
+            locktitle="yes"/>
+        <topicref href="carrier-grade-install-config-dcn.dita"
+            navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes">
+            <topicref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita" toc="no"/>
+        </topicref>
+        <topichead navtitle="Linked Files" toc="no">
+            <topicref href="carrier-grade-install-kvm-tahoe.dita" toc="no"/>
+            <topicref href="carrier-grade-install-non-kvm.dita"
+                navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
+            <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>
+            <topicref href="carrier-grade-install-kvm-ccp-json.dita" toc="no"/>
+            <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
+            <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
+            <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
+            <topicref href="CGH-2-install-vsvapp.dita"
+                navtitle="HP Helion OpenStack Carrier Grade 2.0: Deploying the VRSvApp CGH2.0"
+                locktitle="yes" toc="no" class="- map/topicref "/>
+            <topicref href="carrier-grade-install-vsd-license.dita" toc="no"/>
+            <topicref href="carrier-grade-install-vsd-user.dita" toc="no"/>
+            <topicref href="carrier-grade-install-config-ldap3.dita" toc="no"
+                navtitle="HP Helion OpenStack Carrier Grade 2.0: Configuring LDAP 3" locktitle="yes"/>
+            <topicref href="CGH-2-install-vmware-workaround.dita" toc="no"/>
+            <topicref href="carrier-grade-install-keystone-neutron-role-patch.dita" toc="no"/>
+            <topicref href="carrier-grade-install-bonded-nic.dita"/>
+            <topicref href="carrier-grade-install-kvm-ansible-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-ansible-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-def-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-def-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-esx-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-esx-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-ldap-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-ldap-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-bonded-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-bonded-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-env-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-wr-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-node-json-mem.dita"/>
+            <topicref href="carrier-grade-install-kvm-node-json-sac.dita"/>
+            <topicref href="carrier-grade-install-kvm-wr-json-mem.dita"/>
+        </topichead>
+    </topicref></map>

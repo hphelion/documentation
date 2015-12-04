@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample definition.json File for
+    Sacramento</title>
+<prolog>
+    <metadata>
+        <othermeta name="layout" content="default"/>
+        <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+        <othermeta name="role" content="Storage Administrator"/>
+        <othermeta name="role" content="Storage Architect"/>
+        <othermeta name="role" content="Michael B"/>
+        <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+</prolog>
+<body>
+    <p>The process for installing the memphis and sacramento deployments requires several JSON files
+      that will be used when deploying the lifecycle manager.</p>
+<section id="sample-node-provisionjson-file">
+    <p>The following represents a sample <codeph>definition.json</codeph> file in the
+          <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager. The IP
+        addresses are masked for security purposes. Use values appropriate for your environment.</p>
+            <p><i>Return to installing the non-KVM region for the <xref
+              href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581/conref-json">sacramento</xref> template.</i></p>
+<codeblock>{
+  "cloud": {
+    "environment": "environment.json",
+    "name": "ftab36",
+    "network-config": ".hos/lnet-control-data.json",
+    "nickname": "base",
+    "properties": "vars",
+    "server-config": "nodes.json"
+  },
+  "control-planes": [
+    {
+      "file": ".hos/ccp-dcn-esx.json",
+      "resource-nodes": [
+        {
+          "count": 1,
+          "file": ".hos/ccp-compute-proxy.json"
+        },
+        {
+          "count": 2,
+          "file": ".hos/ccp-vrsg.json"
+        }
+      ]
+    },
+    {
+      "file": ".hos/baremetal.json",
+      "resource-nodes": []
+    }
+  ],
+  "failure-zones": [
+    {
+      "name": "fz1"
+    },
+    {
+      "name": "fz2"
+    },
+    {
+      "name": "fz3"
+    }
+  ],
+  "product": {
+    "version": 1
+  }
+}</codeblock>
+        </section>
+    <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+        <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-def-json">Sacramento
+            deployment</xref></li>
+      </ul></p>
+</body>
+</topic>

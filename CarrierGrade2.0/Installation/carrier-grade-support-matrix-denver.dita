@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Denver Deployment Support
+    Matrix</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+  </metadata>
+</prolog>
+<body>
+
+    <section id="intro">
+      <p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is
+        very important to meet the requirements and conform to the recommendations listed in this
+        document. <ul id="ul_pyg_1kd_b5">
+          <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
+          <li><xref href="#topic1773/req-specs" format="dita">Required Specifications</xref></li>
+          <li><xref href="#topic1773/hardware-config" format="dita">Hardware Configurations</xref></li>
+          <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
+          <li><xref href="#topic1773/storage" format="dita">External Storage</xref></li>
+          <li><xref href="#topic1773/guestos" format="dita">Supported Guest Operating Systems</xref></li>
+        </ul></p>
+    </section>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/hardware" id="hardware" />
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/req-specs" id="req-specs"/>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/hardware-config" id="hardware-config"/>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/software" id="software"/>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/storage" id="storage"/>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/guestOS" id="guestos"/>
+
+  <section id="next"> <title>Next step</title>
+    <p>Review the <xref href="CGH-install-prereqs-denver.dita">Installation Prerequisites</xref>.</p>
+    
+  </section>
+  <!-- ===================== horizontal rule ===================== -->
+
+</body>
+</topic>

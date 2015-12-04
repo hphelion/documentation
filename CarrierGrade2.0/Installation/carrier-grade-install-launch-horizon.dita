@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Launching the Horizon
+    Interface</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    
+    <p>After the HP Helion OpenStack cloud is installed, you can launch the Horizon interface to
+      verify that the installation was successful.</p>
+    <section>
+      <title>Import the Horizon browser certificate</title>
+      <p>You need to import the Horizon security certificate (<codeph>ca.crt</codeph>) into your
+        browser. The <codeph>ca.crt</codeph> is available in the lifecycle manager in the
+          <codeph>~/&lt;cloudname></codeph> folder. You can use any file transfer program to move
+        the certificate file from the lifecycle manager to the local system.</p>
+      <p>Use the instructions provided by the browser manufacturer to import the
+          <codeph>ca.crt</codeph> file. For a list of browsers supported by OpenStack, see <xref
+          href="https://wiki.openstack.org/wiki/Horizon/BrowserSupport" format="html"
+          scope="external">https://wiki.openstack.org/wiki/Horizon/BrowserSupport</xref>.</p>
+      <p>Also, clear the cache from the browser.</p>
+    </section>
+    
+    
+    <section>
+      <title>Login to Horizon</title>
+      <p>At this point, you can log into the Horizon interface, a web-interface you can use to
+        manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref
+          href="carrier-grade-technical-overview.dita#topic3485">CAN IP address</xref> to launch
+        Horizon. You can locate the CAN IP address in the <codeph>/root/stackrc</codeph> file on any
+        of the controller nodes in the non-KVM region.</p>
+      <p>The CAN IP address contains port <codeph>5000</codeph>. </p>
+      <p>
+        <codeblock>https://&lt;CAN_IP></codeblock>
+      </p>
+      <p>By default, the user name is <codeph>admin</codeph>. You can find the installation password
+        for <codeph>admin</codeph> in the <codeph>/root/stackrc</codeph> file from any of the
+        controller node. If this is the first time you log in with that user name, make sure you
+        change the password</p>
+      <p>For example:</p>
+      <codeblock>root@B53NEW-CCP-T2-M1-NETCLM:~# cat /root/stackrc
+        export OS_PASSWORD=admin
+        export OS_USERNAME=admin
+        export OS_TENANT_NAME=admin
+        #export OS_AUTH_URL=http://10.x.x.x:35357/v2.0
+        export OS_AUTH_URL=https://10.x.x.x:5000/v2.0
+        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </codeblock>
+      <p>In this case, the CAN IP address is located in the
+          <codeph>OS_AUTH_URL=https://10.x.x.x:5000/v2.0</codeph> line. You would log in using
+          <codeph>https://10.x.x.x</codeph>.</p>
+      <p>The Horizon interface appears similar to the following:</p>
+      <p><image href="../../media/CGH-install-horizon.png" id="image_rcc_td1_1t"/></p>
+    </section>
+    <section>
+      <title>Upload a Glance VMDK Image</title>
+      <p>For the <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>KVM
+            + ESX deployment</b></xref>, perform the following task. </p>
+      <p>For <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>the KVM
+            deployment</b></xref>, proceed to the <xref href="#topic10581/next-step" format="dita"
+          >Next Step</xref>.</p>
+      <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
+        least on ISO image file, and import that file into Horizon. </p>
+      <ol id="ol_yd1_ckj_1t">
+        <li>Launch the Horizon dashboard.</li>
+        <li>Switch to <b>memphis</b> region. </li>
+        <li>Click the <b>Images</b> link on the <b>Admin</b> panel. </li>
+        <li>In the <b>Images</b> screen, click <b>Create Image</b>.</li>
+        <li>In the <b>Create an Image</b> screen, fill out the fields as appropriate: <ol
+          id="ol_zd1_ckj_1t">
+          <li>From the <b>Image Source</b> list, select <b>Image File</b>.</li>
+          <li>From the <b>Image File</b> list that appears, navigate to the VMDK file.</li>
+          <li>From the <b>Format</b> list, select <codeph>VMDK</codeph>.
+            <p><image href="../../media/CGH-install-create-vmdk-image.png" width="400"
+              id="image_qym_mlj_1t"/>
+            </p></li>
+        </ol></li>
+        <li>Click <b>Create Image</b>.</li>
+        <li>For the image, click <b>More</b> then click <b>Edit</b> to update the metadata for the
+          image.<p><image href="../../media/CGH-install-create-image.png" width="400"
+            id="image_etd_dlj_1t"/></p></li>
+        <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties
+          and set the <codeph>vmware_adaptertype</codeph> to <codeph>lsiLogic</codeph> and the
+            <codeph>vmware_disktype</codeph> to <codeph>sparse</codeph>.. <ul id="ul_rrk_mxb_nt">
+            <li>For CirrOS VMDK images, change the <codeph>vmware_adaptertype</codeph> to
+                <codeph>ide</codeph> and <codeph>vmware_disktype</codeph> to
+              <codeph>sparse</codeph>.</li>
+            <li>For Ubuntu RHEL images you can change the <codeph>vmware_adaptertype</codeph> to
+                <codeph>lsiLogic</codeph> and the <codeph>vmware_disktype</codeph> to
+                <codeph>sparse</codeph>.</li>
+          </ul></li>
+        <li>When complete, click <b>Update Image</b>.  </li>
+      </ol>
+      <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
+      </p>
+    </section>
+    
+    <section id="next-step">
+      <title>Next Step</title>
+      <p>
+        <xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref>.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1404333564380" xml:lang="en-us">
+
+
+    <!-- Modification History
+
+
+
+
+
+ -->
+
+
+    <title >Network Requirements</title>
+
+
+    <shortdesc >The networking environment of the HPE Helion OpenStack Carrier Grade incorporates up to
+
+
+        five types of network: the internal management network, the OAM network, one or more
+
+
+        provider networks, an optional infrastructure network, and an optional board management
+
+
+        network. Operational requirements for each network are described in the following
+
+
+        sections.</shortdesc>
+
+
+    <prolog>
+
+
+        <author >Pedro Sanchez</author>
+
+
+    </prolog>
+
+
+    <body>
+
+
+        <section id="section_N1001F_N1001C_N10001" >
+
+
+            <title >PXE Network</title>
+
+
+            <p >The PXE network must be implemented as a single, dedicated, Layer 2
+
+
+                broadcast domain for the exclusive use of each HPE Helion OpenStack Carrier Grade
+
+
+                cluster. Sharing of this network by more than one HPE Helion OpenStack Carrier Grade
+
+
+                cluster is not a supported configuration.</p>
+
+
+            <p >During the HPE Helion OpenStack Carrier Grade software installation
+
+
+                process, several network services such as BOOTP, DHCP, and PXE, are expected to run
+
+
+                over the PXE network. These services are used to bring up the different hosts to an
+
+
+                operational state. Therefore, it is mandatory that this network be operational and
+
+
+                available in advance, to ensure a successful installation.</p>
+
+
+            <p >On each host, the PXE network can be implemented using a 1Gb or 10 Gb
+
+
+                Ethernet port. In either case, requirements for this port are:</p>
+
+
+            <ul id="ul_uh1_pqs_hp">
+
+
+                <li >
+
+
+                    <p > it must be capable of PXE-booting</p>
+
+
+                </li>
+
+
+                <li >
+
+
+                    <p >can be used by the motherboard as a primary boot device</p>
+
+
+                </li>
+
+
+            </ul>
+
+
+        </section>
+
+
+        <section><title>Cloud Management Network</title>
+
+
+         <p>This network must be implemented as a single, dedicated, Layer2 broadcase domain for the  exclusive use of each 
+
+
+            HPE Helion OpenStack Carrier Grade cluster. Sharing of this network by more than one HPE Helion OpenStack Carrier Grade cluster 
+
+
+            is not a supported configuration.  This is typically configured by installer as a VLAN sub interface on PXE network. 
+
+
+            Allows inter service communication, configuration on this network.</p>
+
+
+        </section>
+
+
+        <section id="section_N10030_N1001C_N10001" >
+
+
+            <title >Infrastructure Network</title>
+
+
+            <p >The infrastructure network must be implemented as a single,
+
+
+                dedicated, Layer 2 broadcast domain for the exclusive use of each HPE Helion
+
+
+                OpenStack Carrier Grade cluster. Sharing of this network by more than one HPE Helion
+
+
+                OpenStack Carrier Grade cluster is not a supported configuration.</p>
+
+
+            <p >The infrastructure network can be implemented as a 10 Gb Ethernet
+
+
+                network. In its absence, all infrastructure traffic is carried over the internal
+
+
+                management network.</p>
+
+
+        </section>
+
+
+        <section id="section_N10041_N1001C_N10001" >
+
+
+            <title >DCM Network</title>
+
+
+            <p >You should ensure that the following services are available on the
+
+
+                DCM (Data center management network) Network and available through the CLM
+
+
+                Network:</p>
+
+
+            <dl>
+
+
+                <dlentry >
+
+
+                    <dt >DNS Service</dt>
+
+
+                    <dd >
+
+
+                        <p >Needed to facilitate the name resolution of servers reachable on the OAM Network. </p>
+
+
+                        <p >The HPE Helion OpenStack Carrier Grade can operate without a configured DNS
+
+
+                            service. However,  a DNS service should be in place to ensure that links
+
+
+                            to external references in the current and future versions of the web
+
+
+                            administration interface work as expected.</p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+                <dlentry >
+
+
+                    <dt >NTP Service</dt>
+
+
+                    <dd >
+
+
+                        <p >The Network Time Protocol (NTP) can be optionally used by the HPE Helion OpenStack Carrier Grade controller
+
+
+       nodes to synchronize their local clocks with a reliable external time reference. However, it
+
+
+       is strongly suggested that this service be available, among other things, to ensure that
+
+
+       system-wide log reports present a unified view of the day-to-day operations.</p>
+
+
+                        <p >The HPE Helion OpenStack Carrier Grade compute nodes always use the controller nodes as the de-facto time server for the
+
+
+       entire HPE Helion OpenStack Carrier Grade cluster. </p>
+
+
+                    </dd>
+
+
+                </dlentry>
+
+
+            </dl>
+
+
+        </section>
+
+
+        <section id="section_N1007A_N1001C_N10001" >
+
+
+            <title >Provider Network</title>
+
+
+            <p >There are no specific requirements for network services to be available on the provider
+
+
+    network. However, you must ensure that all network services required by the guests running in
+
+
+    the compute nodes are available. For configuration purposes, the compute nodes themselves are
+
+
+    entirely served by the services provided by the controller nodes over the internal management
+
+
+    network.</p>
+
+
+        </section>
+
+
+        <section id="section_N100A2_N1001F_N10001" >
+
+
+            <title >Board Management CTL (IPMI Control) Network</title>
+
+
+                <p>External access to the
+
+
+                board management network, the board management modules are assigned IP addresses
+
+
+                accessible from the OAM network, and the controller uses the OAM network to connect
+
+
+                to them.</p>
+
+
+        </section>
+
+
+    </body>
+
+
+</topic>
+
+

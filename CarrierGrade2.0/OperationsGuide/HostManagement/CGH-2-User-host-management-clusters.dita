@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5063">
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Cluster Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Openstack"/>
+<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HPE Helion Openstack"/>
+<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-clusters.md-->
+ <!--permalink: /helion/openstack/carrier/admin/host/management/clusters/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The Overview page appears when you log into the HPE Helion OpenStack Carrier Grade web management interface as the administrator. It presents a dashboard providing a quick health-check overview of the cluster.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The Overview page is an enhanced version of its OpenStack counterpart. It includes the following features:</p>
+<ul>
+<li>dynamically updated, relocatable resource charts. Click the top of any chart, and drag it to the desired location to customize the presentation as desired. The layout changes are persistent across logins.</li>
+<li>dynamically updated, relocatable Host Server Status summary table. Presents the total number of hosts currently
+in one of the following states:
+
+<ul>
+<li>locked</li>
+<li>unlocked</li>
+<li>available</li>
+<li>unavailable</li>
+<li>degraded</li>
+</ul>
+</li>
+<li>dynamically updated, relocatable Alarms summary table. Lists the current count of critical, major, minor, and
+warning alarms.</li>
+</ul>
+<p>Common attributes of the resource pages are:</p>
+<ul>
+<li>All resource charts display resource information in real-time, spanning over a time-window of ten minutes.</li>
+<li>Labels along the X-axis present the number of minutes elapsed since the last full-time hour of the system clock.</li>
+<li>Hovering the mouse over the charts overlays information windows with detailed values.</li>
+<li>History information is lost when the Overview page is no longer displayed.</li>
+</ul>
+<p>The following charts are available:</p>
+<p>
+<b>Compute vCPU Usage</b> - Presents information about the number of virtual CPUs across the entire cluster, available and allocated to virtual machines, and their average level of utilization. Elements in this chart are as follows:
+* Y-axis is in units vCPUs.
+* A solid black line tracking the number of available vCPUs. This line settles at a constant value at the top of the chart, unless the number of compute nodes changes over time.
+* Light blue bars indicating the number of allocated vCPUs, that is, the number of vCPUs in use by virtual machines (one in the example).
+* Dark blue bars indicating the average level of utilization of the allocated vCPUs (varies from 30 to 83% in the example), presented as a relative height with respect to the light blue bars.</p>
+<p>
+<b>Instance CPU Utilization</b> - Presents information about virtual CPU utilization levels on virtual machines, across the entire cluster or for individual instances. Elements in this chart are as follows:</p>
+<ul>
+<li>Y-axis displays the virtual CPU utilization level, from 0 to 100%.</li>
+<li>A solid black line tracking the maximum utilization level.</li>
+<li>Dark blue bars indicating the average utilization level.</li>
+<li>A gray line tracking the minimum utilization level.</li>
+<li>A filter drop-down menu to select the virtual machines on which to report utilization levels. The default value for this filter is "All Instances," and therefore it reports the same utilization levels indicated by the dark blue bars in the Compute vCPU Usage chart.</li>
+</ul>
+<p>
+<b>Compute Memory Usage</b> - Presents information about memory usage levels on the compute nodes across the entire cluster. Elements in this
+chart are as follows:</p>
+<ul>
+<li>Y-axis is in units of bytes.</li>
+<li>A solid black line tracking the available aggregated compute memory. This line usually settles as a constant value at the top of the chart, unless the number of compute nodes changes over time.</li>
+<li>Dark blue bars indicating the amount of memory allocated to virtual machines (less than 1 GB in the example).</li>
+</ul>
+<p>
+<b>Compute Disk Usage</b> - Presents information about disk usage levels on the compute nodes across the entire cluster. Elements in this chart
+are as follows:</p>
+<ul>
+<li>Y-axis is in units of bytes.</li>
+<li>A solid black line tracking the available aggregated storage capacity. This line usually settles as a constant value at the top of the chart, unless the number of storage nodes changes over time.</li>
+<li>Dark blue bars indicating the amount of disk space allocated to virtual machines (about 1 GB in the example).</li>
+</ul>
+<p>
+<b>AVS CPU Utilization</b> - Presents information about AVS CPU utilization levels on the compute nodes across the entire cluster. Elements in this chart are as follows:</p>
+<ul>
+<li>Y-axis displays the AVS CPU utilization level, from 0 to 100%.</li>
+<li>A solid black line tracking the maximum utilization level.</li>
+<li>Dark blue bars indicating the average utilization level.</li>
+</ul>
+<p>
+<b>Provider Network Port Utilization</b> - Presents information about network traffic levels on provider networks across the entire cluster. Elements in this chart are as follows:</p>
+<ul>
+<li>Y-axis displays the port utilization level, from 0 to 100%.</li>
+<li>A solid black line tracking the maximum utilization level.</li>
+<li>Pairs of dark blue and dark green bars indicating the average utilization level, egress and ingress (Tx and Rx) traffic respectively.</li>
+<li>A gray line tracking the minimum utilization level.</li>
+</ul>
+<p>
+  <xref type="section" href="#topic5063"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

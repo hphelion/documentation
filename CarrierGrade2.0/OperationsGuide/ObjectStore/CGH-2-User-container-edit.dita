@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Editing and Deleting
+    Objects</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Object_Storage/1.1commercial.dashboard.container.edit.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/container/edit/--></p>
+<p>An object is the basic storage entity that represents a file you store in the <tm tmtype="reg">Openstack</tm> Object Storage system. When you upload data to <tm tmtype="reg">Openstack</tm> Object Storage, the data is stored as-is (no compression or encryption) and consists of a location (container), the object's name, and any metadata consisting of key/value pairs</p>
+<section id="edit-an-object-in-a-container"> <title>Edit an object in a container</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Project</b> dashboard, then the <b>Object Store</b> panel, then the
+            <b>Containers</b> tab. </li>
+<li>Select the container in which you want to store your object.</li>
+<li>From the <b>More</b> drop-down list, choose <b>Edit</b>.</li>
+<li>The <b>Edit Object</b> dialog box is displayed.</li>
+<li>Browse to and select the file that you want to upload.</li>
+<li>Click <b>Update Object</b> to confirm.</li>
+</ol>
+</section>
+<section id="delete-an-object-from-a-container"> <title>Delete an object from a container</title>
+<ol>
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Project</b> dashboard, then the <b>Object Store</b> panel, then the
+            <b>Containers</b> tab. </li>
+<li>Select the container from which you want to delete the object.</li>
+<li>From the <b>More</b> drop-down list next to an object, choose <b>Delete Object</b>.</li>
+<li>The <b>Confirm Delete Object</b> dialog box is displayed.</li>
+<li>Click <b>Delete Object</b> to confirm.</li>
+</ol>
+</section>
+</body>
+</topic>

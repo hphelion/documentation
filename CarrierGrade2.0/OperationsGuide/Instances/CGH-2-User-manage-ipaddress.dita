@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1092">
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Managing Floating IP
+    Addresses</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/ipaddresses/--></p>
+<p>Floating IP addresses allow external access to the instances in your network.</p>
+<p>You can use the dashboards to create a floating IP address pool that contains IP addresses you can associate to the instances on a network.</p>
+<section id="managing-your-floating-ip-addresses-as-a-user"> <title>Managing your floating IP addresses as a user</title>
+<p>As a user, you can:</p>
+<ul>
+<li>
+          <xref href="CGH-2-User-assoc-ipaddress.dita#topic2995/associate"/></li>
+<li><xref href="CGH-2-User-assoc-ipaddress.dita#topic2995/allocate"/></li>
+</ul>
+</section>
+<section id="managing-your-floating-ip-addresses-as-an-admin"> <title>Managing your floating IP addresses as an admin</title>
+<p>As an admin user, you can work on all of the images in your domain, regardless of which project the group is associated with.</p>
+<p>Access the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel to work with floating IP addresses.</p>
+<p>There are no additional tasks available to the admin user.</p>
+<p>
+  <xref type="section" href="#topic1092"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

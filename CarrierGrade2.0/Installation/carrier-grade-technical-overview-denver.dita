@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic3485">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Denver Deployment
+    Technical Overview</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    
+    <p>This page introduces deployment and network architectures of the Denver deployment of HPE
+      Helion OpenStack Carrier Grade. During the installation, use the <codeph>denver</codeph>
+      template that comes with the installation package. </p>
+    <p><b>Note:</b> The Denver deployment is for proof-of-concept (POC) only and is not intended for
+      production environments.</p>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
+    <p><b>Network/Component Architecture</b></p>
+    <p><image href="../../media/CGH-2-block-arch-denver.png" width="750" id="image_wdn_zbw_mt"/></p>
+    <ul>
+      <li>
+        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
+      </li>
+    </ul>
+    <section id="deploy-arch">
+      <title>Deployment architecture</title>
+      <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
+        Carrier Grade.</p>
+      <p>
+        <image href="../../media/CGH-2-deploy-arch-denver.png" width="600"/></p>
+      <p>The following sections describe essential aspects of this diagram.</p>
+    </section>
+    <section id="networkarch">
+      <title>Network architecture</title>
+      <p>The following information describes the network configuration, which must be configured by
+        the network administrator.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry> Network </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> PXE-1</entry>
+              <entry>Boot/initial configuration network for non-KVM region controllers. Untagged </entry>
+            </row>
+            <row>
+              <entry>PXE-2</entry>
+              <entry>Boot/initial configuration network for KVM region controllers. Untagged
+              </entry>
+            </row>
+            <row>
+              <entry> CLM / MGMT</entry>
+              <entry>Cloud Management Network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> CAN / OAM</entry>
+              <entry>Consumer Access Network Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> CTL </entry>
+              <entry>IPMI/iLO network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> BLS / INFRA</entry>
+              <entry>Block Storage Network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry>Data Center Management network (accessible to KVM region) and route across
+                multiple data centers. </entry>
+            </row>
+            <row>
+              <entry> TUL/SR-IOV </entry>
+              <entry>Tenant Underlay Network for the KVM region </entry>
+            </row>
+            <row>
+              <entry> EXT </entry>
+              <entry>Provider VLAN as an External network (provides that FIP pool for the KVM
+                region). </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="interfaces">
+      <title>Interfaces</title>
+      <p>The following are the interfaces being used, based on the technical architecture diagram.
+        You can use more than two interfaces and specific networks to physical networks.</p>
+      <ul>
+        <li>Intf0 is mapped to Port1/Bonded Pair</li>
+        <li>Intf1 is mapped to Port2/Bonded Pair</li>
+        <li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
+      </ul>
+    </section>
+    <section id="routing-acls">
+      <title>Routing ACLs</title>
+      <p>Configure the following routing access lists.</p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <thead>
+            <row>
+              <entry> From </entry>
+              <entry> To </entry>
+              <entry> Reason </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> CLM </entry>
+              <entry> DCM </entry>
+              <entry> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CTL </entry>
+              <entry> Access iLO network for managing the lifecycle of the node </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>CLM, PXE-1, PXE-2, BLS, TUL should use RFC 1918 non-routable IPs to prevent access to these
+        networks from DCM, CTL, or EXT.</p>
+      <p>DCM, CAN, and EXT should use routable IP addresses. DCM should be restricted to the
+        corporate network. </p>
+    </section>
+    <section><title>Service Architecture Diagram</title>
+      <p>For service architecture diagrams with interface details, see <xref
+        href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture Diagrams</xref></p>
+  </section>
+    <section>
+      <title>Regions</title>
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+        or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
+        installation process. The <xref
+          href="carrier-grade-technical-overview-denver.dita#topic3485/deploy-arch">Deployment
+          Architecture diagram</xref> shows an illustration of these two zones. </p>
+      <p><b>Non-KVM</b></p>
+      <p>The Non-KVM region contains the lifecycle manager, to deploy and maintain HP Helion
+        OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade distribution of
+        OpenStack. </p>
+      <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+        of a software platform, providing ultra-reliability and exceptional performance efficiencies
+        for telecommunications networks. </p>
+    </section>
+    <section id="components">
+      <title>Components</title>
+      <ul id="ul_ddb_ryh_f5">
+        <li><b>Lifecycle manager</b> The lifecycle manager deploys and manages HP Helion OpenStack
+          Carrier Grade, consisting of a controller running shared services and the nodes required
+          to run DCN (as needed).</li>
+        <li><b>Non-KVM Region Controller</b>. Standard IaaS control plane to enable cloud-to-cloud
+          communication. </li>
+        <li><b>StoreVirtual/3PAR</b>: Hardware storage array used as backend for Cinder. Support for
+          3PAR has a similar architecture as StoreVirtual on iSCSI, not Fibre.</li>
+        <li><b>KVM Region Controller</b>: Real-time control plane for compute and networking.
+          Contains modified versions of most of the OpenStack components.</li>
+        <li><b>KVM Region Compute</b>: Realtime compute node with networking components.</li>
+        <li><b>Orchestrator</b>: This could be any application consuming the cloud services.
+          <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
+      </ul>
+    </section>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/data"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
+    <section
+      conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/> 
+ <section>
+      <title>Next Step</title>
+      <p>Review the <xref href="carrier-grade-support-matrix-denver.dita#topic1773">Support
+          Matrix</xref></p>
+    </section>
+  </body>
+</topic>

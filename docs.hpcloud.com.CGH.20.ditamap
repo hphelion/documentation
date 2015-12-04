@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no" otherprops="&quot;&quot;">
+  <title>HP Helion OpenStack Carrier Grade 2.0</title>
+  <topicmeta>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>HP Helion</copyrholder>
+    </copyright>
+    <prodinfo>
+      <prodname>HP Helion</prodname>
+      <vrmlist>
+        <vrm version="4.1."/>
+      </vrmlist>
+    </prodinfo>
+  </topicmeta>
+  <!--permalink: -->
+  <!--permalink: /-->
+  <!-- Index -->
+  <!-- HoS 2.0 -->
+  <!--Dev Plat-->
+  <!-- Euca -->
+  <!-- CGH -->
+  <topicref href="CarrierGrade2.0/carrier-grade-index.dita" otherprops="&quot;&quot;">
+    <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview.dita" navtitle="Overview"
+      locktitle="yes" otherprops="overview">
+      <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview-non-kvm.dita"
+        navtitle="Non-KVM Region Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview-kvm.dita"
+        navtitle="KVM Region Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview-baremetal.dita"
+        navtitle="Baremetal Region Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/Installation/carrier-grade-technical-overview.dita"
+        navtitle="Technical Overview" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/Overview/carrier-grade.services-overview.dita"
+        navtitle="Services Overview" locktitle="yes" otherprops="overviewsvc">
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-compute-overview.dita"
+          navtitle="Compute Service (Nova) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-networking-overview.dita"
+          navtitle="Networking Service (Neutron) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-imaging-overview.dita"
+          navtitle="Image Operations (Glance) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-volume-overview.dita"
+          navtitle="Block Storage Operations (Cinder) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"
+          navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-identity-overview.dita"
+          navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-metering-overview.dita"
+          navtitle="Metering Service (Ceilometer) Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-ironic-overview.dita"
+          navtitle="Ironic Service Overview" locktitle="yes"/>
+        <topicref
+          href="CarrierGrade2.0/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+          navtitle="Horizon Service Overview" locktitle="yes" otherprops="overviewhoriz">
+          <topicref
+            href="CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            navtitle="Logging into the Helion Dashboard" locktitle="yes"/>
+          <topicref
+            href="CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
+            navtitle="How to Use the Helion Dashboard" locktitle="yes"/>
+          <topicref
+            href="CarrierGrade2.0/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
+            navtitle="Using the Helion Dashboard to Manage Your Cloud" locktitle="yes"/>
+        </topicref>
+      </topicref>
+    </topicref>
+    <topicref href="CarrierGrade2.0/CGHRelNotes/carrier-grade-release-notes.dita"
+      navtitle="Release Notes" locktitle="yes" otherprops="relnotes">
+      <topicref href="CarrierGrade2.0/CGHRelNotes/jow1430312565268.xml"
+        navtitle="Applying Customer-Specific Branding (optional)" locktitle="yes"/>
+    </topicref>
+    <topicref href="CarrierGrade2.0/Installation/carrier-grade-installation-guide.ditamap"
+      format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation"/>
+    <topicref href="CarrierGrade2.0/carrier-grade-administration.dita" navtitle="Administration"
+      locktitle="yes">
+      <topicref href="CarrierGrade2.0/AdminGuideNew/carrier-grade-admin-guide.dita"
+        navtitle="KVM Region Administrator Guide" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/OperationsGuide/Logging/CHG-2-logging-overview.dita"
+        navtitle="Centralized Logging" locktitle="yes"/>
+      <topicref
+        href="CarrierGrade2.0/OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+        navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/MultiDC/CGH-2-Config-Multi-DC.dita"
+        navtitle="Confguring a Multiple Datacenter Environment (Multi-DC)" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/OperationsGuide/Backup/CGH-2-backup-restore.dita" toc="yes"
+        navtitle="Backup and Restore Configuration Files and MySQL Clusters" locktitle="yes"
+        otherprops="backup">
+        <topicref href="CarrierGrade2.0/OperationsGuide/Backup/CGH-2--backup-restore-cli.dita"
+          navtitle="Attis Backup and Restore CLI Reference" locktitle="yes"/>
+        <topicref href="CarrierGrade2.0/OperationsGuide/Backup/CGH-2--backup-configure.dita"
+          navtitle="Configuring the Backup and Restore Location " locktitle="yes"/>
+      </topicref>
+      <topicref href="CarrierGrade2.0/OperationsGuide/Upgrade/CGH-2-Update-Patch.dita"
+        navtitle="Patching and Update Process" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
+        locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/HLMCLI/CGH-2-hlm-cli.dita"
+        navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
+      <topicref
+        href="CarrierGrade2.0/OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
+        navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"
+      />
+    </topicref>
+    <topicref href="CarrierGrade2.0/OperationsGuide/CGH-2-User-Overview.dita" navtitle="Operations"
+      locktitle="yes">
+      <topicref href="CarrierGrade2.0/OperationsGuide/carrier-grade-User-guide.ditamap"
+        navtitle="User Guide" locktitle="yes" format="ditamap"/>
+    </topicref>
+    <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting.dita"
+      navtitle="Troubleshooting" locktitle="yes">
+      <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting-install.dita"
+        navtitle="Installation Troubleshooting" locktitle="yes"/>
+    </topicref>
+    <topicref href="CarrierGrade2.0/carrier-grade-license.dita"
+      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes">
+      <topicref href="CarrierGrade2.0/carrier-grade-license-osrb.dita"
+        navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
+        locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/carrier-grade-dcn-license-osrb.dita"/>
+    </topicref>
+    <topicref href="CarrierGrade2.0/carrier-grade-end-user-license.dita"
+      navtitle="Software License Terms" locktitle="yes">
+      <topicref href="CarrierGrade2.0/carrier-grade-eula.dita" toc="yes"
+        navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/carrier-grade-dcn-eula.dita"/>
+    </topicref>
+    <topichead navtitle="Files in map not TOC" toc="no">
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"
+        toc="no"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita"
+        toc="no"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita"
+        toc="no"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
+        toc="no"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita"
+        toc="no"/>
+    </topichead>
+    <!-- hiding for RC0
+    <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
+      <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-account-container.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-starter-object-ring.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-storage-node.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-proxy-node.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-expand-swift-cluster.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-disk-drive(s).dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-health-check.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-health-swift-services.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-replica-swift-status.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-cluster.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-disk.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-drive-audit.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-file-ownership.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-mount-points.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-network-access-ping.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-network-interface.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-part-power.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-provision-swift-node.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-proxy-node.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-swift-cluster.dita"/>
+      <topicref
+        href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-diagnosis-disk-health-hpssacli.dita"/>
+      <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-troubleshooting.swift.dita"/>
+      <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
+      /> -->
+    <!--    <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1410640041471.xml">
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1410638776646.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1410638924240.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411430962060.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411435660602.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411482049845.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1410636108227.xml">
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411497294920.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333821651.xml">
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333723047.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333728991.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1424192677556.xml"/>
+                  <topicref href="rst1433175643400.xml"/>
+            </topicref>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/rst1432665605712.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1410637938926.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333714134.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333668441.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333673732.xml"/>
+        </topicref>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333809139.xml">
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333586935.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333594789.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/rec1433352802888.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1410804489611.xml"/>
+          <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1408735356648.xml"/>
+        </topicref>
+      </topicref> 
+     <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411149829129.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411149875790.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411677830752.xml"/>
+      <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333819947.xml">
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333822865.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333823466.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1424188329479.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/rst1432757329786.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1411739340460.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333587606.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333825310.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333825972.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333826563.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333827217.xml"/>
+        <topicref href="CarrierGrade2.0/DeploymentScenarios3/jow1404333827838.xml"/>
+      </topicref>
+    </topicref>  -->
+  </topicref>
+</map>

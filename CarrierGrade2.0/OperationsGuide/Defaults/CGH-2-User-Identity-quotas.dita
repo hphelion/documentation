@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1853">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Default Quotas</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.quotas.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/quotas/--></p>
+<p>Quotas are operational limits enforced on each project.</p>
+<p>To prevent system capacities from being exhausted without notification, you can set up quotas.</p>
+    <p><image href="../../../media/CGH-2-defaults.png" width="600" id="image_v2k_fvf_jt"/></p>
+<p>For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space.</p>
+<section id="quotamod">
+      <p>To modify quotas:</p>
+      <ol id="ol_xhx_fvf_jt">
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            Helion OpenStack Horizon Dashboard</xref>.</li>
+        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
+            appropriate region and project</xref>.</li>
+        <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Defaults</b>
+          tab. </li>
+        <li>In the <b>Quotas</b> table, click the <b>Update Defaults</b>.<p>Edit any of the
+            following fields: </p><ul id="ul_kxs_xvf_jt">
+            <li><b>Injected File Content Bytes</b> - Enter the maximum number of content bytes
+              allowed per injected file for the project.</li>
+            <li><b>Metadata Items</b> - Enter the maximum number of metadata items allowed for the
+              project.</li>
+            <li><b>Server Group Members</b> - Enter the maximum number of members allowed in a
+              security group, per project. <!--Verify--></li>
+            <li><b>Server Groups</b> - Enter the maximum number of security groups allowed per
+              project. <!--Verify--></li>
+            <li><b>RAM</b> - Enter the maximum megabytes of instance RAM allowed for the
+              project.</li>
+            <li><b>Key Pairs</b> - Enter the maximum number of key pairs allowed per user..</li>
+            <li>Length of Injected File Path</li>
+            <li><b>Instances</b> - Enter the maximum number of instances allowed for the
+              project.</li>
+            <li><b>Injected Files</b> - Enter the maximum number of injected files allowed for the
+              project.</li>
+            <li><b>VCPUs</b> - Enter the maximum number of instance cores allowed for the
+              project.</li>
+            <li><b>Total Size of Volumes and Snapshots</b>- Enter the maximum total size for all
+              volumes and snapshots allowed for the project.</li>
+            <li><b>Backup Gigabytes</b> - Enter the maximum number of storage, in gigabytes, for
+              backup files, per project. <!--Verify--></li>
+            <li><b>Volumes</b> - Enter the maximum number of volumes allowed for the project.</li>
+            <li><b>Volume Snapshots</b> - Enter the maximum number of volume snapshots allowed for
+              the project.</li>
+            <li><b>Backups</b> -  - Enter the maximum number of backup files, per project.
+              <!--Verify--></li>
+          </ul></li>
+      
+        <li>Click <b>Save</b>.<p>A message is displayed on successful modification.</p></li>
+      </ol>
+      <p>
+        <xref type="section" href="#topic1853"> Return to Top </xref>
+      </p>
+      <!-- ===================== horizontal rule ===================== -->
+    </section>
+</body>
+</topic>

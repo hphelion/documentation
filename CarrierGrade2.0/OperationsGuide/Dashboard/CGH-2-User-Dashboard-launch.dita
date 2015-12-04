@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1160">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Logging into the Helion
+    Dashboard</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack"/>
+<othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack"/>
+<othermeta name="product-version2" content="HP Helion OpenStack Carrier Grade 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.md-->
+ <!--permalink: /helion/openstack/carrier/dashboard/login/--></p>
+    <p>The IP address for the Horizon interface is stored in the CAN VIP value in the
+        <codeph>/root/stackrc</codeph> file on any controller node. The CAN IP contains port
+        <codeph>5000</codeph>. The CAN VIP can also be got from HLM VM in the <codeph>~/&lt;cloud
+        name&gt;/clouds/&lt;cloudname&gt;/001/stage/net/hosts.hf</codeph> file. Search for
+        <codeph>VIP</codeph>.</p>
+    <p><b>Note: </b>You need to import the <codeph>ca.crt</codeph> certificate  from the
+        <codeph>/root/&lt;cloudname&gt;</codeph> on the HLM VM. You can use any file transfer
+      program to move the certificate file from the HLM VM to the local system.</p>
+<ol>
+<li>Ask the cloud operator for the host name or public IP address where the dashboard is located,
+        your user name, and your password.</li>
+<li>Open a web browser that has both JavaScript and cookies enabled.</li>
+<li>In the address bar, enter the host name or IP address for the dashboard:<p>
+          <codeblock>https://&lt;CAN vip&gt;/ </codeblock>
+        </p></li>
+<li>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign In</b>.<p>By
+          default, the user name is <codeph>admin</codeph>. You can find the installation password
+          for <codeph>admin</codeph> in the <codeph>/root/stackrc</codeph> file from any of the
+          controller node. If this is the first time you log in with that user name, make sure you
+            <xref href="../Identity/CGH-2-User-Identity-users-password.dita#topic1008">change the
+            password</xref>.</p><p><image href="../../../media/CGH-Horizon-Login.png" width="400"
+            id="image_b1v_dcf_ht"/></p></li>
+<li>If you are a non-admin user, you will only be able to select a project from the list at the top
+        of the screen.<p>
+          <xref type="section" href="#topic1160"> Return to Top </xref>
+        </p></li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

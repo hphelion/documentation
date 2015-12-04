@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Verifying the VSC
+    VMs</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After installing HP Helion OpenStack Carrier Grade, you can use the following commands to
+      verify that LDAP is functioning correctly. </p>
+    
+      <section>
+        <title>Verify the VSC VMs</title>
+        <p>The installation process creates virtual machines for VSC. Use the following steps to
+          verify that the VSC VMs are installed and are operational:</p>
+        <ol id="ol_fkv_xjj_1t">
+          <li>SSH to your VSC VM from KVM Host using the DCM IP. The default username and password:
+            <codeph>admin/admin</codeph></li>
+          <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
+          <li>Execute the following commands to verify the VMs are active:
+            <codeblock>show vswitch-controller vsd
+              show vswitch-controller xmpp-server
+              ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
+        </ol>
+      </section>
+     
+      <p>If all these test pass to your satisfaction, the HP Helion OpenStack Carrier Grade
+      installation is complete. To learn more information about using HP Helion OpenStack Carrier
+      Grade, see the <xref href="../Troubleshooting/CGH-2-troubleshooting.dita#topic10581"
+        >Administrator Guide</xref>.</p>
+  </body>
+</topic>
