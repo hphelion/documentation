@@ -228,54 +228,55 @@
         <b>Example:</b>
       </p>
       <p><codeblock>{
-        "product": {
+    "product": {
         "version": 1
-        },
-        
-        "node-type": [
+    },
+
+    "node-type": [
         {
-        "name": "CCN",
-        "interface-map": [
-        {
-        "name": "INTF0",
-        "ethernet-port-map": {
-        "interface-ports": [ "eth0" ]
-        },
-        "logical-network-map": [
-        {
-        "name": "CLM",
-        "type": "vlan",
-        "segment-id": "502",
-        "network-address": {
-        "cidr": "10.50.2.0/24",
-        "start-address": "10.50.2.10",
-        "gateway": "10.50.2.1"
+            "name": "CCN",
+            "interface-map": [
+                {
+                    "name": "INTF0",
+                    "ethernet-port-map": {
+                        "interface-ports": [ "eth0" ]
+                    },
+                    "logical-network-map": [
+                        {
+                            "name": "CLM",
+                            "type": "vlan",
+                            "segment-id": "102",
+                            "network-address": {
+                                "cidr": "10.10.2.0/24",
+                                "start-address": "10.10.2.100",
+                                "gateway": "10.10.2.1"
+                            }
+                        },
+                        {
+                            "name": "CAN",
+                            "type": "vlan",
+                            "segment-id": "103",
+                            "network-address": {
+                                "cidr": "10.10.3.0/24",
+                                "start-address": "10.10.3.100"
+                            }
+                        },
+                        {
+                            "name": "BLS",
+                            "type": "vlan",
+                            "segment-id": "71",
+                            "network-address": {
+                                "cidr": "172.16.71.0/24",
+                                "start-address": "172.16.71.100"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-        },
-        {
-        "name": "CAN",
-        "type": "vlan",
-        "segment-id": "504",
-        "network-address": {
-        "cidr": "10.50.4.0/24",
-        "start-address": "10.50.4.10"
-        }
-        },
-        {
-        "name": "BLS",
-        "type": "vlan",
-        "segment-id": "76",
-        "network-address": {
-        "cidr": "172.16.76.0/19",
-        "start-address": "172.16.76.10"
-        }
-        }
-        ]
-        }
-        ]
-        }
-        ]
-        }</codeblock>
+    ]
+}
+</codeblock>
         <b>NOTE:</b> The configuration processor assigns the first address of the CLM address range
         to itself for serving python and debian repositories. Make sure that you set the first IP
         address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
@@ -288,106 +289,39 @@
           <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
         <li>Update the <codeph>ansible-vars</codeph> section with all the information based on
           your setup.</li>
-        <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph>
-          fields in the <codeph>definition.json</codeph> file as seen in the following example.
-          If you have only one NTP server in your environment, specify the same NTP server
-          twice. Example:
+        <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph> fields
+          in the <codeph>definition.json</codeph> file as seen in the following example. If you have
+          only one NTP server in your environment, specify the same NTP server twice. Example:
           <codeblock>{
-            "product": {
-            "version": 1
-            },
-            
-            "cloud": {
-            "name": "b44tb4",
-            "nickname": "b44tb4",
-            "server-config": "nodes.json",
-            "environment": "environment.json",
-            "network-config": ".hos/lnet-control-data.json"
-            },
-            
-            "failure-zones": [
-            {
-            "name": "fz1"
-            },
-            {
-            "name": "fz2"
-            },
-            {
-            "name": "fz3"
-            }
-            ],
-            
-            "control-planes": [
-            {
-            "file": ".hos/ccp-1x3-ss.json",
-            "resource-nodes": []
-            }
-            ],
-            
-            "ansible-vars": {
-            "dns_address": "10.1.2.44",
-            "dns_domain_name": "helion.cg",
-            "ldap_url": "10.1.2.44",
-            "ldap_username": "admin",
-            "ldap_password": "admin",
-            "ldap_domain": "dc=helioncg,dc=local",
-            "ldap_ou": "CGTestUsers",
-            "ldap_nova_password": "nova",
-            "ldap_nova_user": "nova",
-            "ldap_neutron_password": "neutron",
-            "ldap_neutron_user": "neutron",
-            "ldap_cinder_password": "cinder",
-            "ldap_cinder_user": "cinder",
-            "ldap_glance_password": "glance",
-            "ldap_glance_user": "glance",
-            "ldap_enabled": 1,
-            "upstream_ntp_servers": [
-            "10.1.2.44",
-            "16.110.135.123",
-            "2.debian.pool.ntp.org"
-            ],
-            "ssl_cert_file": "ca.crt",
-            "ssl_key_file": "cakey.pem",
-            "ssl_passphrase": "cghelion"
-            },
-            
-            "wr-vars": {
-            "database_storage": 50,
-            "backup_storage": 300,
-            "image_storage": 250,
-            "region_name": "RegionOne",
-            "logical_interface": [
-            {
-            "lag_interface": "N",
-            "interface_mtu": 1500,
-            "interface_ports": [
-            "eth0"
-            ],
-            "network": [
-            {
-            "ip_start_address": "10.50.2.51",
-            "ip_end_address": "10.50.2.99",
-            "name": "CLM"
-            },
-            {
-            "ip_start_address": "172.16.76.150",
-            "ip_end_address": "172.16.76.199",
-            "name": "BLS"
-            },
-            {
-            "ip_start_address": "10.50.4.51",
-            "ip_end_address": "10.50.4.99",
-            "gateway": "10.50.4.1",
-            "name": "CAN"
-            }
-            ]
-            }
-            ],
-            "pxeboot_cidr": "10.50.1.0/24",
-            "license_file_name": "license.lic"
-            }
-            }
-          </codeblock></li>
+  "cloud": {
+    "environment": "environment.json",
+    "name": "tb1b36newdenver",
+    "network-config": ".hos/lnet-control-data.json",
+    "nickname": "base",
+    "properties": "vars",
+    "server-config": "nodes.json"
+  },
+  "control-planes": [
+    {
+      "file": ".hos/ccp-1x3-ss.json",
+      "resource-nodes": []
+    }
+  ],
+  "failure-zones": [
+    {
+      "name": "fz1"
+    },
+    {
+      "name": "fz2"
+    },
+    {
+      "name": "fz3"
+    }
+  ],
+  "product": {
+    "version": 1
+  }
+}          </codeblock></li>
       </ol>
     </section>    
     
