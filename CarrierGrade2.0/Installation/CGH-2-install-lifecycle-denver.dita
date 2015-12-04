@@ -14,6 +14,11 @@
   </metadata>
 </prolog>
 <body>
+  <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
+    bootstrapping the lifecycle manager VM and installation services. </p>
+  <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
+    required installation processes.</p>
+  
     <bodydiv conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/hlm"/>
     <p/>
   <section id="next-step">

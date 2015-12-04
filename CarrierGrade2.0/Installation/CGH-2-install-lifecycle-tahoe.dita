@@ -14,7 +14,12 @@
   </metadata>
 </prolog>
 <body>
-    <bodydiv conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/hlm"/>
+  <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
+    bootstrapping the lifecycle manager VM and installation services. </p>
+  <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
+    required installation processes.</p>
+  <section conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/debian"/>
+    <bodydiv conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/hlm"></bodydiv>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="CGH-2-install-tahoe.dita">Installing the Non-KVM Region</xref></p>

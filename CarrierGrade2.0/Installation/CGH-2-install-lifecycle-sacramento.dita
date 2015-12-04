@@ -14,12 +14,12 @@
   </metadata>
 </prolog>
 <body>
-  <bodydiv  id="hlm">
+  
     <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
       bootstrapping the lifecycle manager VM and installation services. </p>
     <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
       required installation processes.</p>
-    <section><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
+    <section id="debian"><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
         Grade maintains a local Debian repository on the KVM Host from where Debain packages are
         installed. Before starting the installation, make sure the Debian files you <xref
           href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded in the
@@ -29,12 +29,13 @@
         <li><xref href="carrier-grade-install-download.dita#topic7148/libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</xref></li>
         <li><xref href="carrier-grade-install-download.dita#topic7148/setproc">python-setproctitle_1.1.8-1_amd64.deb</xref></li>
       </ul></section>
+    <bodydiv  id="hlm">
     <section id="prepare">
       <title>Prepare the system for deployment</title>
       <p>Use the following steps to prepare the server on which the lifecycle manager will be deployed (the KVM
         Host):</p>
       <ol>
-        <li>Log into the KVM Host using the default credentials</li>
+        <li>Log into the lifecycle manager host using the default credentials</li>
         <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
             environment. For information on each variable, refer to the comments in the file with
             each variable. <p><b>Note:</b> Make sure the Cobbler passwords are blank. You will
@@ -107,8 +108,8 @@ upstream_ntp_servers:
     </section>
     <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the Lifecycle Manager Virtual Machine</title>
-      <p>Use the following steps on the KVM Host to deploy the lifecycle manager on the KVM Host using Ansible
-        playbooks.</p>
+      <p>Use the following steps on the lifecycle manager host to deploy the lifecycle manager on
+          that host using Ansible playbooks.</p>
       <ol>
         <li>Execute the following command: <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock>
           <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the KVM Host, decrypt, 
@@ -119,9 +120,10 @@ upstream_ntp_servers:
             <alt>Sample Ansible Playbook run output</alt>
           </image></li>
         <li>Locate the IP address for the lifecycle manager in the
-            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the KVM Host under
-          <codeph>hlm_clmstaticip</codeph> field. You will use this IP address to SSH into the lifecycle manager
-          VM during the HP Helion OpenStack Carrier Grade installation process.</li>
+              <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the lifecycle
+            manager host under <codeph>hlm_clmstaticip</codeph> field. You will use this IP address
+            to SSH into the lifecycle manager VM during the HP Helion OpenStack Carrier Grade
+            installation process.</li>
       </ol>
     </section>
     <section>

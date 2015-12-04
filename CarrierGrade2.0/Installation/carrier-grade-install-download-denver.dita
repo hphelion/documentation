@@ -26,7 +26,6 @@
                         OpenStack Carrier Grade in a baremetal environment.</p>
                 <section conref="carrier-grade-install-download.dita#topic7148/getinstall"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/infoblox"/>
-                <section conref="carrier-grade-install-download.dita#topic7148/esx"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/checksum"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/extract"/>
                 <section conref="carrier-grade-install-download.dita#topic7148/kvm"/>
