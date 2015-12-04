@@ -1311,7 +1311,7 @@
               <row outputclass="row-applies-to-21">
                 <entry>mode (optional)</entry>
                 <entry>
-                  <p conkeyref="HOS-conrefs/appliest-to-21"/>
+                  <p conkeyref="HOS-conrefs/applies-to-21"/>
                   <p>The <codeph>mode</codeph> changes the root file system mode bits, which can
                   be either a symbolic representation or an octal number representing the bit patten
                   for the new mode bits.</p></entry>
