@@ -32,6 +32,11 @@
             example:<codeblock>cat /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
+        <li>Update the /etc/hosts file with the IP and FQDN. For
+            example:<codeblock>root@vsd1 ~]# cat /etc/hosts
+127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.2.2.1 vsd1.dcn-one.helion.cg</codeblock></li>
             <li>Execute the following command to add the VSD VM host name to the
                 <codeph>/etc/sysconfig/network</codeph> file:
             <codeblock>/etc/init.d/network restart </codeblock></li>

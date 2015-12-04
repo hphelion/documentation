@@ -20,12 +20,12 @@
   <topicref href="home.dita"/>
   <mapref href="docs.hpcloud.com.HOS.ditamap" />
   <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"/>
+  <topicref href="docs.hpcloud.com.CGH.20.ditamap" format="ditamap"/>
 
   <!-- Community -->
 
 
   <!--Dev Plat-->
-  <mapref href="docs.hpcloud.com.CGH.ditamap"/>
   <topicref href="euca/euca-landing-page.dita" navtitle="HPE Helion Eucalyptus" locktitle="yes">
     <topicref href="euca/euca.thirdparty.licensing.dita"
       navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
@@ -1833,6 +1833,7 @@
       </topichead>
      
     </topicref>
+    <mapref href="docs.hpcloud.com.CGH.ditamap"/>
     <topichead navtitle="Archive">
       <topicref href="community/community.index.dita"
         navtitle="HPE Helion OpenStack Community Edition" locktitle="yes">

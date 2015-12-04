@@ -118,7 +118,7 @@
       navtitle="Software License Terms" locktitle="yes" toc="no">
       <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="yes"
         navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
-      <topicref href="CarrierGrade/2.0/carrier-grade-DCN-eula.dita"/>
+      <topicref href="CarrierGrade/2.0/carrier-grade-dcn-eula.dita"/>
     </topicref>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">

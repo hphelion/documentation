@@ -462,7 +462,8 @@ Password: cghelion</codeblock>
           <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph>
             directory:<codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
           <li>Execute the following
-            command:<codeblock>./hlm_initcobbler.sh 192.168.100.2 255.255.255.0 192.168.100.100 192.168.100.200 </codeblock>or
+              command:<codeblock>./hlm_initcobbler.sh [&lt;ip address&gt; &lt;netmask&gt; &lt;dhcp begin range&gt; &lt;dhcp end range&gt;]</codeblock><p>For
+              example:</p><codeblock>./hlm_initcobbler.sh 192.168.100.2 255.255.255.0 192.168.100.100 192.168.100.200 </codeblock>or
             something similar if PXE network is different. </li>
           <li>Execute the following command: <codeblock>./hlm_importiso.sh</codeblock></li>
           <li>Change to the <codeph>~/kenobi-node-configuration</codeph>

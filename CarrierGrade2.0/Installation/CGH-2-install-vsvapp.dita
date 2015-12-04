@@ -272,10 +272,12 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
                     <li>Click the <b>Edit</b> button<p><image
                                 href="../../media/CGH-2-install-vsdvm-vsphere-agent-vm.png"
                                 width="400" id="image_tcs_wsp_wt"/></p></li>
-                    <li>Configure the <b>Datastore and Bootstrap Network</b> settings. <p>The
-                            Bootstrap Network is the network on which the vCenter Integration Node
-                            VM issues DHCP requests and issues requests to the vCenter integration
-                            node in order to receive all its parameters.</p></li>
+                    <li>Configure the <b>Datastore and Bootstrap Network</b> settings. <p>Edit the
+                            Agent VM settings and select the desired datastore and VSD-PXE for your
+                            VRS vApp.</p><p>The Bootstrap Network is the network on which the
+                            vCenter Integration Node VM issues DHCP requests and issues requests to
+                            the vCenter integration node in order to receive all its
+                        parameters.</p></li>
                 </ol></p>
         </section>
         <section>
