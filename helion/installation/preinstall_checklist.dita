@@ -505,9 +505,10 @@
           </tgroup>
         </table>
       </p>
-      <p><b>VLAN Information for Troubleshooting</b></p>
-      <p>From your lifecycle manager, run the following command and use this information for your
-          <codeph>nic_mappings.yml</codeph> file:
+    </section>
+    <section id="vlaninfo"><title>VLAN Information for the nic_mappings.yml Input File</title>
+      <p>From your lifecycle manager, run the following command and use this information for the
+          <codeph>bus-address</codeph> value in your <codeph>nic_mappings.yml</codeph> file:
         <codeblock>sudo lspci -D |grep -i eth</codeblock></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
@@ -516,6 +517,39 @@
             <thead>
               <row>
                 <entry>NIC Adapter PCI Bus Address Output</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  <codeblock>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </codeblock>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <p>Also from your lifecycle manager, run the following command and use this information for
+        the <codeph>port-num</codeph> value in your <codeph>nic_mappings.yml</codeph> file.  You
+        will need to do this for each
+        device:<codeblock>cat /sys/class/net/&lt;device name>/dev_id</codeblock></p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="nic_mappings2">
+          <tgroup cols="1">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Network Device Port Number Output</entry>
               </row>
             </thead>
             <tbody>
