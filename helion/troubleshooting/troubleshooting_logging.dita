@@ -36,8 +36,9 @@
           are not yet consumed by the logstash workers might be lost.</li>
       </ul>
     </section>
-    <p conkeyref="HOS-conrefs/applies-to-21"/>
-    <section id="kibana_visualization"><title>Error When Creating a Kibana Visualization</title>
+    <p outputclass="section-applies-to-21"><ph conkeyref="HOS-conrefs/applies-to-21-string"/></p>
+    <section id="kibana_visualization" outputclass="section-applies-to-21">
+      <title>Error When Creating a Kibana Visualization</title>
       <p>When creating a visualization in Kibana you may get an error similiar to this:
         <codeblock>"logstash-*" index pattern does not contain any of the following field types: number</codeblock></p>
       <p>To resolve this issue:</p>
