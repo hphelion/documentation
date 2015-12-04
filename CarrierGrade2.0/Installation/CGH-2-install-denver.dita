@@ -88,6 +88,129 @@
           Virtual Machine Installation</xref>. </p>
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
+    <section>
+      <title>Modify the ansible.json file</title>
+      <p>Modify the <codeph>ansible.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
+        directory of the lifecycle manager with values appropriate for your environment. For
+        example: </p>
+      <p>
+        <codeblock>{
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "ansible-vars",
+            "properties": {
+                "dns_domain_name": "helion.cg",
+                "dns_address": "10.1.2.44",
+                "ext_dns_ip": "10.1.2.44",
+                "upstream_ntp_servers": [
+                    "10.1.2.44",
+                    "16.110.135.123",
+                    "2.debian.pool.ntp.org"
+                ],
+                "ssl_cert_file": "ca.crt",
+                "ssl_key_file": "cakey.pem",
+                "ssl_passphrase": "cghelion"
+            }
+        }
+    ]
+}
+</codeblock>
+      </p>
+    </section>
+    <section>
+      <title>Modify the ldap.json file</title>
+      <p>Modify the <codeph>ldap.json</codeph> file in the /var/hlm/clouds/&lt;cloudname> directory
+        of the lifecycle manager with values appropriate for your environment. For example: </p>
+      <p>
+        <codeblock>
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "ldap-vars",
+            "properties": {
+                "ldap_domain_name": "americas",
+                "ldap_url": "10.1.2.44",
+                "ldap_username": "admin",
+                "ldap_password": "admin",
+                "ldap_domain": "dc=helioncg,dc=local",
+                "ldap_ou": "CGTestUsers",
+                "ldap_nova_password": "nova",
+                "ldap_nova_user": "nova",
+                "ldap_neutron_password": "neutron",
+                "ldap_neutron_user": "neutron",
+                "ldap_cinder_password": "cinder",
+                "ldap_cinder_user": "cinder",
+                "ldap_glance_password": "glance",
+                "ldap_glance_user": "glance",
+                "ldap_enabled": 1
+            }
+        }
+    ]
+}</codeblock>
+      </p>
+    </section>
+    <section>
+      <title>Modify the wr.json file</title>
+      <p>Modify the <codeph>wr.json</codeph> file in the /var/hlm/clouds/&lt;cloudname> directory of
+        the lifecycle manager with values appropriate for your environment. For example: </p>
+      <p>
+        <codeblock>{
+    "product": {
+        "version": 1
+    },
+
+    "property-groups": [
+        {
+            "name": "wr-vars",
+            "properties": {
+                "database_storage": 50,
+                "backup_storage": 300,
+                "shared_instance_storage": 250,
+                "region_name": "regionone",
+                "logical_interface": [
+                    {
+                        "lag_interface": "N",
+                        "lag_mode": 4,
+                        "interface_mtu": 1500,
+                        "interface_ports": [
+                            "eth0"
+                        ],
+                        "network": [
+                            {
+                                "ip_start_address": "10.10.2.51",
+                                "ip_end_address": "10.10.2.99",
+                                "name": "CLM"
+                            },
+                            {
+                                "ip_start_address": "172.16.71.51",
+                                "ip_end_address": "172.16.71.99",
+                                "name": "BLS"
+                            },
+                            {
+                                "ip_start_address": "10.10.3.51",
+                                "ip_end_address": "10.10.3.99",
+                                "name": "CAN"
+                            }
+                        ]
+                    }
+                ],
+                "pxeboot_cidr": "10.10.8.0/24",
+             "license_file_name": "license.lic",
+                "physnet_VLAN_range_mappings": ["physnet1:1000:1999","physnet2:2000:2020"],
+                "pci_vendor_id": ["8086:10ca","8086:10ed"]
+            }
+        }
+    ]
+}</codeblock>
+      </p>
+    </section>
     <section id="environment">
       <title id="env-json">Modify the <codeph>environment.json</codeph> file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the

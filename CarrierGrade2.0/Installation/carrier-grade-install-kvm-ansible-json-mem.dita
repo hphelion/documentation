@@ -26,7 +26,7 @@
             <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
                 appropriate for your environment. The IP addresses are masked for security
                 purposes.</p>
-            <codeblock>{
+            <codeblock>// {
     "product": {
         "version": 1
     },
@@ -36,37 +36,37 @@
             "name": "ansible-vars",
             "properties": {
                 "dns_domain_name": "dcn-one.helion.cg",
-                "ext_dns_ip": "10.x.x.x",
-                "dns_address": "10.x.x.x",
-                "vsc_dcm_ip": "10.x.x.x",
-                "vsc_dcm_ip_ha": "10.x.x.x",
+                "ext_dns_ip": "10.1.2.44",
+                "dns_address": "10.1.2.44",
+                "vsc_dcm_ip": "10.20.5.31",
+                "vsc_dcm_ip_ha": "10.20.5.32",
                 "vsc_dcm_ip_subnet": "24",
-                "vsc_tul_cidr": "10.x.x.x/24",
-                "vsc_tul_cidr_ha": "10.x.x.x/24",
-                "vsc_tul_ip": "10.x.x.x",
-                "vsc_tul_ip_ha": "10.x.x.x",
+                "vsc_tul_cidr": "10.20.6.31/24",
+                "vsc_tul_cidr_ha": "10.20.6.32/24",
+                "vsc_tul_ip": "10.20.6.31",
+                "vsc_tul_ip_ha": "10.20.6.32",
                 "vsc_user_name": "admin",
                 "vsc_user_pass": "admin",
                 "vsc_xmpp_name": "vsc1:password@vsd1.dcn-one.helion.cg",
                 "vsc_xmpp_name_ha": "vsc2:password@vsd1.dcn-one.helion.cg",
                 "vsc_route_mgmt_cidr": [
-                    "10.x.x.x/24",
-                    "10.x.x.x/24"
+                    "10.1.2.0/24",
+                    "10.20.3.0/24"
                 ],
-                "vsc_route_mgmt_gw": "10.x.x.x",
-                "vsd_address": "10.x.x.x",
+                "vsc_route_mgmt_gw": "10.20.5.1",
+                "vsd_address": "10.20.5.21",
                 "vsd_name": "vsd1",
                 "vsc_image_name": "vsc_singledisk",
                 "vsc_host_name": "vsc1",
                 "vsc_host_name_ha": "vsc2",
-                "vsc_ha_enabled": 0,
-                "vsc_bgp_required": 0, 
-              "vsd_image_name": "VSD-3.2.2_74-hp.qcow2",
-                "vsd_gateway": "10.x.x.x",
+                "vsc_ha_enabled": 1,
+                "vsc_bgp_required": 1,
+                "vsd_image_name": "VSD-3.2.4_134-hp.qcow2",
+                "vsd_gateway": "10.20.5.1",
                 "vsd_netmask": "255.255.255.0",
-                "upstream_ntp_servers": [
-                    "10.x.x.x",
-                    "16.x.x.x"
+               "upstream_ntp_servers": [
+                    "10.1.2.44",
+                    "16.110.135.123"
                 ],
                 "compute_virt_type": "kvm",
                 "ssl_cert_file": "ca.crt",
@@ -75,9 +75,7 @@
             }
         }
     ]
-}
-
-</codeblock>
+}</codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
                 <li><xref href="CGH-2-install-tahoe.dita#topic10581/env">Tahoe

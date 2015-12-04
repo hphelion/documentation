@@ -350,8 +350,8 @@ Password: cghelion</codeblock>
     <section id="conref-wr-json">
       <title>Configure the wr.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
-        lifecycle manager.</p>
+          <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory on the lifecycle
+        manager.</p>
     </section>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-sac.dita">a sample wr.json
         file</xref>. </p>

@@ -20,8 +20,8 @@
             files that will be used when deploying the lifecycle manager.</p>
         <section id="fields">
         <p>The <codeph>ansible.json</codeph> file in the
-                <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager contains
-            the following fields:</p>
+                    <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the
+                lifecycle manager contains the following fields:</p>
         
 
             <table frame="all" rowsep="1" colsep="1">

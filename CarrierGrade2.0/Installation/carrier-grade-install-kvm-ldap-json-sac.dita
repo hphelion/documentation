@@ -19,9 +19,9 @@
         
 <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>ldap.json</codeph> file in the
-                    <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager. The
-                IP addresses are masked for security purposes. Use values appropriate for your
-                environment.</p>
+                    <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory of the lifecycle
+                manager. The IP addresses are masked for security purposes. Use values appropriate
+                for your environment.</p>
             <p>The user admin name and password must be present in LDAP:</p>
             <p>
                 <codeblock>"ldap_username": "admin", 
