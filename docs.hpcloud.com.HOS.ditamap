@@ -90,6 +90,8 @@
     <!-- BEGIN ADMINISTRATION -->
     <topicref href="helion/administration/administration_index.dita" navtitle="Administration"
       locktitle="yes" otherprops="administration">
+      <topicref href="helion/administration/change_adminpassword.dita"
+        navtitle="Retrieving and Changing the Admin Password" locktitle="yes"/>
       <topicref href="helion/administration/create_extnet.dita"
         navtitle="Creating an External Network" locktitle="yes"/>
       <topicref href="helion/administration/upload_image.dita" navtitle="Uploading an Image for Use"

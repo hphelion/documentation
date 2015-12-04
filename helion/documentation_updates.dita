@@ -27,6 +27,12 @@
             </thead>
             <tbody>
               <row>
+                <entry>12/4/2015</entry>
+                <entry>Administration</entry>
+                <entry>Added steps for retrieving and changing the Admin password (<xref
+                    href="administration/change_adminpassword.dita">Link</xref>)</entry>
+              </row>
+              <row>
                 <entry>12/2/2015</entry>
                 <entry>Logging Configuration</entry>
                 <entry>Updated information related to changing the logging level for the Monasca
