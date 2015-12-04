@@ -560,10 +560,14 @@ Password: cghelion</codeblock>
                 </row>
               </tbody>
             </tgroup>
-          </table><p><b>Note:</b> You can use either 3PAR and VSA in the KVM region or select both
-            if you have respective storage arrays </p><p id="storage">A typical
-              <codeph>cinder_conf</codeph> that enables all three back ends appears similar to the
-            following
+          </table><p>You can use either 3PAR and VSA in the KVM region or select both if you have
+            respective storage arrays </p><p>Note: The HP 3PAR Web Services API server must be
+            enabled and running on the HP 3PAR storage system. For more information, see the
+            OpenStack documentation at: <xref
+              href="http://docs.openstack.org/liberty/config-reference/content/enable-hp-3par-fibre-channel.html"
+              format="html" scope="external">Enable the HP 3PAR Fibre Channel and iSCSI
+              drivers</xref>.</p><p id="storage">A typical <codeph>cinder_conf</codeph> that enables
+            all three back ends appears similar to the following
           example:</p><codeblock>[DEFAULT]
 enabled_backends=vmdk, hp3par, hplefthand
 ...                                

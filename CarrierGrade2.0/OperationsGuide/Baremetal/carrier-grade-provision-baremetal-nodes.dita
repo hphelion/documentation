@@ -48,15 +48,17 @@
             flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
 nova flavor-key baremetal set "capabilities:boot_option"="local" 
 nova flavor-key baremetal set "capabilities:boot_mode"="bios"</codeblock></li>
-          <li>Register the ironic node using pxe_ipmitool, agent_ipmitool, or agent_ilo drivers. <ul
-              id="ul_g2k_gsh_f5">
-              <li><b>pxe_ipmitool driver</b><p>Execute the following commands to register the Ironic
-                  node:</p><codeblock>ironic node-create -d ilo_ipa -i ipmi_address=&lt;&lt;ip&gt;&gt; -i ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt;  -i cpu_arch=amd64</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+          <li>Register the Ironic node using the <codeph>pxe_ipmitool</codeph>,
+              <codeph>agent_ipmitool</codeph>, or <codeph>agent_ilo</codeph> drivers. Use one of the
+            three methods to register Ironic. For HP servers, <codeph>agent_ipmitool</codeph> and
+              <codeph>agent_ilo</codeph> are supported.<ul id="ul_g2k_gsh_f5">
               <li><b>agent_ipmitool driver</b><p>Execute the following commands to register the
                   Ironic
                 node:</p><codeblock>ironic node-create -d agent_ipmitool -i ipmi_address=&lt;&lt;ip>> -i ipmi_username=&lt;user> -i ipmi_password=&lt;password> -i ipmi_terminal_port=&lt;terminal_port> -p cpus=&lt;cpus> -p memory_mb=&lt;memory> -p local_gb=&lt;disk_space> -i deploy_kernel=&lt;glance_deploy_kernel_id> -i deploy_ramdisk=&lt;glance deploy ram disk id> i cpu_arch=&lt;cpu_arch></codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
               <li><b>agent_ilo driver</b><p>Execute the following commands to register the Ironic
                   node:</p><codeblock>ironic node-create -d agent_ilo -i ilo_address==&lt;&lt;ip&gt;&gt; -i ilo_username=&lt;user&gt; -i ilo_password=&lt;pass&gt; -p cpus=&lt;cpus&gt; -p memory_mb=&lt;memory&gt; -p local_gb=&lt;disk_space&gt; -i ilo_deploy_iso=&lt;glance deploy iso image&gt; -i cpu_arch=&lt;cpu_arch&gt;</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+              <li><b>pxe_ipmitool driver</b><p>Execute the following commands to register the Ironic
+                  node:</p><codeblock>ironic node-create -d ilo_ipa -i ipmi_address=&lt;&lt;ip&gt;&gt; -i ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt;  -i cpu_arch=amd64</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
             </ul></li>  
               <li>Execute the following command to register the port for the baremetal
             node:<codeblock>ironic port-create -a &lt;&lt;node_mac_id&gt;&gt; --local-link-connection switch_id="&lt;&lt;switch_id&gt;&gt;" --local-link-connection port_id="&lt;&lt;switch_port&gt;&gt;" --local-link-connection switch_info="ToR" -n &lt;&lt;node_id&gt;&gt;</codeblock></li>

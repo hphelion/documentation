@@ -33,21 +33,23 @@
     </section>
     <section>
       <title>Network/Component Architecture</title>
-    <p><image href="../../media/CGH-2-block-arch-sacramento.png" width="750" id="image_wdn_zbw_mt"
-      /></p>
+      <p><image href="../../media/CGH-2-block-arch-sacramento.png" width="750" id="image_wdn_zbw_mt"
+        /></p>
     </section>
     <section id="deploy-arch">
       <title>Deployment architecture</title>
       <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-2-deploy-arch-sacramento.png" id="image_g3z_dx1_xt" width="800"
+        <image href="../../media/CGH-2-deploy-arch-sacramento.jpg" id="image_g3z_dx1_xt" width="800"
         /></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
-    <section id="networkarch"><title>Network architecture</title><p>The following information
-        describes the network configuration, which must be configured by the network
-        administrator.</p><table>
+    <section id="networkarch">
+      <title>Network architecture</title>
+      <p>The following information describes the network configuration, which must be configured by
+        the network administrator.</p>
+      <table>
         <tgroup cols="2">
           <colspec colname="col1"/>
           <colspec colname="col2"/>
@@ -110,11 +112,16 @@
               <entry>Tenant Underlay Network for the baremetal region/PCI-Passthrough/SR-IOV
                 interfaces. This is a set of tagged VLANs. </entry>
             </row>
+            <row>
+              <entry>VTEP-GW</entry>
+              <entry>Top-of-Rack (ToR) with OVSDB. Acts as a hardware VxLAN Tunnel Endpoint Gateway.
+                Provides VxLAN-VLAN bridging and L3 routing</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
     </section>
-        <!-- <row>
+    <!-- <row>
 <row>
 <entry> WR-BLS </entry>
 <entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
@@ -130,6 +137,8 @@
         <li>Intf0 is mapped to Port1/Bonded Pair</li>
         <li>Intf1 is mapped to Port2/Bonded Pair</li>
         <li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
+        <li>p1 to p<i>n</i> are switch ports</li>
+        <li>Switch Mgmt Port or iLO Port</li>
       </ul>
     </section>
     <section id="routing-acls">
@@ -261,72 +270,72 @@
           <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
       </ul>
     </section>
-    <section id="data"><title>Data</title>
-    <table id="table_czt_whc_f5">
-      <tgroup cols="6">
-        <colspec colnum="1" colname="col1"/>
-        <colspec colnum="2" colname="col2"/>
-        <colspec colnum="3" colname="col3"/>
-        <colspec colnum="4" colname="col4"/>
-        <colspec colnum="5" colname="col5"/>
-        <colspec colnum="6" colname="col6"/>
-        <thead>
-          <row>
-            <entry>Data name</entry>
-            <entry>Confidentiality</entry>
-            <entry>Integrity</entry>
-            <entry>Availability</entry>
-            <entry>Backup?</entry>
-            <entry>Description</entry>
-          </row>
-        </thead>
-        <tbody>
-          <row>
-            <entry>Cloud Definition</entry>
-            <entry>Confidential</entry>
-            <entry>High</entry>
-            <entry>Low</entry>
-            <entry>Yes</entry>
-            <entry>Control plane and network topology and mapping to data center (input to
-              HLM)</entry>
-          </row>
-          <row>
-            <entry>Cloud Configuration</entry>
-            <entry>Confidential</entry>
-            <entry>High</entry>
-            <entry>Low</entry>
-            <entry>Yes</entry>
-            <entry>Configuration of services in cloud (output from HLM)</entry>
-          </row>
-          <row>
-            <entry>MySQL database</entry>
-            <entry>Confidential</entry>
-            <entry>High</entry>
-            <entry>High</entry>
-            <entry>Yes</entry>
-            <entry>Contains user preferences. Backup to Swift daily.</entry>
-          </row>
-          <row>
-            <entry>Logs</entry>
-            <entry>Confidential</entry>
-            <entry>High</entry>
-            <entry>Medium</entry>
-            <entry>Yes</entry>
-            <entry>Logs from all services</entry>
-          </row>
-          <row>
-            <entry>Credentials</entry>
-            <entry>Confidential</entry>
-            <entry>High</entry>
-            <entry>High</entry>
-            <entry>Yes</entry>
-            <entry>Inter-service authentication uses the credentials for each service</entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
+    <section id="data">
+      <title>Data</title>
+      <table id="table_czt_whc_f5">
+        <tgroup cols="6">
+          <colspec colnum="1" colname="col1"/>
+          <colspec colnum="2" colname="col2"/>
+          <colspec colnum="3" colname="col3"/>
+          <colspec colnum="4" colname="col4"/>
+          <colspec colnum="5" colname="col5"/>
+          <colspec colnum="6" colname="col6"/>
+          <thead>
+            <row>
+              <entry>Data name</entry>
+              <entry>Confidentiality</entry>
+              <entry>Integrity</entry>
+              <entry>Availability</entry>
+              <entry>Backup?</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Cloud Definition</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>Low</entry>
+              <entry>Yes</entry>
+              <entry>Control plane and network topology and mapping to data center (input to
+                HLM)</entry>
+            </row>
+            <row>
+              <entry>Cloud Configuration</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>Low</entry>
+              <entry>Yes</entry>
+              <entry>Configuration of services in cloud (output from HLM)</entry>
+            </row>
+            <row>
+              <entry>MySQL database</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>Contains user preferences. Backup to Swift daily.</entry>
+            </row>
+            <row>
+              <entry>Logs</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>Yes</entry>
+              <entry>Logs from all services</entry>
+            </row>
+            <row>
+              <entry>Credentials</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>High</entry>
+              <entry>Yes</entry>
+              <entry>Inter-service authentication uses the credentials for each service</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
     </section>
-    
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
         OpenStack Carrier Grade Sacramento deployment uses HPE Distributed Cloud Networking to
         provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
@@ -429,22 +438,23 @@
         <li>an optional board management network.</li>
       </ul>
       <p>Operational requirements for each network are described in the following sections.</p>
-      
       <title id="internal-management-network">Internal Management Network</title>
       <p>The internal management network must be implemented as a single, dedicated, Layer 2
         broadcast domain for the exclusive use of each server cluster. Sharing of this network by
-        more than one server cluster is not a supported configuration.</p><p>During the server
-          software installation process, several network services such as DHCP, and PXE, are expected
-          to run over the internal management network. These services are used to bring up the
-          different hosts to an operational state. Therefore, it is mandatory that this network be
-          operational and available in advance, to ensure a successful installation.</p><p>On each
-            host, the internal management network can be implemented using a 10 Gb Ethernet port. In
-            either case, requirements for this port are:</p><ul>
-              <li>must be capable of PXE-booting</li>
-              <li>can be used by the motherboard as a primary boot device</li>
-            </ul>
+        more than one server cluster is not a supported configuration.</p>
+      <p>During the server software installation process, several network services such as DHCP, and
+        PXE, are expected to run over the internal management network. These services are used to
+        bring up the different hosts to an operational state. Therefore, it is mandatory that this
+        network be operational and available in advance, to ensure a successful installation.</p>
+      <p>On each host, the internal management network can be implemented using a 10 Gb Ethernet
+        port. In either case, requirements for this port are:</p>
+      <ul>
+        <li>must be capable of PXE-booting</li>
+        <li>can be used by the motherboard as a primary boot device</li>
+      </ul>
       <title id="oam-network">CAN/OAM Network</title>
-      <p>You should ensure that the following services are available on the CAN/OAM Network:</p><ul>
+      <p>You should ensure that the following services are available on the CAN/OAM Network:</p>
+      <ul>
         <li>
           <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the
             CAN/OAM Network.</p>
@@ -459,8 +469,9 @@
             things, to ensure that system-wide log reports present a unified view of the day-to-day
             operations.</p>
         </li>
-      </ul><p>The server compute nodes always use the controller nodes as the time server for the
-        entire cluster. </p>
+      </ul>
+      <p>The server compute nodes always use the controller nodes as the time server for the entire
+        cluster. </p>
       <title id="provider-network">Provider Network</title>
       <p>There are no specific requirements for network services to be available on the provider
         network. However, you must ensure that all network services required by the guests running
@@ -468,16 +479,19 @@
         are entirely served by the services provided by the controller nodes over the internal
         management network.</p>
       <title id="infrastructure-network">Infrastructure Network</title>
-      <p>This is an optional network.</p><p>As with the internal management network, the
-        infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain
-        for the exclusive use of each server cluster.</p><p>Sharing of this network by more than one
-          server cluster is not a supported configuration.</p><p>The infrastructure network can be
-            implemented as a 10 Gb Ethernet network. In its absence, all infrastructure traffic is
-            carried over the internal management network.</p>
+      <p>This is an optional network.</p>
+      <p>As with the internal management network, the infrastructure network must be implemented as
+        a single, dedicated, Layer 2 broadcast domain for the exclusive use of each server
+        cluster.</p>
+      <p>Sharing of this network by more than one server cluster is not a supported
+        configuration.</p>
+      <p>The infrastructure network can be implemented as a 10 Gb Ethernet network. In its absence,
+        all infrastructure traffic is carried over the internal management network.</p>
       <title id="board-network">Board Management Network</title>
       <p>Board Management CTL (IPMI Control) Network External access to the board management
         network, the board management modules are assigned IP addresses accessible from the OAM
-        network, and the controller uses the OAM network to connect to them.</p></section>
+        network, and the controller uses the OAM network to connect to them.</p>
+    </section>
     <section>
       <title>Summary of Controls</title>
       <p>Summary of controls spanning multiple components and interfaces:</p>
