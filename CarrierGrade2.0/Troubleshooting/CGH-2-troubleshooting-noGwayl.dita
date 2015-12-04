@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Set NoGway For Multi-NIC
+    Subnets</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carreir Grade 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carreir Grade 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <codeblock>VSD managed subnets:
+
+1. Get APIKey for VSD:
+curl -k -s -u csproot:csproot -H "X-Nuage-Organization: csp" -X GET https://&lt;VSD IP>:8443/nuage/api/v3_2/me | python -mjson.tool
+
+eg.
+curl -k -s -u csproot:csproot -H "X-Nuage-Organization: csp" -X GET https://10.10.4.21:8443/nuage/api/v3_2/me | python -mjson.tool
+[
+    {
+        "APIKey": "d7126af3-b8a4-42e4-b77b-d99308c1e83b",
+        "APIKeyExpiry": 1447495809143,
+        "ID": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "avatarData": null,
+        "avatarType": null,
+        "email": "csproot@CSP.com",
+        "enterpriseID": "76046673-d0ea-4a67-b6af-2829952f0812",
+        "enterpriseName": "CSP",
+        "entityScope": null,
+        "externalID": null,
+        "externalId": null,
+        "firstName": "csproot",
+        "lastName": "csproot",
+        "licenseCapabilities": [],
+        "mobileNumber": null,
+        "password": null,
+        "role": "CSPROOT",
+        "userName": "csproot"
+    }
+]
+
+
+2. Get the subnets:
+curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -X GET https://10.10.4.21:8443/nuage/api/v3_2/subnets | python -mjson.tool
+
+eg. multinic1, multinic2 and multinic3 in the following example
+
+[
+    {
+        "ID": "3194f7ca-5952-4d3e-a62b-7986586fb6bb",
+        "IPType": "IPV4",
+        "PATEnabled": "INHERITED",
+        "address": "10.29.51.0",
+        "associatedApplicationID": null,
+        "associatedApplicationObjectID": null,
+        "associatedApplicationObjectType": null,
+        "associatedMulticastChannelMapID": null,
+        "associatedSharedNetworkResourceID": null,
+        "children": null,
+        "creationDate": 1447458421000,
+        "description": null,
+        "encryption": "INHERITED",
+        "entityScope": "ENTERPRISE",
+        "externalID": null,
+        "gateway": "10.29.51.1",
+        "gatewayMACAddress": "68:54:ED:00:00:07",
+        "lastUpdatedBy": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "lastUpdatedDate": 1447458421000,
+        "maintenanceMode": "DISABLED",
+        "multicast": "INHERITED",
+        "name": "multinicsub1",
+        "netmask": "255.255.255.0",
+        "owner": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "parentID": "cf9d99fa-24f6-4e1d-8451-823221f575d7",
+        "parentType": "zone",
+        "policyGroupID": 15,
+        "proxyARP": false,
+        "public": false,
+        "routeDistinguisher": "65534:27816",
+        "routeTarget": "65534:34072",
+        "serviceID": 20034,
+        "splitSubnet": false,
+        "templateID": null,
+        "underlayEnabled": "DISABLED",
+        "vnId": 907660
+    },
+    {
+        "ID": "3370ba9e-17b4-4cec-86f0-6bfe63fc6989",
+        "IPType": "IPV4",
+        "PATEnabled": "INHERITED",
+        "address": "10.107.86.0",
+        "associatedApplicationID": null,
+        "associatedApplicationObjectID": null,
+        "associatedApplicationObjectType": null,
+        "associatedMulticastChannelMapID": null,
+        "associatedSharedNetworkResourceID": null,
+        "children": null,
+        "creationDate": 1447458448000,
+        "description": null,
+        "encryption": "INHERITED",
+        "entityScope": "ENTERPRISE",
+        "externalID": null,
+        "gateway": "10.107.86.1",
+        "gatewayMACAddress": "68:54:ED:00:00:08",
+        "lastUpdatedBy": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "lastUpdatedDate": 1447458448000,
+        "maintenanceMode": "DISABLED",
+        "multicast": "INHERITED",
+        "name": "multinicsub2",
+        "netmask": "255.255.255.0",
+        "owner": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "parentID": "cf9d99fa-24f6-4e1d-8451-823221f575d7",
+        "parentType": "zone",
+        "policyGroupID": 16,
+        "proxyARP": false,
+        "public": false,
+        "routeDistinguisher": "65534:61383",
+        "routeTarget": "65534:30946",
+        "serviceID": 20035,
+        "splitSubnet": false,
+        "templateID": null,
+        "underlayEnabled": "DISABLED",
+        "vnId": 590844
+    },
+    {
+        "ID": "176972b4-c532-4ceb-869a-a50990146bdb",
+        "IPType": "IPV4",
+        "PATEnabled": "INHERITED",
+        "address": "10.120.59.0",
+        "associatedApplicationID": null,
+        "associatedApplicationObjectID": null,
+        "associatedApplicationObjectType": null,
+        "associatedMulticastChannelMapID": null,
+        "associatedSharedNetworkResourceID": null,
+        "children": null,
+        "creationDate": 1447458467000,
+        "description": null,
+        "encryption": "INHERITED",
+        "entityScope": "ENTERPRISE",
+        "externalID": null,
+        "gateway": "10.120.59.1",
+        "gatewayMACAddress": "68:54:ED:00:00:09",
+        "lastUpdatedBy": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "lastUpdatedDate": 1447458467000,
+        "maintenanceMode": "DISABLED",
+        "multicast": "INHERITED",
+        "name": "multinicsub3",
+        "netmask": "255.255.255.0",
+        "owner": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "parentID": "cf9d99fa-24f6-4e1d-8451-823221f575d7",
+        "parentType": "zone",
+        "policyGroupID": 17,
+        "proxyARP": false,
+        "public": false,
+        "routeDistinguisher": "65534:49410",
+        "routeTarget": "65534:33996",
+        "serviceID": 20036,
+        "splitSubnet": false,
+        "templateID": null,
+        "underlayEnabled": "DISABLED",
+        "vnId": 739391
+    }
+]
+
+
+multinic2 UUID: 3370ba9e-17b4-4cec-86f0-6bfe63fc6989
+multinic3 UUID: 176972b4-c532-4ceb-869a-a50990146bdb
+
+3. How to set No Gateway option on a subnet:
+--------------------------------------------------
+Get the dhcp options for a specific subnet:
+
+curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -X GET https://10.10.4.21:8443/nuage/api/v3_2/subnets/3370ba9e-17b4-4cec-86f0-6bfe63fc6989/dhcpoptions | python -mjson.tool
+Blank output to begin with since we haven't set any dhcpoptions yet
+
+POST - No default router (3)
+--------------------------------------------------
+curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -H "Content-Type:application/json" -d '{"type":"03","length":"01", "value":"00"}' -X POST https://10.10.4.21:8443/nuage/api/v3_2/subnets/3370ba9e-17b4-4cec-86f0-6bfe63fc6989/dhcpoptions | python - mjson.tool
+
+GET command to double check that dhcpoptions are set:
+root@LR4TB1:~# curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -X GET https://10.10.4.21:8443/nuage/api/v3_2/subnets/3370ba9e-17b4-4cec-86f0-6bfe63fc6989/dhcpoptions | python -mjson.tool
+[
+    {
+        "ID": "4db72abb-1f5e-438a-abb2-a98d075eb6ef",
+        "actualType": 3,
+        "actualValues": [
+            "00"
+        ],
+        "children": null,
+        "creationDate": 1447468134000,
+        "entityScope": "ENTERPRISE",
+        "externalID": null,
+        "lastUpdatedBy": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "lastUpdatedDate": 1447468134000,
+        "length": "01",
+        "owner": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "parentID": "3370ba9e-17b4-4cec-86f0-6bfe63fc6989",
+        "parentType": "subnet",
+        "type": "03",
+        "value": "00"
+    }
+]
+
+Repeat on the multinic2
+------------------------
+
+curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -X GET https://10.10.4.21:8443/nuage/api/v3_2/subnets/176972b4-c532-4ceb-869a-a50990146bdb/dhcpoptions | python -mjson.tool
+
+root@LR4TB1:~# curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -H "Content-Type:application/json" -d '{"type":"03","length":"01", "value":"00"}' -X POST https://10.10.4.21:8443/nuage/api/v3_2/subnets/176972b4-c532-4ceb-869a-a50990146bdb/dhcpoptions | python - mjson.tool
+root@LR4TB1:~# curl -k -s -u csproot:d7126af3-b8a4-42e4-b77b-d99308c1e83b -H "X-Nuage-Organization: csp" -X GET https://10.10.4.21:8443/nuage/api/v3_2/subnets/176972b4-c532-4ceb-869a-a50990146bdb/dhcpoptions | python -mjson.tool
+[
+    {
+        "ID": "7a9b15d2-bed2-44c7-8f27-4ed5ac642cc3",
+        "actualType": 3,
+        "actualValues": [
+            "00"
+        ],
+        "children": null,
+        "creationDate": 1447468321000,
+        "entityScope": "ENTERPRISE",
+        "externalID": null,
+        "lastUpdatedBy": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "lastUpdatedDate": 1447468321000,
+        "length": "01",
+        "owner": "8a6f0e20-a4db-4878-ad84-9cc61756cd5e",
+        "parentID": "176972b4-c532-4ceb-869a-a50990146bdb",
+        "parentType": "subnet",
+        "type": "03",
+        "value": "00"
+    }
+]
+
+Now multinicsub3 and multinicsub3 are set to NO DEFAULT GW entry.
+
+Post this operation launch a VM with multinicsub1,multinicsub2,multinicsub3
+only multinicsub1 should get GW route entry for the VM.
+
+Assign FIP to this multinicsub1 IP.
+
+</codeblock>
+    </p>
+  </body>
+</topic>

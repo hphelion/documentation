@@ -119,6 +119,8 @@
       navtitle="Troubleshooting" locktitle="yes">
       <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting-install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
+      <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting-noGwayl.dita"
+        navtitle="Set NoGway For Multi-NIC Subnets" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/carrier-grade-license.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes">
