@@ -24,324 +24,6 @@
                 
                 <p>This document describes the prerequisite steps required to install HP Helion
                         OpenStack Carrier Grade in a baremetal environment.</p>
-                <section id="getinstall">
-                        <title>Download and unpack the installation packages</title>
-                        <p><b>HP Helion OpenStack Carrier Grade installation files</b></p>
-                        <p>
-                                <ol id="ol_nkj_qg4_yt">
-                                        <li>Extract the file:<ul id="ul_hh2_rg4_yt">
-                                                  <li>HCG2.0Beta.tar.gz</li>
-                                                  <li>HCG2.0Beta.tar.gz.md5</li>
-                                                  <li>HCG2.0BetaInfobloxPlugin.tar.gz</li>
-                                                  <li>HCG2.0BetaInfobloxPlugin.tar.gz.md5</li>
-                                                </ul></li>
-                                        <li>Extract the <codeph>HCG2.0Beta.tar.gz</codeph> file:
-                                                  <!--updated from status page 12/2--><ul
-                                                  id="ol_tnd_wc1_f5">
-                                                  <li>cg-hos-src.tar.gz</li>
-                                                  <li>cg-hos-src.tar.gz.md5</li>
-                                                  <li>cg-infra-src.tar.gz</li>
-                                                  <li>cg-infra-src.tar.gz.md5</li>
-                                                  <li>cg-hos-misc.tar.gz</li>
-                                                  <li>cg-hos-misc.tar.gz.md5</li>
-                                                  <li>cg-hlm.qcow2</li>
-                                                  <li>cg-hlm.qcow2.md5</li>
-                                                  <li>cg-ironic-deploy-images.tar.gz</li>
-                                                  <li>cg-ironic-deploy-images.tar.gz.md5</li>
-                                                </ul><p>The <b>WR-HCG-2_0</b> directory contains
-                                                  files required to install the KVM region. The
-                                                  installation instructions indicate when and how to
-                                                  deploy the files:
-                                                  <!--updated from FTP server 12/2--><ul
-                                                  id="ul_elg_f34_yt">
-                                                  <li>bootimage_avs_only.iso</li>
-                                                  <li>bootimage_full.iso</li>
-                                                  </ul></p><p>The following files are included in
-                                                  the installation download packages and will become
-                                                  available during the installation of the Lifecycle
-                                                  Manager. </p><p>
-                                                  <ul id="ul_oty_2cz_st">
-                                                  <li><codeph>license.lic</codeph> Located in the
-                                                  <codeph>/root/cg-hlm/windriver-files</codeph>
-                                                  directory on the KVM Host.</li>
-                                                  <li><codeph>region_config</codeph> Located in the
-                                                  /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                  directory on the KVM Host.</li>
-                                                  <li><codeph>cakey.pem</codeph> Located in the
-                                                  <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                                  directory on the KVM Host.</li>
-                                                  </ul>
-                                                </p><p>You can download these files to any location.
-                                                  You will copy these files to the
-                                                  <codeph>/home/wrsroot/</codeph> directory of
-                                                  <codeph>controller-0</codeph> in the KVM region
-                                                  during the installation process. </p><p
-                                                  id="patches">The <b>Patches</b> folder contains
-                                                  patches for the Attic backup and restore service
-                                                  and the OpenStack Ironic service:<table
-                                                  id="table_ich_gs5_mt">
-                                                  <tgroup cols="2">
-                                                  <colspec colnum="1" colname="col2"/>
-                                                  <colspec colnum="2" colname="col3"/>
-                                                  <tbody>
-                                                  <row>
-                                                  <entry><b>Folder Name</b></entry>
-                                                  <entry><b>Files within the folder</b></entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>HCG-941</entry>
-                                                  <entry>
-                                                  <ul id="ul_e5y_zk4_yt">
-                                                  <li>haproxy-FND-RMQ-BAR-VIP.patch</li>
-                                                  <li>kenobi-config-proc-rmb-bar.patch</li>
-                                                  <li>kenobi-node-config-rmb-bar.patch</li>
-                                                  </ul>
-                                                  </entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>knc-cobbler-random.patch</entry>
-                                                  <entry>
-                                                  <ul id="ul_avt_2cp_f5">
-                                                  <li>knc-cobbler-random.patch</li>
-                                                  </ul>
-                                                  </entry>
-                                                  </row>
-                                                  </tbody>
-                                                  </tgroup>
-                                                  </table></p><p><b>Note:</b> The HCG-941 patch is
-                                                  for the Sacramento deployment only.</p></li>
-                                </ol>
-                        </p>
-                </section>
-                <section id="dcn"><title>Extract the DCN Installation Packages</title>
-                        <ol>
-                                        <li>Extract the <codeph>HCG2.0BetaDCN.tar.gz</codeph>
-                                                  file.<p>The <codeph>hcg-2-0-beta.tar</codeph> file
-                                                  contains the required DCN packages needed to
-                                                  deploy the DCN environment, in the
-                                                  <codeph>build22/HLM/DCN</codeph> directory. The
-                                                  currently supported version is <b id="dcn-version">DCN version 3.2
-                                                  R4</b>.</p><ul id="ul_w3c_yj4_yt">
-                                                  <li>5930-Nuage-D2423.ipe</li>
-                                                  <li>itoolbox1.ova</li>
-                                                  <li>nuage-metadata-agent_3.2.4-133_all.deb</li>
-                                                  <li>nuage-openstack-neutron_2015.1.1745_all.deb</li>
-                                                  <li>nuage-openvswitch-common_3.2.4-133_amd64.deb</li>
-                                                  <li>nuage-openvswitch-switch_3.2.4-133_amd64.deb</li>
-                                                  <li>nuage-python-openvswitch_3.2.4-133_all.deb </li>
-                                                <li>nuagenetlib_0.0.0-1729-kilo_all.deb</li>
-                                                  <li>VRS_3.2.4-135_10062015.ovf</li>
-                                                  <li>VRS_3.2.4-135_10062015-disk1.vmdk</li>
-                                                  <li>vsc_singledisk.qcow2</li>
-                                                  <li>VSD-3.2.4_134-hp.ova</li>
-                                                  <li><ph id="vsd-qcow"
-                                                  >VSD-3.2.4_134-hp.qcow2</ph></li>
-                                                </ul></li>
-                        </ol>
-                </section>
-                        <section id="infoblox"><title>Extract the Infoblox Packages</title>
-                                <ol>
-                                        <li>Extract the
-                                                  <codeph>HCG2.0BetaInfobloxPlugin.tar.gz</codeph>
-                                                  file:<ul id="ul_gxx_3h4_yt">
-                                                  <li>infoblox.tar.gz</li>
-                                                  <li>infoblox.tar.gz.md5</li>
-                                                  <li>infoblox-baremetal.tar.gz</li>
-                                                  <li>infoblox-baremetal.tar.gz.md5</li>
-                                                </ul>Do not extract these files. You will copy the
-                                                compressed files later in the installation
-                                                process.</li>
-                                </ol>
-                        
-                </section>
-                <section>
-                        <title>Obtain the required Debian packages</title>
-                        <p>HP Helion OpenStack Carrier Grade maintains a local Debian repository on
-                                the KVM Host from where Debain packages are installed. Download
-                                these files from a trusted source and copy them to the
-                                        <systemoutput>/root/cg/dcn</systemoutput> directory. </p>
-                        <p>
-                                <ul id="ul_xjq_cm4_yt">
-                                        <li id="libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</li>
-                                                <li id="setproc">python-setproctitle_1.1.8-1_amd64.deb</li>
-                                </ul>
-                        </p>
-                </section>
-                <section id="esx">
-                        <title>Download the ESX packages</title>
-                        <p>To integrate VMware ESX<tm tmtype="reg"/> storage, download all required
-                                ESX packages needed to deploy the ESX environment, including the
-                                VMware vSphere Distributed Switch (VDS) . The
-                                        <codeph>hcg-2-0-beta.tar</codeph> file contains the template
-                                file required for the ESX Compute Proxy.</p>
-                </section>
-                <section><ol id="ol_b4b_pyk_2t">
-                                <li> DCN has a well-defined process for Pre-Sales and Post-Sales
-                                        process to download DCN bits and obtain license. Use one of
-                                        the following processes to download DCN bits and obtain
-                                        license: <ul id="ul_c4b_pyk_2t">
-                                                <li>External customers will follow the DCN
-                                                  Post-Sales Process:<ol id="ol_d4b_pyk_2t">
-                                                  <li>You purchase a DCN license through the
-                                                  Post-Sales process.</li>
-                                                  <li>After you purchase the license, you will
-                                                  receive an email with all the instructions on how
-                                                  to obtain DCN installation packages and required
-                                                  license.</li>
-                                                  <li>Follow the instructions in the email to
-                                                  download all the required DCN packages listed
-                                                  above form the link provided in the email.</li>
-                                                  </ol></li>
-                                        </ul><ul id="ul_whv_rcf_bt">
-                                                <li>Internal HPE partners will follow DCN Pre-Sales
-                                                  Process:<ol id="ol_xhv_rcf_bt">
-                                                  <li>Internal HPE partners can contact HP Helion
-                                                  OpenStack Carrier Grade team for help.</li>
-                                                  <li>Internal HPE partners can refer to HP Helion
-                                                  OpenStack Carrier Grade Engineering Wiki under the
-                                                  <i>HOS CG 1.1 GA: ESX (non-KVM region) DCN package
-                                                  details</i> section.</li>
-                                                  </ol></li>
-                                        </ul></li>
-                                <li>Move or copy the compressed installation packages to the KVM
-                                                host.<ul id="ul_cqm_tzc_ws">
-                                                <li>DCN-VRS-GW-3.2R4</li>
-                                                <li>DCN-VSC-3.2R4</li>
-                                                <li>DCN-VRS-VMware-3.2R4.zip (copy to VSD
-                                                  server)</li>
-                                                <li>DCN-VSD-QCOW-3.2R4 (copy to VSD server)</li>
-                                        </ul></li>
-                                <li>Create the <codeph>~/cg/dcn</codeph> directory on the KVM
-                                        Host.</li>
-                                <li>Extract the compressed download packages. 
-                                        <table
-                                                id="table_e4b_pyk_2t">
-                                                <tgroup cols="3">
-                                                  <colspec colnum="1" colname="col2"
-                                                  colwidth="1.89*"/>
-                                                  <colspec colnum="2" colname="col3"
-                                                  colwidth="2.77*"/>
-                                                  <colspec colnum="3" colname="col4" colwidth="1*"/>
-                                                  <thead>
-                                                  <row>
-                                                  <entry>File Name</entry>
-                                                  <entry>List of files to be used after
-                                                  Extraction</entry>
-                                                  <entry>Copy the files to directory on the KVM
-                                                  Host</entry>
-                                                  </row>
-                                                  </thead>
-                                                  <tbody>
-                                                  <row>
-                                                  <entry>DCN-VRS-GW-3.2R4</entry>
-                                                  <entry><p>
-                                                  <codeph/></p><p>Untarring this file will
-                                                  extract::</p><codeph>nuage-openvswitch-common_3.2.4-133_amd64.deb
-                                                  </codeph><p><codeph>nuage-openvswitch-switch_3.2.4-133_amd64.deb
-                                                  </codeph></p><codeph>nuage-python-openvswitch_3.2.4-133_all.deb</codeph>
-                                                  </entry>
-                                                  <entry>~/cg/dcn</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>DCN-VRS-VMware-3.2R4</entry>
-                                                  <entry/>
-                                                  <entry>~/cg/dcn</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>DCN-VSC-3.2R4</entry>
-                                                  <entry>
-                                                  <p><codeph> DCN-VSC-07-OEM-125.tar.gz</codeph></p>
-                                                  <p>Untarring this file will extract::</p>
-                                                  <p><codeph>…/single_disk/vsc_singledisk.qcow2</codeph></p>
-                                                  <p>Copy this file to
-                                                  <codeph>~/cg/dcn</codeph>.</p>
-                                                  </entry>
-                                                  <entry>~/cg/dcn</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry> DCN-VRS-VMware-3.2R4.zip</entry>
-                                                  <entry>Unzipping this file extracts the VRS VM
-                                                  template for the VRSvApp installation.</entry>
-                                                  <entry>Any location. Copy to VSD VM.</entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>DCN-VSD-QCOW-3.2R4.zip</entry>
-                                                  <entry>
-                                                  <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
-                                                  <p>Then untarring this file will extract a patch
-                                                  file for the vSphere Distributed Switch. </p>
-                                                  </entry>
-                                                  <entry>Any location. Copy to VSD VM.</entry>
-                                                  </row>
-                                                  </tbody>
-                                                </tgroup>
-                                        </table>
-                                        <table
-                                                id="t">
-                                                <tgroup cols="3">
-                                                        <colspec colnum="1" colname="col2"
-                                                                colwidth="1.89*"/>
-                                                        <colspec colnum="2" colname="col3"
-                                                                colwidth="2.77*"/>
-                                                        <colspec colnum="3" colname="col4" colwidth="1*"/>
-                                                        <thead>
-                                                                <row>
-                                                                        <entry>File Name</entry>
-                                                                        <entry>List of files to be used after
-                                                                                Extraction</entry>
-                                                                        <entry>Copy the files to directory on the KVM
-                                                                                Host</entry>
-                                                                </row>
-                                                        </thead>
-                                                        <tbody>
-                                                                <row>
-                                                                        <entry>DCN-VRS-GW-3.0R7</entry>
-                                                                        <entry>
-                                                                                <p>
-                                                                                        <codeph>DCN-VRS-3.0.7-125-ubuntu.14.04.tar.gz
-                                                                                        </codeph></p>
-                                                                                <p>Untarring this file will extract::</p>
-                                                                                <p><codeph>nuage-openvswitch-common_3.0.7-125_amd64.deb</codeph></p>
-                                                                                <p><codeph>nuage-openvswitch-switch_3.0.7-125_amd64.deb</codeph></p>
-                                                                                <p><codeph>nuage-python-openvswitch_3.0.7-125_all.deb</codeph></p>
-                                                                        </entry>
-                                                                        <entry>~/cg/dcn</entry>
-                                                                </row>
-                                                                <row>
-                                                                        <entry>DCN-VRS-VMware-3.0R7</entry>
-                                                                        <entry/>
-                                                                        <entry>~/cg/dcn</entry>
-                                                                </row>
-                                                                <row>
-                                                                        <entry>DCN-VSC-3.0R7</entry>
-                                                                        <entry>
-                                                                                <p><codeph> DCN-VSC-07-OEM-125.tar.gz</codeph></p>
-                                                                                <p>Untarring this file will extract::</p>
-                                                                                <p><codeph>…/single_disk/vsc_singledisk.qcow2</codeph></p>
-                                                                                <p>Copy this file to
-                                                                                        <codeph>~/cg/dcn</codeph>.</p>
-                                                                        </entry>
-                                                                        <entry>~/cg/dcn</entry>
-                                                                </row>
-                                                                <row>
-                                                                        <entry> DCN-VRS-VMware-3.0R7.zip</entry>
-                                                                        <entry>Unzipping this file extracts the VRS VM
-                                                                                template for the VRSvApp installation.</entry>
-                                                                        <entry>Any location. Copy to VSD VM.</entry>
-                                                                </row>
-                                                                <row>
-                                                                        <entry>DCN-VSD-QCOW-3.0R8.zip</entry>
-                                                                        <entry>
-                                                                                <p><codeph>CloudMgmt-vmware.tar.gz</codeph></p>
-                                                                                <p>Then untarring this file will extract a patch
-                                                                                        file for the vSphere Distributed Switch. </p>
-                                                                        </entry>
-                                                                        <entry>Any location. Copy to VSD VM.</entry>
-                                                                </row>
-                                                        </tbody>
-                                                </tgroup>
-                                        </table></li>
-                        </ol></section>
                 <section>
                         <p>Launch the <xref
                                         href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
@@ -354,25 +36,15 @@
                                         id="ul_dcw_yld_gt">
                                         <li><b>Helion Carrier Grade 2.0.0</b>. Installation files
                                                 for HP Helion OpenStack Carrier Grade. This link
-                                                will download the <codeph>hcg.1.1.0.tar</codeph>
-                                                file. Also download the <b> Helion Carrier Grade
-                                                  2.0.0 Checksum File</b> and <b
-                                                  id="productShow_appName">Helion Carrier Grade
-                                                  2.0.0 Signature File</b>.</li>
-                                        <li><b>Helion Carrier Grade 2.0.0 Wind River License
-                                                  Patch</b>. Required license file for the KVM
-                                                region servers. Also download the <b> Helion Carrier
-                                                  Grade 2.0.0 Windriver License patch checksum
-                                                  file</b> and <b> Helion Carrier Grade 2.0.0
-                                                  Windriver License patch signature file</b>.</li>
-                                        <li><b>Horizon Patch Tar File for Helion Carrier Grade
-                                                  2.0.0</b>. Required patch for the Horizon UI. Also
-                                                download the <b> Helion Carrier Grade 2.0.0 Horizon
-                                                  Patch Checksum File</b> and <b>Helion Carrier
-                                                  Grade 2.0.0 Horizon Patch Signature File</b>.</li>
-                                        <li><b>GPG keys to verify signature files</b>. A set of GPG
-                                                keys to verify download signatures.
-                                                GPG-HPCSS-Public-Keys(1).tar</li>
+                                                will download the
+                                                  <codeph>HelionOpenStack-2.0.0.iso</codeph> file.
+                                                  <b> hcg2_kvm_avs.tar.gz.sha256</b> checksum
+                                                file</li>
+                                        <li><b>Helion Carrier Grade 2.0.0 Signature File</b>
+                                                Signature file for the
+                                                  .<codeph>HelionOpenStack-2.0.0.iso</codeph>
+                                                download. Named
+                                                  <codeph>HelionOpenStack-2.0.0.iso.sig</codeph>.</li>
                                 </ul></p>
                         <p><b>Note:</b> When downloading installation files, always download and
                                 verify the signature file before installing. </p>
@@ -390,67 +62,23 @@
                                                   OpenStack Carrier Grade and click
                                                   <b>Download</b>.</li>
                                         </ul></li>
-                                <li>Download the following files: <ul>
-                                                <li><b>Helion Carrier Grade 2.0.0</b>. The file is
-                                                  named <codeph>hcg_1.1.0.tar</codeph>. Also
-                                                  download the <b>Helion Carrier Grade 2.0.0
-                                                  Checksum</b> and <b>Helion Carrier Grade 2.0.0
-                                                  Signature</b> files.</li>
-                                                <li><b>Horizon Patch Tar File for Helion Carrier
-                                                  Grade</b>. The file is named
-                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>.
-                                                  Also download the <b>Horizon Patch Tar File for
-                                                  Helion Carrier Grade Checksum</b> and <b>Horizon
-                                                  Patch Tar File for Helion Carrier Grade
-                                                  Signature</b> files.</li>
-                                                <li><b id="productShow_apcodeph">Helion Carrier
-                                                  Grade 2.0.0 Windriver License patch signature
-                                                  file</b> and the <b>Helion Carrier Grade 2.0.0
-                                                  Windriver License patch</b> signature file
-                                                  signature and <b>Helion Carrier Grade 2.0.0
-                                                  Windriver License patch</b> signature file
-                                                  checksum files.</li>
-                                                <li>LDAP patch. Download the
-                                                  <codeph>ldap_patch_1.1.tar.gz and
-                                                  hoscg-update.tgz</codeph> file. </li>
-                                                <li>Compute Proxy patch. Dowload the
-                                                  <codeph>compute_proxy_patch_1.1.tar.gz</codeph>
-                                                  file.</li>
-                                                <li>GRE tunnel. Download the
-                                                  <codeph>gre_patch_1.1.tar.gz</codeph> file. </li>
-                                                <li>KLM port security patch. Download the
-                                                  <codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph>
-                                                  file.</li>
-                                                <li>Rabbit MQ Random Password patch. Download the
-                                                  <codeph>random-password.tar.gz</codeph> file.</li>
-                                                <li>Helion Dynamic Password patch. Download the
-                                                  <codeph>horizon_web_patch_1.1.tar.gz</codeph>
-                                                  file.</li>
-                                                <li>NIC Bonding Patch. If you are using bonded NIC,
-                                                  download the
-                                                  <codeph>cg-hos-nic-bonding.patch</codeph>
-                                                  file.</li>
-                                                <li><b>GPG keys to verify signature files</b>. This
-                                                  file is named
-                                                  <codeph>GPG-HPCSS-Public-Keys.tar</codeph>.</li>
+                                <li>Download the following files: <ul id="ul_tfk_d2r_f5">
+                                                <li><b>Helion Carrier Grade 2.0.0 AVS</b>.
+                                                  Installation files for HP Helion OpenStack Carrier
+                                                  Grade. This link will download the
+                                                  <codeph>hcg2_kvm_avs.tar.gz</codeph> file. Also
+                                                  download the <b> hcg2_kvm_avs.tar.gz.sha256</b>
+                                                  checksum file and <b>hcg2_kvm_avs.tar.gz.sig</b>
+                                                  fignature file.</li>
+                                                <li><b>Helion Carrier Grade 2.0.0 VRS</b>.
+                                                  Installation files for HP Helion OpenStack Carrier
+                                                  Grade. This link will download the
+                                                  <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
+                                                  file. Also download the <b>
+                                                  hcg2_kvm_esx_ironic_vrs.tar.gz.sha256</b> checksum
+                                                  file and <b>hcg2_kvm_esx_ironic_vrs.tar.gz.sig</b>
+                                                  fignature file.</li>
                                         </ul></li>
-                                <li><b>vCenter Proxy Appliance</b>. For the KVM + ESX deployment,
-                                        download this file, named
-                                                <codeph>overcloud_vcenter_compute_proxy.tar</codeph>.
-                                        Also download the Signature files. This file will need to be
-                                        moved to the system that hosts the VMware vCenter client.
-                                        You can move the file to that system or download the file
-                                        later.</li>
-                                <li><b id="productShow_apcodep">VCN OVSvApp Appliance</b>. For the
-                                        KVM + ESX deployment, download this file, named Also
-                                        download the Signature files. HPE Virtual Cloud Networking's
-                                        Open vSwitch vApp (OVSvApp) must be installed for HP Helion
-                                        OpenStack environment to provision VMs in your VMware
-                                        vCenter environment. Once deployed, OVSvApp appliance
-                                        enables networking between the tenant Virtual Machines
-                                        (VMs).</li>
-                                <li><xref href="#topic7148/verify" format="dita">Verify the
-                                                signature and checksums</xref>. </li>
                         </ol>
                 </section>
                 <section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the KVM Host. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the KVM Host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
@@ -480,33 +108,6 @@ gpg: Good signature from "Hewlett Packard Enterprise Company RSA (HPE Codesignin
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg: There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li><li>Perform this verification for each file you downloaded.</li></ol></section>
-                <section id="checksum">
-                        <title>Verify the downloaded checksums</title>
-                        <p>You should also use a checksum verification tool, such as sha256sum,
-                                which should come installed with Ubuntu.</p>
-                        <ol id="ol_icb_k4f_xs">
-                                        <li>Run the checksum tool against the
-                                                  <codeph>hcg_1.1.0.tar</codeph> file.
-                                                <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0.tar</codeblock></li>
-                                        <li>Compare the output of the checksum tool to the
-                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
-                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
-                                                that the chechsum file contains the date that the
-                                                file was generated, the checksum string, and the
-                                                name of the file that was
-                                                used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
-                                        <li>Run the checksum tool against the
-                                                  <codeph>hcg_1.1.0_horizon_patch1.tar</codeph>
-                                                file.
-                                                <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0_horizon_patch1.tar  </codeblock></li>
-                                        <li>Compare the output of the checksum tool to the
-                                                  <codeph>hcg_1.1.0.tar.sha256</codeph> file.
-                                                <codeblock>sha256sum.exe hcg_1.1.0.tar
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
-                                </ol>
-                </section>
                 <section id="extract"><title>Extract and copy the HP Helion OpenStack Carrier Grade installation files and patches</title><p>Extract the downloaded files as indicated in the
                                 following table.</p><table id="table_rkj_yyk_2t">
                                 <tgroup cols="3">
@@ -570,8 +171,35 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 </tgroup>
                         </table>
                 </section>
-                <section id="dcn-extract"><title>Extract the DCN components</title><p>Extract the downloaded files as
-                                indicated in the following table.</p><table id="table_mlr_bcz_st">
+                <section id="checksum">
+                        <title>Verify the downloaded checksums</title>
+                        <p>You should also use a checksum verification tool, such as sha256sum,
+                                which should come installed with Ubuntu.</p>
+                        <ol id="ol_icb_k4f_xs">
+                                <li>Run the checksum tool against the <codeph>hcg_1.1.0.tar</codeph>
+                                        file.
+                                        <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0.tar</codeblock></li>
+                                <li>Compare the output of the checksum tool to the
+                                                <codeph>hcg_1.1.0.tar.sha256</codeph> file.
+                                        <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
+                                        that the chechsum file contains the date that the file was
+                                        generated, the checksum string, and the name of the file
+                                        that was
+                                        used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
+                                <li>Run the checksum tool against the
+                                                <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file.
+                                        <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0_horizon_patch1.tar  </codeblock></li>
+                                <li>Compare the output of the checksum tool to the
+                                                <codeph>hcg_1.1.0.tar.sha256</codeph> file.
+                                        <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
+                        </ol>
+                </section>
+                <section id="dcn-extract"><title>Extract the DCN components</title><p>Extract the
+                                downloaded files as indicated in the following table.</p><table
+                                id="table_mlr_bcz_st">
                                 <tgroup cols="3">
                                         <colspec colname="newCol1" colnum="1" colwidth="1*"/>
                                         <colspec colnum="2" colname="col2" colwidth="3.26*"/>
@@ -624,19 +252,21 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </row>
                                         </tbody>
                                 </tgroup>
-                        </table><b>Debian Packages</b><p>Move the downloaded files to the to the
-                                        <codeph>/root/cg/dcn</codeph> directory on the KVM Host:<ul
-                                        id="ul_hq1_sjh_xt">
+                        </table><b>Debian Packages</b><p>Download the following Debian packages from
+                                a trusted source:</p><p>
+                                <ul id="ul_hq1_sjh_xt">
                                         <li conref="#topic7148/libproto"/>
                                         <li conref="#topic7148/setproc"/>
-                                </ul></p></section>
+                                </ul>
+                        </p><p>Move the downloaded files to the to the <codeph>/root/cg/dcn</codeph>
+                                directory on the lifecycle manager host:</p></section>
                 
                 <section id="kvm"><p><b>KVM Region Installation files</b></p>Move the downloaded files to the
                                 <codeph>/home/wrsroot/</codeph> directory of
                                 <codeph>controller-0</codeph> in the KVM region during the
                         installation process.<ul id="ul_wt5_vcz_st">
-                                <li>wr_vrs_or_avs_bootimage_10_06.iso</li>
-                                <li>HCG_2.0_WR_license.lic.txt</li>
+                                <li>bootimage_avs_only.iso or bootimage_vrs_only.iso</li>
+                                <li>HCG_2.0_WR_license.lic.txt <!--what about these???--></li>
                                 <li><codeph>license.lic</codeph> Located in the
                                                 <codeph>/root/cg-hlm/windriver-files</codeph>
                                         directory on the lifecycle manager.</li>
@@ -647,138 +277,10 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
                                         directory on the lifecycle manager.</li>
                         </ul></section>
-                <ol id="ol_fzx_zns_25">
-                        <li>Extract the <codeph>hcg_1.1.0.tar</codeph> file. The following list of
-                                files is extracted:
-                                <codeblock>cg-hlm.qcow2 
-cg-hlm.qcow2.md5
-cg-hos.tar.gz
-cg-hos.tar.gz.md5
-cg-infra-playbooks.tar.gz
-cg-infra-playbooks.tar.gz.md5
-TEMPL-CPV9.ova
-WR/HP-HCG-Server-host-installer-15.05-b10.iso
-WR/HP-HCG-Server-host-installer-15.05-b10.iso.md5
-WR/extras/HP-HCG-SDK-15.05-b10.tgz
-WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5
-WR/extras/HP-HCG-sample-guest-15.05-b9.img
-WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
-                </ol>
-                <section id="extrac">
-                        <ol id="ol_fhs_14s_25">
-                                <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images
-                                        folder: <codeph>/var/lib/libvirt/images</codeph>. </li>
-                                <li>Copy the <codeph>cg-infra-playbooks.tar.gz</codeph> file from
-                                        the <codeph>hcg_1.1.0.tar</codeph> files to the
-                                                <codeph>/root</codeph> directory.</li>
-                        </ol>
-                        <p>The following table lists the installation and patch files and indicates
-                                where you need to copy those files.</p>
-                        <table id="table_yhb_zny_zs">
-                                <tgroup cols="3">
-                                        <colspec colnum="1" colname="col2" colwidth="1*"/>
-                                        <colspec colnum="2" colname="col3" colwidth="1.11*"/>
-                                        <colspec colnum="3" colname="col4" colwidth="1.11*"/>
-                                        <thead>
-                                                <row>
-                                                  <entry>File Name</entry>
-                                                  <entry>Extracted from</entry>
-                                                  <entry>Copy the file to: </entry>
-                                                </row>
-                                        </thead>
-                                        <tbody>
-                                                <row>
-                                                  <entry><codeph>cg-hlm.qcow2</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/var/lib/libvirt/images</codeph> on
-                                                  the KVM Host</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>cg-infra-playbooks.tar.gz</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on the KVM
-                                                  Host</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>TEMPL-CPV9.ova</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry>Any location on any server that can be
-                                                  accessed by the VMware vCenter client.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>ldap_patch_1.1.tar.gz and
-                                                  hoscg-update.tgz </codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1/</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>gre_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry>Any directory on the KVM Host. Make note of
-                                                  the location.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>compute_proxy_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>secure_HLM_ports_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>random-password.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>horizon_web_patch_1.1.tar.gz</codeph></entry>
-                                                  <entry>N/A</entry>
-                                                  <entry><codeph>~/patch_cghelion1.1</codeph>
-                                                  directory on the HML host. You must first create
-                                                  this directory.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>WR/HP-HCG-Server-host-installer-15.05-b10.iso</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM
-                                                  region.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>WR/extras/HP-HCG-SDK-15.05-b10.tgz
-                                                  WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM region.
-                                                  SDK files to be used as needed.</entry>
-                                                </row>
-                                                <row>
-                                                  <entry><codeph>WR/extras/HP-HCG-sample-guest-15.05-b9.img
-                                                  WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeph></entry>
-                                                  <entry><codeph>hcg_1.1.0.tar</codeph></entry>
-                                                  <entry><codeph>/root</codeph> on
-                                                  <codeph>controller-0</codeph> in the KVM region.
-                                                  Sample guestt OS files to be used as
-                                                  needed.</entry>
-                                                </row>
-                                        </tbody>
-                                </tgroup>
-                        </table>
-                </section>
                 <section id="next-step">
                         <title>Next Step</title>
                         <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581">Deploying the
-                                Lifecycle Manager</xref></p>
+                                        Lifecycle Manager</xref></p>
                 </section>
         </body>
 </topic>
