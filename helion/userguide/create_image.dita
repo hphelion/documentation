@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="user_image_upload">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating and Uploading a Glance Image</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section id="about">
+      <p>This guide will assist you in obtaining, creating, or modifying cloud images for your Image
+        (Glance) repository and uploading them for use.</p>
+    </section>
+    <section id="custom_image"><title>How to Curate Your Own Images</title>
+      <p>OpenStack has created a guide to show you how to obtain, create, and modify images that
+        will be compatible with your HPE Helion OpenStack cloud:</p>
+      <p><xref href="http://docs.openstack.org/image-guide/content/" scope="external" format="html"
+          >OpenStack Virtual Machine Image Guide</xref></p>
+    </section>
+
+    <section><title>Example: Uploading a Cirros Linux Image for Use</title>
+      <p>These steps assume you have a user account setup within Keystone that has access to upload
+        images to the Glance repository. Contact your Administrator if you do not have these
+        permissions or if you are unsure.</p>
+      <ol>
+        <li>Download the Cirros image from the internet:
+          <codeblock>wget http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img</codeblock></li>
+        <li>Upload that file to Glance using the GlanceClient CLI:
+          <codeblock>glance \
+  --os-username &lt;username> \
+  --os-password &lt;password> \
+  --os-tenant-name &lt;project name> \
+  --os-auth-url &lt;identity endpoint> \
+  --os-endpoint-type internalURL \
+  image-create
+     --name cirros-0.3.3-x86_64 \
+     --container-format bare \
+     --disk-format qcow2 \
+     --is-public True \
+     --file &lt;path to Cirros image file></codeblock></li>
+      </ol>
+    </section>
+  </body>
+</topic>
