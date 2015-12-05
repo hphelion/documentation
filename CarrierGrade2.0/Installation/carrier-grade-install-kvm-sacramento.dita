@@ -47,12 +47,17 @@ ifconfig eth0 up</codeblock></li>
         <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver License patch signature file</b> and the associated signature and checksum files. For information on performing verifications of the download, see the Prerequistues. </li>-->
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
             <codeph>controller-0</codeph>. <ul id="ul_mpn_hnr_bt">
-            <li><codeph>license.lic</codeph></li>
-            <li><codeph>region_config</codeph>
-            </li>
-            <li><codeph>cakey.pem</codeph></li>
+            <li><codeph>license.lic</codeph> Located in the
+                <codeph>/root/cg-hlm/windriver-files</codeph> directory on the lifecycle
+              manager.</li>
+            <li><codeph>region_config</codeph> Located in the
+                /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+              directory on the lifecycle manager.</li>
+            <li><codeph>cakey.pem</codeph> Located in the
+                <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+              directory on the lifecycle manager.</li>
           </ul><p>You should have downloaded these files <xref
-            href="carrier-grade-install-download.dita#topic7148/patches">in the
+              href="carrier-grade-install-download.dita#topic7148/patches">in the
               prerequisites</xref></p></li>
       </ol>
     </section>
