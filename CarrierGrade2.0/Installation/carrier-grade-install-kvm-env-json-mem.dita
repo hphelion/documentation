@@ -43,9 +43,9 @@
                             "type": "vlan",
                             "segment-id": "203",
                             "network-address": {
-                                "cidr": "10.x.x.x/24",
-                                "start-address": "10.x.x.x",
-                                "gateway": "10.x.x.x"
+                                "cidr": "10.20.3.0/24",
+                                "start-address": "10.20.3.120",
+                                "gateway": "10.20.3.1"
                             }
                         },
                         {
@@ -53,8 +53,8 @@
                             "type": "vlan",
                             "segment-id": "204",
                             "network-address": {
-                                "cidr": "10.x.x.x/24",
-                                "start-address": "10.x.x.x"
+                                "cidr": "10.20.4.0/24",
+                                "start-address": "10.20.4.120"
                             }
                         },
                         {
@@ -62,68 +62,9 @@
                             "type": "vlan",
                             "segment-id": "73",
                             "network-address": {
-                                "cidr": "172.x.x.x/24",
-                                "start-address": "172.x.x.x"
+                                "cidr": "172.16.73.0/24",
+                                "start-address": "172.16.73.120"
                             }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "CPN",
-            "interface-map": [
-                {
-                    "name": "INTF0",
-                    "ethernet-port-map": {
-                        "interface-ports": [ "eth0" ]
-                    },
-                    "logical-network-map": [
-                        {
-                            "name": "management",
-                            "ref": "ccn-INTF0-management"
-                        },
-                        {
-                            "name": "blockstore",
-                            "ref": "ccn-INTF0-blockstore"
-                        }
-
-                    ]
-                },
-                {
-                    "name": "INTF1",
-                     "ethernet-port-map": { 
-                     "interface-ports": [ "eth1" ]
-                    },
-                    "logical-network-map": [
-                    {
-                            "name": "tenant",
-                            "type": "vlan",
-                            "segment-id": "",
-                            "network-address": {
-                                "cidr": "10.x.x.x/24",
-                                "start-address": "10.x.x.x",
-                                "gateway": "10.x.x.x"
-                            }
-
-                        }
-
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "CPX",
-            "interface-map": [
-                {
-                    "name": "INTF0",
-                    "ethernet-port-map": {
-                        "interface-ports": [ "eth0" ]
-                    },
-                    "logical-network-map": [
-                        {
-                            "name": "management",
-                            "ref": "ccn-INTF0-management"
                         }
                     ]
                 }
@@ -139,7 +80,7 @@
                     },
                     "logical-network-map": [
                         {
-                          "name": "management",
+                            "name": "management",
                             "ref": "ccn-INTF0-management"
                         },
                         {
@@ -147,9 +88,9 @@
                             "type": "vlan",
                             "segment-id": "205",
                             "network-address": {
-                             "cidr": "10.x.x.x/24",
-                             "start-address": "10.x.x.x",
-                             "gateway": "10.x.x.x"
+                                "cidr": "10.20.5.0/24",
+                                "start-address": "10.20.5.120",
+                                "gateway": "10.20.5.1"
                             }
                         }
                     ]
@@ -158,11 +99,18 @@
                     "name": "INTF1",
                     "ethernet-port-map": {
                         "interface-ports": [ "eth1" ]
-                    },
+                   },
                     "logical-network-map": [
                         {
                             "name": "tenant",
-                            "ref": "cpn-INTF1-tenant"
+                            "type": "vlan",
+                            "segment-id": "",
+                            "network-address": {
+                                "cidr": "10.20.6.0/24",
+                                "start-address": "10.20.6.120",
+                                "gateway": "10.20.6.1"
+                            }
+
                         }
                     ]
                 }
@@ -171,8 +119,7 @@
         {
             "name": "VRG",
             "interface-map": [
-
-     {
+                {
                     "name": "INTF0",
                     "ethernet-port-map": {
                         "interface-ports": [ "eth0" ]
@@ -190,17 +137,16 @@
                         "interface-ports": [ "eth1" ]
                     },
                     "logical-network-map": [
-                        {
+                       {
                             "name": "tenant",
-                            "ref": "cpn-INTF1-tenant"
+                            "ref": "dcn-INTF1-tenant"
                         }
                     ]
                 }
             ]
         }
     ]
-}
-</codeblock>
+}</codeblock>
     
     
     <p> NOTE: The configuration processor assigns the first address of the CLM address range to itself for serving python 

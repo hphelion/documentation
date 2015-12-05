@@ -59,12 +59,10 @@
             "name": "wr-vars",
             "properties": {
                 "database_storage": 70,
-                "backup_storage": 300,
+                "backup_storage": 350,
                 "shared_instance_storage": 250,
                 "vswitch_type": "nuage_vrs",
-                "tul_ip_start_address": "10.x.x.x",
-                "tul_ip_end_address": "10.x.x.x",
-                 "region_name": "regionone",
+                "region_name": "regionone",
                 "logical_interface": [
                     {
                         "lag_interface": "N",
@@ -75,28 +73,27 @@
                         ],
                         "network": [
                             {
-                                "ip_start_address": "10.x.x.x",
-                                "ip_end_address": "10.x.x.x",
+                                "ip_start_address": "10.20.3.50",
+                                "ip_end_address": "10.20.3.99",
                                 "name": "management"
                             },
                             {
-                                "ip_start_address": "172.x.x.x",
-                                "ip_end_address": "172.x.x.x",
+                                "ip_start_address": "172.16.73.50",
+                                "ip_end_address": "172.16.73.99",
                                 "name": "blockstore"
                             },
                             {
-                                "ip_start_address": "10.x.x.x",
-                                "ip_end_address": "10.x.x.x",
+                                "ip_start_address": "10.20.4.50",
+                                "ip_end_address": "10.20.4.99",
                                 "name": "api"
                             }
                         ]
                     }
                 ],
-                "pxeboot_cidr": "10.x.x.x/24",
-                "license_file_name": "license.lic"
-                "physnet_VLAN_range_mappings": ["physnet1:1000:1999","physnet2:1001:2000"],
+                "pxeboot_cidr": "10.20.2.0/24",
+                "license_file_name": "license.lic",
+                "physnet_VLAN_range_mappings": ["physnet1:211:215","physnet2:216:220"],
                 "pci_vendor_id": ["8086:10ca","8086:10ed"]
-
             }
         }
     ]

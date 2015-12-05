@@ -18,6 +18,7 @@
     <p>This topic describes all the known issues that you might encounter:</p>
     <section>
       <ul id="ul_xzh_nmc_mt">
+        <li><xref href="#topic10581/provision" format="dita"/></li>
         <li><xref href="#topic10581/ansible-accelerate" format="dita"/></li>
         <li><xref href="#topic10581/fail-apache" format="dita"/></li>
         <li><xref href="#topic10581/fail-ntp" format="dita"/></li>
@@ -26,9 +27,17 @@
         <li><xref href="#topic10581/vrs" format="dita"/></li>
       </ul>
     </section>
-    <section id="ansible-accelerate"><title>Installation fails due to Ansible errors</title><b>System
-        Behavior/Message</b><p>The installation fails during <codeph>hlm deploy</codeph>, and you
-        see any of the following errors:</p><p>
+    <section id="provision"><title>Node fails to boot during HLM provision</title>
+      <b>System Behavior/Message</b>
+      <p>In rare situations, a node might not boot during the HLM provisioning process due to an
+        issue with network configuration. <!--HCG-951--></p><p>
+        <b>Resolution</b>
+      </p>If this happens, log into that console. If you see a message stating that the boot failed
+      at network configuration, use the Retry Auto Configuration option to attempt a re-boot. It
+      might take more than one attempt to get the node to boot.</section>
+    <section id="ansible-accelerate"><title>Installation fails due to Ansible
+        errors</title><b>System Behavior/Message</b><p>The installation fails during <codeph>hlm
+          deploy</codeph>, and you see any of the following errors:<!--HCG-984--></p><p>
         <ul id="ul_ill_x1d_f5">
           <li>Any error with the following message: <codeph>Failed to launch the accelerated daemon
               on 10.10.2.102 (reason: failed to connect to the local socket file) </codeph>. For

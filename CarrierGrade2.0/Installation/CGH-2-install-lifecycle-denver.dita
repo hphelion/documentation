@@ -14,7 +14,127 @@
   </metadata>
 </prolog>
 <body>
-    <bodydiv conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/hlm"/>
+  <p>The first phase of the HP Helion OpenStack Carrier Grade installation involves creating a
+    bootstrapping the lifecycle manager VM and installation services. </p>
+  <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
+    required installation processes.</p>
+    <bodydiv id="hlm">
+      <section id="prepare">
+        <title>Prepare the system for deployment</title>
+        <p>Use the following steps to prepare the server on which the lifecycle manager will be
+          deployed (the KVM Host):</p>
+        <ol id="ol_hx2_33q_f5">
+          <li>Log into the lifecycle manager host using the default credentials</li>
+          <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
+            environment. For information on each variable, refer to the comments in the file with
+            each variable. <p><b>Note:</b> Make sure the Cobbler passwords are blank. You will
+              deploy a patch during the installation to randomize the password.</p><p>The
+                <codeph>group_vars/all</codeph> file should appear similar to the
+            following:</p><codeblock>---
+
+############################################# Variables for HLM  #################################################################
+#These variables are relevant in both All Virtual and BareMetal scenarios.
+
+#Set this to '0' for dcn cloud, '1' for ovs cloud, '2' for denver or denver_virtual cloud.
+ovs_cloud_only:  2
+
+#Set this to 'bm' if cloud is being deployed over baremetal.
+#Set this to 'av' if the cloud is all virtual
+cloud_type: 'bm'
+
+#These are hlm related variables that must be changed according to your Baremetal Env
+hlm_login_id:       root
+hlm_password:       cghelion
+
+#The following variables are for CLM network IP details for HLM
+hlm_clmstaticip:    10.10.2.100
+hlm_clmnetmask:     255.255.255.0
+hlm_clmgateway:     10.10.2.1
+
+#The variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
+cobbler_pxestartip: 10.10.1.100
+cobbler_pxeendip:   10.10.1.200
+cobbler_pxestaticip: 10.10.1.7
+cobbler_pxenetmask: 255.255.255.0
+cobbler_hlinux_password: 
+cobbler_web_password:
+
+#Set the location of your images that will be used by libvirt
+imagelocation: /var/lib/libvirt/images
+
+#Set the location of your infra-ansible-playbooks
+ansible_dir: ~/infra-ansible-playbooks
+
+##################################################################################################################################
+
+############################################# Variables for DCN ##################################################################
+#Set the location of dcn bits on KVM
+#There must be 4 debs, 2 tar.gz files, 1 vsc qcow2
+#You must copy your VSD qcow2 to the imagelocation on the KVM if you want to provision it on the same KVM as the HLM
+dcn_dir: ~/cg/dcn
+##################################################################################################################################
+
+############################################# Variables for VSD ##################################################################
+#Ignore these variables if creating an OVS cloud. This section is relevant only for DCN cloud - in both BM and All Virtual cases
+#These variables are used for VSD Configuration
+#If you have already configured a VSD and ignore the following variables
+
+dns_domain_name: helion.cg
+dns_address: 10.10.10.25
+vsd_address: 10.10.10.10
+vsd_gateway: 10.10.10.1
+vsd_netmask: 255.255.255.0
+vsd_name: vsd
+vsdimagename: VSD-3.0.0_HP_r3.0_36
+upstream_ntp_servers:
+   - 10.10.10.25
+   - 10.1.64.20
+###################################################################################################################################</codeblock></li>
+          <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to
+            enter the IP address of the <codeph>vibr0</codeph> interface in the
+              <codeph>hlm_kvm_host</codeph> field, as shown in the following example. </li>
+        </ol>
+        <codeblock>  [hlm_kvm_host]
+  192.168.122.1 </codeblock>
+      </section>
+      <section id="deploy-the-hlm-and-vsd-vm">
+        <title>Deploy the Lifecycle Manager Virtual Machine</title>
+        <p>Use the following steps on the lifecycle manager host to deploy the lifecycle manager on
+          that host using Ansible playbooks.</p>
+        <ol id="ol_ix2_33q_f5">
+          <li>Execute the following command: <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock>
+            <!-- The command will do the following:<ul><li>Copy both installation files (tar balls) to the KVM Host, decrypt, 
+            and extract the files.</li>
+            <li>Execute the <codeph>updatepackages</codeph> command.</li>
+            <li>Execute the <codeph>prepareenv</codeph> command.</li><li>Execute the <codeph>Init cobbler</codeph> command.</li><li>Execute the <codeph>Importiso</codeph> command.<p>You will see a message similar to the following image when the playbook is run successful:</p></li></ul> GET WHAT THESE SCRIPTS DO AND UNCOMMENT-->
+            <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
+              <alt>Sample Ansible Playbook run output</alt>
+            </image></li>
+          <li>Locate the IP address for the lifecycle manager in the
+              <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the lifecycle
+            manager host under <codeph>hlm_clmstaticip</codeph> field. You will use this IP address
+            to SSH into the lifecycle manager VM during the HP Helion OpenStack Carrier Grade
+            installation process.</li>
+        </ol>
+      </section>
+      <section>
+        <title>Configure Networking for the Baremetal Region</title>
+        <p>If you are deploying the baremetal region, perform the following tasks:</p>
+        <p>
+          <ol id="ol_uvk_chg_vt">
+            <li>Execute the following command to add a BM-CTL route:
+                <codeblock>route add default gw &lt;ip-address> dev &lt;int></codeblock><p>Where
+                  <codeph>&lt;ip-address></codeph> is the gateway and <codeph>&lt;eth></codeph> is
+                the Ethernet interface.</p><p>For
+                example:<codeblock>route add default gw 192.168.122.1 dev eth0</codeblock></p></li>
+            <li>Make sure that the vNet corresponding to eth0 is part of virbr0 bridge on the KVM
+              Host.</li>
+            <li>Verify that all iLO ips of the controller blades/DLs are pingable from KVM
+              Host.</li>
+          </ol>
+        </p>
+      </section>
+    </bodydiv>
     <p/>
   <section id="next-step">
     <title>Next Step</title>

@@ -32,8 +32,6 @@
                                         <li>Extract the file:<ul id="ul_hh2_rg4_yt">
                                                   <li>HCG2.0Beta.tar.gz</li>
                                                   <li>HCG2.0Beta.tar.gz.md5</li>
-                                                  <li>HCG2.0BetaDCN.tar.gz</li>
-                                                  <li>HCG2.0BetaDCN.tar.gz.md5</li>
                                                   <li>HCG2.0BetaInfobloxPlugin.tar.gz</li>
                                                   <li>HCG2.0BetaInfobloxPlugin.tar.gz.md5</li>
                                                 </ul></li>
@@ -443,7 +441,7 @@
                                         moved to the system that hosts the VMware vCenter client.
                                         You can move the file to that system or download the file
                                         later.</li>
-                                <li><b id="productShow_apcodeph">VCN OVSvApp Appliance</b>. For the
+                                <li><b id="productShow_apcodep">VCN OVSvApp Appliance</b>. For the
                                         KVM + ESX deployment, download this file, named Also
                                         download the Signature files. HPE Virtual Cloud Networking's
                                         Open vSwitch vApp (OVSvApp) must be installed for HP Helion
@@ -666,7 +664,7 @@ WR/extras/HP-HCG-SDK-15.05-b10.tgz.md5
 WR/extras/HP-HCG-sample-guest-15.05-b9.img
 WR/extras/HP-HCG-sample-guest-15.05-b9.img.md5</codeblock></li>
                 </ol>
-                <section id="extract">
+                <section id="extrac">
                         <ol id="ol_fhs_14s_25">
                                 <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images
                                         folder: <codeph>/var/lib/libvirt/images</codeph>. </li>

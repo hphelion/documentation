@@ -134,9 +134,9 @@ Password: cghelion</codeblock>
       <ol id="ol_kwm_c1k_zt">
         <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
             <codeblock>hlm define -t sacramento &lt;cloudname&gt;</codeblock><p>Where::
-              <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p>
-          <p id="cloudname">The cloud
-            name can be any combination of up to 40 digits, letters:<ul id="ul_lz5_rbf_bt">
+              <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p><p
+            id="cloudname">The cloud name can be any combination of up to 40 digits, letters:<ul
+              id="ul_lz5_rbf_bt">
               <li>
                 <p>Cannot contain with the <codeph>-</codeph> character;</p>
               </li>
@@ -350,8 +350,8 @@ Password: cghelion</codeblock>
     <section id="conref-wr-json">
       <title>Configure the wr.json file</title>
       <p><b>For bonded NIC environments</b>, modify the <codeph>wr.json</codeph> file in the
-          <codeph>/var/hlm/clouds/&lt;cloudname&gt;/&lt;cloudname>/vars</codeph> directory on the
-        lifecycle manager.</p>
+          <codeph>/var/hlm/clouds/&lt;cloudname>/vars</codeph> directory on the lifecycle
+        manager.</p>
     </section>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-sac.dita">a sample wr.json
         file</xref>. </p>
@@ -497,9 +497,15 @@ Password: cghelion</codeblock>
           </p></li>
         <li>Make sure the nodes are booted up using iLO. For example:<p><image
               href="../../media/CGH-2-install-cobbler.png" width="600" id="image_c5k_d4b_kt"
-          /></p>Once the baremetal nodes are provisioned, make sure the <codeph>nodes.json</codeph>
-          file is generated. The <codeph>nodes.json</codeph> file will have entries for your
-            environment:<ul id="ul_zyc_b4k_zt">
+              /></p><p><b>Note:</b> In rare situations, a node might not boot due to an issue with
+            network configuration. If this happens, you need to log into that node and manually boot
+            using the Retry Auto-Configuration option. The provisioning will continue as you reboot
+            that node. See <xref
+              href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581/provision">Node
+              fails to boot during HLM provision</xref>. </p>Once the baremetal nodes are
+          provisioned, make sure the <codeph>nodes.json</codeph> file is generated. The
+            <codeph>nodes.json</codeph> file will have entries for your environment:<ul
+            id="ul_zyc_b4k_zt">
             <li>Denver: 3 controllers;</li>
             <li>Tahoe: 3 controllers, 1 DCN Hosts;</li>
             <li>Memphis: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
@@ -634,9 +640,10 @@ Saved the current configuration to mainboard device successfully.
 [FTC-R146340-5930A]quit
 &lt;FTC-R146340-5930A&gt;</codeblock>
     </section>
-    <section id="ironic-patch"><title>Deploy the Horizon Provider Network Patch</title><p>
-        <!--HCG-991--></p>You should have downloaded the following patch files during the
-        prerequisites:<ul id="ul_awq_db1_f5">
+    <section id="providernet-patch"><title>Deploy the Horizon Provider Network Patch</title><p>Because of
+        a configuration issue with the Ansible roles, the Provider Networks tab in the Horizon
+        interface will be hidden unless you deploy the following patch. <!--HCG-991--></p>You should
+      have downloaded the following patch files during the prerequisites:<ul id="ul_awq_db1_f5">
         <li>providernet-tab-missing-in-horizon.patch</li>
       </ul><p>The README with the patch download contains information on files changed by these
         patches.</p><p>To prevent this condition, execute the following commands:<ol

@@ -32,7 +32,7 @@
             example:<codeblock>cat /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=vsd1.dcn-one.helion.cg</codeblock></li>
-        <li>Update the /etc/hosts file with the IP and FQDN. For
+        <li>Update the <codeph>/etc/hosts</codeph> file with the IP and FQDN. For
             example:<codeblock>root@vsd1 ~]# cat /etc/hosts
 127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
