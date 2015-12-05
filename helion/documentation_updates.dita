@@ -28,6 +28,12 @@
             <tbody>
               <row>
                 <entry>12/4/2015</entry>
+                <entry>User Guide</entry>
+                <entry>Added page for creating and uploading cloud images for the User Guide (<xref
+                  href="userguide/create_image.dita">Link</xref>)</entry>
+              </row>
+              <row>
+                <entry>12/4/2015</entry>
                 <entry>Administration</entry>
                 <entry>Added steps for retrieving and changing the Admin password (<xref
                     href="administration/change_adminpassword.dita">Link</xref>)</entry>
