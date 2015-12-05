@@ -426,6 +426,8 @@
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
+      <topicref href="helion/userguide/create_image.dita"
+        navtitle="Creating and Uploading a Glance Image" locktitle="yes"/>
       <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
