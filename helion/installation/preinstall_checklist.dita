@@ -482,26 +482,6 @@
                   file</entry>
                 <entry/>
               </row>
-              <row>
-                <entry/>
-                <entry>Install and configure NTP for your environment</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry>Ensure your NTP server(s) is placed into your /etc/ntp.conf file</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry>NTP time source:</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
-                <entry/>
-              </row>
             </tbody>
           </tgroup>
         </table>
