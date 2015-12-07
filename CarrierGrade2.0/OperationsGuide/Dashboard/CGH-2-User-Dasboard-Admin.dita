@@ -401,7 +401,7 @@
 
 
                             <entry><xref
-                                    href="../Defaults/CGH-2-User-Identity-quotas.dita#topic1853"
+                                    href="../Defaults/CGH-2-User-Identity-quotas.dita#topic1853c2uiq"
                                 />Managing Default Quotas</entry>
 
 
@@ -466,7 +466,7 @@
 
                             <entry>
                                 <p><xref
-                                        href="../SystemInformation/CGH-2-User-system-info.dita#topic1853"
+                                        href="../SystemInformation/CGH-2-User-system-info.dita#topic1853c2usi"
                                         >Viewing System Informaton</xref></p>
                             </entry>
 
@@ -476,7 +476,7 @@
                             <entry>Metadata Definitions</entry>
                             <entry/>
                             <entry><xref
-                                    href="../SystemInformation/CGH-2-User-metadata.dita#topic1853"
+                                    href="../SystemInformation/CGH-2-User-metadata.dita#topic1853c2um"
                                     >Viewing Metadate Definitions</xref></entry>
                         </row>
 
