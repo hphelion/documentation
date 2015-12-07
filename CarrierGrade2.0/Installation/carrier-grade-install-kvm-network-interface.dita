@@ -21,7 +21,7 @@
           existing Ethernet interface on the node to attach it, as described in this
           topic. </p>
     <ol>
-      <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
+      <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160cgdl"
         >Log in to the Horizon interface</xref>.</li>  
     <li>Open the <b>Inventory Detail</b> page for the host. <ol>
           <li>On the <b>Admin</b> pane of the web administration interface, in the <b>System

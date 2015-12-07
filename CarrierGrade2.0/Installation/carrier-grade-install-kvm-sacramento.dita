@@ -80,7 +80,7 @@ system host-add --hostname &lt;unique-compute-name&gt; --personality compute --m
           network.</li>
         <li>Restart the nodes.</li>
         <li>Access the Horizon dashboard using the CAN network IP (HTTPS). </li>
-        <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
+        <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160cgdl"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE
           booted. After succesful PXE boot, Operational State as Disabled and Availability State as
           Online in the <b>Admin</b>, then <b>Inventory</b> page. <p><b>Note:</b>The Horizon

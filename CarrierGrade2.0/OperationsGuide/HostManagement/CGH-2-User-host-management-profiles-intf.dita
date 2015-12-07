@@ -31,7 +31,7 @@
       <note> This feature applies only to servers in regionone.</note>
     <p>To view hardware profles:<ol id="ol_qcc_4l4_ht">
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

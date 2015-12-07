@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1160">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1160c2udl">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Logging into the Helion
     Dashboard</title>
 <prolog>
@@ -50,7 +50,7 @@
             id="image_b1v_dcf_ht"/></p></li>
 <li>If you are a non-admin user, you will only be able to select a project from the list at the top
         of the screen.<p>
-          <xref type="section" href="#topic1160"> Return to Top </xref>
+          <xref type="section" href="#topic1160c2udl"> Return to Top </xref>
         </p></li>
 </ol>
 <!-- ===================== horizontal rule ===================== -->

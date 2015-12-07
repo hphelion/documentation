@@ -17,7 +17,7 @@
 <p>For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space.</p>
 <section id="quotamod"> <title>Modify a quotas</title>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

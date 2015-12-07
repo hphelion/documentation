@@ -39,7 +39,7 @@
    -->
 <p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
 <p>To access the dashboard, enter the dashboard URL in a supported browser and log in.<xref
-        href="CGH-2-User-Dashboard-launch.dita#topic1160"/></p>
+        href="CGH-2-User-Dashboard-launch.dita#topic1160c2udl"/></p>
 <p>The layout of a typical Helion page contains dashboards, panels, tabs, and tables, as shown in
       the following diagram:</p>
     <p><image href="../../../media/CGH-Horizon-Map.png" id="image_vw5_djf_ht" width="600"/></p>

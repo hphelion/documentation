@@ -28,7 +28,7 @@
     <p><image href="../../../media/CGH-2-hypervisors.png" width="600" id="image_fsm_cg5_ht"/></p>
     <p>To view charts for monitoring hypervisor resource usage on compute nodes:</p>
     <ol>
-      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
           OpenStack Horizon Dashboard</xref>.</li>
       <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
           appropriate region and project</xref>.</li>

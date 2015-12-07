@@ -20,7 +20,7 @@
       <title>Verify the VSC VMs</title>
       <p>The installation process creates virtual machines for VSC. VSC VMs are installed and are
         operational. </p>
-      <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581cgivv"
+      <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581cgivvsc"
         />.</p>
     </section>
   <section><title>Verify the VRS-G Node</title>

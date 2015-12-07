@@ -75,7 +75,7 @@
       <p>To view information on a host: </p>
       <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -167,7 +167,7 @@
         the system, the host is equipped with an iLO module, and the host is in a powered-on
         state.</p><p>To power on/off a host:</p><ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -183,7 +183,7 @@ system host-power-off &lt;hostname&gt;</codeblock>
         that all system processes are properly shut off first. The host then reboots
         automatically.</p><p>To reboot a host:</p><ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -198,7 +198,7 @@ system host-power-off &lt;hostname&gt;</codeblock>
         It performs an out-of-band reset, stopping and restarting the host without ensuring that all
         system processes are shut off first.</p><p>To reset a host:</p><ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -219,7 +219,7 @@ system host-power-off &lt;hostname&gt;</codeblock>
       <p>To reinstall a host:</p>
       <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -232,7 +232,7 @@ system host-power-off &lt;hostname&gt;</codeblock>
     <section id="delete"><title>Delete Host</title><p>Removes the host from the inventory database,
         and its hard drive is erased.</p><p>To delete a host:</p><ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -253,7 +253,7 @@ system host-power-off &lt;hostname&gt;</codeblock>
         maintenance procedures, for example, when updating hardware or replacing faulty
         components.</p><p>To swact a host:</p><ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
