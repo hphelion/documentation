@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="recover_downed_cluster">
-  <title><ph conkeyref="HOS-conrefs/product-title"/>Recovering a Control Plane after outage</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Recovering the Control Plane After
+    Outage</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
@@ -59,8 +60,7 @@ sudo service mysql restart</codeblock>
           <codeblock>sudo service mysql start</codeblock>
         </li>
         <li>Log into the lifecycle manager and execute the hlm-start playbook for the 3 controller
-          nodes.
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+          nodes. <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=&lt;host_var name&gt;</codeblock>
           <p>Here is an example using the above command using the example in the previous step.</p>
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=helion-cp-c1-m1-mgmt,helion-cp-c1-m2-mgmt,helion-cp-c1-m3-mgmt</codeblock>
