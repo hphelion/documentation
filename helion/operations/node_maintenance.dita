@@ -20,7 +20,8 @@
       <p><b>Control Plane Nodes</b></p>
       <ul>
         <li><xref href="replace_controller.dita">Replacing a Controller Node</xref></li>
-        <li><xref href="recover_downed_cluster.dita#recover_downed_cluster">Recover a Control Plane after outage</xref></li>
+        <li><xref href="recover_downed_cluster.dita#recover_downed_cluster">Recovering a Downed
+            Cluster After Power Outage</xref></li>
       </ul>
       <p><b>Compute Nodes</b></p>
       <ul>

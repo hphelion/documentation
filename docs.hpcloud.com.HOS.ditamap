@@ -257,7 +257,7 @@
         <topicref href="helion/operations/replace_controller.dita"
           navtitle="Replacing a Controller Node" locktitle="yes"/>
         <topicref href="helion/operations/recover_downed_cluster.dita"
-          navtitle="Recovering the Control Plane After Outage" locktitle="yes"/>
+          navtitle="Recovering a Downed Cluster After Power Outage" locktitle="yes"/>
         <!-- COMPUTE -->
         <topicref href="helion/operations/add_node.dita" navtitle="Adding a Compute Node"
           locktitle="yes"/>
