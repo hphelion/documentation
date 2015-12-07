@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_m3k_bth_tt">
- <title>Quick Start Step 6: <keyword keyref="quickStartHPcloudStep6"/></title>
+ <title>Quick Start Step 6: <keyword keyref="quickStartHOSstep6"/></title>
  <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
-  on <keyword keyref="pubCloudLong"/>.</shortdesc>
+  on <keyword keyref="opnStckLong"/>.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
@@ -12,12 +12,12 @@
  <conbody>
   <simpletable id="simpletable_o32_yvk_g5">
    <strow>
-    <stentry>1. <xref conref="cfr_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-       <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3. <xref
-       conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-       conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
-       conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <b><keyword
-       keyref="quickStartHPcloudStep6"/></b></stentry>
+    <stentry>1. <xref conref="cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
+     <xref conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
+      conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
+       conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
+        conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <b><keyword
+       keyref="quickStartHOSstep6"/></b></stentry>
     <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer and
       troubleshoot your cluster, you can connect to it using SSH and then run <keyword
        keyref="adminUtil"/> commands. To connect, specify the IP address of your <keyword
@@ -38,11 +38,11 @@
       associated with it.</p><note type="tip">If the <filepath>destroy</filepath> process enters a
       loop, delete the <filepath>terraform.tfstate</filepath> file and run the command
       again.</note><b>To Terminate Instances and Security Groups from <keyword
-       keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate instances
+       keyref="opnStckShort"/></b><p>Using <keyword keyref="opnStckShort"/> to terminate instances
       or security groups is not recommended. Use the following steps only if you run into
       difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
       <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
-         keyref="pubCloudShort"/></xref>.</li>
+         keyref="opnStckShort"/></xref>.</li>
       <li>Click <menucascade>
         <uicontrol>Project</uicontrol>
         <uicontrol>Compute</uicontrol>

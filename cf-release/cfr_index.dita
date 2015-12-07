@@ -2,8 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_qlr_s3c_nt">
   <title><keyword keyref="prodLong"/>
-    <keyword keyref="prodVerShort"/> Technical Preview: Documentation</title>
-  <titlealts><navtitle>HPE Helion Cloud Foundry 1.0 TP</navtitle></titlealts>
+    <keyword keyref="prodVerLong"/> Technical Preview: Documentation</title>
+  <titlealts><navtitle>HPE Helion Cloud Foundry 0.10.0 TP</navtitle></titlealts>
   <shortdesc/>
   <prolog>
     <metadata>
@@ -14,11 +14,11 @@
     <p><keyword keyref="prodLong"/> Technical Preview (TP) is a certified distribution of <xref
         href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>
         (<xref href="https://github.com/cloudfoundry/cf-release/releases/tag/v217" format="html"
-        scope="external">cf-release v217</xref>). Instead of deploying VMs, <keyword
-        keyref="prodShort"/> uses containers for bundling all major functions, for representing
-      roles, and for providing simple update and upgrade workflows. <keyword keyref="prodShort"/>
-      uses <xref href="https://www.consul.io/" format="html" scope="external">Consul</xref> for
-      centralized configuration storage that runs on each instance.</p>
+        scope="external">cf-release v217</xref>). Instead of deploying virtual machines (VMs),
+        <keyword keyref="prodShort"/> uses containers for bundling all major functions, for
+      representing roles, and for providing simple update and upgrade workflows. <keyword
+        keyref="prodShort"/> uses <xref href="https://www.consul.io/" format="html" scope="external"
+        >Consul</xref> for centralized configuration storage that runs on each instance.</p>
     <note>For detailed descriptions of the components of <keyword keyref="prodLong"/>, see <xref
         href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt/available_role_containers"
       />.</note>
@@ -33,7 +33,7 @@
       -->
     </ul>
     <ul id="ul_pph_ytf_vt">
-      <li><b>Quick Start: Deploying to <keyword keyref="pubCloudLong"/></b><ul id="ul_ack_nwv_tt">
+      <li><b>Quick Start: Deploying to <keyword keyref="opnStckLong"/></b><ul id="ul_ack_nwv_tt">
         <li><xref href="quickstart/hos/cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st"/></li>
         <li><xref href="quickstart/hos/cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st"/></li>
         <li><xref href="quickstart/hos/cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st"/></li>

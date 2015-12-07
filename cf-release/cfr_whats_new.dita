@@ -33,8 +33,7 @@
        author="michaelk"><keyword keyref="adminUtil"/> communicates with <xref
         href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of Cloud
        Controller and runs within the Docker overlay Virtual Extensible LAN
-       (VXLAN).</draft-comment><draft-comment author="michaelk">Link to the Dev Center:
-       http://dev.hpcloud.com/</draft-comment></dd>
+      (VXLAN).</draft-comment></dd>
     </dlentry>
    </dl>
   </section>

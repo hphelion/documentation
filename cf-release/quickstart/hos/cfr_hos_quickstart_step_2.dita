@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_ikh_xgz_st">
- <title>Quick Start Step 2: <keyword keyref="quickStartHPcloudStep2"/></title>
+ <title>Quick Start Step 2: <keyword keyref="quickStartHOSstep2"/></title>
  <shortdesc>During this step you will download and install the tools necessary for creating a
   cluster and pushing applications to your sandbox environment. The download links and instructions
   will open in separate pages.</shortdesc>
@@ -13,13 +13,13 @@
  <conbody>
   <simpletable id="simpletable_h5h_tvk_g5">
    <strow>
-    <stentry>1. <xref href="cfr_step_1.dita#concept_s2k_b35_st" id="quickStartHPcloudStep1_"
-       ><keyword keyref="quickStartHPcloudStep1"/></xref><p>2. <b><keyword
-        keyref="quickStartHPcloudStep2" id="quickStartHPcloudStep2"/></b></p><p>3. <xref
-       conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-       conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
-       conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
-      conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+     <stentry>1. <xref href="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st" id="quickStartHOSstep1_"
+       ><keyword keyref="quickStartHOSstep1"/></xref><p>2. <b><keyword
+        keyref="quickStartHOSstep2" id="quickStartHOSstep2"/></b></p><p>3. <xref
+       conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
+         conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
+           conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
+             conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
     <stentry><b>Downloading <keyword keyref="prodLong"/></b><p>You can use <keyword
        keyref="prodShort"/> to push Docker images and application code to the server, to start and
       stop applications, to link <keyword keyref="opnStckShort"/> services to applications, and to
@@ -83,7 +83,7 @@
        format="html" scope="external">see this page</xref>. For detailed installation instructions,
       see the <xref href="https://terraform.io/intro/getting-started/install.html" format="html"
        scope="external">Terraform installation guide</xref>.</note><xref
-      href="cfr_step_3.dita#concept_kpg_fhz_st">
+         href="cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
    </strow>
