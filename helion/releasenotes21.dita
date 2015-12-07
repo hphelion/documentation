@@ -35,6 +35,25 @@
                 
             </p>
             
+            <!--  https://jira.hpcloud.net/browse/DOCS-2053 -->
+            <p id="DOCS-2053"><b>The behavior associated with the <codeph>curator_num_of_indicies_to_keep</codeph> configuration variable has changed in <keyword keyref="kw-hos-phrase-21"/>.</b></p>
+            
+            <p>The <codeph>curator_num_of_indicies_to_keep</codeph> configuration variable is specified in the 
+                file <codeph>roles/logging-common/defaults/main.yml</codeph> and is used to control the number of 
+                old log indices to keep. The default value has increased in <keyword keyref="kw-hos-phrase-21"/> from 3 to 7.</p>
+            <p>Log indices are now automatically deleted once their number exceeds <codeph>curator_num_of_indicies_to_keep</codeph>. 
+                Logs are always deleted in reverse chronological order so that there are at most 
+                <codeph>curator_num_of_indicies_to_keep</codeph> indices available. In the case where the high watermark disk space 
+                has been exceeded, logs will be removed in reverse chronological order until the disk space is again below the high watermark.
+                This may mean that that number of indices available may be smaller than the number specified in <codeph>curator_num_of_indicies_to_keep</codeph>.
+            </p>
+            
+            <p>This functionality differs significantly from <keyword keyref="kw-hos-version-20"/> where indices were deleted based on size rather than age
+                when the high watermark disk space was exceeded. In addition, <keyword keyref="kw-hos-version-20"/> did not strictly 
+                enforce the <codeph>curator_num_of_indicies_to_keep</codeph> configuration value so more indices were allowed to exist, providing 
+                the high watermark disk space was not exceeded.
+            </p>
+            
             
             <p><b>Freezer UI</b></p>            
             <p><b>OVSvApp over VxLAN</b></p>
