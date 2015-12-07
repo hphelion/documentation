@@ -21,7 +21,7 @@
             <ul>
                 <li>the non-KVM region, also called <codeph>memphis</codeph> or
                         <codeph>denver</codeph> (based on the <xref
-                        href="../../Installation/carrier-grade-install-overview.dita#topic1925"
+                        href="../../Installation/carrier-grade-install-overview.dita#topic1925cgio"
                         >deployment template used during the installation</xref>)</li>
                 <li>the KVM region, also called <codeph>regionone</codeph></li>
             </ul>

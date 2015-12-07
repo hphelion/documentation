@@ -144,7 +144,7 @@ hlm define -l </codeblock>
           <codeph>&lt;cloudname></codeph> directory of the HLM VM for an existing cloud. This
         command provisions/installs the operation system on the servers specified in the
           <codeph>node-provision.json</codeph> file. See the <xref
-          href="../Installation/carrier-grade-install-overview.dita#topic1925">installation
+          href="../Installation/carrier-grade-install-overview.dita#topic1925cgio">installation
           documentation</xref> for your deployment.</p><b>Synopsis</b>
       <codeblock>hlm provision -c &lt;cloud name> [-n &lt;"node1 node2">] [-d &lt;"node1 node2">] [-p]</codeblock><p><b>Arguments</b></p><p><codeph>--cloud,
           -c</codeph> -- Specify the name of the cloud to provision. </p><p><codeph>--nodes,

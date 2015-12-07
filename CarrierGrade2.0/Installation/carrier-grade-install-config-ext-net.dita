@@ -21,7 +21,7 @@
       Grade Horizon interface, and the HPE Virtualized Services Directory Architect (VSD Architect)
       interface. </p>
     <p><b>Note:</b> If you are deploying the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM
+        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM
       deployment</xref>, you do not need to perform these tasks. </p>
     <p>The following diagram illustrates the general workflow of the post-installation
       configuration.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic1925">
+<topic xml:lang="en-us" id="topic1925cgio">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation </title>
   <titlealts>
     <searchtitle>HP Helion OpenStack Carrier Grade 2.0: Installation Overivew</searchtitle>
@@ -101,7 +101,7 @@
         Carrier Grade. During the installation, you will integrate the storage into HP Helion
         OpenStack Carrier Grade. See the <xref href="CGH-2-install-denver.dita#topic10581c2id/storage"
           >installation instructions</xref> for the 3PAR and/or VSA parameters you will
-        need.</p><p>Start <xref href="carrier-grade-install-overview-denver.dita#topic1925"
+        need.</p><p>Start <xref href="carrier-grade-install-overview-denver.dita#topic1925cgiod"
           >installing the Denver deployment</xref>.</p><p id="tahoe"><b>KVM with DCN Topology using
           the Tahoe Deployment</b></p><p>If you are installing the Tahoe deployment, you are
         installing the KVM region and <xref
@@ -113,7 +113,7 @@
         Helion OpenStack Carrier Grade. See the <xref
           href="CGH-2-install-tahoe.dita#topic10581c2it/storage">installation instructions</xref> for
         the 3PAR and/or VSA parameters you will need.</p><p>Start <xref
-          href="carrier-grade-install-overview-tahoe.dita#topic1925">installing the Tahoe
+          href="carrier-grade-install-overview-tahoe.dita#topic1925cgiot">installing the Tahoe
           deployment</xref>.</p><p id="memphis"><b>KVM + ESX with DCN Topology using the Memphis
           Deployment</b></p><p>If you are installing the Memphis deployment, you are installing the
         KVM region and VMware ESX storage. The networking uses <xref
@@ -127,7 +127,7 @@
           >installation instructions</xref> for the 3PAR and/or VSA parameters you will
         need.</p><p>You will need to perform tasks to integrate ESX and DCN with HP Helion OpenStack
         Carrier Grade. These steps are described during this installation process.</p>Start <xref
-        href="carrier-grade-install-overview-memphis.dita#topic1925">installing the Memphis
+        href="carrier-grade-install-overview-memphis.dita#topic1925cgiom">installing the Memphis
         deployment</xref>.<p id="sacramento"><b>KVM + ESX + Ironic with DCN Topology using the
           Sacramento Deployment</b></p><p>If you are installing the Sacramento deployment, you are
         installing the KVM region, VMware ESX storage, and a baremetal region (controlled by
@@ -143,7 +143,7 @@
         for the 3PAR and/or VSA parameters you will need.</p>You will need to perform tasks to
       integrate ESX and DCN with HP Helion OpenStack Carrier Grade. These steps are described during
       this installation process.<p>Start <xref
-          href="carrier-grade-install-overview-sacramento.dita#topic1925">installing the Sacramento
+          href="carrier-grade-install-overview-sacramento.dita#topic1925cgios">installing the Sacramento
           deployment</xref>.</p></section>
     <section>
       <title>Installation Troubleshooting</title>

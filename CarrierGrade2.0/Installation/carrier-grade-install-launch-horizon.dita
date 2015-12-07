@@ -63,9 +63,9 @@
     </section>
     <section>
       <title>Upload a Glance VMDK Image</title>
-      <p>For the <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>KVM
+      <p>For the <xref href="carrier-grade-install-overview.dita#topic1925cgio/install-option"><b>KVM
             + ESX deployment</b></xref>, perform the following task. </p>
-      <p>For <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>the KVM
+      <p>For <xref href="carrier-grade-install-overview.dita#topic1925cgio/install-option"><b>the KVM
             deployment</b></xref>, proceed to the <xref href="#topic10581cgilh/next-step" format="dita"
           >Next Step</xref>.</p>
       <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at

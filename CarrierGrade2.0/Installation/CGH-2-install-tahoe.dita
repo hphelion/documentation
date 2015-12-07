@@ -17,7 +17,7 @@
   <body>
     <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM is
         installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">Tahoe deployment</xref>
+        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">Tahoe deployment</xref>
       is to deploy the HP Helion OpenStack cloud and install the HPE Distributed Cloud Networking
       (DCN) components. </p>
     <p>If you are installing the <codeph>tahoe</codeph> template, which includes the KVM region and
