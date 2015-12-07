@@ -18,17 +18,19 @@
             <row>
               <entry>Centralized Logging Troubleshooting</entry>
               <entry><ul>
-                <li>Moved troubleshooting section from Centralized Logging doc to separate
-                  Troubleshooting Centralized Logging page</li>
-                <li>Added 2.1 note about Kibana troubleshooting (DOCS-2134)</li>
-              </ul></entry>
+                  <li>Moved troubleshooting section from Centralized Logging doc to separate
+                    Troubleshooting Centralized Logging page</li>
+                  <li>Added 2.1 note about Kibana troubleshooting (DOCS-2134)</li>
+                </ul></entry>
             </row>
             <row>
               <entry>Input Model</entry>
               <entry><ul>
-                <li>Edited <xref href="#input_model/co_nicmappings">NIC Mappings</xref> section to adding details about multi-port (DOCS-2194)</li>
-                <li>Edited <xref href="#input_model/co_volumegroups">Volume Groups</xref> section to add details about mode bits (DOCS-2032)</li>
-              </ul></entry>
+                  <li>Edited <xref href="#input_model/co_nicmappings">NIC Mappings</xref> section to
+                    adding details about multi-port (DOCS-2194)</li>
+                  <li>Edited <xref href="#input_model/co_volumegroups">Volume Groups</xref> section
+                    to add details about mode bits (DOCS-2032)</li>
+                </ul></entry>
             </row>
             <row>
               <entry>Pre-install Checklist</entry>
@@ -36,7 +38,9 @@
             </row>
             <row>
               <entry>Swift Device Groups</entry>
-              <entry>Added text for feature in 2.1 (<xref href="objectstorage/swift_device_groups.dita">Link</xref>) (DOCS-1948)</entry>
+              <entry>Added text for feature in 2.1 (<xref
+                  href="objectstorage/allocating_disk_drives.dita#allocating-disk-drives/swift-device-groups"
+                  >Link</xref>) (DOCS-1948)</entry>
             </row>
             <row>
               <entry>Entry Scale with Swift Install</entry>
@@ -53,7 +57,7 @@
             <row>
               <entry>Release Notes 2.1</entry>
               <entry>DOCS-2052 Changes to Alarm Definition in Centralized Logging</entry>
-            </row>            
+            </row>
           </tbody>
         </tgroup>
       </table>
