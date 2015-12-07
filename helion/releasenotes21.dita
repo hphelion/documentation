@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="release_notes">
+    <title><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-21"/>: Release Notes</title>
+    <body>
+        
+        <section id="about">
+            <p>This document provides an overview of the features contained within
+                <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-21"/>, 
+                including known issues and workarounds for this release:</p>
+            <ul>
+                <li><xref href="releasenotes21.dita#release_notes/features">Features Available in this
+                    Release</xref></li>
+                <li><xref href="releasenotes21.dita#release_notes/known_issues">Known Issues in this
+                    Release</xref></li>
+            </ul>
+        </section>   
+        
+        <section id="features"><title>Features Available in this Release</title>
+            <p><b>Freezer UI</b></p>            
+            <p><b>OVSvApp over VxLAN</b></p>
+            <p><b>Ceph Multi-network support</b></p>
+            <p><b>hLinux: security updates via Top of Tree</b></p>
+            <p><b>Mid-scale support</b></p>
+            <p><b>~100 patches</b></p>
+            <p><b>Includes all fixes in HOS V2.0.1 hotfix</b></p>
+            <p><b>Will include HLX-755 “Softlockup affecting multipath”</b></p>
+            <p><b>kernel update => managed reboots</b></p>
+            
+        </section>
+        
+        <section id="known_issues">
+            <title>Known Issues in this Release</title>
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2052  -->
+            <p><b>Changes to Alarm Definition in Centralized Logging 
+                may require existing alarms to be deleted and recreated on an upgrade from 
+                <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/></b></p>   
+            
+            <p>
+                A new dimension <codeph>service=logging</codeph> has been added for alarm definitions.
+                During an upgrade, you should delete exisiting alarms that won't have this dimension and 
+                then recreate them, so that they will have the correct dimension and appear as expected 
+                in the Ops Console "logging" bucket. Before performing an upgrade, remove the old logging alarms manually,
+                specifically the "Process Detect" alarms for Apache, Beaver, Kibana and Logstash. 
+                </p>
+                        
+              <p>
+                If you do not perform this step, two sets of alarm metrics will be generated after the upgrade. 
+                As a result, the metrics for the older definition might appear in the "logging" bucket while those for the 
+                newer definition might appear in the Unknown or Other bucket.
+              </p>
+            
+            
+        </section>
+        
+    </body>
+</topic>

@@ -15,9 +15,13 @@
    </vrmlist>
   </prodinfo>
  </topicmeta>
+ 
+ <mapref href="helion/HOS-keywords.xml" format="ditamap" processing-role="resource-only"/>
+ 
  <topicref href="helion/index.dita">
   <!-- BEGIN - TOP LEVEL -->
   <topicref href="helion/documentation_updates_2_1.dita" navtitle="2.1 Changelog" locktitle="yes"/>
+  <topicref href="helion/releasenotes21.dita" navtitle="Release Notes 2.1" locktitle="yes"/>
   <topicref href="helion/input_model.dita" navtitle="Input Model" locktitle="yes"/>
   <topicref href="helion/installation/upgrade.dita" navtitle="Upgrade to 2.1" locktitle="yes"/>
   <topicref href="helion/installation/preinstall_checklist.dita"

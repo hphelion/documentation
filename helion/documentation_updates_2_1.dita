@@ -50,6 +50,10 @@
               <entry>Upgrade</entry>
               <entry>Added 2.0 to 2.1 Upgrade instructions</entry>
             </row>
+            <row>
+              <entry>Release Notes 2.1</entry>
+              <entry>DOCS-2052 Changes to Alarm Definition in Centralized Logging</entry>
+            </row>            
           </tbody>
         </tgroup>
       </table>
