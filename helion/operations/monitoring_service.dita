@@ -32,7 +32,7 @@
       </ul>
     </section>
     <section id="installation"><title>Installation</title>
-      <p>The Monasca service is automatically installed as part of the <keyword keyref="kw-hos"/>
+      <p>The monitoring service is automatically installed as part of the <keyword keyref="kw-hos"/>
         installation.</p>
       <p>No specific configuration is required to use Monasca. However, you can configure the
         database for storing metrics as detailed in the <xref
@@ -41,8 +41,9 @@
     </section>
     <section id="differences"><title>Differences Between Upstream and <keyword keyref="kw-hos"/>
         Implementations</title>
-      <p>In the <keyword keyref="kw-hos-phrase"/> release, the OpenStack monitoring service, Monasca, is
-        included as the <keyword keyref="kw-hos"/> monitoring solution with the following exceptions:</p>
+      <p>In the <keyword keyref="kw-hos-phrase"/> release, the OpenStack monitoring service,
+        Monasca, is included as the monitoring solution with the following exceptions which are not
+        included:</p>
       <ul>
         <li>Transform Engine</li>
         <li>Events Engine </li>
@@ -60,11 +61,11 @@
       <p>The <b>monasca-agent</b> is a Python program that runs on the control plane nodes. It runs
         the defined checks and then sends data onto the API. The checks that the agent runs include: <ul>
           <li>System Metrics: CPU utilization, memory usage, disk I/O, network I/O, and filesystem
-            utilization on Control Plane and Resource Nodes.</li>
+            utilization on the control plane and resource nodes.</li>
           <li>Service Metrics: the agent supports plugins such as MySQL, RabbitMQ, Kafka, and many
             others.</li>
           <li>VM Metrics: CPU utilization, disk I/O, network I/O, and memory usage of hosted virtual
-            machines on Compute nodes. Full details of these can be found <xref
+            machines on compute nodes. Full details of these can be found <xref
               href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#per-instance-metrics"
               format="html" scope="external">here</xref>.</li>
         </ul></p>
@@ -78,7 +79,8 @@
     <section id="access"><title>Access to Monasca</title>
       <p>Access to Monasca is available through a number of different interfaces.</p>
       <p><b>Command-Line Interface</b></p>
-      <p>For users who prefer using the command line, there is the python-monascaclient.</p>
+      <p>For users who prefer using the command line, there is the python-monascaclient, which is
+        part of the default installation on your lifecycle manager node.</p>
       <p>For details on the CLI, including installation instructions, see <xref
           href="https://github.com/stackforge/python-monascaclient/blob/master/README.rst"
           format="html" scope="external">Python-Monasca Client</xref></p>
@@ -95,12 +97,29 @@
         installed.</p>
       <p>Full details of all service alarms can be found here: <xref href="alarms.dita">Service
           Alarm Definitions</xref>.</p>
+      <p>Each alarm will have one of the following statuses:
+        <ul>
+          <li><uicontrol>Critical</uicontrol> - Open alarms, identified by red indicator.</li>
+          <li><uicontrol>Warning</uicontrol> - Open alarms, identified by yellow
+            indicator.</li>
+          <li><uicontrol>Unknown</uicontrol> - Open alarms, identified by gray indicator.
+            Unknown will be the status of an alarm that has stopped receiving a metric. This
+            can be caused by the following conditions:
+            <ul>
+              <li>An alarm exists for a service or component that is not installed in the environment.</li>
+              <li>An alarm exists for a virtual machine or node that previously existed but has been removed without the corresponding alarms being removed.</li>
+              <li>There is a gap between the last reported metric and the next metric.</li>
+            </ul></li>
+          <li><uicontrol>Open</uicontrol> - Complete list of open alarms.</li>
+          <li><uicontrol>Total</uicontrol> - Complete list of alarms, may include Acknowledged
+            and Resolved alarms.</li>
+        </ul></p>
       <p>When alarms are triggered it is helpful to review the service logs. Details on how to use
         the logging UI built into the Operations Console can be found here: <xref type="section"
           href="centralized_logging.dita#centralized_logging/interface">Logging Interface</xref></p>
     </section>
     <section id="info"><title>For More Information</title>
-      <p>For details on OpenStack Monasca, see <xref href="http://monasca.io/" format="html"
+      <p>For more details on OpenStack Monasca, see <xref href="http://monasca.io/" format="html"
           scope="external">Monasca.io</xref></p>
     </section>
   </body>
