@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="release_notes">
+<topic xml:lang="en-us" id="release-notes-21">
     <title><keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-21"/>: Release Notes</title>
     <body>
         
@@ -9,9 +9,9 @@
                 <keyword keyref="kw-hos-tm"/> <keyword keyref="kw-hos-version-21"/>, 
                 including known issues and workarounds for this release:</p>
             <ul>
-                <li><xref href="releasenotes21.dita#release_notes/features">Features Available in this
+                <li><xref href="releasenotes21.dita#release-notes-21/features">Features Available in this
                     Release</xref></li>
-                <li><xref href="releasenotes21.dita#release_notes/known_issues">Known Issues in this
+                <li><xref href="releasenotes21.dita#release-notes-21/known_issues">Known Issues in this
                     Release</xref></li>
             </ul>
         </section>   
