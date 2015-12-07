@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785c2uhmr">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Resource Usage</title>
 <prolog>
 <metadata>
@@ -39,16 +39,16 @@
 <p>The Ceilometer implementation in the HP Helion OpenStack Carrier Grade improves on several aspects. They are described in the following sections:</p>
 <ul>
 <li>
-<xref type="section" href="#topic8785/filters">Optimized Ceilometer Filters</xref>
+<xref type="section" href="#topic8785c2uhmr/filters">Optimized Ceilometer Filters</xref>
 </li>
 <li>
-<xref type="section" href="#topic8785/reports">On-Line Ceilometer Reports</xref>
+<xref type="section" href="#topic8785c2uhmr/reports">On-Line Ceilometer Reports</xref>
 </li>
 <li>
-<xref type="section" href="#topic8785/backend">CSV Performance Monitoring Backend</xref>
+<xref type="section" href="#topic8785c2uhmr/backend">CSV Performance Monitoring Backend</xref>
 </li>
 <li>
-<xref type="section" href="#topic8785/retention">Retention Period</xref>
+<xref type="section" href="#topic8785c2uhmr/retention">Retention Period</xref>
 </li>
 </ul>
 <section id="filters"> <title>Optimized Ceilometer Filters</title>
