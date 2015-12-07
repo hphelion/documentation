@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic4797">
+<topic xml:lang="en-us" id="topic4797cgipkaj">
     <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample ansible.json File for
         Installing the KVM + ESX Topology</title>
     <prolog>
@@ -19,7 +19,7 @@
             <!--UNDER REVISION-->
             <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
             <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-        <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing
+        <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg">process for installing
                 the KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
         <p>The <codeph>ansible.json</codeph> file contains the following fields:</p>
@@ -155,7 +155,7 @@ _vars.vsc_dcm_ip_subnet}}
                     <codeph>&lt;cloudname>/vars</codeph> directory of the HLM VM. Use values
                 appropriate for your environment. The IP addresses are masked for security
                 purposes.</p>
-            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>
     {

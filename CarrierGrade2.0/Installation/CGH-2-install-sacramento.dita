@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2is">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Non-KVM Region
     Cloud in a Sacramento Deployment</title>
   <prolog>
@@ -15,9 +15,9 @@
     </metadata>
   </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">lifecycle manager VM is
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM is
         installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
+        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM + ESX
         deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
       proxy. </p>
@@ -30,19 +30,19 @@
         installed and functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud
         Networking (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
         documentation for details. </p><p>For a quick overview of the DCN components, see the
-        appropriate <xref href="carrier-grade-technical-overview.dita#topic3485">Deployment
+        appropriate <xref href="carrier-grade-technical-overview.dita#topic3485cgto">Deployment
           Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
         id="ul_hnw_pry_zs">
         <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
         <li>VSD should be deployed in HA mode (3+1 VSDs). </li>
         <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
-            href="carrier-grade-technical-overview.dita#topic3485">architecture diagram</xref>.</li>
+            href="carrier-grade-technical-overview.dita#topic3485cgto">architecture diagram</xref>.</li>
         <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
           commands. </li>
         <li>Make sure all the VSD services are in PASS state.</li>
-        <li><xref href="#topic10581/conref-vsd-license" format="dita">Apply the VSD license</xref>
+        <li><xref href="#topic10581c2is/conref-vsd-license" format="dita">Apply the VSD license</xref>
           based on single or clustered VSD setup. </li>
-        <li><xref href="#topic10581/conref-admin-user" format="dita">Create the required VSD
+        <li><xref href="#topic10581c2is/conref-admin-user" format="dita">Create the required VSD
             users</xref>.</li>
       </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
           Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
@@ -83,13 +83,13 @@
     <section id="conref-vmware">
       <title>Deploy the VMware vSphere Distributed Switch</title>
       <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
-        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581">Deploying
+        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581cgivs">Deploying
           the VMware vSphere Distributed Switch</xref>. </p>
     </section>
     <section id="conref-vapp">
       <title>Deploy the VRSvApp</title>
       <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
-          href="CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p>
+          href="CGH-2-install-vsvapp.dita#topic10581c2iv">Deploying the VRS vApp</xref></p>
     </section>
     <section id="conref-vsd">
       <title>Verify VSD is running</title>
@@ -102,17 +102,17 @@
     </section>
     <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
       license file when you purchased DCN. You need to apply that license on the KVM Host. For more
-      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
+      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
     <section id="conref-admin-user">
       <title>Create an OSadmin user for VSD</title>
       <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
-        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581">Create an
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581cgivu">Create an
           OSadmin User for VSD</xref>.</p>
     </section>
     <section id="conref-hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
       <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
-          href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the Lifecycle Manager VM
+          href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the Lifecycle Manager VM
           and Installation Services</xref>:</p>
       <ol id="ol_ncd_wff_zt">
         <li>Log into the lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where:
@@ -292,7 +292,7 @@ Password: cghelion</codeblock>
         id="ul_eln_vcl_25">
         <li><xref href="carrier-grade-install-kvm-env-json-sac.dita">For an Unbonded NIC
             Environment</xref></li>
-        <li><xref href="carrier-grade-install-kvm-env-json-bonded-sac.dita#topic4797">For a Bonded
+        <li><xref href="carrier-grade-install-kvm-env-json-bonded-sac.dita#topic4797cgikejbs">For a Bonded
             NIC Environment</xref></li>
       </ul></p>
     <section id="conref-ansible-json">
@@ -362,7 +362,7 @@ Password: cghelion</codeblock>
         fit your hardware model. You have to gather the correct PCI SLOT INFO and add ports
         accordingly on the hardware slots or cards used for networking.</p>
       <p>Click here to see a  <xref
-          href="carrier-grade-install-kvm-machine-json-bonded.dita#topic4797">sample
+          href="carrier-grade-install-kvm-machine-json-bonded.dita#topic4797cgikmjb">sample
           machine_architecture.json file</xref>.</p>
     </section>
     <section>
@@ -433,7 +433,7 @@ Password: cghelion</codeblock>
           scope="external">Helion Download Network</xref>.
         <!-- Review with Michael Duncan all JSON files and proxy re: bonded set up --></p>
       <p>For instructions on installing the ESX compute proxy, see <xref
-          href="carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX Compute
+          href="carrier-grade-install-esx-proxy.dita#topic10581cgiep">Deploy the ESX Compute
         Proxy</xref>.</p>
     </section>
     <section id="conref-vmware-workaround">
@@ -442,7 +442,7 @@ Password: cghelion</codeblock>
         receive a <codeph>VMK_NO_MEMORY</codeph> error. This is a known problem with HP server and
         ESXi 5.x. To prevent this issue, you need to upgrade the version of the HP Agentless
         Management Service (AMS) that comes with the HP servers. </p>
-      <p>For more information, see <xref href="CGH-2-install-vmware-workaround.dita#topic10581"
+      <p>For more information, see <xref href="CGH-2-install-vmware-workaround.dita#topic10581c2ivw"
           >vmWare Installation Workaround</xref>.</p>
     </section>
     <section id="cobbler">
@@ -501,7 +501,7 @@ Password: cghelion</codeblock>
             network configuration. If this happens, you need to log into that node and manually boot
             using the Retry Auto-Configuration option. The provisioning will continue as you reboot
             that node. See <xref
-              href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581/provision">Node
+              href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581c2ti/provision">Node
               fails to boot during HLM provision</xref>. </p>Once the baremetal nodes are
           provisioned, make sure the <codeph>nodes.json</codeph> file is generated. The
             <codeph>nodes.json</codeph> file will have entries for your environment:<ul
@@ -672,7 +672,7 @@ Saved the current configuration to mainboard device successfully.
 The cloud &lt;cloudname> was generated successfully.
 ################################################################################</codeblock><p>To
             view the complete output of the command, see <xref
-              href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
+              href="carrier-grade-install-hcfgproc-output.dita#topic10581cgiho"> Output from the hcfgproc
               command</xref>.</p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
@@ -705,7 +705,7 @@ The cloud &lt;cloudname> was generated successfully.
         v2 authorization. The services need to be modified to use Keystone v3. Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581"
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581cgicl"
           >Configuring LDAP CLI Support</xref></p>
     </section>
     <section id="conref-vsc-vm">
@@ -738,10 +738,10 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       </image></section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959c2ii">Installing Infoblox</xref>. Infoblox is
         an optional component that integrates with the OpenStack Neutron networking service, to
         provide IP Address Management (IPAM) networking services within OpenStack cloud platforms. </p>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
           Interface</xref>. Launch the Horizon interface to load a required security certificate and
         test the non-KVM deployment.
         <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->

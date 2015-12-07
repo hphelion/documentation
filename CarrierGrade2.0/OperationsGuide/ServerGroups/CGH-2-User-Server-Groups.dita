@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic804">
+<topic xml:lang="en-us" id="topic804c2usg">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Server Groups</title>
   <prolog>
     <metadata>
@@ -19,7 +19,7 @@
     <p>To create a server group:</p>
 
       <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

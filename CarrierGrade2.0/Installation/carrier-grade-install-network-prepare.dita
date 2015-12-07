@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7646">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7646cginp">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Preparing the Network for Installation</title>
 <prolog>
     <metadata>
@@ -17,7 +17,7 @@
         <section>
             <title>VLAN ID Reference</title>
             <p>Make sure you have all VLAN IDs defined for the networks as defined in the <xref
-                    href="carrier-grade-technical-overview.dita#topic3485">Architecture
+                    href="carrier-grade-technical-overview.dita#topic3485cgto">Architecture
                     Diagram</xref></p>
 
         <p><b><u>Example</u></b></p>
@@ -427,7 +427,7 @@ ifup br-clm
 ifup br-dcm</codeph></codeblock></li>
 </ol>
 <p>Networking will be restored through the OVS Bridge.</p>
-            <p><b>Return to the <xref href="carrier-grade-install-prereqs.dita#topic7148"
+            <p><b>Return to the <xref href="carrier-grade-install-prereqs.dita#topic7148cgip"
                         >prerequisites</xref>.</b></p>
 <!-- Hide this; might not be needed 
 

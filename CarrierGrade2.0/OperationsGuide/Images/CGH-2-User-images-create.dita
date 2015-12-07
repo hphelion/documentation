@@ -22,12 +22,12 @@
         Helion OpenStack to upload the image to your cloud.</p><p>
         <note> After you upload an image, it is considered <i>golden</i> and you cannot change
         it.</note><ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Based on whether you are <xref
-            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">working on a project
             or the domain</xref>:<ul id="ul_zvj_cgt_jt">
             <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
                 <b>Volumes</b> tab. </li>
@@ -68,12 +68,12 @@
 
     <p>To delete a private image:</p>
     <ol>
-      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+      <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
         Helion OpenStack Horizon Dashboard</xref>.</li>
       <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
         appropriate region and project</xref>.</li>
       <li>Based on whether you are <xref
-            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">working on a project
             or the domain</xref>:<ul id="ul_btt_cgt_jt">
             <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
                 <b>Volumes</b> tab. </li>

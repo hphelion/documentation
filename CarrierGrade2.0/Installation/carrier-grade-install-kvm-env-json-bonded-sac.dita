@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797cgikejbs">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample environment.json File
         for Bonded Sacramento</title>
 <prolog>
@@ -326,7 +326,7 @@
                 Host.</p>
 </section>
     <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-        <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-env-json">Sacramento
+        <li><xref href="CGH-2-install-sacramento.dita#topic10581c2is/conref-env-json">Sacramento
                         deployment</xref></li>
     </ul></p>
         

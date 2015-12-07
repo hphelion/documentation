@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107t">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the KVM Region</title>
 <prolog>
   <metadata>
@@ -50,7 +50,7 @@ ifconfig eth0 up</codeblock></li>
             </li>
             <li><codeph>cakey.pem</codeph></li>
           </ul><p>You should have downloaded these files <xref
-              href="carrier-grade-install-prereqs.dita#topic7148/patches">in the
+              href="carrier-grade-install-prereqs.dita#topic7148cgip/patches">in the
               prerequisites</xref></p></li>
       </ol>
     </section>
@@ -76,7 +76,7 @@ system host-add --hostname &lt;unique-compute-name&gt; --personality compute --m
           network.</li>
         <li>Restart the nodes.</li>
         <li>Access the Horizon dashboard using the CAN network IP (HTTPS). </li>
-        <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
+        <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160cgdl"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE
           booted. After succesful PXE boot, Operational State as Disabled and Availability State as
           Online in the <b>Admin</b>, then <b>Inventory</b> page. <p><b>Note:</b>The Horizon
@@ -96,15 +96,15 @@ password:  &lt;random> </codeblock><p>The
       <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute
         the following commands from controller-0 to unlock each compute node in the inventory, based
         on your deployment:</p>
-      <p><xref href="#topic1107/kvm" format="dita">For KVM deployments</xref></p>
-      <p><xref href="#topic1107/kvm-esx" format="dita">For KVM + ESX deployments</xref></p>
-      <p><xref href="#topic1107/nic" format="dita">For bonded NIC environments</xref></p>
+      <p><xref href="#topic1107t/kvm" format="dita">For KVM deployments</xref></p>
+      <p><xref href="#topic1107t/kvm-esx" format="dita">For KVM + ESX deployments</xref></p>
+      <p><xref href="#topic1107t/nic" format="dita">For bonded NIC environments</xref></p>
     </section>
     <section>
       <title id="kvm">For KVM deployments</title>
       <ol>
         <li>Create the Infra interface. See <xref
-            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
+            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151cgawhmidi"
           /> or <i>Interfaces</i> in the Administrtor Guide.</li>
         <li>Create a Provider Network. See <xref
             href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
@@ -113,17 +113,17 @@ password:  &lt;random> </codeblock><p>The
           option. See <xref
             href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
           /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-        <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
+        <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107cgikni">Create data
             interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
           Guide.</li>
         <li>Optionally, change the default CPU allocations and/or the default memory allocations
           (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes. See
             <i>Processor</i> in the Administrator Guide.</li>
         <li><xref
-            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
+            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241cgawhmhl"
             >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
           the inventory page to show <b>Available</b> and <b>Online</b>.</li>
-        <li>If you are using a bonded interface, see <xref href="#topic1107/nic" format="dita">For
+        <li>If you are using a bonded interface, see <xref href="#topic1107t/nic" format="dita">For
             bonded NIC environments</xref>.</li>
       </ol>
     </section>
@@ -192,7 +192,7 @@ system host-if-modify compute-1 bondvrs -nt data-vrs --ipv4-mode=pool --ipv4-poo
     </section>
     <section id="next-step">
       <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref></p>
+      <p><xref href="carrier-grade-install-post.dita#topic1107cgip">Post-Installation Tasks</xref></p>
     </section>
   </body>
 </topic>

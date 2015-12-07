@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgic">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Configuring the KVM
         Region Hosts</title>
   <prolog>
@@ -16,7 +16,7 @@
   </prolog>
   <body>
     <p><i>Return to Installing the <xref
-          href="carrier-grade-install-kvm-esx.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx.dita#topic10581cgike/vmware">KVM + ESX
         Deployment</xref>.</i></p>
 
     <p>After deploying the KVM region, you must perform the following steps to configure the  </p>
@@ -70,7 +70,7 @@ nova aggregate-create remote_storage_hosts
 nova aggregate-set-metadata remote_storage_hosts localstorage=false
 nova aggregate-add-host remote_storage_hosts &lt;compute host name&gt;</codeblock></li></ol>
             <title>Next Step</title>
-            <p><xref href="carrier-grade-install-metadata.dita#topic10581">Configure the DCN
+            <p><xref href="carrier-grade-install-metadata.dita#topic10581cgim">Configure the DCN
                     Metadata Agent</xref>
             </p>
         </section>

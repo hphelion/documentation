@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgilh">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Launching the Horizon
     Interface</title>
   <prolog>
@@ -36,7 +36,7 @@
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
         manage and maintain HP Helion OpenStack Carrier Grade. Use the <xref
-          href="carrier-grade-technical-overview.dita#topic3485">CAN IP address</xref> to launch
+          href="carrier-grade-technical-overview.dita#topic3485cgto">CAN IP address</xref> to launch
         Horizon. You can locate the CAN IP address in the <codeph>/root/stackrc</codeph> file on any
         of the controller nodes in the non-KVM region.</p>
       <p>The CAN IP address contains port <codeph>5000</codeph>. </p>
@@ -63,10 +63,10 @@
     </section>
     <section>
       <title>Upload a Glance VMDK Image</title>
-      <p>For the <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>KVM
+      <p>For the <xref href="carrier-grade-install-overview.dita#topic1925cgio/install-option"><b>KVM
             + ESX deployment</b></xref>, perform the following task. </p>
-      <p>For <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>the KVM
-            deployment</b></xref>, proceed to the <xref href="#topic10581/next-step" format="dita"
+      <p>For <xref href="carrier-grade-install-overview.dita#topic1925cgio/install-option"><b>the KVM
+            deployment</b></xref>, proceed to the <xref href="#topic10581cgilh/next-step" format="dita"
           >Next Step</xref>.</p>
       <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
         least on ISO image file, and import that file into Horizon. </p>

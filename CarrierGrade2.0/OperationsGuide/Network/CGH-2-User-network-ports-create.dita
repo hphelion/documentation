@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3171">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3171c2unpc">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Creating and Deleting Ports</title>
 <prolog>
 <metadata>
@@ -16,15 +16,15 @@
 <p>As an admin, you can:</p>
 <ul>
 <li>
-<xref type="section" href="#topic3171/createport">create a port</xref>
+<xref type="section" href="#topic3171c2unpc/createport">create a port</xref>
 </li>
 <li>
-<xref type="section" href="#topic3171/deleteport">delete a port</xref>
+<xref type="section" href="#topic3171c2unpc/deleteport">delete a port</xref>
 </li>
 </ul>
 <section id="createport"> <title>Create a port</title>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -49,7 +49,7 @@
 </section>
 <section id="editport"> <title>Edit a port</title>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -71,7 +71,7 @@
 <section id="deleteport">
       <title>Delete a port</title>
       <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

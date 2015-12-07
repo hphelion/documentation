@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773cgsms">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Support Matrix</title>
 <prolog>
   <metadata>
@@ -17,21 +17,21 @@
 <section id="intro">  
 <p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is very
       important to meet the requirements and conform to the recommendations listed in this document. <ul>
-        <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
-        <li><xref href="#topic1773/req-specs" format="dita">Required Specifications</xref></li>
-          <li><xref href="#topic1773/esx-dcn-hardware" format="dita">ESX and DCN
+        <li><xref href="#topic1773cgsms/hardware" format="dita">Supported Hardware</xref></li>
+        <li><xref href="#topic1773cgsms/req-specs" format="dita">Required Specifications</xref></li>
+          <li><xref href="#topic1773cgsms/esx-dcn-hardware" format="dita">ESX and DCN
             components</xref></li>
-        <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
+        <li><xref href="#topic1773cgsms/hardware-config" format="dita">Required Hardware
           Configurations</xref></li>
-        <li><xref href="#topic1773/dcn" format="dita">DCN Components</xref></li>
-        <li><xref href="#topic1773/esx" format="dita">ESX Components</xref></li>
-        <li><xref href="#topic1773/ironic" format="dita">Ironic Baremetal Components</xref></li>
-        <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
-        <li><xref href="#topic1773/add-esx" format="dita">ESX Software Requirements</xref></li>
-        <li><xref href="#topic1773/add-dcn" format="dita">DCN Software Requirements</xref></li>
-        <li><xref href="#topic1773/storage" format="dita">External Storage</xref></li>
-        <li><xref href="#topic1773/guestOS" format="dita">Supported Guest Operating Systems</xref></li>
-        <li><xref href="#topic1773/os-dcn-esx" format="dita">Additional Guest Operating
+        <li><xref href="#topic1773cgsms/dcn" format="dita">DCN Components</xref></li>
+        <li><xref href="#topic1773cgsms/esx" format="dita">ESX Components</xref></li>
+        <li><xref href="#topic1773cgsms/ironic" format="dita">Ironic Baremetal Components</xref></li>
+        <li><xref href="#topic1773cgsms/software" format="dita">Software Requirements</xref></li>
+        <li><xref href="#topic1773cgsms/add-esx" format="dita">ESX Software Requirements</xref></li>
+        <li><xref href="#topic1773cgsms/add-dcn" format="dita">DCN Software Requirements</xref></li>
+        <li><xref href="#topic1773cgsms/storage" format="dita">External Storage</xref></li>
+        <li><xref href="#topic1773cgsms/guestOS" format="dita">Supported Guest Operating Systems</xref></li>
+        <li><xref href="#topic1773cgsms/os-dcn-esx" format="dita">Additional Guest Operating
           Systems</xref></li>
       </ul></p>
 </section>
@@ -44,8 +44,8 @@
       <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
         for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
-          <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. The
-        servers must meet the specifications in <xref href="#topic1773/specs" format="dita">the
+        <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743cgok">KVM region</xref>. The
+        servers must meet the specifications in <xref href="#topic1773cgsms/specs" format="dita">the
           Required Specifications table below</xref>:</p>
       <p><b>Controller:</b></p>
       <ul>
@@ -204,32 +204,6 @@
           </tgroup>
         </table>
       </p>
-      <!--<p>  
-        <b>HPE ProLiant Rack Servers</b>
-      </p><ul>
-        <li>DL360 Gen9</li>
-        <li>DL380 Gen9</li>
-        <li>DL360 Gen8</li>
-        <li>DL380 Gen8 </li>
-      </ul><p><b>Note:</b> If you are using Gen9 systens, you must update the firmware to HPE Service
-        Pack for ProLiant (SPP) Version 2015.06.0. </p><p id="compute"><b>Compute servers</b>
-      </p><p>The following servers are supported for the compute servers in the <xref
-          href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. </p><p>
-        <b>HPE ProLiant BladeSystem</b>
-      </p><ul id="ul_er1_sc2_qs">
-        <li>BL460c Gen8</li>
-        <li>BL460c Gen9 </li>
-      </ul><p>
-        <b>HPE ProLiant Rack Servers</b>
-      </p><ul id="ul_l4s_pc2_qs">
-        <li>DL360 Gen9</li>
-        <li>DL380 Gen9</li>
-        <li>DL360 Gen8</li>
-        <li>DL380 Gen8</li>
-      </ul>
-      <p><b>Note:</b> If you are using Gen9 systems, you must update the firmware to HPE Service Pack
-        for ProLiant (SPP) Version 2015.06.0. </p>
--->
     </section>
     <section id="esx-dcn-hardware">
       <title>ESX and DCN Specifications</title>
@@ -238,7 +212,7 @@
     </section>
   <section id="hardware-config">
       <title>Required Hardware Configurations </title>
-      <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported
+      <p>The servers, selected from the <xref href="#topic1773cgsms/hardware" format="dita">Supported
           Hardware</xref> lists, must be configured as follows for HP Helion OpenStack Carrier
         Grade.</p>
       <p>One (1) <b>Lifecycle Manager Host</b>. You must have a server with a 40GB Disk and 8,192 MB
@@ -334,7 +308,7 @@
       <title>DCN Software Requirements</title>
       <p>HP Distributed Cloud Networking (DCN) must be fully installed and operational before
         installing HP Helion OpenStack Carrier Grade. The currently supported version is <b
-          conref="carrier-grade-install-download.dita#topic7148/dcn-version"/>.</p>
+          conref="carrier-grade-install-download.dita#topic7148cgid/dcn-version"/>.</p>
     </section>
     <section id="storage">
       <title>External Storage</title>
@@ -387,7 +361,7 @@
           <li>Ubuntu 14.04 </li>
         </ul>
 </section>
-    <!--<section id="typical"><title>Typical Configurations</title><p>The following tables list the hardware required for a typical KVM + ESX deployment cloud installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita">enclosure</xref>. </p><p>The KVM + ESX deployment requires an existing and operational VMware vSphere installation on the appropriate ESX/ESXi servers.</p><p><b>Note:</b> The KVM deployment requires the same hardware, except you need only six (6) DL360 G9 controllers, not ten (10).</p><p id="rack"><b>GEN9 Rackmount Base</b></p><table id="table_tgx_5k2_qs"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>16 x DL360 G9 (Compute)</entry><entry>See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>.</entry></row><row><entry>10 x DL360 G9(Control)</entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches</entry><entry><ul id="ul_wgx_5k2_qs"><li>6 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p> 1 x 3PAR 7400 </p></entry></row></tbody></tgroup></table><p id="enclosure"><b>GEN9 Enclosure Based</b></p><table id="table_xyv_xcs_ns"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>2 x C7000 Enclosure (Compute) </entry><entry><ul id="ul_q2d_bns_ns"><li>2 x Virtual Connect FlexFabric-20/40 F8 Module</li><li>4 x 6125XLG Blade Switch</li></ul></entry></row><row><entry><p>16 x BL460 G9 (Compute) </p></entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry><p>10 x DL360 G9 (Control)</p></entry><entry> See <xref href="#topic1773/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches </entry><entry><ul id="ul_ygx_5k2_qs"><li>4 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p><ul id="ul_ilg_fns_ns"><li>1 x 3PAR 7400 </li></ul></p></entry></row></tbody></tgroup></table></section>-->
+    <!--<section id="typical"><title>Typical Configurations</title><p>The following tables list the hardware required for a typical KVM + ESX deployment cloud installation using GEN9 servers in a <xref href="#topic1773cgsms/rack" format="dita">rackmount installation</xref> or an <xref href="#topic1773cgsms/enclosure" format="dita">enclosure</xref>. </p><p>The KVM + ESX deployment requires an existing and operational VMware vSphere installation on the appropriate ESX/ESXi servers.</p><p><b>Note:</b> The KVM deployment requires the same hardware, except you need only six (6) DL360 G9 controllers, not ten (10).</p><p id="rack"><b>GEN9 Rackmount Base</b></p><table id="table_tgx_5k2_qs"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>16 x DL360 G9 (Compute)</entry><entry>See <xref href="#topic1773cgsms/specs" format="dita">Required Specifications</xref>.</entry></row><row><entry>10 x DL360 G9(Control)</entry><entry> See <xref href="#topic1773cgsms/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches</entry><entry><ul id="ul_wgx_5k2_qs"><li>6 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p> 1 x 3PAR 7400 </p></entry></row></tbody></tgroup></table><p id="enclosure"><b>GEN9 Enclosure Based</b></p><table id="table_xyv_xcs_ns"><tgroup cols="2"><colspec colname="col1"/><colspec colname="col2"/><thead><row><entry>Component</entry><entry>Description</entry></row></thead><tbody><row><entry>2 x C7000 Enclosure (Compute) </entry><entry><ul id="ul_q2d_bns_ns"><li>2 x Virtual Connect FlexFabric-20/40 F8 Module</li><li>4 x 6125XLG Blade Switch</li></ul></entry></row><row><entry><p>16 x BL460 G9 (Compute) </p></entry><entry> See <xref href="#topic1773cgsms/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry><p>10 x DL360 G9 (Control)</p></entry><entry> See <xref href="#topic1773cgsms/specs" format="dita">Required Specifications</xref>. </entry></row><row><entry>TOR Switches </entry><entry><ul id="ul_ygx_5k2_qs"><li>4 x 5920AF-24XG Switch</li><li>2 x FF 5930-32QSFP+ Switch</li></ul></entry></row><row><entry>Storage</entry><entry><p><ul id="ul_ilg_fns_ns"><li>1 x 3PAR 7400 </li></ul></p></entry></row></tbody></tgroup></table></section>-->
   
 <!-- 
   <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HPE Distributed Cloud Networking (DCN) host</title>

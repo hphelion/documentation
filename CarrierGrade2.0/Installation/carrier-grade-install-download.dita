@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic7148">
+<topic xml:lang="en-us" id="topic7148cgid">
         <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Download the
                 Installation Packages </title>
         <titlealts>
@@ -24,7 +24,7 @@
                 
                 <p>This document describes the prerequisite steps required to install HP Helion
                         OpenStack Carrier Grade in a baremetal environment.</p>
-                <section>
+                <section id="getinstall">
                         <p>Launch the <xref
                                         href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
                                         format="html" scope="external">Helion Distribution Network
@@ -180,7 +180,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                         <p><b>Extract the DCN components</b></p>
                                         <p>Extract the DCN integration components from the DCN
                                                 folder in downloaded files as indicated in the
-                                                following table.</p><table id="table_mlr_bcz_st">
+                                                following table.</p><table id="table_mlr_bcz_st-a">
                                                 <tgroup cols="3">
                                                   <colspec colname="newCol1" colnum="1"
                                                   colwidth="1*"/>
@@ -403,18 +403,76 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
 97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
                         </ol>
                 </section>
-                <section id="dcn-extract"><b>Debian Packages</b><p>Download the following Debian
-                                packages from a trusted source:</p><p>
-                                <ul
-                                        conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/ul_wwn_13h_xt"
-                                        id="ul_hxk_3nw_f5">
-                                        <li/>
-                                </ul>
-                        </p><p>Move the downloaded files to the to the <codeph>/root/cg/dcn</codeph>
-                                directory on the lifecycle manager host:</p></section>
+                <section id="dcn-extract"><title>Extract the DCN components</title><p>HP Distributed
+                                Cloud Networking (DCN) must be fully installed and operational
+                                before installing HP Helion OpenStack Carrier Grade. The currently
+                                supported version is <b id="dcn-version">3.2R4</b>.</p><p>Extract the downloaded
+                                files as indicated in the following
+                                table.</p><p>itoolbox1.ova</p><p>nuage-metadata-agent_3.2.4-133_all.deb</p><p>nuagenetlib_0.0.0-1729-kilo_all.deb</p><p>nuage-openstack-neutron_2015.1.1745_all.deb</p><p>nuage-openvswitch-common_3.2.6-0b008b5_amd64.deb</p><p>nuage-openvswitch-switch_3.2.6-0b008b5_amd64.deb</p><p>nuage-python-openvswitch_3.2.6-0b008b5_all.deb</p><p>VRS_3.2.6-0b008b5_11252015.ovf</p><p>VRS_3.2.6-0b008b5_11252015-disk1.vmdk</p><p>vsc_singledisk.qcow2</p><p>vsd.xml</p><p>VSD-3.2.4_134-hp.ova</p><p>VSD-3.2.4_134-hp.qcow2</p><table
+                                id="table_mlr_bcz_st">
+                                <tgroup cols="3">
+                                        <colspec colname="newCol1" colnum="1" colwidth="1*"/>
+                                        <colspec colnum="2" colname="col2" colwidth="3.26*"/>
+                                        <colspec colnum="3" colname="col3" colwidth="2.13*"/>
+                                        <thead>
+                                                <row>
+                                                  <entry>Folder</entry>
+                                                  <entry>File Name</entry>
+                                                  <entry>To be copied to the KVM Host</entry>
+                                                </row>
+                                        </thead>
+                                        <tbody>
+                                                <row>
+                                                  <entry/>
+                                                  <entry>
+                                                  <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
+                                                  <p>nuagenetlib_0.0.0-1729-kilo_all.deb</p>
+                                                  <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
+                                                  <p>nuage-openvswitch-common_3.2.4-133_amd64.deb</p>
+                                                  <p>nuage-openvswitch-switch_3.2.4-133_amd64.deb</p>
+                                                  <p>nuage-python-openvswitch_3.2.4-133_all.deb</p>
+                                                  <p>
+                                                  <b><i><u>vsc_singledisk.ova</u></i></b></p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p>/root/cg/dcn</p>
+                                                  <p><b>Create dcn folder uncer /root/cg if you
+                                                  don’t have in the KVM Host</b></p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>VSD-QCOW2</entry>
+                                                  <entry>vsd- </entry>
+                                                  <entry>
+                                                  <p>/var/lib/libvirt/images</p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>VRS-vApp</entry>
+                                                  <entry>
+                                                  <p>itoolbox1.ova</p>
+                                                  <p><b><u><i>VRS_3.2.4-135_10062015.mf</i></u></b></p>
+                                                  <p>VRS_3.2.4-135_10062015.ovf</p>
+                                                  <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p><codeph>/var/www/html</codeph> on the KVM Host.
+                                                  </p>
+                                                  </entry>
+                                                </row>
+                                        </tbody>
+                                </tgroup>
+                        </table><b id="debian">Debian Packages</b><p>Download the following Debian packages from
+                                a trusted source:</p><ul
+                                conref="CGH-2-install-lifecycle-sacramento.dita#topic10581c2ils/ul_wwn_13h_xt"
+                                id="ul_kwl_vyj_g5">
+                                <li/>
+                        </ul><p>Move the downloaded files to the to the
+                                        <codeph>/root/cg/dcn</codeph> directory on the lifecycle
+                                manager host:</p></section>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581">Deploying the
+                        <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581c2ilt">Deploying the
                                         Lifecycle Manager</xref></p>
                 </section>
         </body>

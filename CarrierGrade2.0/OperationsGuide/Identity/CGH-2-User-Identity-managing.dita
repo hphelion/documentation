@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic585">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic585c2uim">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Identity</title>
 <prolog>
 <metadata>
@@ -48,7 +48,7 @@
         metadata, instances, CPUs, memory, and other settings for each project.</p>
       <ul id="ul_l32_nkp_ft">
         <li>
-          <xref href="CGH-2-User-Identity-quotas.dita#topic1853">Modify the quota of a
+          <xref href="CGH-2-User-Identity-quotas.dita#topic1853c2uiq">Modify the quota of a
             project</xref></li>
       </ul>
     </section>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgivs">
 
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the VMware vSphere
     Distributed Switch</title>
@@ -50,8 +50,8 @@
       </ol>
       <p/>
       <p><i>Return to installing the non-KVM region for the <xref
-        href="CGH-2-install-memphis.dita#topic10581/conref-vmware">memphis</xref> or <xref
-          href="CGH-2-install-sacramento.dita#topic10581/conref-vmware">sacramento</xref>
+        href="CGH-2-install-memphis.dita#topic10581c2im/conref-vmware">memphis</xref> or <xref
+          href="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware">sacramento</xref>
         template.</i></p>
     </section>
 </body>

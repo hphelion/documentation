@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgikd">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the KVM with
     DCN Deployment</title>
   <prolog>
@@ -15,22 +15,22 @@
     </metadata>
   </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Helion Lifecycle
         Management (HLM) VM is installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM with DCN</xref>
+        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM with DCN</xref>
       is to deploy the HPE Helion OpenStack cloud and install the HPE Distributed Cloud Networking
       (DCN) components.</p>
     <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
-        href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
+        href="carrier-grade-install-kvm.dita#topic10581cgik">Installing the KVM Deployment</xref>.</p>
     <p/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/prereqs"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/vsd"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/vsd-license"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-user-for-plugin-login"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/prereqs"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/vsd"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/vsd-license"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/create-user-for-plugin-login"/>
     <section id="hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
       <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
-        href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
+        href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the HPE Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
           IP of the lifecycle manager. Locate the IP address for the lifecycle manager in the
@@ -67,31 +67,31 @@
             contains several JSON template files. </p></li></ol>
     </section>
     
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-node-provision-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-def-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-env-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-ansible-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-ldap-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-wr-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/dcn-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/configure-mach-json"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/verify-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-node-provision-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-def-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-env-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-ansible-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-ldap-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-wr-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/dcn-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/configure-mach-json"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/verify-json"/>
     <section
-      conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/back-end"/>
+      conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/back-end"/>
     <!--  
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/gre-patch"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/reverse-patch"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/helion-pass-patch"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/nic-patch"/> -->
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/hos-cloud"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/hdeploy"/>
-    <!--<section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after"/>-->
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/root-user"/>
-    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581/kibana"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/gre-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/reverse-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/helion-pass-patch"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/nic-patch"/> -->
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/hos-cloud"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/hdeploy"/>
+    <!--<section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/patch-after"/>-->
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/root-user"/>
+    <section conref="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/kibana"/>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon Interface</xref></p>
       <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>

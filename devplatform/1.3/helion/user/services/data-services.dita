@@ -18,7 +18,7 @@
 </prolog>
 <body>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="filesystem.dita#topic4410/creating-a-persistent-file-system" >persistent file system</xref> service and 
+  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="filesystem.dita#topic4410f/creating-a-persistent-file-system" >persistent file system</xref> service and 
   <xref href="memcached.dita">Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19772/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
@@ -246,7 +246,7 @@ the <xref href="../reference/client-ref-service-management.dita" >ALS Service Ma
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title> 
   <p>When you bind a database service to an application, <xref href="../reference/environment.dita#topic7631/helion-app-env" type="section" >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
-  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/deploy_index.dita#topic1693/languages" type="section" >language-specific</xref> documentation.</p>
+  <p>Examples of how to parse and use these variables can be found in the <xref href="../deploy/deploy_index.dita#topic1693di/languages" type="section" >language-specific</xref> documentation.</p>
 </section>
 <section id="database-url"> <title>DATABASE_URL<!--Removed anchor point database-url--><!-- id="database-url" --></title> 
 <p>
@@ -590,7 +590,7 @@ variable. See the following language-specific documentation:</p>
 </ul>
 </section>
 <section id="sqlite"> <title>SQLite</title> 
-  <p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >Persistent File System</xref> mount point to avoid losing data.</p>
+  <p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="filesystem.dita#topic4410f/creating-a-persistent-file-system" type="section"   >Persistent File System</xref> mount point to avoid losing data.</p>
 </section>
 </body>
 </topic>

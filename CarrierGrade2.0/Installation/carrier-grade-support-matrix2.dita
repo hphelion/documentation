@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic1773">
+<topic xml:lang="en-us" id="topic1773cgsm2">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Support Matrix</title>
   <prolog>
     <metadata>
@@ -17,13 +17,13 @@
     <p>For information about HP Helion OpenStack Carrier Grade hardware, software and other
       requirements and conform to the recommendations, see one of the following, based upon your
         deployment:<ul id="ul_es3_kb2_b5">
-        <li><xref href="carrier-grade-support-matrix-denver.dita#topic1773">Denver Deployment
+        <li><xref href="carrier-grade-support-matrix-denver.dita#topic1773cgsmd">Denver Deployment
             Support Matrix</xref></li>
-        <li><xref href="carrier-grade-support-matrix-tahoe.dita#topic1773">Tahoe Deployment Support
+        <li><xref href="carrier-grade-support-matrix-tahoe.dita#topic1773cgsmt">Tahoe Deployment Support
             Matrix</xref></li>
-        <li><xref href="carrier-grade-support-matrix-memphis.dita#topic1773">Memphis Deployment
+        <li><xref href="carrier-grade-support-matrix-memphis.dita#topic1773cgsmm">Memphis Deployment
             Support Matrix</xref></li>
-        <li><xref href="carrier-grade-support-matrix-sacramento.dita#topic1773">Sacramento
+        <li><xref href="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms">Sacramento
             Deployment Support Matrix</xref></li>
       </ul></p>
   </body>

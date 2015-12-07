@@ -21,7 +21,7 @@
             <ul>
                 <li>the non-KVM region, also called <codeph>memphis</codeph> or
                         <codeph>denver</codeph> (based on the <xref
-                        href="../../Installation/carrier-grade-install-overview.dita#topic1925"
+                        href="../../Installation/carrier-grade-install-overview.dita#topic1925cgio"
                         >deployment template used during the installation</xref>)</li>
                 <li>the KVM region, also called <codeph>regionone</codeph></li>
             </ul>
@@ -29,7 +29,7 @@
             <p><image href="../../../media/CGH-2-region-selector.png" id="image_iyh_rsw_ft"
                     width="350" height="141"/></p>
             <p>For more information on the regions, see the <xref
-                    href="../../Installation/carrier-grade-technical-overview.dita#topic3485"
+                    href="../../Installation/carrier-grade-technical-overview.dita#topic3485cgto"
                     >Technical Overview</xref>.</p>
             <p>Within each region, there are one or more project (tenants). You can use the selector
                 to move between projects. </p>

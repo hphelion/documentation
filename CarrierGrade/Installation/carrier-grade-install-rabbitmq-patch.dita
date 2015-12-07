@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgirp">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Rabbit MQ Random
     Password Patch</title>
 <prolog>
@@ -101,9 +101,9 @@ patching file ansible-playbooks/roles/FND-RMQ/tasks/updateusrpass.yml </codebloc
           file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
       </ol>
     </section>
-  <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patches">KVM
+  <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581cgik/patches">KVM
       installation</xref>.</p>
-  <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patches">the KVM + ESX
+  <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/patches">the KVM + ESX
         installation</xref>.</p>
   </body>
 </topic>

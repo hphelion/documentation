@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic6108">
+<topic xml:lang="en-us" id="topic6108cgrn">
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Release Notes</title>
     <prolog>
         <metadata>
@@ -18,19 +18,19 @@
             the features contained within HPE Helion OpenStack version 1.1.1, including known issues
             and workarounds, and where to find further information on the product release.</p>
         <p>For more information on using HP Helion OpenStack Carrier Grade, see the <xref
-                href="../Installation/carrier-grade-install-overview.dita#topic1925">HP Helion
+                href="../Installation/carrier-grade-install-overview.dita#topic1925cgio">HP Helion
                 OpenStack Carrier Grade Installation Guide</xref>, the <xref
-                href="../carrier-grade-administration.dita#topic916">HP Helion OpenStack Carrier
+                href="../carrier-grade-administration.dita#topic916cga">HP Helion OpenStack Carrier
                 Grade Administrator Guide</xref> and the <xref
                 href="../OperationsGuide/CGH-2-User-Overview.dita#jow1404333560080">HP Helion
                 OpenStack Operations Guide</xref>. For information on using the HP Helion OpenStack
             Carrier Grade Developer API, including API definitions and usage descriptions, see the
-                <xref href="../API/carrier-grade-api.dita#topic15959">HP Helion OpenStack Carrier
+                <xref href="../API/carrier-grade-api.dita#topic15959cga">HP Helion OpenStack Carrier
                 Grade API and SDK Reference</xref>.</p>
         <section>See:<ul id="ul_z23_gdw_c5">
-                <li><xref href="#topic6108/changes" format="dita"/></li>
-                <li><xref href="#topic6108/usage" format="dita"/></li>
-                <li><xref href="#topic6108/problems" format="dita"/></li>
+                <li><xref href="#topic6108cgrn/changes" format="dita"/></li>
+                <li><xref href="#topic6108cgrn/usage" format="dita"/></li>
+                <li><xref href="#topic6108cgrn/problems" format="dita"/></li>
             </ul></section>
         <section id="changes">
             <title>Changes in this release</title>
@@ -307,7 +307,7 @@
                     <systemoutput>VMK_NO_MEMORY</systemoutput> error. This is a known problem with
                 HP server and ESXi 5.x.</p>
             <p>To fix this issue, upgrade to HP AMS version 10.0.1 and above. See <xref
-                    href="../Installation/CGH-2-install-vmware-workaround.dita#topic10581">Fixing
+                    href="../Installation/CGH-2-install-vmware-workaround.dita#topic10581c2ivw">Fixing
                     the VMware VMK_NO_MEMORY Error</xref>.</p>
             <p><!--From jow1404333831397.xml and added info --></p>
             <p><b>Use the CLI with the KVM Region </b></p>

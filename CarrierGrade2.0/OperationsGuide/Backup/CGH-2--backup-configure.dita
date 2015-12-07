@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2bc">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring the Backup
     and Restore Location </title>
   <prolog>
@@ -22,7 +22,7 @@ But the CLI, REST API etc should all be same --></p>
       the <b>attis</b> service, which you can use to backup and restore essential system files and
       components of the non-KVM cloud. The attis service is automatically installed on each of the
       controller nodes in the non-KVM region. Attis uses a command line interface. For more
-      information, see <xref href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore
+      information, see <xref href="CGH-2--backup-restore-cli.dita#topic10581c2brc">Backup and Restore
         CLI</xref>.</p>
     <p>Before you start your first backup, you must use the attis CLI to specify where HP Helion
       OpenStack Carrier Grade will store backup files. </p>
@@ -43,7 +43,7 @@ But the CLI, REST API etc should all be same --></p>
       Failed. </p>
     <section><title>Set the location where the backup file is stored </title>Perform the following
       steps on any cloud controller node. For information about the attis CLI, see the <xref
-        href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>. <ol
+        href="CGH-2--backup-restore-cli.dita#topic10581c2brc">Backup and Restore CLI</xref>. <ol
         id="ol_mnv_3mx_pt">
         <li>Log into HLM node</li>
         <li>SSH to any controller nodes from HLM using controller credentials (default username:

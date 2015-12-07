@@ -93,7 +93,7 @@
 
                             <entry>
                                 <p><xref
-                                        href="../Overview/CGH-2-User-system-overview.dita#topic8785"
+                                        href="../Overview/CGH-2-User-system-overview.dita#topic8785c2uso"
                                         >Viewing System Status</xref></p>
                             </entry>
 
@@ -117,7 +117,7 @@
 
 
                             <entry><xref
-                                    href="../HostManagement/CGH-2-User-host-management-resource.dita#topic8785"
+                                    href="../HostManagement/CGH-2-User-host-management-resource.dita#topic8785c2uhmr"
                                     > Resource Usage</xref></entry>
 
 
@@ -237,7 +237,7 @@
 
                             <entry>
                                 <p><xref
-                                        href="../Instances/CGH-2-User-Instance-Overview.dita#topic804"
+                                        href="../Instances/CGH-2-User-Instance-Overview.dita#topic804c2uio"
                                         >Managing Instances</xref></p>
                             </entry>
 
@@ -262,7 +262,7 @@
 
                             <entry>
                                 <p><xref
-                                        href="../ServerGroups/CGH-2-User-Server-Groups.dita#topic804"
+                                        href="../ServerGroups/CGH-2-User-Server-Groups.dita#topic804c2usg"
                                         >Managing Server Groups</xref></p>
                             </entry>
 
@@ -378,7 +378,7 @@
 
                             <entry>
                                 <p><xref
-                                        href="../Routers/CGH-2-User-routers-managing.dita#topic1681"
+                                        href="../Routers/CGH-2-User-routers-managing.dita#topic1681c2urm"
                                         >Managing Routers</xref></p>
                             </entry>
 
@@ -401,7 +401,7 @@
 
 
                             <entry><xref
-                                    href="../Defaults/CGH-2-User-Identity-quotas.dita#topic1853"
+                                    href="../Defaults/CGH-2-User-Identity-quotas.dita#topic1853c2uiq"
                                 />Managing Default Quotas</entry>
 
 
@@ -422,7 +422,7 @@
 
 
                             <entry><p/><xref
-                                    href="../FaultManagement/CGH-2-Userfault-mgmt.dita#topic2139"
+                                    href="../FaultManagement/CGH-2-Userfault-mgmt.dita#topic2139c2um"
                                 >Managing System Faults</xref></entry>
 
 
@@ -443,7 +443,7 @@
 
 
                             <entry><xref
-                                    href="../SystemConfig/CGH-2-User-system-config.dita#topic2139"
+                                    href="../SystemConfig/CGH-2-User-system-config.dita#topic2139c2usc"
                                 >Managing System Configuration</xref></entry>
 
 
@@ -466,7 +466,7 @@
 
                             <entry>
                                 <p><xref
-                                        href="../SystemInformation/CGH-2-User-system-info.dita#topic1853"
+                                        href="../SystemInformation/CGH-2-User-system-info.dita#topic1853c2usi"
                                         >Viewing System Informaton</xref></p>
                             </entry>
 
@@ -476,7 +476,7 @@
                             <entry>Metadata Definitions</entry>
                             <entry/>
                             <entry><xref
-                                    href="../SystemInformation/CGH-2-User-metadata.dita#topic1853"
+                                    href="../SystemInformation/CGH-2-User-metadata.dita#topic1853c2um"
                                     >Viewing Metadate Definitions</xref></entry>
                         </row>
 

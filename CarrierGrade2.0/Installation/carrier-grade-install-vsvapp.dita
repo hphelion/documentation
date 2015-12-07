@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgiv">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the VRSvApp</title>
   <prolog>
     <metadata>
@@ -15,8 +15,8 @@
   </prolog>
   <body>
       <p><i>Return to installing the non-KVM region for the <xref
-          href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-              href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+          href="CGH-2-install-memphis.dita#topic10581c2im/vrsvapp">memphis</xref> or <xref
+              href="CGH-2-install-sacramento.dita#topic10581c2is/vrsvapp">sacramento</xref>
           template.</i></p>
       
     <p>The HPE Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VRSvApp. One
@@ -52,7 +52,7 @@
                         <codeph>VRS_3.2.3-104_08282015-disk1.vmdk</codeph> files from KVM Host to
                     VSD node in the <codeph>/opt/vsd/</codeph> directory. For more information on
                     downloading DCN files, see <xref
-                        href="carrier-grade-install-prereqs.dita#topic7148/download-esx"
+                        href="carrier-grade-install-prereqs.dita#topic7148cgip/download-esx"
                         >Download packages for KVM + ESX</xref>.</li>
                 <li>In the vSpenere client, click <b>Open File</b> then <b>Deploy OVF
                     Template</b>.</li>
@@ -114,8 +114,8 @@
                 </ol></li>
             </ol>
         <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581c2im/vrsvapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581c2is/vrsvapp">sacramento</xref>
             template.</i></p>
     </section>
   </body>

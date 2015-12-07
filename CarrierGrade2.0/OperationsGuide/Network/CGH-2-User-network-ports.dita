@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3171">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3171c2unp">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Adding or Removing Ports</title>
 <prolog>
 <metadata>
@@ -17,10 +17,10 @@
 <p>You can edit the device associated with a port and change the admin state, as needed.</p>
 <p>As an admin, you can:</p>
 <ul>
-<li><xref href="CGH-2-User-network-ports-create.dita#topic3171">create and delete a port</xref></li>
-<li><xref href="CGH-2-User-network-ports-edit.dita#topic3171">change the device associated with the
+<li><xref href="CGH-2-User-network-ports-create.dita#topic3171c2unpc">create and delete a port</xref></li>
+<li><xref href="CGH-2-User-network-ports-edit.dita#topic3171c2unpe">change the device associated with the
           port</xref></li>
-<li><xref href="CGH-2-User-network-ports-state.dita#topic3171">change the admin state between Up or
+<li><xref href="CGH-2-User-network-ports-state.dita#topic3171c2unps">change the admin state between Up or
           Down</xref></li>
 </ul>
 </body>

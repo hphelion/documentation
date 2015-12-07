@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgik">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
     Deployment</title>
   <prolog>
@@ -425,7 +425,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
     <section id="patches">
       <title>Apply the Rabbit MQ Random Password patch</title>
       <p>For information, see the README in the download or  <xref
-          href="carrier-grade-install-rabbitmq-patch.dita#topic10581">Applying the Random RabbitMQ
+          href="carrier-grade-install-rabbitmq-patch.dita#topic10581cgirp">Applying the Random RabbitMQ
           Password Patch</xref>.</p>
     </section>
     
@@ -435,7 +435,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
           <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
         information, see the README in the download or  <xref
-          href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
+          href="carrier-grade-install-rp-filter.dita#topic10581cgirf">Applying the Reverse Path Filter
           Patch</xref>.</p></section>
     
     <section><title>Apply the Helion Dynamic Password Patch</title>The HPE Helion OpenStack cloud
@@ -443,11 +443,11 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
       to configure the installer to generate a dynamic user name and password for the Helion
       interface. The user name can password can be retrieved from a configuration files. <p>For more
         information, see the README in the download or  <xref
-          href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
+          href="carrier-grade-install-helion-password-patch.dita#topic10581cgihpp">Applying the Helion
           Dynamic Password Patch</xref>.</p></section>
     
     <section><title>Apply the NIC bonding patch</title><p>HPE Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
-        or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
+        or <xref href="carrier-grade-install-nic-patch.dita#topic10581cginp">Applying the NIC Bonding
           Patch</xref> to install a required patch.</p></section>
     
     <section><title>Deploy the HPE Helion OpenStack cloud</title>
@@ -477,13 +477,13 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581cgipl">Configuring LDAP CLI Support</xref></p>
     </section>
     <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
       HLM VM. The standard protocol ports will allow inbound access only and the only the cloud
       nodes will have inbound access to the other ports of the HLM VM.<p>For more information, see
         the README in the download or <xref
-          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
+          href="carrier-grade-install-secure-port-patch.dita#topic10581cgispp">Applying the HLM Port
           Security Patch</xref>.</p></section>    
     <section>
       <title>Disable the Root User</title>
@@ -491,12 +491,12 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos
         <codeph>root</codeph> user is disabled, you can use another default user account,
         <codeph>cghelion</codeph> to access the HLM VM and any actions that require root access
         should be done using <codeph>sudo</codeph>.</p>
-      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
+      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581cgidr"
         >Disabling the Root User</xref>.</p>
     </section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon Interface</xref></p>
       <!--<p><xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>

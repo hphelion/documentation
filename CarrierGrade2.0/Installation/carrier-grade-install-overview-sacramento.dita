@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic1925">
+<topic xml:lang="en-us" id="topic1925cgios">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Sacramento
     Template</title>
   <titlealts>
@@ -39,7 +39,7 @@
       <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HP Helion OpenStack
         installation and are independent of HP Helion OpenStack Carrier Grade. During the
         installation, you will integrate the storage into HP Helion OpenStack Carrier Grade. See the
-          <xref href="CGH-2-install-sacramento.dita#topic10581/backend">installation
+          <xref href="CGH-2-install-sacramento.dita#topic10581c2is/backend">installation
           instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
     </section>
 
@@ -60,7 +60,7 @@
             <li>Review the deployment architecture for different hypervisors</li>
             <li>Review the network architecture for networking needs</li>
           </ul></li>
-        <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
+        <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773cgsm2">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
         <li> Perform any required or optional <xref
             href="../../CarrierGrade2.0/Installation/carrier-grade-install-prereqs.dita"
@@ -81,11 +81,11 @@
                     components</xref>. You will also install the VMware ESX compute proxy. These
                   components will be installed into what is called the non-KVM region and connect to
                   the ESX cluster with DCN networking.</li>
-                <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
+                  <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh"
                     >Helion user interface</xref>.</li>
-                <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581">required
+                  <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581cgicd">required
                     DCN components</xref>.</li>
-                <li>Install the <xref href="carrier-grade-install-kvm-sacramento.dita#topic1107">carrier
+                <li>Install the <xref href="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks">carrier
                     grade cloud</xref>. The carrier grade cloud is deployed into what is called the
                     <i>KVM region</i>
                 </li>
@@ -96,7 +96,7 @@
 
     <section id="first-step">
       <title>First Step</title>
-      <p>Perform the <xref href="carrier-grade-install-prereqs.dita#topic7148">prerequisite
+      <p>Perform the <xref href="carrier-grade-install-prereqs.dita#topic7148cgip">prerequisite
           steps and one time setup</xref> on your KVM Host required to install HP Helion OpenStack
         Carrier Grade in a baremetal environment.</p>
     </section>

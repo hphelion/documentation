@@ -16,12 +16,12 @@
 <p>A non-admin user or admin user can <xref type="section" href="#topic3372/createnet">create</xref> and <xref type="section" href="#topic3372/deletenet">delete</xref> networks as needed.</p>
 <section id="createnet"> <title>Create a network</title>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Based on whether you are <xref
-            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">working on a project
             or the domain</xref>:<ul id="ul_zvj_cgt_jt">
             <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
                 <b>Networks</b> tab. </li>
@@ -79,12 +79,12 @@
 </section>
 <section id="deletenet"> <title>Delete a network</title>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Based on whether you are <xref
-            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on a project
+            href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">working on a project
             or the domain</xref>:<ul id="ul_tf2_fht_jt">
             <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
                 <b>Networks</b> tab. </li>

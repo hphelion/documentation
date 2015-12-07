@@ -21,7 +21,7 @@
   <!--Dev Plat-->
   <!-- Euca -->
   <!-- CGH -->
-  <topicref href="CarrierGrade2.0/carrier-grade-index.dita" otherprops="&quot;&quot;">
+  <topicref href="CarrierGrade2.0/carrier-grade-index.dita" otherprops="">
     <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview.dita" navtitle="Overview"
       locktitle="yes" otherprops="overview">
       <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview-non-kvm.dita"
@@ -79,7 +79,7 @@
         navtitle="Applying Customer-Specific Branding (optional)" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/Installation/carrier-grade-installation-guide.ditamap"
-      format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation"/>
+      format="ditamap" navtitle="Installation" locktitle="yes" />
     <topicref href="CarrierGrade2.0/carrier-grade-administration.dita" navtitle="Administration"
       locktitle="yes">
       <topicref href="CarrierGrade2.0/AdminGuideNew/carrier-grade-admin-guide.dita"

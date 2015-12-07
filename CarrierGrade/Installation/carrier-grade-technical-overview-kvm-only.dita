@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3485">
+<topic xml:lang="en-us" id="topic3485cgtoko">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM Deployment Architecture
     Reference</title>
   <prolog>
@@ -20,13 +20,13 @@
       Helion OpenStack Carrier Grade.</p>
     <ul>
       <li>
-        <xref type="section" href="#topic3485/Helion-services">HPE Helion OpenStack services</xref>
+        <xref type="section" href="#topic3485cgtoko/Helion-services">HPE Helion OpenStack services</xref>
       </li>
       <li>
-        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
+        <xref type="section" href="#topic3485cgtoko/deploy-arch">Deployment architecture</xref>
       </li>
       <li>
-        <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
+        <xref type="section" href="#topic3485cgtoko/networkarch">Network architecture</xref>
       </li>
     </ul>
     <section id="deploy-arch">
@@ -137,7 +137,7 @@
       <p>For installation and maintenance, HPE Helion OpenStack Carrier Grade consists of two logical
         or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
         installation process. The <xref
-          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
+          href="carrier-grade-technical-overview.dita#topic3485cgto/deploy-arch">Deployment Architecture
           diagram</xref> shows an illustration of these two zones. </p>
         <p><b>Non-KVM</b></p>
         <p>The Non-KVM region contains the HPE Helion Lifecycle Management (HLM), to deploy and

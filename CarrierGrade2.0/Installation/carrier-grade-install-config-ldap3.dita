@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgicl">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring LDAP for
     Keystone v3</title>
 <prolog>
@@ -20,7 +20,7 @@
       execute OpenStack CLI commands until the following changes are made on all three controller
       nodes in the non-KVM region. </p>
     <p>You should have downloaded the patch files in the <xref
-      href="carrier-grade-install-download.dita#topic7148/getinstall"
+      href="carrier-grade-install-download.dita#topic7148cgid/getinstall"
       >Prerequisites</xref>.</p>
   <p>To configure HP Helion OpenStack Carrier Grade services to use Keystone v3: </p>
   <ol>
@@ -164,10 +164,10 @@ SecurityWarning
   </ol>
 </section>
   <p>Return installing the non-KVM region for: <ul id="ul_n3r_dfx_wt">
-        <li><xref href="CGH-2-install-denver.dita#topic10581/ldap3">Denver template</xref></li>
-        <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap3">Tahoe template</xref></li>
-        <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap3">Memphis template</xref></li>
-    <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone">Sacramento
+        <li><xref href="CGH-2-install-denver.dita#topic10581c2id/ldap3">Denver template</xref></li>
+        <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/ldap3">Tahoe template</xref></li>
+        <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/ldap3">Memphis template</xref></li>
+    <li><xref href="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-keystone">Sacramento
           template</xref></li>
       </ul></p>
   </body>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785cgawhmr">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Resource Usage</title>
 <prolog>
 <metadata>
@@ -41,16 +41,16 @@
 <p>The Ceilometer implementation in the HPE Helion OpenStack Carrier Grade improves on several aspects. They are described in the following sections:</p>
 <ul>
 <li>
-<xref type="section" href="#topic8785/filters">Optimized Ceilometer Filters</xref>
+<xref type="section" href="#topic8785cgawhmr/filters">Optimized Ceilometer Filters</xref>
 </li>
 <li>
-<xref type="section" href="#topic8785/reports">On-Line Ceilometer Reports</xref>
+<xref type="section" href="#topic8785cgawhmr/reports">On-Line Ceilometer Reports</xref>
 </li>
 <li>
-<xref type="section" href="#topic8785/backend">CSV Performance Monitoring Backend</xref>
+<xref type="section" href="#topic8785cgawhmr/backend">CSV Performance Monitoring Backend</xref>
 </li>
 <li>
-<xref type="section" href="#topic8785/retention">Retention Period</xref>
+<xref type="section" href="#topic8785cgawhmr/retention">Retention Period</xref>
 </li>
 </ul>
 <section id="filters"> <title>Optimized Ceilometer Filters</title>
@@ -206,7 +206,7 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 <p>
 <b>Note:</b> Changes to the retention period cause 250.001 Configuration out-of-date alarms to be raised briefly for the controller nodes. During this period, the status Config out-of-date is displayed for the controller nodes on the <b>Host</b> tab of the <b>Inventory</b> pane. These alarms are resolved and cleared automatically after a few seconds.</p>
 <p>
-  <xref type="section" href="#topic8785"> Return to Top </xref>
+  <xref type="section" href="#topic8785cgawhmr"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

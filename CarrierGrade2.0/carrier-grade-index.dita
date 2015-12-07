@@ -22,7 +22,7 @@
 <p>Use the following links to begin installing HPE OpenStack Carrier Grade:</p>
 <ul>
 <li>
-  <p><xref href="Installation/carrier-grade-install-overview.dita#topic1925"/>
+  <p><xref href="Installation/carrier-grade-install-overview.dita#topic1925cgio"/>
           </p>
 
 <p>Start with this document for complete instructions on how to install your HP Helion OpenStack
@@ -37,7 +37,7 @@
 <li>
           <xref href="Overview/carrier-grade-overview.dita#topic4010" type="section" />
         </li>
-        <li><xref href="CGHRelNotes/carrier-grade-release-notes.dita#topic6108"/></li>
+        <li><xref href="CGHRelNotes/carrier-grade-release-notes.dita#topic6108cgrn"/></li>
 </ul>
 </section>
 <section id="getstart"> <title>Getting started with HP Helion OpenStack Carrier Grade</title>
@@ -47,7 +47,7 @@
           <p><xref
               href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
               format="pdf" scope="external">Administrator Guide</xref></p>
-          <p>The <xref href="AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+          <p>The <xref href="AdminGuideNew/carrier-grade-admin-guide.dita">KVM-Region
               Administrator Guide</xref> is addressed to HP Helion OpenStack Carrier Grade
             administrators responsible for the following areas:</p>
           <ul>
@@ -73,7 +73,7 @@
           <p>These topics describe the supported OpenStack Service and contain links to the
             respective OpenStack CLI and API documentation.</p></li>
         <li>
-          <xref href="API/carrier-grade-api.dita#topic15959">API and SDK Reference</xref>
+          <xref href="API/carrier-grade-api.dita#topic15959cga">API and SDK Reference</xref>
           <p>The API and SDK reference provides links to supported API and custom OpenStack API
             extensions. The page also links to the HP Helion OpenStack Carrier Grade Software
             Development Kit (SDK) documentation.</p></li>

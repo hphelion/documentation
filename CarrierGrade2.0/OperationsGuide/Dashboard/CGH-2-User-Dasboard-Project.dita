@@ -68,7 +68,7 @@
                             <entry> Overview </entry>
                             <entry>Limit Summary and Uage Summary</entry>
                             <entry><xref
-                                    href="../Overview/CGH-2-User-system-overview.dita#topic8785"
+                                    href="../Overview/CGH-2-User-system-overview.dita#topic8785c2uso"
                                     >Viewing System Status</xref></entry>
                         </row>
                         <row>
@@ -76,7 +76,7 @@
                             <entry>Controls for managing instances associated with the tenant,
                                 including controls for creating snapshots. </entry>
                             <entry><xref
-                                    href="../Instances/CGH-2-User-Instance-Overview.dita#topic804"
+                                    href="../Instances/CGH-2-User-Instance-Overview.dita#topic804c2uio"
                                     >Managing Instances</xref></entry>
                         </row>
                         <row>

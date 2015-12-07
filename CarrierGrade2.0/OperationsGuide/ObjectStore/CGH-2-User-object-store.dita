@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic2139">
+<topic xml:lang="en-us" id="topic2139c2uos">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing Object
     Storage</title>
   <prolog>
@@ -43,9 +43,9 @@
         <li><xref href="CGH-2-User-container-create.dita#topic1751">Create and delete a
             container</xref>
         </li>
-        <li><xref href="CGH-2-User-container-upload.dita#topic1681">Upload an object into or
+        <li><xref href="CGH-2-User-container-upload.dita#topic1681c2ucu">Upload an object into or
             download an object from a container</xref></li>
-        <li><xref href="CGH-2-User-container-edit.dita#topic1631">Edit and delete an object in a
+        <li><xref href="CGH-2-User-container-edit.dita#topic1631c2uce">Edit and delete an object in a
             container</xref></li>
       </ul>
     </section>

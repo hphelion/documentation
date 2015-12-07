@@ -27,7 +27,7 @@
             administrator to install, configure, and manage the hosts of the HP Helion OpenStack
             Carrier Grade cluster. </p>
         <p>To access the Inventory tab, on the <xref
-                href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">Horizon
+                href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">Horizon
                 interface</xref>, click <b>Admin</b>, then <b>System</b>, then <b>Inventory</b>. You
             will see links to the following tables: </p>
         <ul id="ul_rsz_fcg_ht">
@@ -39,21 +39,21 @@
             </li>
             <li><xref href="../HostManagement/CGH-2-User-host-management-active.dita#topic4032">Active
                 Hosts</xref></li>
-            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639"
+            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639c2uhmipatches"
                     >Patches </xref></li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-cpu.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-cpu.dita#topic2639c2uhmpc"
                     >CPU Profiles</xref>
             </li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639"
+                href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639c2hmpi"
                     >Interface Profiles </xref></li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-storage.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-storage.dita#topic2639c2uhmps"
                     >Storage Profiles</xref>
             </li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-memory.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-memory.dita#topic2639c2uhmpm"
                     >Memory Profiles</xref></li>
         </ul>
         <p>You can also get <xref href="CGH-2-User-host-management-detail.dita#topic1947">detailed

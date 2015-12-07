@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2iv">
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying a vApp for
         DCN/ESX Integration (VRSvApp)</title>
     <prolog>
@@ -16,8 +16,8 @@
     </prolog>
     <body>
         <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/conref-vapp">memphis</xref> or <xref
-                href="CGH-2-install-sacramento.dita#topic10581/conref-vapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581c2im/conref-vapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581c2is/conref-vapp">sacramento</xref>
                 template.</i></p>
         <p>This document describes how to install the HP Distributed Cloud Networking (DCN) vSphere
             Solution required to properly integrate the HPE Distributed Cloud Networking and VMWare
@@ -26,7 +26,7 @@
             vApp, called the VRSvApp, to integrate ESX and HPE DCN. One VRSvApp is required for each
             ESX host. There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
             installation package is contained in the packages you <xref
-                href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded in the
+                href="carrier-grade-install-download.dita#topic7148cgid/dcn-extract">downloaded in the
                 Prerequisites</xref>.</p>
         <p>The DCN vSphere Solution addresses this integration. The installation involves deploying
             a stand-alone VM, installing the new vCenter Integration Node (called the vCenter
@@ -67,7 +67,7 @@
         <section><title>Import Templates to Create Required VMs</title><p>Two VMs are required for
                 the DCN vSphere Solution. You can use ESX vCenter client to import template files to
                 create these VMs. You should have <xref
-                    href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded these
+                    href="carrier-grade-install-download.dita#topic7148cgid/dcn-extract">downloaded these
                     template files during the prerequisites</xref>.</p><p>For instructions on how to
                 import OVA files, refer to the ESX documentation.</p>To deploy the vCenter
             Integration Node VM:<ol id="ol_mkw_drl_xt">
@@ -78,7 +78,7 @@
                     installation, you will select a network for the VM. Select the DVS Datapath
                     (TUL) network. Select the</li>
                 <li>Import the <codeph>itoolbox1.ova</codeph> template file.<p>You should have <xref
-                    href="carrier-grade-install-download.dita#topic7148/getinstall"
+                    href="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"
                             >downloaded this file during the prerequisites</xref>. Importing the OVA
                         file creates the HTTP\DHCP VM. During the installation, you will select a
                         network for the VM. Select the DVS Datapath (TUL) network.</p><p>For
@@ -120,7 +120,7 @@ GATEWAY=10.20.5.1</codeblock></p></li>
                 <ol id="ol_v11_wh4_rt">
                     <li>In the vCenter client, import the <codeph>itoolbox1.ova</codeph>template
                             file.<p>You should have <xref
-                                href="carrier-grade-install-download.dita#topic7148/getinstall"
+                                href="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"
                                 >downloaded this file during the prerequisites</xref>. Importing the
                             OVA file creates the HTTP\DHCP VM.</p><p>For instructions, refer to the
                             ESX documentation.</p></li>
@@ -325,8 +325,8 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
             </p>
         </section>
         <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/conref-vapp">memphis</xref> or <xref
-                href="CGH-2-install-sacramento.dita#topic10581/conref-vapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581c2im/conref-vapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581c2is/conref-vapp">sacramento</xref>
                 template.</i></p>
     </body>
 </topic>

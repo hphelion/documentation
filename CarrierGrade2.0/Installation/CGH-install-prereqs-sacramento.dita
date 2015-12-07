@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic7148">
+<topic xml:lang="en-us" id="topic7148cips">
         <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
-                Prerequisites</title>
+                Prerequisites for the Sacramento Deployment</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Carrier Grade Installation
                         Prerequisites</searchtitle>
@@ -28,7 +28,7 @@
                         <title>Hardware and software requirements</title>
                         <p>Before you start, if you have not done so already, make sure your
                                 environment meets the hardware and software requirements. See the
-                                        <xref href="carrier-grade-support-matrix2.dita#topic1773">HP
+                                        <xref href="carrier-grade-support-matrix2.dita#topic1773cgsm2">HP
                                         Helion OpenStack Support Matrix</xref>.</p>
                 </section>
                 <section id="kvm">
@@ -36,30 +36,30 @@
                         <p>Perform the following tasks on the KVM Host:</p>
                         <ul>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
-                                                href="#topic7148/proxy" format="dita"
+                                                href="#topic7148cips/proxy" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
-                                                href="#topic7148/ssh" format="dita"
+                                                href="#topic7148cips/ssh" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183030-0400"?><xref
-                                                href="#topic7148/packages" format="dita"
+                                                href="#topic7148cips/packages" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183112-0400"?><xref
-                                                href="#topic7148/configure-the-xrdp-remote-desktop-display"
+                                                href="#topic7148cips/configure-the-xrdp-remote-desktop-display"
                                                 format="dita"/><?oxy_insert_end?></li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183118-0400"?><xref
-                                                href="#topic7148/ntp" format="dita"
+                                                href="#topic7148cips/ntp" format="dita"
                                         /><?oxy_insert_end?></li>
-                                <li><xref href="#topic7148/ssh" format="dita"/></li>
-                                <li><xref href="#topic7148/ssh" format="dita"/></li>
-                                <li><xref href="#topic7148/network" format="dita"/></li>
-                                <li><xref href="#topic7148/ldap" format="dita"/></li>
-                                <!--<li><xref href="#topic7148/kvm-region" format="dita">Download the
+                                <li><xref href="#topic7148cips/ssh" format="dita"/></li>
+                                <li><xref href="#topic7148cips/ssh" format="dita"/></li>
+                                <li><xref href="#topic7148cips/network" format="dita"/></li>
+                                <li><xref href="#topic7148cips/ldap" format="dita"/></li>
+                                <!--<li><xref href="#topic7148cips/kvm-region" format="dita">Download the
                                                 installation packages for the KVM region</xref></li> -->
-                                <!--<li><xref href="#topic7148/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
-                                <!--<li><xref href="#topic7148/verify" format="dita"/></li>-->
-                                <li><xref href="#topic7148/vsd" format="dita"/></li>
-                                <li><xref href="#topic7148/prepbare" format="dita"/></li>
+                                <!--<li><xref href="#topic7148cips/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
+                                <!--<li><xref href="#topic7148cips/verify" format="dita"/></li>-->
+                                <li><xref href="#topic7148cips/vsd" format="dita"/></li>
+                                <li><xref href="#topic7148cips/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
                         <p>The KVM Host must have Ubuntu Server 14.04.2 LTS installed before
@@ -257,7 +257,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <title>Preparing the Network for Installation</title>
                         <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible
                                 for preparing the network for all installations.</p>
-                        <p>See <xref href="carrier-grade-install-network-prepare.dita#topic7646"
+                        <p>See <xref href="carrier-grade-install-network-prepare.dita#topic7646cginp"
                                         >Preparing the Network for Installation</xref></p>
                 </section>
                 <section id="ldap">
@@ -276,7 +276,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <p>You must launch a virtual machine for the required HPE DCN Virtualized
                                 Services Directory (<i>VSD</i>) and create required users.</p>
                         <p>For more information, see <xref
-                                        href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing
+                                        href="carrier-grade-install-vsd-vm.dita#topic7646cgivv">Bringing
                                         Up Single VSD VM Manually</xref>.</p>
                 </section>
                 <section id="prepbare">
@@ -314,7 +314,7 @@ StrictHostKeyChecking no </codeblock></li>
                         </ul>
                 </section>
                </bodydiv>
-                <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                         id="conref-vmware-workaround"/>
         </body>
 </topic>

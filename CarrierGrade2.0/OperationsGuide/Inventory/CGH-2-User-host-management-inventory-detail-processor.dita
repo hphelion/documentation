@@ -56,7 +56,7 @@
 <section id="view"> <title>Viewing details of a host CPUs</title>
 <p>To view the host CPUs:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -78,7 +78,7 @@
 <section id="create"> <title>Creating CPU profiles</title>
 <p>To create a CPU profile:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -97,7 +97,7 @@
 <p>One physical core per processor can be configured as a shared CPU, which can be used by multiple VMs for low-load tasks. To use the shared physical CPU, each VM must be configured with a shared vCPU ID. For more information, see Pinning a vCPU to a Shared Physical CPU.</p>
 <p>All other cores are automatically available for allocation to virtual machine threads.</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -105,7 +105,7 @@
             <b>Inventory</b> tab. </li>
         <li>
                     <xref
-                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
                         >Lock the host</xref> to make changes. Click <b>Edit Host</b> then select
                         <b>Lock Host</b>. Wait for the host to be reported as
                         <codeph>Locked</codeph>.</li>
@@ -123,7 +123,7 @@
 You can use the web administration interface or the CLI to set up shared physical CPUs.</p>
 <p>To designate shared CPUs:</p>
 <ol>
-                <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the
+                <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the
                         HP Helion OpenStack Horizon Dashboard</xref>.</li>
                 <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702"
                         >Select the appropriate region and project</xref>.</li>
@@ -131,7 +131,7 @@ You can use the web administration interface or the CLI to set up shared physica
                         <b>Inventory</b> tab. </li>
                 <li>
                     <xref
-                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
                         >Lock the host</xref> to make changes. Click <b>Edit Host</b> then select
                         <b>Lock Host</b>.<p>Wait for the host to be reported as Locked. </p></li>
                             <li>In the

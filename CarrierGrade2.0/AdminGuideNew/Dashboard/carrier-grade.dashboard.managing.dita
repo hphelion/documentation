@@ -27,7 +27,7 @@
 
     **Note:** Administrators can perform all of the user tasks in addition to the [admin tasks](/helion/commercial/carrier/dashboard/managing/admin/).
 -->
-      * <xref href="carrier-grade.dashboard.how-works.dita#topic6108"/> - Describes the Project and
+      * <xref href="carrier-grade.dashboard.how-works.dita#topic6108cgdhw"/> - Describes the Project and
       Administration dashboard user interface dialogs and options.</p>
 <!--
 * [HP Helion <tm tmtype="reg">OpenStack</tm> Building Images](/helion/commercial/carrier/manage/image-builder/) &#8212; Shows you how to use Disk Image Builder to create images for the HP Helion <tm tmtype="reg">OpenStack</tm>

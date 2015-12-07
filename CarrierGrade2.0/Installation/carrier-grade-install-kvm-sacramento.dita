@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107cgiks">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the KVM Region in a
     Sacramento Deployment </title>
 <prolog>
@@ -56,9 +56,7 @@ ifconfig eth0 up</codeblock></li>
             <li><codeph>cakey.pem</codeph> Located in the
                 <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
               directory on the lifecycle manager.</li>
-          </ul><p>You should have downloaded these files <xref
-              href="carrier-grade-install-download.dita#topic7148/patches">in the
-              prerequisites</xref></p></li>
+          </ul></li>
       </ol>
     </section>
     <section id="install-cloud">
@@ -85,7 +83,7 @@ system host-add --hostname &lt;unique-compute-name&gt; --personality compute --m
           network.</li>
         <li>Restart the nodes.</li>
         <li>Access the Horizon dashboard using the CAN network IP (HTTPS). </li>
-        <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
+        <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160cgdl"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE
           booted. After succesful PXE boot, Operational State as Disabled and Availability State as
           Online in the <b>Admin</b>, then <b>Inventory</b> page. <p><b>Note:</b>The Horizon
@@ -103,8 +101,8 @@ password:  &lt;random></codeblock><p>The Horizon
       <title>Configure and unlock the compute controllers</title>
       <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute
         the following commands from controller-0 to unlock each compute node in the inventory.</p>
-      <p><b>Important!</b> Follow the steps for a <xref href="#topic1107/nic-unlock" format="dita">bonded
-          NIC environment</xref> below.</p>
+      <p><b>Important!</b> Follow the steps for a <xref href="#topic1107cgiks/nic-unlock"
+          format="dita">bonded NIC environment</xref> below.</p>
     </section>
   <section id="kvm-esx-unlock">
     <title>For a Non-Bonded Environment</title>
@@ -171,9 +169,9 @@ system host-if-modify compute-1 bondvrs -nt data-vrs --ipv4-mode=pool --ipv4-poo
     </section>
     <section id="next-step">
       <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref>.</p>
+      <p><xref href="carrier-grade-install-post.dita#topic1107cgip">Post-Installation Tasks</xref>.</p>
       <p>If you are installing the <b>Sacramento</b> deployment, also see <xref
-          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107cgpbn"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   </body>

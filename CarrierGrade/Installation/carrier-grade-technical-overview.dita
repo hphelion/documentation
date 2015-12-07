@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485cgto">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Technical Overview</title>
 <prolog>
 <metadata>
@@ -18,15 +18,15 @@
       environment that you will be installing.</p>
     <ul>
       <li>
-        <xref type="section" href="#topic3485/Helion-services">HPE Helion OpenStack services</xref>
+        <xref type="section" href="#topic3485cgto/Helion-services">HPE Helion OpenStack services</xref>
       </li>
       <li>
-        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
+        <xref type="section" href="#topic3485cgto/deploy-arch">Deployment architecture</xref>
       </li>
-      <li><xref href="#topic3485/board-management-modules" format="dita"/>
+      <li><xref href="#topic3485cgto/board-management-modules" format="dita"/>
       </li>
-      <li><xref href="#topic3485/usb-interface" format="dita"/></li>
-      <li><xref href="#topic3485/net" format="dita"/></li>
+      <li><xref href="#topic3485cgto/usb-interface" format="dita"/></li>
+      <li><xref href="#topic3485cgto/net" format="dita"/></li>
     </ul>
     <p>For more information on the HPE Helion OpenStack Carrier Grade environment, also see the
       Reference Logical Architecture section in the <xref
@@ -46,9 +46,9 @@
       <title>Deployment and network architectures</title>
       <p>See one of the following pages for the appropriate deployment and network architectures:<ul
           id="ul_th3_bpb_ws">
-          <li><xref href="carrier-grade-technical-overview-kvm-only.dita#topic3485">KVM Deployment
+          <li><xref href="carrier-grade-technical-overview-kvm-only.dita#topic3485cgtoko">KVM Deployment
               Architecture Reference </xref></li>
-          <li><xref href="carrier-grade-technical-overview-esx.dita#topic3485">KVM + ESX Deployment
+          <li><xref href="carrier-grade-technical-overview-esx.dita#topic3485cgtoe">KVM + ESX Deployment
               Architecture Reference </xref></li>
         </ul></p>
       <title>Ethernet Interfaces</title>
@@ -123,14 +123,14 @@
       <title>Network Requirements</title>
       <p>The KVM regions networking environment incorporates up to five types of network:</p>
       <ul>
-        <li><xref href="#topic3485/internal-management-network" format="dita">the internal
+        <li><xref href="#topic3485cgdo/internal-management-network" format="dita">the internal
             management network</xref></li>
-        <li><xref href="#topic3485/oam-network" format="dita">the OAM network</xref></li>
-        <li><xref href="#topic3485/provider-network" format="dita">one or more provider
+        <li><xref href="#topic3485cgto/oam-network" format="dita">the OAM network</xref></li>
+        <li><xref href="#topic3485cgto/provider-network" format="dita">one or more provider
             networks</xref></li>
-        <li><xref href="#topic3485/infrastructure-network" format="dita">an optional infrastructure
+        <li><xref href="#topic3485cgto/infrastructure-network" format="dita">an optional infrastructure
             network</xref></li>
-        <li><xref href="#topic3485/board-network" format="dita">an optional board management network.</xref> </li>
+        <li><xref href="#topic3485cgto/board-network" format="dita">an optional board management network.</xref> </li>
       </ul>
       <p>Operational requirements for each network are described in the following sections.</p>
     </section>
@@ -188,7 +188,7 @@
       <p><xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148">Installation
         Prerequisites</xref></p>
       <p>
-        <xref type="section" href="#topic3485"> Return to Top </xref>
+        <xref type="section" href="#topic3485cgto"> Return to Top </xref>
       </p>
     </section>
     <!--

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
-<topic xml:lang="en-us" id="topic8785">
+<topic xml:lang="en-us" id="topic8785c2uso">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Viewing System Status
     (Overview)</title>
   <prolog>
@@ -28,13 +28,13 @@
     <p>The information in the page depends upon which region you are using. </p>
     <p>
       <ul id="ul_f35_tqw_ft">
-        <li><xref href="#topic8785/memphis" format="dita">memphis/denver</xref></li>
-        <li><xref href="#topic8785/regionone" format="dita">regionone</xref></li>
+        <li><xref href="#topic8785c2uso/memphis" format="dita">memphis/denver</xref></li>
+        <li><xref href="#topic8785c2uso/regionone" format="dita">regionone</xref></li>
       </ul>
     </p>
     <p id="memphis">The <codeph>memphis</codeph> or <codeph>denver</codeph> Overview table contains the Usage
       Summary, For more information, see <xref
-        href="CGH-2-User-system-overview-memphis.dita#topic8785">Viewing the memphis/denver Region
+        href="CGH-2-User-system-overview-memphis.dita#topic8785c2usom">Viewing the memphis/denver Region
         System Status</xref>.</p>
     
     <p id="regionone">The <codeph>regionone</codeph> Overview table contains the following:</p>
@@ -47,7 +47,7 @@
       <li> Provider Network Port Utilization </li>
       <li> Usage Summary </li>
     </ul>
-      <p>For more information, see <xref href="CGH-2-User-system-overview-regionone.dita#topic8785">
+      <p>For more information, see <xref href="CGH-2-User-system-overview-regionone.dita#topic8785c2usor">
           Viewing the regionone Region System Status</xref></p>
     
 

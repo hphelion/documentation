@@ -37,14 +37,14 @@
 <p>Access the networking commands using the <b>System</b> panel on the <b>Admin</b> dashboard.</p>
 <ul>
 <li>
-  <xref href="CGH-2-User-network-admin.create.dita#topic1681">Creating externally available networks</xref></li>
+  <xref href="CGH-2-User-network-admin.create.dita#topic1681c2unmc">Creating externally available networks</xref></li>
         <li><xref href="CGH-2-User-network-shared.dita#topic1239">Creating a shared
           network</xref></li>
 <li>
 
   <xref href="CGH-2-User-network-subnet.dita#topic3262">Add or remove a subnet to/from a Network</xref></li>
 <li>
-  <xref href="CGH-2-User-network-ports.dita#topic3171">Create, Modify, or Delete a port on a Network</xref></li>
+  <xref href="CGH-2-User-network-ports.dita#topic3171c2unp">Create, Modify, or Delete a port on a Network</xref></li>
 </ul>
 </section>
 </body>

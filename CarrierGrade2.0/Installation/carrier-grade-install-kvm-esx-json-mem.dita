@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581cgikej">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample esx.json File for
         Memphis</title>
 <prolog>
@@ -16,7 +16,7 @@
 <body>
     <p>The process for installing the memphis or sacramento deployment requires several JSON files
             that will be used when deploying the lifecycle manager.</p>
-        <section conref="carrier-grade-install-kvm-esx-json-sac.dita#topic10581/fields"/>
+        <section conref="carrier-grade-install-kvm-esx-json-sac.dita#topic10581cgikejs/fields"/>
 <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>esx.json</codeph> file. The IP addresses
                 are masked for security purposes. Use values appropriate for your environment.</p>
@@ -69,7 +69,7 @@
             }</codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-            <li><xref href="CGH-2-install-memphis.dita#topic10581/esx">Memphis
+            <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/esx">Memphis
                         deployment</xref></li>
             </ul></p>
 </body>

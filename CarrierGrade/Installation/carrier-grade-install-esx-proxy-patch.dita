@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgiepp">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the ESX Compute Proxy
     Patch</title>
   <prolog>
@@ -17,7 +17,7 @@
   <body>
     <p><!--Based on https://wiki.hpcloud.net/display/HCG/.Helion+CG+1.1+GA+Patch+Instructions--></p>
     <section>
-      <p><i>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/proxy-patch"
+      <p><i>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/proxy-patch"
             >the KVM + ESX installation</xref>.</i></p>
       <p>This patch fixes an intermittent issue where the ESX compute proxy is not configured after
         the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout to
@@ -47,7 +47,7 @@
             file:<codeblock>./hlm_prepare-env.sh</codeblock></li>
         </ol></p>
     </section>
-    <p>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/proxy-patch">the
+    <p>Return to the <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/proxy-patch">the
         KVM + ESX installation</xref>.</p>
     </body>
 </topic>

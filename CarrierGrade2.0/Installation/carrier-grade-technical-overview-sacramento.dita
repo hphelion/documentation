@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3485">
+<topic xml:lang="en-us" id="topic3485cgtos">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sacramento Deployment
     Technical Overview</title>
   <prolog>
@@ -222,7 +222,7 @@
     <section>
       <title>Service Architecture Diagram</title>
       <p>For service architecture diagrams with interface details, see <xref
-          href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture
+        href="carrier-grade-technical-overview-intf.dita#topic3485cgtoi">Service Architecture
           Diagrams</xref></p>
     </section>
     <section>
@@ -230,7 +230,7 @@
       <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
         or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
         installation process. The <xref
-          href="carrier-grade-technical-overview-sacramento.dita#topic3485/deploy-arch">Deployment
+          href="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/deploy-arch">Deployment
           Architecture diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
       <p>The Non-KVM region contains the lifecycle manager, to deploy and maintain HP Helion
@@ -521,7 +521,7 @@
     </section>
     <section>
       <title>Next Step</title>
-      <p>Review the <xref href="carrier-grade-support-matrix-sacramento.dita#topic1773">Support
+      <p>Review the <xref href="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms">Support
           Matrix</xref></p>
     </section>
   </body>

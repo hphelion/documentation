@@ -66,7 +66,7 @@ controller failure.</p>
 <p>To determine which host is the active controller:</p>
 <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -81,7 +81,7 @@ controller failure.</p>
 <p>This can be done from the Hosts tab on the Inventory page, by selecting the option swact (switch active) in the More menu of the controller you want to take out of service:</p>
 <ol>
         <li>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

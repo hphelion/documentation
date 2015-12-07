@@ -29,7 +29,7 @@
       <title>Create a flavor</title>
       <p>To create a flavor:</p>
       <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -64,7 +64,7 @@
 <section id="editflavor"> <title>Edit a flavor</title>
 <p>To edit a flavor:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -83,10 +83,11 @@
 <p>Instances that use the flavor are not affected when a flavor is deleted.</p>
 <p>To delete a flavor:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+  <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
-        <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
-            appropriate region and project</xref>.</li>
+        <li><xref
+            href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702/image_iyh_rsw_ft"
+            >Select the appropriate region and project</xref>.</li>
         <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Flavors</b>
           tab. <p>The flavors in the domain are listed.</p></li>
 <li>For the flavor you want to modify, click <b>More &gt; Delete Flavor</b>.</li>

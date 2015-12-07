@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgilh">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Launching the Horizon
     Interface</title>
   <prolog>
@@ -77,7 +77,7 @@ Password: cghelion</codeblock>
     <section>
       <title>Login to Horizon</title>
       <p>At this point, you can log into the Horizon interface, a web-interface you can use to
-        manage and maintain HPE Helion OpenStack Carrier Grade. Use the <xref href="#topic10581/CAN"
+        manage and maintain HPE Helion OpenStack Carrier Grade. Use the <xref href="#topic10581cgilh/CAN"
           format="dita">CAN IP address</xref> to launch Horizon. </p>
       <p>
         <codeblock>https://&lt;CAN_IP></codeblock>
@@ -107,7 +107,7 @@ Password: cghelion</codeblock>
       <p>For the <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>KVM
             + ESX deployment</b></xref>, perform the following task. </p>
       <p>For <xref href="carrier-grade-install-pb-overview.dita#topic1925/install-option"><b>the KVM
-            deployment</b></xref>, proced to the <xref href="#topic10581/next-step" format="dita"
+            deployment</b></xref>, proced to the <xref href="#topic10581cgilh/next-step" format="dita"
           >Next Step</xref>.</p>
       <p>In order to create VM instances in HPE Helion OpenStack Carrier Grade, you need to supply at
         least on ISO image file, and import that file into Horizon. </p>

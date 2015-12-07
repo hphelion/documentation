@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797cgipkoj">
     <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample JSON File Installing
         the KVM Topology</title>
     <prolog>
@@ -18,7 +18,7 @@
             <!--UNDER REVISION-->
             <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
             <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-        <p>The <xref href="carrier-grade-install-kvm.dita#topic10581">process for installing the KVM
+        <p>The <xref href="carrier-grade-install-kvm.dita#topic10581cgik">process for installing the KVM
                 deployment</xref> requires a JSON file that will be used when deploying the HP
             Helion OpenStack.</p>
         <p>The <codeph>node-provision.json</codeph> file contains the following fields:</p>
@@ -177,10 +177,10 @@
             
             
             </codeblock>
-            <p>Return to <xref href="carrier-grade-install-kvm.dita#topic10581">
+            <p>Return to <xref href="carrier-grade-install-kvm.dita#topic10581cgik">
                     Installing the KVM Deployment</xref>.</p>
             <p>
-                <xref type="section" href="#topic4797"> Return to Top </xref>
+                <xref type="section" href="#topic4797cgipkoj"> Return to Top </xref>
             </p>
         </section>
     </body>

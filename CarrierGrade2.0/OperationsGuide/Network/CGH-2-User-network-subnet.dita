@@ -18,11 +18,11 @@
 <p>A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.</p>
 <p>An admin user can create and delete subnets as needed.</p>
     <note> Before you delete a subnet, you must first <xref
-        href="CGH-2-User-network-ports.dita#topic3171">delete all ports</xref>  associated with the
+        href="CGH-2-User-network-ports.dita#topic3171c2unp">delete all ports</xref>  associated with the
       subnet.</note>
 <section id="add-a-subnet"> <title>Add a subnet</title>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -67,10 +67,10 @@
 </ol>
 </section>
 <section id="deleteport"> <title>Delete a subnet</title>
-<p>Before you delete a subnet, you must first <xref href="CGH-2-User-network-ports.dita#topic3171"
+<p>Before you delete a subnet, you must first <xref href="CGH-2-User-network-ports.dita#topic3171c2unp"
           >delete all ports</xref> associated with the subnet.</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>

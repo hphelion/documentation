@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3241">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3241cgawhmhl">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Locking and Unlocking a System</title>
 <prolog>
 <metadata>
@@ -32,13 +32,13 @@
 <!-- ===================== horizontal rule ===================== -->
 <ul>
 <li>
-<xref type="section" href="#topic3241/lock">Lock a system</xref>
+<xref type="section" href="#topic3241cgawhmhl/lock">Lock a system</xref>
 </li>
 <li>
-<xref type="section" href="#topic3241/unlock">Unlock a system</xref>
+<xref type="section" href="#topic3241cgawhmhl/unlock">Unlock a system</xref>
 </li>
 <li>
-<xref type="section" href="#topic3241/force">Forcing a Host Lock</xref>
+<xref type="section" href="#topic3241cgawhmhl/force">Forcing a Host Lock</xref>
 </li>
 </ul>
 <section id="lock"> <title>Lock a system</title>
@@ -111,7 +111,7 @@
 Note that a force lock operation on a compute node causes an immediate service outage on all hosted
 virtual machines.</p>
 <p>
-  <xref type="section" href="#topic3241"> Return to Top </xref>
+  <xref type="section" href="#topic3241cgawhmhl"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

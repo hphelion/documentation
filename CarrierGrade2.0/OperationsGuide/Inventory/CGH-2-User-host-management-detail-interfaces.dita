@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151c2uhmdi">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host Interface
         Profiles</title>
 <prolog>
@@ -38,22 +38,22 @@
 <p>This topic covers the following:</p>
 <ul>
 <li>
-<xref type="section" href="#topic6151/view">Viewing interface details</xref>
+<xref type="section" href="#topic6151c2uhmdi/view">Viewing interface details</xref>
 </li>
 <li>
-<xref type="section" href="#topic6151/creating">Creating an Interface Profile</xref>
+<xref type="section" href="#topic6151c2uhmdi/creating">Creating an Interface Profile</xref>
 </li>
 <li>
-        <xref type="section" href="#topic6151/create">Creating a new interface</xref>
+        <xref type="section" href="#topic6151c2uhmdi/create">Creating a new interface</xref>
       </li>
 <li>
-<xref type="section" href="#topic6151/editing">Editing Interface Details</xref>
+<xref type="section" href="#topic6151c2uhmdi/editing">Editing Interface Details</xref>
 </li>
 </ul>
 <section id="view"> <title>Viewing interface details</title>
 <p>To view host interface information:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -103,7 +103,7 @@
 <p>You can create a new interface profile out of the currently defined node interfaces.</p>
 <p>To create a host interface profile:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
@@ -125,14 +125,14 @@
 <p>You can create new logical interfaces.</p>
 <p>To create a host interface:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
             <b>Inventory</b> tab. </li>
         <li>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock
             the host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>.
           Wait for the host to be reported as <codeph>Locked</codeph>.</li>
         <li>In the <b>Host Name</b> column, click the name of the locked host to open the
@@ -170,27 +170,27 @@
 </ol>
 
 <note> Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot be deleted. 
-    They can only be <xref type="section" href="#topic6151/editing">modified to use different physical ports</xref> when required.</note>
+    They can only be <xref type="section" href="#topic6151c2uhmdi/editing">modified to use different physical ports</xref> when required.</note>
 </section>
 <section id="editing"> <title>Editing Interface Details</title>
 <p>You can edit existing logical interfaces.</p>
 <p>To edit a host interface:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
             <b>Inventory</b> tab. </li>
         <li>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock
             the host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>.
           Wait for the host to be reported as <codeph>Locked</codeph>.</li>
         <li>In the <b>Host Name</b> column, click the name of the locked host to open the
             <b>Inventory Detail</b> page for that host.</li>
 <li>For the interface to change, click <b>More</b> then <b>Edit</b>.</li>
 <li>In the <b>Edit Interface</b> screen, make changes to the fields, as described in <xref
-            type="section" href="#topic6151/create">Creating a new interface details</xref>.</li>
+            type="section" href="#topic6151c2uhmdi/create">Creating a new interface details</xref>.</li>
 </ol>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -15,15 +15,15 @@
     </metadata>
   </prolog>
   <body><p><i>Return to Installing the KVM + ESX Deployment for the <xref
-                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+                    href="CGH-2-install-memphis.dita#topic10581c2im/vrsvapp">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581c2is/vrsvapp">sacramento</xref>
                 template.</i></p><p>This document describes how to install the HP
             Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
             HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
             the VRSvApp, to integrate ESX and HP DCN. One VRSvApp is required for each ESX host.
             There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
             installation package is contained in the packages you <xref
-                href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in
+                href="carrier-grade-install-prereqs.dita#topic7148cgip/getinstall">downloaded in
                 the Prerequisites</xref>.</p><p>The DCN vSphere
             Solution addresses this integration. The installation involves deploying a stand-alone
             VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
@@ -62,7 +62,7 @@
         </section>
         <section>
             <title>Configuring VRSvApp Deployer</title>
-            <p>The <xref href="carrier-grade-install-vsd-vm.dita#topic7646">HP DCN Virtualized
+            <p>The <xref href="carrier-grade-install-vsd-vm.dita#topic7646cgivv">HP DCN Virtualized
                     Services Directory (VSD)</xref> includes a VRSvApp deployer for ESX that is
                 capable of deploying a VRSvApp for each of the ESXi hosts in each of the ESX
                 clusters that you are managing as computes.</p>
@@ -82,9 +82,9 @@
                         <codeph>/var/www/html</codeph> location in the Toolbox VM <ul
                         id="ul_vhj_xhp_wt">
                         <li><p
-                                conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/></li>
+                                conref="carrier-grade-install-prereqs.dita#topic7148cgip/vrs-ovf"/></li>
                         <li>
-                                <p conref="carrier-grade-install-prereqs.dita#topic7148/vrs-vmdk"/>
+                                <p conref="carrier-grade-install-prereqs.dita#topic7148cgip/vrs-vmdk"/>
                             </li>
                     </ul></li>
                 <li>Execute the following command to grant full permission to the OVF and VMDK
@@ -177,7 +177,7 @@ subnet 10.20.94.0 netmask 255.255.255.0 {
                 </ol>
             </p>
         </section><p><i>Return to Installing the KVM + ESX Deployment for the <xref
-                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+                    href="CGH-2-install-memphis.dita#topic10581c2im/vrsvapp">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581c2is/vrsvapp">sacramento</xref>
                 template.</i></p></body>
 </topic>

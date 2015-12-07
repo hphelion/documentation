@@ -16,17 +16,17 @@
 <p>Users can suspend an instance, for example, to free up the resources used by an instance that is used infrequently or to perform system maintenance.</p>
 
       <note> Suspending is different from <xref
-        href="CGH-2-User-Instance-pause.dita#topic1643">pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and
+        href="CGH-2-User-Instance-pause.dita#topic1643c2uip">pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and
       stores the content of the instance in memory (RAM).</note>
 <section id="suspend-an-instance"> <title>Suspend an instance</title>
 <p>To suspend an instance:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Based on whether you are <xref
-                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">working on
                         a project or the domain</xref>:<ul id="ul_bcj_qft_jt">
                         <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
                                 <b>Instances</b> tab. </li>
@@ -41,12 +41,12 @@
 <section id="resume-an-instance"> <title>Resume an instance</title>
 <p>To resume an instance:</p>
 <ol>
-        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+        <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
             Helion OpenStack Horizon Dashboard</xref>.</li>
         <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
             appropriate region and project</xref>.</li>
         <li>Based on whether you are <xref
-                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108">working on
+                        href="../Dashboard/CGH-2-User-Dashboard-how-works.dita#topic6108c2udhw">working on
                         a project or the domain</xref>:<ul id="ul_ehq_qft_jt">
                         <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the
                                 <b>Instances</b> tab. </li>

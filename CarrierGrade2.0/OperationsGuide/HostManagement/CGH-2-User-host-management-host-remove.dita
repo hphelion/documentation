@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3241">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3241c2uhmhr">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deleting a System</title>
 <prolog>
 <metadata>
@@ -41,7 +41,7 @@
       <ol>
         <li>
           <p>
-            <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP
+            <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP
               Helion OpenStack Horizon Dashboard</xref>.</p>
         </li>
         <li>
@@ -49,14 +49,14 @@
             then selecting the <b>Hosts</b> tab.</p>
         </li>
         <li>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the standby
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock the standby
             controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the
             controller.<p>Wait for the host to be reported as Locked</p></li>
         <li>Click <b>More &gt; Delete Host</b> for the host you want to delete. </li>
         <li>Power down the host and remove the hardware from the cluster. </li>
       </ol>
       <p>
-        <xref type="section" href="#topic3241"> Return to Top </xref>
+        <xref type="section" href="#topic3241c2uhmhr"> Return to Top </xref>
       </p>
       <!-- ===================== horizontal rule ===================== -->
     </section>

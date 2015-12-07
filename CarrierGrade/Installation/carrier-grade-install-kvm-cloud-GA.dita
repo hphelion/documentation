@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107cgikcg">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the KVM Region</title>
 <prolog>
   <metadata>
@@ -151,7 +151,7 @@ password:  admin </codeblock></p><p><b>Important:</b> After
                 Range</b> option. See <xref
                 href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
               /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-            <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
+            <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107cgikni">Create data
                 interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
               Guide.</li>
             <li>Optionally, change the default CPU allocations and/or the default memory allocations
@@ -166,7 +166,7 @@ password:  admin </codeblock></p><p><b>Important:</b> After
     </section>
   
   <section id="next-step"> <title>Next Step</title>
-    <p> Perform some required <xref href="carrier-grade-install-post-install.dita#topic1107"
+    <p> Perform some required <xref href="carrier-grade-install-post-install.dita#topic1107cgipi"
           >post-installation tasks</xref>. </p>
   </section>
 </body>

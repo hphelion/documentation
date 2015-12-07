@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic2139">
+<topic xml:lang="en-us" id="topic2139c2usc">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Managing System
     Configuration</title>
   <prolog>
@@ -44,22 +44,22 @@
     <p>Immediately before making a change, ensure the following: <ul id="ul_mzz_tl2_jt">
         <li>All hosts are unlocked. </li>
         <li>No Major or Critical alarms are shown for the system on <xref
-            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault
+            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139c2uma">the Fault
             Management page</xref>. </li>
         <li>No 250.001 Configuration out-of-date alarms are shown for the system on <xref
-            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139">the Fault
+            href="../FaultManagement/CGH-2-Userfault-mgmt-alarms.dita#topic2139c2uma">the Fault
             Management page</xref>.</li>
       </ul></p>
     <p>During these changes, the HP Helion OpenStack Carrier Grade can remain online and
       operational.</p>
     <p>You can make the following changes:<ul id="ul_ep5_dn2_jt">
-        <li><xref href="CGH-2-User-system-config-OAM.dita#topic2139">Change the OAM IP
+        <li><xref href="CGH-2-User-system-config-OAM.dita#topic2139c2usco">Change the OAM IP
             address</xref>.</li>
-        <li><xref href="CGH-2-User-system-config-DNS.dita#topic2139">Configure a new DNS
+        <li><xref href="CGH-2-User-system-config-DNS.dita#topic2139c2uscd">Configure a new DNS
             server</xref>.</li>
-        <li><xref href="CGH-2-User-system-config-NTP.dita#topic2139">Configure a new NTP
+        <li><xref href="CGH-2-User-system-config-NTP.dita#topic2139c2uscn">Configure a new NTP
             server</xref>.</li>
-        <li><xref href="CGH-2-User-system-config-filesyst.dita#topic2139">Change storage space
+        <li><xref href="CGH-2-User-system-config-filesyst.dita#topic2139c2uscf">Change storage space
             allotments on the controller</xref>. For important information and instructions for
           changing storage allotments, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0
             Carrier Grade: Administrator Guide</i>.</li>

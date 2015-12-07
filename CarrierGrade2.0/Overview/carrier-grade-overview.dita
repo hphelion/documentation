@@ -121,10 +121,10 @@
               Attis which you can use to backup and restore essential system files and components of
               the non-KVM cloud. Attis is automatically installed on each of the controller nodes in
               the non-KVM region. For more information, see <xref
-                href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and
+                href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581c2br">Backup and
                 Restore Configuration Files and MySQL Clusters</xref>.</p>
             <p>For information on backing up and restoring the KVM region, see the <xref
-                href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+                href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959cgag">KVM-Region
                 Administrator Guide</xref>.</p>
           </dd>
         </dlentry>
@@ -153,7 +153,7 @@
               system configuration. Specific installation templates are included in the download
               package to facilitate the deployment of your cloud. </p>
             <p>You can find more information on the deployment options in the <xref
-                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
                 Overview</xref>.<!--Original writing--><ul id="ul_kg5_h5d_25">
                 <li>KVM only (using the Denver template)</li>
                 <li>KVM with HP Distributed Cloud Networking (using the Tahoe template)</li>
@@ -231,7 +231,7 @@
               Switching (VRS). </p>
             <p>VRS is included in the Tahoe, Memphis and Sacramento deployments of HP Helion Carrier
               Grade. The <xref
-                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
                 Overview</xref> describes these deployments. </p>
             <p><b>Accelerated vSwitch (AVS).</b> AVS is integrated into the servers in the KVM
               region. AVS is an optimization of Open vSwitch (OVS) technology for NFV environments.
@@ -266,7 +266,7 @@
               directly attached tenant networks and subnets, as well as for gateway, SNAT, and
               floating IP functionality.</p>
             <p>AVS is included in the Denver deployment of HP Helion Carrier Grade. The <xref
-                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
                 Overview</xref> describes these deployments. </p>
           </dd>
         </dlentry>
@@ -477,7 +477,7 @@
               considerations. For all purposes, a PCI passthrough interface behaves as if it were
               physically attached to the virtual machine.</p>
             <p>Instructions for configuring SR-IOV are available after for installation, see <xref
-                href="../Installation/CGH-2-install-pci-pass.dita#topic10581">Configuring
+                href="../Installation/CGH-2-install-pci-pass.dita#topic10581c2ipp">Configuring
                 PCI-Passthrough</xref></p>
             <p><b>SR-IOV</b>. A Single-Root I/O Virtualization (SR-IOV) Ethernet interface is a
               physical PCI Ethernet NIC that implements hardware-based virtualization mechanisms to
@@ -497,7 +497,7 @@
                   Carrier Grade.</li>
               </ul></p>
             <p>Instructions for configuring SR-IOV are available after for installation, see <xref
-                href="../Installation/CGH-2-install-sr-iov.dita#topic10581">Configuring
+                href="../Installation/CGH-2-install-sr-iov.dita#topic10581c2isi">Configuring
                 SR-IOV</xref>.</p>
           </dd>
         </dlentry>

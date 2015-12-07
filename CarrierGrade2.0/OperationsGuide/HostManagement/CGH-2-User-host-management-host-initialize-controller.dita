@@ -49,7 +49,7 @@
           <note> To ensure you can correctly identify hosts as you install them, power on and
           configure each new node one at a time.</note></li>
       <li>
-        <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+        <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
           OpenStack Horizon Dashboard</xref>.</li>
       <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702">Select the
           appropriate region and project</xref>.</li>
@@ -102,7 +102,7 @@
           </ol>
         </p></li>
 <li>
-        <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Unlock
+        <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Unlock
           the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock
           Host</b>.<p>The node is rebooted, and its Availability State is reported as
             <codeph>In-Test</codeph>. After a few minutes, it is reported as

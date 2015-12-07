@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639c2uhmas">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Replacing Active Storage Nodes</title>
 <prolog>
 <metadata>
@@ -43,7 +43,7 @@
     <ol>
       <li>
         <p>
-          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the HP Helion
+          <xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the HP Helion
             OpenStack Horizon Dashboard</xref>.</p>
         <ul>
           <li>Use the IP address for the appropriate region where you want to make the change,
@@ -59,7 +59,7 @@
       </li>
       <li>
         <p>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the standby
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock the standby
             controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
         <p>Wait for the procedure to be completed.</p>
       </li>
@@ -72,7 +72,7 @@
         <p>Place the new or modified controller into service.</p>
         <p>To begin using the new disk, <xref
             href="CGH-2-User-host-management.dita#topic11233/poweroff" type="section">power up the
-            host</xref> and <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+            host</xref> and <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
             >unlock</xref> the host.</p>
         <ul>
           <li>For disk replacement, no additional configuration changes are needed. </li>
@@ -91,7 +91,7 @@
         href="CGH-2-User-host-management-host-initialize-storage.dita#topic4226">Initializing and
         Configuring Storage Nodes</xref>.</p>
     <p>
-      <xref type="section" href="#topic2639"> Return to Top </xref>
+      <xref type="section" href="#topic2639c2uhmas"> Return to Top </xref>
     </p>
     <!-- ===================== horizontal rule ===================== -->
   </body>

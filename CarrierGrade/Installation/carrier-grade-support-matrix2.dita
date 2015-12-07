@@ -28,7 +28,7 @@
       </ul></p>
     <p>The hardware requirements and configurations are different, depending upon the topology: KVM
       or KVM + ESX<tm tmtype="reg"/>. See the <xref
-        href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref> for more
+        href="carrier-grade-technical-overview.dita#topic3485cgto">Technical Overview</xref> for more
       information on these topologies.</p>
     <section id="hardware">
       <title>Supported Hardware</title>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797cgikajs">
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ansible.json File for
         Sacramento</title>
@@ -213,7 +213,7 @@ _vars.vsc_dcm_ip_subnet}}
 }</codeblock>
 
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-ansible-json"
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581c2is/conref-ansible-json"
                         >Sacramento deployment</xref></li>
             </ul></p>
     </body>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107cgip">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Post-Installation
     Tasks</title>
 <prolog>
@@ -20,7 +20,7 @@
       <title>Verify the VSC VMs</title>
       <p>The installation process creates virtual machines for VSC. VSC VMs are installed and are
         operational. </p>
-      <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581"
+      <p>For more information, see <xref href="carrier-grade-install-verify-vsc.dita#topic10581cgivvsc"
         />.</p>
     </section>
   <section><title>Verify the VRS-G Node</title>
@@ -30,7 +30,7 @@
     <section id="next-step">
       <title>Verify LDAP</title>
       <p>You should verify that LDAP is functioning correctly.</p>
-      <p>For more information, see <xref href="carrier-grade-install-ldap-verify.dita#topic10581"
+      <p>For more information, see <xref href="carrier-grade-install-ldap-verify.dita#topic10581cgilv"
           >Verifying the LDAP Deployment</xref></p>
     </section>
     <section>
@@ -39,7 +39,7 @@
         region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
         instructions to provision baremetal nodes.</p>
       <p>For more information, see <xref
-          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107cgpbn"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   <section><title>Configure a 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</title> This
@@ -50,7 +50,7 @@
           with virtio vNIC, a VM with SRIOV vNIC and a VM with PCI-PT vNIC in the same l2
           domain.</li>
       </ul><p>For more information, see: <xref
-          href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581"
+        href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581cgc5w"
           >Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</xref></p>
     </section>
   </body>

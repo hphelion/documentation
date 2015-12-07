@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgihv">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the HLM VM and
     Installation Services</title>
 <prolog>
@@ -111,9 +111,9 @@
           deployment</xref></p>
       <p>See either:</p>
       <p>
-        <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing the KVM + ESX
+        <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg">Installing the KVM + ESX
           Deployment</xref></p>
-      <p><xref href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM
+      <p><xref href="carrier-grade-install-kvm.dita#topic10581cgik">Installing the KVM
         Deployment</xref></p>
 </section>
 </body>

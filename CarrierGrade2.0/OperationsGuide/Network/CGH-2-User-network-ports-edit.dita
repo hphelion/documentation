@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3171">
+<topic xml:lang="en-us" id="topic3171c2unpe">
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Change the Device Associated with a
         Port</title>
     <prolog>
@@ -14,7 +14,7 @@
         <p>You can edit the device associated with a port, as needed.</p>
         <section id="editport">
             <ol>
-                <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160">Launch the
+                <li><xref href="../Dashboard/CGH-2-User-Dashboard-launch.dita#topic1160c2udl">Launch the
                         HP Helion OpenStack Horizon Dashboard</xref>.</li>
                 <li><xref href="../Dashboard/CGH-2-User-region-selector.dita#jow1432757989702"
                         >Select the appropriate region and project</xref>.</li>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgihv">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Lifecycle
     Manager and Installation Services</title>
 <prolog>
@@ -21,12 +21,12 @@
     <section><title>Update the Debain Repository Index File</title><p>HP Helion OpenStack Carrier
         Grade maintains a local Debian repository on the KVM Host from where Debain packages are
         installed. Before starting the installation, make sure the Debian files you <xref
-          href="carrier-grade-install-download.dita#topic7148/getinstall">downloaded in the
+          href="carrier-grade-install-download.dita#topic7148cgid/debian">downloaded in the
           Prerequisites</xref> are present in the repository: </p>Copy the following Debian packages
       to the <codeph>/root/cg/dcn</codeph> directory. When you run the ansible-playbook command,
       these files will be picked up and moved into the repository. <ul id="ul_wwn_13h_xt">
-        <li><xref href="carrier-grade-install-download.dita#topic7148/libproto">libprotobuf-c0_0.14-1+b1_amd64.deb</xref></li>
-        <li><xref href="carrier-grade-install-download.dita#topic7148/setproc">python-setproctitle_1.1.8-1_amd64.deb</xref></li>
+        <li>libprotobuf-c0_0.14-1+b1_amd64.deb</li>
+        <li>python-setproctitle_1.1.8-1_amd64.deb</li>
       </ul></section>
     <section id="prepare">
       <title>Prepare the system for deployment</title>
@@ -102,15 +102,6 @@ upstream_ntp_servers:
       <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
     </section>
-    <section>
-      <title>Deploying the Ironic Patch</title>
-      <p>A YML file needs to be added to the <codeph>/root/infra-ansible-playbooks</codeph>
-        directory before running the ansible-playbook command. You should have downloaded the
-          <codeph>processtarball.yml</codeph> file <xref
-            href="carrier-grade-install-download.dita#topic7148/patches">in the Prerequisites</xref>. </p>
-      <p>Copy the <codeph>processtarball.yml</codeph> file to following location on HML
-        host:<codeblock>/root/infra-ansible-playbooks/roles/HLM-CFG/tasks/processtarball.yml</codeblock></p>
-    </section>
     <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the Lifecycle Manager Virtual Machine</title>
       <p>Use the following steps on the KVM Host to deploy the lifecycle manager on the KVM Host using Ansible
@@ -148,7 +139,7 @@ upstream_ntp_servers:
     </section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM
+      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581cgink">Installing the Non-KVM
           Region</xref></p>
       <p/>
     </section>

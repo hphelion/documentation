@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2id">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Denver
     Template</title>
   <prolog>
@@ -16,19 +16,19 @@
   </prolog>
   <body>
     <p>After the lifecycle manager is installed, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925/install-option">KVM topology</xref> is
+        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM topology</xref> is
       to deploy the HP Helion OpenStack cloud.</p>
     <p>If you are installing the <codeph>denver</codeph> template, which includes the KVM region and
       uses AVS networking, follow these instructions. If you are installing a different deployment,
       disregard these instructions. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hos-install"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hos-install"/>
     <section id="conref-provision">
       <title>Provision the new cloud</title>
       <ol id="ol_kwm_c1k_zt">
         <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
             <codeblock>hlm define -t denver &lt;cloudname&gt;</codeblock><p>Where::
               <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p><p
-            conref="CGH-2-install-sacramento.dita#topic10581/cloudname"/><p>The command creates the
+            conref="CGH-2-install-sacramento.dita#topic10581c2is/cloudname"/><p>The command creates the
               <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory, which contains several JSON
             template files. </p></li>
       </ol>
@@ -84,10 +84,10 @@
           </tgroup>
         </table></p>
       <p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-only-json.dita#topic10581">Sample JSON File for the HLM
+        href="carrier-grade-install-kvm-only-json.dita#topic10581cgikoj">Sample JSON File for the HLM
           Virtual Machine Installation</xref>. </p>
     </section>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-pxe-boot"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-pxe-boot"/>
     <section>
       <title>Modify the ansible.json file</title>
       <p>Modify the <codeph>ansible.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
@@ -331,17 +331,17 @@
         errors using the tool of your preference. For example, using the Python json.tool: </p>
       <codeblock>python -m json.tool &lt;filename>.json</codeblock>
     </section>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/cobbler"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-create-cloud"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-back-end" id="storage"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/providernet-patch"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-config-proc"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-hdeploy"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/conref-ldap-keystone" id="ldap3"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/cobbler"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-create-cloud"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-back-end" id="storage"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/providernet-patch"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-config-proc"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hdeploy"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-keystone" id="ldap3"/>
     
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
           Interface</xref></p>
       
     </section>

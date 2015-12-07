@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2ipp">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0:
         Configuring PCI-Passthrough</title>
   <prolog>
@@ -28,10 +28,10 @@
         <p>There are two methods to support PCI-PT vNICs:<ul id="ul_n5x_zbn_xt">
                 <li>Classic community using nova flavor: This option is similar to attaching any pci
                     device i.e. not only restricted to NIC device. The type of pci device, no of pci
-                    devices are driven through nova flavors. See <xref href="#topic10581/nova"
+                    devices are driven through nova flavors. See <xref href="#topic10581c2ipp/nova"
                         format="dita">Classic community using nova flavor</xref>.</li>
                 <li>vif-model: This option is implemented using Wind River way of launching VMs
-                    using nova's extension named 'vif-model'. See <xref href="#topic10581/vif"
+                    using nova's extension named 'vif-model'. See <xref href="#topic10581c2ipp/vif"
                         format="dita">Using nova vif-model extension</xref>.</li>
             </ul></p>
         <section id="nova"><title>Classic community using nova flavor</title>This option is similar
