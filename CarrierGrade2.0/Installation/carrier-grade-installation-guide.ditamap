@@ -32,7 +32,7 @@
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
+            <topicref href="carrier-grade-install-launch-horizon-denver.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-denver.dita"
                 navtitle="Deploying the KVM Region" locktitle="yes">
@@ -55,9 +55,7 @@
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-kvm-tahoe.dita"
-                navtitle="Deploying the KVM Region" locktitle="yes"/>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
+            <topicref href="carrier-grade-install-launch-horizon-tahoe.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-tahoe.dita"
                 navtitle="Deploying the KVM Region" locktitle="yes"/>
@@ -78,7 +76,7 @@
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
+            <topicref href="carrier-grade-install-launch-horizon-memphis.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-memphis.dita"
                 navtitle="Deploying the KVM Region" locktitle="yes"/>
