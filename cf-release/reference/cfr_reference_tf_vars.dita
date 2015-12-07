@@ -28,9 +28,44 @@
         </thead>
         <tbody>
           <row>
+            <entry><codeph>cluster_admin_username</codeph></entry>
+            <entry>The initial username for your cluster</entry>
+          </row>
+          <row>
+            <entry><codeph>cluster_admin_password</codeph></entry>
+            <entry>The initial password for your cluster</entry>
+          </row>
+          <row>
+            <entry><codeph>dea_count</codeph></entry>
+            <entry>The number of Droplet Execition Agent (DEA) hosts that you want to create</entry>
+          </row>
+          <row>
+            <entry><codeph>dns_server</codeph></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><codeph>key_file</codeph></entry>
+            <entry>The location and name of the private key <filepath>pem</filepath> file associated
+              with your key pair, relative to the <filepath>tfvars</filepath> file.<note type="tip"
+                >For convenience, you can place the two files into the same
+              directory.</note></entry>
+          </row>
+          <row>
             <entry><codeph>openstack_availability_zone</codeph></entry>
             <entry>The unique regional location on which the deployment is launched,
                 <codeph>az1</codeph> by default</entry>
+          </row>
+          <row>
+            <entry><codeph>openstack_base_image_id</codeph></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><codeph>openstack_flavor_id.core</codeph></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><codeph>openstack_flavor_id.dea</codeph></entry>
+            <entry/>
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
@@ -48,21 +83,6 @@
             <entry><codeph>openstack_region</codeph></entry>
             <entry>Your region, <codeph>us-east</codeph> by default</entry>
           </row>
-          <row>
-            <entry><codeph>cluster_admin_username</codeph></entry>
-            <entry>The username for your cluster</entry>
-          </row>
-          <row>
-            <entry><codeph>cluster_admin_password</codeph></entry>
-            <entry>The password for your cluster</entry>
-          </row>
-          <row>
-            <entry><codeph>key_file</codeph></entry>
-            <entry>The location and name of the private key <filepath>pem</filepath> file associated
-              with your key pair, relative to the <filepath>tfvars</filepath> file.<note type="tip"
-                >For convenience, you can place the two files into the same
-              directory.</note></entry>
-          </row>
           <!--
           <row>
             <entry><codeph>router_ssl_cert_file</codeph></entry>
@@ -73,25 +93,34 @@
             <entry>The location and name of the router SSL key file</entry>
           </row>
           -->
-          <row>
-            <entry><codeph>dea_count</codeph></entry>
-            <entry>The number of Droplet Execition Agent (DEA) hosts that you want to
-              create.</entry>
-          </row>        
+          <row/>        
         </tbody>
       </tgroup>
     </table>
     <example>
       <title>A sample <codeph>.tfvars</codeph> file</title>
-      <codeblock>openstack_availability_zone = "az1"
-openstack_keypair = "myKeyPair"
-openstack_network_id = "123a1ab1-12a1-123a-1a12-a1234a123a12"
+      <codeblock>openstack_base_image_id = " "
+
+openstack_flavor_id.core = "4"
+openstack_flavor_id.dea = "3"
+
+openstack_availability_zone = "nova"
+openstack_keypair = myKeyPair
+openstack_network_id = "123a1ab1-12a1-123a-1a12-a1234a123a12""
 openstack_network_name = "myNetwork"
-openstack_region = "us-west"
+openstack_floating_ip_pool = "ext-net"
+dns_server = "&lt;your environment dns server>"
+key_file = "&lt;your local private key file location>"
+
 cluster_admin_username = "myClusterUsername"
 cluster_admin_password = "myClusterPassword123"
-key_file = "myKeyFile.pem"           
-dea_count = 1</codeblock>
+
+dea_count = 1
+
+http_proxy = "http://myproxy.example.com/"
+https_proxy = "https://myproxy.example.com/"
+
+no_proxy = " "</codeblock>
     </example>
   </refbody>
 </reference>
