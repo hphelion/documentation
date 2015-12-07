@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4565">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4565crp">
 <title>HPE Helion 1.1 Development Platform: ALS Command Reference: Placement Zones</title>
 <prolog>
 <metadata>
@@ -23,13 +23,13 @@
  <!--permalink: /helion/devplatform/1.1/als/user/reference/client-ref/placement/--></p>
 <ul>
 <li>
-<xref type="section" href="#topic4565/command-placement-zone">helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
+<xref type="section" href="#topic4565crp/command-placement-zone">helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
 <li>
-<xref type="section" href="#topic4565/command-placement-zones">helion placement-zones</xref>: Show the available placement zones.</li>
+<xref type="section" href="#topic4565crp/command-placement-zones">helion placement-zones</xref>: Show the available placement zones.</li>
 <li>
-<xref type="section" href="#topic4565/command-set-placement-zone">helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
+<xref type="section" href="#topic4565crp/command-set-placement-zone">helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
 <li>
-<xref type="section" href="#topic4565/command-unset-placement-zone">helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
+<xref type="section" href="#topic4565crp/command-unset-placement-zone">helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
 </ul>
 <section id="syntax"> <title>Syntax</title>
 <codeblock>

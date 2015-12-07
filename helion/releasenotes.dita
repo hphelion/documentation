@@ -386,11 +386,12 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         state</b></p>
       <p>This alert is not always reported but may occur after the system has been running for some
         time.</p>
-      <p>Check if any other Cinder related alarms are alerting. If no other other Cinder related
-        alarms are alerting then this alert for the Cinderlm diagnostics monitor alarm can be
-        ignored. If other Cinder related alarms are alerting then follow the mitigation steps
-        described in the Service Alarm Definitions section.</p>
-      <p><b>Issue: The 'Swiftlm-scan' alarm sticks</b></p>
+      <p>Check if any other Cinder related alarms are alerting. If no other Cinder related alarms
+        are alerting then this alert for the Cinderlm diagnostics monitor alarm can be ignored. If
+        other Cinder related alarms are alerting then follow the mitigation steps described in the
+          <xref href="operations/alarms.dita#alarmdefinitions/blockstorage">Service Alarm
+          Definitions</xref> section.</p>
+      <p id="cinderlm"><b>Issue: The 'Swiftlm-scan' alarm sticks</b></p>
       <p>The <codeph>swiftlm-scan</codeph> monitor alarm may be triggered. However, once triggered,
         the alarm does not automatically return to the normal state even if the condition that
         caused it has been resolved. To confirm this, run the following command:</p>
@@ -719,7 +720,7 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
         devices have been flushed, the messages will subside. It is recommended that you include a
         delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</p>
       <!-- NETWORKING -->
-      <p><b>IPv6 Traffic Not Supported</b></p>
+      <p id="IPv6Traffic"><b>IPv6 Traffic Not Supported</b></p>
       <p>The <keyword keyref="kw-hos-phrase"/> release includes firewall rules to prevent
         non-essential traffic from accessing the physical systems. However, these rules are limited
         to IPv4 traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will

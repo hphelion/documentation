@@ -160,6 +160,12 @@
                 <entry>Run the cinder-migrate-volume playbook to migrate the volume and backup to
                   correct node.</entry>
               </row>
+              <row>
+                <entry>Cinderlm diagnostics monitoring</entry>
+                <entry/>
+                <entry/>
+                <entry>See <xref href="../releasenotes.dita#release-notes/cinderlm">release notes</xref> for information about this alarm.</entry>
+              </row>
             </tbody>
           </tgroup>
         </table></p>

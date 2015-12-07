@@ -51,7 +51,7 @@
                     immediate action.</li>
                 <li>Red ball (or red indicator): Alarm. Varying severity levels and must be
                     addressed.</li>
-                <li>Gray square (or gray indicator): Undetermined.</li>
+                <li>Gray square (or gray indicator): Unknown.</li>
             </ul>
             <p>The <b>Alarm</b> column identifies the alarm by the name it was given when it was
                 originally created. </p>

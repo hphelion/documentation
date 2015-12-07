@@ -15,7 +15,7 @@
       <ol>
         <li><xref href="remove_node.dita#remove_node/disable_provisioning">Disable Provisioning on
             the Compute Host</xref></li>
-        <li><xref href="remove_node.dita#remove_node/remove_az">Remove the Compute Host from it's
+        <li><xref href="remove_node.dita#remove_node/remove_az">Remove the Compute Host from its
             Availability Zone</xref></li>
         <li><xref href="remove_node.dita#remove_node/live_migration">Use Live Migration to Move Any
             Instances on This Host to Other Hosts</xref></li>
@@ -64,7 +64,7 @@
 +--------------------------+--------------+----------+-----------------------+</codeblock></li>
       </ol>
     </section>
-    <section id="remove_az"><title>Remove the Compute Host from it's Availability Zone</title>
+    <section id="remove_az"><title>Remove the Compute Host from its Availability Zone</title>
       <p>If you configured the Compute host to be part of an availability zone, these steps will
         show you how to remove it.</p>
       <ol>

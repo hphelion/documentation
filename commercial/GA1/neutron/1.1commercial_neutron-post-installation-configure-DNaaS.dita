@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20357">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20357cnpicd">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
 <titlealts>
 <searchtitle>HPE Helion Openstack 1.1: DNSaaS Installation and Configuration</searchtitle>
@@ -28,54 +28,54 @@
 <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 <p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HPE Helion OpenStack</p>
 <p>
-<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
+<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357cnpicd/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <p>
 <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on HPE Helion OpenStack 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
 <ul>
 <li>
-<xref type="section" href="#topic20357/preq">Prerequisites</xref>
+<xref type="section" href="#topic20357cnpicd/preq">Prerequisites</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/credentials">Creating Prerequisite Credentials</xref>
+<xref type="section" href="#topic20357cnpicd/credentials">Creating Prerequisite Credentials</xref>
 
 <ul>
 <li>
-<xref type="section" href="#topic20357/target-cred">Target Credentials</xref>
+<xref type="section" href="#topic20357cnpicd/target-cred">Target Credentials</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/service-cred">Service Credentials</xref>
+<xref type="section" href="#topic20357cnpicd/service-cred">Service Credentials</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref type="section" href="#topic20357/publication">Sherpa CSU Publication and Booting the Installer VM</xref>
+<xref type="section" href="#topic20357cnpicd/publication">Sherpa CSU Publication and Booting the Installer VM</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/configure">Installing and Configuring DNSaaS</xref>
+<xref type="section" href="#topic20357cnpicd/configure">Installing and Configuring DNSaaS</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/configovercloud">Configure the Overcloud Load Balancer for DNSaaS</xref>
+<xref type="section" href="#topic20357cnpicd/configovercloud">Configure the Overcloud Load Balancer for DNSaaS</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/keyreg">Registering the Service with Keystone</xref>
+<xref type="section" href="#topic20357cnpicd/keyreg">Registering the Service with Keystone</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/uninstall">Uninstalling DNaaS</xref>
+<xref type="section" href="#topic20357cnpicd/uninstall">Uninstalling DNaaS</xref>
 </li>
 <li>
-<xref type="section" href="#topic20357/moreinfo">More Information</xref>
+<xref type="section" href="#topic20357cnpicd/moreinfo">More Information</xref>
 </li>
 </ul>
 <section id="preq"> <title>Prerequisites</title>
 <p>
 <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on HPE Helion OpenStack 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
 <p>
-<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
+<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357cnpicd/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <ul>
 <li>HPE Helion OpenStack is successfully installed</li>
-<li>Download <xref type="section" href="#topic20357/publication">DNSaaS Installer Image</xref> </li>
+<li>Download <xref type="section" href="#topic20357cnpicd/publication">DNSaaS Installer Image</xref> </li>
 <li>
-<p>Obtain <xref type="section" href="#topic20357/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
+<p>Obtain <xref type="section" href="#topic20357cnpicd/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
 
 <ul>
 <li>This user should have the <b>admin</b> and  <b>_member_</b> roles.</li>
@@ -85,7 +85,7 @@
 </ul>
 </li>
 <li>
-<p>Obtain <xref type="section" href="#topic20357/service-cred">Service Credentials</xref>: credentials for the user+tenant used to validate end user tokens.</p>
+<p>Obtain <xref type="section" href="#topic20357cnpicd/service-cred">Service Credentials</xref>: credentials for the user+tenant used to validate end user tokens.</p>
 
 <ul>
 <li>This user should be in the <b>service</b> tenant, have the <b>admin</b> and  <b>_member_</b> roles, and be called <b>designate</b>.</li>
@@ -298,7 +298,7 @@ A Launch Instance dialog box displays with five tabs: Details Tab, Access &amp; 
 
 <p>b. Make sure you have the nova command line client installed.</p>
 
-<p>c. Download the <xref type="section" href="#topic20357/target-cred">target credentials</xref> in an RC file, for example using Horizon.</p>
+<p>c. Download the <xref type="section" href="#topic20357icnpicd/target-cred">target credentials</xref> in an RC file, for example using Horizon.</p>
 
 <p>d. Source the credentials.</p>
 
@@ -621,7 +621,7 @@ sudo -i
 </section>
 <section id="initial-service-configuration"> <title>Initial Service Configuration</title>
 <p>You must perform an initial configuration step to communicate the names of the servers that serve DNS to Designate. Please ensure you have a valid set of admin credentials in the standard OS_* environment variables before proceeding.</p>
-<p>For the "Nameserver FQDNs" gathered during the <xref type="section" href="#topic20357/preq">prerequisites</xref> step, issue a <codeph>server-create</codeph> command for each name to add the server:</p>
+<p>For the "Nameserver FQDNs" gathered during the <xref type="section" href="#topic20357cnpicd/preq">prerequisites</xref> step, issue a <codeph>server-create</codeph> command for each name to add the server:</p>
 <codeblock>
   <codeph>$ designate server-create --name ns1.example.com.
 </codeph>
@@ -690,7 +690,7 @@ sudo -i
 <p>
 <b>Note</b>: Public Cloud API and HPE Helion Openstack API details are similar.</p>
 <p>
-  <xref href="#topic20357"> Return to Top </xref>
+  <xref href="#topic20357cnpicd"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
