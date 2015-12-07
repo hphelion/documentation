@@ -23,14 +23,14 @@
             <p id="DOCS-2257"><b>IPv6 access to <keyword keyref="kw-hos-tm"/>  components is blocked</b></p>
             
             <p><keyword keyref="kw-hos-phrase-21"/> will upgrade your system to include firewall rules 
-                preventing IPv6 access to HOS components.</p>
+                preventing IPv6 access to <keyword keyref="kw-hos"/> components.</p>
             
             <p>                
-                For <keyword keyref="kw-hos-phrase-20"/>, the release notes indicated IPv4 access to HOS components 
+                For <keyword keyref="kw-hos-phrase-20"/>, the release notes indicated IPv4 access to <keyword keyref="kw-hos"/> components 
                 was restricted to known interfaces and services by firewall rules - 
                 see <xref href="releasenotes.dita#release_notes/IPv6Traffic">IPv6 Traffic Not Supported</xref>. 
                 It also indicated IPv6 access was 
-                not restricted in this way. The release notes provided instructions to disable IPv6 on your 
+                not restricted in this way. The <keyword keyref="kw-hos-version-20"/> release notes provided instructions to disable IPv6 on your 
                 operating system and a suggestion to disable IPv6 at your router. This is no longer necessary. 
                 
             </p>
