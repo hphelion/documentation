@@ -26,6 +26,8 @@
   <topicref href="helion/installation/upgrade.dita" navtitle="Upgrade to 2.1" locktitle="yes"/>
   <topicref href="helion/installation/preinstall_checklist.dita"
    navtitle="Pre-installation Checklist" locktitle="yes"/>
+  <topicref href="helion/installation/install_entryscale_esx.dita"
+   navtitle="Installation for Entry-scale with ESX" locktitle="yes"/>
   <topicref href="helion/installation/install_entryscale_swift.dita"
    navtitle="Installation for Entry-scale with Swift" locktitle="yes"/>
   <topicref href="helion/installation/installation_verification.dita"
