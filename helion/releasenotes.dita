@@ -719,7 +719,7 @@ Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&
         devices have been flushed, the messages will subside. It is recommended that you include a
         delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</p>
       <!-- NETWORKING -->
-      <p><b>IPv6 Traffic Not Supported</b></p>
+      <p id="IPv6Traffic"><b>IPv6 Traffic Not Supported</b></p>
       <p>The <keyword keyref="kw-hos-phrase"/> release includes firewall rules to prevent
         non-essential traffic from accessing the physical systems. However, these rules are limited
         to IPv4 traffic only. In order to prevent unsolicited or nefarious IPv6 traffic, you will
