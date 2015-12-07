@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgiep">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the ESX<tm
       tmtype="reg"/> Compute Proxy</title>
 <prolog>
@@ -15,7 +15,7 @@
 </prolog>
 <body>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
           >KVM + ESX Deployment</xref>.</i></p>
   
     <p>The HPE Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
@@ -91,7 +91,7 @@
         process.</p>
     </section>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/create-a-new-cloud-template-and-bring-the-cloud-nodes-up"
           >KVM + ESX Deployment</xref>.</i></p>
   </body>
 </topic>

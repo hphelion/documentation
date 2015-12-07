@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgicp">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the Ceilometer
     Patch</title>
   <prolog>
@@ -44,9 +44,9 @@ d0b07aba0a5039de67ab489f219b754c01344a26 hoscg-patchCG-1345.tar.gz</codeblock></
         space:<codeblock>rm -f hoscg-patchCG-1345.patch hoscg-patchCG-1345.tar.gz</codeblock></li>
     </ol>
     <p>To see the log of the patch process, see <codeph>hoscg-patchCG-1345.user_guide</codeph>.</p>
-    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patch-after">KVM
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581cgik/patch-after">KVM
       installation</xref>.</p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgik/patch-after">the KVM + ESX
       installation</xref>.</p>
     </body>
 </topic>

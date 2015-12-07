@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgivs">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the VMware vSphere
     Distributed Switch</title>
 <prolog>
@@ -15,7 +15,7 @@
 </prolog>
 <body>
   <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/vmware">KVM + ESX
         Deployment</xref>.</i></p>
   
   <p>The HPE Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires the VMWare vSphere
@@ -51,7 +51,7 @@
               href="../../media/CGH-install-portgroup-name.png" id="image_eqm_ngz_zs"/></p></li>
       </ol>
       <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/vmware">KVM + ESX
             Deployment</xref>.</i></p>
     </section>
 </body>

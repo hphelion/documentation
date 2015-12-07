@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg">process for installing the
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
         
@@ -26,7 +26,7 @@
   <p>The following represents a sample <codeph>ldap.json</codeph> file in the
           <codeph>&lt;cloudname>/vars</codeph> directory of the HLM VM. The IP addresses are masked
         for security purposes. Use values appropriate for your environment.</p>
-            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>
   {

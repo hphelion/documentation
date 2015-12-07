@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgispp">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Applying the HLM Port Security
     Patch</title>
   <prolog>
@@ -64,9 +64,9 @@ ssl_cert_file: /root/ovs/ca.crt
         enter.</li>
       <li>This should run the hlmiptables role which will secure all ports on HLM</li>
     </ol>
-    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581/patch-after">KVM
+    <p>Return to the <xref href="carrier-grade-install-kvm.dita#topic10581cgik/patch-after">KVM
       installation</xref>.</p>
-    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581/patch-after">the KVM + ESX
+    <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgikeg/patch-after">the KVM + ESX
       installation</xref>.</p>
     </body>
 </topic>

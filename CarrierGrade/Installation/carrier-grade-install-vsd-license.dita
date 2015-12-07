@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgivl">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Apply the VSD License</title>
   <prolog>
     <metadata>
@@ -15,7 +15,7 @@
   </prolog>
   <body>
     <p><i>Return to the Installing the <xref
-          href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+          href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgieg/vmware">KVM + ESX
         Deployment</xref>.</i></p>
     <p>You should have recevied a license file when you purchased DCN. You need to apply that
       license on the HLM host. If you do not have the license file, through the DCN post-sales
@@ -46,7 +46,7 @@ VSD Server : auto</codeblock><p>The
     </ol>
     <section>
       <p><i>Return to the Installing the <xref
-            href="carrier-grade-install-kvm-esx-GA.dita#topic10581/vmware">KVM + ESX
+            href="carrier-grade-install-kvm-esx-GA.dita#topic10581cgkeg/vmware">KVM + ESX
             Deployment</xref>.</i></p>
     </section>
   </body>
