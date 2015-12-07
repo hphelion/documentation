@@ -20,7 +20,7 @@
       uses <xref href="https://www.consul.io/" format="html" scope="external">Consul</xref> for
       centralized configuration storage that runs on each instance.</p>
     <note>For detailed descriptions of the components of <keyword keyref="prodLong"/>, see <xref
-        href="../reference/cfr_reference_gato.dita#reference_cd3_bs3_rt/available_role_containers"
+        href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt/available_role_containers"
       />.</note>
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
       and pushing your first apps.</p>
@@ -34,18 +34,18 @@
     </ul>
     <ul id="ul_pph_ytf_vt">
       <li><b>Quick Start: Deploying to <keyword keyref="pubCloudLong"/></b><ul id="ul_ack_nwv_tt">
-        <li><xref href="../quickstart/hos/cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st"/></li>
-        <li><xref href="../quickstart/hos/cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st"/></li>
-        <li><xref href="../quickstart/hos/cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st"/></li>
-        <li><xref href="../quickstart/hos/cfr_hos_quickstart_step_4.dita#concept_pqc_jhz_st"/></li>
-        <li><xref href="../quickstart/hos/cfr_hos_quickstart_step_5.dita#concept_cw2_thz_st"/></li>
-        <li><xref href="../quickstart/hos/cfr_hos_quickstart_step_6.dita#concept_m3k_bth_tt"/></li>
+        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st"/></li>
+        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st"/></li>
+        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st"/></li>
+        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_4.dita#concept_pqc_jhz_st"/></li>
+        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_5.dita#concept_cw2_thz_st"/></li>
+        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_6.dita#concept_m3k_bth_tt"/></li>
       </ul></li>
     </ul>
     <ul id="ul_czt_ytf_vt">
       <li><b>Reference</b><ul id="ul_mdv_swv_tt">
-        <li><xref href="../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"/></li>
-        <li><xref href="../reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/></li>
+        <li><xref href="reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"/></li>
+        <li><xref href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/></li>
       </ul></li>
     </ul>
   </conbody>
