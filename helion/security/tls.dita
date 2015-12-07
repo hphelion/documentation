@@ -95,32 +95,32 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
     </section>
     <section id="fqdn"><p><b>If you are using a FQDN:</b></p>
       <ol id="ol_ngj_qfq_rt">
-        <li> Create or obtain a certificate to match the domain name you are going to use. </li>
-        <li> Copy the certificate (containing both public and private keys) to
-            <codeph>helion/my_cloud/config/tls/certs/ </codeph></li>
+        <li>Create or obtain a certificate to match the domain name you are going to use.</li>
+        <li>Copy the certificate (containing both public and private keys) to the
+            <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory.</li>
         <li id="private1">Replace the contents of <codeph>
-            /home/stack/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with
-          the new CA certificate chain file (if applicable)</li>
-        <li>Edit <codeph>network_groups.yml </codeph>(as part of the general set of edits they have
-          to make to the example) to set the values for "external-name" and "cert-file" </li>
+            ~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the new CA
+          certificate chain file that you added in the previous step.</li>
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
+          values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
+          values for your environment.</li>
         <li>Commit your changes to git:
-          <codeblock>cd ~/helion/hos/ansible
+          <codeblock>cd ~/helion
 git add -A
-git commit -m "My config or other commit message"</codeblock></li>
-        <li>Run the config
-          processor:<codeblock>cd ~/helion/hos/ansible
+git commit -m "Updated certificate and CA chain"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-        <li>Now, in order for the certificate to be enabled, you must take one of the following
-          actions. Run: <ul>
-            <li>A site deploy play</li>
-            <li>An upgrade play</li>
-            <li>or redeploy FND_CLU like so:
-              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+        <li>Create the deployment directory:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Complete the deployment of your certificate by running the playbooks below. <p>To deploy
+            the new certificate:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
-            </li>
-          </ul>
-        </li>
-        <li>Continue with the deployment as usual.</li>
+          <p>To deploy the CA chain:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
       </ol>
     </section>
     <section id="ipaddress"><p><b>If you are using IP addresses for external URLs:</b></p>
@@ -153,14 +153,29 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Create or obtain a certificate tied to this address</li>
         <li>Copy the certificate (containing both public and private keys) to
             <codeph>~/helion/my_cloud/config/tls/certs/ </codeph></li>
-        <li id="private2">Replace the contents of<codeph>
-            ~/scratch/ansible/next/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph>
-          with the new CA certificate chain file (if applicable) </li>
-        <li>Edit <codeph>network_groups.yml</codeph> to set the value for the name of the
-          "cert-file"</li>
-        <li>Again, commit your changes to git and run the configuration processor as in steps 4 and
-          5 above</li>
-        <li>Continue with the deployment as usual</li>
+        <li>Replace the contents of <codeph>
+            ~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the new CA
+          certificate chain file that you added in the previous step.</li>
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
+          values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
+          values for your environment.</li>
+        <li>Commit your changes to git:
+          <codeblock>cd ~/helion
+git add -A
+git commit -m "Updated certificate and CA chain"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Create the deployment directory:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Complete the deployment of your certificate by running the playbooks below. <p>To deploy
+            the new certificate:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
+          <p>To deploy the CA chain:</p>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
       </ol>
       <p>Note that the certificate that is installed by default, "my-public-cert", is linked to the
         name "myhelion.test". It is possible to deploy the system without generating or configuring
@@ -245,7 +260,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <codeph>network_groups.yml</codeph> file from a previous installation, you won't have TLS
         enabled unless you change "components" to "tls-components" in that file.</p>
     </section>
-    
+
     <section id="configure_cipher">
       <title>Configuring the cipher suite for public endpoints</title>
       <p>We have set the default cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>.
