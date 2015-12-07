@@ -28,7 +28,7 @@
       before the deploying the HPE Helion OpenStack cloud (before you run <codeph>hprovision</codeph>
       script).</p>
     <p>The ESX and vCenter server should be installed within the non-KVM region and attached to the
-      CLM network, as shown in the <xref href="carrier-grade-technical-overview.dita#topic3485"
+      CLM network, as shown in the <xref href="carrier-grade-technical-overview.dita#topic3485cgto"
         >Technical Overview</xref></p>
     <p>The process for installing the compute proxy includes the following:</p>
     <section id="download">

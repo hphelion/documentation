@@ -31,7 +31,7 @@
       <p>HPE Helion Distributed Cloud Networking (DCN) must be deployed before starting the cloud
         deployment. Please refer to DCN documentation for details. </p>
       <p>For a quick overview of the DCN components, see <xref
-          href="carrier-grade-technical-overview-esx.dita#topic3485/dcn">KVM + ESX Deployment
+          href="carrier-grade-technical-overview-esx.dita#topic3485cgtoe/dcn">KVM + ESX Deployment
           Architecture Reference</xref></p>
       <p>In production cloud deployments:</p>
       <ul id="ul_hnw_pry_zs">
@@ -42,7 +42,7 @@
           DCN documentation examples of <codeph>BIND</codeph> commands and instructions for testing
           the DNS configuration. </li>
         <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
-            href="carrier-grade-technical-overview-esx.dita#topic3485">architecture
+            href="carrier-grade-technical-overview-esx.dita#topic3485cgtoe">architecture
           diagram</xref>.</li>
         <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
           commands. </li>

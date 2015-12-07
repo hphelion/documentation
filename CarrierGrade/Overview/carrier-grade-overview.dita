@@ -113,7 +113,7 @@
       installation options depending on your system configuration. It allows you to manage the KVM
       and VMware ESX<tm tmtype="reg"/> hypervisors and provision virtual machines.<p>You can find
         more information on the hypervisor options in the <xref
-          href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+          href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
           Overview</xref>.</p></section>
   <section id="kvm-Hypervisor">
     <title>KVM Topology</title>
