@@ -23,7 +23,7 @@
             the VRSvApp, to integrate ESX and HP DCN. One VRSvApp is required for each ESX host.
             There is a 1-to-1 mapping between each VRSvApp and its ESX host. The VRSvApp
             installation package is contained in the packages you <xref
-                href="carrier-grade-install-prereqs.dita#topic7148/getinstall">downloaded in
+                href="carrier-grade-install-prereqs.dita#topic7148cgip/getinstall">downloaded in
                 the Prerequisites</xref>.</p><p>The DCN vSphere
             Solution addresses this integration. The installation involves deploying a stand-alone
             VM, installing the new vCenter Integration Node (called the vCenter Deployment Toolbox).
@@ -82,9 +82,9 @@
                         <codeph>/var/www/html</codeph> location in the Toolbox VM <ul
                         id="ul_vhj_xhp_wt">
                         <li><p
-                                conref="carrier-grade-install-prereqs.dita#topic7148/vrs-ovf"/></li>
+                                conref="carrier-grade-install-prereqs.dita#topic7148cgip/vrs-ovf"/></li>
                         <li>
-                                <p conref="carrier-grade-install-prereqs.dita#topic7148/vrs-vmdk"/>
+                                <p conref="carrier-grade-install-prereqs.dita#topic7148cgip/vrs-vmdk"/>
                             </li>
                     </ul></li>
                 <li>Execute the following command to grant full permission to the OVF and VMDK

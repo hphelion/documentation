@@ -334,7 +334,7 @@
       <title>DCN Software Requirements</title>
       <p>HP Distributed Cloud Networking (DCN) must be fully installed and operational before
         installing HP Helion OpenStack Carrier Grade. The currently supported version is <b
-          conref="carrier-grade-install-download.dita#topic7148/dcn-version"/>.</p>
+          conref="carrier-grade-install-download.dita#topic7148cgid/dcn-version"/>.</p>
     </section>
     <section id="storage">
       <title>External Storage</title>

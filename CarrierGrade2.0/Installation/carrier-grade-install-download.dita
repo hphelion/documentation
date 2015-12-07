@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic7148">
+<topic xml:lang="en-us" id="topic7148cgid">
         <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Download the
                 Installation Packages </title>
         <titlealts>
@@ -232,7 +232,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </row>
                                                 <row>
                                                   <entry>VSD-QCOW2</entry>
-                                                  <entry><ph conref="#topic7148/vsd-qcow"/></entry>
+                                                  <entry><ph conref="#topic7148cgid/vsd-qcow"/></entry>
                                                   <entry>
                                                   <p>/var/lib/libvirt/images</p>
                                                   </entry>
@@ -255,8 +255,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                         </table><b>Debian Packages</b><p>Download the following Debian packages from
                                 a trusted source:</p><p>
                                 <ul id="ul_hq1_sjh_xt">
-                                        <li conref="#topic7148/libproto"/>
-                                        <li conref="#topic7148/setproc"/>
+                                        <li conref="#topic7148cgid/libproto"/>
+                                        <li conref="#topic7148cgid/setproc"/>
                                 </ul>
                         </p><p>Move the downloaded files to the to the <codeph>/root/cg/dcn</codeph>
                                 directory on the lifecycle manager host:</p></section>
