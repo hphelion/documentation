@@ -18,28 +18,5 @@
       service (IaaS). The optional HPE Helion Development Platform gives developers a powerful set
       of tools to migrate traditional applications, build cloud native applications, and deploy both
       to an open and integrated platform as a service (PaaS) layer.</p>
-    <p>This content set contains information about the following products:</p>
-    <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
-      <strow>
-        <stentry>
-          <xref href="index_MPC.dita">HPE Helion <tm tmtype="reg">OpenStack</tm></xref>
-        </stentry>
-        <stentry>HPE’s enterprise-grade distribution of <tm tmtype="reg">OpenStack</tm> software.
-          This hardened, extensible product is designed to deliver leading open-source cloud
-          computing while adhering tightly to OpenStack software API standards and
-          services.</stentry>
-      </strow>
-      <strow>
-        <stentry>
-          <xref href="../../devplatform/2.0/devplatform.index.dita">HPE Helion Development
-            Platform</xref>
-        </stentry>
-        <stentry>
-          <p>A PaaS based on <tm tmtype="tm">Cloud Foundry</tm> technology and fully integrated with
-            HPE Helion OpenStack. This product helps developers build cloud-native applications and
-            then deploy across private and public clouds. </p>
-        </stentry>
-      </strow>
-    </simpletable>
   </body>
 </topic>
