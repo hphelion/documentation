@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108c2udhw">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: How to use the Helion
     Dashboard</title>
 <prolog>
@@ -28,9 +28,9 @@
  <!--permalink: /helion/openstack/carrier/dashboard/how-works/--></p>
 <p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade.</p>
 <p>The interface, based on OpenStack Horizon, is grouped into tabs, including <xref type="section"
-        href="#topic6108/DashProject">Project</xref>, <xref type="section"
-        href="#topic6108/DashAdmin">Admin</xref> and <xref type="section"
-        href="#topic6108/DashIdent">Identity</xref>. The tabs expand and contract to show available
+        href="#topic6108c2udhw/DashProject">Project</xref>, <xref type="section"
+        href="#topic6108c2udhw/DashAdmin">Admin</xref> and <xref type="section"
+        href="#topic6108c2udhw/DashIdent">Identity</xref>. The tabs expand and contract to show available
       commands grouped into <b>panels</b>.</p>
 <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
 <!-- 

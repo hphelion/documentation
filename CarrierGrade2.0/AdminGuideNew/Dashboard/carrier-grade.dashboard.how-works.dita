@@ -28,9 +28,9 @@
  <!--permalink: /helion/openstack/carrier/dashboard/how-works/--></p>
 <p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade.</p>
 <p>The interface, based on OpenStack Horizon, is grouped into tabs, including <xref type="section"
-        href="#topic6108/DashProject">Project</xref>, <xref type="section"
-        href="#topic6108/DashAdmin">Admin</xref> and <xref type="section"
-        href="#topic6108/DashIdent">Identity</xref>. The tabs expand and contract to show available
+        href="#topic6108cgdhw/DashProject">Project</xref>, <xref type="section"
+        href="#topic6108cgdhw/DashAdmin">Admin</xref> and <xref type="section"
+        href="#topic6108cgdhw/DashIdent">Identity</xref>. The tabs expand and contract to show available
       commands grouped into <b>panels</b>.</p>
 <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
 <!-- 

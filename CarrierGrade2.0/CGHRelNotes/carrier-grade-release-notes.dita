@@ -28,9 +28,9 @@
                 <xref href="../API/carrier-grade-api.dita#topic15959cga">HP Helion OpenStack Carrier
                 Grade API and SDK Reference</xref>.</p>
         <section>See:<ul id="ul_z23_gdw_c5">
-                <li><xref href="#topic6108/changes" format="dita"/></li>
-                <li><xref href="#topic6108/usage" format="dita"/></li>
-                <li><xref href="#topic6108/problems" format="dita"/></li>
+                <li><xref href="#topic6108cgrn/changes" format="dita"/></li>
+                <li><xref href="#topic6108cgrn/usage" format="dita"/></li>
+                <li><xref href="#topic6108cgrn/problems" format="dita"/></li>
             </ul></section>
         <section id="changes">
             <title>Changes in this release</title>
