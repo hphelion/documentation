@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631c2us">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using Stacks</title>
 <prolog>
 <metadata>
@@ -20,7 +20,7 @@
       defined in templates and included in services.</p>
     <p>See the following topics on using stacks:</p>
     <ul id="ul_n5c_tnt_jt">
-      <li><xref href="CGH-2-User-stacks-create.dita#topic1631">Creating a Stack</xref></li>
+      <li><xref href="CGH-2-User-stacks-create.dita#topic1631c2usc">Creating a Stack</xref></li>
     </ul>
   <p>For information on peforming the following tasks related to Orchestration stacks, see the <i>HP
         Helion OpenStack® Carrier Grade 2.0: Administrator Guide</i>.</p>

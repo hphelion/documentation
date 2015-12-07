@@ -16,7 +16,7 @@
 <p>Users can suspend an instance, for example, to free up the resources used by an instance that is used infrequently or to perform system maintenance.</p>
 
       <note> Suspending is different from <xref
-        href="CGH-2-User-Instance-pause.dita#topic1643">pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and
+        href="CGH-2-User-Instance-pause.dita#topic1643c2uip">pausing an instance</xref>. Pausing keeps the instance running, (in a "frozen" state) and
       stores the content of the instance in memory (RAM).</note>
 <section id="suspend-an-instance"> <title>Suspend an instance</title>
 <p>To suspend an instance:</p>

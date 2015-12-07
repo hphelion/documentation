@@ -54,7 +54,7 @@
             <li>Review the deployment architecture for different hypervisors</li>
             <li>Review the network architecture for networking needs</li>
           </ul></li>
-        <li>Review the <xref href="carrier-grade-support-matrix-denver.dita#topic1773">Support
+        <li>Review the <xref href="carrier-grade-support-matrix-denver.dita#topic1773cgsmd">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
         <li> Perform any required or optional <xref
             href="../../CarrierGrade2.0/Installation/CGH-install-prereqs-denver.dita"

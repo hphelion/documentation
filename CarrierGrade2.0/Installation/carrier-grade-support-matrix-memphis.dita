@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773cgsmm">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Memphis Deployment Support
     Matrix</title>
 <prolog>
@@ -18,37 +18,37 @@
       <p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is
         very important to meet the requirements and conform to the recommendations listed in this
         document. <ul id="ul_lln_xmd_b5">
-          <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
-          <li><xref href="#topic1773/req-specs" format="dita">Required Specifications</xref></li>
-          <li><xref href="carrier-grade-support-matrix-tahoe.dita#topic1773/esx-dcn-hardware">ESX
+          <li><xref href="#topic1773cgsmm/hardware" format="dita">Supported Hardware</xref></li>
+          <li><xref href="#topic1773cgsmm/req-specs" format="dita">Required Specifications</xref></li>
+          <li><xref href="carrier-grade-support-matrix-tahoe.dita#topic1773cgsmt/esx-dcn-hardware">ESX
               and DCN Specifications</xref></li>
-          <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
+          <li><xref href="#topic1773cgsmm/hardware-config" format="dita">Required Hardware
             Configurations</xref></li>
-          <li><xref href="#topic1773/dcn" format="dita">DCN Components</xref></li>
-          <li><xref href="#topic1773/esx" format="dita">ESX
+          <li><xref href="#topic1773cgsmm/dcn" format="dita">DCN Components</xref></li>
+          <li><xref href="#topic1773cgsmm/esx" format="dita">ESX
             Components</xref></li>
-          <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
-          <li><xref href="#topic1773/add-esx" format="dita">ESX Software Requiremets</xref></li>
-          <li><xref href="#topic1773/add-dcn" format="dita">DCN Software Requiremets</xref></li>
-          <li><xref href="#topic1773/storage" format="dita">External Storage</xref></li>
-          <li><xref href="#topic1773/guestos" format="dita">Supported Guest Operating Systems</xref></li>
-          <li><xref href="#topic1773/add-guestos" format="dita">Additional Guest Operating
+          <li><xref href="#topic1773cgsmm/software" format="dita">Software Requirements</xref></li>
+          <li><xref href="#topic1773cgsmm/add-esx" format="dita">ESX Software Requiremets</xref></li>
+          <li><xref href="#topic1773cgsmm/add-dcn" format="dita">DCN Software Requiremets</xref></li>
+          <li><xref href="#topic1773cgsmm/storage" format="dita">External Storage</xref></li>
+          <li><xref href="#topic1773cgsmm/guestos" format="dita">Supported Guest Operating Systems</xref></li>
+          <li><xref href="#topic1773cgsmm/add-guestos" format="dita">Additional Guest Operating
             Systems</xref></li>
         </ul></p>
     </section>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/hardware" id="hardware"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/req-specs" id="req-specs"/>
-    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/esx-dcn-hardware" id="esx-dcn-hardware"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/hardware-config"
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/hardware" id="hardware"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/req-specs" id="req-specs"/>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/esx-dcn-hardware" id="esx-dcn-hardware"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/hardware-config"
       id="hardware-config"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/dcn" id="dcn"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/esx" id="esx"/>
-    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/software" id="software"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/add-esx" id="add-esx"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/add-dcn" id="add-dcn"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/storage" id="storage"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/guestOS" id="guestos"/>
-  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773/os-dcn-esx"
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/dcn" id="dcn"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/esx" id="esx"/>
+    <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/software" id="software"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/add-esx" id="add-esx"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/add-dcn" id="add-dcn"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/storage" id="storage"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/guestOS" id="guestos"/>
+  <section conref="carrier-grade-support-matrix-sacramento.dita#topic1773cgsms/os-dcn-esx"
       id="add-guestos"/>
 
   <section id="next"> <title>Next step</title>
