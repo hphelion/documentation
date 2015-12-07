@@ -58,6 +58,10 @@
               <entry>Release Notes 2.1</entry>
               <entry>DOCS-2052 Changes to Alarm Definition in Centralized Logging</entry>
             </row>
+            <row>
+              <entry>Entry Scale with ESX Install</entry>
+              <entry>The contents of the net_conf.json file has been updated (DOCS-2243)</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>

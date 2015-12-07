@@ -267,144 +267,203 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <ol>
           <li>Execute the following command to get the network information
               template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
-              file of <codeph>net_conf.json</codeph> is shown
+              example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample file of <codeph>net_conf.json</codeph> is shown
               below:<codeblock>{
     "network": {
         # Deployer Network details
         # This network should be reachable from the Deployer node
         "deployer_network": {
-            #Deployer Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
-            "deployer_pg_name": "hlm-Deployer-PG",
+            #Deployer Portgroup Name. Will create if not exist.
+            "deployer_pg_name": "CONF-PG",
 
-            #VLAN id for Deployer Portgroup
+            #Single VLAN id for CONF/Deployer network
             "deployer_vlan": "33",
 
-#Enable DHCP for Deployer network ?
-            "enable_deployer_dhcp": "no",
+            #VLAN type. Accepted values are "vlan", "trunk", "none"
+            "vlan_type": "trunk",
 
-#CIDR and gateway for deployer network only when enable_deployer_dhcp is no
+            #DHCP setting for deployer network
+            "enable_deployer_dhcp": "false",
+
+            #CIDR and gateway for deployer network only when "enable_deployer_dhcp" is "no"
             "deployer_cidr": "10.20.18.0/23",
+
+            # IP range from the CIDR. Will use whole pool from CIDR if ip_range is not provided.
+	    "ip_range": {
+	        "start_address": "10.20.18.50",
+		"end_address": "10.20.18.90"
+	    },
+
             "deployer_gateway_ip": "10.20.18.1",
 
             #Deployer Node's PXE IP Address
             "deployer_node_ip": "10.20.16.2"
+
+            # NIC Teaming Configurations
+
+            # We support only single DVS for Mgmt and Deployer.
+            # The management_network NIC Teaming configs, will be applied to deployer_network as well.
         },
 
         #Management Network details
         "management_network": {
-#Mgmt DVS name. If already exists then we will use it. If not #then we will create it.
-            "mgmt_dvs_name": "hlm-Mgmt",
+            #Mgmt DVS name. Will create if not exist.
+            "mgmt_dvs_name": "MGMT-DVS",
 
-#Physical NIC name(s) for Mgmt DVS. Make sure that this Physical #NIC(s) is/are free/not used across all hosts in that cluster.
+            #Physical NIC name(s) for Mgmt DVS. Physical NICs(s) must be unassigned to other uplinks.
             "mgmt_nic_name": "vmnic3",
 
-#Mgmt Portgroup Name. If already exists then we will use it. 	     #If not then we will create it.
-            "mgmt_pg_name": "hlm-Mgmt-PG",
+            #Mgmt Portgroup Name. Will create if not exist.
+            "mgmt_pg_name": "MGMT-PG",
+
+            #VLAN id/range for MGMT network (and GUEST network if GUEST is carried over MGMT)
+            "mgmt_vlan": "0,1-4094",
+
+            #VLAN type. Accepted values are "vlan", "trunk", "none"
+            "vlan_type": "trunk",
 
             #Interface order: Example eth1
             "mgmt_interface_order": "eth1",
 
-#Provided physical NIC name(s) will be configured as active #uplink(s) from mgmt_dvs_name. If not provided then the first #entry in mgmt_dvs_name will be configured as active and the #remaining as standby.
+            # Make sure you have exact same NIC teaming configurations for both deployer_network and management_network.
+
+            # NIC Teaming Configurations
+
+            #Provided physical NIC name(s) will be configured as active uplink(s) from mgmt_nic_name.
+            #If not provided then the first entry in mgmt_nic_name will be configured as active and
+            #the remaining as standby.
             "active_nics": "",
-
-
-
-
 
             #Load Balancing. Please choose the corresponding number
 
-#1 -> Route based on the originating virtual port (Choose an            #uplink based on the virtual port where the traffic entered the #virtual switch)
+            # 1 -&gt; Route based on the originating virtual port
+            #(Choose an uplink based on the virtual port where the traffic entered the virtual switch)
 
-#2 -> Route based on IP hash (Choose an uplink based on a hash #of the source and destination IP addresses of each packet. For #non-IP packets, whatever is at those offsets is used to compute #the hash)
+            # 2 -&gt; Route based on IP hash
+            #(Choose an uplink based on a hash of the source and destination IP addresses of each packet.
+            #For non-IP packets, whatever is at those offsets is used to compute the hash)
 
-#3 -> Route based on source MAC hash (Choose an uplink based on #a hash of the source Ethernet.)
+            # 3 -&gt; Route based on source MAC hash (Choose an uplink based on a hash of the source Ethernet.)
 
-#4 -> Route based on physical NIC load (Choose an uplink based on #the current loads of physical NICs)
+            # 4 -&gt; Route based on physical NIC load (Choose an uplink based on the current loads of physical NICs)
 
-#5 -> Use explicit failover order (Always use the highest order    #uplink, from the list of Active adapters, which passes failover #detection criteria)
+            # 5 -&gt; Use explicit failover order (Always use the highest order uplink, from the list of Active adapters,
+            #which passes failover detection criteria)
 
-	    "load_balancing": "1",
+            "load_balancing": "1",
 
-#Network Failover Detection. Please choose the corresponding number
-# 1 -> Link Status. Relies solely on the link status that the #network adapter provides. This option detects failures, such as #cable pulls and physical switch power failures, but not #configuration errors, such as a physical switch port being #blocked by spanning tree or that is misconfigured to the wrong #VLAN or cable pulls on the other side of a physical switch.
+            #Network Failover Detection. Please choose the corresponding number
 
-# 2-> Beacon Probing. Sends out and listens for beacon probes on all #NICs in the team and uses this information, in addition to link #status, to determine link failure. This detects many of the #failures previously mentioned that are not detected by link #status alone.
+            # 1 -&gt; Link Status. (Relies solely on the link status that the network adapter provides. This option detects failures,
+            #such as cable pulls and physical switch power failures, but not configuration errors, such as a physical switch port
+            #being blocked by spanning tree or that is misconfigured to the wrong VLAN or cable pulls on the other side of a physical switch.
+
+            # 2-&gt; Beacon Probing. (Sends out and listens for beacon probes on all NICs in the team and uses this information, in addition to
+            #link status, to determine link failure. This detects many of the failures previously mentioned that are not detected by link status alone.
 
             "network_failover_detection": "1",
 
-	    #Notify Switches(yes/no).
-#If you select Yes, whenever a virtual NIC is connected to the          #Switch or whenever that virtual NIC’s traffic would be routed #over a different physical NIC in the team because of a failover #event, a notification is sent out over the network to update the #lookup tables on physical switches. In almost all cases, this #process is desirable for the lowest latency of failover #occurrences and migrations with vMotion.
+            #Notify Switches(yes/no).
+
+            #If you select Yes, whenever a virtual NIC is connected to the Switch or whenever that virtual NIC?s traffic would be routed over
+            #a different physical NIC in the team because of a failover event, a notification is sent out over the network to update the lookup
+            #tables on physical switches. In almost all cases, this process is desirable for the lowest latency of failover occurrences and
+            #migrations with vMotion.
 
             "notify_switches": "yes"
         },
 
-        "data_network": {
-            #Tenant network type. Only vlan is supported for HOS 2.0
-            "tenant_network_type": "vlan",
+        #Data network details. Uncomment if you want to use data_network.
+        #"data_network": {
+            #Data/Uplink DVS name. Will create if not exist.
+        #    "data_dvs_name": "GUEST-DVS",
 
-#Data/Uplink DVS name. If already exists then we will use it. If #not then we will create it.
-            "data_dvs_name": "hlm-Data",
+            #Physical NIC name(s) for Data/Uplink DVS. Physical NICs(s) must be unassigned to other uplinks.
+        #    "data_nic_name": "vmnic2, vmnic1",
 
-#Physical NIC name(s) for Data/Uplink DVS. Make sure that this #Physical NIC(s) is/are free/not used across all hosts in that #cluster.
-            "data_nic_name": "vmnic2, vmnic1",
+            #Data Portgroup Name. Will create if not exist.
+        #    "data_pg_name": "GUEST-PG",
 
-#Data Portgroup Name. If already exists then we will use it. If      #not then we will create it.
-            "data_pg_name": "hlm-Data-PG",
+            #VLAN id for Data/GUEST network
+        #    "data_vlan": "50, 60-70, 1034-200",
 
-            #Interface order: Example eth2
-            "data_interface_order": "eth2",
-
-#Provided physical NIC name(s) will be configured as active #uplink(s) from data_dvs_name. If not provided then the first #entry in data_dvs_name will be configured as active and the #remaining as standby.
-
-            "active_nics": "vmnic1",
-
-	    #Load Balancing. Please choose the corresponding number
-
-#1 -> Route based on the originating virtual port (Choose an            #uplink based on the virtual port where the traffic entered the #virtual switch)
-
-#2 -> Route based on IP hash (Choose an uplink based on a hash #of the source and destination IP addresses of each packet. For #non-IP packets, whatever is at those offsets is used to compute #the hash)
-
-#3 -> Route based on source MAC hash (Choose an uplink based on #a hash of the source Ethernet.)
-
-#4 -> Route based on physical NIC load (Choose an uplink based on #the current loads of physical NICs)
-
-#5 -> Use explicit failover order (Always use the highest order    #uplink, from the list of Active adapters, which passes failover #detection criteria)
-            
-            "load_balancing": "1",
-
-
-#Network Failover Detection. Please choose the corresponding number
-# 1 -> Link Status. Relies solely on the link status that the #network adapter provides. This option detects failures, such as #cable pulls and physical switch power failures, but not #configuration errors, such as a physical switch port being #blocked by spanning tree or that is misconfigured to the wrong #VLAN or cable pulls on the other side of a physical switch.
-
-# 2-> Beacon Probing. Sends out and listens for beacon probes on all #NICs in the team and uses this information, in addition to link #status, to determine link failure. This detects many of the #failures previously mentioned that are not detected by link #status alone.
-            
-            "network_failover_detection": "1",
-
-	    #Notify Switches(yes/no).
-#If you select Yes, whenever a virtual NIC is connected to the          #Switch or whenever that virtual NIC’s traffic would be routed #over a different physical NIC in the team because of a failover #event, a notification is sent out over the network to update the #lookup tables on physical switches. In almost all cases, this #process is desirable for the lowest latency of failover #occurrences and migrations with vMotion.
-
-            “notify_switches”: “yes”
-        },
-
-        “hpvcn_trunk_network”: {
-#Trunk DVS name. If already exists then we will use it. If not #then we will create it.
-            "trunk_dvs_name": "hlm-Trunk",
-
-#Trunk portgroup name. If already exists then we will use it. If #not then we will create it.
-            "trunk_pg_name": "hlm-Trunk-PG",
+            #VLAN type. Accepted values are "vlan", "trunk", "none"
+        #    "vlan_type": "trunk",
 
             #Interface order: Example eth3
-            "trunk_interface_order": "eth3"
-        },
+        #    "data_interface_order": "eth3",
+            # NIC Teaming Configurations
 
-#VLAN Range for Data &amp; Trunk port group. Please provide the range #separated by a hyphen (vlan-vlan). Multiple vlan or vlan ranges should #be provided as comma separated value.
+            #Provided physical NIC name(s) will be configured as active uplink(s) from data_nic_name.
+            #If not provided then the first entry in data_nic_name will be configured as active and the remaining as standby.
+
+        #    "active_nics": "vmnic2",
+
+            #Load Balancing. Please choose the corresponding number
+
+            # 1 -&gt; Route based on the originating virtual port
+            #(Choose an uplink based on the virtual port where the traffic entered the virtual switch)
+
+            # 2 -&gt; Route based on IP hash
+            #(Choose an uplink based on a hash of the source and destination IP addresses of each packet.
+            #For non-IP packets, whatever is at those offsets is used to compute the hash)
+
+            # 3 -&gt; Route based on source MAC hash (Choose an uplink based on a hash of the source Ethernet.)
+
+            # 4 -&gt; Route based on physical NIC load (Choose an uplink based on the current loads of physical NICs)
+
+            # 5 -&gt; Use explicit failover order (Always use the highest order uplink, from the list of Active adapters,
+            #which passes failover detection criteria)
+
+        #    "load_balancing": "1",
+
+            #Network Failover Detection. Please choose the corresponding number
+
+            # 1 -&gt; Link Status. (Relies solely on the link status that the network adapter provides. This option detects failures,
+            #such as cable pulls and physical switch power failures, but not configuration errors, such as a physical switch port
+            #being blocked by spanning tree or that is misconfigured to the wrong VLAN or cable pulls on the other side of a physical switch.
+
+            # 2-&gt; Beacon Probing. (Sends out and listens for beacon probes on all NICs in the team and uses this information, in addition to
+            #link status, to determine link failure. This detects many of the failures previously mentioned that are not detected by link status alone.
+
+        #    "network_failover_detection": "1",
+
+            #Notify Switches(yes/no).
+
+            #If you select Yes, whenever a virtual NIC is connected to the Switch or whenever that virtual NIC?s traffic would be routed over
+            #a different physical NIC in the team because of a failover event, a notification is sent out over the network to update the lookup
+            #tables on physical switches. In almost all cases, this process is desirable for the lowest latency of failover occurrences and
+            #migrations with vMotion.
+
+        #    "notify_switches": "yes"
+        #},
+
+        # Trunk Network details
+        "trunk_network": {
+            #Trunk DVS name. Will create if not exist.
+            "trunk_dvs_name": "TRUNK-DVS",
+
+            #Trunk portgroup name. Will create if not exist.
+            "trunk_pg_name": "TRUNK-PG",
+
+            #Interface order: Example eth2
+            "trunk_interface_order": "eth2"
+        },
+ 
+       #Tenant network type
+        "tenant_network_type": "vlan",
+
+        #VLAN Range for trunk network. It's applicable for both VXLAN &amp; VLAN deployment
+        #Please don't edit this field and value. Changing this value will have no effect !
+        #This field in future will be removed and is available for backward compatibility.
+        #The value must be 1-4094.
+
         "vlan_range": "1-4094"
     },
 
     "template": {
-#Provide the template name that will be used for cloning Computeproxy #and OVSvApp VMs
-        "template_name": "hlm-template"
+        #Provide the template/appliance name that will be used for cloning Computeproxy and OVSvApp VMs
+        "template_name": "hlm-shell-vm"
     },
 
     "vmconfig": {
@@ -414,8 +473,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         #Amount of RAM for OVSvApp/Computeproxy VM(in Mega Byte)
         "memory_in_mb": "4096",
 
-#SSH public key content for OVSvAPP/Computeproxy password less login. #Carefully copy the public key and paste it within the double quotes.
-        "ssh_key": "&lt;deployer-ssh-pub-key-contents>"
+        #SSH public key content for OVSvAPP/Computeproxy password less login.
+        #Carefully copy the public key and paste it within the double quotes.
+        "ssh_key": "&lt;deployer-ssh-pub-key-contents&gt;"
     }
 }</codeblock></p></li>
           <li>Modify the template (json file) as per your
