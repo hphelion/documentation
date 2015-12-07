@@ -12,7 +12,7 @@
   </metadata>
  </prolog>
  <conbody>
-  <simpletable>
+  <simpletable id="simpletable_kf3_rvk_g5">
    <strow>
     <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b>
      <p>2. <xref href="cfr_step_2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword
@@ -23,8 +23,8 @@
         keyref="quickStartHPcloudStep4"/></xref></p><p>5. <xref
        href="cfr_step_5.dita#concept_cw2_thz_st" id="quickStartHPcloudStep5_"><keyword
         keyref="quickStartHPcloudStep5"/></xref></p>6. <xref
-         href="cfr_step_6.dita#concept_m3k_bth_tt" id="quickStartHPcloudStep6_"><keyword keyref="quickStartHPcloudStep6"
-     /></xref></stentry>
+      href="cfr_step_6.dita#concept_m3k_bth_tt" id="quickStartHPcloudStep6_"><keyword
+       keyref="quickStartHPcloudStep6"/></xref></stentry>
     <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><p>Ensure that you
       have an <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
         keyref="pubCloudLong"/></xref> account and sufficient cloud credit to cover the hosting

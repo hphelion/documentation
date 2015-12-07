@@ -30,17 +30,10 @@
          </keywords>
       </topicmeta>
    </keydef>
-   <keydef keys="opnStckVeryShort">
-      <topicmeta>
-         <keywords>
-            <keyword>OpenStack</keyword>
-         </keywords>
-      </topicmeta>
-   </keydef>
    <keydef keys="pubCloudLong">
       <topicmeta>
          <keywords>
-            <keyword>HP Helion Public Cloud</keyword>
+            <keyword>HPE Helion Public Cloud</keyword>
          </keywords>
       </topicmeta>
    </keydef>

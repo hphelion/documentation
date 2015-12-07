@@ -10,10 +10,9 @@
   </prolog>
   <refbody>
     <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> administration
-      utility. You can run <keyword keyref="adminUtil"/> commands <xref
-        href="../quickstart/pubcloud/cfr_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster"
-        >after connecting to the core node using
-        <filepath>ssh</filepath></xref>.<title>Usage</title><codeblock><keyword keyref="adminUtilCLI"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock></section>
+      utility. You can run <keyword keyref="adminUtil"/> commands after connecting to the core node
+      using
+      <codeph>ssh</codeph>.<title>Usage</title><codeblock><keyword keyref="adminUtilCLI"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock></section>
     <section>
       <title>Global Options</title>
       <dl>

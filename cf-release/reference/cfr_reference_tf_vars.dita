@@ -34,26 +34,11 @@
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
-            <entry>The name of <xref
-                href="../quickstart/pubcloud/cfr_step_3.dita#concept_kpg_fhz_st/create_a_key_pair"
-                >the key pair that you created on <keyword keyref="pubCloudShort"/></xref><note
-                type="tip">To find your key pair, on the left panel click <menucascade>
-                  <uicontrol>Project</uicontrol>
-                  <uicontrol>Computer</uicontrol>
-                  <uicontrol>Access &amp; Security</uicontrol>
-                  <uicontrol>Key Pairs</uicontrol>
-                </menucascade>.</note></entry>
+            <entry>The name of your key pair.</entry>
           </row>
           <row>
             <entry><codeph>openstack_network_id</codeph></entry>
-            <entry>The ID of <xref
-                href="../quickstart/pubcloud/cfr_step_3.dita#concept_kpg_fhz_st/create_a_network"
-                >the network that you created on <keyword keyref="pubCloudShort"/></xref><note
-                type="tip">To find the network ID, on the left panel click <menucascade>
-                  <uicontrol>Project</uicontrol>
-                  <uicontrol>Network</uicontrol>
-                  <uicontrol>Networks</uicontrol>
-                </menucascade> and then click the name of your network.</note></entry>
+            <entry>The network ID.</entry>
           </row>
           <row>
             <entry><codeph>openstack_network_name</codeph></entry>
@@ -73,10 +58,10 @@
           </row>
           <row>
             <entry><codeph>key_file</codeph></entry>
-            <entry>The location and name of the private key <filepath>pem</filepath> file that you
-              downloaded after creating your key pair on <keyword keyref="pubCloudShort"/>, relative
-              to the <filepath>tfvars</filepath> file.<note type="tip">For convenience, you can
-                place the two files into the same directory.</note></entry>
+            <entry>The location and name of the private key <filepath>pem</filepath> file associated
+              with your key pair, relative to the <filepath>tfvars</filepath> file.<note type="tip"
+                >For convenience, you can place the two files into the same
+              directory.</note></entry>
           </row>
           <!--
           <row>
