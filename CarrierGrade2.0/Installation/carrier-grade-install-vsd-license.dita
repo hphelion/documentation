@@ -22,7 +22,7 @@
       license on the KVM Host. If you do not have the license file, through the DCN post-sales
       process, you received a confirmation email. Use a browser and go to the link in the email to
       obtain the license.</p>
-    <section conref="carrier-grade-install-vsd-vm.dita#topic7646/vsd-apply-license"/>
+    <section conref="carrier-grade-install-vsd-vm.dita#topic7646cgivv/vsd-apply-license"/>
     <section>
       <p><i>Return to installing the non-KVM region for the <xref
         href="CGH-2-install-memphis.dita#topic10581c2im/conref-vsd">memphis</xref> or <xref

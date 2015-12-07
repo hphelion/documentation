@@ -62,7 +62,7 @@
         </section>
         <section>
             <title>Configuring VRSvApp Deployer</title>
-            <p>The <xref href="carrier-grade-install-vsd-vm.dita#topic7646">HP DCN Virtualized
+            <p>The <xref href="carrier-grade-install-vsd-vm.dita#topic7646cgivv">HP DCN Virtualized
                     Services Directory (VSD)</xref> includes a VRSvApp deployer for ESX that is
                 capable of deploying a VRSvApp for each of the ESXi hosts in each of the ESX
                 clusters that you are managing as computes.</p>

@@ -257,7 +257,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <title>Preparing the Network for Installation</title>
                         <p>Before installing HP Helion OpenStack Carrier Grade, you are responsible
                                 for preparing the network for all installations.</p>
-                        <p>See <xref href="carrier-grade-install-network-prepare.dita#topic7646"
+                        <p>See <xref href="carrier-grade-install-network-prepare.dita#topic7646cginp"
                                         >Preparing the Network for Installation</xref></p>
                 </section>
                 <section id="ldap">
@@ -276,7 +276,7 @@ StrictHostKeyChecking no </codeblock></li>
                         <p>You must launch a virtual machine for the required HPE DCN Virtualized
                                 Services Directory (<i>VSD</i>) and create required users.</p>
                         <p>For more information, see <xref
-                                        href="carrier-grade-install-vsd-vm.dita#topic7646">Bringing
+                                        href="carrier-grade-install-vsd-vm.dita#topic7646cgivv">Bringing
                                         Up Single VSD VM Manually</xref>.</p>
                 </section>
                 <section id="prepbare">

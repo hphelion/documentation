@@ -22,7 +22,7 @@
     <section id="create-user-for-plugin-login">
       <p>You must create an administrative user called OSadmin and add it to CMS Group.</p>
     </section>
-    <section conref="carrier-grade-install-vsd-vm.dita#topic7646/vsd-osadmin-user"/>
+    <section conref="carrier-grade-install-vsd-vm.dita#topic7646cgivv/vsd-osadmin-user"/>
     <section>
       <p><i>Return to installing the non-KVM region for the <xref
         href="CGH-2-install-memphis.dita#topic10581c2im/conref-admin-user">memphis</xref> or <xref
