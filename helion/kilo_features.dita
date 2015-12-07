@@ -85,32 +85,6 @@
                 <entry/>
               </row>
               <row>
-                <entry morerows="4">Libvirt KVM (x86)Hypervisor Features</entry>
-                <entry>NUMA topology</entry>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry>CPU Pinning</entry>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry>Large pages</entry>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry>PCI Pass-Through</entry>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
-                <entry>SR-IOV</entry>
-                <entry/>
-                <entry/>
-              </row>
-              <row>
                 <entry morerows="1">Server Groups</entry>
                 <entry>Affinity</entry>
                 <entry/>
@@ -134,7 +108,7 @@
                 <entry/>
               </row>
               <row>
-                <entry morerows="4">Live Migration</entry>
+                <entry morerows="3">Live Migration</entry>
                 <entry>Ephemeral Disks</entry>
                 <entry/>
                 <entry/>
@@ -152,11 +126,6 @@
               <row>
                 <entry>Migration to Specified Host</entry>
                 <entry>Paused &amp; Rescued States</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry>CPU Pinning with NUMA</entry>
                 <entry/>
               </row>
               <row>
