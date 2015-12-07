@@ -143,12 +143,9 @@
             navtitle="Creating Roles for Swift Nodes" locktitle="yes"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
             navtitle="Allocating Disk Drives for Object Storage" locktitle="yes"
-            otherprops="admin_objectstorage_allocate">
-            <topicref href="helion/objectstorage/label_on_partition.dita"
-              navtitle="Verifying a Swift Partition Label" locktitle="yes"/>
-            <topicref href="helion/objectstorage/filesystem_label.dita"
-              navtitle="Verifying a Swift File System Label" locktitle="yes"/>
-          </topicref>
+            otherprops="admin_objectstorage_allocate" />
+
+          
           <topicref href="helion/objectstorage/swift_device_groups.dita"
             navtitle="Swift Requirements for Device Group Drives" locktitle="yes"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita"
@@ -389,8 +386,7 @@
       locktitle="yes" otherprops="troubleshooting">
       <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
         navtitle="Troubleshooting the Sherpa Service" locktitle="yes"/>
-      <topicref href="helion/installation/blockstorageconfig_troubleshooting.dita"
-        navtitle="Troubleshooting the Block Storage Backend Configuration" locktitle="yes"/>
+      
       <topicref href="helion/objectstorage/troubleshooting.dita"
         navtitle="Troubleshooting the Object Storage Service" locktitle="yes"
         otherprops="troubleshooting_objectstorage">

@@ -21,7 +21,14 @@
             Groups</xref></li>
         <li><xref href="#allocating-disk-drives/swift-logical-vol" format="dita">Swift Logical
             Volume</xref></li>
+      
       </ul></p>
+    <p>Also see these topics in troubleshooting, especially if you are upgrading:</p>
+    <ul><li>
+        <xref href="label_on_partition.dita#verify-partition-label">Verifying a Swift Partition
+          Label</xref></li><li>
+        <xref href="label_on_partition.dita#verify-partition-label">Verifying a Swift File System
+          Label</xref></li></ul>
     <section id="making-changes-disk-model">
       <title>Making Changes to a Swift Disk Model</title>
       <p>There are several reasons for changing the disk model:</p>
