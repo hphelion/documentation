@@ -15,9 +15,9 @@
    </vrmlist>
   </prodinfo>
  </topicmeta>
- 
+
  <mapref href="helion/HOS-keywords.xml" format="ditamap" processing-role="resource-only"/>
- 
+
  <topicref href="helion/index.dita">
   <!-- BEGIN - TOP LEVEL -->
   <topicref href="helion/documentation_updates_2_1.dita" navtitle="2.1 Changelog" locktitle="yes"/>
@@ -30,9 +30,9 @@
    navtitle="Installation for Entry-scale with Swift" locktitle="yes"/>
   <topicref href="helion/installation/installation_verification.dita"
    navtitle="Installation Verification" locktitle="yes"/>
-  <topicref href="helion/objectstorage/swift_device_groups.dita"
-   navtitle="Swift Requirements for Device Group
-   Drives" locktitle="yes"/>
+  <topicref href="helion/objectstorage/allocating_disk_drives.dita"
+   navtitle="Allocating Disk Drives for Object
+   Storage" locktitle="yes"/>
   <topicref href="helion/troubleshooting/troubleshooting_logging.dita"
    navtitle="Troubleshooting the Centralized Logging Service" locktitle="yes"/>
  </topicref>
