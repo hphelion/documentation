@@ -17,6 +17,25 @@
         </section>   
         
         <section id="features"><title>Features Available in this Release</title>
+            
+
+            <!--  https://jira.hpcloud.net/browse/DOCS-2257  -->
+            <p id="DOCS-2257"><b>IPv6 access to <keyword keyref="kw-hos-tm"/>  components is blocked</b></p>
+            
+            <p><keyword keyref="kw-hos-phrase-21"/> will upgrade your system to include firewall rules 
+                preventing IPv6 access to HOS components.</p>
+            
+            <p>                
+                For <keyword keyref="kw-hos-phrase-20"/>, the release notes indicated IPv4 access to HOS components 
+                was restricted to known interfaces and services by firewall rules - 
+                see <xref href="releasenotes.dita#release_notes/IPv6Traffic">IPv6 Traffic Not Supported</xref>. 
+                It also indicated IPv6 access was 
+                not restricted in this way. The release notes provided instructions to disable IPv6 on your 
+                operating system and a suggestion to disable IPv6 at your router. This is no longer necessary. 
+                
+            </p>
+            
+            
             <p><b>Freezer UI</b></p>            
             <p><b>OVSvApp over VxLAN</b></p>
             <p><b>Ceph Multi-network support</b></p>
@@ -33,7 +52,7 @@
             <title>Known Issues in this Release</title>
             
             <!--  https://jira.hpcloud.net/browse/DOCS-2052  -->
-            <p><b>Changes to Alarm Definition in Centralized Logging 
+            <p id="DOCS-2052"><b>Changes to Alarm Definition in Centralized Logging 
                 may require existing alarms to be deleted and recreated on an upgrade from 
                 <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/></b></p>   
             
@@ -50,7 +69,10 @@
                 As a result, the metrics for the older definition might appear in the "logging" bucket while those for the 
                 newer definition might appear in the Unknown or Other bucket.
               </p>
-            
+  
+  
+
+
             
         </section>
         
