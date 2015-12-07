@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581cgiep">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the ESX<tm
       tmtype="reg"/> Compute Proxy</title>
 <prolog>
@@ -15,8 +15,8 @@
 </prolog>
 <body>
   <p><i>Return to installing the non-KVM region for the <xref
-    href="CGH-2-install-memphis.dita#topic10581/conref-esx-proxy">memphis</xref> or <xref
-      href="CGH-2-install-sacramento.dita#topic10581/conref-esx-proxy">sacramento</xref>
+    href="CGH-2-install-memphis.dita#topic10581c2im/conref-esx-proxy">memphis</xref> or <xref
+      href="CGH-2-install-sacramento.dita#topic10581c2is/conref-esx-proxy">sacramento</xref>
       template.</i></p>
   
     <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
@@ -80,8 +80,8 @@
         process.</p>
     </section>
   <p><i>Return to installing the non-KVM region for the <xref
-    href="CGH-2-install-memphis.dita#topic10581/conref-esx-proxy">memphis</xref> or <xref
-      href="CGH-2-install-sacramento.dita#topic10581/conref-esx-proxy">sacramento</xref>
+    href="CGH-2-install-memphis.dita#topic10581c2im/conref-esx-proxy">memphis</xref> or <xref
+      href="CGH-2-install-sacramento.dita#topic10581c2is/conref-esx-proxy">sacramento</xref>
       template.</i></p>
   </body>
 </topic>

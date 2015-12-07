@@ -15,8 +15,8 @@
     </metadata>
   </prolog>
   <body><p><i>Return to Installing the KVM + ESX Deployment for the <xref
-                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+                    href="CGH-2-install-memphis.dita#topic10581c2im/vrsvapp">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581c2is/vrsvapp">sacramento</xref>
                 template.</i></p><p>This document describes how to install the HP
             Distributed Cloud Networking (DCN) vSphere Solution required to properly integrate the
             HP Distributed Cloud Networking and VMWare ESX components. </p><p>The HP Helion OpenStack Carrier Grade in the KVM + ESX Deployment requires a VMware vApp, called
@@ -177,7 +177,7 @@ subnet 10.20.94.0 netmask 255.255.255.0 {
                 </ol>
             </p>
         </section><p><i>Return to Installing the KVM + ESX Deployment for the <xref
-                    href="CGH-2-install-memphis.dita#topic10581/vrsvapp">memphis</xref> or <xref
-                    href="CGH-2-install-sacramento.dita#topic10581/vrsvapp">sacramento</xref>
+                    href="CGH-2-install-memphis.dita#topic10581c2im/vrsvapp">memphis</xref> or <xref
+                    href="CGH-2-install-sacramento.dita#topic10581c2is/vrsvapp">sacramento</xref>
                 template.</i></p></body>
 </topic>

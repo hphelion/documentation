@@ -314,7 +314,7 @@ StrictHostKeyChecking no </codeblock></li>
                         </ul>
                 </section>
                </bodydiv>
-                <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                         id="conref-vmware-workaround"/>
         </body>
 </topic>

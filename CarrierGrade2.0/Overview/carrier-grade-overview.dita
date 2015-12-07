@@ -121,7 +121,7 @@
               Attis which you can use to backup and restore essential system files and components of
               the non-KVM cloud. Attis is automatically installed on each of the controller nodes in
               the non-KVM region. For more information, see <xref
-                href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581">Backup and
+                href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581c2br">Backup and
                 Restore Configuration Files and MySQL Clusters</xref>.</p>
             <p>For information on backing up and restoring the KVM region, see the <xref
                 href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
@@ -477,7 +477,7 @@
               considerations. For all purposes, a PCI passthrough interface behaves as if it were
               physically attached to the virtual machine.</p>
             <p>Instructions for configuring SR-IOV are available after for installation, see <xref
-                href="../Installation/CGH-2-install-pci-pass.dita#topic10581">Configuring
+                href="../Installation/CGH-2-install-pci-pass.dita#topic10581c2ipp">Configuring
                 PCI-Passthrough</xref></p>
             <p><b>SR-IOV</b>. A Single-Root I/O Virtualization (SR-IOV) Ethernet interface is a
               physical PCI Ethernet NIC that implements hardware-based virtualization mechanisms to
@@ -497,7 +497,7 @@
                   Carrier Grade.</li>
               </ul></p>
             <p>Instructions for configuring SR-IOV are available after for installation, see <xref
-                href="../Installation/CGH-2-install-sr-iov.dita#topic10581">Configuring
+                href="../Installation/CGH-2-install-sr-iov.dita#topic10581c2isi">Configuring
                 SR-IOV</xref>.</p>
           </dd>
         </dlentry>

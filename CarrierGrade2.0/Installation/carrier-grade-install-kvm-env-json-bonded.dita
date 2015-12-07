@@ -26,8 +26,8 @@
                 environment. </p><p>Note that the <codeph>port</codeph> field should not be changed
                 from the example. The <codeph>label</codeph> field can be changed, as needed.
                     </p><p><i>Return to installing the non-KVM region for the <xref
-                        href="CGH-2-install-memphis.dita#topic10581/conref-json">memphis</xref> or
-                        <xref href="CGH-2-install-sacramento.dita#topic10581/conref-json"
+                        href="CGH-2-install-memphis.dita#topic10581c2im/conref-json">memphis</xref> or
+                        <xref href="CGH-2-install-sacramento.dita#topic10581c2is/conref-json"
                         >sacramento</xref> template.</i></p>{     "product": {         "version": 1
             },     "node-type": [         {             "name": "CCN",             "interface-map":
             [                 {                     "name": "INTF0",

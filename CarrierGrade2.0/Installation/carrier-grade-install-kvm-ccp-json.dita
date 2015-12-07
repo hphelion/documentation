@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581cgikcj">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ccp-dcn-esx.json
         File </title>
 <prolog>
@@ -63,11 +63,11 @@
             "services": [</codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-                <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-json">Tahoe
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/conref-json">Tahoe
                         deployment</xref></li>
-                <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-json">Memphis
+                <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/conref-json">Memphis
                         deployment</xref></li>
-                <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-json">Sacramento
+                <li><xref href="CGH-2-install-sacramento.dita#topic10581c2is/conref-json">Sacramento
                         deployment</xref></li>
             </ul></p>
 </body>

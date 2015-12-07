@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2iv">
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying a vApp for
         DCN/ESX Integration (VRSvApp)</title>
     <prolog>
@@ -16,8 +16,8 @@
     </prolog>
     <body>
         <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/conref-vapp">memphis</xref> or <xref
-                href="CGH-2-install-sacramento.dita#topic10581/conref-vapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581c2is/conref-vapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581c2is/conref-vapp">sacramento</xref>
                 template.</i></p>
         <p>This document describes how to install the HP Distributed Cloud Networking (DCN) vSphere
             Solution required to properly integrate the HPE Distributed Cloud Networking and VMWare
@@ -325,8 +325,8 @@ vsd.api.url=https://&lt;vsd_ip&gt;:8443/nuage/api/v3_2</codeblock></li>
             </p>
         </section>
         <p><i>Return to installing the non-KVM region for the <xref
-            href="CGH-2-install-memphis.dita#topic10581/conref-vapp">memphis</xref> or <xref
-                href="CGH-2-install-sacramento.dita#topic10581/conref-vapp">sacramento</xref>
+            href="CGH-2-install-memphis.dita#topic10581c2is/conref-vapp">memphis</xref> or <xref
+                href="CGH-2-install-sacramento.dita#topic10581c2is/conref-vapp">sacramento</xref>
                 template.</i></p>
     </body>
 </topic>

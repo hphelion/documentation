@@ -34,7 +34,7 @@
       <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HP Helion OpenStack
         installation and are independent of HP Helion OpenStack Carrier Grade. During the
         installation, you will integrate the storage into HP Helion OpenStack Carrier Grade. See the
-          <xref href="CGH-2-install-memphis.dita#topic10581/storage">installation
+          <xref href="CGH-2-install-memphis.dita#topic10581c2im/storage">installation
           instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
       <title>Unbonded or Bonded NIC configuration</title>
       <p>During the installation, specific steps might be different, based on whether you are
@@ -71,7 +71,7 @@
             <li>Install the <xref href="CGH-2-install-memphis.dita">HPE Helion
               OpenStack cloud</xref>. These components will be installed into what is called the
               <i>Non-KVM region</i>.</li>
-            <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581">Helion
+            <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Helion
               user interface</xref>.</li>
             <li>Install the <xref href="carrier-grade-install-kvm-memphis.dita">carrier grade cloud</xref>. 
               The carrier grade cloud is deployed into what is

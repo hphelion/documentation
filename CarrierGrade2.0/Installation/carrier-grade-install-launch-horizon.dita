@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgilh">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Launching the Horizon
     Interface</title>
   <prolog>
@@ -66,7 +66,7 @@
       <p>For the <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>KVM
             + ESX deployment</b></xref>, perform the following task. </p>
       <p>For <xref href="carrier-grade-install-overview.dita#topic1925/install-option"><b>the KVM
-            deployment</b></xref>, proceed to the <xref href="#topic10581/next-step" format="dita"
+            deployment</b></xref>, proceed to the <xref href="#topic10581cgilh/next-step" format="dita"
           >Next Step</xref>.</p>
       <p>In order to create VM instances in HP Helion OpenStack Carrier Grade, you need to supply at
         least on ISO image file, and import that file into Horizon. </p>

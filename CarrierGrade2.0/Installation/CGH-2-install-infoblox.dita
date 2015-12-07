@@ -23,7 +23,7 @@
       platforms. Refer to the Infoblox documentation for operation and maintenance information. </p>
     <p>You will need to purchase a license from Infoblox before installing.</p>
     <p>If you are not installing Infoblox, go to <xref
-        href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+        href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
         Interface</xref>.</p>
     <section>
       <p><b>Deploy and Configure Infoblox Openstack Adapter (IOA) VM in ESX</b></p>
@@ -340,7 +340,7 @@ region_name = Memphis</codeblock></li>
     </section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
         Interface</xref></p>
     </section>
   </body>

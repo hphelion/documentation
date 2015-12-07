@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgilcgilss">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Lifecycle
     Manager and Installation Services</title>
 <prolog>
@@ -149,7 +149,7 @@ upstream_ntp_servers:
     </section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581">Installing the Non-KVM
+      <p><xref href="carrier-grade-install-non-kvm.dita#topic10581cgink">Installing the Non-KVM
           Region</xref></p>
       <p/>
     </section>

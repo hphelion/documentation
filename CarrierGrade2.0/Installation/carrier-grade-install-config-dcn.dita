@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgicd">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring Your Cloud
     with DCN VSD</title>
   <prolog>
@@ -314,7 +314,7 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
           </p></li>
         <!--<li>Source the stackrc file: <pre>source stackrc</pre></li>-->
         <li> Map the organization created in VSD to HCG artifact:<ol id="ol_tdh_s4y_nt">
-            <li>Create a net partition with same organization name that <xref href="#topic10581/org"
+            <li>Create a net partition with same organization name that <xref href="#topic10581cgicd/org"
                 format="dita">you created in VSD</xref>.<p>
                 <codeblock>neutron nuage-netpartition-create &lt;partition_name></codeblock>
               </p><p>Where <codeph>&lt;partition_name></codeph> is the name of the organization you

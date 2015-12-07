@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2ikeo">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installing the KVM + ESX<tm
       tmtype="reg"/> Deployment</title>
   <prolog>
@@ -15,14 +15,14 @@
     </metadata>
   </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581">Helion Lifecycle
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Helion Lifecycle
         Management (HLM) VM is installed</xref>, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925/install-option">KVM + ESX
         deployment</xref> is to deploy the HPE Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
       proxy.  </p>
     <p><b>Note:</b> If you are installing the KVM-only deployment, see <xref
-        href="carrier-grade-install-kvm.dita#topic10581">Installing the KVM Deployment</xref>.</p>
+        href="carrier-grade-install-kvm.dita#topic10581cgik">Installing the KVM Deployment</xref>.</p>
     <section id="prereqs"><title>HPE Distributed Cloud Networking Requirements</title><p>Before
         starting the HPE Helion OpenStack Carrier Grade installation, the VMware vSphere application
         and HPE Distributed Cloud Networking components must be fully installed and
@@ -40,9 +40,9 @@
         <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
           commands. </li>
         <li>Make sure all the VSD services are in PASS state.</li>
-        <li><xref href="#topic10581/vsd" format="dita">Apply the VSD license</xref> based on single
+        <li><xref href="#topic10581c2ikeo/vsd" format="dita">Apply the VSD license</xref> based on single
           or clustered VSD setup. </li>
-        <li><xref href="#topic10581" format="dita">Create the required VSD users</xref>.</li>
+        <li><xref href="#topic10581c2ikeo" format="dita">Create the required VSD users</xref>.</li>
       </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
           Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
         record for <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to
@@ -82,13 +82,13 @@
     <section id="vmware">
       <title>Deploy the VMware vSphere Distributed Switch</title>
       <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
-        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581">Deploying
+        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581cgivs">Deploying
           the VMware vSphere Distributed Switch</xref>. </p>
     </section>
     <section id="vapp">
       <title>Deploy the VRSvApp</title>
       <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
-          href="CGH-2-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref></p>
+          href="CGH-2-install-vsvapp.dita#topic10581c2iv">Deploying the VRS vApp</xref></p>
     </section>
     <section id="vsd">
       <title>Verify VSD is running</title>
@@ -101,17 +101,17 @@
     </section>
     <section id="vsd-license"><title>Apply the VSD License</title>You should have recevied a license
       file when you purchased DCN. You need to apply that license on the KVM Host. For more
-      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
+      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
     <section id="create-user-for-plugin-login">
       <title>Create an OSadmin user for VSD</title>
       <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
-        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581">Create an
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581cgivu">Create an
           OSadmin User for VSD</xref>.</p>
     </section>
     <section id="hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
       <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
-          href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle
+          href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the HPE Helion Lifecycle
           Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
@@ -358,7 +358,7 @@ Password: cghelion</codeblock>
           scope="external">Helion Download Network</xref>.
         <!-- Review with Michael Duncan all JSON files and proxy re: bonded set up --></p>
       <p>For instructions on installing the ESX compute proxy, see <xref
-          href="carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX Compute
+          href="carrier-grade-install-esx-proxy.dita#topic10581cgiep">Deploy the ESX Compute
         Proxy</xref>.</p>
     </section>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
@@ -484,7 +484,7 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
     <section id="nuage"><title>Deploy the Networking Role Patch</title>Before launching the
         <codeph>hlm generate</codeph> command, deploy a patch to update the nuage role required to
       deploy the HPE Helion OpenStack Cloud.<p>For more information, see <xref
-          href="carrier-grade-install-network-role-patch.dita#topic10581">Deploy the Networking Role
+          href="carrier-grade-install-network-role-patch.dita#topic10581cginrp">Deploy the Networking Role
           Patch</xref>.</p></section>
     <section id="hos-cloud">
       <title>Deploy the HPE Helion OpenStack cloud</title>
@@ -500,7 +500,7 @@ volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver</codeblock>
 The cloud &lt;cloudname> was generated successfully.
 ################################################################################</codeblock><p>To
             view the complete output of the command, see <xref
-              href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
+              href="carrier-grade-install-hcfgproc-output.dita#topic10581cgiho"> Output from the hcfgproc
               command</xref>.</p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
@@ -527,15 +527,15 @@ The cloud &lt;cloudname> was generated successfully.
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
       <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
-          href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
+          href="carrier-grade-install-build9-workarounds.dita#topic10581cgibw">this section for
           troubleshooting</xref>. </p>
     </section>
-    <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the lifecycle manager. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the lifecycle manager.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port Security Patch</xref>. </p>--></section>
+    <section><!--<title>Applying the HLM Port Security Patch</title>This patch secures all ports on the lifecycle manager. The standard protocol ports will allow inbound access only and the only the cloud nodes will have inbound access to the other ports of the lifecycle manager.<p>For more information, see the README in the download or <xref href="carrier-grade-install-secure-port-patch.dita#topic10581cgispp">Applying the HLM Port Security Patch</xref>. </p>--></section>
     <section>
       <title>Deploy the Icinga Patch</title>
       <p>After launching the <codeph>hdeploy</codeph> command, deploy three patches to support the
         monitoring of HPE Helion OpenStack. </p>
-      <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581">Deploy
+      <p>For more information, see <xref href="CGH-2-install-icinga-patch.dita#topic10581c2iip">Deploy
           the Icinga Patch</xref>.</p>
     </section>
     <section>
@@ -548,7 +548,7 @@ The cloud &lt;cloudname> was generated successfully.
         v2 authorization. The services need to be modified to use Keystone v3. Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581"
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581cgicl"
           >Configuring LDAP CLI Support</xref></p>
     </section>
     <section>
@@ -581,7 +581,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       </image></section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
           Interface</xref></p>
       <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
     </section>

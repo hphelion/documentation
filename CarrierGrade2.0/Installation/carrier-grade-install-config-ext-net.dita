@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgicen">
   <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Creating a Shared L3
     Management Network</title>
   <prolog>
@@ -15,7 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    <p>After <xref href="carrier-grade-install-kvm-esx.dita#topic10581">the HPE Helion OpenStack
+    <p>After <xref href="carrier-grade-install-kvm-esx.dita#topic10581cgike">the HPE Helion OpenStack
         cloud is installed</xref>, in order for the management network to function across the </p>
     <p>You must perform the following tasks using CLI commands, the HPE Helion OpenStack Carrier
       Grade Horizon interface, and the HPE Virtualized Services Directory Architect (VSD Architect)
@@ -315,7 +315,7 @@ curl -ks -H "X-Nuage-Organization: CSP" -H "Content-Type: application/json" -H "
           </p></li>
         <li>Source the stackrc file: <pre>source stackrc</pre></li>
         <li> Map the organization created in VSD to HCG artifact:<ol id="ol_tdh_s4y_nt">
-            <li>Create a net partition with same organization name that <xref href="#topic10581/org"
+            <li>Create a net partition with same organization name that <xref href="#topic10581cgicen/org"
                 format="dita">you created in VSD</xref>.<p>
                 <codeblock>neutron nuage-netpartition-create &lt;org_name></codeblock>
               </p><p>Where <codeph>&lt;org_name></codeph> is the name of the organization you

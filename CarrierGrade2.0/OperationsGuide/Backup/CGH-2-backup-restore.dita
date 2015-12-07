@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2br">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Backup and Restore
     Configuration Files and MySQL Clusters</title>
   <prolog>
@@ -28,7 +28,7 @@ But the CLI, REST API etc should all be same --></p>
       which you can use to backup and restore essential system files and components of the non-KVM
       cloud. Attis is automatically installed on each of the controller nodes in the non-KVM region.
       Attis uses a command line interface. For more information, see <xref
-        href="CGH-2--backup-restore-cli.dita#topic10581">Attis Backup and Restore CLI</xref>.</p>
+        href="CGH-2--backup-restore-cli.dita#topic10581c2brc">Attis Backup and Restore CLI</xref>.</p>
     <p>The installation also includes the Percona XtraDB application, which takes care of
       synchronization of the data between nodes if one of the nodes goes down and comes back later.
       You can use Percona XtraDB to backup and restore the MySQL nodes that the HP Helion OpenStack
@@ -112,7 +112,7 @@ But the CLI, REST API etc should all be same --></p>
     <section>
       <title>Backup and Restore CLI</title>
       <p>For more information on the Attis backup and restore CLI see <xref
-          href="CGH-2--backup-restore-cli.dita#topic10581">Backup and Restore CLI</xref>.</p>
+          href="CGH-2--backup-restore-cli.dita#topic10581c2brc">Backup and Restore CLI</xref>.</p>
     </section>
     <section><title>Backing up the HP Helion OpenStack Carrier Grade</title>
       <p>To back up an HP Helion OpenStack Carrier Grade appliance (for example, the lifecycle

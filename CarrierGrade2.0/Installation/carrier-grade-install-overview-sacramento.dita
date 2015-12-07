@@ -39,7 +39,7 @@
       <p>You must install DCN, ESX, and 3PAR and/or VSA before starting the HP Helion OpenStack
         installation and are independent of HP Helion OpenStack Carrier Grade. During the
         installation, you will integrate the storage into HP Helion OpenStack Carrier Grade. See the
-          <xref href="CGH-2-install-sacramento.dita#topic10581/backend">installation
+          <xref href="CGH-2-install-sacramento.dita#topic10581c2is/backend">installation
           instructions</xref> for the 3PAR and/or VSA parameters you will need.</p>
     </section>
 
@@ -81,9 +81,9 @@
                     components</xref>. You will also install the VMware ESX compute proxy. These
                   components will be installed into what is called the non-KVM region and connect to
                   the ESX cluster with DCN networking.</li>
-                <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581"
+                <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581cgicd"
                     >Helion user interface</xref>.</li>
-                <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581">required
+                <li>Configure <xref href="carrier-grade-install-config-dcn.dita#topic10581cgicd">required
                     DCN components</xref>.</li>
                 <li>Install the <xref href="carrier-grade-install-kvm-sacramento.dita#topic1107">carrier
                     grade cloud</xref>. The carrier grade cloud is deployed into what is called the

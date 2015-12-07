@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581cgiknjm">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample node-provision.json File
         for Memphis and Tahoe</title>
 <prolog>
@@ -16,7 +16,7 @@
 <body>
     <p>The process for installing the memphis and sacramento deployments requires several JSON file
             that will be used when deploying the HP Helion OpenStack.</p>
-        <section conref="carrier-grade-install-kvm-node-json-sac.dita#topic10581/fields"/>
+        <section conref="carrier-grade-install-kvm-node-json-sac.dita#topic10581cgiknjs/fields"/>
 <section id="sample-node-provisionjson-file">
             <title>Sample node-provision.json file</title>
             <p>The following represents a sample <codeph>node-provision.json</codeph> file. The IP
@@ -102,9 +102,9 @@
 ]</codeblock>
         </section>
     <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-        <li><xref href="CGH-2-install-tahoe.dita#topic10581/conref-node-provision-json">Tahoe
+        <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/conref-node-provision-json">Tahoe
                         deployment</xref></li>
-        <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-node-provision-json">Memphis
+        <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/conref-node-provision-json">Memphis
                         deployment</xref></li>
             </ul></p>
 </body>

@@ -22,11 +22,11 @@
         </prolog>
         <body>
                 <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148/prereqs"/>
-                <section conref="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                         id="conref-vmware-workaround"/>
                 <section id="next-step">
                         <title>Next Step</title>
-                        <p><xref href="CGH-2-install-lifecycle-memphis.dita#topic10581">Deploying
+                        <p><xref href="CGH-2-install-lifecycle-memphis.dita#topic10581c2ilm">Deploying
                                         the lifecycle manager</xref></p>
                 </section>
         </body>

@@ -307,7 +307,7 @@
                     <systemoutput>VMK_NO_MEMORY</systemoutput> error. This is a known problem with
                 HP server and ESXi 5.x.</p>
             <p>To fix this issue, upgrade to HP AMS version 10.0.1 and above. See <xref
-                    href="../Installation/CGH-2-install-vmware-workaround.dita#topic10581">Fixing
+                    href="../Installation/CGH-2-install-vmware-workaround.dita#topic10581c2ivw">Fixing
                     the VMware VMK_NO_MEMORY Error</xref>.</p>
             <p><!--From jow1404333831397.xml and added info --></p>
             <p><b>Use the CLI with the KVM Region </b></p>

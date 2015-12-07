@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgivv">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Verifying the VSC
     VMs</title>
   <prolog>
@@ -35,7 +35,7 @@
      
       <p>If all these test pass to your satisfaction, the HP Helion OpenStack Carrier Grade
       installation is complete. To learn more information about using HP Helion OpenStack Carrier
-      Grade, see the <xref href="../Troubleshooting/CGH-2-troubleshooting.dita#topic10581"
+      Grade, see the <xref href="../Troubleshooting/CGH-2-troubleshooting.dita#topic10581c2t"
         >Administrator Guide</xref>.</p>
   </body>
 </topic>

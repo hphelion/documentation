@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgiko">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Installing the KVM + ESX
     Deployment</title>
 <prolog>
@@ -109,14 +109,14 @@
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the KVM Host under
           <codeph>hlm_clmstaticip</codeph> field.</li> 
       </ol>
-      <p>For KVM + ESX deployments, proceed with <xref href="#topic10581/vsd" format="dita"/>.</p>    
+      <p>For KVM + ESX deployments, proceed with <xref href="#topic10581cgiko/vsd" format="dita"/>.</p>    
 <p>For KVM deployments, skip the following sections and proceed to <xref
-          href="#topic10581/configure-a-json-file-for-installation" format="dita"/>.</p>
+          href="#topic10581cgiko/configure-a-json-file-for-installation" format="dita"/>.</p>
 
 </section>
   
 <section id="vsd"> <title>Configuring the VSD node, creating user and applying License</title>
-  <p>During the <xref href="#topic10581/deploy-the-hlm-and-vsd-vm" format="dita"/> process, the
+  <p>During the <xref href="#topic10581cgiko/deploy-the-hlm-and-vsd-vm" format="dita"/> process, the
         Ansible playbook run creates a virtual machine is created to host the VSD node of DCN.</p>
 <p>You need to log into the VSD node (using SSH), then create a default user and apply the required license.</p>
   
@@ -298,7 +298,7 @@ Password: cghelion</codeblock></p></li>
             directory. </p></li>
         <li>Make sure the nodes are booted up.</li>
   <li>Update the <codeph>node-provision.json</codeph> file used in the <xref type="section"
-            href="#topic10581/pxe-boot">previous step</xref>.<p>a. Change to the
+            href="#topic10581cgiko/pxe-boot">previous step</xref>.<p>a. Change to the
               <codeph>&lt;cloudname&gt;</codeph>
             directory:</p><codeblock>cd ~/&lt;cloudname&gt;</codeblock><p>b. Once the baremetal
             nodes are provisioned, make sure the <codeph>nodes.json</codeph>  file is generated and
@@ -474,7 +474,7 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
         <xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref>
       </p>
 <p>
-  <xref type="section" href="#topic10581"> Return to Top </xref>
+  <xref type="section" href="#topic10581cgiko"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

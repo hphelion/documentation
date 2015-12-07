@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2ivw">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Fixing the VMware
     VMK_NO_MEMORY Error</title>
   <prolog>
@@ -56,17 +56,17 @@
                 <li><xref href="CGH-install-prereqs-memphis.dita#topic7148/conref-vmware-workaround"
                     >Memphis</xref></li>
                 <li><xref
-                    href="CGH-install-prereqs-sacramento.dita#topic10581/conref-vmware-workaround"
+                    href="CGH-install-prereqs-sacramento.dita#topic10581cips/conref-vmware-workaround"
                     >Sacramento</xref></li>
               </ul>
             </entry>
             <entry>
               <p>
                 <ul id="ul_f3y_ggv_25">
-                  <li><xref href="CGH-2-install-memphis.dita#topic10581/conref-vmware-workaround"
+                  <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/conref-vmware-workaround"
                       >Memphis</xref>
                   </li>
-                  <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-vmware-workaround"
+                  <li><xref href="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                       >Sacramento</xref></li>
                 </ul>
               </p>

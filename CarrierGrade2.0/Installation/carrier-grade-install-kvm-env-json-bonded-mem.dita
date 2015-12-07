@@ -325,9 +325,9 @@
                 you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM
                 Host.</p>
             <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-                    <li><xref href="CGH-2-install-tahoe.dita#topic10581/env">Tahoe
+                    <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/env">Tahoe
                             deployment</xref></li>
-                    <li><xref href="CGH-2-install-memphis.dita#topic10581/env">Memphis
+                    <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/env">Memphis
                             deployment</xref></li>
                 </ul></p>
         </section>

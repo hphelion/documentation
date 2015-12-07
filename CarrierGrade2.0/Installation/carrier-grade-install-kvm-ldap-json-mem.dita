@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581cgikljm">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ldap.json File for
         Memphis and Tahoe</title>
 <prolog>
@@ -58,9 +58,9 @@
 </codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
-                <li><xref href="CGH-2-install-tahoe.dita#topic10581/ldap">Tahoe
+                <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/ldap">Tahoe
                         deployment</xref></li>
-                <li><xref href="CGH-2-install-memphis.dita#topic10581/ldap">Memphis
+                <li><xref href="CGH-2-install-memphis.dita#topic10581c2im/ldap">Memphis
                         deployment</xref></li>
             </ul></p>
 </body>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581c2ilt">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Lifecycle Manager
     in a Tahoe Deployment</title>
 <prolog>
@@ -18,8 +18,8 @@
     bootstrapping the lifecycle manager VM and installation services. </p>
   <p>The installation uses Ansible playbooks, which are files that contain scripts that execute
     required installation processes.</p>
-  <section conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/debian"/>
-    <bodydiv conref="CGH-2-install-lifecycle-sacramento.dita#topic10581/hlm"></bodydiv>
+  <section conref="CGH-2-install-lifecycle-sacramento.dita#topic10581c2ils/debian"/>
+    <bodydiv conref="CGH-2-install-lifecycle-sacramento.dita#topic10581c2ils/hlm"></bodydiv>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="CGH-2-install-tahoe.dita">Installing the Non-KVM Region</xref></p>

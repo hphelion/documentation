@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgink">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installing the Non-KVM
     Region</title>
   <prolog>
@@ -21,16 +21,16 @@
     <p>Use one of the following links, depending upon which deployment model you are using:<ul
         id="ul_r4h_zgx_vt">
         <li>Denver. The Denver deployment includes a KVM region and uses AVS networking. See <xref
-            href="CGH-2-install-denver.dita#topic10581">Deploying the denver template</xref>. </li>
+            href="CGH-2-install-denver.dita#topic10581c2id">Deploying the denver template</xref>. </li>
         <li>Tahoe. The Tahoe deployment includes a KVM region and uses HPE DCN VRS networking. See
-            <xref href="CGH-2-install-tahoe.dita#topic10581">Deploying the tahoe
+            <xref href="CGH-2-install-tahoe.dita#topic10581c2it">Deploying the tahoe
           template</xref>.</li>
         <li>Memphis. The Memphis deployment includes the KVM region, ESX storage, and uses HPE DCN
-          VRS networking. See <xref href="CGH-2-install-memphis.dita#topic10581">Deploying the
+          VRS networking. See <xref href="CGH-2-install-memphis.dita#topic10581c2im">Deploying the
             memphis template</xref>. </li>
         <li>Sacramento. The Sacramento deployment includes the KVM region, the baremetal region, ESX
           storage, and uses HPE DCN VRS networking. See <xref
-            href="CGH-2-install-sacramento.dita#topic10581">Deploying the sacramento
+            href="CGH-2-install-sacramento.dita#topic10581c2is">Deploying the sacramento
           template</xref>.</li>
       </ul></p>
   </body>

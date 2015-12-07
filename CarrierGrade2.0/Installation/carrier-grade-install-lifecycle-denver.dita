@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581cgild">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Lifecycle Manager
     in a Denver Deployment</title>
 <prolog>
@@ -14,7 +14,7 @@
   </metadata>
 </prolog>
 <body>
-    <bodydiv conref="carrier-grade-install-hlm-vm.dita#topic10581/hlm"/>
+    <bodydiv conref="carrier-grade-install-hlm-vm.dita#topic10581cgihv/hlm"/>
     <p/>
   </body>
 </topic>

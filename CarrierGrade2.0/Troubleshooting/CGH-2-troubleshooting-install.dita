@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581c2ti">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
     Troubleshooting</title>
   <prolog>
@@ -18,13 +18,13 @@
     <p>This topic describes all the known issues that you might encounter:</p>
     <section>
       <ul id="ul_xzh_nmc_mt">
-        <li><xref href="#topic10581/provision" format="dita"/></li>
-        <li><xref href="#topic10581/ansible-accelerate" format="dita"/></li>
-        <li><xref href="#topic10581/fail-apache" format="dita"/></li>
-        <li><xref href="#topic10581/fail-ntp" format="dita"/></li>
-        <li><xref href="#topic10581/install-fails" format="dita"/></li>
-        <li><xref href="#topic10581/vm" format="dita"/></li>
-        <li><xref href="#topic10581/vrs" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/provision" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/ansible-accelerate" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/fail-apache" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/fail-ntp" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/install-fails" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/vm" format="dita"/></li>
+        <li><xref href="#topic10581c2ti/vrs" format="dita"/></li>
       </ul>
     </section>
     <section id="provision"><title>Node fails to boot during HLM provision</title>
@@ -194,7 +194,7 @@ HLM-CFG</codeblock></li>
         <b>System Behavior/Message</b>
       </p>
       <p>After <xref
-          href="../Installation/carrier-grade-install-config-dcn.dita#topic10581/vrsg-config"
+          href="../Installation/carrier-grade-install-config-dcn.dita#topic10581cgicd/vrsg-config"
           >configuring the VRS-G</xref> during installation, the VRS-G VM is assigned with private
         and floating IP ddress, when seen on the VSD dashboard. However, if you launch a console
         session to the VM, there is no networking.</p>

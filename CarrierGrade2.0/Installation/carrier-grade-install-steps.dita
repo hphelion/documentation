@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic10581">
+<topic xml:lang="en-us" id="topic10581cgis">
   <body>
     <section id="prereqs"><p>Before starting the HPE Helion OpenStack Carrier Grade installation, the
         VMware vSphere application and HPE Distributed Cloud Networking components must be fully
@@ -19,9 +19,9 @@
         <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
           commands. </li>
         <li>Make sure all the VSD services are in PASS state.</li>
-        <li><xref href="#topic10581/vsd" format="dita">Apply the VSD license</xref> based on single
+        <li><xref href="#topic10581cgis/vsd" format="dita">Apply the VSD license</xref> based on single
           or clustered VSD setup. </li>
-        <li><xref href="#topic10581" format="dita">Create the required VSD users</xref>.</li>
+        <li><xref href="#topic10581cgis" format="dita">Create the required VSD users</xref>.</li>
       </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
           Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
         record for <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to
@@ -57,13 +57,13 @@
     <section id="vmware">
       <title>Deploy the VMware vSphere Distributed Switch</title>
       <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
-        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581">Deploying
+        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581cgivs">Deploying
           the VMware vSphere Distributed Switch</xref>. </p>
     </section>
     <section>
       <title>Deploy the VRSvApp</title>
       <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
-          href="carrier-grade-install-vsvapp.dita#topic10581">Deploying the VRS vApp</xref>. </p>
+          href="carrier-grade-install-vsvapp.dita#topic10581cgiv">Deploying the VRS vApp</xref>. </p>
     </section>
     <section id="vsd">
       <title>Verify VSD is running</title>
@@ -76,18 +76,18 @@
     </section>
     <section><title>Apply the VSD License</title>You should have recevied a license file when you
       purchased DCN. You need to apply that license on the KVM Host. For more information, see <xref
-        href="carrier-grade-install-vsd-license.dita#topic10581"/>.</section>
+        href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
     <section id="create-user-for-plugin-login">
       <title>Create an OSadmin user for VSD</title>
       <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
-        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581">Create an
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581cgivu">Create an
           OSadmin User for VSD</xref>.</p>
     </section>
     
     <section id="configure-a-json-file-for-installation">
       <title>Launch the HPE Helion OpenStack cloud</title>
       <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
-        href="carrier-grade-install-hlm-vm.dita#topic10581">Bootstrapping the HPE Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
+        href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the HPE Helion Lifecycle Management Virtual Machine and Installation Services</xref>:</p>
       <ol>
         <li>Login to lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where: HLM_VM_IP is the CLM
             IP of the lifecycle manager. Locate the IP address for the lifecycle manager in the
@@ -307,7 +307,7 @@ Password: cghelion</codeblock>
           scope="external">Helion Download Network</xref>.
         <!-- Review with Michael Duncan all JSON files and proxy re: bonded set up --></p>
       <p>For instructions on installing the ESX compute proxy, see <xref
-          href="carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX Compute
+          href="carrier-grade-install-esx-proxy.dita#topic10581cgiep">Deploy the ESX Compute
         Proxy</xref>.</p>
     </section>
     <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up">
@@ -434,7 +434,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
         the <codeph>hprovision</codeph> completes successfully. The patch increase the timeout to
         allow enough time for the proxy VM to boot. </p>
       <p>For more information, see the README in the download or <xref
-          href="carrier-grade-install-esx-proxy-patch.dita#topic10581">Apply the ESX Compute Proxy
+          href="carrier-grade-install-esx-proxy-patch.dita#topic10581cgiepp">Apply the ESX Compute Proxy
           Patch</xref>.</p>
     </section>
         <section>
@@ -443,11 +443,11 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
         failing during installation while enabling Generic Routing Encapsulation (GRE) in firewall
         in VRS-G nodes. The other two files enable GRE on VRS-G nodes in the IP tables.  </p>
       <p>For more information, see the README in the download or <xref
-          href="carrier-grade-install-gre-patch.dita#topic10581">Applying the Generic Routing
+          href="carrier-grade-install-gre-patch.dita#topic10581cgigp">Applying the Generic Routing
           Encapsulation (GRE) Patch</xref>.</p>
       <title>Apply the RabbitMQ Random Password patch</title>
       <p>For information, see the README in the download or <xref
-          href="carrier-grade-install-rabbitmq-patch.dita#topic10581">Applying the Random RabbitMQ
+          href="carrier-grade-install-rabbitmq-patch.dita#topic10581cgirp">Applying the Random RabbitMQ
           Password Patch</xref>.</p>
     </section>
         
@@ -457,7 +457,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
         kernel to set the reverse path filter (<codeph>rp_filter</codeph>) to 1 in the
           <codeph>all</codeph> and <codeph>default</codeph> configuration files. </p><p>For more
         information, see the README in the download or <xref
-          href="carrier-grade-install-rp-filter.dita#topic10581">Applying the Reverse Path Filter
+          href="carrier-grade-install-rp-filter.dita#topic10581cgirf">Applying the Reverse Path Filter
           Patch</xref>.</p></section>
         
         <section><title>Apply the Helion Dynamic Password Patch</title>The HPE Helion OpenStack cloud
@@ -465,11 +465,11 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
       to configure the installer to generate a dynamic user name and password for the Helion
       interface. The user name can password can be retrieved from a configuration files. <p>For more
         information, see the README in the download or <xref
-          href="carrier-grade-install-helion-password-patch.dita#topic10581">Applying the Helion
+          href="carrier-grade-install-helion-password-patch.dita#topic10581cgihpp">Applying the Helion
           Dynamic Password Patch</xref>.</p></section>
         
         <section><title>Apply the NIC bonding patch</title><p>HPE Helion OpenStack Carrier Grade environments using NIC bonding, see the README in the download
-        or <xref href="carrier-grade-install-nic-patch.dita#topic10581">Applying the NIC Bonding
+        or <xref href="carrier-grade-install-nic-patch.dita#topic10581cginp">Applying the NIC Bonding
           Patch</xref> to install a required patch.</p></section>
         
     <section><title>Deploy the HPE Helion OpenStack cloud</title>
@@ -485,7 +485,7 @@ hplefthand_api_url = https://&lt;Iscsi Virtual IP address>/lhos </codeblock></li
 The configuration processor completed successfully.
 ################################################################################</codeblock><p>To
             view the complete output of the command, see <xref
-              href="carrier-grade-install-hcfgproc-output.dita#topic10581"> Output from the hcfgproc
+              href="carrier-grade-install-hcfgproc-output.dita#topic10581cgiho"> Output from the hcfgproc
               command</xref>.</p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
@@ -511,7 +511,7 @@ The configuration processor completed successfully.
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
       <p><b>Note:</b> If the <codeph>hdeploy</codeph> script fails, review the topics in <xref
-          href="carrier-grade-install-build9-workarounds.dita#topic10581">this section for
+          href="carrier-grade-install-build9-workarounds.dita#topic10581cgibw">this section for
           troubleshooting</xref>. </p>
     </section>
     <section id="patch-after">
@@ -520,13 +520,13 @@ The configuration processor completed successfully.
         v2 authorization. The services need to be modified to use Keystone v3.  Users will not be
         able to execute OpenStack CLI commands until the specific changes are made on all three
         controller nodes in the non-KVM region. </p>
-      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581">Configuring LDAP CLI Support</xref></p>
+      <p>For information, see <xref href="carrier-grade-install-config-ldap3.dita#topic10581cgicl">Configuring LDAP CLI Support</xref></p>
     </section>
     <section><title>Applying the HLM Port Security Patch</title>This patch secures all ports on the
       lifecycle manager. The standard protocol ports will allow inbound access only and the only the cloud
       nodes will have inbound access to the other ports of the lifecycle manager.<p>For more information, see
         the README in the download or <xref
-          href="carrier-grade-install-secure-port-patch.dita#topic10581">Applying the HLM Port
+          href="carrier-grade-install-secure-port-patch.dita#topic10581cgispp">Applying the HLM Port
           Security Patch</xref>. </p></section>
     <section>
       <title>Disable the Root User</title>
@@ -534,14 +534,14 @@ The configuration processor completed successfully.
           <codeph>root</codeph> user is disabled, you can use another default user account,
           <codeph>cghelion</codeph> to access the lifecycle manager and any actions that require root access
         should be done using <codeph>sudo</codeph>.</p>
-      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581"
+      <p>For more information, see <xref href="carrier-grade-install-disable-root.dita#topic10581cgidr"
           >Disabling the Root User</xref>.</p>
     </section>
-    <section> To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581"
+    <section> To launch Kibana, see <xref href="carrier-grade-install-access-kibana.dita#topic10581cgiak"
         >Accessing Kibana</xref>.</section>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581">Launching the Horizon Interface</xref></p>
+      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon Interface</xref></p>
       <!--<p><xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref></p>-->
     </section>
   </body>
