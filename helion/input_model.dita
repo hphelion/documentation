@@ -1627,7 +1627,7 @@
         
         - logical-name: hed4
           type: multi-port
-          bus-address: "0000:0a:00.0"
+          bus-address: "0000:09:00.0"
           port-attributes:
               port-num: 1</codeblock>
       <p>Each entry in the <uicontrol>nic-mappings</uicontrol> list has the following
