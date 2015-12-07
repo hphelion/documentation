@@ -539,10 +539,11 @@
           </tgroup>
         </table>
       </p>
-      <p>Also from your lifecycle manager, run the following command and use this information for
-        the <codeph>port-num</codeph> value in your <codeph>nic_mappings.yml</codeph> file.  You
-        will need to do this for each
-        device:<codeblock>cat /sys/class/net/&lt;device name>/dev_id</codeblock></p>
+      <p>For certain adapters with more than one interface, the above command returns a single bus
+        address. In this instance, run the following command from the lifecycle manager. Use this
+        information for the <codeph>port-num</codeph> value in your
+          <codeph>nic_mappings.yml</codeph>
+        file:<codeblock>cat /sys/class/net/&lt;device name>/dev_id</codeblock></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="nic_mappings2">
           <tgroup cols="1">
