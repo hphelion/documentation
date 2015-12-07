@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743cgob">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Baremetal Region
     Overview</title>
 <prolog>
@@ -22,7 +22,7 @@
       metal machines instead of virtual machines.</p>
     <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
     <p>
-      <xref type="section" href="#topic1743"> Return to Top </xref>
+      <xref type="section" href="#topic1743cgob"> Return to Top </xref>
     </p>
     <!-- ===================== horizontal rule ===================== -->
   </body>

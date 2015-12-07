@@ -214,7 +214,7 @@
       </ul><p><b>Note:</b> If you are using Gen9 systens, you must update the firmware to HPE Service
         Pack for ProLiant (SPP) Version 2015.06.0. </p><p id="compute"><b>Compute servers</b>
       </p><p>The following servers are supported for the compute servers in the <xref
-          href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. </p><p>
+          href="../Overview/carrier-grade-overview-kvm.dita#topic1743cgok">KVM region</xref>. </p><p>
         <b>HPE ProLiant BladeSystem</b>
       </p><ul id="ul_er1_sc2_qs">
         <li>BL460c Gen8</li>
