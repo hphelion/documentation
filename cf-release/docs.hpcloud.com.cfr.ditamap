@@ -3,7 +3,7 @@
 <map>
    <title>HP Helion Cloud Foundry</title>
    <mapref href="docs.hpcloud.com.cfr_variables.ditamap"/>
-   <topicref href="home/cfr_home_documentation.dita" otherprops="hcf">
+   <topicref href="home/cfr_index.dita" otherprops="hcf">
       <topicref href="home/cfr_whats_new.dita"/>
       <topicref href="home/cfr_relnotes.dita"/>
       <topicref href="home/cfr_tp_licensing.dita"/>
