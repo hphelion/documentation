@@ -76,7 +76,7 @@
         environment. You can use the CLM network details  from the <codeph>environment.json</codeph>
         file. The compute proxy nodes will be assigned a static IP address based on the cidr
         calculation.</p>
-      <p>See <xref href="carrier-grade-install-pb-kvm-esx-json.dita#topic4797cgipkej">Sample esx.json
+      <p>See <xref href="carrier-grade-install-pb-kvm-esx-json.dita#topic4797cgipkesxj">Sample esx.json
           file</xref> for details on modifying the esx.json file.</p>
     </section>
       <section id="integrate"><title>Integration into the cloud framework</title>
