@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="create_network">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating a Private Network</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating a Private Network</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="prereqs"><title>Prerequisites</title>
       <p>These steps assume the following have been completed:</p>
       <ul>
@@ -10,7 +11,7 @@
         <li>Your Administrator has provided you with the IP address or hostname for the Horizon
           Dashboard.</li>
       </ul>
-      <p>These steps use the pre-setup <codeph>demo</codeph> user account in HPE Helion OpenStack 2.0.
+      <p>These steps use the pre-setup <codeph>demo</codeph> user account in <keyword keyref="kw-hos-phrase"/>.
         If your Administrator has setup a separate user account for you then you will use those
         credentials to access Horizon.</p>
     </section>

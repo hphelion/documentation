@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="neutron_overview">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Networking Service Overview</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Networking Service Overview</title>
   <body>
-    <p>HPE Helion OpenStack Networking is a virtual networking service that leverages the OpenStack
-      Neutron service to provide network connectivity and addressing to HPE Helion OpenStack Compute
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p><keyword keyref="kw-hos"/> Networking is a virtual networking service that leverages the OpenStack
+      Neutron service to provide network connectivity and addressing to <keyword keyref="kw-hos"/> Compute
       service devices.</p>
     <p>The Networking service also provides an API to configure and manage a variety of network
       services.</p>
@@ -45,8 +46,8 @@ ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock>
   <!--
     <section id="UI">
       <title>Using the dashboards</title>
-      <p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita">HP
-          Helion OpenStack Dashboard</xref> to work with the Networking service.</p>
+      <p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita">
+          <keyword keyref="kw-hos"/> Dashboard</xref> to work with the Networking service.</p>
     </section>
     <section id="API">
       <title>Using the API</title>
@@ -69,7 +70,7 @@ ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</codeblock>
       <p>For information on how to operate your cloud we suggest you read the <xref
           href="http://docs.openstack.org/ops/" scope="external" format="html">OpenStack Operations
           Guide</xref>. The <i>Architecture</i> section contains useful information about how an
-        OpenStack Cloud is put together. However, the HPE Helion OpenStack takes care of these
+        OpenStack Cloud is put together. However, the <keyword keyref="kw-hos"/> takes care of these
         details for you. The <i>Operations</i> section contains information on how to manage the
         system.</p>
     </section>

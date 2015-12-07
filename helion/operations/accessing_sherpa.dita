@@ -1,45 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1326">
-<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Accessing the Sherpa Catalog</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HPE Helion Openstack"/>
-<othermeta name="product-version" content="HPE Helion Openstack 1.1"/>
-<othermeta name="role" content="Storage Engineer"/>
-<othermeta name="role" content="Storage Architect"/>
-<othermeta name="role" content="Storage Administrator"/>
-<othermeta name="role" content="Storage Engineer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Cloud Administrator"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HPE Helion Openstack"/>
-<othermeta name="product-version2" content="HPE Helion Openstack 1.1"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./commercial/GA1/1.1commerical.services-sherpa-accessing-ui.md-->
- <!--permalink: /helion/openstack/1.1/services/sherpa/accessing/--></p>
-<p>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="sherpa_access">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Accessing and Using the Sherpa
+    Catalog</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section id="about">
+      <p>The <keyword keyref="kw-hos"/> Sherpa service provides a link to the remote web catalog
+        containing a repository of software available for purchase and download into the HPE Helion
+        environment.</p>
+      <p>You can make purchases using a self-service account on the public web server. Once a
+        purchase is made, you can use the Sherpa UI and back-end service to download the
+        content.</p>
+      <p>Content may include patches, plugins, images, models, and so forth that may be used to
+        update, improve, extend, or provide content for the cloud.</p>
+    </section>
 
-</p>
-<p>The <xref href="sherpa_overview.dita">HPE Helion OpenStack Sherpa Service</xref> provides a link
-      to the remote web catalog containing a repository of software available for purchase and
-      download into the HPE Helion environment.  </p>
-<p>You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content.</p>
-<p>To access the Sherpa UI:</p>
-<ol>
-<li>Log into the Horizon dashboard</li>
-<li>Navigate to <b>Admin -&gt; Updates and Extensions -&gt; Updates and Extensions</b>.</li>
-<li>Click <b>Configure</b> to authenticate to the Helion Download Network (HDN).<p>
-          <image href="../../media/SherpaConfigure.png" placement="break"/>
-        </p></li>
-<li>Provide the credentials if you have already signed up, if not, sign up by clicking the <b>Sign
-          up now</b> link.<p/></li>
-</ol>
-</body>
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>If the <keyword keyref="kw-hos"/> environment is behind a firewall, you need to set the Sherpa
+        proxy shell variables so that the Sherpa service can communicate out to the Helion Download
+        Network (HDN). If you did not already set these values during the installation process, here
+        is how you can change these post-installation:</p>
+      <p>On your lifecycle manager, perform these steps to set the proxies:</p>
+      <ol>
+        <li>Edit the sherpa.conf.j2 file in the location below:
+          <codeblock>~/helion/my_cloud/config/sherpa/sherpa.conf.j2</codeblock></li>
+        <li>Verify that the <codeph>http_proxy</codeph> and <codeph>https_proxy</codeph> values are
+          set appropriately for your environment. The text in the file will look like this:
+          <codeblock>##############################################################
+# Proxy settings must be present
+# but can be empty string ('') if no proxy needed
+##############################################################
+http_proxy = '{{ sherpa_http_proxy }}'
+https_proxy = '{{ sherpa_https_proxy }}'
+no_proxy =  '{{ sherpa_no_proxy }}'
+##############################################################</codeblock></li>
+        <li>Commit your configuration to the <xref href="../installation/using_git.dita">local git
+            repo</xref>, as follows:
+          <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Use the playbook below to create a deployment directory:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Commit your changes to Sherpa with this playbook:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts sherpa-reconfigure.yml</codeblock></li>
+      </ol>
+    </section>
+
+    <section id="access"><title>Accessing the Sherpa UI</title>
+      <p>To access the Sherpa UI:</p>
+      <ol>
+        <li>Log into the Horizon dashboard. See <xref href="accessing_horizon.dita">Accessing the
+            Horizon Dashboard</xref> for further information.</li>
+        <li>Navigate to <b>Admin -&gt; Updates and Extensions -&gt; Updates and Extensions</b>.</li>
+        <li>Click <b>Configure</b> to authenticate to the Helion Download Network (HDN).<p>
+            <image href="../../media/SherpaConfigure.png" placement="break"/>
+          </p></li>
+        <li>Provide the credentials if you have already signed up, if not, sign up by clicking the
+            <b>Sign up now</b> link.</li>
+      </ol>
+    </section>
+
+
+    <section id="validating"><title>Validating Download Signatures</title>
+      <p>The Sherpa service provides a link to the remote web catalog providing a repository of
+        software and patches that can be purchased and downloaded into the Helion environment. Users
+        will make their purchases using a self-service account on the public web server. Once a
+        purchase is made, you can use the Sherpa UI and back end service to download the content
+        from the web catalog using their (web-catalog) self-service account. Content may include
+        patches, plugins, images, templates, models, etc. that may be used to update or provide
+        content to the cloud. Manual validation of package signatures is required in some use cases
+        To verify the signature of packages you download, follow these instructions:</p>
+      <p><b>Verify the downloaded signature</b></p>
+      <ul>
+        <li>Log into one of the controller nodes </li>
+        <li>Download the CSU file from the Swift to the controller node </li>
+        <li>Download the signature file of the CSU file from Helion Download Network(HDN) </li>
+        <li>Check all public keys are already delivered in /etc/sherpa
+          <codeblock>ls -l /etc/sherpa
+total 44
+-r--r--r-- 1 sherpa sherpa  647 Oct 21 08:10 gpg_2048_hpPublicKey.pub
+-r--r--r-- 1 sherpa sherpa 1712 Oct 21 08:10 gpg-hpPublicKey.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-1.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-2.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-3.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-4.pub
+-r--r--r-- 1 sherpa sherpa  994 Oct 21 08:10 HP-RPM-GPG-2048-KEY-5.pub</codeblock>
+        </li>
+        <li>Execute the following command to import the keys: <codeblock>gpg --import "</codeblock>
+          where &lt;filename> is the name of the public key. The keys are then imported into the
+          gpgp key share:
+          <codeblock>gpg --import gpg-hpPublicKey.pub
+gpg --import gpg_2048_hpPublicKey.pub
+gpg --import HP-RPM-GPG-2048-KEY-1.pub
+gpg --import HP-RPM-GPG-2048-KEY-2.pub
+gpg --import HP-RPM-GPG-2048-KEY-3.pub
+gpg --import HP-RPM-GPG-2048-KEY-4.pub
+gpg --import HP-RPM-GPG-2048-KEY-5.pub</codeblock>
+        </li>
+        <li>Use the following command to view the keys in the key store:
+          <codeblock>gpg --list-keys
+/home/stack/.gnupg/pubring.gpg
+------------------------------
+pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
+uid                  Hewlett Packard Enterprise Company (HPE Codesigning Service)
+pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service)
+pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 1
+pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 2
+pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 3
+pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 4
+pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5</codeblock>
+        </li>
+        <li>Use the following command to verify the signature:
+          <codeblock>gpg --verify &lt;filename>.sig &lt;filename>.csu</codeblock>
+        </li>
+        <li>Perform this verification for each file you downloaded. </li>
+      </ul>
+    </section>
+
+
+  </body>
 </topic>

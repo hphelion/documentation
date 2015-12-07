@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="using_git">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using Git for Configuration
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Using Git for Configuration
     Management</title>
   <body>
-    <p>In HPE Helion OpenStack 2.0, a local git repository is used to track configuration changes
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>In <keyword keyref="kw-hos-phrase"/>, a local git repository is used to track configuration changes
       and the configuration processor (CP) uses this repository. The introduction of a git workflow
       also means that your configuration history is maintained, making rollbacks easier as well as
       keeping a record of previous configuration settings.</p>
@@ -16,7 +17,7 @@
       (i.e. from HP) updates, and allows you to manage your own configuration changes. </p>
     <section>
       <title>Initialization on a new deployment</title>
-      <p>On a system new to HPE Helion OpenStack 2.0, the lifecycle manager will prepare a git repository
+      <p>On a system new to <keyword keyref="kw-hos-phrase"/>, the lifecycle manager will prepare a git repository
         under <codeph>~/helion</codeph>. The lifecycle manager provisioning runs the
           <codeph>hlm-init-deployer</codeph> script automatically - this calls
           <codeph>ansible-playbook -i hosts/localhost git-00-initialise.yml</codeph>.</p>

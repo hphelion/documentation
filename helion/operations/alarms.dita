@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic id="alarmdefinitions">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Service Alarm Definitions</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Service Alarm Definitions</title>
   <shortdesc>This topic contains a list of service-specific alarms and the recommended
     troubleshooting steps.</shortdesc>
   <body><!--Needs Work; should the command/code content in the table be surrounded by codeph tags; we are inconsistent? for Ceilometer/HTTP Status, what needs to be restarted (it?); is there a mititgation for Keystone/Host alive Check?-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>When alarms are triggered it may be helpful for you to review the service logs. For details
       on how to use the logging user interface built into the Operations Console, see <xref
-        href="centralized_logging.dita#logging/interface"/>.</p>
+        href="centralized_logging.dita#centralized_logging/interface"/>.</p>
     <section id="services"><title>Services</title>
       <p>Alarms for the following services are described below:</p>
       <ul>
@@ -158,6 +159,12 @@
                 </entry>
                 <entry>Run the cinder-migrate-volume playbook to migrate the volume and backup to
                   correct node.</entry>
+              </row>
+              <row>
+                <entry>Cinderlm diagnostics monitoring</entry>
+                <entry/>
+                <entry/>
+                <entry>See <xref href="../releasenotes.dita#release-notes/cinderlm">release notes</xref> for information about this alarm.</entry>
               </row>
             </tbody>
           </tgroup>

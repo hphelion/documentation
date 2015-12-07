@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_d3l_svr_4t">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Managing Object Storage Rings</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Managing Object Storage Rings</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>The rings are a machine-readable description of which disk drives are used by Swift (for
       example, a drive is used to store account or object data). Rings also specify the policy for
       data storage (for example, defining the number of replicas). The rings are automatically built
       during the initial deployment of the system, with the configuration provided during setup of
-      the HPE Helion OpenStack Input Model. (For more information, see <xref
+      the <keyword keyref="kw-hos"/> Input Model. (For more information, see <xref
         href="../input_model.dita#input_model"/>.) </p>
     <p>After successful deployment of your cloud, you may want to change or modify the configuration
       for Swift. For example, you may want to add or remove Swift nodes, add additional storage

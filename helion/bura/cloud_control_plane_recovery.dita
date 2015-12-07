@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_tb4_lqy_qt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Recovering the Cloud Control Plane</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Recovering the Cloud Control Plane</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section><title>Point in time database recovery</title><p>Everything is still running (lifecycle
         manager, cloud controller nodes (CCNs), and compute nodes (CPNs) but you want to restore the
         MySQL database to an old state.</p></section>
@@ -411,19 +412,18 @@ freezer-agent --config ./restore_config.ini
 # Then from the deployer run
  
 cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock><p>If
-                the SWF-PRX[0] is<b> not </b>deployed:
+ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</codeblock><p>If the SWF-PRX[0] is<b> not </b>deployed:
                 <codeblock># From the deployer run
 cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_host guard-deployment.yml
-ansible-playbook -i hosts/verb_host osconfig-run.yml
+ansible-playbook -i hosts/verb_hosts guard-deployment.yml
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml
  
 # Copy the content of the restored directory (/tmp/hlm_builder_dir_restore/) to /etc/swiftlm/builder_dir/ on the SWF-PRX[0]
 # You will have to create the directories : /etc/swiftlm/builder_dir/
  
 # From the deployer run
 cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_host hlm-deploy.yml</codeblock></p></li>
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock></p></li>
           </ol></li>
       </ul></section>
 

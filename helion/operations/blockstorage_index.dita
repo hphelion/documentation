@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ops_cinder">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Block Storage Operations</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>This section contains operations tasks for your HPE Helion OpenStack 2.0 Block Storage service.</p>
+  </body>
+</topic>

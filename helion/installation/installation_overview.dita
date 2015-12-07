@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_overview">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation Overview</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation Overview</title>
   <body>
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/installation_overview.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="../../helion/installation/installation_overview.html" scope="external" format="html"
+        >Click here</xref> for a frameless version of this page where the links should work.</note>
     <section id="overview">
       <p>Before jumping into your installation, we recommend taking the time to read through our
           <xref href="../example_configurations.dita">Example Configurations</xref> documentation to
-        get an overview of the sample configurations HPE Helion OpenStack 2.0 offers. We have highly
-        tuned example configurations for each of these Cloud models:</p>
+        get an overview of the sample configurations <keyword keyref="kw-hos-phrase"/> offers. We
+        have highly tuned example configurations for each of these Cloud models:</p>
       <ul>
         <li><xref href="../example_configurations.dita#example_configurations/entryscale_kvm_vsa"
             >Entry-scale KVM with VSA model</xref></li>
@@ -26,11 +28,11 @@
         recommend going through to ensure your environment meets the requirements of the Cloud model
         you choose.</p>
     </section>
-    <section id="about"><title>Helion OpenStack 2.0 Installation</title>
+    <section id="about"><title><keyword keyref="kw-hos-phrase"/> Installation</title>
       <p>Once you have an idea of the configuration you want to choose for your cloud and you have
         gone through the pre-installation steps, you have two options for installation. You can use
         a GUI that runs in your web browser or you can install via the command-line that exposes the
-        full power and flexibility of HPE Helion OpenStack 2.0.</p>
+        full power and flexibility of <keyword keyref="kw-hos-phrase"/>.</p>
       <p><b>Using the GUI</b></p>
       <p>You should use the GUI if: <ul>
           <li>You are installing a simple demo or proof-of-concept cloud. </li>
@@ -57,8 +59,8 @@
         <li>You need to use availability zones or the server groups functionality of the cloud
           model. See the <xref href="../input_model.dita#input_model">Input Model page</xref> for
           more information. </li>
-        <li>You want to customize the cloud configuration beyond the tuned defaults that HPE provides
-          out of the box. </li>
+        <li>You want to customize the cloud configuration beyond the tuned defaults that HPE
+          provides out of the box. </li>
         <li>You need deeper customizations than are possible to express using the GUI.</li>
       </ul>
     </section>

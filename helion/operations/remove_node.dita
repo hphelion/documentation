@@ -1,235 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_fld_zzy_lt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Compute Node</title>
+<topic id="remove_node">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Removing a Compute Node</title>
   <body>
-    <!--Needs Work-->
-    <section id="removeNodes"> The process for removing a compute node requires that you run these
-      steps. Note that to run any playbooks whatsoever for cloud maintenance, you will always run
-      from the lifecycle manager.<ol>
-        <li>If availability zones are configured, remove the affected node from its availability
-          zone.</li>
-        <li>Disable provisioning to prevent new instances from being created on this node. </li>
-        <li>If possible migrate any instances on the node to other nodes. </li>
-        <li>Shut down the node or stop the nova-compute service. </li>
-        <li>Delete the compute node from nova </li>
-        <li>Amend servers.yml in the cloud configuration to remove entry for this node, commit the
-          change and re run the config processor </li>
-        <li>Remove the node from cobbler</li>
-<li>Remove the node from monitoring</li>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="../../helion/operations/remove_node.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
+    <section id="about">
+      <p>You may have a need to remove a Compute node and these steps will help you achieve
+        this.</p>
+      <p>The steps involved are:</p>
+      <ol>
+        <li><xref href="remove_node.dita#remove_node/disable_provisioning">Disable Provisioning on
+            the Compute Host</xref></li>
+        <li><xref href="remove_node.dita#remove_node/remove_az">Remove the Compute Host from its
+            Availability Zone</xref></li>
+        <li><xref href="remove_node.dita#remove_node/live_migration">Use Live Migration to Move Any
+            Instances on This Host to Other Hosts</xref></li>
+        <li><xref href="remove_node.dita#remove_node/shutdown_node">Shutdown or Stop the Nova
+            Service on the Compute Host</xref></li>
+        <li><xref href="remove_node.dita#remove_node/delete_node">Delete The Compute Host from
+            Nova</xref></li>
+        <li><xref href="remove_node.dita#remove_node/remove_node">Remove the Compute Host from the
+            servers.yml File and Run the Configuration Processor</xref></li>
+        <li><xref href="remove_node.dita#remove_node/remove_cobbler">Remove the Compute Host from
+            Cobbler</xref></li>
+        <li><xref href="remove_node.dita#remove_node/remove_monitoring">Remove the Compute Host from
+            Monitoring</xref></li>
       </ol>
     </section>
 
-    <section id="removeAZ"><title>Remove Hosts from Host Aggregates</title> When removing a compute
-      node, if availability zones have been configured, either manually or using the Nova playbook
-        <b>nova-cloud-configure.yml</b>, or you have manually configured any host aggregates, then
-      before executing the <codeph>service-delete</codeph> command you need to remove the host(s)
-      being deleted from any host aggregates. For example: <ol>
-        <li>Disable the
-          service<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-disable --reason="HNOV-240 - removed" padawan-ccp-comp0002-mgmt nova-compute</codeblock><codeblock>+---------------------------+--------------+----------+--------------------+
-| Host                      | Binary       | Status   | Disabled Reason    |
-+---------------------------+--------------+----------+--------------------+
-| padawan-ccp-comp0002-mgmt | nova-compute | disabled | HNOV-240 - removed |
-+---------------------------+--------------+----------+--------------------+</codeblock></li>
-        <li>Get nova service
-          list<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+------------------+---------------------------+----------+----------+-------+----------------------------+--------------------+
-| Id | Binary           | Host                      | Zone     | Status   | State | Updated_at                 | Disabled Reason    |
-+----+------------------+---------------------------+----------+----------+-------+----------------------------+--------------------+
-| 1  | nova-conductor   | padawan-ccp-c1-m1-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:12.000000 | -                  |
-| 4  | nova-scheduler   | padawan-ccp-c1-m1-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:13.000000 | -                  |
-| 7  | nova-conductor   | padawan-ccp-c1-m3-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:14.000000 | -                  |
-| 10 | nova-conductor   | padawan-ccp-c1-m2-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:12.000000 | -                  |
-| 13 | nova-scheduler   | padawan-ccp-c1-m3-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:13.000000 | -                  |
-| 16 | nova-consoleauth | padawan-ccp-c1-m1-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:14.000000 | -                  |
-| 19 | nova-scheduler   | padawan-ccp-c1-m2-mgmt    | internal | enabled  | up    | 2015-10-12T08:46:13.000000 | -                  |
-| 22 | nova-compute     | padawan-ccp-comp0002-mgmt | AZ2      | disabled | up    | 2015-10-12T08:46:12.000000 | HNOV-240 - removed |
-| 25 | nova-compute     | padawan-ccp-comp0001-mgmt | AZ1      | enabled  | up    | 2015-10-12T08:46:11.000000 | -                  |
-| 28 | nova-compute     | padawan-ccp-comp0003-mgmt | AZ3      | enabled  | up    | 2015-10-12T08:46:11.000000 | -                  |
-+----+------------------+---------------------------+----------+----------+-------+----------------------------+--------------------+</codeblock></li>
-        <li>Get availability
-          zones<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-list</codeblock><codeblock>+----+------+-------------------+
-| Id | Name | Availability Zone |
-+----+------+-------------------+
-| 1  | AZ1  | AZ1               |
-| 4  | AZ2  | AZ2               |
-| 7  | AZ3  | AZ3               |
-+----+------+-------------------+</codeblock></li>
-        <!--  TODO missing content here -->
-        <li>Check that the availability zone has been
-          removed:<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-remove-host AZ2 padawan-ccp-comp0002-mgmt</codeblock><codeblock>Host padawan-ccp-comp0002-mgmt has been successfully removed from aggregate 4</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
-| Id | Name | Availability Zone | Hosts | Metadata                |
-+----+------+-------------------+-------+-------------------------+
-| 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
-+----+------+-------------------+-------+-------------------------+</codeblock></li>
-        <li>Get availability zone aggregate
-          details<codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova aggregate-details AZ2</codeblock><codeblock>+----+------+-------------------+-------+-------------------------+
-| Id | Name | Availability Zone | Hosts | Metadata                |
-+----+------+-------------------+-------+-------------------------+
-| 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
-+----+------+-------------------+-------+-------------------------+</codeblock></li>
-        <li>Delete service ID 22 (AZ2) and check that is deleted using <codeph>nova
-            service-list</codeph><codeblock>stack@padawan-ccp-c0-m1-mgmt:~$ nova service-delete 22
-stack@padawan-ccp-c0-m1-mgmt:~$ nova service-list</codeblock><codeblock>+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
-| Id | Binary           | Host                      | Zone     | Status  | State | Updated_at                 | Disabled Reason |
-+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+
-| 1  | nova-conductor   | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-12T08:47:56.000000 | -               |
-| 4  | nova-scheduler   | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-12T08:47:53.000000 | -               |
-| 7  | nova-conductor   | padawan-ccp-c1-m3-mgmt    | internal | enabled | up    | 2015-10-12T08:47:54.000000 | -               |
-| 10 | nova-conductor   | padawan-ccp-c1-m2-mgmt    | internal | enabled | up    | 2015-10-12T08:47:52.000000 | -               |
-| 13 | nova-scheduler   | padawan-ccp-c1-m3-mgmt    | internal | enabled | up    | 2015-10-12T08:47:53.000000 | -               |
-| 16 | nova-consoleauth | padawan-ccp-c1-m1-mgmt    | internal | enabled | up    | 2015-10-12T08:47:54.000000 | -               |
-| 19 | nova-scheduler   | padawan-ccp-c1-m2-mgmt    | internal | enabled | up    | 2015-10-12T08:47:53.000000 | -               |
-| 25 | nova-compute     | padawan-ccp-comp0001-mgmt | AZ1      | enabled | up    | 2015-10-12T08:47:51.000000 | -               |
-| 28 | nova-compute     | padawan-ccp-comp0003-mgmt | AZ3      | enabled | up    | 2015-10-12T08:47:51.000000 | -               |
-+----+------------------+---------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock>
-        </li>
+    <section id="disable_provisioning"><title>Disable Provisioning on the Compute Host</title>
+      <ol>
+        <li>Get a list of the Nova services running which will provide us with the details we need
+          to disable the provisionong on the Compute host you are wanting to remove: <codeblock>nova service-list</codeblock>
+          <p>Here is an example below. I've highlighted the Compute node we are going to remove in
+            the examples:</p>
+          <codeblock>$ nova service-list
++----+------------------+--------------------------+----------+---------+-------+----------------------------+-----------------+
+| Id | Binary           | Host                     | Zone     | Status  | State | Updated_at                 | Disabled Reason |
++----+------------------+--------------------------+----------+---------+-------+----------------------------+-----------------+
+| 1  | nova-conductor   | helion-cp1-c1-m1-mgmt    | internal | enabled | up    | 2015-11-22T22:50:43.000000 | -               |
+| 10 | nova-scheduler   | helion-cp1-c1-m1-mgmt    | internal | enabled | up    | 2015-11-22T22:50:34.000000 | -               |
+| 13 | nova-conductor   | helion-cp1-c1-m3-mgmt    | internal | enabled | up    | 2015-11-22T22:50:43.000000 | -               |
+| 16 | nova-conductor   | helion-cp1-c1-m2-mgmt    | internal | enabled | up    | 2015-11-22T22:50:43.000000 | -               |
+| 25 | nova-consoleauth | helion-cp1-c1-m1-mgmt    | internal | enabled | up    | 2015-11-22T22:50:38.000000 | -               |
+| 28 | nova-scheduler   | helion-cp1-c1-m2-mgmt    | internal | enabled | up    | 2015-11-22T22:50:38.000000 | -               |
+| 31 | nova-scheduler   | helion-cp1-c1-m3-mgmt    | internal | enabled | up    | 2015-11-22T22:50:42.000000 | -               |
+| 34 | nova-compute     | helion-cp1-comp0001-mgmt | AZ1      | enabled | up    | 2015-11-22T22:50:35.000000 | -               |
+<b>| 37 | nova-compute     | helion-cp1-comp0002-mgmt | AZ2      | enabled | up    | 2015-11-22T22:50:44.000000 | -               |</b>
++----+------------------+--------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock></li>
+        <li>Disable the Nova service on the Compute node you are wanting to remove which will ensure
+          it is taken out of the scheduling rotation: <codeblock>nova service-disable --reason "&lt;enter reason here>" &lt;node hostname> nova-compute</codeblock>
+          <p>Here is an example if I wanted to remove the <codeph>helion-cp1-comp0002-mgmt</codeph>
+            in the output above:</p>
+          <codeblock>$ nova service-disable --reason "hardware reallocation" helion-cp1-comp0002-mgmt nova-compute
++--------------------------+--------------+----------+-----------------------+
+| Host                     | Binary       | Status   | Disabled Reason       |
++--------------------------+--------------+----------+-----------------------+
+| helion-cp1-comp0002-mgmt | nova-compute | disabled | hardware reallocation |
++--------------------------+--------------+----------+-----------------------+</codeblock></li>
       </ol>
     </section>
-    <section><title>Remove the Nodes</title>
+    <section id="remove_az"><title>Remove the Compute Host from its Availability Zone</title>
+      <p>If you configured the Compute host to be part of an availability zone, these steps will
+        show you how to remove it.</p>
       <ol>
-        <li>For example, using a cloud administrator account first disable provisioning and then run
-            <codeph>nova service-list</codeph>
-          <codeblock>~$ nova service-disable --reason="HNOV-240 - removed" hlm004-ccp-comp0004-mgmt nova-compute
-~$ nova service-list</codeblock>
-          to see the
-          result<codeblock>+----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+
-| Id | Binary           | Host                     | Zone     | Status  | State | Updated_at | Disabled Reason |
-+----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+
-...
-| 40 | nova-compute     | hlm004-ccp-comp0005-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:53.000000 | -                  |
-| 46 | nova-compute     | hlm004-ccp-comp0002-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:52.000000 | -                  |
-| 49 | nova-compute     | hlm004-ccp-comp0006-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:53.000000 | -                  |
-| 52 | nova-compute     | hlm004-ccp-comp0003-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:52.000000 | -                  |
-| 55 | nova-compute     | hlm004-ccp-comp0001-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:56.000000 | -                  |
-| 58 | nova-compute     | hlm004-ccp-comp0004-mgmt | nova     | disabled | up    | 2015-09-17T10:29:55.000000 | HNOV-240 - removed |
-+----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+</codeblock>
-        </li>
-        <li> Next,
-          run<codeblock>~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock> to
-          see all
-          tenants<codeblock>+--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+
+        <li>Get a list of the Nova services running which will provide us with the details we need
+          to remove a Compute node: <codeblock>nova service-list</codeblock>
+          <p>Here is an example below. I've highlighted the Compute node we are going to remove in
+            the examples:</p>
+          <codeblock>$ nova service-list
++----+------------------+--------------------------+----------+---------+-------+----------------------------+-----------------------+
+| Id | Binary           | Host                     | Zone     | Status  | State | Updated_at                 | Disabled Reason       |
++----+------------------+--------------------------+----------+---------+-------+----------------------------+-----------------------+
+| 1  | nova-conductor   | helion-cp1-c1-m1-mgmt    | internal | enabled | up    | 2015-11-22T22:50:43.000000 | -                     |
+| 10 | nova-scheduler   | helion-cp1-c1-m1-mgmt    | internal | enabled | up    | 2015-11-22T22:50:34.000000 | -                     |
+| 13 | nova-conductor   | helion-cp1-c1-m3-mgmt    | internal | enabled | up    | 2015-11-22T22:50:43.000000 | -                     |
+| 16 | nova-conductor   | helion-cp1-c1-m2-mgmt    | internal | enabled | up    | 2015-11-22T22:50:43.000000 | -                     |
+| 25 | nova-consoleauth | helion-cp1-c1-m1-mgmt    | internal | enabled | up    | 2015-11-22T22:50:38.000000 | -                     |
+| 28 | nova-scheduler   | helion-cp1-c1-m2-mgmt    | internal | enabled | up    | 2015-11-22T22:50:38.000000 | -                     |
+| 31 | nova-scheduler   | helion-cp1-c1-m3-mgmt    | internal | enabled | up    | 2015-11-22T22:50:42.000000 | -                     |
+| 34 | nova-compute     | helion-cp1-comp0001-mgmt | AZ1      | enabled | up    | 2015-11-22T22:50:35.000000 | -                     |
+<b>| 37 | nova-compute     | helion-cp1-comp0002-mgmt | AZ2      | enabled | up    | 2015-11-22T22:50:44.000000 | hardware reallocation |</b>
++----+------------------+--------------------------+----------+---------+-------+----------------------------+-----------------------+</codeblock></li>
+        <li>You can remove the Compute host from the availability zone it was a part of with this
+          command: <codeblock>nova aggregate-remove-host &lt;availability zone> &lt;nova hostname></codeblock>
+          <p>So for the same example as the previous step, the
+              <codeph>helion-cp1-comp0002-mgmt</codeph> host was in the <codeph>AZ2</codeph>
+            availability zone so I would use this command to remove it:</p>
+          <codeblock>$ nova aggregate-remove-host AZ2 helion-cp1-comp0002-mgmt
+Host helion-cp1-comp0002-mgmt has been successfully removed from aggregate 4
++----+------+-------------------+-------+-------------------------+
+| Id | Name | Availability Zone | Hosts | Metadata                |
++----+------+-------------------+-------+-------------------------+
+| 4  | AZ2  | AZ2               |       | 'availability_zone=AZ2' |
++----+------+-------------------+-------+-------------------------+</codeblock></li>
+        <li>You can confirm the last two steps completed successfully by running another
+            <codeph>nova service-list</codeph>. <p>Here is an example which confirms that the node
+            has been disabled and that it has been removed from the availability zone. I have
+            highlighted these:</p>
+          <codeblock>$ nova service-list
++----+------------------+--------------------------+----------+----------+-------+----------------------------+-----------------------+
+| Id | Binary           | Host                     | Zone     | Status   | State | Updated_at                 | Disabled Reason       |
++----+------------------+--------------------------+----------+----------+-------+----------------------------+-----------------------+
+| 1  | nova-conductor   | helion-cp1-c1-m1-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:33.000000 | -                     |
+| 10 | nova-scheduler   | helion-cp1-c1-m1-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:34.000000 | -                     |
+| 13 | nova-conductor   | helion-cp1-c1-m3-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:33.000000 | -                     |
+| 16 | nova-conductor   | helion-cp1-c1-m2-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:33.000000 | -                     |
+| 25 | nova-consoleauth | helion-cp1-c1-m1-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:28.000000 | -                     |
+| 28 | nova-scheduler   | helion-cp1-c1-m2-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:28.000000 | -                     |
+| 31 | nova-scheduler   | helion-cp1-c1-m3-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:32.000000 | -                     |
+| 34 | nova-compute     | helion-cp1-comp0001-mgmt | AZ1      | enabled  | up    | 2015-11-22T23:04:25.000000 | -                     |
+<b>| 37 | nova-compute     | helion-cp1-comp0002-mgmt | nova     | disabled | up    | 2015-11-22T23:04:34.000000 | hardware reallocation |</b>
++----+------------------+--------------------------+----------+----------+-------+----------------------------+-----------------------+</codeblock></li>
+      </ol>
+    </section>
+    <section id="live_migration"><title>Use Live Migration to Move Any Instances on This Host to
+        Other Hosts</title>
+      <ol>
+        <li>You will need to verify if the Compute node is currently hosting any instances on it.
+          You can do this with the command below: <codeblock>nova list --host=&lt;nova hostname> --all_tenants=1</codeblock>
+          <p>Here is an example below which shows that we have a single running instance on this
+            node currently:</p>
+          <codeblock>$ nova list --host=helion-cp1-comp0002-mgmt --all_tenants=1
++--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+
 | ID                                   | Name   | Tenant ID                        | Status | Task State | Power State | Networks        |
 +--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+
 | 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9 | paul4d | 5e9998f1b1824ea9a3b06ad142f09ca5 | ACTIVE | -          | Running     | paul=10.10.10.7 |
-+--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+</codeblock>
-        </li>
-        <li> Now, perform the
-          migration:<codeblock>~$ nova live-migration --block-migrate 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9
-~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock>
-          and run nova list (above) to get the
-          status:<codeblock>+--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+
++--------------------------------------+--------+----------------------------------+--------+------------+-------------+-----------------+</codeblock></li>
+        <li>You will likely want to migrate this instance off of this node before removing it. You
+          can do this with the live migration functionality within Nova. The command will look like
+          this: <codeblock>nova live-migration --block-migrate &lt;nova instance ID></codeblock>
+          <p>Here is an example using the instance in the previous step:</p>
+          <codeblock>$ nova live-migration --block-migrate 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9</codeblock>
+          <p>You can check the status of the migration using the same command from the previous
+            step:</p>
+          <codeblock>$ nova list --host=helion-cp1-comp0002-mgmt --all_tenants=1
++--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+
 | ID                                   | Name   | Tenant ID                        | Status    | Task State | Power State | Networks        |
 +--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+
 | 78fdb938-a89c-4a0c-a0d4-b88f1555c3b9 | paul4d | 5e9998f1b1824ea9a3b06ad142f09ca5 | MIGRATING | migrating  | Running     | paul=10.10.10.7 |
 +--------------------------------------+--------+----------------------------------+-----------+------------+-------------+-----------------+</codeblock>
         </li>
         <li> Run nova list again
-          <codeblock>~$ nova list --host=hlm004-ccp-comp0004-mgmt --all_tenants=1</codeblock> to see
+          <codeblock>$ nova list --host=helion-cp1-comp0002-mgmt --all_tenants=1</codeblock> to see
           that the running instance has been
           migrated:<codeblock>+----+------+-----------+--------+------------+-------------+----------+
 | ID | Name | Tenant ID | Status | Task State | Power State | Networks |
 +----+------+-----------+--------+------------+-------------+----------+
 +----+------+-----------+--------+------------+-------------+----------+</codeblock>
         </li>
-        <li> Log into the compute node and stop the nova service <!--<note>The specified node "ccp-0004" (which
-            is the node's 'cobbler' name) should match the desired node (hlm004-ccp-comp0004-mgmt).
-            However, ccp-0004 does not necessarily match hlm004-ccp-comp0004-mgmt. This means you
-            could easily power down the wrong node because, for example, ccp-0004 might actually map
-            to hlm004-ccp-comp0008-mgmt. So, to ensure that you are powering down the correct node,
-            you need to map from the hlm004-ccp-comp0004-mgmt system name to the matching cobbler
-            name. To do so, find the IP address of hlm004-ccp-comp0004-mgmt by searching in the
-              <b>/etc/hosts</b> file. Then search for IP address value in the
-              <b>/home/stack/helion/my_cloud/definition/data/servers.yml</b> file and choose the
-            corresponding <b>id field</b> value. That will be the cobbler ID of the node you are
-            looking for.</note>-->
-          <note>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see
-            if the assignment of the node you have added is what you expect. It may not be, as nodes
-            will not be numbered consecutively if any have previously been removed. This is to
-            prevent loss of data; the config processor retains data about removed nodes and keeps
-            their ID numbers from being reallocated. See the <xref
-              href="../input_model.dita#input_model/persistedserverallocations">Persisted Server
-              Allocations</xref> section in HPE Helion OpenStack 2.0 Input Model for information on
-            how this works.</note>
-          <codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo systemctl stop nova-compute"</codeblock>
-          or shut down the node. (alternatively, you may re-image the
-          node):<codeblock>~$ ssh stack@hlm004-ccp-comp0004-mgmt "sudo shutdown now"</codeblock>Alternatively,
-          from the deployer, run the <b>bm-power-down.yml </b>playbook <codeblock>~$ cd ~/helion/hos/ansible
-    ~/helion/hos/ansible$ ansible-playbook -i hosts/localhost bm-power-down.yml -e nodelist=cpn-0004</codeblock>
-          <codeblock>PLAY [localhost] **************************************************************
-    GATHERING FACTS *************************************************************** 
-    ok: [localhost]
-    TASK: [cobbler | get-nodelist | User-specified target list] ******************* 
-    ok: [localhost]
-    TASK: [cobbler | get-nodelist | Check we have targets] ************************ 
-    skipping: [localhost]
-    TASK: [debug var=target_nodes] ************************************************ 
-    ok: [localhost] => {
-    "var": {
-    "target_nodes": [
-    "cpn-0004"
-    ]
-    }
-    }
-    TASK: [cobbler | power-down | Power the nodes down] *************************** 
-    changed: [localhost] => (item=cpn-0004)
-    PLAY RECAP ******************************************************************** 
-    cobbler | power-down | Power the nodes down ----------------------------- 1.48s
-    cobbler | get-nodelist | User-specified target list --------------------- 0.02s
-    debug var=target_nodes -------------------------------------------------- 0.01s
-    cobbler | get-nodelist | Check we have targets -------------------------- 0.01s
-    -------------------------------------------------------------------------------
-    Total: ------------------------------------------------------------------ 3.54s
-    localhost : ok=4 changed=1 unreachable=0 failed=0</codeblock>
-        </li>
-        <li>Next, delete the nova compute node:
-          <codeblock>~$ nova service-delete 58
-~$ nova service-list</codeblock> And run nova
-          service-list (above) to see that it s
-          gone:<codeblock>+----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+
-| Id | Binary           | Host                     | Zone     | Status  | State | Updated_at | Disabled Reason |
-+----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+
-...
-| 40 | nova-compute     | hlm004-ccp-comp0005-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:53.000000 | -                  |
-| 46 | nova-compute     | hlm004-ccp-comp0002-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:52.000000 | -                  |
-| 49 | nova-compute     | hlm004-ccp-comp0006-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:53.000000 | -                  |
-| 52 | nova-compute     | hlm004-ccp-comp0003-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:52.000000 | -                  |
-| 55 | nova-compute     | hlm004-ccp-comp0001-mgmt | nova     | enabled  | up    | 2015-09-17T10:29:56.000000 | -                  |
-+----+------------------+--------------------------+----------+----------+-------+----------------------------+--------------------+</codeblock>
-        </li>
-        <li>Then get hypervisor status:<codeblock>~$ nova hypervisor-list</codeblock> And check that
-          the node has been removed from the
-          list:<codeblock>+----+--------------------------+-------+---------+
-| ID | Hypervisor hostname      | State | Status  |
-+----+--------------------------+-------+---------+
-| 1  | hlm004-ccp-comp0005-mgmt | up    | enabled |
-| 7  | hlm004-ccp-comp0002-mgmt | up    | enabled |
-| 10 | hlm004-ccp-comp0006-mgmt | up    | enabled |
-| 13 | hlm004-ccp-comp0003-mgmt | up    | enabled |
-| 16 | hlm004-ccp-comp0001-mgmt | up    | enabled |
-+----+--------------------------+-------+---------+</codeblock>
-        </li>
-        <li>Then, on the lifecycle manager, remove the node from <b>servers.yml </b><note>Make sure
-            you are removing the correct node from <b>servers.yml</b> by ensuring you remove the
-            stanza that contains the IP address that matches the node to be removed.</note> Edit
-            <b>servers.yml </b>to remove the entry for removed node.
-          <codeblock>cd ~/helion/my_cloud/definition/data
-git checkout site</codeblock>
-        </li>
-        <li>Then, commit the change, and rerun the config processor:
-          <codeblock>git commit -a -m "Removed node &lt;name>"
-cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml
+      </ol>
+    </section>
+    <section id="shutdown_node"><title>Shutdown or Stop the Nova Service on the Compute Host</title>
+      <p>To do this step you have a few options. You can SSH to the Compute host and run the
+        following commands:</p>
+      <codeblock>sudo systemctl stop nova-compute
+sudo shutdown now</codeblock>
+      <p>OR</p>
+      <p>From the lifecycle manager you can use the <codeph>bm-power-down.yml</codeph> playbook to
+        shut the node down:</p>
+      <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-power-down.yml -e nodelist=&#60;node name></codeblock>
+      <note>The <codeph>&#60;node name></codeph> value will be the value corresponding to this node
+        in Cobbler. You can run <codeph>sudo cobbler system list</codeph> to retrieve these
+        names.</note>
+    </section>
+    <section id="delete_node"><title>Delete The Compute Host from Nova</title>
+      <p>Retrieve the list of Nova services:</p>
+      <codeblock>nova service-list</codeblock>
+      <p>Here is an example highlighting the Compute host we're going to remove:</p>
+      <codeblock>$ nova service-list
++----+------------------+--------------------------+----------+----------+-------+----------------------------+-----------------------+
+| Id | Binary           | Host                     | Zone     | Status   | State | Updated_at                 | Disabled Reason       |
++----+------------------+--------------------------+----------+----------+-------+----------------------------+-----------------------+
+| 1  | nova-conductor   | helion-cp1-c1-m1-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:33.000000 | -                     |
+| 10 | nova-scheduler   | helion-cp1-c1-m1-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:34.000000 | -                     |
+| 13 | nova-conductor   | helion-cp1-c1-m3-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:33.000000 | -                     |
+| 16 | nova-conductor   | helion-cp1-c1-m2-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:33.000000 | -                     |
+| 25 | nova-consoleauth | helion-cp1-c1-m1-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:28.000000 | -                     |
+| 28 | nova-scheduler   | helion-cp1-c1-m2-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:28.000000 | -                     |
+| 31 | nova-scheduler   | helion-cp1-c1-m3-mgmt    | internal | enabled  | up    | 2015-11-22T23:04:32.000000 | -                     |
+| 34 | nova-compute     | helion-cp1-comp0001-mgmt | AZ1      | enabled  | up    | 2015-11-22T23:04:25.000000 | -                     |
+<b>| 37 | nova-compute     | helion-cp1-comp0002-mgmt | nova     | disabled | up    | 2015-11-22T23:04:34.000000 | hardware reallocation |</b>
++----+------------------+--------------------------+----------+----------+-------+----------------------------+-----------------------+</codeblock>
+      <p>Delete the host from Nova using the command below:</p>
+      <codeblock>nova service-delete &lt;service ID></codeblock>
+      <p>Following our example above, you would use:</p>
+      <codeblock>nova service-delete 37</codeblock>
+      <p>Use the command below to confirm that the Compute host has been completely removed from
+        Nova:</p>
+      <codeblock>nova hypervisor-list</codeblock>
+    </section>
+    <section id="remove_node"><title>Remove the Compute Host from the servers.yml File and Run the
+        Configuration Processor</title>
+      <p>Complete these steps from the lifecycle manager to remove the Compute node:</p>
+      <ol>
+        <li>Log in to the lifecycle manager</li>
+        <li>Edit your <codeph>servers.yml</codeph> file in the location below to remove references
+          to the Compute node(s) you want to remove:
+          <codeblock>~/helion/my_cloud/definition/data/servers.yml</codeblock></li>
+        <li>You may also need to edit your <codeph>control_plane.yml</codeph> file to update the
+          values for <codeph>member-count</codeph>, <codeph>min-count</codeph>, and
+            <codeph>max-count</codeph> if you used those to ensure they reflect the proper number of
+          nodes you are using. <p>See <xref href="../input_model.dita#input_model/co_controlplane"
+              >Input Model - Control Plane</xref> for more details.</p></li>
+        <li>Commit the changes to git:
+          <codeblock>git commit -a -m "Remove node &lt;name>"</codeblock></li>
+        <li>Run the configuration processor: <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
+          <p>You may want to use the <codeph>remove_deleted_servers</codeph> and
+              <codeph>free_unused_addresses</codeph> switches to free up the resources when running
+            the configuration processor. See <xref
+              href="../input_model.dita#input_model/persisteddata">Persisted Data</xref> for more
+            details.</p>
+          <codeblock>ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y" -e free_unused_addresses="y"</codeblock></li>
+        <li>Run the ready deployment playbook:
+          <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
-        </li>
-        <li>There is no need to run the site.yml playbook. However you should remove the node from
-          cobbler, as shown
-          here:<codeblock>sudo cobbler system remove --name=&lt;node>
-ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock>
         </li>
       </ol>
     </section>
-
-    <section id="monitoring"><title>Removing the Node from Monitoring</title>
+    <section id="remove_cobbler"><title>Remove the Compute Host from Cobbler</title>
+      <p>Complete these steps to remove the node from Cobbler:</p>
+      <ol>
+        <li>Confirm the system name in Cobbler with this command:
+          <codeblock>sudo cobbler system list</codeblock></li>
+        <li>Remove the system from Cobbler using this command:
+          <codeblock>sudo cobbler system remove --name=&lt;node></codeblock></li>
+        <li>Run the <codeph>cobbler-deploy.yml</codeph> playbook to complete the process:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+      </ol>
+    </section>
+    <section id="remove_monitoring"><title>Remove the Compute Host from Monitoring</title>
       <p>Once you have removed the Compute nodes, the alarms against them will trigger so there are
         additional steps to take to resolve this issue.</p>
       <p>You will want to SSH to each of the Monasca API servers and edit the

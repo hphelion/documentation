@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="hdp_servicenet">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Creating the HPE Helion Development Platform Service Net</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating the HPE Helion Development Platform Service Net</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section>Many of the HPE Helion Developer Platform services require the creation of a VM service
       network in order to access the cloud control plane. This service network is a
-      VLAN-encapsulated provider network which is fully routable to the HPE Helion OpenStack MGMT
+      VLAN-encapsulated provider network which is fully routable to the <keyword keyref="kw-hos"/> MGMT
       network. <note type="important">Create this network before attempting to install the HPE Helion
         Developer Platform. </note><ol>
         <li>SSH to the lifecycle manager using admin credentials.</li>
@@ -42,35 +43,50 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
             <li>Ensure that the service network is routable from the management network and that the
               service network is defined in
                 <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>:
-              <codeblock># Management 
-# 
-# This is the network group that will be used for 
-# management traffic within the cloud. 
-# 
-# The interface used by this group will be presented 
-# to Neutron as physnet1, and used by provider VLANS 
-# 
-# In this example this group is also used for ISCSI 
-# traffic between VMs and the VSA block storage 
-# 
-- name: MANAGEMENT 
-  # removed items 
+              <codeblock>#
+# Management
+#
+# This is the network group that will be used to for
+# management traffic within the cloud.
+#
+# The interface used by this group will be presented
+# to Neutron as physnet1, and used by provider VLANS
+#
+# In this example this group is also used for ISCSI
+# traffic between VMs and the VSA block storage
+#
+- name: MANAGEMENT
+  hostname-suffix: mgmt
+  hostname: true
+
+  component-endpoints:
+    - default
+
   routes:
-    - SERVICE 
-  # removed items 
-# Service 
-# 
-# This is the network group that will be used for in-cloud 
-# service traffic to control plane 
-# 
-- name: SERVICE</codeblock></li>
+    - default
+    <b>- SERVICE</b>
+
+  load-balancers:
+    - provider: ip-cluster
+      name: lb
+      components:
+         - default
+      roles:
+         - internal
+         - admin
+
+  tags:
+    - neutron.networks.vlan:
+        provider-physical-network: physnet1
+
+<b>- name: SERVICE</b></codeblock></li>
             <li>Ensure that there is a valid definition for the service network in
                 <codeph>~/helion/my_cloud/definition/data/networks.yml</codeph>
               <note>The <codeph>cidr</codeph> and <codeph>gateway</codeph> given must match the
                 values provided when the network was
               created.</note><codeblock>- name: SERVICE-NET
   vlanid: 306 
-tagged-vlan: true 
+  tagged-vlan: true 
   cidr: 10.1.6.0/24 
   gateway-ip: 10.1.6.1 
   network-group: SERVICE</codeblock></li>

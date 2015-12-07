@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="add_vsa">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Adding a VSA Node</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="../../helion/operations/add_vsa_node.html" scope="external"
+        format="html">Click here</xref> for a frameless version of this page where the links should
+      work.</note>
+    <section id="about">
+      <p>You may have a need to add a VSA node for additional storage capacity or another purpose
+        and these steps will help you achieve this.</p>
+      <p>The steps involved are:</p>
+      <ol>
+        <li><xref href="add_vsa_node.dita#add_vsa/prereqs">Prerequisites</xref></li>
+        <li><xref href="add_vsa_node.dita#add_vsa/steps">Adding a VSA Node</xref></li>
+        <li><xref href="add_vsa_node.dita#add_vsa/monitoring">Adding a New VSA Node to
+            Monitoring</xref></li>
+        <li><xref href="add_vsa_node.dita#add_vsa/cmc">Adding a New VSA Node to your CMC Management
+            Cluster</xref></li>
+      </ol>
+    </section>
+
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>You should have one or more baremetal servers that meet the minimum hardware requirements
+        for a VSA node which are documented in the <xref href="../hardware.dita">Hardware Support
+          Matrix</xref>.</p>
+    </section>
+
+    <section id="steps"><title>Adding a VSA Node</title>
+      <p>These steps will show you how to add the new VSA node to your <codeph>servers.yml</codeph>
+        file and then run the playbooks that update your cloud configuration. You will run these
+        playbooks from the lifecycle manager.</p>
+      <ol>
+        <li>Log in to your lifecycle manager.</li>
+        <li>Checkout the <codeph>site</codeph> branch of your local git so you can begin to make the
+          necessary edits:
+          <codeblock>cd ~/helion/my_cloud/definition/data
+git checkout site</codeblock></li>
+        <li>In the same directory, edit your <codeph>servers.yml</codeph> file to include the
+          details about your new VSA node(s). <p>For example, if you already had a cluster of three
+            VSA nodes and needed to add a fourth one you would add your details to the bottom of the
+            file in this format:</p>
+          <codeblock># VSA Storage Nodes
+
+   - id: vsa4
+     ip-addr: 10.13.111.148
+     role: VSA-ROLE
+     server-group: RACK1
+     nic-mapping: HP-DL360-4PORT
+     mac-addr: f0:92:1c:05:f5:78
+     ilo-ip: 192.168.9.4
+     ilo-password: password
+     ilo-user: admin</codeblock>
+          <p>You can find detailed descriptions of these fields <xref
+              href="../input_model.dita#input_model/co_servers">here</xref>.</p>
+          <note type="important">You will need to verify that the <codeph>ip-addr</codeph> value you
+            choose for this node does not conflict with any other IP address in your cloud
+            environment. You can confirm this by checking the
+              <codeph>~/helion/my_cloud/info/address_info.yml</codeph> file on your lifecycle
+            manager.</note>
+        </li>
+        <li>In your <codeph>control_plane.yml</codeph> file you will need to check the values for
+            <codeph>member-count</codeph>, <codeph>min-count</codeph>, and
+            <codeph>max-count</codeph>, if you specified them, to ensure that they match up with
+          your new total node count. So for example, if you had previously specified
+            <codeph>member-count: 3</codeph> and are adding a fourth VSA node, you will need to
+          change that value to <codeph>member-count: 4</codeph>. <p>See <xref
+              href="../input_model.dita#input_model/co_controlplane">Input Model - Control
+              Plane</xref> for more details.</p></li>
+        <li>Commit the changes to git:
+          <codeblock>git commit -a -m "Add node &lt;name>"</codeblock></li>
+        <li>Run the configuration processor:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Run the ready deployment playbook:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
+        </li>
+        <li>Add the new node into Cobbler:
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
+        <li>Then you can image the node: <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&#60;node name></codeblock>
+          <note>If you don't know the <codeph>&#60;node name></codeph> already, you can get it by
+            using <codeph>sudo cobbler system list</codeph></note>
+          <p>Before proceeding, you may want to take a look at <b>info/server_info.yml</b> to see if
+            the assignment of the node you have added is what you expect. It may not be, as nodes
+            will not be numbered consecutively if any have previously been removed. This is to
+            prevent loss of data; the config processor retains data about removed nodes and keeps
+            their ID numbers from being reallocated. See the Persisted Server Allocations section in
+            <xref href="../input_model.dita#input_model/persistedserverallocations"><keyword keyref="kw-hos-phrase"/>
+              Input Model</xref> for information on how this works.</p></li>
+        <li>Run the following command:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-run.yml</codeblock></li>
+        <li>Run this command to complete the deployment of your new node, ensuring you use the <codeph>--limit</codeph> option to specify your new node:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml --limit &#60;host_var name></codeblock>
+          <note>If you don't know the <codeph>&#60;host_var name></codeph> already, you can get it
+            by looking in the <codeph>~/scratch/ansible/next/hos/ansible/host_vars</codeph>
+            directory.</note></li>
+      </ol>
+    </section>
+
+    <section id="monitoring"><title>Adding a New VSA Node to Monitoring</title>
+      <p>If you want to add a new VSA node to the monitoring service checks, there is an additional
+        playbook that must be run to ensure this happens:</p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-deploy.yml --tags active_ping_checks</codeblock>
+    </section>
+
+    <section id="cmc"><title>Adding a New VSA Node to your CMC Management Cluster</title>
+      <p>Coming</p>
+      <ol>
+        <li>On your lifecycle manager, collect the IP addresses of the VSA virtual machines that you
+          added from the <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph>
+          file. This file is generated as part of output of the configuration processor during
+          installation. You will need this IP address in the next steps.</li>
+        <li>Launch the CMC utility. You will likely want to use the same method you used when you
+          did your initial VSA cluster configuration. See <xref
+            href="../installation/configure_vsa.dita#config_vsa/launch_cmc">Launching the CMC
+            utility GUI</xref> for more details.</li>
+        <li>In the CMC GUI, click the <b>Find</b> menu and then select the <b>Find Systems</b>
+          options. <p><image href="../../media/vsa/addvsa_cmc1.png"/></p>
+        </li>
+        <li>Click the <b>Add</b> button which will open the <b>Enter IP Address</b> dialogue box
+          where you can enter the IP address of the VSA node(s) that you are adding. These will be
+          the same IP addresses you noted in step 1 from your
+            <codeph>~/scratch/ansible/next/my_cloud/stage/info/net_info.yml</codeph> file. <p><image
+              href="../../media/vsa/addvsa_cmc2.png"/></p></li>
+        <li>Once you have all of your VSA nodes entered, click the <b>Close</b> button. <p><image
+              href="../../media/vsa/addvsa_cmc3.png"/></p></li>
+        <li>Next, click the <b>Tasks</b> menu and then navigate to the <b>System</b> submenu and
+          select the <b>Add to Existing Management Group</b> option. <p><image
+              href="../../media/vsa/addvsa_cmc4.png"/></p></li>
+        <li>In the Management Group wizard, select your new VSA node and then press <b>Continue</b>.
+              <p><image href="../../media/vsa/addvsa_cmc5.png"/></p></li>
+        <li>Select your <b>Group Name</b> from the drop down box and then press <b>Add</b> to
+          continue. <p><image href="../../media/vsa/addvsa_cmc6.png"/></p></li>
+        <li>The CMC utility will then add your new VSA node to the management group. Once it has
+          completed you will see the <b>Status</b> change to <codeph>Storage System Normal</codeph>.
+              <p><image href="../../media/vsa/addvsa_cmc7.png"/></p></li>
+        <li>You can then continue on to create additional volumes.</li>
+      </ol>
+    </section>
+
+  </body>
+</topic>

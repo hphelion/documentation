@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_a3t_ptt_rt">
-  <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>
-
-  <title><?oxy_custom_end?>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing Ceph Monitor
-    Node </title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Removing Ceph Monitor Node </title>
 
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>The process to remove Ceph monitor nodes, depends on how they have been deployed - either on
       the controller node or on a separate/dedicated resource node. </p>
     <section id="remove-monitor-contorller">

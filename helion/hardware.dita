@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="min_hardware">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Hardware and Software Support
-    Matrix</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Hardware and Software Support Matrix</title>
   <body>
-    <!--Needs Work; 'Supported Hardware Configurations' section is confusing and seems incomplete; 
-      Notes about performance should maybe be rewritten as actual notes and/or recommendations~this section is kind of fuzzy;-->
-    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref href="http://docs.hpcloud.com/helion/hardware.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/hardware.html" scope="external" format="html">Click
+        here</xref> for a frameless version of this page where the links should work.</note>
     <section id="about">
-      <p>This document lists the details about the supported hardware and software for HPE Helion
-        OpenStack 2.0</p>
+      <p>This document lists the details about the supported hardware and software for <keyword
+          keyref="kw-hos-phrase"/></p>
       <ul>
         <li><xref href="hardware.dita#min_hardware/openstack">OpenStack Version
           Information</xref></li>
@@ -27,7 +26,7 @@
       </ul>
     </section>
     <section id="openstack"><title>OpenStack Version Information</title>
-      <p>HPE Helion OpenStack 2.0 services have been updated to the <xref
+      <p><keyword keyref="kw-hos-phrase"/> services have been updated to the <xref
           href="http://www.openstack.org/software/kilo/" scope="external" format="html">OpenStack
           Kilo</xref> release. See <xref href="kilo_features.dita">OpenStack Kilo Features</xref>
         for more details.</p>
@@ -35,15 +34,15 @@
 
 
     <section id="supported_hardware"><title>Supported Hardware</title>
-      <p>For information about the supported hardware in HPE Helion OpenStack 2.0, see <xref
-          href="http://helionready.hpcloud.com/ihv/" format="html" scope="external">HPE Helion Ready
-          Solution Catalog</xref>.</p>
+      <p>For information about the supported hardware in <keyword keyref="kw-hos-phrase"/>, see
+          <xref href="http://helionready.hpcloud.com/ihv/" format="html" scope="external">HPE Helion
+          Ready Solution Catalog</xref>.</p>
     </section>
 
 
     <section id="supported_configs">
       <title>Supported Hardware Configurations</title>
-      <p>HPE Helion OpenStack 2.0 supports the following hardware configurations for a
+      <p><keyword keyref="kw-hos-phrase"/> supports the following hardware configurations for a
         deployment.</p>
       <p>Storage Interconnects/Protocols</p>
       <ul>
@@ -182,7 +181,9 @@
               <entry morerows="3">VSA or OSD (Ceph)</entry>
               <entry morerows="3">0 or 3 (which will provide the recommended redundancy)</entry>
               <entry>Disk</entry>
-              <entry>3 X 512 GB (minimum)</entry>
+              <entry>3 X 512 GB (minimum) See <xref
+                  href="installation/preinstall_checklist.dita#preinstall_checklist/vsa">Pre-Install
+                  Checklist - VSA</xref> for more details.</entry>
             </row>
             <row>
               <entry>Memory</entry>
@@ -282,7 +283,7 @@
 
     <section id="guestos">
       <title>Guest OS Support</title>
-      <p>HPE Helion OpenStack 2.0 Guest OS support is based on the hypervisor.</p>
+      <p><keyword keyref="kw-hos-phrase"/> Guest OS support is based on the hypervisor.</p>
       <ul>
         <li>For ESX, refer to the <xref
             href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0"
@@ -290,10 +291,10 @@
         <li>For KVM, refer to the table below.</li>
       </ul>
       <p>A <b>Verified</b> Guest OS has been tested by HPE and appears to function properly as a
-        Nova compute virtual machine on HPE Helion OpenStack 2.0.</p>
+        Nova compute virtual machine on <keyword keyref="kw-hos-phrase"/>.</p>
       <p>A <b>Certified</b> Guest OS has been officially tested by the operating system vendor, or
         by HPE under the vendor's authorized program, and will be supported by the operating system
-        vendor as a Nova compute virtual machine on HPE Helion OpenStack 2.0.</p>
+        vendor as a Nova compute virtual machine on <keyword keyref="kw-hos-phrase"/>.</p>
       <table frame="all" rowsep="1" colsep="1" id="table_xbd_sbq_yt">
         <tgroup cols="3">
           <colspec colname="c1" colnum="1"/>

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install_kvm">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Installation for Helion Entry-scale Cloud
-    with KVM</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Installation for Helion Entry-scale Cloud with
+    KVM</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="http://docs.hpcloud.com/helion/installation/install_entryscale_kvm.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
-    <section id="about"><p>This page describes the common installation steps that are required for
-        each of the HPE Helion OpenStack Entry-scale cloud models that utilize the KVM hypervisor on
-        the Compute nodes. This includes the following example configurations: <ul>
-          <li>Entry-scale KVM with VSA model</li>
-          <li>Entry-scale KVM with Ceph model</li>
-        </ul>
-      </p>The different phases of the installation:<ul>
+        href="http://docs.hpcloud.com/helion/installation/install_entryscale_kvm.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
+    <section id="about">
+      <p>This page describes the common installation steps that are required for each of the
+          <keyword keyref="kw-hos"/> Entry-scale cloud models that utilize the KVM hypervisor on the
+        Compute nodes. This includes the following example configurations:</p>
+      <ul>
+        <li>Entry-scale KVM with VSA model</li>
+        <li>Entry-scale KVM with Ceph model</li>
+      </ul>
+      <p>The different phases of the installation:</p>
+      <ul>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/setup_deployer">Set up the
             Lifecycle-manager</xref></li>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/configuration">Configure Your
@@ -35,6 +40,8 @@
             Overview</xref>.</li>
         <li>Review the <xref href="../hardware.dita">recommended minimum hardware
             requirements</xref> that we have listed.</li>
+        <li>Review the <xref href="../releasenotes.dita">Release Notes</xref> to make yourself aware
+          of any known issues and limitations.</li>
         <li>The installation process can occur in different phases. For example, you can install the
           control plane only and then add Compute nodes afterwards if you would like.</li>
         <!-- consider including steps to achieve this -->
@@ -47,6 +54,12 @@
         <li>There is no requirement to have a dedicated network for OS-install and system
           deployment, this can be shared with the management network. More information can be found
           on the <xref href="../example_configurations.dita">Example Configuration</xref> page.</li>
+        <li>You may see the terms deployer and lifecycle manager used interchangeably. These are
+          referring to the same nodes in your environment.</li>
+        <li>When running the Ansible playbook in this installation guide, if a runbook fails you
+          will see in the error response to use the <codeph>--limit</codeph> switch when retrying a
+          playbook. This should be avoided. You can simply re-run any playbook without this
+          switch.</li>
       </ul>
     </section>
     <section id="prereqs">
@@ -55,30 +68,40 @@
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
     </section>
     <section id="setup_deployer">
-      <title>Set up the Lifecycle-manager</title>
-      <p><b>Installing the Lifecycle-manager</b></p>
+      <title>Set up the Lifecycle Manager</title>
+      <p><b>Installing the Lifecycle Manager</b></p>
       <p>The lifecycle manager will contain the installation scripts and configuration files to
         deploy your cloud. You can set up the lifecycle manager on a dedicated node or you do so on
         your first controller node. The default choice is to use the first controller node as the
         lifecycle manager.</p>
       <ol>
-        <li>Download the HPE Helion OpenStack 2.0.0 product from the <xref
-            href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
-            format="html" scope="external">Helion Downloads</xref> page after signing in.</li>
+        <li>Sign in and download the product and signature files at the links below: <ol>
+            <li><xref
+                href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
+                format="html" scope="external">HPE Helion OpenStack Files</xref></li>
+            <li><xref
+                href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10507%7D/Show"
+                format="html" scope="external">HPE Helion OpenStack Signature Files</xref></li>
+          </ol>
+        </li>
+        <li>You can verify the download was complete via the signature verification process outlined
+            <xref
+            href="https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=HPLinuxCodeSigning"
+            scope="external" format="html">here</xref>.</li>
         <li>Boot your lifecycle manager from the ISO contained in the download.</li>
         <li>Enter "install" to start installation. <note>"install" is all lower case</note></li>
         <li>Select the language. Note that only the English language selection is currently
           supported.</li>
         <li>Select the location.</li>
         <li>Select the keyboard layout.</li>
-        <li>Select the primary network interface, if prompted:<ul>
+        <li>Select the primary network interface, if prompted:<ol>
             <li>Assign IP address, subnet mask, and default gateway</li>
-          </ul></li>
-        <li>Create new account:<ul>
+          </ol></li>
+        <li>Create new account:<ol>
             <li>Enter a username.</li>
             <li>Enter a password.</li>
             <li>Enter time zone.</li>
-          </ul>
+          </ol>
         </li>
       </ol>
       <p>Once the initial installation is finished, complete the lifecycle manager setup with these
@@ -92,14 +115,14 @@
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HPE Helion on
         it.</p>
-      <p><b>Configure and Run the Lifecycle-manager</b></p>
+      <p><b>Configure and Run the Lifecycle Manager</b></p>
       <note type="important">It is critical that you don't run any of the commands below as the
           <codeph>root</codeph> user or use <codeph>sudo</codeph>, unless it is stated explicitly in
         the steps. Run then as the user you just created (or <codeph>stack</codeph> if you left the
         default of "stack").</note>
       <ol>
-        <li>Log into your lifecycle manager as the user you created and mount the install media
-          at <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
+        <li>Log into your lifecycle manager as the user you created and mount the install media at
+            <codeph>/media/cdrom</codeph>. It may be necessary to use <codeph>wget</codeph> or
           another file transfer method to transfer the install media to the lifecycle manager before
           completing this step. Here is the command to mount the media:
           <codeblock>sudo mount Helion-OpenStack-2.0.0.iso /media/cdrom</codeblock></li>
@@ -113,7 +136,7 @@
           <p>For automated installation (e.g. CI) it is possible to disable SSH passphrase prompting
             by setting the <codeph>HOS_INIT_AUTO</codeph> environment variable before running
               <codeph>hos-init.bash</codeph>, like this:</p>
-          <codeblock>export HOST_INIT_AUTO=y</codeblock></li>
+          <codeblock>export HOS_INIT_AUTO=y</codeblock></li>
       </ol>
       <p>If you have protected the SSH key with a passphrase then execute the following commands to
         avoid having to enter the passphrase on every attempt by Ansible to connect to its client
@@ -162,10 +185,39 @@ helion/tech-preview            Directory contains the config input files of the 
               <p>If you are using the Entry-scale KVM with Ceph model, see <xref
                   href="configure_ceph.dita#config_ceph/config_files">Configuring Your Ceph
                   Environment Input Files</xref> for details.</p></li>
-          </ol>
-          <p>Optionally, you can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
-            passwords. This script uses OpenSSL.</p>
-          <ol>
+          </ol></li>
+        <li>If your <keyword keyref="kw-hos"/> environment is behind a firewall, you need to set the
+          Sherpa proxy shell variables so that the Sherpa service can communicate out to the Helion
+          Download Network (HDN). <ol>
+            <li>Edit the sherpa.conf.j2 file in the location below:
+              <codeblock>~/helion/my_cloud/config/sherpa/sherpa.conf.j2</codeblock></li>
+            <li>Verify that the <codeph>http_proxy</codeph> and <codeph>https_proxy</codeph> values
+              are set appropriately for your environment. The text in the file will look like this:
+              <codeblock>##############################################################
+# Proxy settings must be present
+# but can be empty string ('') if no proxy needed
+##############################################################
+http_proxy = '{{ sherpa_http_proxy }}'
+https_proxy = '{{ sherpa_https_proxy }}'
+no_proxy =  '{{ sherpa_no_proxy }}'
+##############################################################</codeblock></li>
+          </ol></li>
+        <li>[WORKAROUND] - There is currently an issue with the Elasticsearch name that requires
+          that you change it in the logging configuration file before continuing in the
+          installation. The steps to do this are: <ol>
+            <li>Edit the file below:
+              <codeblock>~/helion/hos/ansible/roles/logging-common/defaults/main.yml</codeblock></li>
+            <li>Edit the default value for the <codeph>elasticsearch_cluster_name</codeph> to a
+              value other than <codeph>elasticsearch</codeph>. This entry will be under the
+              Elasticsearch defaults section, which looks like the example below. Change the bolded
+              value.
+              <codeblock># Elasticsearch defaults
+...
+elasticsearch_cluster_name: "{{ LOG_SVR | item('vars.elasticsearch_cluster_name', default='<b>elasticsearch</b>') }}"</codeblock></li>
+          </ol></li>
+
+        <li>[OPTIONAL] - You can use the <codeph>hosencrypt.py</codeph> script to encrypt your iLo
+          passwords. This script uses OpenSSL. <ol>
             <li>Change to the Ansible directory: <codeblock>cd ~/helion/hos/ansible</codeblock></li>
             <li>Put the encryption key into the following environment variable:
               <codeblock>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeblock></li>
@@ -174,33 +226,33 @@ helion/tech-preview            Directory contains the config input files of the 
             <li>Take the string generated and place it in the <codeph>"ilo_password"</codeph> field
               in your <codeph>~/helion/my_cloud/definition/data/servers.yml</codeph> file,
               remembering to enclose it in quotes.</li>
-            <li>Repeat the above for each server.</li>
-          </ol>
-          <note>Before you run any playbooks, remember that you need to export the encryption key in
-            the following environment variable: <codeph>export
-              HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption key></codeph></note></li>
-      </ol>
-      <!--  TODO What branch? is it set automatically to "site"? is there a need to change directory? -->
-      <p>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
-        follows: <codeblock>cd ~/helion/hos/ansible
+            <li>Repeat the above for each server. <note>Before you run any playbooks, remember that
+                you need to export the encryption key in the following environment variable:
+                  <codeph>export HOS_USER_PASSWORD_ENCRYPT_KEY=&#60;encryption
+              key></codeph></note></li>
+          </ol></li>
+        <li>Commit your configuration to the <xref href="using_git.dita">local git repo</xref>, as
+          follows:
+          <codeblock>cd ~/helion/hos/ansible
 git add -A
-git commit -m "My config or other commit message"</codeblock>
-        <note type="important">This step needs to be repeated any time you make changes to your
+git commit -m "My config or other commit message"</codeblock></li>
+      </ol>
+      <p><note type="important">This step needs to be repeated any time you make changes to your
           configuration files before you move onto the following steps. See <xref
             href="using_git.dita">Using Git for Configuration Management</xref> for more
           information.</note></p>
     </section>
     <section id="provision"><title>Provision Your Baremetal Nodes</title>
       <p>To provision the baremetal nodes in your cloud deployment you can either use the automated
-        operating system installation process provided by HPE Helion OpenStack or you can use the
-        3rd party installation tooling of your choice. We will outline both methods below:</p>
+        operating system installation process provided by <keyword keyref="kw-hos"/> or you can use
+        the 3rd party installation tooling of your choice. We will outline both methods below:</p>
       <p id="thirdparty"><b>Using 3rd Party Baremetal Installers</b></p>
       <p>If you do not wish to use the automated operating system installation tooling included with
-        HPE Helion OpenStack 2.0 then the requirements that have to be met using the installation
-        tooling of your choice are:</p>
+          <keyword keyref="kw-hos-version"/> then the requirements that have to be met using the
+        installation tooling of your choice are:</p>
       <ul>
-        <li>The operating system must be installed via the HPE Linux for HPE Helion OpenStack ISO
-          provided on the <xref
+        <li>The operating system must be installed via the HPE Linux for <keyword keyref="kw-hos"/>
+          ISO provided on the <xref
             href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10389%7D/Show"
             format="html" scope="external">Helion Downloads</xref> page.</li>
         <li>Each node must have SSH keys in place that allow the user who will be doing the
@@ -215,10 +267,10 @@ git commit -m "My config or other commit message"</codeblock>
       <p>If you chose this method for installing your baremetal hardware, skip forward to the <xref
           href="install_entryscale_kvm.dita#install_kvm/config_processor">Run the Configuration
           Processor</xref> step.</p>
-      <p>If you would like to use the automated operating system installation tools provided by HP
-        Helion OpenStack 2.0 then complete all of the steps below.</p>
-      <p><b>Using the Automated Operating System Installation Provided by HPE Helion
-        OpenStack</b></p>
+      <p>If you would like to use the automated operating system installation tools provided by
+          <keyword keyref="kw-hos-version"/> then complete all of the steps below.</p>
+      <p><b>Using the Automated Operating System Installation Provided by <keyword keyref="kw-hos"
+          /></b></p>
       <p><b>Part One: Deploy Cobbler</b></p>
       <p>This phase of the install process takes the baremetal information that was provided in
           <codeph>servers.yml</codeph> and installs the Cobbler provisioning tool and loads this
@@ -229,10 +281,10 @@ git commit -m "My config or other commit message"</codeblock>
         live node by accident.</p>
       <p>The <codeph>cobbler-deploy.yml</codeph> playbook prompts for a password - this is the
         password that will be encrypted and stored in Cobbler, which is associated with the user
-        running the command on the lifecycle manager, that you will use to log in to the nodes via their
-        consoles after install. The username is the same as the user set up in the initial dialogue
-        when installing the lifecycle manager from the iso, and is the same user that is running the
-        cobbler-deploy play.</p>
+        running the command on the lifecycle manager, that you will use to log in to the nodes via
+        their consoles after install. The username is the same as the user set up in the initial
+        dialogue when installing the lifecycle manager from the iso, and is the same user that is
+        running the cobbler-deploy play.</p>
       <ol>
         <li>Run the following playbook which confirms that there is iLo connectivity for each of
           your nodes so that they are accessible to be re-imaged in a later step:
@@ -298,7 +350,11 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           href="installation_troubleshooting.dita#troubleshooting_installation/config_processor"
           >Troubleshooting Your Installation</xref></p>
     </section>
-
+    <!--
+<section id="security"><title>Configuring TLS</title>
+<p>After you run the configuration processor in the previous step the IP addresses for your environment will be generated. It's at this point that you will want to take into consideration whether or not you want to configure TLS and setup a SSL certificate for your environment. Please read <xref href="../security/tls.dita">Configure TLS</xref> before proceeding.</p>
+</section>
+    -->
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Use the playbook below to create a deployment directory:
@@ -309,13 +365,10 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           you are using fresh machines this step may not be necessary.
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts wipe_disks.yml</codeblock></li>
-        <li>Run the <codeph>site.yml</codeph> playbook using the command below. The <codeph>-e
-            elasticsearch_cluster_name</codeph> switch is used to set a unique name for your
-          elasticsearch cluster. This should be set to a value other than
-            <codeph>elasticsearch</codeph>. <codeblock>cd ~/scratch/ansible/next/hos/ansible 
-ansible-playbook -i hosts/verb_hosts site.yml -e elasticsearch_cluster_name=&#60;name></codeblock>
+        <li>Run the <codeph>site.yml</codeph> playbook below: <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
           <p>If you have used an encryption password when running the configuration processor use
-            the command below and enter the encryption password when prompted: <!-- TODO does this need the -e switch as well? -->
+            the command below and enter the encryption password when prompted:
             <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
           </p>
           <note>The step above runs <codeph>osconfig</codeph> to configure the cloud and

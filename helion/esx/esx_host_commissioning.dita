@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_nfp_xtf_rt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: ESX Host Commissioning</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>ESX Host Commissioning</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>ESX host commissioning is a functionality provided to a user to add additional ESX hosts to
             an already-activated cluster. </p>
     <p>The following steps detail how to commission a new a host to an already activated cluster.<ol

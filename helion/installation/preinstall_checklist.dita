@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="preinstall_checklist">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Pre-Installation Checklist</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Pre-Installation Checklist</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <note type="attention">The formatting of this page facilitates printing it out and using it to
       record details of your setup.</note>
     <p>This checklist is focused on the Entry-scale KVM with VSA model but you can alter it to fit
@@ -57,13 +58,13 @@
       </p>
     </section>
     <section id="network"><title>Network Setup and Configuration</title>
-      <p>Before installing HPE Helion OpenStack, the following networks must be provisioned and
+      <p>Before installing <keyword keyref="kw-hos"/>, the following networks must be provisioned and
         tested. The networks are not installed or managed by the Cloud. You must install and manage
         the networks as documented in the <xref href="../example_configurations.dita">Example
           Configurations</xref>.</p>
       <p>Use these checklists to confirm and record your network configuration information.</p>
       <p><b>Router</b></p>
-      <p>The IP router used with HPE Helion OpenStack must support the updated of its ARP table
+      <p>The IP router used with <keyword keyref="kw-hos"/> must support the updated of its ARP table
         through gratuitous ARP packets.</p>
       <p><b>PXE Installation Network</b></p>
       <p>When provisioning the IP range, allocate sufficient IP addresses to cover both the current
@@ -162,7 +163,7 @@
         </table>
       </p>
       <p><b>Management Network</b></p>
-      <p>The management network is the backbone used for the majority of HPE Helion OpenStack
+      <p>The management network is the backbone used for the majority of <keyword keyref="kw-hos"/>
         management communications. Control messages are exchanged between the Controllers, Compute
         hosts, and Cinder backends through this network. In addition to the control flows, the
         management network is also used to transport Swift and iSCSI based Cinder block storage
@@ -447,7 +448,7 @@
       </p>
     </section>
     <section id="deployer"><title>Lifecycle Manager</title>
-      <p>This server contains the HPE Helion OpenStack installer, which is based on Git, Ansible,
+      <p>This server contains the <keyword keyref="kw-hos"/> installer, which is based on Git, Ansible,
         and Cobbler.</p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="table_d2v_mk4_ht">
@@ -479,26 +480,6 @@
                 <entry/>
                 <entry>Ensure your local DNS nameserver is placed into your /etc/resolv.conf
                   file</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry>Install and configure NTP for your environment</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry>Ensure your NTP server(s) is placed into your /etc/ntp.conf file</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry>NTP time source:</entry>
-                <entry/>
-              </row>
-              <row>
-                <entry/>
-                <entry/>
                 <entry/>
               </row>
             </tbody>
@@ -541,7 +522,7 @@
     </section>
     <section id="control_plane"><title>Control Plane</title>
       <p>The Control Plane consists of three servers, in a highly available cluster, that host the
-        core HPE Helion OpenStack services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
+        core <keyword keyref="kw-hos"/> services including Nova, Keystone, Glance, Cinder, Heat, Neutron,
         Swift, Ceilometer, and Horizon. Additional services include mysql, ip-cluster, apache2,
         rabbitmq, memcached, zookeeper, kafka, influxDB, storm, monasca, logging, and cmc.</p>
       <p><b>Control Plane 1</b></p>
@@ -790,7 +771,9 @@
               <row>
                 <entry/>
                 <entry>Disk Requirement: 3x 512 GB disks (or enough space to create three logical
-                  drives with that amount of space)</entry>
+                  drives with that amount of space)<p>- The VSA appliance deployed on a host is
+                    expected to consume ~40 GB of disk space from the host root disk for ephemeral
+                    storage to run the VSA virtual machine.</p></entry>
               </row>
               <row>
                 <entry/>

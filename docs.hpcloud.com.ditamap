@@ -17,6 +17,8 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
+  <topicref href="helion/HOS-conrefs.xml"/>
+  <topicref href="helion/HOS-keywords.xml" format="ditamap"/>
   <topicref href="helion/MPC/home_MPC.dita">
     <topicref href="helion/kilo_features.dita" navtitle="OpenStack Kilo Features" locktitle="yes"/>
     <topicref href="helion/hardware.dita" navtitle="Hardware and Software Support Matrix"

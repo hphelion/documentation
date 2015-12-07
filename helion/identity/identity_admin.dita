@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_qmz_fg3_bt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Administering the Identity Service</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Administering the Identity Service</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <section id="administration"><title>Post-Installation Verification and Administration</title>
       <p>Keystone identity service query and administration tasks can be performed using the
         OpenStack command line utility. The utility is installed by the lifecycle manager onto
-        lifecycle manager. Also, HPE Helion OpenStack installs convenient *.osrc files
+        lifecycle manager. Also, <keyword keyref="kw-hos"/> installs convenient *.osrc files
         which contain exports of environment variables used by the OpenStack CLI.</p><p>
         <note>Keystone administration tasks should be performed by an <i>admin</i> user with a token
           scoped to the <i>default</i> domain via the Keystone v3 identity API. These settings are
@@ -14,7 +15,7 @@
           with the admin endpoint of keystone. If the admin endpoint is not accessible from your
           network, please change OS_AUTH_URL to point to the public endpoint.</note></p>
     </section>
-    <section> Here are some examples:
+    <section> Here are some examples: 
       <codeblock>
 # Set environment variables needed for Keystone administration
 stack@hLinux:~$ source keystone.osrc 

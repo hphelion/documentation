@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0DNSaaS">
-  <title>HPE Helion 2.0 Development Platform: DNSaaS Installation and Configuration</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>DNSaaS Installation and Configuration</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you
       create, publish, and manage your DNS zones and records securely and efficiently for either a
       public or private DNS server network.</p>
     <section id="Prerequisites">
       <title>Prerequisites</title>
       <ul>
-        <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
+        <li><keyword keyref="kw-hos-phrase"/> installation must be completed. You must know the location of
           its <codeph>keystone.osrc</codeph> file, which contains configuration information.</li>
         <li>You must know the NTP server and DNS server IP addresses.</li>
         <li>Credentials of the User and Tenant where the service is to be deployed ("Target
@@ -18,7 +19,7 @@
         <li>"openrc" credentials file for the Target user and project
           <!--why this file?: the values don't seem to be used anywhere in the process?--></li>
         <li>The v2 CLI must be installed on all nodes due to client differences.</li>
-        <li>The SVC network correctly configured within HPE Helion OpenStack. <note type="important"
+        <li>The SVC network correctly configured within <keyword keyref="kw-hos"/>. <note type="important"
             >The DNSaaS installation requires that the svc network be named "SVC". User defined
             names for the SVC network are currently not supported. </note></li>
         <li>A SSH public and private keypair.</li>
@@ -42,7 +43,7 @@
         deployed. Target credentials include a project name and a username. Service credentials can
         only be created after the Target credentials have been successfully created. </p>
       <ol>
-        <li>SSH to the HPE Helion OpenStack deployer.</li>
+        <li>SSH to the <keyword keyref="kw-hos"/> deployer.</li>
         <li>Source the keystone.osrc file. <codeblock>$ source keystone.osrc</codeblock></li>
         <li>Create the DNSaaS project. Make a note of the ID field
           value.<codeblock>$ openstack project create dnsaas
@@ -170,7 +171,7 @@ To continue installation copy your cloud layout to: /home/stack/helion/my_cloud/
     <section id="PrepareDeployment">
       <title>Prepare the Deployment</title><sectiondiv>
         <b>Select an Example Deployment Model</b>
-        <p>HPE Helion OpenStack DNSaaS has several example models that can be deployed. In the
+        <p><keyword keyref="kw-hos"/> DNSaaS has several example models that can be deployed. In the
           following example, the <i>powerdns</i> example deployment model is used.</p><note
           type="important">The <codeph>cp</codeph> command must be used exactly as shown - including
           the /* on the end of the example model
@@ -185,7 +186,7 @@ $ git commit -a -m "Add DNSaaS Example Model" </codeblock>
             to configure your DNS and NTP servers.
             <codeblock>$ cd my_cloud/definition/
 $ nano cloudConfig.yml                                           </codeblock></li>
-          <li>Run the ansible-playbook on the HPE Helion OpenStack
+          <li>Run the ansible-playbook on the <keyword keyref="kw-hos"/>
             deployer.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_key=""        </codeblock></li>
           <li> Copy the contents of the <codeph>pass-through.yml</codeph> file as follows:<ul>
@@ -198,8 +199,8 @@ ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_k
             <codeblock>$ git add -A
 $ git commit -a -m "Save DNSaaS config file changes."
             </codeblock></li>
-          <li>Run the Pre-Installation Playbook <p>Copy the ~/dnsaas.osrc file from the HPE Helion
-              OpenStack deployer. At the end of each playbook, ensure both "unreachable" and
+          <li>Run the Pre-Installation Playbook <p>Copy the ~/dnsaas.osrc file from the <keyword keyref="kw-hos"/>
+              deployer. At the end of each playbook, ensure both "unreachable" and
               "failed" are zero.</p>
             <codeblock>$ source ~/dnsaas.osrc
 $ cd ~/helion/hos/ansible/
@@ -209,8 +210,8 @@ $ ansible-playbook -i hosts/localhost hlm-pre-install.yml</codeblock>
       </sectiondiv>
       <sectiondiv>
         <p><b>Create SSL Certificates</b></p>
-        <p>If you want to install a self-signed certificate that meets the needs of HPE Helion
-          OpenStack and HPE Helion Development Platform, follow the steps outlined in the FQDN-based
+        <p>If you want to install a self-signed certificate that meets the needs of <keyword keyref="kw-hos"/>
+          and HPE Helion Development Platform, follow the steps outlined in the FQDN-based
           Certificate section. If you want to create an IP-address Certificate follow the steps in
           the IP-Address Certificate section.</p>
         <p>FQDN-based Certificate</p>
@@ -224,7 +225,7 @@ openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my
             </codeblock></li>
           <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
             above and provide your IP address. The IP address is what is used by HPE Helion
-            Development Platform and the DNS is used by HPE Helion OpenStack. <note>Update the
+            Development Platform and the DNS is used by <keyword keyref="kw-hos"/>. <note>Update the
               "subjectAltName" value with the domain name subjectAltName=DNS:your.domain.com</note>
             <codeblock>$ cat &gt; v3_ext.cnf &lt;&lt; EOF
 [ v3_req ]
@@ -243,10 +244,10 @@ EOF
                 Add the following lines at the same indentation level as <codeph>name:
                   extlb</codeph>
                 <codeblock>external-name: your.domain.name
-        cert-file: my-public-cert</codeblock></li>
+cert-file: my-public-cert</codeblock></li>
               <li>Rename the "components" section of the extlb for a "tls-components" section,
                 activating TLS on all external components.
-                <codeblock>$ nano ~/helion/my_cloud/definition/data/pass-through$network_groups.yml</codeblock></li>
+                <codeblock>$ nano ~/helion/my_cloud/definition/data/network_groups.yml</codeblock></li>
               <li>Add changes to git.
                 <codeblock>$ git add hos/ansible/roles/tls-frontend/files/my-public-cert  my_cloud/definition/data/network_groups.yml
 $ git diff ^HEAD my_cloud/definition/data/network_groups.yml
@@ -287,7 +288,7 @@ stack@dnsaas-deployer:~$ openssl req -nodes -days 365 -newkey rsa:2048 -keyout m
           <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entr
             above and provide your IP address. <note>The IP address must be the same in DNS: and IP:
               The IP address is what is used by HPE Helion Development Platform and the DNS is used
-              by HPE Helion OpenStack.</note>
+              by <keyword keyref="kw-hos"/>.</note>
             <codeblock>stack@dnsaas-deployer:~$ cat &gt; v3_ext.cnf &lt;&lt; EOF
 [ v3_req ]
 subjectAltName=DNS:&lt;EXTERNAL_IP_ADDRESS&gt;, IP:&lt;EXTERNAL_IP_ADDRESS&gt;

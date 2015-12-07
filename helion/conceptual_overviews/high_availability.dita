@@ -2,8 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="HP2.0HA">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: High Availability (HA) Concepts</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>High Availability (HA) Concepts</title>
   <body><!--Needs Edit-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>This page covers the following topics:</p>
     <ul>
       <li><xref href="#HP2.0HA/concepts_overview">High Availability Concepts Overview</xref>
@@ -60,7 +61,7 @@
           and so forth.</li>
         <li><b>Software SPOFs</b>: Server processes can crash due to software defects, out-of-memory conditions, operating system kernel panic, and so forth.</li>
       </ul>
-      <p>By design, HPE Helion OpenStack strives to create a system architecture resilient to SPOFs,
+      <p>By design, <keyword keyref="kw-hos"/> strives to create a system architecture resilient to SPOFs,
         and does not attempt to automatically protect the system against multiple cascading levels
         of failures; such cascading failures will result in an unpredictable state.  Hence, the
         cloud operator is encouraged to recover and restore any failed component, as soon as the
@@ -90,7 +91,7 @@
       
       <sectiondiv id="tenant_workloads">
         <p><b>Highly Available Cloud-Aware Tenant Workloads</b></p>
-        <p>HPE Helion OpenStack Compute hypervisors do not support transparent high availability for user 
+        <p><keyword keyref="kw-hos"/> Compute hypervisors do not support transparent high availability for user 
           applications; as such, the project application provider is responsible for deploying their applications 
           in a redundant and highly available manner, using multiple VMs spread appropriately across availability 
           zones, routed through the load balancers and made highly available through clustering.</p>
@@ -115,7 +116,7 @@
     
     <section id="high_availablity_controllers">
       <title>High Availability of Controllers</title>
-      <p>The HPE Helion OpenStack installer deploys highly available configurations of 
+      <p>The <keyword keyref="kw-hos"/> installer deploys highly available configurations of 
         OpenStack cloud services, resilient against single points of failure.</p>
       <p>The high availability of the controller components comes in two main forms.</p>
       <ul>
@@ -239,8 +240,7 @@
         </sectiondiv>
         <sectiondiv>
           <p id="sherpa"><b>Sherpa</b></p>
-          <p>in HPE Helion OpenStack 2.0, Sherpa is used by the Helion Development Platform and is not
-            used for Helion OpenStack Upgrade.</p>
+          <p>in <keyword keyref="kw-hos-phrase"/> for <keyword keyref="kw-hos"/> Upgrade.</p>
           <p>You must take periodic backups of the Sherpa service since it does 
             maintain some state information on local disk storage on the controller. 
             If the controller fails, Sherpa becomes unavailable until you rebuild or 
@@ -286,12 +286,12 @@
         zone. For larger deployments, you may plan more elaborate redundancy schemes 
         for redundant power, network ISP connection, and even physical firewalling 
         between zones (<i>this aspect is outside the scope of this document</i>).</p>
-        <p>HPE Helion OpenStack offers APIs, CLIs and Horizon UIs for the administrator 
+      <p><keyword keyref="kw-hos"/> offers APIs, CLIs and Horizon UIs for the administrator 
           to define and user to consume, availability zones for Nova, Cinder and Swift 
           services. This section outlines the process to deploy specific types of nodes 
           to specific physical servers, and makes a statement of available support for 
           these types of availability zones in the current release.</p>
-        <note>By default, HPE Helion OpenStack is deployed in a single availability zone upon
+      <note>By default, <keyword keyref="kw-hos"/> is deployed in a single availability zone upon
         installation. Multiple availability zones can be configured by an administrator
         post-install, if required. Refer to the <xref
           href="http://docs.openstack.org/openstack-ops/content/scaling.html" format="html"
@@ -412,7 +412,7 @@
                 <li>Replicate VMs containing stateless services such as Web application 
                   tier or Web service API tier and put them behind load balancers 
                   (you must implement your own HA Proxy type load balancer in your 
-                  application VMs until HPE Helion OpenStack delivers the LBaaS service).
+                  application VMs until <keyword keyref="kw-hos"/> delivers the LBaaS service).
                 </li>
                 <li>Boot the replicated VMs into different Nova availability zones.</li>
                 <li>If your VM stores state information on its local disk (Ephemeral Storage), 
@@ -428,7 +428,7 @@
           </ul>
         </li>
         <li>Instead of rolling your own highly available stateful services, use 
-          readily available HPE Helion OpenStack platform services such as:
+          readily available <keyword keyref="kw-hos"/> platform services such as:
           <ul>
             <li>Database as a Service (DBaaS)</li>
             <li>DNS as a Service(DNSaaS)</li>
@@ -443,7 +443,7 @@
       
       <sectiondiv>
         <p id="deployer"><b>Deployer</b></p>
-        <p>The deployer in HPE Helion OpenStack is not highly-available. The deployer state/data are all
+        <p>The deployer in <keyword keyref="kw-hos"/> is not highly-available. The deployer state/data are all
           maintained in filesystem and are backed up by the Freezer backup. In case a
           lifecycle manager failure, the deployer state/data can be recovered from the
           backup.</p>

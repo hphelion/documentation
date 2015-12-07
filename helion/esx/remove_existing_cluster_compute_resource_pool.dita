@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_lfq_3wf_rt">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Removing a Cluster from the Compute Resource
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Removing a Cluster from the Compute Resource
     Pool</title>
   <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>Perform the following steps to remove an existing cluster from the compute resource pool.<ol
         id="ol_dq1_pwf_rt">
         <li>Run the following command to check for the instances launched in that

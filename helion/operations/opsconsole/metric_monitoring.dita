@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?> <!--This work by HPE Helion Openstack is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--> <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="time_series_graphs">
-    <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Time Series Graphs</title>
+    <title><ph conkeyref="HOS-conrefs/product-title"/>Time Series Graphs</title>
     <shortdesc>This page allows you to define charts that display data based on the metrics and
         parameters you choose. </shortdesc>
     <conbody>
+        <p conkeyref="HOS-conrefs/applies-to"/>
         <section>
             <title>Search</title>
             <p>The search bar allows you to filter the notification methods you want to view. </p>

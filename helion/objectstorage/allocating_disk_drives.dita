@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="allocating-disk-drives">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Allocating Disk Drives for Object
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Allocating Disk Drives for Object
     Storage</title>
   <body><!--Needs Work; fnf edit on 10/22-->
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>The disk model describes the configuration of disk drives
       <!--the number of disk present on a particular server--> and their usage. The examples include
       several disk models. <!--The disk model used by any given server is determined as follows:-->
@@ -20,7 +21,14 @@
             Groups</xref></li>
         <li><xref href="#allocating-disk-drives/swift-logical-vol" format="dita">Swift Logical
             Volume</xref></li>
+      
       </ul></p>
+    <p>Also see these topics in troubleshooting, especially if you are upgrading:</p>
+    <ul><li>
+        <xref href="label_on_partition.dita#verify-partition-label">Verifying a Swift Partition
+          Label</xref></li><li>
+        <xref href="label_on_partition.dita#verify-partition-label">Verifying a Swift File System
+          Label</xref></li></ul>
     <section id="making-changes-disk-model">
       <title>Making Changes to a Swift Disk Model</title>
       <p>There are several reasons for changing the disk model:</p>

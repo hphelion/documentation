@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="troubleshooting_logging">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Troubleshooting the Centralized Logging
+    Service</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
+        href="http://docs.hpcloud.com/helion/troubleshooting/troubleshooting_logging.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
+    <section id="about">
+      <p>We have gathered some of the common issues and troubleshooting steps that will help when
+        resolving issues that occur with the Centralized Logging service.</p>
+      <ul>
+        <li><xref href="troubleshooting_logging.dita#troubleshooting_logging/log_collection"
+            >Situations In Which Logs Might Not Be Collected</xref></li>
+        <li><xref href="troubleshooting_logging.dita#troubleshooting_logging/kibana_visualization"
+            >Error When Creating a Kibana Visualization</xref></li>
+      </ul>
+    </section>
+
+    <section id="log_collection"><title>Situations In Which Logs Might Not Be Collected</title>
+      <p>Centralized logging might not collect log data under the following circumstances:</p>
+      <ul>
+        <li>If the Beaver service is not running on one or more of the nodes (controller or
+          compute), logs from these nodes will not be collected.</li>
+        <li>Beaver watches the log files for any additions and only pushes the incremental log
+          records for centralized logging. It does not parse all the existing log records in the log
+          files that were added <b>before</b> Beaver started watching those files. Similarly, if
+          Beaver was stopped for some reason and then started again later, the logs that were added
+          during the time span that Beaver was not running will not be collected for centralized
+          logging.</li>
+        <li>The logging service uses a RabbitMQ queue and this queue is not persistent. This means,
+          if the RabbitMQ service on the master node is restarted for some reason, all messages that
+          are not yet consumed by the logstash workers might be lost.</li>
+      </ul>
+    </section>
+<!-- specific to 2.1
+    <section id="kibana_visualization"><title>Error When Creating a Kibana Visualization</title>
+      <p>When creating a visualization in Kibana you may get an error similiar to this:
+        <codeblock>"logstash-*" index pattern does not contain any of the following field types: number</codeblock></p>
+      <p>To resolve this issue:</p>
+      <ol>
+        <li>Log in to Kibana.</li>
+        <li>Navigate to the <codeph>Settings</codeph> page.</li>
+        <li>Select the <codeph>logstash-*</codeph> index in the left panel.</li>
+        <li>Click the refresh button. You may see a mapping conflict warning after refreshing the
+          index.</li>
+        <li>Re-create the visualization.</li>
+      </ol>
+    </section>
+    -->
+  </body>
+</topic>

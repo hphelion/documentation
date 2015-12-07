@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd" >
 <topic xml:lang="en-us" id="topic15050">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Ceilometer Metering Setting Role-based
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Ceilometer Metering Setting Role-based
     Access Control</title>
   <prolog>
     <metadata>
@@ -14,7 +14,7 @@
     </metadata>
   </prolog>
   <body>
-  
+    <p conkeyref="HOS-conrefs/applies-to"/>
     <p>Role Base Access Control (RBAC) is a technique that limits access to resources based on a
       specific set of role(s) associated with each user's credentials.</p>
     <p>Keystone has a set of users that are associated with each project. Each user has one or more

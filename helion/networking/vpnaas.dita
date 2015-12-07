@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="HP2.0VPNaaS">
-  <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.0: Using VPN as a Service (VPNaaS)</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Using VPN as a Service (VPNaaS)</title>
   <body>
-    <p><b>HPE Helion OpenStack 2.0 VPNaaS Configuration</b></p>
-    <p>This document describes the configuration process and requirements for the HPE Helion
-      OpenStack 2.0 Virtual Private Network (VPN) as a Service module.</p>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p><b><keyword keyref="kw-hos-phrase"/> VPNaaS Configuration</b></p>
+    <p>This document describes the configuration process and requirements for the <keyword keyref="kw-hos-phrase"/>
+      Virtual Private Network (VPN) as a Service module.</p>
     <p>
       <ul id="LBaaSlist">
         <li><xref href="vpnaas.dita#HP2.0VPNaaS/Prerequisites">Prerequisites</xref></li>
@@ -17,7 +18,7 @@
     <section id="Prerequisites">
       <title>Prerequisites</title>
       <ol>
-        <li>HPE Helion OpenStack must be installed. </li>
+        <li><keyword keyref="kw-hos"/> must be installed. </li>
         <li>Before setting up VPNaaS, you will need to have created an external network and a subnet
           with access to the internet. Information on how to create the external network and subnet
           can be found in the <xref href="vpnaas.dita#HP2.0VPNaaS/MoreInfo"> More Information</xref>
@@ -40,15 +41,21 @@
       <title>Configuration</title>
       <sectiondiv>
         <b>Setup Networks</b>
-        <p>You can setup VPN as a Service (VPNaaS) by first creating
-          networks, subnets and routers using the <codeph>neutron</codeph> command line. </p>
+        <p>You can setup VPN as a Service (VPNaaS) by first creating networks, subnets and routers
+          using the <codeph>neutron</codeph> command line. The VPNaaS module enables the ability to
+          extend access between private networks across two different <keyword keyref="kw-hos"/> clouds or
+          between a <keyword keyref="kw-hos"/> cloud and a non-cloud network. VPNaaS is based on the open
+          source software application called OpenSwan. OpenSwan (more information available at<xref
+            href="http://www.openswan.org/" format="html" scope="external"
+            >http://www.openswan.org</xref>) is an IPsec implementation and provides basic VPN
+          gateway functionality.</p>
         <note>You can execute the included commands from any shell with access to the service APIs.
-          In the included examples, the commands are executed from the lifecycle manager, however you could
-          execute the commands from the controller node or any other shell with aforementioned
-          service API access. </note>
+          In the included examples, the commands are executed from the lifecycle manager, however
+          you could execute the commands from the controller node or any other shell with
+          aforementioned service API access. </note>
         <ol>
-          <li>From the lifecycle manager, create first private network, subnet and router assuming that
-              <i>ext-net</i> is created by
+          <li>From the lifecycle manager, create first private network, subnet and router assuming
+            that <i>ext-net</i> is created by
             admin.<codeblock>neutron net-create privateA
 neutron subnet-create --name subA privateA 10.1.0.0/24 --gateway 10.1.0.1
 neutron router-create router1
@@ -189,6 +196,8 @@ ping ###.###.###.###</codeblock></li>
 
     <section id="MoreInfo">
       <title>More Information</title>
+      <p>VPNaaS currently only supports Pre-shared Keys (PSK) security between VPN gateways. 
+        A different VPN gateway solution should be considered if stronger, certificate-based security is required.</p>
       <p>For more information on the neutron command-line interface (CLI) and VPN as a Service
         (VPNaaS), see the OpenStack networking command-line client reference: <xref
           href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html"
@@ -198,6 +207,7 @@ ping ###.###.###.###</codeblock></li>
           href="http://docs.openstack.org/kilo/install-guide/install/apt/content/neutron_initial-external-network.html"
           scope="external" format="html"/>
       </p>
+      
     </section>
   </body>
 </topic>
