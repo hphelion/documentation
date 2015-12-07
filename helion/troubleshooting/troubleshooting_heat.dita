@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+  <topic id="troubleshootingHeat">
+    <title><ph conkeyref="HOS-conrefs/product-title"/>Troubleshooting Heat Orchestration</title>
+    <body>
+      <p conkeyref="HOS-conrefs/applies-to"/>
+  
+
+    <p>
+      If you exerience a timeout failure when attempting heat stack-create, you can work around the issue by increasing the timeout value, following these steps: 
+      
+     <ol><li>Increase the timeout value. <codeblock>cd ~/helion/my_cloud/config/heat</codeblock>
+        </li><li>Make changes to heat config files. In heat.conf.j2 add this timeout
+          value:<codeblock>rpc_response_timeout=300</codeblock> Commit your
+          changes<codeblock>git commit -a -m "some message"</codeblock>
+     </li><li>Move to ansible directory and run the following
+          playbooks:<codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li><li> Change to the scratch directory and run heat-reconfigure:
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts heat-reconfigure.yml  </codeblock></li>
+        <li>Purge records of deleted stacks from the database.  First delete all stacks that are in
+          failed state. Then execute the following
+          <codeblock>/opt/stack/venv/heat-20151116T000451Z/bin/python2 
+/opt/stack/service/heat-engine/venv/bin/heat-manage purge_deleted 0 
+--config-file=/opt/stack/service/heat-engine-20151116T000451Z/etc/heat/heat.conf 
+--config-file=/opt/stack/service/heat-engine-20151116T000451Z/etc/heat/engine.conf  </codeblock>
+        </li></ol>
+      
+    </p>
+  </body>
+</topic>
