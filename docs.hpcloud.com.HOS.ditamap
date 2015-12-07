@@ -386,7 +386,8 @@
       locktitle="yes" otherprops="troubleshooting">
       <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
         navtitle="Troubleshooting the Sherpa Service" locktitle="yes"/>
-
+      <topicref href="helion/troubleshooting/troubleshooting_heat.dita"
+        navtitle="Troubleshooting Heat Stack Creation" locktitle="yes" toc="no"/>
       <topicref href="helion/objectstorage/troubleshooting.dita"
         navtitle="Troubleshooting the Object Storage Service" locktitle="yes"
         otherprops="troubleshooting_objectstorage">
