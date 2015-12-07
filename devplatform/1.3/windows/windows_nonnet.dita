@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_js">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic_amr_q3w_jswn">
   <title>HPE Helion 1.3 Development Platform: Deploying a Node.js Application</title> 
   <prolog>
     <metadata>
@@ -29,9 +29,9 @@
     <section><title>Contents</title> 
     <p>This tutorial contains the following sections:</p>
     <ul>
-      <li><xref type="section" href="#topic_amr_q3w_js/prerequisites">Prerequisites</xref></li>
-      <li><xref type="section" href="#topic_amr_q3w_js/create">Creating the Hello World application</xref></li>
-      <li><xref type="section" href="#topic_amr_q3w_js/deploy">Deploying the application</xref></li>
+      <li><xref type="section" href="#topic_amr_q3w_jswn/prerequisites">Prerequisites</xref></li>
+      <li><xref type="section" href="#topic_amr_q3w_jswn/create">Creating the Hello World application</xref></li>
+      <li><xref type="section" href="#topic_amr_q3w_jswn/deploy">Deploying the application</xref></li>
     </ul></section>
     <section id="prerequisites"><title>Prerequisites</title> 
       <p>This tutorial requires the following:</p>
@@ -85,7 +85,7 @@
       <p>To deploy the sample application, do the following:</p>
       <ol>
         <li>Right-click the project and select <b>Publish to Cloud Foundry</b>. If this option does not appear, see <b>Cloud Foundry Extensions</b> under 
-          <xref type="section" format="dita" href="windows_nonnet.dita#topic_amr_q3w_js/prerequisites">Prerequisites</xref> above.</li>
+          <xref type="section" format="dita" href="windows_nonnet.dita#topic_amr_q3w_jswn/prerequisites">Prerequisites</xref> above.</li>
         <li>In the first <b>Publish to Cloud Foundry</b> dialog, click the <b>...</b> button in the <b>Target</b> line.
           <image placement="break" href="../../../media/windows_nonnet_pub_1.png"></image></li>
         <li>In the <b>Cloud Foundry target login</b> window, enter the following:
