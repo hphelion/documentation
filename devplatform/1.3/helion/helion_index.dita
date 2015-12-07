@@ -67,25 +67,25 @@
           <xref href="user/helion_user_index.dita">Application Lifecycle Service User Guide</xref>
           <ul>
             <li>
-              <xref href="user/helion_user_index.dita#topic1693/quick-start" type="section"  >Quick Start</xref>
+              <xref href="user/helion_user_index.dita#topic1693hui/quick-start" type="section"  >Quick Start</xref>
             </li>
             <li>
               <xref href="CLI/ALS_Client_Downloads.dita">Application Lifecycle Service
                 Client</xref>
             </li>
             <li>
-              <xref href="user/helion_user_index.dita#topic1693/deploying-applications" type="section"  >Deploying
+              <xref href="user/helion_user_index.dita#topic1693hui/deploying-applications" type="section"  >Deploying
                 Applications</xref>
             </li>
             <li>
-              <xref href="user/helion_user_index.dita#topic1693/services" type="section"  >Services</xref>
+              <xref href="user/helion_user_index.dita#topic1693hui/services" type="section"  >Services</xref>
             </li>
             <li>
-              <xref href="user/helion_user_index.dita#topic1693/logging-monitoring" type="section" >Logging &amp;
+              <xref href="user/helion_user_index.dita#topic1693hui/logging-monitoring" type="section" >Logging &amp;
                 Monitoring</xref>
             </li>
             <li>
-              <xref href="user/helion_user_index.dita#topic1693/management-console" type="section" >Management Console</xref>
+              <xref href="user/helion_user_index.dita#topic1693hui/management-console" type="section" >Management Console</xref>
             </li>
           </ul></li>
       </ul>

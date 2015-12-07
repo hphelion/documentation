@@ -37,7 +37,7 @@
             features added in version 1.3.</dd></dlentry>
     <dlentry>
       <dt>Updated Buildpacks</dt>
-      <dd> The <xref href="helion/user/deploy/deploy_index.dita#topic1693/languages"
+      <dd> The <xref href="helion/user/deploy/deploy_index.dita#topic1693di/languages"
         >buildpacks</xref> have all been updated, including Ruby (2.1.5) and Docker
         (1.5).</dd>
     </dlentry>
