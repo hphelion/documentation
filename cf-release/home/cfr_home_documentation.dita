@@ -27,7 +27,7 @@
     <ul id="ul_nlv_fct_5t">
       <li><xref href="cfr_whats_new.dita#concept_uvz_1cx_tt"/></li>
       <li><xref href="cfr_relnotes.dita#cfr_relnotes"/></li>
-      <li><xref href="cfr_TP_licensing.dita#cfr_TP_licensing"/></li>
+      <li><xref href="cfr_tp_licensing.dita#cfr_tp_licensing"/></li>
       <!--
       <li><xref href="cfr_license_terms.dita#concept_xzh_3f1_vt">Software License Terms</xref></li>
       -->
@@ -44,7 +44,7 @@
     </ul>
     <ul id="ul_czt_ytf_vt">
       <li><b>Reference</b><ul id="ul_mdv_swv_tt">
-        <li><xref href="../reference/cfr_reference_TF_vars.dita#reference_phl_shc_rt"/></li>
+        <li><xref href="../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"/></li>
         <li><xref href="../reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/></li>
       </ul></li>
     </ul>

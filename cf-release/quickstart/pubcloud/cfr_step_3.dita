@@ -41,7 +41,7 @@
                     <codeph>10.0.0.2,10.0.0.254</codeph>), and click
                     <uicontrol>Create</uicontrol>.<note type="tip">To find the network ID, click the
                     name of your network. You will need it to <xref
-                      href="../../reference/cfr_reference_TF_vars.dita#reference_phl_shc_rt"
+                      href="../../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"
                       >configure your <filepath>tfvars</filepath> file</xref> and <xref
                       href="cfr_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run terraform
                       commands.</xref></note></li>
@@ -134,7 +134,7 @@
                   commands</xref> and to <xref
                   href="cfr_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH into your
                   cluster</xref>. The location of the <filepath>pem</filepath> file is relative to
-                  <xref href="../../reference/cfr_reference_TF_vars.dita#reference_phl_shc_rt">the
+                  <xref href="../../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt">the
                     <filepath>tfvars</filepath> file in which it is specified</xref>. For
                 convenience, you can place the two files into the same directory.</note></li>
           </ol><xref href="cfr_step_4.dita#concept_pqc_jhz_st">
