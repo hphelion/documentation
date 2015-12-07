@@ -45,7 +45,7 @@
       to a network. </p>
     <p><b>Interfaces</b> Logical L2 interfaces defined on top of physical Ethernet ports.</p>
   <p>For more information on how to create interface profiles, see <xref
-        href="../Inventory/CGH-2-User-host-management-detail-interfaces.dita#topic6151">Working with
+        href="../Inventory/CGH-2-User-host-management-detail-interfaces.dita#topic6151c2uhmdi">Working with
         Interface Profiles</xref>.</p>
   </body>
 </topic>

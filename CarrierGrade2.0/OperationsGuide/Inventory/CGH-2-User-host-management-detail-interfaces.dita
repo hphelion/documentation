@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151c2uhmdi">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Working with Host Interface
         Profiles</title>
 <prolog>
@@ -38,16 +38,16 @@
 <p>This topic covers the following:</p>
 <ul>
 <li>
-<xref type="section" href="#topic6151/view">Viewing interface details</xref>
+<xref type="section" href="#topic6151c2uhmdi/view">Viewing interface details</xref>
 </li>
 <li>
-<xref type="section" href="#topic6151/creating">Creating an Interface Profile</xref>
+<xref type="section" href="#topic6151c2uhmdi/creating">Creating an Interface Profile</xref>
 </li>
 <li>
-        <xref type="section" href="#topic6151/create">Creating a new interface</xref>
+        <xref type="section" href="#topic6151c2uhmdi/create">Creating a new interface</xref>
       </li>
 <li>
-<xref type="section" href="#topic6151/editing">Editing Interface Details</xref>
+<xref type="section" href="#topic6151c2uhmdi/editing">Editing Interface Details</xref>
 </li>
 </ul>
 <section id="view"> <title>Viewing interface details</title>
@@ -170,7 +170,7 @@
 </ol>
 
 <note> Logical interfaces of network types <codeph>oam</codeph> and <codeph>mgmt</codeph> cannot be deleted. 
-    They can only be <xref type="section" href="#topic6151/editing">modified to use different physical ports</xref> when required.</note>
+    They can only be <xref type="section" href="#topic6151c2uhmdi/editing">modified to use different physical ports</xref> when required.</note>
 </section>
 <section id="editing"> <title>Editing Interface Details</title>
 <p>You can edit existing logical interfaces.</p>
@@ -190,7 +190,7 @@
             <b>Inventory Detail</b> page for that host.</li>
 <li>For the interface to change, click <b>More</b> then <b>Edit</b>.</li>
 <li>In the <b>Edit Interface</b> screen, make changes to the fields, as described in <xref
-            type="section" href="#topic6151/create">Creating a new interface details</xref>.</li>
+            type="section" href="#topic6151c2uhmdi/create">Creating a new interface details</xref>.</li>
 </ol>
 <!-- ===================== horizontal rule ===================== -->
 </section>

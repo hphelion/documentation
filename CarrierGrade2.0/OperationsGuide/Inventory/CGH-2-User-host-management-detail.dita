@@ -52,7 +52,7 @@
   <xref href="CGH-2-User-host-management-inventory-detail-ports.dita#topic1730">Viewing Host Port Details</xref></li>
 <li>
         
-  <xref href="CGH-2-User-host-management-detail-interfaces.dita#topic6151">Working with Host Interfaces</xref></li>
+  <xref href="CGH-2-User-host-management-detail-interfaces.dita#topic6151c2uhmdi">Working with Host Interfaces</xref></li>
 </ul>
 <section id="overview"> <title>Overview</title>
 <p>The <b>Overview</b> tab on the <b>Inventory Detail</b> page summarizes core details about a host object.</p>

@@ -104,7 +104,7 @@ password:  &lt;random> </codeblock><p>The
       <title id="kvm">For KVM deployments</title>
       <ol>
         <li>Create the Infra interface. See <xref
-            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
+            href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151cgawhmidi"
           /> or <i>Interfaces</i> in the Administrtor Guide.</li>
         <li>Create a Provider Network. See <xref
             href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
