@@ -124,7 +124,7 @@
                 href="../OperationsGuide/Backup/CGH-2-backup-restore.dita#topic10581c2br">Backup and
                 Restore Configuration Files and MySQL Clusters</xref>.</p>
             <p>For information on backing up and restoring the KVM region, see the <xref
-                href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+                href="../AdminGuideNew/carrier-grade-admin-guide.dita#topic15959cgag">KVM-Region
                 Administrator Guide</xref>.</p>
           </dd>
         </dlentry>

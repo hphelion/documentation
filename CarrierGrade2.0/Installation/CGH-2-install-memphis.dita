@@ -93,7 +93,7 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vrs-g"/>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="CGH-2-install-infoblox.dita#topic15959">Installing Infoblox</xref>. Infoblox is
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959c2ii">Installing Infoblox</xref>. Infoblox is
         an optional component that integrates with the OpenStack Neutron networking service, to
         provide IP Address Management (IPAM) networking services within OpenStack cloud
         platforms.</p>

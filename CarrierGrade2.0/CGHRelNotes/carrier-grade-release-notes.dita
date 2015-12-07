@@ -25,7 +25,7 @@
                 href="../OperationsGuide/CGH-2-User-Overview.dita#jow1404333560080">HP Helion
                 OpenStack Operations Guide</xref>. For information on using the HP Helion OpenStack
             Carrier Grade Developer API, including API definitions and usage descriptions, see the
-                <xref href="../API/carrier-grade-api.dita#topic15959">HP Helion OpenStack Carrier
+                <xref href="../API/carrier-grade-api.dita#topic15959cga">HP Helion OpenStack Carrier
                 Grade API and SDK Reference</xref>.</p>
         <section>See:<ul id="ul_z23_gdw_c5">
                 <li><xref href="#topic6108/changes" format="dita"/></li>

@@ -73,7 +73,7 @@
           <p>These topics describe the supported OpenStack Service and contain links to the
             respective OpenStack CLI and API documentation.</p></li>
         <li>
-          <xref href="API/carrier-grade-api.dita#topic15959">API and SDK Reference</xref>
+          <xref href="API/carrier-grade-api.dita#topic15959cga">API and SDK Reference</xref>
           <p>The API and SDK reference provides links to supported API and custom OpenStack API
             extensions. The page also links to the HP Helion OpenStack Carrier Grade Software
             Development Kit (SDK) documentation.</p></li>
