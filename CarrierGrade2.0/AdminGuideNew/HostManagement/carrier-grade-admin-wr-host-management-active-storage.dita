@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639cgawhmas">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0 Alpha: Replacing Active Storage Nodes</title>
 <prolog>
 <metadata>
@@ -77,7 +77,7 @@ resources to meet the operational requirements of the system.</p>
 </ol>
 <p>For more information on initializing and configuring a storage node, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-initialize-storage.dita" >Initializing and Configuring Storage Nodes</xref>.</p>
 <p>
-  <xref type="section" href="#topic2639"> Return to Top </xref>
+  <xref type="section" href="#topic2639cgawhmas"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

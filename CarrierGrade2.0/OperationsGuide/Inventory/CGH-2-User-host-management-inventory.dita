@@ -39,21 +39,21 @@
             </li>
             <li><xref href="../HostManagement/CGH-2-User-host-management-active.dita#topic4032">Active
                 Hosts</xref></li>
-            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639"
+            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639c2uhmp"
                     >Patches </xref></li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-cpu.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-cpu.dita#topic2639c2uhmpc"
                     >CPU Profiles</xref>
             </li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639c2uhmpi"
                     >Interface Profiles </xref></li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-storage.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-storage.dita#topic2639c2uhmps"
                     >Storage Profiles</xref>
             </li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-memory.dita#topic2639"
+                    href="../HostManagement/CGH-2-User-host-management-profiles-memory.dita#topic2639c2uhmpm"
                     >Memory Profiles</xref></li>
         </ul>
         <p>You can also get <xref href="CGH-2-User-host-management-detail.dita#topic1947">detailed
