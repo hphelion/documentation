@@ -21,7 +21,7 @@
   <!--Dev Plat-->
   <!-- Euca -->
   <!-- CGH -->
-  <topicref href="CarrierGrade2.0/carrier-grade-index.dita" otherprops="&quot;&quot;">
+  <topicref href="CarrierGrade2.0/carrier-grade-index.dita" otherprops="">
     <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview.dita" navtitle="Overview"
       locktitle="yes" otherprops="overview">
       <topicref href="CarrierGrade2.0/Overview/carrier-grade-overview-non-kvm.dita"
