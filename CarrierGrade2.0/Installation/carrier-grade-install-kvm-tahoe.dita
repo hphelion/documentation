@@ -38,7 +38,7 @@
         (huge pages) on each processor, such as the NUMA (Non-Uniform Memory Access) nodes. See
         <i>Processor</i> in the Administrator Guide.</li>
       <li><xref
-        href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
+        href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241cgawhmhl"
         >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
         the inventory page to show <b>Available</b> and <b>Online</b>.</li>
       <li>If you are using a bonded interface, see <xref href="#topic1107cgikt/nic-unlock" format="dita">For

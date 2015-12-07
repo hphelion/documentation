@@ -158,7 +158,7 @@
       <p>Locking a host brings the host out of service.</p>
       <p>Force locking a host takes the host out of service if for the Lock Host option does not
         work.</p>
-      <p>For more information, see <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+      <p>For more information, see <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
           >Locking and Unlocking a Host</xref>.</p>
     </section>
     <section id="poweroff"><title>Power Off and On a Host</title><p>You can use the Hosts page to

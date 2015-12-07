@@ -105,7 +105,7 @@
             <b>Inventory</b> tab. </li>
         <li>
                     <xref
-                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
                         >Lock the host</xref> to make changes. Click <b>Edit Host</b> then select
                         <b>Lock Host</b>. Wait for the host to be reported as
                         <codeph>Locked</codeph>.</li>
@@ -131,7 +131,7 @@ You can use the web administration interface or the CLI to set up shared physica
                         <b>Inventory</b> tab. </li>
                 <li>
                     <xref
-                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+                        href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
                         >Lock the host</xref> to make changes. Click <b>Edit Host</b> then select
                         <b>Lock Host</b>.<p>Wait for the host to be reported as Locked. </p></li>
                             <li>In the

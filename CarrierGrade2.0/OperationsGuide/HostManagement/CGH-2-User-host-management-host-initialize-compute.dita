@@ -97,7 +97,7 @@
               Interface Provisioning.</li>
           </ol>
         </p></li>
-<li><xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Unlock the
+<li><xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Unlock the
           node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.<p>The
           node is rebooted, and its Availability State is reported as In-Test. After a few minutes,
           it is reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and

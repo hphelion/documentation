@@ -59,7 +59,7 @@
       </li>
       <li>
         <p>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the standby
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock the standby
             controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
         <p>Wait for the procedure to be completed.</p>
       </li>
@@ -72,7 +72,7 @@
         <p>Place the new or modified controller into service.</p>
         <p>To begin using the new disk, <xref
             href="CGH-2-User-host-management.dita#topic11233/poweroff" type="section">power up the
-            host</xref> and <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241"
+            host</xref> and <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl"
             >unlock</xref> the host.</p>
         <ul>
           <li>For disk replacement, no additional configuration changes are needed. </li>

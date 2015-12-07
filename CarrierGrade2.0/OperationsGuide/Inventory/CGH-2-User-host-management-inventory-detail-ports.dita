@@ -44,7 +44,7 @@
       <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Inventory</b>
         tab. </li>
       <li>
-        <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the
+        <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock the
           host</xref> to make changes. Click <b>Edit Host</b> then select <b>Lock Host</b>. Wait for
         the host to be reported as <codeph>Locked</codeph>.</li>
       <li>In the <b>Host Name</b> column, click the name of the locked host to open the <b>Inventory

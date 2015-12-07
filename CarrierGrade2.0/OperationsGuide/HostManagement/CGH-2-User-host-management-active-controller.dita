@@ -56,7 +56,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
       </li>
       <li>
         <p>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the standby
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock the standby
             controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
         <p>Wait for the procedure to be completed.</p>
       </li>
@@ -86,7 +86,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
       </li>
       <li>
         <p>
-          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241">Lock the original active
+          <xref href="../HostManagement/CGH-2-User-host-management-host-lock.dita#topic3241c2uhmhl">Lock the original active
             controller</xref>, which is in standby.</p>
         <p>a. Open the Hosts list by clicking Inventory on the System Panel section of the Admin
           menu, and then selecting the Hosts tab.</p>
