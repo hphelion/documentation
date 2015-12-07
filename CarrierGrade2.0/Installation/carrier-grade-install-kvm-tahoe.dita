@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107cgikt">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the KVM Region in a Tahoe Deployment</title>
 <prolog>
   <metadata>
@@ -14,11 +14,11 @@
 </prolog>
 <body>
 
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/intro"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/controller-0"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/install-license"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/install-cloud"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/unlock"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/intro"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/controller-0"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-license"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-cloud"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/unlock"/>
   <section id="kvm-unlock"><title>For a Non-Bonded Environment</title>
     <ol>
       <li>Create the Infra interface. See <xref
@@ -31,7 +31,7 @@
         option. See <xref
           href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
         /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
-      <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
+      <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107cgikni">Create data
         interface.</xref> See <i>Configuring Endpoint IP Addresses</i> in the Administrator
         Guide.</li>
       <li>Optionally, change the default CPU allocations and/or the default memory allocations
@@ -41,18 +41,18 @@
         href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
         >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
         the inventory page to show <b>Available</b> and <b>Online</b>.</li>
-      <li>If you are using a bonded interface, see <xref href="#topic1107/nic-unlock" format="dita">For
+      <li>If you are using a bonded interface, see <xref href="#topic1107cgikt/nic-unlock" format="dita">For
         bonded NIC environments</xref>.</li>
     </ol>
   </section>
   
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/nic-unlock" id="nic-unlock"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/nic-unlock" id="nic-unlock"/>
   
   <section id="next-step">
       <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref>.</p>
+      <p><xref href="carrier-grade-install-post.dita#topic1107cgip">Post-Installation Tasks</xref>.</p>
       <p>If you are installing the <b>Sacramento</b> deployment, also see <xref
-          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107cgpbn"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   </body>

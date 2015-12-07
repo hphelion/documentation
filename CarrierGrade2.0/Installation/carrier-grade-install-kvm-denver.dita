@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107cgikd">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the KVM Region in
     a Denver Deployment</title>
 <prolog>
@@ -14,18 +14,18 @@
   </metadata>
 </prolog>
 <body>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/intro"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/controller-0"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/install-license"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/install-cloud"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/unlock"/>
-    <section conref="carrier-grade-install-kvm-tahoe.dita#topic1107/kvm-unlock"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107/nic-unlock"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/intro"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/controller-0"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-license"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-cloud"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107ckiks/unlock"/>
+    <section conref="carrier-grade-install-kvm-tahoe.dita#topic1107icgikt/kvm-unlock"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/nic-unlock"/>
     <section id="next-step">
       <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-post.dita#topic1107">Post-Installation Tasks</xref>.</p>
+      <p><xref href="carrier-grade-install-post.dita#topic1107cgip">Post-Installation Tasks</xref>.</p>
       <p>If you are installing the <b>Sacramento</b> deployment, also see <xref
-          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107"
+          href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107cgpbn"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
     </section>
   </body>
