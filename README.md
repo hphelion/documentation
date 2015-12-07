@@ -5,13 +5,14 @@ This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](
 ## Navigating the Document
 * `docs.hpcloud.com.ditamap` The ditamap that links to the main <docs.hpcloud.com> TOC
 * `cf-release/`
-  * `docs.hpcloud.com.CFR.ditamap` The ditamap of the document itself
-  * `docs.hpcloud.com.CFR_variables.ditamap` The ditamap that contains the variables for everything
+  * `docs.hpcloud.com.cfr.ditamap` The ditamap of the document itself
+  * `docs.hpcloud.com.cfr_variables.ditamap` The ditamap that contains the variables for everything
     * **Note:** Do not use product names (for example, _Helion Cloud Foundry_) anywhere in the document itself. Add the product names to the appropriate `<keydef>` and then reuse it in your topic using `<keyword>`.
   * `home/` Top-level documents
   * `media/` Graphics
   * `quickstart/` Quick start guides
-    * `pubcloud/` Quick start for deploying HCF on HP Helion Public Cloud
+    * ~~`pubcloud/` Quick start for deploying HCF on HP Helion Public Cloud~~
+    * `hos/` Quick start for deploying HCF on HP Helion Public Cloud
   * `reference/` Reference topics
   
 ## Previewing the Document
