@@ -12,7 +12,7 @@ This is the documentation for Helion Cloud Foundry. It is written in [DITA XML](
   * `media/` Graphics
   * `quickstart/` Quick start guides
     * ~~`pubcloud/` Quick start for deploying HCF on HP Helion Public Cloud~~
-    * `hos/` Quick start for deploying HCF on HP Helion Public Cloud
+    * `hos/` Quick start for deploying HCF on HPE Helion OpenStack
   * `reference/` Reference topics
   
 ## Previewing the Document
