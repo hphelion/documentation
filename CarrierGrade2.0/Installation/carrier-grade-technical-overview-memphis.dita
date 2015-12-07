@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3485">
+<topic xml:lang="en-us" id="topic3485cgtom">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Memphis (KVM + ESX with DCN)
     Deployment Architecture Reference</title>
   <prolog>
@@ -23,7 +23,7 @@
     <p>The Memphis deployment incorporates HPE Distributed Cloud Networking (DCN) virtual network
       solution. During the installation, use the <codeph>memphis</codeph> template that comes with
       the installation package.</p>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/Helion-services"/>
     <section>
     <title>Network/Component Architecture</title>
     <p><image href="../../media/CGH-2-block-arch-memphis.png" width="750" id="image_wdn_zbw_mt"
@@ -128,7 +128,7 @@
     <section>
       <title>Service Architecture Diagram</title>
       <p>For service architecture diagrams with interface details, see <xref
-          href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture
+          href="carrier-grade-technical-overview-intf.dita#topic3485cgtoi">Service Architecture
           Diagrams</xref></p>
     </section>
     <section>
@@ -136,7 +136,7 @@
       <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two
         logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
         the installation process. The <xref
-          href="carrier-grade-technical-overview-memphis.dita#topic3485/deploy-arch">Deployment
+          href="carrier-grade-technical-overview-memphis.dita#topic3485cgtom/deploy-arch">Deployment
           Architecture diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
       <p>The Non-KVM region contains the lifecycle manager, to deploy and
@@ -165,7 +165,7 @@
           <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
       </ul>
     </section>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/data"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/data"/>
     <section id="dcn"><title>HPE Distributed Cloud Networking Components </title><p>The HP Helion
       OpenStack Carrier Grade Memphis deployment uses HPE Distributed Cloud Networking to
       provide virtual networking within the cloud.</p><p>DCN must be deployed before starting the
@@ -188,11 +188,11 @@
       </ul><p>During the installation, you will be interacting with DCN. You should be familiar with
         the major DCN components, including how to access the various systems, IP addresses, and
         user credentials. </p></section>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/eth-int"/>
     <section
-      conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/>
+      conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtom/usb-interface"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/net"/>
     <section>
       <title>Next Step</title>
       <p>Review the <xref href="carrier-grade-support-matrix-memphis.dita#topic1773cgsmm">Support

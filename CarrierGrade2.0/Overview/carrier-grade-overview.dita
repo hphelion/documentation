@@ -153,7 +153,7 @@
               system configuration. Specific installation templates are included in the download
               package to facilitate the deployment of your cloud. </p>
             <p>You can find more information on the deployment options in the <xref
-                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
                 Overview</xref>.<!--Original writing--><ul id="ul_kg5_h5d_25">
                 <li>KVM only (using the Denver template)</li>
                 <li>KVM with HP Distributed Cloud Networking (using the Tahoe template)</li>
@@ -231,7 +231,7 @@
               Switching (VRS). </p>
             <p>VRS is included in the Tahoe, Memphis and Sacramento deployments of HP Helion Carrier
               Grade. The <xref
-                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
                 Overview</xref> describes these deployments. </p>
             <p><b>Accelerated vSwitch (AVS).</b> AVS is integrated into the servers in the KVM
               region. AVS is an optimization of Open vSwitch (OVS) technology for NFV environments.
@@ -266,7 +266,7 @@
               directly attached tenant networks and subnets, as well as for gateway, SNAT, and
               floating IP functionality.</p>
             <p>AVS is included in the Denver deployment of HP Helion Carrier Grade. The <xref
-                href="../Installation/carrier-grade-technical-overview.dita#topic3485">Technical
+                href="../Installation/carrier-grade-technical-overview.dita#topic3485cgto">Technical
                 Overview</xref> describes these deployments. </p>
           </dd>
         </dlentry>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485cgto">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Technical Overview</title>
 <prolog>
 <metadata>
@@ -15,12 +15,12 @@
 <body>
     <p>For technical information about HP Helion OpenStack Carrier Grade, see one of the following,
       based upon your deployment:<ul id="ul_es3_kb2_b5">
-        <li><xref href="carrier-grade-technical-overview-denver.dita#topic3485">Denver Deployment Technical Overview</xref></li>
-        <li><xref href="carrier-grade-technical-overview-tahoe.dita#topic3485">Tahoe Deployment
+        <li><xref href="carrier-grade-technical-overview-denver.dita#topic3485cgtod">Denver Deployment Technical Overview</xref></li>
+        <li><xref href="carrier-grade-technical-overview-tahoe.dita#topic3485cgtot">Tahoe Deployment
             Technical Overview</xref></li>
-        <li><xref href="carrier-grade-technical-overview-memphis.dita#topic3485">Memphis Deployment
+        <li><xref href="carrier-grade-technical-overview-memphis.dita#topic3485cgtom">Memphis Deployment
             Technical Overview</xref></li>
-        <li><xref href="carrier-grade-technical-overview-sacramento.dita#topic3485">Sacramento
+        <li><xref href="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos">Sacramento
             Deployment Technical Overview</xref></li>
       </ul></p>
   </body>

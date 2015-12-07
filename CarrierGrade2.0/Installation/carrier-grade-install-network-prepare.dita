@@ -17,7 +17,7 @@
         <section>
             <title>VLAN ID Reference</title>
             <p>Make sure you have all VLAN IDs defined for the networks as defined in the <xref
-                    href="carrier-grade-technical-overview.dita#topic3485">Architecture
+                    href="carrier-grade-technical-overview.dita#topic3485cgto">Architecture
                     Diagram</xref></p>
 
         <p><b><u>Example</u></b></p>

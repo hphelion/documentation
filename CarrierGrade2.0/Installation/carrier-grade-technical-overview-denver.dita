@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3485">
+<topic xml:lang="en-us" id="topic3485cgtod">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Denver Deployment
     Technical Overview</title>
   <prolog>
@@ -21,15 +21,15 @@
       template that comes with the installation package. </p>
     <p><b>Note:</b> The Denver deployment is for proof-of-concept (POC) only and is not intended for
       production environments.</p>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/Helion-services"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/Helion-services"/>
     <p><b>Network/Component Architecture</b></p>
     <p><image href="../../media/CGH-2-block-arch-denver.png" width="750" id="image_wdn_zbw_mt"/></p>
     <ul>
       <li>
-        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
+        <xref type="section" href="#topic3485cgtod/deploy-arch">Deployment architecture</xref>
       </li>
       <li>
-        <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
+        <xref type="section" href="#topic3485cgtod/networkarch">Network architecture</xref>
       </li>
     </ul>
     <section id="deploy-arch">
@@ -144,14 +144,14 @@
     </section>
     <section><title>Service Architecture Diagram</title>
       <p>For service architecture diagrams with interface details, see <xref
-        href="carrier-grade-technical-overview-intf.dita#topic3485">Service Architecture Diagrams</xref></p>
+        href="carrier-grade-technical-overview-intf.dita#topic3485cgtoi">Service Architecture Diagrams</xref></p>
   </section>
     <section>
       <title>Regions</title>
       <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
         or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
         installation process. The <xref
-          href="carrier-grade-technical-overview-denver.dita#topic3485/deploy-arch">Deployment
+          href="carrier-grade-technical-overview-denver.dita#topic3485cgtod/deploy-arch">Deployment
           Architecture diagram</xref> shows an illustration of these two zones. </p>
       <p><b>Non-KVM</b></p>
       <p>The Non-KVM region contains the lifecycle manager, to deploy and maintain HP Helion
@@ -179,12 +179,12 @@
           <!--https://wiki.hpcloud.net/display/iaas/HCG+Arch+-+NFV--></li>
       </ul>
     </section>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/data"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/eth-int"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/data"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/eth-int"/>
     <section
-      conref="carrier-grade-technical-overview-sacramento.dita#topic3485/board-management-modules"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/usb-interface"/>
-    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485/net"/> 
+      conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/board-management-modules"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/usb-interface"/>
+    <section conref="carrier-grade-technical-overview-sacramento.dita#topic3485cgtos/net"/> 
  <section>
       <title>Next Step</title>
       <p>Review the <xref href="carrier-grade-support-matrix-denver.dita#topic1773cgsmd">Support

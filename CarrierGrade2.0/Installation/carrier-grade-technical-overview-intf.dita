@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic3485">
+<topic xml:lang="en-us" id="topic3485cgtoi">
   <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Technical Reference: Service
     Architecture and Sequence Diagrams </title>
   <prolog>
@@ -21,13 +21,13 @@
           Tahoe/Memphis/Sacramento deployments</b></p><p>The following diagram represents the
         control plane interfaces for the Sacramento deployment. The Memphis and Tahoe deployments
         are based on this model, without the baremetal region. See the legend below for more
-        information and <xref href="carrier-grade-technical-verview-intf.dita#topic3485/interface"
+        information and <xref href="carrier-grade-technical-verview-intf.dita#topic3485cgtvi/interface"
           >Interfaces</xref> for details on each interface.</p><p>
         <image href="../../media/CGH-2-control-plane-intf.png" id="image_mrd_1jc_f5"/></p><p><b>Data
           Plane Interfaces </b></p>The following diagram represents the data plane interfaces for
       the Sacramento deployment. The Memphis and Tahoe deployments are based on this model, without
       the baremetal region. See the legend below for more information and <xref
-        href="carrier-grade-technical-verview-intf.dita#topic3485/interface">Interfaces</xref> for
+        href="carrier-grade-technical-verview-intf.dita#topic3485cgtvi/interface">Interfaces</xref> for
       details on each interface.<p/><image href="../../media/CGH-2-data-plane-intf.png"
         id="image_tlh_2jc_f5"/><p><b>Legend</b></p><p>Dotted lines show different security
         domains.</p><p>Lines between components show interactions. Colors of these lines help
@@ -41,7 +41,7 @@
       </ul><p><b>AVS: Denver deployment</b></p><p><b>Control and Data Plane Interfaces</b></p><p>
         The following diagram represents the control and data plane interfaces for the Denver
         deployment. See the legend below for more information and <xref
-          href="carrier-grade-technical-verview-intf.dita#topic3485/interface">Interfaces</xref> for
+          href="carrier-grade-technical-verview-intf.dita#topic3485cgtvi/interface">Interfaces</xref> for
         details on each interface.<image href="../../media/CGH-2-ctrl-data-plane-intf.png"
           id="image_yyy_hjc_f5"/></p><p><b>Legend</b></p><p>Dotted lines show different security
         domains.</p><p>Lines between components show interactions. Colors of these lines help
