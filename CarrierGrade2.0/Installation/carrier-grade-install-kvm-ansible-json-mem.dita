@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797cgikajm">
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample ansible.json File for
         Memphis and Tahoe</title>
@@ -18,7 +18,7 @@
         
         <p>The process for installing the memphis or sacramento deployment requires several JSON
             files that will be used when deploying the lifecycle manager.</p>
-        <section conref="carrier-grade-install-kvm-ansible-json-sac.dita#topic4797/fields"/>
+        <section conref="carrier-grade-install-kvm-ansible-json-sac.dita#topic4797cgikajm/fields"/>
         
         
         

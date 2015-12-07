@@ -292,7 +292,7 @@ Password: cghelion</codeblock>
         id="ul_eln_vcl_25">
         <li><xref href="carrier-grade-install-kvm-env-json-sac.dita">For an Unbonded NIC
             Environment</xref></li>
-        <li><xref href="carrier-grade-install-kvm-env-json-bonded-sac.dita#topic4797">For a Bonded
+        <li><xref href="carrier-grade-install-kvm-env-json-bonded-sac.dita#topic4797cgikejbs">For a Bonded
             NIC Environment</xref></li>
       </ul></p>
     <section id="conref-ansible-json">
@@ -362,7 +362,7 @@ Password: cghelion</codeblock>
         fit your hardware model. You have to gather the correct PCI SLOT INFO and add ports
         accordingly on the hardware slots or cards used for networking.</p>
       <p>Click here to see a  <xref
-          href="carrier-grade-install-kvm-machine-json-bonded.dita#topic4797">sample
+          href="carrier-grade-install-kvm-machine-json-bonded.dita#topic4797cgikmjb">sample
           machine_architecture.json file</xref>.</p>
     </section>
     <section>
