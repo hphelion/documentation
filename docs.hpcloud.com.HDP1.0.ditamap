@@ -112,7 +112,7 @@
     <topicref href="devplatform/helion/1.0index.dita"
       navtitle="Application Lifecycle Service Documentation" locktitle="yes" otherprops="als">
       <!--permalink: /als/v1/admin/-->
-      <topichead navtitle="ALS Management Console" otherprops="console">
+      <topicref navtitle="ALS Management Console" href="devplatform/helion/admin/adminintro.dita"  otherprops="console">
         <topicref href="devplatform/helion/admin/console/1.0index.dita" locktitle="yes"
           navtitle="Management Console (Admin View) "
           ><!--permalink: /als/v1/admin/console/app-store/--><!--permalink: /als/v1/admin/console/customize/--></topicref>
@@ -120,8 +120,8 @@
           locktitle="yes"/>
         <topicref href="devplatform/helion/user/console/1.0index.dita"
           navtitle="Managment Console (User View)" locktitle="yes"/>
-      </topichead>
-      <topichead navtitle="ALS Command Line Clients" otherprops="cli">
+      </topicref>
+      <topicref  navtitle="ALS Command Line Clients"  href="devplatform/helion/CLI/userintro.dita" otherprops="cli">
         <topicref href="devplatform/helion/user/client/1.0index.dita" locktitle="yes"
           navtitle="HPE Helion Application Lifecycle Service Client " otherprops="lifecycle">
           <!--permalink: /als/v1/client/download/-->
@@ -152,7 +152,7 @@
           <topicref href="devplatform/helion/user/reference/1.0troubleshoot.dita" locktitle="yes"
             navtitle="Troubleshooting "/>
         </topicref>
-      </topichead>
+      </topicref>
       <topicref href="devplatform/helion/admin/1.0index.dita" locktitle="yes"
         navtitle="ALS Admin Guide " otherprops="als-admin">
         <!--permalink: /als/v1/admin/best-practices/-->
