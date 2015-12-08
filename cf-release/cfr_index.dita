@@ -27,9 +27,6 @@
       <li><xref href="hcf-whats-new.dita#concept_uvz_1cx_tt"/></li>
       <li><xref href="hcf-release-notes.dita#cfr_relnotes"/></li>
       <li><xref href="hcf-agreements.dita#cfr_tp_licensing"/></li>
-      <!--
-      <li><xref href="cfr_license_terms.dita#concept_xzh_3f1_vt">Software License Terms</xref></li>
-      -->
     </ul>
     <ul id="ul_pph_ytf_vt">
       <li><b>Quick Start: Deploying to <keyword keyref="opnStckLong"/></b><ul id="ul_ack_nwv_tt">
