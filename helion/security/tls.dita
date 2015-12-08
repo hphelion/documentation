@@ -34,10 +34,16 @@
         <li>Assign a name to the "external-name:" line in
             <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> (so that an FQDN
           is used) </li>
-      </ul> You also need to choose if you want TLS on or off. We recommend keeping TLS on by
-      default as it cannot be changed. But if you want it disabled you need to change
-      "tls-components" to "components" in <codeph>network_groups.yml</codeph> and comment out the
-      cert-file. </section>
+      </ul>
+      <p>You also need to choose if you want TLS on or off. We recommend keeping TLS on by default
+        as it cannot be changed. But if you want it disabled you need to change "tls-components" to
+        "components" in <codeph>network_groups.yml</codeph> and comment out the cert-file.</p>
+      <p>For more details about how this works, see <xref
+          href="../input_model.dita#input_model/co_networkgroups">Input Model - Network
+          Groups</xref> and <xref
+          href="../example_configurations.dita#example_configurations/networkgroups">Example
+          Configurations - Network_groups.yml</xref></p>
+    </section>
     <section id="selfsigned_cert">
       <title>Creating a Self-Signed Certificate</title>
       <p>If you want to install a self-signed certificate for testing purposes that meets the needs
