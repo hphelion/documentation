@@ -128,8 +128,10 @@
           <topicref href="devplatform/helion/CLI/1.0ALS_Client_Downloads.dita" locktitle="yes"
             navtitle="HPE Application Lifecycle Service (ALS) Client "/>
           <!--permalink: /als/v1/user/console/-->
+          <!-- duplicate removed for drupal export
           <topicref href="devplatform/helion/user/console/1.0index.dita" locktitle="yes"
             navtitle="Management Console "/>
+            -->
           <!--permalink: /als/v1/user/quick-start/-->
           <topicref href="devplatform/helion/user/quick-start/1.0index.dita" locktitle="yes"
             navtitle="Prerequisites "/>
@@ -212,16 +214,19 @@
         </topicref>
         <topicref href="devplatform/helion/admin/console/1.0app-store.dita" locktitle="yes"
           navtitle="Sample Applications "/>
-        <topicref href="devplatform/helion/admin/console/1.0customize.dita" locktitle="yes"
-          navtitle="Customization "/>
+        <!-- removed for drupal export 
+          <topicref href="devplatform/helion/admin/console/1.0customize.dita" locktitle="yes"
+          navtitle="Customization "/> -->
       </topicref>
       <!--permalink: /als/v1/user/-->
       <topicref href="devplatform/helion/user/1.0index.dita" locktitle="yes"
         navtitle="ALS User Guide " otherprops="als-user">
         <!--permalink: /als/v1/user/client/-->
         <!--permalink: /als/v1/user/deploy/-->
+        <!--duplicate removed for drupal export
         <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
           navtitle="ALS Quick Start Guide" locktitle="yes"/>
+          -->
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment " otherprops="deploy">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
