@@ -20,8 +20,7 @@
         keyref="prodShort"/> uses <xref href="https://www.consul.io/" format="html" scope="external"
         >Consul</xref> for centralized configuration storage that runs on each instance.</p>
     <note>For detailed descriptions of the components of <keyword keyref="prodLong"/>, see <xref
-        href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt/available_role_containers"
-      />.</note>
+        href="reference/cfr_reference_roles.dita#cf_reference_roles">Available Roles</xref>. </note>
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
       and pushing your first apps.</p>
     <ul id="ul_nlv_fct_5t">
@@ -46,6 +45,8 @@
       <li><b>Reference</b><ul id="ul_mdv_swv_tt">
         <li><xref href="reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"/></li>
         <li><xref href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/></li>
+          <li><xref href="reference/cfr_reference_roles.dita#cf_reference_roles">Available
+              Roles</xref></li>
       </ul></li>
     </ul>
   </conbody>

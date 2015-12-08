@@ -18,6 +18,7 @@
       <topicref href="reference/cfr_reference.dita" otherprops="reference">
          <topicref href="reference/cfr_reference_tf_vars.dita"/>
          <topicref href="reference/cfr_reference_gato.dita"/>
+         <topicref href="reference/cfr_reference_roles.dita"/>
       </topicref>
       <!--
       <topicref href="cfr_license_terms.dita"/>
