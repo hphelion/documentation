@@ -116,7 +116,7 @@
         <!-- <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
         navtitle="Network Security">-->
         <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
-          navtitle="Configuring Your Network Securely"  otherprops="network-security" locktitle="yes"/>
+        navtitle="Configuring Your Network Securely" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" navtitle="TLS Support"
           locktitle="yes"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
@@ -460,7 +460,7 @@
       <topicref href="commercial/GA1/1.1commerical.services-focus-overview.dita"
         navtitle="Focus Service Overview" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/1.1commerical.services-dns-overview.dita"
-        navtitle="DNS as a Service (DNSaaS)" locktitle="yes" otherprops="dnsaas">
+        navtitle="DNS as a Service (DNSaaS)" locktitle="yes" >
         <!--commenting out duplicate to allow export to drupal
         <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
           navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
