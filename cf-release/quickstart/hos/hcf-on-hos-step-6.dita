@@ -12,11 +12,11 @@
  <conbody>
   <simpletable id="simpletable_o32_yvk_g5">
    <strow>
-    <stentry>1. <xref conref="cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
-     <xref conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
-      conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
-       conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
-        conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <b><keyword
+    <stentry>1. <xref conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
+     <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
+      conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
+       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
+        conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <b><keyword
        keyref="quickStartHOSstep6"/></b></stentry>
     <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer and
       troubleshoot your cluster, you can connect to it using SSH and then run <keyword
@@ -24,7 +24,7 @@
        keyref="prodShort"/> core and the location of your RSA private key, for
       example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><note
       type="note">For more information, see the <xref
-       href="../../reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/>.</note><b>Terminating
+       href="../../reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/>.</note><b>Terminating
       Instances and Security Groups from the Command Line</b><p>To terminate your instance and its
       security groups, run the following command and enter <userinput>yes</userinput> when
       prompted:</p><note type="important" id="delete_cluster">This action will delete all of your
@@ -33,7 +33,7 @@
        scope="external">Command:
       Destroy</xref>.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
       type="note">For more information, see <xref
-       href="../../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt">Terraform
+       href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">Terraform
        Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security groups
       associated with it.</p><note type="tip">If the <filepath>destroy</filepath> process enters a
       loop, delete the <filepath>terraform.tfstate</filepath> file and run the command

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
+<map>
+   <title>HP Helion Cloud Foundry</title>
+   <mapref href="hcf-variables.ditamap"/>
+   <topicref href="cfr_index.dita" otherprops="hcf">
+      <topicref href="hcf-whats-new.dita"/>
+      <topicref href="hcf-release-notes.dita"/>
+      <topicref href="hcf-agreements.dita"/>
+      <topicref href="quickstart/hos/hcf-on-hos.dita">
+         <topicref href="quickstart/hos/hcf-on-hos-step-1.dita"/>
+         <topicref href="quickstart/hos/hcf-on-hos-step-2.dita"/>
+         <topicref href="quickstart/hos/hcf-on-hos-step-3.dita"/>
+         <topicref href="quickstart/hos/hcf-on-hos-step-4.dita"/>
+         <topicref href="quickstart/hos/hcf-on-hos-step-5.dita"/>
+         <topicref href="quickstart/hos/hcf-on-hos-step-6.dita"/>
+      </topicref>
+      <topicref href="reference/hcf-reference.dita" otherprops="reference">
+         <topicref href="reference/hcf-reference-tfvars.dita"/>
+         <topicref href="reference/hcf-reference-gato.dita"/>
+         <topicref href="reference/hcf-reference-roles.dita"/>
+      </topicref>
+      <!--
+      <topicref href="cfr_license_terms.dita"/>
+      -->      
+   </topicref>
+</map>

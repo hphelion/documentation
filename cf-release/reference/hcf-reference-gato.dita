@@ -9,9 +9,9 @@
     </metadata>
   </prolog>
   <refbody>
-    <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> administration
-      utility. To run <keyword keyref="adminUtil"/> commands you must <codeph>ssh</codeph> into the
-      core node.</section>
+    <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> Command-Line
+      Interface (CLI) administration utility. To run <keyword keyref="adminUtil"/> commands you must
+        <codeph>ssh</codeph> into the core node.</section>
     <section>
       <title>Global Options</title>
       <dl>
@@ -37,7 +37,7 @@
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
         </dlentry>
         <dlentry>
-          <dt><filepath>config</filepath></dt>
+          <dt><filepath id="config_get_example">config</filepath></dt>
           <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components. For
               example:<codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><ul
               id="ul_x4n_dtj_rt">
@@ -52,10 +52,10 @@
           <dd>Show a list of commands or help for one command.</dd>
         </dlentry>
         <dlentry>
-          <dt><filepath>role</filepath></dt>
+          <dt><filepath id="role_example">role</filepath></dt>
           <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the Docker server endpoint. Use the <filepath>--node</filepath>
-            flag to stop a <xref href="cfr_reference_roles.dita#cf_reference_roles"
+            flag to stop a <xref href="hcf-reference-roles.dita#cf_reference_roles"
                 ><varname>&lt;role></varname></xref> on a specific node. For example:
               <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
               id="ul_blk_nhj_rt">
@@ -100,7 +100,7 @@
                 <filepath><varname>&lt;value></varname></filepath> in the configuration store.<dl>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-                <dd>Set a specific <xref href="cfr_reference_roles.dita#cf_reference_roles"
+                <dd>Set a specific <xref href="hcf-reference-roles.dita#cf_reference_roles"
                     >&lt;role></xref>'s configuration.</dd>
               </dlentry>
               <dlentry>
@@ -116,7 +116,7 @@
         <dlentry id="role_start">
           <dt><filepath><keyword keyref="adminUtilCLI"/> role start
               <varname>[options]</varname></filepath></dt>
-          <dd>Start the <xref href="cfr_reference_roles.dita#cf_reference_roles"
+          <dd>Start the <xref href="hcf-reference-roles.dita#cf_reference_roles"
                 ><varname>&lt;role></varname></xref>.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
@@ -131,7 +131,7 @@
         <dlentry id="role_stop_restart">
           <dt><filepath><keyword keyref="adminUtilCLI"/> role stop|restart
                 <varname>[options]</varname></filepath></dt>
-          <dd>Stop or restart the <xref href="cfr_reference_roles.dita#cf_reference_roles"
+          <dd>Stop or restart the <xref href="hcf-reference-roles.dita#cf_reference_roles"
                 ><varname>&lt;role></varname></xref>.<dl>
               <dlentry>
                 <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>

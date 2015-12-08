@@ -15,22 +15,22 @@
   <simpletable id="simpletable_kf3_rvk_g5">
    <strow>
     <stentry>1. <b><keyword keyref="quickStartHOSstep1"/></b>
-     <p>2. <xref href="cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st" id="quickStartHOSstep2_"><keyword
+     <p>2. <xref href="hcf-on-hos-step-2.dita#concept_ikh_xgz_st" id="quickStartHOSstep2_"><keyword
         keyref="quickStartHOSstep2"/></xref></p><p>3. <xref
-         href="cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st" id="quickStartHOSstep3_"><keyword
+         href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st" id="quickStartHOSstep3_"><keyword
         keyref="quickStartHOSstep3"/></xref></p><p>4. <xref
-         href="cfr_hos_quickstart_step_4.dita#concept_pqc_jhz_st" id="quickStartHOSstep4_"><keyword
+         href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st" id="quickStartHOSstep4_"><keyword
         keyref="quickStartHOSstep4"/></xref></p><p>5. <xref
-         href="cfr_hos_quickstart_step_5.dita#concept_cw2_thz_st" id="quickStartHOSstep5_"><keyword
+         href="hcf-on-hos-step-5.dita#concept_cw2_thz_st" id="quickStartHOSstep5_"><keyword
         keyref="quickStartHOSstep5"/></xref></p>6. <xref
-         href="cfr_hos_quickstart_step_6.dita#concept_m3k_bth_tt" id="quickStartHOSstep6_"><keyword
+         href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt" id="quickStartHOSstep6_"><keyword
        keyref="quickStartHOSstep6"/></xref></stentry>
     <stentry><b>Registering for a <keyword keyref="opnStckShort"/> Account</b><p>Ensure that you
       have an <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
         keyref="opnStckLong"/></xref> account and sufficient cloud credit to cover the hosting
       costs for your sandbox environment.</p><note type="tip">Keep your username and password handy.
-       You will need them to <xref href="cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st">create a sandbox
-        environment</xref>.</note><xref href="cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st">
+       You will need them to <xref href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st">create a sandbox
+        environment</xref>.</note><xref href="hcf-on-hos-step-2.dita#concept_ikh_xgz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
    </strow>

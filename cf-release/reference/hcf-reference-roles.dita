@@ -26,6 +26,13 @@
     </draft-comment>
   </shortdesc>
   <refbody>
+    <refsyn>Roles are the components of <keyword keyref="prodShort"/>. You can <xref
+        href="hcf-reference-gato.dita#reference_cd3_bs3_rt/role_example">stop, start, and restart
+        these components</xref> and <xref
+        href="hcf-reference-gato.dita#reference_cd3_bs3_rt/config_get_example">manipulate their
+        values</xref> using the <keyword keyref="adminUtil"/> Command-Line Interface (CLI)
+      administration utility. To run <keyword keyref="adminUtil"/> commands you must
+        <codeph>ssh</codeph> into the core node.</refsyn>
     <table frame="all" rowsep="1" colsep="1" id="table_d1m_bbn_g5">
       <tgroup cols="2">
         <colspec colname="c1" colnum="1" colwidth="1*"/>

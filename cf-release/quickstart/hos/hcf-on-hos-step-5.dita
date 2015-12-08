@@ -19,12 +19,12 @@
     format="html" scope="external">deploying an application</xref>.</note>
   <simpletable id="simpletable_cmb_xvk_g5">
    <strow>
-     <stentry>1. <xref conref="cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
-       <xref conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
-         conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
-           conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <b><keyword
+     <stentry>1. <xref conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
+       <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
+         conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
+           conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <b><keyword
         keyref="quickStartHOSstep5" id="quickStartHOSstep5"/></b></p>6. <xref
-          conref="cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
+          conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
     <stentry><b>Sample Applications</b><p>The following sample applications will get your started
       with the <codeph>cf push</codeph> workflow:<dl>
        <dlentry>
@@ -103,7 +103,7 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
            format="html" scope="external">Troubleshooting Application Deployment and
           Health</xref></li>
         </ul></note></li>
-     </ol><xref href="cfr_hos_quickstart_step_6.dita#concept_m3k_bth_tt">
+     </ol><xref href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
    </strow>
