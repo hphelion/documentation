@@ -13,8 +13,8 @@
             </serialized>
         </options>
     </meta>
-    <projectTree name="Master-Project.xpr">
+    <projectTree name="master-project.xpr">
         <folder path="devplatform/"/>
         <folder path="media/"/>
-    </projectTree>
+           </projectTree>
 </project>
