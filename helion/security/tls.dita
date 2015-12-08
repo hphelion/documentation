@@ -81,49 +81,23 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
       </ol>
     </section>
     <section id="install_cert"><title>Installing Your SSL Certificate</title>
-      <p>Follow the steps below to install the certificate in the cloud:</p>
-      <ul>
-        <li><xref href="#configure_tls/fqdn">If you are using a FQDN</xref></li>
-        <li><xref href="#configure_tls/ipaddress">If you are using IP addresses for external
-            URLs</xref></li>
-      </ul>
-    </section>
-    <section id="fqdn"><p><b>If you are using a FQDN:</b></p>
-      <ol id="ol_ngj_qfq_rt">
-        <li>Create or obtain a certificate to match the domain name you are going to use.</li>
+      <p><b>Pre-requisites</b></p>
+      <p>These steps assume you have already created or obtained a valid SSL certificate for your
+        environment that references either the FQDN you chose or the IP address for the public API
+        endpoint noted in your <codeph>~/helion/my_cloud/info/address_info.yml</codeph> file.</p>
+      <p><b>Specifying Your Certificate in the Input Model</b></p>
+      <p>Follow the steps below to specify the certificate in the input files:</p>
+      <ol>
+        <li>Log in to the lifecycle manager.</li>
         <li>Copy the certificate (containing both public and private keys) to the
             <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory.</li>
-        <li id="private1">Replace the contents of <codeph>
-            ~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the new CA
-          certificate chain file that you added in the previous step.</li>
+        <li id="private1">Replace the contents of
+            <codeph>~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the
+          new CA certificate chain file that you added in the previous step.</li>
         <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
           values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
-          values for your environment.</li>
-        <li>Commit your changes to git:
-          <codeblock>cd ~/helion
-git add -A
-git commit -m "Updated certificate and CA chain"</codeblock></li>
-        <li>Run the configuration processor:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
-        <li>Create the deployment directory:
-          <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
-        <li>Complete the deployment of your certificate by running the playbooks below. <p>To deploy
-            the new certificate:</p>
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
-          <p>To deploy the CA chain:</p>
-          <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
-      </ol>
-    </section>
-    <section id="ipaddress"><p><b>If you are using IP addresses for external URLs:</b></p>
-      <ol id="ol_y3j_qfq_rt">
-        <li>Edit the <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file and
-          under the <codeph>EXTERNAL-API</codeph> section comment out the
-            <codeph>external-name</codeph> line. <p>Here is an example of what it will look
-            like:</p>
+          values for your environment. <p>If you are using IP addresses only then you will comment
+            out the <codeph>external-name</codeph> value. Example:</p>
           <codeblock>
   - name: EXTERNAL-API
     hostname-suffix: extapi
@@ -133,20 +107,39 @@ ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
          name: extlb
          # If external-name is set then public urls in keystone
          # will use this name instead of the IP address
-         #You must either set this to a name that can be resolved in your network
+         # You must either set this to a name that can be resolved in your network
          # or comment out this line to use IP addresses
-         <b>#external-name:</b></codeblock></li>
-        <li>Note the IP address used for the public URLs (from
-            <codeph>~/helion/my_cloud/info/address_info.yml</codeph>l)</li>
-        <li>Create or obtain a certificate tied to this address</li>
-        <li>Copy the certificate (containing both public and private keys) to
-            <codeph>~/helion/my_cloud/config/tls/certs/ </codeph></li>
-        <li>Replace the contents of <codeph>
-            ~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the new CA
-          certificate chain file that you added in the previous step.</li>
-        <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
-          values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
-          values for your environment.</li>
+         <b>#external-name:</b>
+
+         tls-components:
+            - default
+         roles:
+            - public
+         <b>cert-file: &lt;cert-name></b></codeblock>
+          <p>If you are using a FQDN then you will specify that in the
+              <codeph>external-name</codeph> value, ensuring it matches the FQDN you used when
+            creating your certificate. Example:</p>
+          <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+        
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+         <b>external-name: &lt;FQDN></b>
+            
+         tls-components:
+            - default
+         roles:
+            - public
+         <b>cert-file: &lt;cert-name></b></codeblock></li>
+      </ol>
+      <p><b>Deploy Your Certificate</b></p>
+      <ol>
         <li>Commit your changes to git:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
