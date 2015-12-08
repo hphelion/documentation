@@ -97,10 +97,46 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
         <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
           values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
           values for your environment. <p>If you are using IP addresses only then you will comment
-            out the <codeph>external-name</codeph> value.</p>
+            out the <codeph>external-name</codeph> value. Example:</p>
+          <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+            
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+         <b>#external-name:</b>
+
+         tls-components:
+            - default
+         roles:
+            - public
+         <b>cert-file: &lt;cert-name></b></codeblock>
           <p>If you are using a FQDN then you will specify that in the
               <codeph>external-name</codeph> value, ensuring it matches the FQDN you used when
-            creating your certificate.</p></li>
+            creating your certificate. Example:</p>
+          <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+        
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+         <b>external-name: &lt;FQDN></b>
+            
+         tls-components:
+            - default
+         roles:
+            - public
+         <b>cert-file: &lt;cert-name></b></codeblock></li>
       </ol>
       <p><b>Deploy Your Certificate</b></p>
       <ol>
