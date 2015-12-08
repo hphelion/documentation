@@ -128,7 +128,7 @@
       <!-- Hight Avail -->
     
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"
-          navtitle="Virtual Demo Installation"  otherprops="demo-install" locktitle="yes"/>
+          navtitle="Virtual Demo Installation"  locktitle="yes"/>
       
     </topicref>
      
