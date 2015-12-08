@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="adminintro">
+  <title>ALS Management Console</title>
+  <body>
+    <p>This section contains information about the ALS Management Console<ul id="adminintro">
+        <li><xref href="console/1.0index.dita"/></li>
+        <li><xref href="console/1.0customize.dita"/></li>
+        <li><xref href="../user/console/1.0index.dita"/></li>
+      </ul></p>
+  </body>
+</topic>

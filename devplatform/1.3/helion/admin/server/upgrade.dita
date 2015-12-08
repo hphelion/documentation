@@ -80,7 +80,7 @@
 <p>Use the <b>free</b> or <b>vmstat</b> commands to determine how much memory is available on each VM and use <b>kato stop</b> to temporarily stop roles if more memory is required.</p>
 </section>
 <section id="maintenance-mode"> <title>Maintenance Mode</title> 
-  <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/customize.dita#topic5029/console-settings" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
+  <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/customize.dita#customconsole/console-settings" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
 <codeblock>kato config set cloud_controller_ng maintenance_mode true</codeblock>
 <p>This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.</p>
 </section>

@@ -134,7 +134,7 @@ pass: &lt;password&gt;</codeblock></li>
           <li>Create a webserv.sh script with below contents. In this example, the port is
             80.<codeblock>$ vi webserv.sh
               
-#!/bin/ash
+#!/bin/bash
               
 MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
 while true; do

@@ -54,12 +54,12 @@
 </section>
 <section id="controlling-hp-helion-with-your-application"> <title>Controlling HPE Helion with your Application</title> 
 <p>If your Python application is going to control HPE Helion resources, it can communicate directly
-  with the <xref href="../../../../../../../publiccloud/api.dita">Helion REST APIs</xref> with a client or the Python SDK.
-        Currently, the Python SDK is very limited in features, so you will probably be forced to use
-        the CLIs. The unified Python Openstack Client has pretty good coverage of Openstack features
-        except for network (Neutron) and object store (Swift). To get full coverage of features you
-        would need to install the following CLIs in your requirements.txt file (using our earlier
-        cherrypy example):</p>
+        with the <xref href="../../../../../../../publiccloud/api.dita#topic2806">Helion REST
+          APIs</xref> with a client or the Python SDK. Currently, the Python SDK is very limited in
+        features, so you will probably be forced to use the CLIs. The unified Python Openstack
+        Client has pretty good coverage of Openstack features except for network (Neutron) and
+        object store (Swift). To get full coverage of features you would need to install the
+        following CLIs in your requirements.txt file (using our earlier cherrypy example):</p>
 <codeblock>import os
 import cherrypy
 import subprocess

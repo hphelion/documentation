@@ -87,7 +87,7 @@
       <topicref href="CarrierGrade2.0/OperationsGuide/Logging/CHG-2-logging-overview.dita"
         navtitle="Centralized Logging" locktitle="yes"/>
       <topicref
-        href="CarrierGrade2.0/OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+        href="CarrierGrade2.0/OperationsGuide/Baremetal/carrier-grade-admin-provision-baremetal-nodes.dita"
         navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/MultiDC/CGH-2-Config-Multi-DC.dita"
         navtitle="Confguring a Multiple Datacenter Environment (Multi-DC)" locktitle="yes"/>
@@ -135,7 +135,8 @@
         navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/carrier-grade-dcn-eula.dita"/>
     </topicref>
-    <topichead navtitle="Files in map not TOC" toc="no">
+    <topicref href="CarrierGrade2.0/carrier-grade-admin-placeholder.dita"
+      navtitle="Linked files not in TOC" locktitle="yes" toc="no">
       <topicref
         href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"
         toc="no"/>
@@ -151,7 +152,7 @@
       <topicref
         href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita"
         toc="no"/>
-    </topichead>
+    </topicref>
     <!-- hiding for RC0
     <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
       <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita"/>

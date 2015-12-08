@@ -72,7 +72,10 @@ But the CLI, REST API etc should all be same --></p>
         on <codeph>/root/</codeph> directory or on a remote system. <!--HCG-681--></p>
     </section>
     <section><title>When to perform backups</title>
-      <p>You should create a backup from HLM VM as follows:</p>
+      <p>We recommend performing regular backups, preferably hourly, and especially after changing
+        the appliances configuration and before and after updating HP Helion OpenStack Carrier Grade
+        software.</p>
+      <p>Additionally, you should create a backup from HLM VM as follows:</p>
       <ul>
         <li>when the HP Helion OpenStack Carrier Grade installation is complete,</li>
         <li>when any change is made to the HP Helion OpenStack Carrier Grade components, </li>

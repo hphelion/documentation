@@ -17,6 +17,14 @@
     <section id="intro">
     <p>After the lifecycle manager is up and running and HP Helion OpenStack is installed, use the following
       steps to deploy the KVM region.</p>
+      <p>The process for installing the KVM region involves the following tasks:<ul
+          id="ul_fj4_mct_g5">
+          <li><xref href="#topic1107cgiks/controller-0" format="dita"/></li>
+          <li><xref href="#topic1107cgiks/install-license" format="dita"/></li>
+          <li><xref href="#topic1107cgiks/install-cloud" format="dita"/></li>
+          <li><xref href="#topic1107cgiks/unlock" format="dita"/></li>
+          <li><xref href="#topic1107cgiks/ssl" format="dita"/></li>
+        </ul></p>
     </section>
     <section id="controller-0">
       <title>Bring Up Controller-0 in the KVM Region</title>
@@ -38,7 +46,7 @@ ifconfig eth0 up</codeblock></li>
       </ol>
     </section>
     <section id="install-license">
-      <p><b>Install the KVM region license</b></p>
+      <title>Install the KVM region license</title>
       <p>The servers in the KVM region require a specific license file to be installed.
         <!--You must download this file from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. --></p>
       <p>Before installing the patch, make sure the KVM region controller-0 was properly installed
@@ -166,6 +174,25 @@ system host-if-modify compute-1 bondvrs -nt data-vrs --ipv4-mode=pool --ipv4-poo
           </ul></li>
           <li>Execute the following command to assign IP addresses to
           compute-0:<codeblock>system host-update compute-0 vsc_controllers=10.30.6.31,10.30.6.32</codeblock></li></ol>
+    </section>
+    <section id="ssl">
+      <title>Install Required SSL Certificate</title>
+      <p>If you want to Opentsack CLIs in the KVM region from a remote client, use the following
+        steps to install a required SSL certificate.</p>
+      <p>
+        <ol id="ol_k5p_bys_g5">
+          <li>Log into the KVM region <codeph>controller-0</codeph>, the active
+            controller.<codeblock>sudo -i</codeblock></li>
+          <li>Copy the patch script to <codeph>/home/wrsroot/</codeph>.</li>
+          <li>Edit the script to set <codeph>WR_VIP</codeph> field to the  KVM region endpoint.</li>
+          <li>Execute the following command to deploy the script using bash
+            <codeblock>+x wrvippem.sh</codeblock></li>
+          <li>Change to the following directory: <codeblock>cd /etc/ssl/private</codeblock></li>
+          <li>Copy the <codeph>server-cert.pem</codeph> in that directory to the
+              <codeph>/etc/ssl/private</codeph> directory on the KVM region
+              <codeph>controller-1</codeph>, the standby controller.</li>
+        </ol>
+      </p>
     </section>
     <section id="next-step">
       <title>Next Steps</title>

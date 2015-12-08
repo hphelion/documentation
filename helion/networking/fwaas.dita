@@ -113,10 +113,11 @@ neutron firewall-rule-create --protocol tcp --destination-port 22 --action allow
         <li>Similarly, you can connect via ssh to the instance due to the allow-ssh firewall
           rule.<codeblock>ssh cirros@&lt;FIP-VM1>
 password: &lt;password></codeblock></li>
-        <li>Run a web server on vm1 instance that listens over port 80, accepts requests and sends a WELCOME response.
+        <li>Run a web server on vm1 instance that listens over port 80, accepts requests and sends a
+          WELCOME response.
           <codeblock>$ vi webserv.sh
             
-#!/bin/ash
+#!/bin/bash
             
 MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
 while true; do
