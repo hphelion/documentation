@@ -107,9 +107,9 @@ gpg: WARNING: This key is not certified with a trusted signature!
 gpg: There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li><li>Perform this verification for each file you downloaded.</li></ol></section>-->
                 <section id="extract"><title>Extract and copy the HP Helion OpenStack Carrier Grade
-                                installation files and
-                                        patches</title><p><b>hcg2_kvm_esx_ironic_vrs.tar.gz</b></p>Extract
-                        the downloaded files:<ol id="ol_kck_hlw_f5">
+                                installation files and patches</title>Extract the downloaded files
+                        from the <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph> file:<ol
+                                id="ol_kck_hlw_f5">
                                 <li>Extract the <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
                                         file. The exraction creates the
                                                 <codeph>hcg2_kvm_esx_ironic_vrs.tar</codeph>
@@ -165,62 +165,6 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p> </p>
                                                   </entry>
                                                   <entry> </entry>
-                                                  </row>
-                                                  </tbody>
-                                                </tgroup>
-                                        </table><p><b>Extract the DCN components</b></p><p>Extract
-                                                the DCN integration components from the DCN folder
-                                                in downloaded files as indicated in the following
-                                                table.</p><table id="table_mlr_bcz_st-a">
-                                                <tgroup cols="3">
-                                                  <colspec colname="newCol1" colnum="1"
-                                                  colwidth="1*"/>
-                                                  <colspec colnum="2" colname="col2"
-                                                  colwidth="3.26*"/>
-                                                  <colspec colnum="3" colname="col3"
-                                                  colwidth="2.13*"/>
-                                                  <thead>
-                                                  <row>
-                                                  <entry>Folder</entry>
-                                                  <entry>File Name</entry>
-                                                  <entry>To be copied to the KVM Host</entry>
-                                                  </row>
-                                                  </thead>
-                                                  <tbody>
-                                                  <row>
-                                                  <entry/>
-                                                  <entry>
-                                                  <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
-                                                  <p>nuagenetlib_0.0.0-1729-kilo_all.deb</p>
-                                                  <p>nuage-openstack-neutron_2015.1.1745_all.deb</p>
-                                                  <p>nuage-openvswitch-common_3.2.6-0b008b5_amd64.deb</p>
-                                                  <p>nuage-openvswitch-switch_3.2.6-0b008b5_amd64.deb</p>
-                                                  <p>nuage-python-openvswitch_3.2.6-0b008b5_all.deb</p>
-                                                  </entry>
-                                                  <entry>
-                                                  <p>/root/cg/dcn</p>
-                                                  <p><b>Create dcn folder uncer /root/cg if you
-                                                  don’t have in the KVM Host</b></p>
-                                                  </entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>VSD-QCOW2</entry>
-                                                  <entry>vsc_singledisk.qcow2<p>VSD-3.2.4_134-hp.ova</p><p>VSD-3.2.4_134-hp.qcow2</p><p>vsd.xml</p></entry>
-                                                  <entry>
-                                                  <p>/var/lib/libvirt/images</p>
-                                                  </entry>
-                                                  </row>
-                                                  <row>
-                                                  <entry>VRS-vApp</entry>
-                                                  <entry>
-                                                  <p>itoolbox1.ova</p>
-                                                  <p>VRS_3.2.6-0b008b5_11252015.ovf</p>
-                                                  <p>VRS_3.2.6-0b008b5_11252015-disk1.vmdk</p>
-                                                  </entry>
-                                                  <entry>
-                                                  <p><codeph>/var/www/html</codeph> on the KVM Host.
-                                                  </p>
-                                                  </entry>
                                                   </row>
                                                   </tbody>
                                                 </tgroup>
