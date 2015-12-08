@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_u5y_22t_g5">
+  <title>HPE Helion 1.2 Development Platform: Management Console</title>
+  <body>
+    <p>The Management Console is a web interface for Application Lifecycle Service (ALS). Using the
+      same API as the Helion CLI client, it provides access to a subset of features for deploying,
+      scaling, and configuring applications as well as monitoring quota usage, and viewing logs.</p>
+    <p>The interface differs for Admin and non-Admin users. End-users should review the <xref
+        href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita">Console User
+        Guide</xref>.. Administrators should reference the <xref
+        href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita">Console Admin
+        Guide</xref>.</p>
+  </body>
+</topic>

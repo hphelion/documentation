@@ -350,11 +350,46 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           href="installation_troubleshooting.dita#troubleshooting_installation/config_processor"
           >Troubleshooting Your Installation</xref></p>
     </section>
-    <!--
-<section id="security"><title>Configuring TLS</title>
-<p>After you run the configuration processor in the previous step the IP addresses for your environment will be generated. It's at this point that you will want to take into consideration whether or not you want to configure TLS and setup a SSL certificate for your environment. Please read <xref href="../security/tls.dita">Configure TLS</xref> before proceeding.</p>
-</section>
-    -->
+
+    <section id="security"><title>Configuring TLS</title>
+      <p>After you run the configuration processor the first time, the IP addresses for your
+        environment will be generated and populated in the
+          <codeph>~/helion/my_cloud/info/address_info.yml</codeph> file. It's at this point that you
+        will want to take into consideration whether or not you want to configure TLS and setup a
+        SSL certificate for your environment. Please read <xref href="../security/tls.dita"
+          >Configure TLS</xref> before proceeding for how to achieve this.</p>
+      <p>Note that if you intend to install HPE Helion Development Platform in your environment you
+        will need to configure a SSL certificate for the public endpoint for the Identity service.
+        This can be located in the <codeph>~/helion/my_cloud/info/address_info.yml</codeph> under
+        the <codeph>EXTERNAL-API</codeph> section. Here is an example showing a snippet of a file
+        with the value needed highlighted:</p>
+      <codeblock>EXTERNAL-API:
+   EXTERNAL-API-NET:
+        10.13.120.72:
+        - helion-cp1-c1-m1-extapi
+        10.13.120.73:
+        - helion-cp1-c1-m2-extapi
+        10.13.120.74:
+        - helion-cp1-c1-m3-extapi
+        <b>10.13.120.75</b>:
+        - helion-cp1-vip-public-SWF-PRX-extapi
+        - helion-cp1-vip-public-FRE-API-extapi
+        - helion-cp1-vip-public-GLA-API-extapi
+        - helion-cp1-vip-public-HEA-ACW-extapi
+        - helion-cp1-vip-public-HEA-ACF-extapi
+        - helion-cp1-vip-public-NEU-SVR-extapi
+        - helion-cp1-vip-public-KEY-API-extapi
+        - helion-cp1-vip-public-MON-API-extapi
+        - helion-cp1-vip-public-HEA-API-extapi
+        - helion-cp1-vip-public-NOV-API-extapi
+        - helion-cp1-vip-public-CND-API-extapi
+        - helion-cp1-vip-public-CEI-API-extapi
+        - helion-cp1-vip-public-SHP-API-extapi
+        - helion-cp1-vip-public-OPS-WEB-extapi
+        - helion-cp1-vip-public-HZN-WEB-extapi
+        - helion-cp1-vip-public-NOV-VNC-extapi</codeblock>
+    </section>
+
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Use the playbook below to create a deployment directory:
