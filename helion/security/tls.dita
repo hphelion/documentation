@@ -43,9 +43,18 @@
       <p>If you want to install a self-signed certificate for testing purposes that meets the needs
         of <keyword keyref="kw-hos"/> and HPE Helion Development Platform, follow these steps to
         create the cert, and then install it by following the installation in the next section.</p>
-      <note type="caution">Self-signed certificates should not be used in a production environment,
-        they are meant for testing only.</note>
-      <ol id="ol_wmt_wsp_tt">
+      <note type="important">Self-signed certificates should not be used in a production
+        environment, they are meant for testing only.</note>
+      <p>The domain name in the certificate signing request in step 1 below and the DNS entry in
+        step 2 must match, although the domain does not have to exist.</p>
+      <p>In step 2 you need the same IP address listed for both the DNS and the IP entries. The IP
+        address is what is used by HPE Helion Development Platform and the DNS is used by <keyword
+          keyref="kw-hos"/>. Note that as you examine the certificate output, the issuer will match
+        the subject because the cert is self-signed. The requirement for the DNS entry stems from a
+        low-level Python bug.</p>
+      <p>The example below shows you how to create a self-signed certificate named
+          <codeph>my-public-cert</codeph>:</p>
+      <ol>
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
 -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
@@ -59,13 +68,6 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
         </li>
         <li>Self-sign your certificate
           <codeblock>openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -text -out my-public-cert.crt</codeblock>
-          Note that the domain name in the certificate signing request in step 1 and the DNS entry
-          in step 2 must match, although the domain do not have to exist. <p>In step 2 you need the
-            same IP address listed for both the DNS and the IP entries. The IP address is what is
-            used by HPE Helion Development Platform and the DNS is used by <keyword keyref="kw-hos"
-            />. Note that is you examine the output certificate, the issuer will match the subject
-            because the cert is self-signed. The requirement for the DNS entry stems from a
-            low-level Python bug.</p>
         </li>
       </ol>
     </section>
