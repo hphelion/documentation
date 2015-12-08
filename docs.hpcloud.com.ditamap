@@ -144,7 +144,7 @@
     <mapref href="docs.hpcloud.com.HDP.1.1.ditamap"   format="ditamap" navtitle="HPE Helion Development Platform 1.1" locktitle="yes"/>
     <mapref href="docs.hpcloud.com.HOS.1.1.x.ditamap" format="ditamap" navtitle="HPE Helion OpenStack 1.1.1 and 1.1" locktitle="yes"/>
     <mapref href="docs.hpcloud.com.HDP1.0.ditamap"    format="ditamap" navtitle="HPE Helion Development Platform 1.0" locktitle="yes"/>
-    <mapref href="docs.hpcloud.com.HOS.1.0.ditamap"   format="ditamap" navtitle="HPE Helion OpenStack 1.3" locktitle="yes"/>
+    <mapref href="docs.hpcloud.com.HOS.1.0.ditamap"   format="ditamap" navtitle="HPE Helion OpenStack 1.0" locktitle="yes"/>
     <mapref href="docs.hpcloud.com.CGH.ditamap"/>
     <topichead navtitle="Archive">
       <topicref href="community/community.index.dita"
