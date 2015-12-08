@@ -57,9 +57,19 @@
             </p>
             
             <p>This functionality differs significantly from <keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version-20"/> where indices were deleted based on size rather than age
-                when the high watermark disk space was exceeded. In addition, <keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version-20"/> did not strictly 
+                when the high watermark disk space was exceeded. In addition, <keyword keyref="kw-hos-phrase-20"/> did not strictly 
                 enforce the <codeph>curator_num_of_indicies_to_keep</codeph> configuration value if the high watermark disk space was not exceeded
-                so more indices than that number were allowed to exist.
+                so more indices than that number    were allowed to exist.
+            </p>
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2252 -->
+            <p id="DOCS-2252"><b>Rsync requests are no longer blocked by the firewall on systems with a dedicated Swift
+                network</b></p>
+            
+            <p>In <keyword keyref="kw-hos-phrase-20"/>, it was necessary to add the <codeph>swift-rsync</codeph> 
+                service to the <codeph>component-endpoints</codeph> in the
+                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file. This is not required in <keyword keyref="kw-hos-phrase-21"/>
+                and can be removed if you are upgrading from <keyword keyref="kw-hos-phrase-20"/>.
             </p>
             
             
