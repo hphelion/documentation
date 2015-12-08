@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065cigos">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</title>
 <titlealts>
 <searchtitle>HPE Helion Openstack 1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</searchtitle>
@@ -130,7 +130,7 @@ log_level=DEBUG_or_INFO
 </codeph>
 </codeblock>
 <p>
-  <xref href="#topic5065"> Return to Top </xref>
+  <xref href="#topic5065cigos"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

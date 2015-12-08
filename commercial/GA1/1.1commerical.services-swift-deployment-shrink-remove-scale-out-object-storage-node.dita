@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065cssd">
 <title>HPE Helion <tm tmtype="reg">OpenStack</tm> 1.1: Remove Scale-out Object Storage Node</title>
 <prolog>
 <metadata>
@@ -30,16 +30,16 @@
 <p>Object nodes can only be removed once all disks have been removed from the node.</p>
 <ol>
 <li>
-<xref type="section" href="#topic5065/prer">Prerequisites</xref>
+<xref type="section" href="#topic5065cssd/prer">Prerequisites</xref>
 </li>
 <li>
-<xref type="section" href="#topic5065/removing-disk">Removing disks from ring</xref>
+<xref type="section" href="#topic5065cssd/removing-disk">Removing disks from ring</xref>
 </li>
 <li>
-<xref type="section" href="#topic5065/remove-scale-out-object-node">Removing scale-out object node</xref>
+<xref type="section" href="#topic5065cssd/remove-scale-out-object-node">Removing scale-out object node</xref>
 </li>
 <li>
-<xref type="section" href="#topic5065/node-removal">Verify the node removal</xref>
+<xref type="section" href="#topic5065cssd/node-removal">Verify the node removal</xref>
 </li>
 </ol>
 <section id="prer"> <title>Prerequisite</title>
@@ -169,7 +169,7 @@ sudo -i
         </note>
       </p>
 <p>
-  <xref href="#topic5065"> Return to Top </xref>
+  <xref href="#topic5065cssd"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
