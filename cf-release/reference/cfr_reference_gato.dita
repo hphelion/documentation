@@ -100,8 +100,8 @@
                 <filepath><varname>&lt;value></varname></filepath> in the configuration store.<dl>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
-                <dd>Set <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a
-                    specific role's</xref> configuration.</dd>
+                <dd>Set a specific <xref href="cfr_reference_roles.dita#cf_reference_roles"
+                    >&lt;role></xref>'s configuration.</dd>
               </dlentry>
               <dlentry>
                 <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
