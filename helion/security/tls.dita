@@ -4,19 +4,21 @@
   <title><ph conkeyref="HOS-conrefs/product-title"/>Configuring TLS for Public Endpoints</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <section id="intro">
+    <section id="about">
       <p outputclass="aTest">The Transport Layer Security (TLS) protocol, successor to SSL, provides
         the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of
         user communications to the <keyword keyref="kw-hos"/> services from public endpoints.</p>
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on
         the management network. All traffic to OpenStack services coming in on the public endpoints
         are secured using TLS connections.</p>
+    </section>
+    <section id="notes"><title>Notes</title>
       <p>All of the <keyword keyref="kw-hos-phrase"/> example cloud models ship with TLS enabled on
-        the public API. Note that because TLS is enabled by default, a test certificate is bundled
+        the public API endpoints. Because TLS is enabled by default, a test certificate is bundled
         with the release. Having this default cert allows you to bring up a cloud without having to
-        worry about certificates. It will not match your IP address, but you can ignore the
-        warnings. Later, when you require a trusted certificate, you can add your own certificate
-        and redeploy.</p>
+        worry about certificates. It will not match the IP address of your environments API
+        endpoints, but you can ignore the warnings. Later, when you require a trusted certificate,
+        you can add your own certificate and redeploy using the instructions below.</p>
       <p>Keystone currently doesn't support updating an endpoint. Therefore <b>the public endpoint
           cannot be changed after the initial deployment</b>. This has the following
         implications:</p>
@@ -35,22 +37,14 @@
       </ul> You also need to choose if you want TLS on or off. We recommend keeping TLS on by
       default as it cannot be changed. But if you want it disabled you need to change
       "tls-components" to "components" in <codeph>network_groups.yml</codeph> and comment out the
-      cert-file.
-      <!--<p>
-        <note type="warning">Here we are configuring and installing a test certificate. It is
-          recommended that you create and sign certifcates properly for a production environment.
-          TLS certificates used in production must adhere to the current Baseline Requirements.
-          Furthermore, due to a known limitation in the Python codebase, you must ensure additional
-          standards are met, all of which are outlined at the end of this document in <xref
-            href="#topic_yym_nps_4t/rfcs" format="dita">Critical Standards for Certificates in
-            Production Environments</xref>.</note>
-      </p>-->
-    </section>
+      cert-file. </section>
     <section id="selfsigned_cert">
-      <title>Creating a self-signed certificate</title>
-      <p>If you want to install a self-signed certificate that meets the needs of <keyword
-          keyref="kw-hos"/> and HPE Helion Development Platform, follow these steps to create the
-        cert, and then install it by following the installation steps.</p>
+      <title>Creating a Self-Signed Certificate</title>
+      <p>If you want to install a self-signed certificate for testing purposes that meets the needs
+        of <keyword keyref="kw-hos"/> and HPE Helion Development Platform, follow these steps to
+        create the cert, and then install it by following the installation in the next section.</p>
+      <note type="caution">Self-signed certificates should not be used in a production environment,
+        they are meant for testing only.</note>
       <ol id="ol_wmt_wsp_tt">
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
           <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
@@ -74,18 +68,8 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
             low-level Python bug.</p>
         </li>
       </ol>
-      <!--Follow these steps to
-      create a certificate for non-production environments. <ol>
-        <li> Make sure you have OpenSSL installed.
-          <codeblock>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.crt</codeblock>
-          You must provide details when prompted. Make sure you provide your FQDN or IP address of
-          the VIP when prompted for Common Name. </li>
-        <li>Append the certificate to the key for haproxy-required format.
-          <codeblock>cat my-public-cert.key my-public-cert.crt > my-public-cert</codeblock></li>
-            
-      </ol> You can now use my-public-cert as your certificate. -->
     </section>
-    <section id="install_cert"><title>Installing the Certificate</title>
+    <section id="install_cert"><title>Installing Your SSL Certificate</title>
       <p>Follow the steps below to install the certificate in the cloud:</p>
       <ul>
         <li><xref href="#configure_tls/fqdn">If you are using a FQDN</xref></li>
