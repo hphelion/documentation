@@ -134,7 +134,9 @@ ssh-copy-id vsd_user@vsd_address</codeblock><p><b>Note:</b>
               <codeblock>attis config --id &lt;Config_ID_of_VSD_Appliance_DB_Backup> </codeblock>The
                 <i>vsd_address</i> can be found in the <codeph>/etc/attis/dcn.lst</codeph> file:
               <codeblock>cat /etc/attis/dcn.lst</codeblock></p></li>
-          <li>After restore job is complete, ssh to the VSD node from controller and restart vsd
+          <li>Before starting a restore job, SSH to the VSD node from controller and stop all
+            services on VSD.<codeblock>service vsd stop</codeblock></li>
+          <li>After restore job is complete, SSH to the VSD node from controller and restart VSD
             service.<codeblock>service vsd restart</codeblock></li>
         </ol><b>Backing up and Restoring the VSC</b>
       </p><p>If VSC username/password is set other than defaults, modify <i>vsc_user_name</i> or/and
