@@ -25,7 +25,7 @@
                 <p conref="carrier-grade-install-download.dita#topic7148cgid/intro"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/getinstall"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"/>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/checksum"/>
+                <!-- <section conref="carrier-grade-install-download.dita#topic7148cgid/checksum"/> -->
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/extract"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"/>
                 <section id="next-step">

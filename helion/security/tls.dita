@@ -78,6 +78,10 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
         <li>Self-sign your certificate
           <codeblock>openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -text -out my-public-cert.crt</codeblock>
         </li>
+        <li>You will need to combine the contents of the <codeph>my-public-cert.key</codeph> and
+            <codeph>my-public-cert.crt</codeph> files into a single file prior to copying that file
+          into your <codeph>~/helion/my_cloud/config/tls/certs/</codeph> in the steps in the next
+          section.</li>
       </ol>
     </section>
     <section id="install_cert"><title>Installing Your SSL Certificate</title>
@@ -97,10 +101,46 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
         <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
           values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
           values for your environment. <p>If you are using IP addresses only then you will comment
-            out the <codeph>external-name</codeph> value.</p>
+            out the <codeph>external-name</codeph> value. Example:</p>
+          <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+            
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+         <b>#external-name:</b>
+
+         tls-components:
+            - default
+         roles:
+            - public
+         <b>cert-file: &lt;cert-name></b></codeblock>
           <p>If you are using a FQDN then you will specify that in the
               <codeph>external-name</codeph> value, ensuring it matches the FQDN you used when
-            creating your certificate.</p></li>
+            creating your certificate. Example:</p>
+          <codeblock>
+  - name: EXTERNAL-API
+    hostname-suffix: extapi
+        
+    load-balancers:
+       - provider: ip-cluster
+         name: extlb
+         # If external-name is set then public urls in keystone
+         # will use this name instead of the IP address
+         # You must either set this to a name that can be resolved in your network
+         # or comment out this line to use IP addresses
+         <b>external-name: &lt;FQDN></b>
+            
+         tls-components:
+            - default
+         roles:
+            - public
+         <b>cert-file: &lt;cert-name></b></codeblock></li>
       </ol>
       <p><b>Deploy Your Certificate</b></p>
       <ol>
