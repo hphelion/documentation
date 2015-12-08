@@ -19,9 +19,6 @@
          <topicref href="hcf/reference/hcf-reference-tfvars.dita"/>
          <topicref href="hcf/reference/hcf-reference-gato.dita"/>
          <topicref href="hcf/reference/hcf-reference-roles.dita"/>
-      </topicref>
-      <!--
-      <topicref href="cfr_license_terms.dita"/>
-      -->      
+      </topicref>    
    </topicref>
 </map>
