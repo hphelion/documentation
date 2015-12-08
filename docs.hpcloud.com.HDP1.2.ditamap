@@ -50,7 +50,8 @@
         navtitle="Uninstallation"/>
     </topicref>
     <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/-->
-    <topichead navtitle="Developer Quick Start Trial Guide" otherprops="dev-quick-start">
+    <topicref href="devplatform/1.2/1.2devplatform_quickstart.dita"
+      navtitle="Developer Quick Start Trial Guide" locktitle="yes" otherprops="dev-quick-start">
       <topicref href="devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita"
         navtitle="Quick Start Step 1: Register" locktitle="yes"
         ><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/2/--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/3/--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/4/--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/5/--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/6/--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/termination/--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting/--></topicref>
@@ -70,7 +71,7 @@
       <topicref
         href="devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
-    </topichead>
+    </topicref>
     <!--permalink: /helion/devplatform/1.2/appdev/-->
     <!--permalink: /helion/devplatform/1.2/upgrade/-->
     <!--permalink: /helion/devplatform/1.2/install/troubleshooting/-->
