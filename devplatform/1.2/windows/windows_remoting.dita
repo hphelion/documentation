@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035wr">
 <title>HPE Helion 1.2 Development Platform: Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances</title>
 <titlealts>
   <searchtitle>HPE Helion 1.2 Development Platform: Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances</searchtitle>
@@ -38,12 +38,12 @@
 <p>The steps needed to do this are as follows:</p>
 <ul>
 <li>
-<xref type="section" href="#topic1035/create_security">Create an RDP security group</xref>
+<xref type="section" href="#topic1035wr/create_security">Create an RDP security group</xref>
 </li>
 <li>
-<xref type="section" href="#topic1035/add_security">Add the RDP security group to the instance</xref>
+<xref type="section" href="#topic1035wr/add_security">Add the RDP security group to the instance</xref>
 </li>
-  <li><xref type="section" href="#topic1035/connect">Connect to the instance with Remote Desktop Connection</xref></li>
+  <li><xref type="section" href="#topic1035wr/connect">Connect to the instance with Remote Desktop Connection</xref></li>
 
 </ul>
 <section id="create_security"> <title>Create an RDP Security Group</title>
