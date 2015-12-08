@@ -10,15 +10,14 @@
   </prolog>
   <refbody>
     <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> administration
-      utility. You can run <keyword keyref="adminUtil"/> commands after connecting to the core node
-      using
-      <codeph>ssh</codeph>.<title>Usage</title><codeblock><keyword keyref="adminUtilCLI"/> <varname>[global options]</varname> <varname>command</varname> <varname>[command options]</varname> <varname>[arguments...]</varname></codeblock></section>
+      utility. To run <keyword keyref="adminUtil"/> commands you must <codeph>ssh</codeph> into the
+      core node.</section>
     <section>
       <title>Global Options</title>
       <dl>
         <dlentry>
           <dt><filepath>--help</filepath>, <filepath>-h</filepath></dt>
-          <dd>Show help.</dd>
+          <dd>Show the help.</dd>
         </dlentry>
         <dlentry>
           <dt><filepath>--version</filepath>, <filepath>-v</filepath></dt>
@@ -30,14 +29,16 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt><filepath>api</filepath></dt>
+          <dt><filepath>api <varname>[&lt;endpoint>]</varname></filepath></dt>
           <dd>Set <keyword keyref="adminUtilCLI"/> to use the specified <keyword keyref="prodShort"
-            /> config store for subsequent operations. For
+            /> configuration store for subsequent operations.  If
+                <filepath><varname>&lt;endpoint></varname></filepath> is not specified, the current
+            endpoint is displayed. For
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
         </dlentry>
         <dlentry>
           <dt><filepath>config</filepath></dt>
-          <dd>Manipulate configuration values of <keyword keyref="prodShort"/> components.<ul
+          <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components.<ul
               id="ul_x4n_dtj_rt">
               <li><xref href="#reference_cd3_bs3_rt/config_get" format="dita"><filepath>config
                     get</filepath></xref></li>
@@ -51,8 +52,8 @@
         </dlentry>
         <dlentry>
           <dt><filepath>role</filepath></dt>
-          <dd>Manage node roles. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
-            variable to determine the docker server endpoint. Use the <filepath>--node</filepath>
+          <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
+            variable to determine the Docker server endpoint. Use the <filepath>--node</filepath>
             flag to stop a <xref href="#reference_cd3_bs3_rt/available_role_containers"
               format="dita"><varname>&lt;role></varname> container</xref> on a specific node.<ul
               id="ul_blk_nhj_rt">
@@ -67,12 +68,11 @@
       </dl>
       <dl>
         <dlentry>
-          <dt><filepath>status</filepath></dt>
+          <dt><filepath>status <varname>[options]</varname></filepath></dt>
           <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster.<dl>
               <dlentry>
                 <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
-                <dd>Show each individual process, for
-                  example:<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock></dd>
+                <dd>Show the status of every individual process.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
@@ -82,25 +82,20 @@
       <title>Command Options</title>
       <dl>
         <dlentry id="config_get">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config get <varname>[command
-                options]</varname>
-              <varname>[arguments...]</varname></filepath></dt>
-          <dd>Look up the current and default values of a configuration, for example: <codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/password</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/machines</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get system_domain</codeblock><dl>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config get
+              <varname>[options]</varname></filepath></dt>
+          <dd>Look up the current and default values of a configuration. For example: <codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/password</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/machines</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get system_domain</codeblock><dl>
               <dlentry>
                 <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
                 <dd>Output key/value pairs in JSON format.</dd>
               </dlentry>
-              <dlentry>
-                <dt><filepath>--quiet</filepath>, <filepath>-q</filepath></dt>
-                <dd>Output only the config values.</dd>
-              </dlentry>
             </dl></dd>
         </dlentry>
         <dlentry id="config_set">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config set <varname>[command
-                options]</varname>
-              <varname>[arguments...]</varname></filepath></dt>
-          <dd>Set the current value of a configuration.<dl>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> config set
+              <varname>[options]</varname></filepath></dt>
+          <dd>Set <filepath><varname>&lt;key-path></varname></filepath> to
+                <filepath><varname>&lt;value></varname></filepath> in the configuration store.<dl>
               <dlentry>
                 <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
                 <dd>Set <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita">a
@@ -108,16 +103,17 @@
               </dlentry>
               <dlentry>
                 <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
-                <dd>Read values from file or from stdin if followed by a dash (-).</dd>
+                <dd>Read the <filepath><varname>&lt;value></varname></filepath>.
+                    <varname>&lt;value></varname> becomes either a filename to read the value from
+                  or a dash (<filepath>-</filepath>) for <codeph>stdin</codeph>.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
       </dl>
       <dl>
         <dlentry id="role_start">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role start <varname>[command
-                options]</varname>
-              <varname>[arguments...]</varname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role start
+              <varname>[options]</varname></filepath></dt>
           <dd>Start the <xref href="#reference_cd3_bs3_rt/available_role_containers" format="dita"
                 ><varname>&lt;role></varname> container</xref>.<dl>
               <dlentry>
@@ -131,12 +127,8 @@
             </dl></dd>
         </dlentry>
         <dlentry id="role_stop_restart">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role stop <varname>[command
-                options]</varname>
-              <varname>[arguments...]</varname></filepath></dt>
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role restart <varname>[command
-                options]</varname>
-              <varname>[arguments...]</varname></filepath></dt>
+          <dt><filepath><keyword keyref="adminUtilCLI"/> role stop|restart
+                <varname>[options]</varname></filepath></dt>
           <dd>Stop or restart the <xref href="#reference_cd3_bs3_rt/available_role_containers"
               format="dita"><varname>&lt;role></varname> container</xref>.<dl>
               <dlentry>
