@@ -146,8 +146,10 @@
     </topichead>
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting"
       locktitle="yes" otherprops="troubleshooting">
+      <!--commenting out duplicate to allow export to drupal
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
+        -->
       <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"
         navtitle="Compute Service Troubleshooting" locktitle="yes" toc="no"/>
       <!--set to toc=no later-->
@@ -300,8 +302,10 @@
           navtitle="Domain Management" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita"
           navtitle="Using the Identity Service" locktitle="yes"/>
+        <!--commenting out duplicate to allow export to drupal
         <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita"
           navtitle="Integrating the Keystone Identity Service with LDAP/AD" locktitle="yes"/>
+          -->
         <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita"
           navtitle="Configuring Horizon for Keystone V3" locktitle="yes"/>
       </topicref>
@@ -317,8 +321,10 @@
         <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"
           navtitle="Networking Operation (Neutron) Administrator: Preinstallation Requirements"
           locktitle="yes"/>
+        <!--commenting out duplicate to allow export to drupal
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"
           navtitle="Tracking Masked IPs When Using NAT" locktitle="yes"/>
+          -->
         <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"
           navtitle="Neutron Networking Post-installation" locktitle="yes"/>
         <topicref
@@ -384,8 +390,10 @@
           navtitle="Ceph Glossary" locktitle="yes"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"
           navtitle="Ceph Related Topics" locktitle="yes"/>
+        <!--commenting out duplicate to allow export to drupal
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"
           navtitle="Ceph Troubleshooting" locktitle="yes"/>
+          -->
         <topicref
           href="commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
           navtitle="Ceph Backup and Recovery" locktitle="yes"/>
@@ -453,8 +461,10 @@
         navtitle="Focus Service Overview" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/1.1commerical.services-dns-overview.dita"
         navtitle="DNS as a Service (DNSaaS)" locktitle="yes" otherprops="dnsaas">
+        <!--commenting out duplicate to allow export to drupal
         <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
           navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
+          -->
       </topicref>
       <!-- Using HOS -->
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storeserv.dita"
