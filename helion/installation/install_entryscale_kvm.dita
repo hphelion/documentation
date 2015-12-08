@@ -323,7 +323,7 @@ ansible-playbook -i hosts/localhost bm-reimage.yml [-e nodelist=node1,node2,node
           >Troubleshooting Your Installation</xref></p>
     </section>
 
-    <section id="config_processor"><title>Run the configuration processor</title>
+    <section id="config_processor"><title>Run the Configuration Processor</title>
       <p>Once you have your configuration files setup you need to run the configuration processor to
         complete your configuration.</p>
       <p id="encrypt">When you run the configuration processor you will be prompted for two
@@ -353,6 +353,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
     </section>
 
     <section id="security"><title>Configuring TLS</title>
+      <note type="important">This section is optional, but recommended, for a HPE Helion OpenStack
+        installation but is considered a required pre-requisite for installing HPE Helion
+        Development Platform.</note>
       <p>After you run the configuration processor the first time, the IP addresses for your
         environment will be generated and populated in the
           <codeph>~/helion/my_cloud/info/address_info.yml</codeph> file. It's at this point that you
