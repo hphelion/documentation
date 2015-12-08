@@ -68,8 +68,8 @@
           Checklist</xref> that should help with the recommended pre-installation tasks.</p>
     </section>
     <section id="setup_deployer">
-      <title>Set up the Lifecycle-manager</title>
-      <p><b>Installing the Lifecycle-manager</b></p>
+      <title>Set up the Lifecycle Manager</title>
+      <p><b>Installing the Lifecycle Manager</b></p>
       <p>The lifecycle manager will contain the installation scripts and configuration files to
         deploy your cloud. You can set up the lifecycle manager on a dedicated node or you do so on
         your first controller node. The default choice is to use the first controller node as the
@@ -115,7 +115,7 @@
       </ol>
       <p>At the end of this section you should have a node set up with Linux for HPE Helion on
         it.</p>
-      <p><b>Configure and Run the Lifecycle-manager</b></p>
+      <p><b>Configure and Run the Lifecycle Manager</b></p>
       <note type="important">It is critical that you don't run any of the commands below as the
           <codeph>root</codeph> user or use <codeph>sudo</codeph>, unless it is stated explicitly in
         the steps. Run then as the user you just created (or <codeph>stack</codeph> if you left the
@@ -350,7 +350,11 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           href="installation_troubleshooting.dita#troubleshooting_installation/config_processor"
           >Troubleshooting Your Installation</xref></p>
     </section>
-
+    <!--
+<section id="security"><title>Configuring TLS</title>
+<p>After you run the configuration processor in the previous step the IP addresses for your environment will be generated. It's at this point that you will want to take into consideration whether or not you want to configure TLS and setup a SSL certificate for your environment. Please read <xref href="../security/tls.dita">Configure TLS</xref> before proceeding.</p>
+</section>
+    -->
     <section id="deploy"><title>Deploy the Cloud</title>
       <ol>
         <li>Use the playbook below to create a deployment directory:

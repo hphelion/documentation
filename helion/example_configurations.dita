@@ -888,8 +888,8 @@
     </section>
     <section id="without_dvr"><title>Configuring <keyword keyref="kw-hos"/> without DVR</title>
       <p>By default in the KVM model, the Neutron service utilizes distributed routing (DVR). This
-        is the recommended setup. However, if you would like to disable this feature, here are the
-        steps to achieve this.</p>
+        is the recommended setup because it allows for high availability. However, if you would like
+        to disable this feature, here are the steps to achieve this.</p>
       <p>On your lifecycle manager, make the following changes:</p>
       <ol>
         <li>In the <codeph>~/helion/my_cloud/config/neutron/neutron.conf.j2</codeph> file, change
