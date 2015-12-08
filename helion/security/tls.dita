@@ -83,8 +83,10 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
     <section id="install_cert"><title>Installing Your SSL Certificate</title>
       <p><b>Pre-requisites</b></p>
       <p>These steps assume you have already created or obtained a valid SSL certificate for your
-        environment.</p>
-      <p>Follow the steps below to install the certificate in the cloud:</p>
+        environment that references either the FQDN you chose or the IP address for the public API
+        endpoint noted in your <codeph>~/helion/my_cloud/info/address_info.yml</codeph> file.</p>
+      <p><b>Specifying Your Certificate in the Input Model</b></p>
+      <p>Follow the steps below to specify the certificate in the input files:</p>
       <ol>
         <li>Log in to the lifecycle manager.</li>
         <li>Copy the certificate (containing both public and private keys) to the
