@@ -25,16 +25,15 @@
       locktitle="yes"/>
     <topicref href="devplatform/1.1devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
-    <topichead navtitle="Installation and Configuration" otherprops="install">
-      <topicref href="devplatform/1.1devplatform_commercial_install.dita"
-        navtitle="Installation and Configuration" locktitle="yes"/>
+    <topicref href="devplatform/1.1devplatform_commercial_install.dita"
+      navtitle="Installation and Configuration" locktitle="yes" otherprops="install">
       <topicref href="devplatform/1.1devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting "/>
       <topicref href="devplatform/1.1devplatform.marketplace.install.dita" locktitle="yes"
         navtitle="The Marketplace (Beta) "/>
       <topicref href="devplatform/1.1devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
-    </topichead>
+    </topicref>
     <!--permalink: /helion/devplatform/1.1/appdev/-->
     <topicref href="devplatform/1.1devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers" otherprops="app-dev">
@@ -42,30 +41,33 @@
       <topicref href="devplatform/1.1devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin "/>
       <!--permalink: /helion/devplatform/1.1/workbook/database/java/-->
-      <topichead navtitle="Java Samples" otherprops="java">
+      <topicref href="devplatform/1.2devplatform.javacodesamples.dita" navtitle="Java Code Samples"
+        locktitle="yes" otherprops="java">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.1database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.1messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample "/>
-      </topichead>
-      <topichead navtitle="Node Samples" otherprops="node">
+      </topicref>
+      <topicref href="devplatform/1.2devplatform.nodecodesamples.dita" navtitle="Node Code Samples"
+        locktitle="yes" otherprops="node">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.1database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.1messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample "/>
-      </topichead>
-      <topichead navtitle="PHP Samples" otherprops="php">
+      </topicref>
+      <topicref href="devplatform/1.2devplatform.phpcodesamples.dita" navtitle="PHP Code Samples"
+        locktitle="yes" otherprops="php">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.1database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.1messaging.php.dita" locktitle="yes"
           navtitle="PHP RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/1.1/workbook/database/node/-->
       <!--permalink: /helion/devplatform/1.1/workbook/database/php/-->
       <!--permalink: /helion/devplatform/1.1/workbook/helloworld/java/-->
@@ -112,8 +114,7 @@
     <!--permalink: /helion/devplatform/1.1/als/-->
     <topicref href="devplatform/helion/1.1index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation " otherprops="als">
-      <topichead navtitle="ALS Command Line Clients" otherprops="als-cli">
-        <topicref href="devplatform/helion/CLI/1.1ALS_Client_Downloads.dita"/>
+      <topicref href="devplatform/helion/CLI/1.1ALS_Client_Downloads.dita" otherprops="als-cli">
         <topicref href="devplatform/helion/CLI/1.1ALS_Client_Reference.dita" locktitle="yes"
           navtitle="HPE Helion ALS Cluster Management Tool Reference "/>
         <topicref href="devplatform/helion/user/reference/1.1client-ref.dita" locktitle="yes"
@@ -195,18 +196,17 @@
           navtitle="HPE Helion Application Lifecycle Service Client "/>
         <topicref href="devplatform/helion/admin/reference/1.1kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference "/>
-      </topichead>
-      <topichead navtitle="ALS Management Console" otherprops="als-console">
+      </topicref>
+      <topicref href="devplatform/1.2devplatform.managementconsole.dita"
+        navtitle="ALS Management Console" locktitle="yes" otherprops="als-console">
         <topicref href="devplatform/helion/admin/console/1.1index.dita" locktitle="yes"
           navtitle="Management Console (Admin View) "/>
         <topicref href="devplatform/helion/user/console/1.1index.dita" locktitle="yes"
           navtitle="Management Console (User View)"/>
         <topicref href="devplatform/helion/admin/console/1.1customize.dita" locktitle="yes"
           navtitle="Management Console Customization "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/1.1/als/client/constructor/-->
-      <topicref href="devplatform/helion/CLI/1.1constructor_vm.dita" locktitle="yes"
-        navtitle="HPE Application Lifecycle Service (ALS) Constructor Virtual Machine "/>
       <!--permalink: /helion/devplatform/1.1/als/client/download/-->
       <!--permalink: /helion/devplatform/1.1/als/client/reference/-->
       <!--permalink: /helion/devplatform/1.1/als/admin/-->
@@ -367,6 +367,8 @@
         <!--permalink: /helion/devplatform/1.1/als/user/services/data-services/-->
       </topicref>
     </topicref>
+    <topicref href="devplatform/helion/CLI/1.1constructor_vm.dita" locktitle="yes"
+      navtitle="HPE Application Lifecycle Service (ALS) Constructor Virtual Machine "/>
   </topicref>
  
 
