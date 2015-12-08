@@ -47,13 +47,16 @@ ifconfig eth0 up</codeblock></li>
         <!--<li>In a browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">HP Helion Download Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs"><li>Click <b>Sign In</b> to log in using your account. </li><li>After signing in, click the <b>Downloads</b> link in the menu on the left side of the page.</li><li>On the <b>Downloads</b> page, locate HP Helion OpenStack Carrier Grade and click <b>Download</b>.</li></ul></li><li>Download and extract the <b id="productShow_apcodeph">Helion Carrier Grade 2.0 Windriver License patch signature file</b> and the associated signature and checksum files. For information on performing verifications of the download, see the Prerequistues. </li>-->
         <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
             <codeph>controller-0</codeph>. <ul id="ul_mpn_hnr_bt">
-            <li><codeph>license.lic</codeph></li>
-            <li><codeph>region_config</codeph>
-            </li>
-            <li><codeph>cakey.pem</codeph></li>
-          </ul><p>You should have downloaded these files <xref
-            href="carrier-grade-install-download.dita#topic7148cgid/patches">in the
-              prerequisites</xref></p></li>
+            <li><codeph>license.lic</codeph> Located in the
+                <codeph>/root/cg-hlm/windriver-files</codeph> directory on the lifecycle
+              manager.</li>
+            <li><codeph>region_config</codeph> Located in the
+                /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+              directory on the lifecycle manager.</li>
+            <li><codeph>cakey.pem</codeph> Located in the
+                <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
+              directory on the lifecycle manager.</li>
+          </ul></li>
       </ol>
     </section>
     <section id="install-cloud">
@@ -98,8 +101,8 @@ password:  &lt;random></codeblock><p>The Horizon
       <title>Configure and unlock the compute controllers</title>
       <p>After the controller-1 and the compute nodes come up successfully after PXE boot, execute
         the following commands from controller-0 to unlock each compute node in the inventory.</p>
-      <p><b>Important!</b> Follow the steps for a <xref href="#topic1107cgiks/nic-unlock" format="dita">bonded
-          NIC environment</xref> below.</p>
+      <p><b>Important!</b> Follow the steps for a <xref href="#topic1107cgiks/nic-unlock"
+          format="dita">bonded NIC environment</xref> below.</p>
     </section>
   <section id="kvm-esx-unlock">
     <title>For a Non-Bonded Environment</title>
@@ -166,7 +169,7 @@ system host-if-modify compute-1 bondvrs -nt data-vrs --ipv4-mode=pool --ipv4-poo
     </section>
     <section id="next-step">
       <title>Next Steps</title>
-      <p><xref href="carrier-grade-install-post.dita#topic1107cgiks">Post-Installation Tasks</xref>.</p>
+      <p><xref href="carrier-grade-install-post.dita#topic1107cgip">Post-Installation Tasks</xref>.</p>
       <p>If you are installing the <b>Sacramento</b> deployment, also see <xref
           href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107cgpbn"
           >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>

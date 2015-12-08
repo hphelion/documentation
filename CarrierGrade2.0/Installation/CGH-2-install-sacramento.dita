@@ -485,7 +485,7 @@ Password: cghelion</codeblock>
       <ol id="ol_f1b_cmf_zt">
         <li>On the lifecycle manager, use the following script to start the provisioning of the HPE
           Helion OpenStack cloud:
-            <codeblock>hlm provision &lt;cloudname&gt;          </codeblock><p>Where:
+            <codeblock>hlm provision -c &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname></codeph> is the name of the cloud you created. The script takes
             approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers for
             the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux operating
@@ -501,9 +501,10 @@ Password: cghelion</codeblock>
             network configuration. If this happens, you need to log into that node and manually boot
             using the Retry Auto-Configuration option. The provisioning will continue as you reboot
             that node. See <xref
-              href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581c2ti/provision">Node
-              fails to boot during HLM provision</xref>. </p>Once the baremetal nodes are
-          provisioned, make sure the <codeph>nodes.json</codeph> file is generated. The
+              href="../Troubleshooting/CGH-2-troubleshooting-install.dita#topic10581c2ti/provision"
+              >Node fails to boot during HLM provision</xref>. </p>Once the baremetal nodes are
+          provisioned, make sure the <codeph>nodes.json</codeph> file is generated to the
+            <codeph>var/hlm/clouds/&lt;cloud name&gt;/</codeph> directory. The
             <codeph>nodes.json</codeph> file will have entries for your environment:<ul
             id="ul_zyc_b4k_zt">
             <li>Denver: 3 controllers;</li>
@@ -528,7 +529,7 @@ Password: cghelion</codeblock>
         to configure back-end support:</p>
       <ol id="ul_btr_l52_xs">
         <li>Change to the <codeph>/cinder/blocks</codeph> directory:
-          <codeblock>cd ~/&lt;cloudname>/services/cinder/blocks</codeblock> Where
+          <codeblock>cd /var/hlm/clouds/&lt;cloudname>/services/cinder/blocks</codeblock> Where
             <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
           contains several sample Cinder configuration files that you can edit, depending upon which
           storage method(s) you are using.</li>
@@ -675,8 +676,8 @@ The cloud &lt;cloudname> was generated successfully.
               href="carrier-grade-install-hcfgproc-output.dita#topic10581cgiho"> Output from the hcfgproc
               command</xref>.</p></li>
         <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
-            <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
-          correct.</li>
+            <codeph>/etc/network/interfaces.d/eth.cfg</codeph> files to make sure the network
+          settings are correct.</li>
         <li>Initialize network interfaces on all the cloud nodes using the following command:
             <codeblock>hlm netinit –c &lt;cloud name&gt;</codeblock><p>Where:
               <codeph>&lt;cloudname&gt;</codeph> is the name of the cloud you created.</p><p>After

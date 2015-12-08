@@ -30,8 +30,8 @@
     <p>The information in the page depends upon which region you are using. </p>
     <p>
       <ul id="ul_f35_tqw_ft">
-        <li><xref href="#topic8785c2usom/memphis" format="dita">memphis/denver</xref></li>
-        <li><xref href="CGH-2-User-system-overview-regionone.dita#topic8785c2usom">regionone</xref></li>
+        <li>memphis/denver</li>
+        <li>regionone</li>
       </ul>
     </p>
   <section id="memphis">

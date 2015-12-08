@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148cgid">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Download the
-                Installation Packages </title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Prerequisites - Download
+                the Installation Packages </title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Carrier Grade Installation
                         Prerequisites</searchtitle>
@@ -22,9 +22,10 @@
         </prolog>
         <body>
                 
-                <p>This document describes the prerequisite steps required to install HP Helion
-                        OpenStack Carrier Grade in a baremetal environment.</p>
-                <section>
+                <p id="intro">This document describes the prerequisite steps to download the installation files
+                        required to install HP Helion OpenStack Carrier Grade in a baremetal
+                        environment.</p>
+                <section id="getinstall">
                         <p>Launch the <xref
                                         href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
                                         format="html" scope="external">Helion Distribution Network
@@ -34,17 +35,17 @@
                                         HDN</xref> in order to download these files. </p>
                         <p>Click the <b>Downloads</b> tab and locate the following downloads. <ul
                                         id="ul_dcw_yld_gt">
-                                        <li><b>Helion Carrier Grade 2.0.0</b>. Installation files
-                                                for HP Helion OpenStack Carrier Grade. This link
+                                        <li><b><b id="productShow_appName">Helion Carrier Grade 2.0
+                                                  AVS</b></b>. Installation files for the HP Helion
+                                                OpenStack Carrier Grade Denver deployment. This link
                                                 will download the
-                                                  <codeph>HelionOpenStack-2.0.0.iso</codeph> file.
-                                                  <b> hcg2_kvm_avs.tar.gz.sha256</b> checksum
-                                                file</li>
-                                        <li><b>Helion Carrier Grade 2.0.0 Signature File</b>
-                                                Signature file for the
-                                                  .<codeph>HelionOpenStack-2.0.0.iso</codeph>
-                                                download. Named
-                                                  <codeph>HelionOpenStack-2.0.0.iso.sig</codeph>.</li>
+                                                  <codeph>hcg2_kvm_avs.tar.gz</codeph> file. </li>
+                                        <li><b>Helion Carrier Grade 2.0.0 VRS</b>   Installation
+                                                files for the HP Helion OpenStack Carrier Grade
+                                                Tahoe, Memphis, and Sacramento deployments. This
+                                                link will download the
+                                                  <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
+                                                file. </li>
                                 </ul></p>
                         <p><b>Note:</b> When downloading installation files, always download and
                                 verify the signature file before installing. </p>
@@ -74,14 +75,11 @@
                                                   Installation files for HP Helion OpenStack Carrier
                                                   Grade. This link will download the
                                                   <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
-                                                  file. Also download the <b>
-                                                  hcg2_kvm_esx_ironic_vrs.tar.gz.sha256</b> checksum
-                                                  file and <b>hcg2_kvm_esx_ironic_vrs.tar.gz.sig</b>
-                                                  fignature file.</li>
+                                                  file. </li>
                                         </ul></li>
                         </ol>
                 </section>
-                <section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the KVM Host. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the KVM Host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
+                <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the KVM Host. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the KVM Host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-1.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-2.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-3.pub 
@@ -107,23 +105,33 @@ uid                  Hewlett Packard Enterprise Company RSA (HPE Codesigning Ser
 gpg: Good signature from "Hewlett Packard Enterprise Company RSA (HPE Codesigning Service) - 5"
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg: There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li><li>Perform this verification for each file you downloaded.</li></ol></section>
-                <section id="extract"><title>Extract and copy the HP Helion OpenStack Carrier Grade installation files and patches</title><p>Extract the downloaded files as indicated in the
-                                following table.</p><table id="table_rkj_yyk_2t">
-                                <tgroup cols="3">
-                                        <colspec colnum="1" colname="col2"/>
-                                        <colspec colnum="2" colname="col3"/>
-                                        <colspec colnum="3" colname="col4"/>
-                                        <thead>
-                                                <row>
+Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock></li><li>Perform this verification for each file you downloaded.</li></ol></section>-->
+                <section id="extract"><title>Extract and copy the HP Helion OpenStack Carrier Grade
+                                installation files and patches</title>Extract the downloaded files
+                        from the <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph> file:<ol
+                                id="ol_kck_hlw_f5">
+                                <li>Extract the <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
+                                        file. The exraction creates the
+                                                <codeph>hcg2_kvm_esx_ironic_vrs.tar</codeph>
+                                        file.</li>
+                                <li>Extract the <codeph>hcg2_kvm_esx_ironic_vrs.tar</codeph> file. A
+                                        number of files and folders are extracted.</li>
+                                <li>Copy or move the extracted files as indicated in the following
+                                        tables. <table id="table_rkj_yyk_2t">
+                                                <tgroup cols="3">
+                                                  <colspec colnum="1" colname="col2"/>
+                                                  <colspec colnum="2" colname="col3"/>
+                                                  <colspec colnum="3" colname="col4"/>
+                                                  <thead>
+                                                  <row>
                                                   <entry><b>File Name</b></entry>
-                                                  <entry><b>Copy to location on the KVM
-                                                  Host</b></entry>
+                                                  <entry><b>Copy to location on the Lifecycle
+                                                  Manager</b></entry>
                                                   <entry><b>Notes</b></entry>
-                                                </row>
-                                        </thead>
-                                        <tbody>
-                                                <row>
+                                                  </row>
+                                                  </thead>
+                                                  <tbody>
+                                                  <row>
                                                   <entry><xref
                                                   href="http://15.214.241.88/cg-hos-builds/cg-hlm.qcow2"
                                                   format="html" scope="external"
@@ -137,8 +145,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p> </p>
                                                   </entry>
                                                   <entry/>
-                                                </row>
-                                                <row>
+                                                  </row>
+                                                  <row>
                                                   <entry>
                                                   <p>cg-hos-misc.tar.gz</p>
                                                   <p>cg-hos-src.tar.gz</p>
@@ -146,31 +154,169 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <entry>
                                                   <p>/root/cg</p>
                                                   <p> </p>
-                                                  <p><b>Create cg folder if you don’t have in the
-                                                  KVM Host</b></p>
+                                                  <p><b>Create cg folder if not present</b></p>
                                                   </entry>
                                                   <entry> </entry>
-                                                </row>
-                                                <row>
+                                                  </row>
+                                                  <row>
                                                   <entry> cg-infra-src.tar.gz</entry>
                                                   <entry>
                                                   <p>/root </p>
                                                   <p> </p>
                                                   </entry>
                                                   <entry> </entry>
+                                                  </row>
+                                                  </tbody>
+                                                </tgroup>
+                                        </table><p id="kvm"><b>KVM Region Installation
+                                        files</b></p>Move the downloaded files to the
+                                                <codeph>/home/wrsroot/</codeph> directory of
+                                                <codeph>controller-0</codeph> in the KVM region
+                                        during the installation process.<p>
+                                                <table id="topic7148__table_yhb_zny_zs">
+                                                  <tgroup cols="2">
+                                                  <colspec colnum="1" colname="col2"
+                                                  colwidth="3.26*"/>
+                                                  <colspec colnum="2" colname="col3"
+                                                  colwidth="2.13*"/>
+                                                  <thead>
+                                                  <row>
+                                                  <entry>File Name</entry>
+                                                  <entry>To be copied to the KVM Host</entry>
+                                                  </row>
+                                                  </thead>
+                                                  <tbody>
+                                                  <row>
+                                                  <entry><systemoutput>bootimage_full.iso</systemoutput></entry>
+                                                  <entry><systemoutput>/root</systemoutput> on
+                                                  <systemoutput>controller-0</systemoutput> in the
+                                                  KVM region.</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry><systemoutput>HCG2.0GA-guest-SDK.tar.gz</systemoutput></entry>
+                                                  <entry><systemoutput>/root</systemoutput> on
+                                                  <systemoutput>controller-0</systemoutput> in the
+                                                  KVM region. SDK files to be used as
+                                                  needed.</entry>
+                                                  </row>
+                                                  <row>
+                                                  <entry><systemoutput>WR-15.09-sample-guest.img</systemoutput></entry>
+                                                  <entry><systemoutput>/root</systemoutput> on
+                                                  <systemoutput>controller-0</systemoutput> in the
+                                                  KVM region. Sample guest operating system files to
+                                                  be used as needed.</entry>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                </table>
+                                        </p><itemgroup id="patches">
+                                                <p><b> Mandatory patches</b></p>
+                                                <p>The mandatory_patches directory contains:<ul
+                                                  id="ul_o1k_trn_g5">
+                                                  <li><b>providernet-tab-missing-in-horizon</b>.
+                                                  This directory contains the Horizon Provider
+                                                  Network Patch patch. </li>
+                                                  <li><b>security_patches</b>. This directory
+                                                  contains the Ramdomize Cobbler Password patch
+                                                  files:
+                                                  <codeph>cg-hlm-cobbler-random.patch</codeph> and
+                                                  <codeph>knc-cobbler-random.patch</codeph>.</li>
+                                                  </ul></p>
+                                                <p>You will be shown during the installation where
+                                                  to copy these patches.</p>
+                                        </itemgroup></li>
+                        </ol></section>
+                <section id="dcn-extract">
+                        <title>Extract the DCN components</title>
+                        <p>HP Distributed Cloud Networking (DCN) must be fully installed and
+                                operational before installing HP Helion OpenStack Carrier Grade. The
+                                currently supported version is <b id="dcn-version">3.2R4</b>.</p>
+                        <p>Extract the downloaded files as indicated in the following table.</p>
+                        <table id="table_mlr_bcz_st">
+                                <tgroup cols="2">
+                                        <colspec colnum="1" colname="col2" colwidth="3.26*"/>
+                                        <colspec colnum="2" colname="col3" colwidth="2.13*"/>
+                                        <thead>
+                                                <row>
+                                                  <entry>File Name</entry>
+                                                  <entry>To be copied to the lifecycle
+                                                  manager</entry>
+                                                </row>
+                                        </thead>
+                                        <tbody>
+                                                <row>
+                                                  <entry>
+                                                  <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
+                                                  <p>nuagenetlib_0.0.0-1729-kilo_all.deb</p>
+                                                  <p>nuage-openstack-neutron_2015.1.1745_all.deb</p>
+                                                  <p>nuage-openvswitch-common_3.2.6-0b008b5_amd64.deb</p>
+                                                  <p>nuage-openvswitch-switch_3.2.6-0b008b5_amd64.deb</p>
+                                                  <p>nuage-python-openvswitch_3.2.6-0b008b5_all.deb</p>
+                                                  </entry>
+                                                  <entry>
+                                                  <p>/root/cg/dcn</p>
+                                                  <p><b>Create <codeph>dcn</codeph> folder under
+                                                  <codeph>/root/cg</codeph> if you don’t have in the
+                                                  lifecycle manager</b></p>
+                                                  </entry>
+                                                </row>
+                                                <row>
+                                                  <entry><p>vsd.xml</p><p>VSD-3.2.4_134-hp.ova</p>VSD-3.2.4_134-hp.qcow2</entry>
+                                                  <entry>
+                                                  <p>/var/lib/libvirt/images</p>
+                                                  </entry>
                                                 </row>
                                                 <row>
                                                   <entry>
-                                                  <p>TEMPL-CPV9.ova</p>
+                                                  <p>itoolbox1.ova</p>
+                                                  <p>VRS_3.2.6-0b008b5_11252015.ovf</p>
+                                                  <p>VRS_3.2.6-0b008b5_11252015-disk1.vmdk</p>
                                                   </entry>
-                                                  <entry>Uploaded to the ESX Cluster</entry>
-                                                  <entry>For Denver and Tahoe deployments, disregard
-                                                  this file.</entry>
+                                                  <entry>
+                                                  <p><codeph>/var/www/html</codeph>
+                                                  </p>
+                                                  </entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>
                         </table>
                 </section>
+                <section id="avs">
+                        <b>hcg2_kvm_avs.tar.gz</b><p>Extract the downloaded files:</p><ol
+                                id="ol_qkx_cmw_f5">
+                                <li>Extract the <codeph>hcg2_kvm_avs.tar.gz</codeph> file. The
+                                        exraction creates the <codeph>hcg2_kvm_avs.tar</codeph>
+                                        file.</li>
+                                <li>Extract the <codeph>hcg2_kvm_avs.tar.gz</codeph> file.</li>
+                                <li>Copy or move the extracted files as indicated in the following
+                                        tables. <p>
+                                                <table conref="#topic7148cgid/table_rkj_yyk_2t"
+                                                  id="table_cvn_s5n_g5">
+                                                  <tgroup cols="1">
+                                                  <tbody>
+                                                  <row>
+                                                  <entry/>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                </table>
+                                        </p><p><b>KVM Region Installation files</b></p>Move the
+                                        downloaded files to the <codeph>/home/wrsroot/</codeph>
+                                        directory of <codeph>controller-0</codeph> in the KVM region
+                                        during the installation process.<p>
+                                                <table
+                                                  conref="#topic7148cgid/topic7148__table_yhb_zny_zs"
+                                                  id="table_cpb_xvn_g5">
+                                                  <tgroup cols="1">
+                                                  <tbody>
+                                                  <row>
+                                                  <entry/>
+                                                  </row>
+                                                  </tbody>
+                                                  </tgroup>
+                                                </table>
+                                        </p><itemgroup conref="#topic7148cgid/patches"/></li>
+                        </ol></section>
                 <section id="checksum">
                         <title>Verify the downloaded checksums</title>
                         <p>You should also use a checksum verification tool, such as sha256sum,
@@ -197,86 +343,16 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
 97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
                         </ol>
                 </section>
-                <section id="dcn-extract"><title>Extract the DCN components</title><p>Extract the
-                                downloaded files as indicated in the following table.</p><table
-                                id="table_mlr_bcz_st">
-                                <tgroup cols="3">
-                                        <colspec colname="newCol1" colnum="1" colwidth="1*"/>
-                                        <colspec colnum="2" colname="col2" colwidth="3.26*"/>
-                                        <colspec colnum="3" colname="col3" colwidth="2.13*"/>
-                                        <thead>
-                                                <row>
-                                                  <entry>Folder</entry>
-                                                  <entry>File Name</entry>
-                                                  <entry>To be copied to the KVM Host</entry>
-                                                </row>
-                                        </thead>
-                                        <tbody>
-                                                <row>
-                                                  <entry/>
-                                                  <entry>
-                                                  <p>nuage-metadata-agent_3.2.4-133_all.deb</p>
-                                                  <p>nuagenetlib_0.0.0-1729-kilo_all.deb</p>
-                                                  <p>nuage-openstack-neutron_2015.1.1729_all.deb</p>
-                                                  <p>nuage-openvswitch-common_3.2.4-133_amd64.deb</p>
-                                                  <p>nuage-openvswitch-switch_3.2.4-133_amd64.deb</p>
-                                                  <p>nuage-python-openvswitch_3.2.4-133_all.deb</p>
-                                                  <p>
-                                                  <b><i><u>vsc_singledisk.ova</u></i></b></p>
-                                                  </entry>
-                                                  <entry>
-                                                  <p>/root/cg/dcn</p>
-                                                  <p><b>Create dcn folder uncer /root/cg if you
-                                                  don’t have in the KVM Host</b></p>
-                                                  </entry>
-                                                </row>
-                                                <row>
-                                                  <entry>VSD-QCOW2</entry>
-                                                  <entry><ph conref="#topic7148cgid/vsd-qcow"/></entry>
-                                                  <entry>
-                                                  <p>/var/lib/libvirt/images</p>
-                                                  </entry>
-                                                </row>
-                                                <row>
-                                                  <entry>VRS-vApp</entry>
-                                                  <entry>
-                                                  <p>itoolbox1.ova</p>
-                                                  <p><b><u><i>VRS_3.2.4-135_10062015.mf</i></u></b></p>
-                                                  <p>VRS_3.2.4-135_10062015.ovf</p>
-                                                  <p> VRS_3.2.4-135_10062015-disk1.vmdk</p>
-                                                  </entry>
-                                                  <entry>
-                                                  <p><codeph>/var/www/html</codeph> on the KVM Host.
-                                                  </p>
-                                                  </entry>
-                                                </row>
-                                        </tbody>
-                                </tgroup>
-                        </table><b>Debian Packages</b><p>Download the following Debian packages from
-                                a trusted source:</p><p>
-                                <ul id="ul_hq1_sjh_xt">
-                                        <li conref="#topic7148cgid/libproto"/>
-                                        <li conref="#topic7148cgid/setproc"/>
-                                </ul>
-                        </p><p>Move the downloaded files to the to the <codeph>/root/cg/dcn</codeph>
-                                directory on the lifecycle manager host:</p></section>
-                
-                <section id="kvm"><p><b>KVM Region Installation files</b></p>Move the downloaded files to the
-                                <codeph>/home/wrsroot/</codeph> directory of
-                                <codeph>controller-0</codeph> in the KVM region during the
-                        installation process.<ul id="ul_wt5_vcz_st">
-                                <li>bootimage_avs_only.iso or bootimage_vrs_only.iso</li>
-                                <li>HCG_2.0_WR_license.lic.txt <!--what about these???--></li>
-                                <li><codeph>license.lic</codeph> Located in the
-                                                <codeph>/root/cg-hlm/windriver-files</codeph>
-                                        directory on the lifecycle manager.</li>
-                                <li><codeph>region_config</codeph> Located in the
-                                                /<codeph>var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                        directory on the lifecycle manager.</li>
-                                <li><codeph>cakey.pem</codeph> Located in the
-                                                <codeph>/var/hlm/clouds/&lt;cloud-name&gt;/desired_state/&lt;cloud-name&gt;/001/base/stage/windriver-config</codeph>
-                                        directory on the lifecycle manager.</li>
-                        </ul></section>
+                <section>
+                        <p><b id="debian">Debian Packages</b></p>
+                                <p>Download the following Debian
+                                packages from a trusted source:</p><ul
+                                conref="CGH-2-install-lifecycle-sacramento.dita#topic10581c2ils/ul_wwn_13h_xt"
+                                id="ul_kwl_vyj_g5">
+                                <li/>
+                        </ul><p>Move the downloaded files to the to the
+                                        <codeph>/root/cg/dcn</codeph> directory on the lifecycle
+                                manager host:</p></section>
                 <section id="next-step">
                         <title>Next Step</title>
                         <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581c2ilt">Deploying the

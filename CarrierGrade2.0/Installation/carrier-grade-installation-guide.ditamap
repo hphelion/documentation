@@ -20,8 +20,6 @@
             navtitle="Deploying the Denver Template" locktitle="yes">
             <topicref href="carrier-grade-technical-overview-denver.dita"
                 navtitle="Technical Overview" locktitle="yes"/>
-            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
-                locktitle="yes"/>
             <topicref href="carrier-grade-support-matrix-denver.dita" navtitle="Support Matrix"
                 locktitle="yes"/>
             <topicref href="CGH-install-prereqs-denver.dita" navtitle="Installation Prerequisites"
@@ -32,19 +30,15 @@
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-denver.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
+            <topicref href="carrier-grade-install-launch-horizon-denver.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-denver.dita"
-                navtitle="Deploying the KVM Region" locktitle="yes">
-                <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
-            </topicref>
+                navtitle="Deploying the KVM Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-overview-tahoe.dita"
             navtitle="Deploying the Tahoe Template" locktitle="yes">
             <topicref href="carrier-grade-technical-overview-tahoe.dita"
                 navtitle="Technical Overview" locktitle="yes"/>
-            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
-                locktitle="yes"/>
             <topicref href="carrier-grade-support-matrix-tahoe.dita" navtitle="Support Matrix"
                 locktitle="yes"/>
             <topicref href="CGH-install-prereqs-tahoe.dita" navtitle="Installation Prerequisites"
@@ -55,9 +49,7 @@
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-kvm-tahoe.dita"
-                navtitle="Deploying the KVM Region" locktitle="yes"/>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
+            <topicref href="carrier-grade-install-launch-horizon-tahoe.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-tahoe.dita"
                 navtitle="Deploying the KVM Region" locktitle="yes"/>
@@ -66,8 +58,6 @@
             navtitle="Deploying the Memphis Template" locktitle="yes">
             <topicref href="carrier-grade-technical-overview-memphis.dita"
                 navtitle="Technical Overview" locktitle="yes"/>
-            <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
-                locktitle="yes"/>
             <topicref href="carrier-grade-support-matrix-memphis.dita" navtitle="Support Matrix"
                 locktitle="yes"/>
             <topicref href="CGH-install-prereqs-memphis.dita" navtitle="Installation Prerequisites"
@@ -78,7 +68,7 @@
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
             <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
-            <topicref href="carrier-grade-install-launch-horizon.dita"
+            <topicref href="carrier-grade-install-launch-horizon-memphis.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-memphis.dita"
                 navtitle="Deploying the KVM Region" locktitle="yes"/>

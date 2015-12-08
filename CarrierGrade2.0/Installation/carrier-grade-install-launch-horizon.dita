@@ -15,7 +15,7 @@
     </metadata>
   </prolog>
   <body>
-    
+    <bodydiv id="horizon">
     <p>After the HP Helion OpenStack cloud is installed, you can launch the Horizon interface to
       verify that the installation was successful.</p>
     <section>
@@ -103,11 +103,13 @@
       <p>Once the images are uploaded, you are ready to launch the instance with different flavors.
       </p>
     </section>
-    
+        </bodydiv>
     <section id="next-step">
       <title>Next Step</title>
       <p>
         <xref href="carrier-grade-install-kvm-cloud.dita">Deploying the KVM Region</xref>.</p>
     </section>
+    
+  
   </body>
 </topic>

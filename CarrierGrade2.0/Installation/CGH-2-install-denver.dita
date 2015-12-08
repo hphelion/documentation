@@ -84,7 +84,7 @@
           </tgroup>
         </table></p>
       <p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-          href="carrier-grade-install-kvm-only-json.dita#topic10581cgisoj">Sample JSON File for the HLM
+        href="carrier-grade-install-kvm-only-json.dita#topic10581cgikoj">Sample JSON File for the HLM
           Virtual Machine Installation</xref>. </p>
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-pxe-boot"/>
@@ -337,12 +337,12 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/providernet-patch"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-config-proc"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hdeploy"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581/c2isconref-ldap-keystone" id="ldap3"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-keystone" id="ldap3"/>
     
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
-          Interface</xref></p>
+      <p><xref href="carrier-grade-install-launch-horizon-denver.dita#topic10581cgilhd">Launching
+          the Horizon Interface</xref></p>
       
     </section>
   </body>

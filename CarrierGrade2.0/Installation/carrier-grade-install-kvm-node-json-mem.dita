@@ -16,7 +16,7 @@
 <body>
     <p>The process for installing the memphis and sacramento deployments requires several JSON file
             that will be used when deploying the HP Helion OpenStack.</p>
-        <section conref="carrier-grade-install-kvm-node-json-sac.dita#topic10581cgiknjs/fields"/>
+        <section conref="carrier-grade-install-kvm-node-json-sac.dita#topic10581cgiknj/fields"/>
 <section id="sample-node-provisionjson-file">
             <title>Sample node-provision.json file</title>
             <p>The following represents a sample <codeph>node-provision.json</codeph> file. The IP

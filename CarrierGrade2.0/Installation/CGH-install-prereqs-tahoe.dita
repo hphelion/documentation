@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148cipt">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Installation
-                Prerequisites</title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Prerequisites -
+                Preparing the Installation Environment  for the Tahoe Deployment</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Carrier Grade Installation
                         Prerequisites</searchtitle>
@@ -21,7 +21,9 @@
                 </metadata>
         </prolog>
         <body>
-                <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cipt/prereqs"/>
+                        <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cips/prereqs"
+                        />
+                
                 <section id="next-step">
                         <title>Next Step</title>
                         <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581c2ilt">Deploying

@@ -24,14 +24,14 @@
                 <p>For information about HP Helion OpenStack Carrier Grade hardware, software and
                         other requirements and conform to the recommendations, see one of the
                         following, based upon your deployment:<ul id="ul_es3_kb2_b5">
-                                <li><xref href="CGH-install-prereqs-denver.dita#topic1773cipd"
+                                <li><xref href="CGH-install-prereqs-denver.dita#topic7148cipd"
                                                 >Denver Deployment Prerequisites</xref></li>
-                                <li><xref href="CGH-install-prereqs-tahoe.dita#topic1773cipt"
+                                <li><xref href="CGH-install-prereqs-tahoe.dita#topic7148cipt"
                                                 >Tahoe Deployment Prerequisites</xref></li>
-                                <li><xref href="CGH-install-prereqs-memphis.dita#topic1773cipm"
+                                <li><xref href="CGH-install-prereqs-memphis.dita#topic7148cipm"
                                                 >Memphis Deployment Prerequisites</xref></li>
                                 <li><xref
-                                        href="CGH-install-prereqs-sacramento.dita#topic1773cips"
+                                        href="CGH-install-prereqs-sacramento.dita#topic7148cips"
                                                 >Sacramento Deployment Prerequisites</xref></li>
                         </ul></p>
         </body>

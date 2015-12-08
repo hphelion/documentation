@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148cgidm">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Download the
-                Memphis Installation Packages</title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Prerequisites - Download
+                the Memphis Installation Packages</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Carrier Grade Installation
                         Prerequisites</searchtitle>
@@ -21,18 +21,13 @@
                 </metadata>
         </prolog>
         <body>
-                
-                <p>This document describes the prerequisite steps required to install HP Helion
-                        OpenStack Carrier Grade in a baremetal environment.</p>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/getinstall" id="download"/>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn"/>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/infoblox"/>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/esx"/>
+                <p conref="carrier-grade-install-download.dita#topic7148cgid/intro"/>
+                <section conref="carrier-grade-install-download.dita#topic7148cgid/getinstall"
+                        id="download"/>
+                <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/checksum"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/extract"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"/>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/kvm"/>
-                <p/>
                 <section id="next-step">
                         <title>Next Step</title>
                         <p><xref href="CGH-2-install-lifecycle-memphis.dita#topic10581c2ilm">Deploying the

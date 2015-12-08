@@ -8,10 +8,6 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.quotas.md-->
- <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/quotas/--></p>
 <p>Quotas are operational limits enforced on each project.</p>
 <p>To prevent system capacities from being exhausted without notification, you can set up quotas.</p>
 <p>For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space.</p>

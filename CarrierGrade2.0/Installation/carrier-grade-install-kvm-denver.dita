@@ -18,8 +18,8 @@
     <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/controller-0"/>
     <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-license"/>
     <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-cloud"/>
-    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107ckiks/unlock"/>
-    <section conref="carrier-grade-install-kvm-tahoe.dita#topic1107icgikt/kvm-unlock"/>
+  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/unlock"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/kvm-esx-unlock"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/nic-unlock"/>
     <section id="next-step">
       <title>Next Steps</title>

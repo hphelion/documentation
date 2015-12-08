@@ -39,14 +39,14 @@
             </li>
             <li><xref href="../HostManagement/CGH-2-User-host-management-active.dita#topic4032">Active
                 Hosts</xref></li>
-            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639c2uhmpatches"
+            <li><xref href="../HostManagement/CGH-2-User-host-management-patches.dita#topic2639c2uhmipatches"
                     >Patches </xref></li>
             <li><xref
                     href="../HostManagement/CGH-2-User-host-management-profiles-cpu.dita#topic2639c2uhmpc"
                     >CPU Profiles</xref>
             </li>
             <li><xref
-                    href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639c2uhmpi"
+                href="../HostManagement/CGH-2-User-host-management-profiles-intf.dita#topic2639c2hmpi"
                     >Interface Profiles </xref></li>
             <li><xref
                     href="../HostManagement/CGH-2-User-host-management-profiles-storage.dita#topic2639c2uhmps"

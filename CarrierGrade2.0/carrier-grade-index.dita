@@ -47,7 +47,7 @@
           <p><xref
               href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/CGH-2-KVM-Admin.pdf"
               format="pdf" scope="external">Administrator Guide</xref></p>
-          <p>The <xref href="AdminGuideNew/carrier-grade-admin-guide.dita#topic15959">KVM-Region
+          <p>The <xref href="AdminGuideNew/carrier-grade-admin-guide.dita">KVM-Region
               Administrator Guide</xref> is addressed to HP Helion OpenStack Carrier Grade
             administrators responsible for the following areas:</p>
           <ul>

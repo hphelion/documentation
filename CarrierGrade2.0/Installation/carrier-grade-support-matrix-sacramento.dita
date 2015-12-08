@@ -44,7 +44,7 @@
       <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
         for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
-          <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. The
+        <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743cgok">KVM region</xref>. The
         servers must meet the specifications in <xref href="#topic1773cgsms/specs" format="dita">the
           Required Specifications table below</xref>:</p>
       <p><b>Controller:</b></p>
@@ -204,32 +204,6 @@
           </tgroup>
         </table>
       </p>
-      <!--<p>  
-        <b>HPE ProLiant Rack Servers</b>
-      </p><ul>
-        <li>DL360 Gen9</li>
-        <li>DL380 Gen9</li>
-        <li>DL360 Gen8</li>
-        <li>DL380 Gen8 </li>
-      </ul><p><b>Note:</b> If you are using Gen9 systens, you must update the firmware to HPE Service
-        Pack for ProLiant (SPP) Version 2015.06.0. </p><p id="compute"><b>Compute servers</b>
-      </p><p>The following servers are supported for the compute servers in the <xref
-          href="../Overview/carrier-grade-overview-kvm.dita#topic1743cgok">KVM region</xref>. </p><p>
-        <b>HPE ProLiant BladeSystem</b>
-      </p><ul id="ul_er1_sc2_qs">
-        <li>BL460c Gen8</li>
-        <li>BL460c Gen9 </li>
-      </ul><p>
-        <b>HPE ProLiant Rack Servers</b>
-      </p><ul id="ul_l4s_pc2_qs">
-        <li>DL360 Gen9</li>
-        <li>DL380 Gen9</li>
-        <li>DL360 Gen8</li>
-        <li>DL380 Gen8</li>
-      </ul>
-      <p><b>Note:</b> If you are using Gen9 systems, you must update the firmware to HPE Service Pack
-        for ProLiant (SPP) Version 2015.06.0. </p>
--->
     </section>
     <section id="esx-dcn-hardware">
       <title>ESX and DCN Specifications</title>

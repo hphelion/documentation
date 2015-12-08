@@ -298,7 +298,7 @@
                     navtitle="Adding and Removing Users to a Project" locktitle="yes"/>
                 <topicref href="Identity/CGH-2-User-Identity-projects-primary.dita"
                     navtitle="Specifying a Primary Project for a User" locktitle="yes"/>
-                <topicref href="Identity/CGH-2-User-Identity-quotas.dita"
+                <topicref href="Identity/CGH-2-User-Identity-projects-quotas.dita"
                     navtitle="Setting Project Quotas" locktitle="yes"/>
             </topicref>
         </topicref>

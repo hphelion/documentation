@@ -22,17 +22,13 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-resource.md-->
- <!--permalink: /helion/openstack/carrier/admin/host/management/resources/--></p>
+
     <p>When you first log into the Helion interface, the Overview page appears. </p>
     <p>The information in the page depends upon which region you are using. </p>
     <p>
       <ul id="ul_f35_tqw_ft">
-        <li><xref href="#topic8785c2usor/regionone" format="dita">regionone</xref></li>
-        <li><xref href="CGH-2-User-system-overview-memphis.dita#topic8785c2usom"
-          >memphis/denver</xref></li>
+        <li>regionone</li>
+        <li>memphis/denver</li>
       </ul>
     </p>
     <section id="regionone"><p>To view information on the servers in the regionone region, click

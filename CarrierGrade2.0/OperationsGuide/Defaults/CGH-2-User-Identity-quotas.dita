@@ -8,10 +8,7 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.quotas.md-->
- <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/quotas/--></p>
+<bodydiv>
 <p>Quotas are operational limits enforced on each project.</p>
 <p>To prevent system capacities from being exhausted without notification, you can set up quotas.</p>
     <p><image href="../../../media/CGH-2-defaults.png" width="600" id="image_v2k_fvf_jt"/></p>
@@ -63,5 +60,6 @@
       </p>
       <!-- ===================== horizontal rule ===================== -->
     </section>
+</bodydiv>
 </body>
 </topic>

@@ -50,7 +50,7 @@
           with virtio vNIC, a VM with SRIOV vNIC and a VM with PCI-PT vNIC in the same l2
           domain.</li>
       </ul><p>For more information, see: <xref
-          href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581cgc5s"
+        href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581cgc5w"
           >Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</xref></p>
     </section>
   </body>

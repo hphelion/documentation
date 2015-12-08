@@ -76,7 +76,7 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-wr-json" id="wr"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-mem.dita">a sample wr.json
       file</xref>. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-mach-json"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-mach-json" id="mach"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-verify-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-esx-proxy"
       id="conref-esx-proxy"/>
@@ -97,9 +97,9 @@
         an optional component that integrates with the OpenStack Neutron networking service, to
         provide IP Address Management (IPAM) networking services within OpenStack cloud
         platforms.</p>
-      <p><xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Launching the Horizon
-          Interface</xref>. Launch the Horizon interface to load a required security certificate and
-        test the non-KVM deployment. </p>
+      <p><xref href="carrier-grade-install-launch-horizon-memphis.dita#topic10581cgilhm">Launching
+          the Horizon Interface</xref>. Launch the Horizon interface to load a required security
+        certificate and test the non-KVM deployment. </p>
     </section>
   </body>
 </topic>
