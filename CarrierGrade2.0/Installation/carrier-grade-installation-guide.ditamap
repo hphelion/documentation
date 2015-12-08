@@ -111,9 +111,6 @@
             <topicref
                 href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
                 navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
-            <topicref href="carrier-grade-install-5930-switch.dita"
-                navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports"
-                locktitle="yes"/>
             <topicref
                 href="../OperationsGuide/Baremetal/carrier-grade-baremetal-best-practices.dita"
                 navtitle="Baremetal Region Best Practices" locktitle="yes"/>
