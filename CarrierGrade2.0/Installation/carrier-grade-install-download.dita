@@ -317,32 +317,10 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </table>
                                         </p><itemgroup conref="#topic7148cgid/patches"/></li>
                         </ol></section>
-                <section id="checksum">
-                        <title>Verify the downloaded checksums</title>
-                        <p>You should also use a checksum verification tool, such as sha256sum,
-                                which should come installed with Ubuntu.</p>
-                        <ol id="ol_icb_k4f_xs">
-                                <li>Run the checksum tool against the <codeph>hcg_1.1.0.tar</codeph>
-                                        file.
-                                        <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0.tar</codeblock></li>
-                                <li>Compare the output of the checksum tool to the
-                                                <codeph>hcg_1.1.0.tar.sha256</codeph> file.
-                                        <codeblock>sha256sum.exe hcg_1.1.0.tar
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note
-                                        that the chechsum file contains the date that the file was
-                                        generated, the checksum string, and the name of the file
-                                        that was
-                                        used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li>
-                                <li>Run the checksum tool against the
-                                                <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file.
-                                        <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0_horizon_patch1.tar  </codeblock></li>
-                                <li>Compare the output of the checksum tool to the
-                                                <codeph>hcg_1.1.0.tar.sha256</codeph> file.
-                                        <codeblock>sha256sum.exe hcg_1.1.0.tar
-97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li>
-                        </ol>
-                </section>
+                <!--<section id="checksum"><title>Verify the downloaded checksums</title><p>You should also use a checksum verification tool, such as sha256sum, which should come installed with Ubuntu.</p><ol id="ol_icb_k4f_xs"><li>Run the checksum tool against the <codeph>hcg_1.1.0.tar</codeph> file. <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0.tar</codeblock></li><li>Compare the output of the checksum tool to the <codeph>hcg_1.1.0.tar.sha256</codeph> file. <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock>Note that the chechsum file contains the date that the file was generated, the checksum string, and the name of the file that was used:<codeblock>Fri Jul 31 10:55:37 EDT 2015
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar</codeblock></li><li>Run the checksum tool against the <codeph>hcg_1.1.0_horizon_patch1.tar</codeph> file. <codeblock>sha256sum &lt;path-to-file>/hcg_1.1.0_horizon_patch1.tar  </codeblock></li><li>Compare the output of the checksum tool to the <codeph>hcg_1.1.0.tar.sha256</codeph> file. <codeblock>sha256sum.exe hcg_1.1.0.tar
+97f5b83c7aa0410ecc90f870f22bf8a691f8491a69c2ec26e0e71a24 hcg_1.1.0.tar                                                </codeblock></li></ol></section>-->
                 <section>
                         <p><b id="debian">Debian Packages</b></p>
                                 <p>Download the following Debian

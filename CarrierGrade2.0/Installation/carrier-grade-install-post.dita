@@ -35,23 +35,12 @@
     </section>
     <section>
       <title>Provision Baremetal Nodes for the Sacramento Deployment</title>
-        <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
+      <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
         region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
         instructions to provision baremetal nodes.</p>
       <p>For more information, see <xref
           href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita#topic1107cgpbn"
-          >Provision Baremetal Nodes for the Sacramento Deployment</xref>.</p>
-    </section>
-  <section><title>Configure a 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</title> This
-      document provides a sequence of events to understand how VMs with vNIC type PCI-PT or SRIOV is
-      orchestrated to provide: <ul>
-        <li>IP assignment to the vNICs from the tenant network pool</li>
-        <li>vNICs are part of VSD managed subnet (VxLAN segment) to allow communication between a VM
-          with virtio vNIC, a VM with SRIOV vNIC and a VM with PCI-PT vNIC in the same l2
-          domain.</li>
-      </ul><p>For more information, see: <xref
-        href="../OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita#topic10581cgc5w"
-          >Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports</xref></p>
+          >Provision Baremetal Nodes for the Sacramento Deployment</xref>. </p>
     </section>
   </body>
 </topic>
