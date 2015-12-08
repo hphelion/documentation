@@ -180,8 +180,9 @@ system host-if-modify compute-1 bondvrs -nt data-vrs --ipv4-mode=pool --ipv4-poo
           <li>Execute the following command to deploy the script using bash
             <codeblock>+x wrvippem.sh</codeblock></li>
           <li>Change to the following directory: <codeblock>cd /etc/ssl/private</codeblock></li>
-          <li>Copy the <codeph>server-cert.pem</codeph> from that directory to KVM region
-            controller-1, the standby controller.</li>
+          <li>Copy the <codeph>server-cert.pem</codeph> in that directory to the
+              <codeph>/etc/ssl/private</codeph> directory on the KVM region
+              <codeph>controller-1</codeph>, the standby controller.</li>
         </ol>
       </p>
     </section>
