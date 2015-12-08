@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035wt">
   <title>HPE Helion 1.2 Development Platform: Windows Troubleshooting</title>
   <titlealts>
     <searchtitle>HPE Helion 1.2 Development Platform: Windows Troubleshooting</searchtitle>
@@ -30,8 +30,8 @@
     <p>This document describes troubleshooting and additional configuration steps for Windows instances.</p>
     <p>This document contains the following sections:</p>
     <ul>
-      <li><xref href="#topic1035/kato_upstream_proxies">Upstream proxies are not set in DEAs added after cluster creation</xref></li>
-      <li><xref href="#topic1035/kato_patch">Kato tries to install patches on Windows nodes</xref></li>
+      <li><xref href="#topic1035wt/kato_upstream_proxies">Upstream proxies are not set in DEAs added after cluster creation</xref></li>
+      <li><xref href="#topic1035wt/kato_patch">Kato tries to install patches on Windows nodes</xref></li>
     </ul>
     <section id="kato_upstream_proxies"><title>Upstream proxies are not set in DEAs added after cluster creation</title>
     <p>When DEAs are added to clusters after they have been created, upstream proxies are not automatically configured. To configure upstream proxies for these nodes, do the following:</p>

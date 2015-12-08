@@ -33,7 +33,9 @@
           otherprops="scale-out">
           <topichead navtitle="Scale up or expand" otherprops="expand">
             <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+            <!-- commenting out duplicate to allow export to drupal
             <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+            -->
             <topicref
               href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
             <topicref
@@ -112,8 +114,11 @@
     <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
     <!-- Install -->
     <topicref href="commercial/GA1/1.0commercial.install-GA-overview.dita" otherprops="install">
-      <topicref href="commercial/GA1/1.0commercial.install-GA-supportmatrix.dita"/>
+      <!--commenting out duplicate to allow export to drupal
+        <topicref href="commercial/GA1/1.0commercial.install-GA-supportmatrix.dita"/>
+     
       <topicref href="commercial/GA1/1.0commercial.technical-overview.ga.dita"/>
+      -->
       <topicref href="commercial/GA1/1.0commercial.install-GA-prereqs.dita" otherprops="prereq">
         <topicref href="commercial/GA1/1.0commercial.install-GA-CSV.dita"/>
         <topicref href="commercial/GA1/1.0commercial.name-resolution.dita"/>
@@ -181,7 +186,9 @@
       otherprops="restore">
       <topicref
         href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
+      <!--commenting out duplicate to allow export to drupal
       <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
+    -->
     </topichead>
     <topichead navtitle="HPE Helion Openstack(R) 1.0: Flexible Control Pane"
       otherprops="control-pane">

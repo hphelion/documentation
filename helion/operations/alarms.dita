@@ -5,7 +5,8 @@
   <title><ph conkeyref="HOS-conrefs/product-title"/>Service Alarm Definitions</title>
   <shortdesc>This topic contains a list of service-specific alarms and the recommended
     troubleshooting steps.</shortdesc>
-  <body><!--Needs Work; should the command/code content in the table be surrounded by codeph tags; we are inconsistent? for Ceilometer/HTTP Status, what needs to be restarted (it?); is there a mititgation for Keystone/Host alive Check?-->
+  <body>
+    <!--Needs Work; should the command/code content in the table be surrounded by codeph tags; we are inconsistent? for Ceilometer/HTTP Status, what needs to be restarted (it?); is there a mititgation for Keystone/Host alive Check?-->
     <p conkeyref="HOS-conrefs/applies-to"/>
     <p>When alarms are triggered it may be helpful for you to review the service logs. For details
       on how to use the logging user interface built into the Operations Console, see <xref
@@ -64,7 +65,7 @@
                 <entry>Process Check</entry>
                 <entry>process_name=ceilometer-agent-central</entry>
                 <entry>Process crashed.</entry>
-                <entry>Restart process on the affected node. Review the associated  logs.</entry>
+                <entry>Restart process on the affected node. Review the associated logs.</entry>
               </row>
               <row>
                 <entry>HTTP Status</entry>
@@ -78,8 +79,8 @@
                 <entry>HTTP Status</entry>
                 <entry>component=ceilometer-api </entry>
                 <entry>Ceilometer API on administrator VIP.</entry>
-                <entry><p>If this occurs with an http_status in error on all nodes, then restart Apache on all
-                    controllers.</p>
+                <entry><p>If this occurs with an http_status in error on all nodes, then restart
+                    Apache on all controllers.</p>
                   <p>If this occurs with a specific host with http_status in non-error for
                     telemetry, then it should be a haproxy issue and it needs to be restarted.</p>
                   <p>For further troubleshooting, look into the Ceilometer access log in the
@@ -162,9 +163,13 @@
               </row>
               <row>
                 <entry>Cinderlm diagnostics monitoring</entry>
-                <entry/>
-                <entry/>
-                <entry>See <xref href="../releasenotes.dita#release-notes/cinderlm">release notes</xref> for information about this alarm.</entry>
+                <entry>Alarms if Cinder monitoring cannot execute a task</entry>
+                <entry>Cinder monitoring was unable to execute the cinder service check to determine
+                  the number of executing Cinder processes</entry>
+                <entry>Review the monasca agent collector.log file on the affected node to determine
+                  why the service check did not execute as expected. <p>See <xref
+                      href="../releasenotes.dita#release-notes/cinderlm">release notes</xref> for
+                    additional information about this alarm.</p></entry>
               </row>
             </tbody>
           </tgroup>
@@ -549,9 +554,9 @@
                 it is insufficient, you may need to increase this configuration parameter and run a
                 reconfigure.</entry>
             </row>
-            
-            
-            
+
+
+
             <row>
               <entry>Elasticsearch Low Watermark alarm definition</entry>
               <entry>Elasticsearch</entry>
@@ -576,8 +581,8 @@
                 Alternatively, adjust curator_low_watermark_percent, curator_high_watermark_percent,
                 and/or elasticsearch_max_total_indices_size_in_bytes if needed.</entry>
             </row>
-            
-            
+
+
             <row>
               <entry>Elasticsearch Bulk Pool Rejected</entry>
               <entry>Elasticsearch</entry>
@@ -587,7 +592,7 @@
                 even 3000, for example). This is found in the config/logging/elasticsearch.yml.j2
                 file.</entry>
             </row>
-            
+
             <row>
               <entry>Elasticsearch Open File Descriptors </entry>
               <entry>Elasticsearch</entry>
@@ -598,7 +603,7 @@
                 indices, to a specific number of days. This is located in the
                 config/logging-common/main.yml file.</entry>
             </row>
-            
+
             <row>
               <entry>Process Check</entry>
               <entry>Elasticsearch</entry>
@@ -996,8 +1001,8 @@ ansible-playbook -i hosts/verb_hosts ops-console-start.yml</codeblock></entry>
                 <entry>Process Check</entry>
                 <entry>process_name=leia-leia_monitor</entry>
                 <entry>Process crashed or unresponsive.</entry>
-                <entry><p>Review logs in <codeph>/var/log/ops-console</codeph>. Restart ops-console by running the
-                    following commands on the lifecycle manager:</p>
+                <entry><p>Review logs in <codeph>/var/log/ops-console</codeph>. Restart ops-console
+                    by running the following commands on the lifecycle manager:</p>
                   <codeblock>
 cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts ops-console-stop.yml 

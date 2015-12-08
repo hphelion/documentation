@@ -264,8 +264,10 @@
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/-->
         <topicref href="devplatform/1.2/helion/admin/cluster/1.2index.dita" locktitle="yes"
           navtitle="Cluster Setup"/>
+        <!--commenting out duplicate to allow export to drupal
         <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
           navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
+          -->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/cloud-init/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/external-db/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/harbor/-->

@@ -42,32 +42,32 @@
       <!--permalink: /helion/devplatform/workbook/database/java/-->
       <topicref href="devplatform/1.0devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin "/>
-      <topichead navtitle="JAVA Samples" otherprops="java">
+      <topicref navtitle="JAVA Samples" href="devplatform/workbook/javaintro.dita" otherprops="java">
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.0database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/workbook/database/node/-->
-      <topichead navtitle="Node Samples" otherprops="node">
+      <topicref navtitle="Node Samples" href="devplatform/workbook/nodeintro.dita" otherprops="node">
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.0database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/workbook/database/php/-->
-      <topichead navtitle="PHP Samples" otherprops="php">
+      <topicref navtitle="PHP Samples" otherprops="php" href="devplatform/workbook/phpintro.dita">
         <topicref href="devplatform/workbook/database/1.0database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample "/>
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.php.dita" locktitle="yes"
           navtitle="PHP RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/workbook/helloworld/java/-->
       <!--permalink: /helion/devplatform/workbook/helloworld/node/-->
       <!--permalink: /helion/devplatform/workbook/helloworld/php/-->
@@ -112,7 +112,7 @@
     <topicref href="devplatform/helion/1.0index.dita"
       navtitle="Application Lifecycle Service Documentation" locktitle="yes" otherprops="als">
       <!--permalink: /als/v1/admin/-->
-      <topichead navtitle="ALS Management Console" otherprops="console">
+      <topicref navtitle="ALS Management Console" href="devplatform/helion/admin/adminintro.dita"  otherprops="console">
         <topicref href="devplatform/helion/admin/console/1.0index.dita" locktitle="yes"
           navtitle="Management Console (Admin View) "
           ><!--permalink: /als/v1/admin/console/app-store/--><!--permalink: /als/v1/admin/console/customize/--></topicref>
@@ -120,16 +120,18 @@
           locktitle="yes"/>
         <topicref href="devplatform/helion/user/console/1.0index.dita"
           navtitle="Managment Console (User View)" locktitle="yes"/>
-      </topichead>
-      <topichead navtitle="ALS Command Line Clients" otherprops="cli">
+      </topicref>
+      <topicref  navtitle="ALS Command Line Clients"  href="devplatform/helion/CLI/userintro.dita" otherprops="cli">
         <topicref href="devplatform/helion/user/client/1.0index.dita" locktitle="yes"
           navtitle="HPE Helion Application Lifecycle Service Client " otherprops="lifecycle">
           <!--permalink: /als/v1/client/download/-->
           <topicref href="devplatform/helion/CLI/1.0ALS_Client_Downloads.dita" locktitle="yes"
             navtitle="HPE Application Lifecycle Service (ALS) Client "/>
           <!--permalink: /als/v1/user/console/-->
+          <!-- duplicate removed for drupal export
           <topicref href="devplatform/helion/user/console/1.0index.dita" locktitle="yes"
             navtitle="Management Console "/>
+            -->
           <!--permalink: /als/v1/user/quick-start/-->
           <topicref href="devplatform/helion/user/quick-start/1.0index.dita" locktitle="yes"
             navtitle="Prerequisites "/>
@@ -150,7 +152,7 @@
           <topicref href="devplatform/helion/user/reference/1.0troubleshoot.dita" locktitle="yes"
             navtitle="Troubleshooting "/>
         </topicref>
-      </topichead>
+      </topicref>
       <topicref href="devplatform/helion/admin/1.0index.dita" locktitle="yes"
         navtitle="ALS Admin Guide " otherprops="als-admin">
         <!--permalink: /als/v1/admin/best-practices/-->
@@ -212,16 +214,19 @@
         </topicref>
         <topicref href="devplatform/helion/admin/console/1.0app-store.dita" locktitle="yes"
           navtitle="Sample Applications "/>
-        <topicref href="devplatform/helion/admin/console/1.0customize.dita" locktitle="yes"
-          navtitle="Customization "/>
+        <!-- removed for drupal export 
+          <topicref href="devplatform/helion/admin/console/1.0customize.dita" locktitle="yes"
+          navtitle="Customization "/> -->
       </topicref>
       <!--permalink: /als/v1/user/-->
       <topicref href="devplatform/helion/user/1.0index.dita" locktitle="yes"
         navtitle="ALS User Guide " otherprops="als-user">
         <!--permalink: /als/v1/user/client/-->
         <!--permalink: /als/v1/user/deploy/-->
+        <!--duplicate removed for drupal export
         <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
           navtitle="ALS Quick Start Guide" locktitle="yes"/>
+          -->
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment " otherprops="deploy">
           <!--permalink: /als/v1/user/deploy/app-debug/-->

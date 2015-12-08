@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1693">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1693d">
 <title>HPE Helion 1.2 Development Platform: Application Lifecycle Service User Guide</title>
 <prolog>
 <metadata>
@@ -119,7 +119,7 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../services/1.2data-services.dita#topic19772" type="section"  >Data Services</xref>
         </li>
 <li>
-          <xref href="../services/1.2filesystem.dita#topic4410" type="section"  >Persistent File System</xref>
+          <xref href="../services/1.2filesystem.dita#topic4410f" type="section"  >Persistent File System</xref>
         </li>
 <li>
           <xref href="../services/1.2memcached.dita#topic2514" type="section"  >Memcached Service</xref>
