@@ -11,7 +11,7 @@
   <refbody>
     <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> Command-Line
       Interface (CLI) administration utility. To run <keyword keyref="adminUtil"/> commands you must
-        <codeph>ssh</codeph> into the core node.</section>
+        <codeph>ssh</codeph> into any instance in your cluster.</section>
     <section>
       <title>Global Options</title>
       <dl>

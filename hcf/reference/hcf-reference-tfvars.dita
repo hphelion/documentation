@@ -70,7 +70,7 @@
           </row>
           <row>
             <entry><codeph>no_proxy</codeph></entry>
-            <entry>The addresses that do not use a proxy</entry>
+            <entry>The addresses for which a proxy should not be used</entry>
             <entry/>
           </row>
           <row>
@@ -91,7 +91,7 @@
                   href="http://docs.openstack.org/openstack-ops/content/flavors.html" format="html"
                   scope="external">OpenStack documentation</xref>. For more information on managing
                 compute flavors, see the <xref
-                  href="docs.openstack.org/admin-guide-cloud/compute-flavors.html" format="html"
+                  href="http://docs.openstack.org/admin-guide-cloud/compute-flavors.html" format="html"
                   scope="external">Helion OpenStack documentation</xref>.</note></entry>
             <entry><codeph>4</codeph> (larger or equals to 8 GB)</entry>
           </row>
@@ -101,8 +101,8 @@
           </row>
           <row>
             <entry><codeph>openstack_floating_ip_pool</codeph></entry>
-            <entry>The external network whose subnet allocates floating IP addresses associated with
-              it</entry>
+            <entry>The external network from whose subnet floating IP addresses are
+              allocated</entry>
             <entry><codeph>ext-net</codeph></entry>
           </row>
           <row>
@@ -146,7 +146,7 @@ dea_count = 1
 http_proxy = "http://myProxy.example.com:8080"
 https_proxy = "https://myProxy.example.com:443"
 
-no_proxy = "198.51.100.0/24"</codeblock>
+no_proxy = "198.51.100.0,.example.com"</codeblock>
     </example>
   </refbody>
 </reference>
