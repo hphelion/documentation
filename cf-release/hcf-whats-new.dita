@@ -29,7 +29,7 @@
        >HPE Helion Development Platform</xref> before, <keyword keyref="prodShort"/> will allow you
       to work with <keyword keyref="adminUtil"/>, a new command-line administration utility that
       shares some functionality with Kato. For more information, see the <xref
-       href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/>.<draft-comment
+       href="reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/>.<draft-comment
        author="michaelk"><keyword keyref="adminUtil"/> communicates with <xref
         href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of Cloud
        Controller and runs within the Docker overlay Virtual Extensible LAN

@@ -13,39 +13,37 @@
   <conbody>
     <p><keyword keyref="prodLong"/> Technical Preview (TP) is a certified distribution of <xref
         href="http://www.cloudfoundry.org/" format="html" scope="external">Cloud Foundry</xref>
-        (<xref href="https://github.com/cloudfoundry/cf-release/releases/tag/v217" format="html"
+        (<xref href="https://github.com/cloudfoundry/cf-releae/releases/tag/v217" format="html"
         scope="external">cf-release v217</xref>). Instead of deploying virtual machines (VMs),
         <keyword keyref="prodShort"/> uses containers for bundling all major functions, for
       representing roles, and for providing simple update and upgrade workflows. <keyword
         keyref="prodShort"/> uses <xref href="https://www.consul.io/" format="html" scope="external"
         >Consul</xref> for centralized configuration storage that runs on each instance.</p>
     <note>For detailed descriptions of the components of <keyword keyref="prodLong"/>, see <xref
-        href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt/available_role_containers"
-      />.</note>
+        href="reference/hcf-reference-roles.dita#cf_reference_roles">Available Roles</xref>. </note>
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
       and pushing your first apps.</p>
     <ul id="ul_nlv_fct_5t">
-      <li><xref href="cfr_whats_new.dita#concept_uvz_1cx_tt"/></li>
-      <li><xref href="cfr_relnotes.dita#cfr_relnotes"/></li>
-      <li><xref href="cfr_tp_licensing.dita#cfr_tp_licensing"/></li>
-      <!--
-      <li><xref href="cfr_license_terms.dita#concept_xzh_3f1_vt">Software License Terms</xref></li>
-      -->
+      <li><xref href="hcf-whats-new.dita#concept_uvz_1cx_tt"/></li>
+      <li><xref href="hcf-release-notes.dita#cfr_relnotes"/></li>
+      <li><xref href="hcf-agreements.dita#cfr_tp_licensing"/></li>
     </ul>
     <ul id="ul_pph_ytf_vt">
       <li><b>Quick Start: Deploying to <keyword keyref="opnStckLong"/></b><ul id="ul_ack_nwv_tt">
-        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_1.dita#concept_s2k_b35_st"/></li>
-        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_2.dita#concept_ikh_xgz_st"/></li>
-        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_3.dita#concept_kpg_fhz_st"/></li>
-        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_4.dita#concept_pqc_jhz_st"/></li>
-        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_5.dita#concept_cw2_thz_st"/></li>
-        <li><xref href="quickstart/hos/cfr_hos_quickstart_step_6.dita#concept_m3k_bth_tt"/></li>
+        <li><xref href="quickstart/hos/hcf-on-hos-step-1.dita#concept_s2k_b35_st"/></li>
+        <li><xref href="quickstart/hos/hcf-on-hos-step-2.dita#concept_ikh_xgz_st"/></li>
+        <li><xref href="quickstart/hos/hcf-on-hos-step-3.dita#concept_kpg_fhz_st"/></li>
+        <li><xref href="quickstart/hos/hcf-on-hos-step-4.dita#concept_pqc_jhz_st"/></li>
+        <li><xref href="quickstart/hos/hcf-on-hos-step-5.dita#concept_cw2_thz_st"/></li>
+        <li><xref href="quickstart/hos/hcf-on-hos-step-6.dita#concept_m3k_bth_tt"/></li>
       </ul></li>
     </ul>
     <ul id="ul_czt_ytf_vt">
       <li><b>Reference</b><ul id="ul_mdv_swv_tt">
-        <li><xref href="reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"/></li>
-        <li><xref href="reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"/></li>
+        <li><xref href="reference/hcf-reference-tfvars.dita#reference_phl_shc_rt"/></li>
+        <li><xref href="reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/></li>
+          <li><xref href="reference/hcf-reference-roles.dita#cf_reference_roles">Available
+              Roles</xref></li>
       </ul></li>
     </ul>
   </conbody>
