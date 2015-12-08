@@ -30,9 +30,10 @@
         href="hcf-reference-gato.dita#reference_cd3_bs3_rt/role_example">stop, start, and restart
         these components</xref> and <xref
         href="hcf-reference-gato.dita#reference_cd3_bs3_rt/config_get_example">manipulate their
-        values</xref> using the <keyword keyref="adminUtil"/> Command-Line Interface (CLI)
-      administration utility. To run <keyword keyref="adminUtil"/> commands you must
-        <codeph>ssh</codeph> into any instance in your cluster.</refsyn>
+        values</xref> using the <filepath><keyword keyref="adminUtilCLI"/></filepath> Command-Line
+      Interface (CLI) administration utility. To run <filepath><keyword keyref="adminUtilCLI"
+        /></filepath> commands you must <codeph>ssh</codeph> into any <keyword keyref="prodShort"/>
+      node.</refsyn>
     <table frame="all" rowsep="1" colsep="1" id="table_d1m_bbn_g5">
       <tgroup cols="2">
         <colspec colname="c1" colnum="1" colwidth="1*"/>
@@ -49,8 +50,8 @@
                 cloud_controller_ng</draft-comment></entry>
             <entry>The Cloud Controller provides the primary Cloud Foundry API to the Cloud Foundry
               command-line interface (CLI). The Cloud Controller uses a database to keep tables for
-              organizations, spaces, applications, services, service instances, user roles, so on.
-              Typically, multiple instances of Cloud Controller are load balanced.</entry>
+              organizations, spaces, applications, services, service instances, user roles, and so
+              on. Typically, multiple instances of Cloud Controller are load-balanced.</entry>
           </row>
           <row>
             <entry><filepath>api_worker</filepath><draft-comment author="michaelk">process (job) =
@@ -66,86 +67,81 @@
           </row>
           <row>
             <entry><filepath>consul</filepath></entry>
-            <entry>Consul is a tool for discovering and configuring services in an infrastructure.
-              It provides service discovery, health checking, and key/value storage and supports
-              multiple datacenters.</entry>
+            <entry>Consul discovers and configures services in an infrastructure. It provides
+              service discovery, health checking, and key-value storage. Consul supports multiple
+              datacenters.</entry>
           </row>
           <row>
             <entry><filepath>doppler</filepath></entry>
-            <entry>Doppler is a component of Loggregator that is responsible for gathering logs from
-              Metron agents. Doppler stores the logs in temporary buffers in addition to forwarding
-              them to third-party syslog drains.</entry>
+            <entry>Doppler is a component of Loggregator that gathers logs from Metron agents and
+              stores the logs in temporary buffers in addition to forwarding them to third-party
+              syslog drains.</entry>
           </row>
           <row>
             <entry><filepath>etcd</filepath></entry>
-            <entry>etcd is a key value store that provides shared configuration and service
-              discovery for clusters. etcd runs on each machine in a cluster and gracefully handles
-              master election during network partitions and the loss of the current master.
-              Application containers running on your cluster can read and write data into
-              etcd.</entry>
+            <entry>etcd provides shared configuration and service discovery and acts as a
+              distributed, consistent key-value backing store for Loggregator, containing data such
+              as drain information.</entry>
           </row>
           <row>
             <entry><filepath>ha_proxy</filepath></entry>
-            <entry>The HAProxy server can terminate SSL in front of routers. <note>Each HAProxy
-                instance should point to multiple routers.</note></entry>
+            <entry>The HAProxy server provides the ability to terminate SSL in front of routers.
+                <note>Each HAProxy instance should point to multiple routers.</note></entry>
           </row>
           <row>
             <entry><filepath>hm9000</filepath></entry>
-            <entry>HM9000 periodically compares the list of expected running applications as
-              specified by the Cloud Controller against a list of actually running applications as
-              reported by the DEAs. The HM9000 attempts to reconcile any differences between the two
-              lists.</entry>
+            <entry>Health Manager 9000 (HM9000) periodically compares the list of expected running
+              applications, as specified by the Cloud Controller, against a list of actually running
+              applications, as reported by the DEAs. HM9000 attempts to reconcile any differences
+              between the two lists.</entry>
           </row>
           <row>
             <entry><filepath>loggregator_trafficcontroller</filepath></entry>
-            <entry>Traffic Controller is a component of Loggregator that is responsible for handling
-              client requests for logs, for gathering and collating messages from all Doppler
-              servers, and for providing external API and message translation, as needed for legacy
-              APIs.</entry>
+            <entry>The Traffic Controller is a component of Loggregator that handles client requests
+              for logs, gathers and collates messages from all Doppler servers, and provides
+              external API and message translation, as required by legacy APIs.</entry>
           </row>
           <row>
             <entry><filepath>nats</filepath></entry>
-            <entry>The NATS server provides publish-subscribe messaging system for the Cloud
+            <entry>The NATS server provides a publish-subscribe messaging system to the Cloud
               Controller, the DEA, HM9000, and other Cloud Foundry components.</entry>
           </row>
           <row>
             <entry><filepath>postgres</filepath></entry>
-            <entry>The Postgres server provides a single instance Postgres database that can be used
-              with the Cloud Controller or the UAA. </entry>
+            <entry>The Postgres server provides a single-instance Postgres database that can be used
+              with the Cloud Controller or with UAA. </entry>
           </row>
           <row>
             <entry><filepath>router</filepath><draft-comment author="michaelk">process (job) =
                 gorouter</draft-comment></entry>
-            <entry>The router maintains a list of live routes for the applications running on each
-              DEA. The router load-balances requests (based on their host header) between each
-              application instance registered for a specific route. It must be behind a load
-              balancer that can terminate SSL connections.</entry>
+            <entry>The Router maintains a list of live routes for applications running on each DEA,
+              load-balancing requests based on their host headers between each application instance
+              registered for a specific route.<note>The Router must be behind a load balancer that
+                can terminate SSL connections.</note></entry>
           </row>
           <row>
             <entry><filepath>runner</filepath><draft-comment author="michaelk">process (job) =
                 dea_next</draft-comment></entry>
-            <entry>The Droplet Execution Agent (DEA) is responsible for running customer
-              applications and maintaining associated routes as live. It also periodically
-              advertises its capacity to Cloud Controllers and accepts requests to start and stop
-              applications.</entry>
+            <entry>The Droplet Execution Agent (DEA) runs customer applications and maintains
+              associated routes as live, periodically advertising its capacity to Cloud Controllers
+              and accepting requests to start and stop applications.</entry>
           </row>
           <row>
             <entry><filepath>stats</filepath><draft-comment author="michaelk">process (job) =
                 collector</draft-comment></entry>
-            <entry>The stats collector discovers the various components on the message bus and
+            <entry>The Stats Collector discovers the various components on the message bus and
               queries their <codeph>/healthz</codeph> and <codeph>/varz</codeph> interfaces. The
-              collected metric data is published to collector plugins such as OpenTSDB, AWS
-              CloudWatch, and DataDog.</entry>
+              Collector publishes metrics to collector plugins such as OpenTSDB, AWS CloudWatch, and
+              DataDog.</entry>
           </row>
           <row>
             <entry><filepath>uaa</filepath></entry>
-            <entry>User Account and Authentication (UAA) is the identity management service for
-              Cloud Foundry. Its primary role is acting as an OAuth2 provider, issuing tokens for
-              client applications when they act on behalf of Cloud Foundry users. UAA can also
-              authenticate users with their Cloud Foundry credentials, and it can act as an SSO
-              service using Cloud Foundry (or other) credentials. UAA has endpoints for managing
-              user accounts and for registering OAuth2 clients and other management
-              functions.</entry>
+            <entry>User Account and Authentication (UAA) is the Cloud Foundry identity management
+              service that primarily acts as an OAuth2 provider, issuing tokens to client
+              applications when they act on behalf of Cloud Foundry users. UAA authenticates users
+              with their Cloud Foundry credentials while also acting as an SSO service using Cloud
+              Foundry (or other) credentials. UAA provides endpoints for managing user accounts and
+              for registering OAuth2 clients and other management functions.</entry>
           </row>
         </tbody>
       </tgroup>
