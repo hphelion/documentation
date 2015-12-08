@@ -38,7 +38,7 @@
             <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> which will enable
           you to use a FQDN for your API endpoints.</li>
       </ul>
-       <p>You also need to choose if you want TLS on or off. We recommend keeping TLS on by default
+      <p>You also need to choose if you want TLS on or off. We recommend keeping TLS on by default
         as it cannot be changed. But if you want it disabled you need to change "tls-components" to
         "components" in <codeph>network_groups.yml</codeph> and comment out the cert-file.</p>
       <p>For more details about how this works, see <xref
@@ -136,6 +136,17 @@ ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
          #You must either set this to a name that can be resolved in your network
          # or comment out this line to use IP addresses
          <b>#external-name:</b></codeblock></li>
+        <li>Note the IP address used for the public URLs (from
+            <codeph>~/helion/my_cloud/info/address_info.yml</codeph>l)</li>
+        <li>Create or obtain a certificate tied to this address</li>
+        <li>Copy the certificate (containing both public and private keys) to
+            <codeph>~/helion/my_cloud/config/tls/certs/ </codeph></li>
+        <li>Replace the contents of <codeph>
+            ~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the new CA
+          certificate chain file that you added in the previous step.</li>
+        <li>Edit <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> and set the
+          values for <codeph>external-name</codeph> and <codeph>cert-file</codeph> to match the
+          values for your environment.</li>
         <li>Commit your changes to git:
           <codeblock>cd ~/helion/hos/ansible
 git add -A
