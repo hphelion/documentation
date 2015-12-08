@@ -112,38 +112,38 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes" toc="no"/>
-      <topichead navtitle="Network Security" otherprops="network-security">
+       
         <!-- <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
         navtitle="Network Security">-->
         <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
-          navtitle="Configuring Your Network Securely" locktitle="yes"/>
+          navtitle="Configuring Your Network Securely"  otherprops="network-security" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" navtitle="TLS Support"
           locktitle="yes"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
           navtitle="Configuring Support for Customer-provided Certs" locktitle="yes" toc="no"/>
-      </topichead>
+      
       <!-- Install KVM -->
       <!-- Install ESK -->
       <!-- Post Install -->
       <!-- Hight Avail -->
-      <topichead navtitle="Installing on a Laptop" otherprops="laptop-install">
+    
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"
-          navtitle="Virtual Demo Installation" locktitle="yes"/>
-      </topichead>
+          navtitle="Virtual Demo Installation"  otherprops="demo-install" locktitle="yes"/>
+      
     </topicref>
-    <topichead navtitle="Post-Installation Tasks" otherprops="post-install">
+     
       <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita"
-        navtitle="Verify Your Installation" locktitle="yes" otherprops="verify">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"
-          navtitle="Verification Using Embedded Tests" locktitle="yes"/>
-      </topicref>
+        navtitle="Verify Your Installation" locktitle="yes" otherprops="post-install">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"
+        navtitle="Verification Using Embedded Tests" locktitle="yes"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"
         navtitle="Storage Options" locktitle="yes"/>
-    </topichead>
-    <topichead navtitle="High Availibility" otherprops="high-availability">
+      </topicref>
+    
+    
       <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
-    </topichead>
+    
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting"
       locktitle="yes" otherprops="troubleshooting">
       <!--commenting out duplicate to allow export to drupal
@@ -475,9 +475,9 @@
         navtitle="Mapping a Back End to a Volume Type" locktitle="yes"/>
       <!-- Installation -->
     </topicref>
-    <topichead navtitle="Managing Operations via the Dashboards" otherprops="dashboards">
-      <topicref href="commercial/GA1/1.1commercial.using.dita" navtitle="Using the Dashboards"
-        locktitle="yes"/>
+   
+      <topicref href="commercial/GA1/1.1commercial.using.dita" navtitle="Using the Dashboards"  otherprops="dashboards"
+        locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.undercloud-horizon-overview.dita"
         navtitle="Undercloud Horizon Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"
@@ -498,10 +498,11 @@
         navtitle="Working with Virtual Environments" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"
         navtitle="HPE Helion OpenStack Updates and Extensions" locktitle="yes"/>
-    </topichead>
-    <topichead navtitle="System Restore and Recovery" otherprops="restore">
+      </topicref>
+    
+ 
       <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"
-        navtitle="Backup and Restore" locktitle="yes"/>
+        navtitle="Backup and Restore" otherprops="backup-restore" locktitle="yes">
       <topicref
         href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"
         navtitle="Remove or Replace a Failed Overcloud Controller" locktitle="yes"/>
@@ -509,7 +510,8 @@
         navtitle="Recovering after a Power Outage" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"
         navtitle="Disaster Recovery" locktitle="yes"/>
-    </topichead>
+      </topicref>
+   
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.related-topics.dita"
       navtitle="Related OpenStack Documentation" locktitle="yes"/>
@@ -524,11 +526,11 @@
         navtitle="Flexible Control Plane Installation" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
     </topicref>
-    <topichead navtitle="HPE Helion Openstack 1.1.1 and 1.1: License Files" otherprops="license">
+      <topicref href="commercial/GA1/license-container.dita" navtitle="HPE Helion Openstack 1.1.1 and 1.1: License Files" otherprops="license">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
-    </topichead>
+    </topicref>
     <!-- Glossary -->
     <!-- Not in 1.1.1 -->
     <!--set to toc=no later-->
