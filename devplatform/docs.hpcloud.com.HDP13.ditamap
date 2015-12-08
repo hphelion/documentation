@@ -263,7 +263,7 @@
     <topicref href="1.3/devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
-      <topicref href="1.3/devplatform_upgrade.dita" navtitle="upgrading HPE Helion OpenStack"
+      <topicref href="1.3/devplatform_upgrade.dita" navtitle="Upgrading HPE Helion OpenStack"
         locktitle="yes"/>
       <topicref href="1.3/devplatform.clustercreatemanage.dita" navtitle="Cluster Creation and Management" otherprops="clustercreatemanage">
         <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"
@@ -381,33 +381,8 @@
                 locktitle="yes" navtitle="User Management "/>
             </topicref>
           </topicref>
-          <topicref href="1.3/devplatform.clustermgmttool.dita" navtitle="Cluster Management Tool" otherprops="clustermgmttool">
-            <topicref href="1.3/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
-              navtitle="Cluster Management Tool Installation and Reference"/>
-            <topicref href="1.3/helion/CLI/cf_mgmt_createcluster.dita"
-              navtitle="Create Clusters and Services from the Command Line" locktitle="yes">
-              <topicref href="1.3/helion/CLI/cfmgmt_createcluster_starter.dita"
-                navtitle="Example: Create a Starter Cluster" locktitle="yes"/>
-              <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addDEANode.dita"
-                navtitle="Example: Add a DEA Node" locktitle="yes"/>
-              <topicref href="1.3/helion/CLI/cfmgmt_growcluster_addservice.dita"
-                navtitle="Example: Add a Service" locktitle="yes"/>
-            </topicref>
-          </topicref>
-          <topicref href="1.3/devplatform.alsmgmtconsole2.dita" navtitle="ALS Management Console" otherprops="alsmgmtconsole2">
-            <topicref href="1.3/helion/admin/console/console_intro.dita"
-              navtitle="Introduction and First Use" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/console/console_index.dita" locktitle="yes"
-              navtitle="Management Console (Admin View)"/>
-            <topicref href="1.3/helion/user/console/console_index.dita"
-              navtitle="Management Console (User View)" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/console/console_settings.dita"
-              navtitle="Management Console Settings" locktitle="yes"/>
-            <topicref href="1.3/helion/admin/console/customize.dita" locktitle="yes"
-              navtitle="Management Console Customization"/>
-            <topicref href="1.3/helion/admin/console/app-store.dita" locktitle="yes"
-              navtitle="Sample Applications"/>
-          </topicref>
+          <topicref href="1.3/helion/CLI/ALS_Client_Reference.dita" locktitle="yes"
+            navtitle="Cluster Management Tool Installation and Reference"/>
         </topicref>
         <topicref href="1.3/helion/admin/helion_admin_index.dita" locktitle="yes"
           navtitle="ALS Admin Guide">
@@ -420,8 +395,6 @@
           <!--permalink: /helion/devplatform/als/admin/cluster/-->
           <topicref href="1.3/helion/admin/cluster/cluster_index.dita" locktitle="yes"
             navtitle="Cluster Setup"/>
-          <topicref href="1.3/devplatform.deploy-ALS.dita" locktitle="yes"
-            navtitle="Create a Cluster using the Horizon UI"/>
           <topicref href="1.3/helion/admin/cluster/zones.dita"
             navtitle="Configure Availability and Placement Zones" locktitle="yes"/>
           <topicref href="1.3/helion/admin/cluster/harbor.dita" locktitle="yes"
@@ -449,8 +422,6 @@
               navtitle="HTTP and SSL Configuration" locktitle="yes"/>
             <topicref href="1.3/helion/admin/server/aok.dita" locktitle="yes"
               navtitle="AOK Authentication Server"/>
-            <topicref href="1.3/helion/admin/server/docker.dita" locktitle="yes"
-              navtitle="Docker and Fence"/>
             <topicref href="1.3/helion/admin/best-practices/logging-examples.dita" locktitle="yes"
               navtitle="Log Drain Examples"/>
             <topicref href="1.3/helion/admin/server/logging.dita" locktitle="yes"

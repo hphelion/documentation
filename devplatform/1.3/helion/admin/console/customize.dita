@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
-<topic xml:lang="en-us" id="topic5029">
+<topic xml:lang="en-us" id="customconsole">
   <title>HPE Helion 1.3 Development Platform: Management Console Customization</title> 
   <prolog>
     <metadata>
@@ -27,34 +27,34 @@
       the <xref href="console_index.dita">Management Console</xref> interface.</p>
     <ul>
       <li>
-        <xref type="section" href="#topic5029/console-settings">Console Settings</xref>
+        <xref type="section" href="#customconsole/console-settings">Console Settings</xref>
         <ul>
           <li>
-            <xref type="section" href="#topic5029/product">Product</xref>
+            <xref type="section" href="#customconsole/product">Product</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/look-and-feel">Look and Feel</xref>
+            <xref type="section" href="#customconsole/look-and-feel">Look and Feel</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/welcome-page">Welcome Page</xref>
+            <xref type="section" href="#customconsole/welcome-page">Welcome Page</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/support-page">Support Page</xref>
+            <xref type="section" href="#customconsole/support-page">Support Page</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/eula-content">Eula Content</xref>
+            <xref type="section" href="#customconsole/eula-content">Eula Content</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/custom_error">Error Pages</xref>
+            <xref type="section" href="#customconsole/custom_error">Error Pages</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/custom-stylesheet">Custom Stylesheet</xref>
+            <xref type="section" href="#customconsole/custom-stylesheet">Custom Stylesheet</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/settings-variables">Settings Variables</xref>
+            <xref type="section" href="#customconsole/settings-variables">Settings Variables</xref>
           </li>
           <li>
-            <xref type="section" href="#topic5029/restoring-values">Restoring values</xref>
+            <xref type="section" href="#customconsole/restoring-values">Restoring values</xref>
           </li>
         </ul></li>
     </ul>
@@ -103,7 +103,7 @@
     <section id="welcome-page">
       <title>Welcome Page</title> 
       <p>The HTML/EJS to show on the Welcome page. The <xref type="section"
-          href="#topic5029/settings-variables">
+          href="#customconsole/settings-variables">
           <i>settings-variables</i>
         </xref> and <codeph>username</codeph> variable (current user) are available via EJS, but
         plain HTML will work for simple use cases.</p>
@@ -111,7 +111,7 @@
     <section id="support-page">
       <title>Support Page</title> 
       <p>The HTML/EJS to show on the Support page. The <xref type="section"
-          href="#topic5029/settings-variables">
+          href="#customconsole/settings-variables">
           <i>settings-variables</i>
         </xref> and <codeph>support_email</codeph> variable (see Settings &gt; Controller) are
         available.</p>
@@ -119,7 +119,7 @@
     <section id="eula-content">
       <title>Eula Content</title> 
       <p>The HTML/EJS to show in the EULA overlay. The <xref type="section"
-          href="#topic5029/settings-variables">
+          href="#customconsole/settings-variables">
           <i>settings-variables</i>
         </xref> are available.</p>
     </section>
