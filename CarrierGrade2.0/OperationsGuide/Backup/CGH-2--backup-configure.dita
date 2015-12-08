@@ -153,9 +153,14 @@ attis config --id &lt;config_id of WR_Appliance_system_files_Restore&gt; --updat
             file:<codeblock>vi /etc/attis/dcn.lst</codeblock></li>
           <li>Update the <codeph>target_restore_nodes</codeph> parameter in baremetal controller
             files restore
-            config:<codeblock>attis config --id &lt;Config_ID_of_BM_Controller_ironic_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'
+              config:<codeblock>attis config --id &lt;Config_ID_of_BM_Controller_ironic_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'
 attis config --id &lt;Config_ID_of_BM_Controller_neutron_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'
-attis config --id &lt;Config_ID_of_BM_Controller_nova_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'</codeblock></li>
+attis config --id &lt;Config_ID_of_BM_Controller_nova_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'</codeblock><p>Where:
+                <ul id="ul_qwh_wys_g5">
+                <li><codeph>Config_ID_of_BM_Controller_ironic_files_Restore</codeph> is the ID of
+                  the <codeph>BM_Controller_ironic_files_Restore</codeph> configuration file.</li>
+                <li><codeph>BM_Controller_IP</codeph> is the IP of the baremetal controller.</li>
+              </ul></p></li>
           <li>Copy the Attis public key, <codeph>/home/attis/.ssh/id_rsa.pub </codeph>, from each of
             the controllers in the KVM region and paste the keys into the
               <codeph>authorized_keys</codeph> file on the baremetal
