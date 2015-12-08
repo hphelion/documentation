@@ -38,7 +38,8 @@
         </dlentry>
         <dlentry>
           <dt><filepath>config</filepath></dt>
-          <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components.<ul
+          <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components. For
+              example:<codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/user --json</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><ul
               id="ul_x4n_dtj_rt">
               <li><xref href="#reference_cd3_bs3_rt/config_get" format="dita"><filepath>config
                     get</filepath></xref></li>
@@ -48,14 +49,16 @@
         </dlentry>
         <dlentry>
           <dt><filepath>help</filepath></dt>
-          <dd>Show a list of commands or help for one command</dd>
+          <dd>Show a list of commands or help for one command.</dd>
         </dlentry>
         <dlentry>
           <dt><filepath>role</filepath></dt>
           <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the Docker server endpoint. Use the <filepath>--node</filepath>
             flag to stop a <xref href="#reference_cd3_bs3_rt/available_role_containers"
-              format="dita"><varname>&lt;role></varname> container</xref> on a specific node.<ul
+              format="dita"><varname>&lt;role></varname> container</xref> on a specific node. For
+            example:
+              <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
               id="ul_blk_nhj_rt">
               <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
                     start</filepath></xref></li>
@@ -69,7 +72,7 @@
       <dl>
         <dlentry>
           <dt><filepath>status <varname>[options]</varname></filepath></dt>
-          <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster.<dl>
+          <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster. For example:<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock><dl>
               <dlentry>
                 <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
                 <dd>Show the status of every individual process.</dd>
@@ -84,7 +87,7 @@
         <dlentry id="config_get">
           <dt><filepath><keyword keyref="adminUtilCLI"/> config get
               <varname>[options]</varname></filepath></dt>
-          <dd>Look up the current and default values of a configuration. For example: <codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/password</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get nats/machines</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config get system_domain</codeblock><dl>
+          <dd>Look up the current and default values of a configuration.<dl>
               <dlentry>
                 <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
                 <dd>Output key/value pairs in JSON format.</dd>
