@@ -42,32 +42,32 @@
       <!--permalink: /helion/devplatform/workbook/database/java/-->
       <topicref href="devplatform/1.0devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin "/>
-      <topichead navtitle="JAVA Samples" otherprops="java">
+      <topicref navtitle="JAVA Samples" href="devplatform/workbook/javaintro.dita" otherprops="java">
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.0database.java.dita" locktitle="yes"
           navtitle="Java MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/workbook/database/node/-->
-      <topichead navtitle="Node Samples" otherprops="node">
+      <topicref navtitle="Node Samples" href="devplatform/workbook/nodeintro.dita" otherprops="node">
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample "/>
         <topicref href="devplatform/workbook/database/1.0database.node.dita" locktitle="yes"
           navtitle="Node MySQL Database Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/workbook/database/php/-->
-      <topichead navtitle="PHP Samples" otherprops="php">
+      <topicref navtitle="PHP Samples" otherprops="php" href="devplatform/workbook/phpintro.dita">
         <topicref href="devplatform/workbook/database/1.0database.php.dita" locktitle="yes"
           navtitle="PHP MySQL Database Sample "/>
         <topicref href="devplatform/workbook/helloworld/1.0helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
         <topicref href="devplatform/workbook/messaging/1.0messaging.php.dita" locktitle="yes"
           navtitle="PHP RabbitMQ Messaging Sample "/>
-      </topichead>
+      </topicref>
       <!--permalink: /helion/devplatform/workbook/helloworld/java/-->
       <!--permalink: /helion/devplatform/workbook/helloworld/node/-->
       <!--permalink: /helion/devplatform/workbook/helloworld/php/-->

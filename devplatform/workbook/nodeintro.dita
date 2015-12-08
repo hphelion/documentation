@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tyg_wtr_g5">
+  <title>Node Samples</title>
+  <body>
+    <p>This section contains samples of Node.js web app :<ul id="ul_f1p_55r_g5">
+        <li><xref href="helloworld/1.0helloworld.node.dita"/></li>
+        <li><xref href="database/1.0database.node.dita"/></li>
+        <li><xref href="messaging/1.0messaging.node.dita"/></li>
+      </ul></p>
+  </body>
+</topic>
