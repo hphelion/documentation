@@ -23,15 +23,15 @@
       </ol> 
     </section>
 
-    <section outputclass="headerHremove" id="prereqs"><title>Prerequisites</title>
-      <sectiondiv outputclass="insideSectionremove"><p>You should have one or more baremetal servers that
+    <section  id="prereqs"><title outputclass="headerH">Prerequisites</title>
+      <sectiondiv outputclass="insideSection"><p>You should have one or more baremetal servers that
           meet the minimum hardware requirements for a Compute node which are documented in the
             <xref href="../hardware.dita">Hardware Support Matrix</xref>.</p>
       </sectiondiv>
     </section>
 
-    <section outputclass="headerHremove" id="steps"><title>Adding a Compute Node</title>
-      <sectiondiv outputclass="insideSectionremove"><p>These steps will show you how to add the new
+    <section id="steps"><title outputclass="headerH">Adding a Compute Node</title>
+      <sectiondiv outputclass="insideSection"><p>These steps will show you how to add the new
           Compute node to your <codeph>servers.yml</codeph> file and then run the playbooks that
           update your cloud configuration. You will run these playbooks from the lifecycle
           manager.</p>

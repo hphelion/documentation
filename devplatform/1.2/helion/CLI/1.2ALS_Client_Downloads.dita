@@ -21,6 +21,8 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.md-->
  <!--permalink: /helion/devplatform/1.2/als/client/download/--></p>
+    <p>There are three command-line tools available for working with the Application Lifecycle
+      Service:</p>
 <section id="hp-helion-application-lifecycle-service-als-client"> <title>HPE Helion Application Lifecycle Service (ALS) Client</title>
 <p>Click the download link that is appropriate for your operating system.</p>
   <ul> 
@@ -61,6 +63,9 @@
 <xref href="http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml" scope="external" format="html" >Add a SQL Server Service</xref>
 </li>
 </ul>
-</section>
+</section><section><title>Kato Command Reference</title> Kato is the Application Lifecycle Service command
+      line administration utility. It does not need to be downloaded separately. For more
+      information, see the full<xref href="../admin/reference/1.2kato-ref.dita#topic39432"> Command
+        Reference</xref>. </section>
 </body>
 </topic>
