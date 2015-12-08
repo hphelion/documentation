@@ -41,7 +41,7 @@
           </row>
           <row>
             <entry><codeph>dea_count</codeph></entry>
-            <entry>The number of Droplet Execition Agent (DEA) hosts that you want to create</entry>
+            <entry>The number of Droplet Execution Agent (DEA) hosts that you want to create</entry>
             <entry/>
           </row>
           <row>
@@ -63,7 +63,7 @@
           <row>
             <entry><codeph>key_file</codeph></entry>
             <entry>The location and name of the private key <filepath>pem</filepath> file associated
-              with your key pair, relative to the <filepath>tfvars</filepath> file.<note type="tip"
+              with your key pair, relative to your <filepath>tfvars</filepath> file.<note type="tip"
                 >For convenience, you can place the two files into the same
               directory.</note></entry>
             <entry/>
@@ -85,19 +85,20 @@
           </row>
           <row>
             <entry><codeph>openstack_flavor_id.core</codeph></entry>
-            <entry morerows="1">The OpenStack flavor (a virtual hardware template) that defines the
+            <entry morerows="1">The OpenStack flavor, a virtual hardware template that defines the
               specifications of the specified node<note type="tip">For more information about
                 flavors, see the <xref
                   href="http://docs.openstack.org/openstack-ops/content/flavors.html" format="html"
                   scope="external">OpenStack documentation</xref>. For more information on managing
                 compute flavors, see the <xref
-                  href="http://docs.openstack.org/admin-guide-cloud/compute-flavors.html" format="html"
-                  scope="external">Helion OpenStack documentation</xref>.</note></entry>
-            <entry><codeph>4</codeph> (larger or equals to 8 GB)</entry>
+                  href="http://docs.openstack.org/admin-guide-cloud/compute-flavors.html"
+                  format="html" scope="external">Helion OpenStack
+              documentation</xref>.</note></entry>
+            <entry><codeph>4</codeph> (larger than or equals to 8 GB)</entry>
           </row>
           <row>
             <entry><codeph>openstack_flavor_id.dea</codeph></entry>
-            <entry><codeph>3</codeph> (larger or equals to 4 GB)</entry>
+            <entry><codeph>3</codeph> (larger than or equals to 4 GB)</entry>
           </row>
           <row>
             <entry><codeph>openstack_floating_ip_pool</codeph></entry>

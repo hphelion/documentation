@@ -9,9 +9,10 @@
     </metadata>
   </prolog>
   <refbody>
-    <section><keyword keyref="adminUtil"/> is the <keyword keyref="prodLong"/> Command-Line
-      Interface (CLI) administration utility. To run <keyword keyref="adminUtil"/> commands you must
-        <codeph>ssh</codeph> into any instance in your cluster.</section>
+    <section><filepath><keyword keyref="adminUtilCLI"/></filepath> is the <keyword keyref="prodLong"
+      /> command-line interface (CLI) administration utility. To run <filepath><keyword
+          keyref="adminUtilCLI"/></filepath> commands you must <codeph>ssh</codeph> into any
+      instance in your cluster.</section>
     <section>
       <title>Global Options</title>
       <dl>
@@ -30,8 +31,8 @@
       <dl>
         <dlentry>
           <dt><filepath>api <varname>[&lt;endpoint>]</varname></filepath></dt>
-          <dd>Set <keyword keyref="adminUtilCLI"/> to use the specified <keyword keyref="prodShort"
-            /> configuration store for subsequent operations.  If
+          <dd>Set <filepath><keyword keyref="adminUtilCLI"/></filepath> to use the specified
+              <keyword keyref="prodShort"/> configuration store for subsequent operations. If
                 <filepath><varname>&lt;endpoint></varname></filepath> is not specified, the current
             endpoint is displayed. For
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
@@ -89,7 +90,7 @@
           <dd>Look up the current and default values of a configuration.<dl>
               <dlentry>
                 <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
-                <dd>Output key/value pairs in JSON format.</dd>
+                <dd>Output key-value pairs in JSON format.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>

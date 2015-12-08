@@ -21,19 +21,19 @@
       management command-line tool.</dd>
     </dlentry>
     <dlentry>
-     <dt><keyword keyref="adminUtil"/></dt>
+     <dt><keyword keyref="adminUtilCLI"/></dt>
      <dd>If you have worked with <xref
        href="http://www8.hp.com/us/en/cloud/helion-devplatform-overview.html" format="html"
        scope="external">HPE Helion Stackato</xref> or with the <xref
        href="http://devdocspjaytb3moy.devcloud.acquia-sites.com/hdp" format="html" scope="external"
        >HPE Helion Development Platform</xref> before, <keyword keyref="prodShort"/> will allow you
-      to work with <keyword keyref="adminUtil"/>, a new command-line administration utility that
-      shares some functionality with Kato. For more information, see the <xref
-       href="reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/>.<draft-comment
-       author="michaelk"><keyword keyref="adminUtil"/> communicates with <xref
-        href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of Cloud
-       Controller and runs within the Docker overlay Virtual Extensible LAN
-      (VXLAN).</draft-comment></dd>
+      to work with <filepath><keyword keyref="adminUtilCLI"/></filepath>, a new command-line
+      administration utility that shares some functionality with Kato. For more information, see the
+       <xref href="reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/>.<draft-comment
+       author="michaelk"><filepath><keyword keyref="adminUtilCLI"/></filepath> communicates with
+        <xref href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of
+       Cloud Controller and runs within the Docker overlay Virtual Extensible LAN
+       (VXLAN).</draft-comment></dd>
     </dlentry>
    </dl>
   </section>
