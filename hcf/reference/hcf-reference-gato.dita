@@ -12,7 +12,7 @@
     <section><filepath><keyword keyref="adminUtilCLI"/></filepath> is the <keyword keyref="prodLong"
       /> command-line interface (CLI) administration utility. To run <filepath><keyword
           keyref="adminUtilCLI"/></filepath> commands you must <codeph>ssh</codeph> into any
-      instance in your cluster.</section>
+        <keyword keyref="prodShort"/> node.</section>
     <section>
       <title>Global Options</title>
       <dl>

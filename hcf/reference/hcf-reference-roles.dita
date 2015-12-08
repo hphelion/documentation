@@ -32,8 +32,8 @@
         href="hcf-reference-gato.dita#reference_cd3_bs3_rt/config_get_example">manipulate their
         values</xref> using the <filepath><keyword keyref="adminUtilCLI"/></filepath> Command-Line
       Interface (CLI) administration utility. To run <filepath><keyword keyref="adminUtilCLI"
-        /></filepath> commands you must <codeph>ssh</codeph> into any instance in your
-      cluster.</refsyn>
+        /></filepath> commands you must <codeph>ssh</codeph> into any <keyword keyref="prodShort"/>
+      node.</refsyn>
     <table frame="all" rowsep="1" colsep="1" id="table_d1m_bbn_g5">
       <tgroup cols="2">
         <colspec colname="c1" colnum="1" colwidth="1*"/>
