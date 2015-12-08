@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tyg_wtr_g5">
+  <title>Java Samples</title>
+  <body>
+    <p>This section contains samples of Servlet-based Java web apps:<ul id="ul_syn_pvr_g5">
+        <li><xref href="helloworld/1.0helloworld.java.dita"/></li>
+        <li><xref href="database/1.0database.java.dita"/></li>
+        <li><xref href="messaging/1.0messaging.java.dita"/></li>
+      </ul></p>
+  </body>
+</topic>
