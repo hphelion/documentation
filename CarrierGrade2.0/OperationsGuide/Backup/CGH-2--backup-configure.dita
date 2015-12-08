@@ -147,12 +147,29 @@ ssh-copy-id vsd_user@vsd_address</codeblock><p><b>Note:</b>
         config.<codeblock>attis config --id &lt;config_id of WR_Appliance_system_files_Backup&gt; --update-parameter '{"wr_controller_backup_user":"YOUR_USER"}'
 attis config --id &lt;config_id of WR_Appliance_system_files_Restore&gt; --update-parameter '{"wr_controller_backup_password":"YOUR_PASSWORD"}'</codeblock></p><p><b>Backing
           up and Restoring the Baremetal Controller</b></p><p>Before backing up or restoring the
-        baremetal controller, update the <codeph>bm_controller_address</codeph> field in the
-          <codeph>/etc/attis/dcn.lst</codeph>
-          file:<codeblock>vi /etc/attis/dcn.lst</codeblock></p><p><b>Cloud Controller Database
-          Restore</b></p><p> This job restores MySQL database of the Cloud Controller. Remember to
-        update parameters of the config template you’re using (default location:
-        /etc/attis/config_template) before you trigger restore. </p><ul id="ul_o44_rbp_xt">
+        baremetal controller: <ol id="ol_nxs_wqs_g5">
+          <li>Update the <codeph>bm_controller_address</codeph> field in the
+              <codeph>/etc/attis/dcn.lst</codeph>
+            file:<codeblock>vi /etc/attis/dcn.lst</codeblock></li>
+          <li>Update the <codeph>target_restore_nodes</codeph> parameter in baremetal controller
+            files restore
+              config:<codeblock>attis config --id &lt;Config_ID_of_BM_Controller_ironic_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'
+attis config --id &lt;Config_ID_of_BM_Controller_neutron_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'
+attis config --id &lt;Config_ID_of_BM_Controller_nova_files_Restore&gt; --update-parameter '{"target_restore_nodes":"&lt;BM_Controller_IP&gt;:&lt;BM_Controller_IP&gt;"}'</codeblock><p>Where:
+                <ul id="ul_qwh_wys_g5">
+                <li><codeph>Config_ID_of_BM_Controller_ironic_files_Restore</codeph> is the ID of
+                  the <codeph>BM_Controller_ironic_files_Restore</codeph> configuration file.</li>
+                <li><codeph>BM_Controller_IP</codeph> is the IP of the baremetal controller.</li>
+              </ul></p></li>
+          <li>Copy the Attis public key, <codeph>/home/attis/.ssh/id_rsa.pub </codeph>, from each of
+            the controllers in the KVM region and paste the keys into the
+              <codeph>authorized_keys</codeph> file on the baremetal
+              controller,<systemoutput>/home/cghelion/.ssh/authorized_keys</systemoutput>, to setup
+            trust between controllers and the baremetal bontroller.</li>
+        </ol></p><p><b>Cloud Controller Database Restore</b></p><p> This job restores MySQL database
+        of the Cloud Controller. Remember to update parameters of the config template you’re using
+        (default location: /etc/attis/config_template) before you trigger restore. </p><ul
+        id="ul_o44_rbp_xt">
         <li>If SCP option is
           selected:<codeblock>attis restore --config-path /etc/attis/config_template/cloudcontrollerappliancedbrestore_scp.json</codeblock></li>
       </ul><ul id="ul_mmg_qbp_xt">
