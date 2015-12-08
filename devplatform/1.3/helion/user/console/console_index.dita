@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8844">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="userconsoleview">
 <title>HPE Helion 1.3 Development Platform: Management Console: User View</title> 
 <prolog>
 <metadata>
@@ -21,33 +21,33 @@
 <p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../admin/console/console_index.dita" >Console Admin Guide</xref>.</p>
 <ul>
 <li>
-<xref type="section" href="#topic8844/welcome">Welcome Page</xref>
+<xref type="section" href="#userconsoleview/welcome">Welcome Page</xref>
 </li>
 <li>
-        <xref type="section" href="#topic8844/app-list">Applications List</xref>
+        <xref type="section" href="#userconsoleview/app-list">Applications List</xref>
       </li>
       <li>
-        <xref type="section" href="#topic8844/application-view">Application View</xref>
+        <xref type="section" href="#userconsoleview/application-view">Application View</xref>
       </li>
 <li>
-        <xref type="section" href="#topic8844/organization-list">Organizations List</xref>
+        <xref type="section" href="#userconsoleview/organization-list">Organizations List</xref>
         <ul>
           <li>
-            <xref type="section" href="#topic8844/organization-view">Organization View</xref>
+            <xref type="section" href="#userconsoleview/organization-view">Organization View</xref>
           </li>
           <li>
-            <xref type="section" href="#topic8844/space-view">Spaces View</xref>
+            <xref type="section" href="#userconsoleview/space-view">Spaces View</xref>
           </li>
           <li>
-            <xref type="section" href="#topic8844/service-instance-view">Service Instance
+            <xref type="section" href="#userconsoleview/service-instance-view">Service Instance
               View</xref>
           </li>
         </ul></li>
 <li>
-<xref type="section" href="#topic8844/sample-apps">Sample Applications</xref>
+<xref type="section" href="#userconsoleview/sample-apps">Sample Applications</xref>
 </li>
 <li>
-<xref type="section" href="#topic8844/support">Support</xref>
+<xref type="section" href="#userconsoleview/support">Support</xref>
 </li>
 </ul>
 <section id="welcome"> <title>Welcome Page</title> 
@@ -57,16 +57,16 @@
 <b>Read the Documentation</b>: By default, this links to the documentation at <xref href="http://docs.hpcloud.com" scope="external" format="html">docs.hpcloud.com</xref>
 </li>
 <li>
-          <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
+          <b>Contact Support</b>: Link to the <xref href="#userconsoleview/support" format="dita"
             >Support</xref> page.</li>
 <li>
   <b>Download the Client</b>: Link to the locally hosted <xref href="../../CLI/ALS_Client_Downloads.dita">CLI client</xref> download.</li>
 <li>
-          <b>Deploy Sample Applications</b>: Link to the <xref href="#topic8844/sample-apps"
+          <b>Deploy Sample Applications</b>: Link to the <xref href="#userconsoleview/sample-apps"
             format="dita">Sample Applications</xref>.</li>
 <li>
           <b>Organizations Membership</b>: Link to the end user view of the <xref
-            href="#topic8844/welcome" format="dita">Organizations</xref> page.</li>
+            href="#userconsoleview/welcome" format="dita">Organizations</xref> page.</li>
 <li>
 <b>Account Details</b>: Shows the account details of the current user. Also accessible from the drop down list at the top left.</li>
 </ul>
@@ -136,7 +136,7 @@
 <p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
 <ul>
 <li>
-<b>Spaces</b>: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a <xref type="section" href="#topic8844/space-view">view of that Space</xref>.</li>
+<b>Spaces</b>: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a <xref type="section" href="#userconsoleview/space-view">view of that Space</xref>.</li>
 <li>
           <b>Users</b>: A list of Users who are members of the Organization, showing the Email
           address and Organization <xref
@@ -220,7 +220,7 @@
 <p>
   <b>App Bindings</b>
 </p>
-  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../admin/console/console_index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
+  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../admin/console/console_index.dita#adminconsoleview/applications" type="section"   >administrative view of that application</xref>.</p>
 </section>
 <section id="sample-apps"> <title>Sample Applications</title> 
 <p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>
