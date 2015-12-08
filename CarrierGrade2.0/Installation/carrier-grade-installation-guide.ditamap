@@ -135,7 +135,6 @@
             <topicref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita" toc="no"/>
         </topicref>
         <topichead navtitle="Linked Files" toc="no">
-            <topicref href="carrier-grade-install-kvm-tahoe.dita" toc="no"/>
             <topicref href="carrier-grade-install-non-kvm.dita"
                 navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
             <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>
@@ -161,7 +160,6 @@
             <topicref href="carrier-grade-install-kvm-esx-json-sac.dita"/>
             <topicref href="carrier-grade-install-kvm-ldap-json-mem.dita"/>
             <topicref href="carrier-grade-install-kvm-ldap-json-sac.dita"/>
-            <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita"/>
             <topicref href="carrier-grade-install-kvm-env-json-bonded-mem.dita"/>
             <topicref href="carrier-grade-install-kvm-env-json-bonded-sac.dita"/>
             <topicref href="carrier-grade-install-kvm-env-json-mem.dita"/>
