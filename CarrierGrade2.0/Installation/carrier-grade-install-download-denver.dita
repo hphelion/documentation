@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic7148cgidd">
-        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Download the Denver
-                Installation Packages</title>
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Prerequisites - Download
+                the Denver Installation Packages</title>
         <titlealts>
                 <searchtitle>HP Helion OpenStack Carrier Grade Installation
                         Prerequisites</searchtitle>
@@ -22,8 +22,7 @@
         </prolog>
         <body>
                
-                <p>This document describes the prerequisite steps required to install HP Helion
-                        OpenStack Carrier Grade in a baremetal environment.</p>
+                <p conref="carrier-grade-install-download.dita#topic7148cgid/intro"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/getinstall"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/checksum"/>
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/extract"/>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE topic   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+
+
+<topic id="jow1404333560080-toc" xml:lang="en-us">
+
+
+    <!-- Modification History
+
+
+
+
+
+ -->
+
+
+    <title>HP Helion OpenStack Carrier Grade 2.0: Operations Guide</title>
+
+
+    <shortdesc >HP Helion OpenStack Carrier Grade is a high-performance, high-availability,
+
+
+        cloud operating system that enables telecommunications operators to use
+
+
+        Commercial-off-the-shelf (COTS) hardware to manage Virtualized Network Functions (VNF)
+
+
+        within a carrier grade Network Function Virtualization (NFV) architecture.</shortdesc>
+
+
+    <body>
+        <p><!--Above and below paragraphs from the HCG API 1.1 doc--></p>
+        <p>HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the
+            IT cloud, and the high-availability and performance demanded by the Telecommunications
+            industry, into a unique carrier grade, industry-leading solution to deliver a
+            price-performance ratio well above alternative solutions. HP Helion OpenStack Carrier
+            Grade is aligned with the ETSI-NFV architecture.</p>
+        <section id="section_N10027_N1001C_N10001">
+            <dl>
+                <dlentry>
+                    <dt>Virtual machine operations</dt>
+                    <dd>
+                        <p>Use the Compute panel on the Project dashboard to:</p>
+                            <ul>
+                                <li>Create a new instance</li>
+                                <li>Terminate an instance</li>
+                                <li>Reboot an instance</li>
+                                <li>Rebuild an instance</li>
+                                <li>Suspend and resume an instance</li>
+                                <li>Pause and resume an instance</li>
+                                <li>Create an instance snapshot</li>
+                            </ul>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt>Network Management</dt>
+                    <dd>
+                        <p>The Network panel contains commands to view a visual representation of your network and to enable you to work with your network.</p>
+                            <ul>
+                                <li>View your network</li>
+                                <li>Create or delete a network</li>
+                                <li>Enable or disable a network</li>
+                                <li>Create externally available networks</li>
+                                <li>Create shared networks</li>
+                                <li>Add or remove a subnet to/from a Network</li>
+                                <li>Create, Modify, or Delete a port on a Network</li>
+                                <li>Configure virual ports and virtual routers</li>
+                        </ul>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt><b>Inventory Management</b></dt>
+                    <dd>
+                        <p>HP Helion OpenStack Carrier Grade provides complete inventory management
+                            of hosts in the OpenStack cloud, allowing the system administrator to
+                            install, configure, and maintain the individual servers. The inventory
+                            service gives the system administrator the following
+                            capabilities:<!--From the WR admin guide--></p>
+                        <ul id="ul_xyb_2bt_nn">
+                            <li>
+                                <p>Host management</p>
+                                <ul id="ul_afq_fbt_nn">
+                                    <li>
+                                        <p>discovery of new hosts in the cluster</p>
+                                    </li>
+                                    <li>
+                                        <p>installation of the appropriate load, controller,
+                                            compute, or storage images</p>
+                                    </li>
+                                    <li>
+                                        <p>configuration of the management, OAM, infrastructure, and
+                                            provider network interfaces on each host</p>
+                                    </li>
+                                    <li>
+                                        <p>creation and use of data interface and CPU profiles to
+                                            simplify host configuration</p>
+                                    </li>
+                                    <li>
+                                        <p>configuration of the number of CPUs allocated to the
+                                            Accelerated Virtual Switch (AVS) on each compute
+                                            node</p>
+                                    </li>
+                                    <li>
+                                        <p>configuration of huge memory page allocations for VM
+                                            use</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Administrative operations</p>
+                                <ul id="ul_px4_nms_nn">
+                                    <li>
+                                        <p>lock/unlock</p>
+                                    </li>
+                                    <li>
+                                        <p>switch active controller host or service</p>
+                                    </li>
+                                    <li>
+                                        <p>reboot and reset host</p>
+                                    </li>
+                                    <li>
+                                        <p>power-on and power-off</p>
+                                    </li>
+                                    <li>
+                                        <p>software re-installation</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Status reporting</p>
+                                <ul id="ul_qgg_rms_nn">
+                                    <li>
+                                        <p>admin state</p>
+                                    </li>
+                                    <li>
+                                        <p>operational state</p>
+                                    </li>
+                                    <li>
+                                        <p>availability state</p>
+                                    </li>
+                                    <li>
+                                        <p>uptime</p>
+                                    </li>
+                                    <li>
+                                        <p>real-time command execution reports, such as booting and
+                                            testing</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Host resources</p>
+                                <ul id="ul_x3s_xms_nn">
+                                    <li>
+                                        <p>volumes</p>
+                                    </li>
+                                    <li>
+                                        <p>flavors</p>
+                                    </li>
+                                    <li>
+                                        <p>images</p>
+                                    </li>
+                                    <li>
+                                        <p>processor, sockets, cores</p>
+                                    </li>
+                                    <li>
+                                        <p>memory</p>
+                                    </li>
+                                    <li>
+                                        <p>disk</p>
+                                    </li>
+                                    <li>
+                                        <p>network interfaces</p>
+                                    </li>
+                                    <li>
+                                        <p>additional hardware devices, such as cryptographic and
+                                            compression devices</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt><b>Improved Web Administration Interface</b></dt>
+                    <dd>
+                        <p>HP Helion OpenStack Carrier Grade web administration interface is an
+                            enhanced version of the Horizon web interface provided by OpenStack. The
+                            enhancements include:<!--From the WR admin guide--></p>
+                        <ul id="ul_xyt_r1t_nn">
+                            <li>
+                                <p>Automatic page refresh for immediate notification of status
+                                    changes. This eliminates the need for manual reloading of web
+                                    pages to access up-to-date information about the cloud</p>
+                            </li>
+                            <li>
+                                <p>Admin Overview page with charts and tables providing a high-level
+                                    overview of cloud resources</p>
+                                <ul id="ul_kcf_qbt_nn">
+                                    <li>
+                                        <p>avg/max/min compute vCPU usage</p>
+                                    </li>
+                                    <li>
+                                        <p>avg/max/min compute memory usage</p>
+                                    </li>
+                                    <li>
+                                        <p>avg/max/min compute disk usage</p>
+                                    </li>
+                                    <li>
+                                        <p>avg/max/min AVS CPU utilization</p>
+                                    </li>
+                                    <li>
+                                        <p>avg/max/min provider network port utilization</p>
+                                    </li>
+                                    <li>
+                                        <p>current host status (available, unavailable, locked,
+                                            unlocked)</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Performance management resource usage web page</p>
+                                <ul id="ul_cr2_kct_nn">
+                                    <li>
+                                        <p>optimized performance management sample DB queries for
+                                            improved usability</p>
+                                    </li>
+                                    <li>
+                                        <p>capability to filter on fields in the performance
+                                            management sample’s metadata</p>
+                                    </li>
+                                    <li>
+                                        <p>human-readable legends and chart labels using object
+                                            names instead of long UUID text strings</p>
+                                    </li>
+                                    <li>
+                                        <p>performance management meters can be selected using their
+                                            brief descriptions</p>
+                                    </li>
+                                    <li>
+                                        <p>meters for CPU, memory, and disk utilization</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </dd>
+                </dlentry>
+                <dlentry>
+                    <dt><b>Alarms Generation and Reporting</b></dt>
+                    <dd>
+                        <ul id="ul_ltp_xch_tp">
+                            <li>
+                                <p>alarms on performance management thresholds and cloud-level
+                                    services and equipment</p>
+                            </li>
+                            <li>
+                                <p>SNMPv2c support</p>
+                            </li>
+                        </ul>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+    </body>
+
+
+</topic>

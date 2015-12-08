@@ -60,6 +60,9 @@
             <li>Review the deployment architecture for different hypervisors</li>
             <li>Review the network architecture for networking needs</li>
           </ul></li>
+        <li>Review the <xref href="carrier-grade-technical-specs.dita#topic3485cgts">Technical
+            Specifications</xref> for dimensions and limits of the current versrion of HP Helion
+          OpenStack Carrier Grade. </li>
         <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773cgsm2">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
         <li> Perform any required or optional <xref
