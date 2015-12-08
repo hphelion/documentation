@@ -2,23 +2,23 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
 <map>
    <title>HP Helion Cloud Foundry</title>
-   <mapref href="cf-release/hcf-variables.ditamap"/>
-   <topicref href="cf-release/cfr_index.dita" otherprops="hcf">
-      <topicref href="cf-release/hcf-whats-new.dita"/>
-      <topicref href="cf-release/hcf-release-notes.dita"/>
-      <topicref href="cf-release/hcf-agreements.dita"/>
-      <topicref href="cf-release/quickstart/hos/hcf-on-hos.dita">
-         <topicref href="cf-release/quickstart/hos/hcf-on-hos-step-1.dita"/>
-         <topicref href="cf-release/quickstart/hos/hcf-on-hos-step-2.dita"/>
-         <topicref href="cf-release/quickstart/hos/hcf-on-hos-step-3.dita"/>
-         <topicref href="cf-release/quickstart/hos/hcf-on-hos-step-4.dita"/>
-         <topicref href="cf-release/quickstart/hos/hcf-on-hos-step-5.dita"/>
-         <topicref href="cf-release/quickstart/hos/hcf-on-hos-step-6.dita"/>
+   <mapref href="hcf/hcf-variables.ditamap"/>
+   <topicref href="hcf/hcf-index.dita" otherprops="hcf">
+      <topicref href="hcf/hcf-whats-new.dita"/>
+      <topicref href="hcf/hcf-release-notes.dita"/>
+      <topicref href="hcf/hcf-agreements.dita"/>
+      <topicref href="hcf/quickstart/hos/hcf-on-hos.dita">
+         <topicref href="hcf/quickstart/hos/hcf-on-hos-step-1.dita"/>
+         <topicref href="hcf/quickstart/hos/hcf-on-hos-step-2.dita"/>
+         <topicref href="hcf/quickstart/hos/hcf-on-hos-step-3.dita"/>
+         <topicref href="hcf/quickstart/hos/hcf-on-hos-step-4.dita"/>
+         <topicref href="hcf/quickstart/hos/hcf-on-hos-step-5.dita"/>
+         <topicref href="hcf/quickstart/hos/hcf-on-hos-step-6.dita"/>
       </topicref>
-      <topicref href="cf-release/reference/hcf-reference.dita" otherprops="reference">
-         <topicref href="cf-release/reference/hcf-reference-tfvars.dita"/>
-         <topicref href="cf-release/reference/hcf-reference-gato.dita"/>
-         <topicref href="cf-release/reference/hcf-reference-roles.dita"/>
+      <topicref href="hcf/reference/hcf-reference.dita" otherprops="reference">
+         <topicref href="hcf/reference/hcf-reference-tfvars.dita"/>
+         <topicref href="hcf/reference/hcf-reference-gato.dita"/>
+         <topicref href="hcf/reference/hcf-reference-roles.dita"/>
       </topicref>
       <!--
       <topicref href="cfr_license_terms.dita"/>
