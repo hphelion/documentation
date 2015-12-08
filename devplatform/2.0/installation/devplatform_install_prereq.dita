@@ -5,27 +5,33 @@
   <body>
     <section id="prerequisites">
       <title>General Prerequisites</title>
+      <note type="warning">You must satisfy all prerequisites <i>before</i> beginning
+        installation.</note>
       <ul id="ul_plz_psf_xt">
-        <li>
-          <p>The Cinder block storage backend must be configured to use <xref
-              href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
-              scope="external">VSA</xref>, <xref
-              href="http://docs.hpcloud.com/#helion/installation/configure_3par.html" format="html"
-              scope="external">3Par</xref>, or <xref
-              href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html" format="html"
-              scope="external">Ceph</xref>.</p>
-        </li>
+        <li> Ensure that the HPE Helion <tm tmtype="reg">OpenStack</tm> environment you are using meets
+          the following requirements: <ul>
+            <li>The Cinder block storage backend must be configured to use <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
+                scope="external">VSA</xref>, <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_3par.html"
+                format="html" scope="external">3Par</xref>, or <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html"
+                format="html" scope="external">Ceph</xref>.</li>
+            <li> If you did not <xref
+                href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
+                format="html" scope="external">create the Service Network </xref>, you <b>must</b>
+              do so before proceeding.</li>
+            <li>The HP Helion Development Platform accesses the public URL for the Identity service
+              endpoint. The <xref href="http://docs.hpcloud.com/#helion/security/tls.html"
+                format="html" scope="external">SSL certificate</xref> installed with your HPE Helion
+              OpenStack environment must be configured for your specific domain/IP before
+              proceeding.</li>
+          </ul></li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
             systems include this as part of their base toolkit. This document is geared toward a
             Linux operating system, but this does not preclude the installer from running on other
             operating systems with appropriate modifications to the command-line statements.</p>
-        </li>
-        <li>
-          <p>If you did not <xref
-              href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
-              format="html" scope="external">create the Service Network </xref>immediately after
-            installing HP Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
         <li>
           <p>For Windows and .NET support, due to licensing requirements, you must create and deploy
