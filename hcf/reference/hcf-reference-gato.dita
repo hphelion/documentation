@@ -56,8 +56,9 @@
           <dt><filepath id="role_example">role</filepath></dt>
           <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the Docker server endpoint. Use the <filepath>--node</filepath>
-            flag to stop a <xref href="hcf-reference-roles.dita#cf_reference_roles"
-                ><varname>&lt;role></varname></xref> on a specific node. For example:
+            flag to start, stop, or restart a <xref
+              href="hcf-reference-roles.dita#cf_reference_roles"><varname>&lt;role></varname></xref>
+            on a specific node. For example:
               <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
               id="ul_blk_nhj_rt">
               <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
@@ -107,8 +108,9 @@
               <dlentry>
                 <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
                 <dd>Read the <filepath><varname>&lt;value></varname></filepath>.
-                    <varname>&lt;value></varname> becomes either a filename to read the value from
-                  or a dash (<filepath>-</filepath>) for <codeph>stdin</codeph>.</dd>
+                      <filepath><varname>&lt;value></varname></filepath> becomes either a filename
+                  to read the value from or a dash (<filepath>-</filepath>) for
+                    <codeph>stdin</codeph>.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
