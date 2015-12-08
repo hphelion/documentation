@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_mpc">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Administration Overview</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <p>This section covers the following:<ul id="ul_est_zym_g5">
+        <li><xref href="configure_firewall.dita"/></li>
+        <li><xref href="configure_monitoring.dita"/></li>
+        <li><xref href="configure_logging.dita"/></li>
+        <li><xref href="../identity/identity_overview.dita"/></li>
+      </ul></p>
+  </body>
+</topic>

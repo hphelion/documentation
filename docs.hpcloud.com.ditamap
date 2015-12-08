@@ -17,7 +17,6 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
-  <topicref href="helion/HOS-conrefs.xml"/>
   <topicref href="helion/HOS-keywords.xml" format="ditamap"/>
   <topicref href="helion/MPC/home_MPC.dita">
     <topicref href="helion/kilo_features.dita" navtitle="OpenStack Kilo Features" locktitle="yes"/>
@@ -26,31 +25,24 @@
     <topicref href="helion/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <topicref href="helion/3rd-party-license-agreements.dita"
       navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
-    <topichead navtitle="Administration">
+    <topicref href="helion/administration/administration_index_mpc.dita" navtitle="Administration" locktitle="yes">
       <topicref href="helion/administration/configure_firewall.dita"
         navtitle="Configuring the HPE Helion OpenStack Firewall" locktitle="yes"/>
       <topicref href="helion/administration/configure_monitoring.dita"
         navtitle="Configuring the Monitoring Service" locktitle="yes"/>
       <topicref href="helion/administration/configure_logging.dita"
         navtitle="Configuring the Centralized Logging Service" locktitle="yes"/>
-      <!-- BEGIN - Administration/IDENTITY -->
       <topicref href="helion/identity/identity_overview.dita" navtitle="Identity Service"
         locktitle="yes"/>
-      <!-- BEGIN - Administration/Object Storage -->
-      <!-- BEGIN - Administration/Block Storage -->
-      <!-- BEGIN - Administration/Networking -->
-      <!-- BEGIN - Administration/EON -->
-    </topichead>
-    <topichead navtitle="User Guide">
-      <!-- HORIZON -->
+    </topicref>
+    <topicref href="helion/userguide/userguide_index_mpc.dita" navtitle="User Guide" locktitle="yes">
       <topicref href="helion/horizon/horizon_overview.dita" navtitle="Using the Horizon Dashboard"
         locktitle="yes"/>
       <topicref href="helion/userguide/create_network.dita" navtitle="Creating a Private Network"
         locktitle="yes"/>
-      <topicref href="helion/userguide/create_image.dita"/>
+      <topicref href="helion/userguide/create_image.dita" navtitle="Creating and Uploading a Glance Image" locktitle="yes"/>
       <topicref href="helion/userguide/lbaas.dita"
         navtitle="Using Load Balancing as a Service (LBaaS)" locktitle="yes"/>
-      <!--  LBaaS, FWaaS, VPNaaS -->
       <topicref href="helion/networking/fwaas.dita" locktitle="yes">
         <topicmeta>
           <navtitle>Using Firewall as a Service (FWaaS)</navtitle>
@@ -61,7 +53,7 @@
           <navtitle>Using VPN as a Service (VPNaaS)</navtitle>
         </topicmeta>
       </topicref>
-    </topichead>
+    </topicref>
   </topicref>
   <mapref href="devplatform/docs.hpcloud.com.HDP.ditamap" format="ditamap"/>
 
