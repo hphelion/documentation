@@ -205,9 +205,10 @@ no_proxy =  '{{ sherpa_no_proxy }}'
           </ol></li>
         <li>If you are planning on installing HPE Helion Development Platform you should ensure that
           you include your Service Net into your configuration files at this point in the
-          installation. See <xref href="../administration/create_hdp_servicenet.dita">Creating the
+          installation. 
+          <p>See <xref href="../administration/create_hdp_servicenet.dita">Creating the
             HPE Helion Development Platform Service Net</xref> for details on how to achieve
-          this.</li>
+          this.</p></li>
         <li>[WORKAROUND] - There is currently an issue with the Elasticsearch name that requires
           that you change it in the logging configuration file before continuing in the
           installation. The steps to do this are: <ol>
