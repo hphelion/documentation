@@ -32,14 +32,11 @@
                                         Helion OpenStack Support Matrix</xref>.</p>
                 </section>
                 <section id="kvm">
-                        <title>Preparing the KVM Host</title>
-                        <p>Perform the following tasks on the KVM Host:</p>
+                        <title>Preparing the lifecycle manager host</title>
+                        <p>Perform the following tasks on the lifecycle manager host:</p>
                         <ul>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
                                                 href="#topic7148cips/proxy" format="dita"
-                                        /><?oxy_insert_end?></li>
-                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
-                                                href="#topic7148cips/ssh" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><?oxy_insert_start author="burkmich" timestamp="20150727T183030-0400"?><xref
                                                 href="#topic7148cips/packages" format="dita"
@@ -51,50 +48,47 @@
                                                 href="#topic7148cips/ntp" format="dita"
                                         /><?oxy_insert_end?></li>
                                 <li><xref href="#topic7148cips/ssh" format="dita"/></li>
-                                <li><xref href="#topic7148cips/ssh" format="dita"/></li>
                                 <li><xref href="#topic7148cips/network" format="dita"/></li>
                                 <li><xref href="#topic7148cips/ldap" format="dita"/></li>
-                                <!--<li><xref href="#topic7148cips/kvm-region" format="dita">Download the
-                                                installation packages for the KVM region</xref></li> -->
-                                <!--<li><xref href="#topic7148cips/download-esx" format="dita"/> This is applicable only for KVM + ESX Cloud Deployment. </li>-->
-                                <!--<li><xref href="#topic7148cips/verify" format="dita"/></li>-->
                                 <li><xref href="#topic7148cips/vsd" format="dita"/></li>
                                 <li><xref href="#topic7148cips/prepbare" format="dita"/></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
-                        <p>The KVM Host must have Ubuntu Server 14.04.2 LTS installed before
-                                performing the HP Helion OpenStack Carrier Grade installation.</p>
+                        <p>The lifecycle manager host must have Ubuntu Server 14.04.2 LTS installed
+                                        before performing the HP Helion OpenStack Carrier Grade
+                                        installation.</p>
                 </section>
                 <!--<section id="pub-key"> <title>Obtain a public key</title>
-<p>On the KVM Host, the user <codeph>root</codeph> must have a public key.</p>
+<p>On the lifecycle manager host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
-<li>Launch a terminal and log in to your KVM Host as root:<p>sudo su -</p></li>
+<li>Launch a terminal and log in to your lifecycle manager host as root:<p>sudo su -</p></li>
 <li>Use the following command to create the key. Accept the default
           values.<p>/root/.ssh/id_rsa</p></li>
 <li>Install the public key into the authorized keys on the KVM
             Host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
 </codeph></codeblock><p>Enter the
-            IP address of the default network gateway on the KVM Host.</p></li>
+            IP address of the default network gateway on the lifecycle manager host.</p></li>
 </ol>
 </section>
 -->
                 <section id="proxy">
                         <title>Configure proxy information</title>
-                        <p>Before you begin your installation on the KVM Host, configure the proxy
-                                information for your environment using the following steps:</p>
+                        <p>Before you begin your installation on the lifecycle manager host,
+                                        configure the proxy information for your environment using
+                                        the following steps:</p>
                         <ol>
-                                <li>Launch a terminal and log in to your KVM Host as
-                                        root:<codeblock><codeph>sudo su -
+                                <li>Launch a terminal and log in to your lifecycle manager host as
+                                                root:<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
                                 <li>Edit the <codeph>/etc/environment</codeph> file to add the
-                                        following lines, using values specific to your environment.
-                                                  <p><b>Note:</b> The <codeph>export
+                                                following lines, using values specific to your
+                                                environment. <p><b>Note:</b> The <codeph>export
                                                   no-proxy</codeph> command is
-                                                          optional<!-- per Lakshmi email 10/9/15-->:</p><codeblock><codeph>vsc_config_restore.yml ATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+                                                  optional<!-- per Lakshmi email 10/9/15-->:</p><codeblock><codeph>vsc_config_restore.yml ATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
-export no_proxy=localhost,127.0.0.1,&lt;KVM_Host_IP_address>,&lt;provider_network></codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
-&lt;KVM_Host_IP_address> is the IP address of the KVM Host</codeblock></li>
+export no_proxy=localhost,127.0.0.1,&lt;IP_address>,&lt;provider_network></codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
+&lt;IP_address> is the IP address of the lifecycle manager host</codeblock></li>
                                 <li>Source the <codeph>environment</codeph>
                                         file:<codeblock><codeph>source /etc/environment
 </codeph></codeblock></li>
@@ -103,7 +97,7 @@ export no_proxy=localhost,127.0.0.1,&lt;KVM_Host_IP_address>,&lt;provider_networ
                 <section id="packages">
                         <title>Install Ubuntu packages</title>
                         <p>Before starting the installation, you must install the following packages
-                                on the KVM Host.</p>
+                                        on the lifecycle manager host.</p>
                         <ul id="ul_szw_sh4_rs">
                                 <li>ntp </li>
                                 <li>firefox </li>
@@ -133,7 +127,7 @@ export no_proxy=localhost,127.0.0.1,&lt;KVM_Host_IP_address>,&lt;provider_networ
                                 <li>sudo</li>
                                 <li>ansible</li>
                         </ul>
-                        <p>To install the packages on the KVM Host:</p>
+                        <p>To install the packages on the lifecycle manager host:</p>
                         <ol>
                                 <li>On the KLM host, run the following command to install all
                                         required packages:
@@ -144,14 +138,13 @@ export no_proxy=localhost,127.0.0.1,&lt;KVM_Host_IP_address>,&lt;provider_networ
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
 </codeph></codeblock></li>
                                 <li>Reboot the server</li>
-                                <li>Log out and re-login to the KVM Host to activate the proxy
-                                        configuration.</li>
+                                <li>Log out and re-login to the lifecycle manager host to activate
+                                                the proxy configuration.</li>
                         </ol>
                 </section>
                 <section id="configure-the-xrdp-remote-desktop-display"><title>Configure the XRDP
-                                remote desktop display</title><p>Configure XRDP on the KVM Host for
-                                the remote desktop connection to access the server remotely as
-                                follows.</p><ol>
+                                remote desktop display</title><p>Configure XRDP on the lifecycle manager host for the remote desktop connection to access the
+                                        server remotely as follows.</p><ol>
                                 <li>Edit the <codeph>sesman.ini</codeph> file: <ol>
                                                 <li>Open the file:
                                                   <codeblock>vi /etc/xrdp/sesman.ini </codeblock></li>
@@ -186,30 +179,33 @@ fi
          
                                 
                                 <li>Restart
-                                XDRP:<codeblock><codeph>sudo /etc/init.d/xrdp restart
+                                                  XDRP:<codeblock><codeph>sudo /etc/init.d/xrdp restart
 </codeph></codeblock><p>When
-                                you XRDP to the KVM Host, the screen appears similar to the
-                                following image:</p><image href="../../media/CGH-install-xrdp.png"
-                                id="image_pln_cdm_vs">
-                                
-                        </image> </li></ol></p></section>
+                                                  you XRDP to the lifecycle manager host, the screen
+                                                  appears similar to the following image:</p><image
+                                                  href="../../media/CGH-install-xrdp.png"
+                                                  id="image_pln_cdm_vs"/>
+                                                </li></ol></p></section>
                 <section id="ntp">
                         <title>Install and configure NTP</title>
-                        <p>You must configure the KVM Host as an NTP client.</p>
-                        <p>You can install NTP on the KVM Host and configure it as an NTP server.
-                                Or, you can use a pre-existing NTP server that is reachable from the
-                                management network. </p>
-                        <p>For information on configuring the KVM Host as an NTP client, see <xref
-                                        href="carrier-grade-install-NTP.dita#topic4740/client"
-                                />.</p>
-                        <p>For information on installing NTP on the KVM Host, see <xref
-                                        href="../../CarrierGrade2.0/Installation/carrier-grade-install-NTP.dita"
-                                        >Installing an NTP Server</xref>.</p>
+                        <p>You must configure the lifecycle manager host as an NTP client.</p>
+                        <p>You can install NTP on the lifecycle manager host and configure it as an
+                                        NTP server. Or, you can use a pre-existing NTP server that
+                                        is reachable from the management network. </p>
+                        <p>For information on configuring the lifecycle manager host as an NTP
+                                        client, see <xref
+                                                href="carrier-grade-install-NTP.dita#topic4740/client"
+                                        />.</p>
+                        <p>For information on installing NTP on the lifecycle manager host, see
+                                                <xref
+                                                href="../../CarrierGrade2.0/Installation/carrier-grade-install-NTP.dita"
+                                                >Installing an NTP Server</xref>.</p>
                 </section>
                 <section id="ssh">
                         <title>Configure SSH</title>
-                        <p>On the KVM Host, the OpenSSH server must be running and the firewall
-                                configuration should allow access to the SSH ports.</p>
+                        <p>On the lifecycle manager host, the OpenSSH server must be running and the
+                                        firewall configuration should allow access to the SSH
+                                        ports.</p>
                         <ol>
                                 <li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>:
                                                 <ol id="ol_h13_kqk_yt">
@@ -268,17 +264,6 @@ StrictHostKeyChecking no </codeblock></li>
                                 management processes.</p>
                         <p>See </p>
                 </section>
-                <section id="vsd">
-                        <title>Bring Up Single VSD VM Manually</title>
-                        <p><b>Note:</b> This patch is not applicable for the <xref
-                                        href="carrier-grade-technical-overview-denver.dita">Denver
-                                        deployment</xref>. </p>
-                        <p>You must launch a virtual machine for the required HPE DCN Virtualized
-                                Services Directory (<i>VSD</i>) and create required users.</p>
-                        <p>For more information, see <xref
-                                        href="carrier-grade-install-vsd-vm.dita#topic7646cgivv">Bringing
-                                        Up Single VSD VM Manually</xref>.</p>
-                </section>
                 <section id="prepbare">
                         <title>Prepare the servers</title>
                         <p>Perform the following tasks on each server you will use as a compute
@@ -314,7 +299,17 @@ StrictHostKeyChecking no </codeblock></li>
                         </ul>
                 </section>
                </bodydiv>
-                <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
+                <section id="vsd">
+                        <title>Bring Up Single VSD VM Manually</title>
+                        <p>You must launch a virtual machine for the required HPE DCN Virtualized
+                                Services Directory (<i>VSD</i>) and create required users.</p>
+                        <p>For more information, see <xref
+                                        href="carrier-grade-install-vsd-vm.dita#topic7646cgivv"
+                                        >Bringing Up Single VSD VM Manually</xref>.</p>
+                </section>
+                
+                <section
+                        conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                         id="conref-vmware-workaround"/>
                 <section id="next-step">
                         <title>Next Step</title>

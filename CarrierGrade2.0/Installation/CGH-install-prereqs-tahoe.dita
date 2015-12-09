@@ -21,8 +21,15 @@
                 </metadata>
         </prolog>
         <body>
-                        <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cips/prereqs"
-                        />
+                        <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cips/prereqs"/>
+                <section id="vsd">
+                        <title>Bring Up Single VSD VM Manually</title>
+                        <p>You must launch a virtual machine for the required HPE DCN Virtualized
+                                Services Directory (<i>VSD</i>) and create required users.</p>
+                        <p>For more information, see <xref
+                                        href="carrier-grade-install-vsd-vm.dita#topic7646cgivv"
+                                        >Bringing Up Single VSD VM Manually</xref>.</p>
+                </section>
                 <section>
                         <title>Next Step</title>
                         <p><xref href="carrier-grade-install-download-tahoe.dita#topic7148cgidt"

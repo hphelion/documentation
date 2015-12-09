@@ -27,12 +27,6 @@
         >services</xref>.</p>
     </section>
     <section id="install-option">
-      <title>Installation options</title>
-      <p>HP Helion OpenStack Carrier Grade has two baremetal installation options depending on your
-        system configuration. It allows you to manage the KVM and VMware ESX<tm tmtype="reg"/>
-        hypervisors and provision virtual machines.</p>
-      <p>You can find more information on the hypervisor options in the <xref
-          href="carrier-grade-technical-overview.dita#topic3485cgto">Technical Overview</xref>.</p>
       <p id="tahoe"><b>KVM with DCN Topology using the <i>tahoe</i> template</b></p>
       <p>If you are installing the <codeph>tahoe</codeph> template, you are installing the KVM
         region and HP DCN VRS networking. </p>

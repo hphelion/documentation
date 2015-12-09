@@ -147,10 +147,8 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   </tbody>
                                                 </tgroup>
                                         </table><p id="kvm"><b>KVM Region Installation
-                                        files</b></p>Move the downloaded files to the
-                                                <codeph>/home/wrsroot/</codeph> directory of
-                                                <codeph>controller-0</codeph> in the KVM region
-                                        during the installation process.<p>
+                                        files</b></p>The following files for installing the KVM
+                                        region are in the <b>WR</b> folder in the extracted download package.<p>
                                                 <table id="topic7148__table_yhb_zny_zs">
                                                   <tgroup cols="2">
                                                   <colspec colnum="1" colname="col2"
@@ -189,13 +187,13 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                 </table>
                                         </p><itemgroup id="patches">
                                                 <p><b> Mandatory patches</b></p>
-                                                <p>The mandatory_patches directory contains:<ul
-                                                  id="ul_o1k_trn_g5">
+                                                <p>The <b>mandatory_patches</b> directory
+                                                  contains:<ul id="ul_o1k_trn_g5">
                                                   <li><b>providernet-tab-missing-in-horizon</b>.
                                                   This directory contains the Horizon Provider
                                                   Network Patch patch. </li>
                                                   <li><b>security_patches</b>. This directory
-                                                  contains the Ramdomize Cobbler Password patch
+                                                  contains the Randomize Cobbler Password patch
                                                   files:
                                                   <codeph>cg-hlm-cobbler-random.patch</codeph> and
                                                   <codeph>knc-cobbler-random.patch</codeph>.</li>
@@ -211,14 +209,16 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                 currently supported version is <b id="dcn-version">3.2R4</b>.</p>
                         <p>Extract the downloaded files as indicated in the following table.</p>
                         <table id="table_mlr_bcz_st">
-                                <tgroup cols="2">
-                                        <colspec colnum="1" colname="col2" colwidth="3.26*"/>
-                                        <colspec colnum="2" colname="col3" colwidth="2.13*"/>
+                                <tgroup cols="3">
+                                        <colspec colnum="1" colname="col2" colwidth="1.52*"/>
+                                        <colspec colnum="2" colname="col3" colwidth="1*"/>
+                                        <colspec colname="newCol2" colnum="3" colwidth="1*"/>
                                         <thead>
                                                 <row>
                                                   <entry>File Name</entry>
                                                   <entry>To be copied to the lifecycle
                                                   manager</entry>
+                                                  <entry>Notes</entry>
                                                 </row>
                                         </thead>
                                         <tbody>
@@ -238,28 +238,33 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <codeph>/root/cg</codeph> if you don’t have in the
                                                   lifecycle manager</b></p>
                                                   </entry>
+                                                  <entry/>
                                                 </row>
                                                 <row>
                                                   <entry><p>vsd.xml</p><p>VSD-3.2.4_134-hp.ova</p>VSD-3.2.4_134-hp.qcow2</entry>
                                                   <entry>
                                                   <p>/var/lib/libvirt/images</p>
                                                   </entry>
+                                                  <entry/>
                                                 </row>
                                                 <row>
-                                                  <entry>
-                                                  <p>itoolbox1.ova</p>
-                                                  <p>VRS_3.2.6-0b008b5_11252015.ovf</p>
-                                                  <p>VRS_3.2.6-0b008b5_11252015-disk1.vmdk</p>
-                                                  </entry>
+                                                  <entry>itoolbox1.ova</entry>
+                                                  <entry><codeph>/var/www/html</codeph></entry>
+                                                  <entry>Optional</entry>
+                                                </row>
+                                                <row>
+                                                  <entry>VRS_3.2.6-0b008b5_11252015.ovf<p>VRS_3.2.6-0b008b5_11252015-disk1.vmdk</p></entry>
                                                   <entry>
                                                   <p><codeph>/var/www/html</codeph>
                                                   </p>
                                                   </entry>
+                                                  <entry>Not required for Tahoe</entry>
                                                 </row>
                                                 <row>
                                                   <entry>TEMPL-CPV9.ova</entry>
                                                   <entry>Any location on any server that can be
                                                   accessed by the VMware vCenter client.</entry>
+                                                  <entry>Not required for Tahoe</entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>

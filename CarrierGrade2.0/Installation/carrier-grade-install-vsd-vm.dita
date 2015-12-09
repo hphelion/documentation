@@ -111,8 +111,14 @@ VSD Server : auto</codeblock></li>
                 <li>Click the Groups icon to add the user to the CMS Group.</li>
                 <li>Select the <b>CMS Group</b>, then click <b>OSadmin</b> to add the user.</li>
             </ol>
-            <p>Return to the <xref href="carrier-grade-install-prereqs.dita#topic7148cgip">Installation
-                    Prerequisites</xref>.</p>
+            <p>Return to the Installation Prerequisites for:</p>
+            <ul id="ul_tf5_wbb_h5">
+                <li><xref href="CGH-install-prereqs-tahoe.dita#topic7148cipt/vsd">Tahoe</xref></li>
+                <li><xref href="CGH-install-prereqs-memphis.dita#topic7148cipm/vsd"
+                    >Memphis</xref></li>
+                <li><xref href="CGH-install-prereqs-sacramento.dita#topic7148cips/vsd"
+                        >Sacramento</xref></li>
+            </ul>
         </section>
     </body>
 </topic>
