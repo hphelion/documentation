@@ -30,8 +30,8 @@
             <p>Make sure the file contains the following lines for the TUL network. Remove any
                 additional TUL entries, if present:</p>
             <codeblock>"vswitch_type": "nuage_vrs",
-"tul_ip_start_address": "10.20.6.50",
-"tul_ip_end_address": "10.20.6.99",
+"tul_ip_start_address": "10.x.x.x",
+"tul_ip_end_address": "10.x.x.x",
 "region_name": "regionone",</codeblock>
             <p><b>For SR-IOV environments,</b> edit the following values.</p>
             <p><codeph>physnet_VLAN_range_mappings</codeph>: Specify VLAN ranges for SRIOV/PCIPT
@@ -73,24 +73,24 @@
                         ],
                         "network": [
                             {
-                                "ip_start_address": "10.20.20.150",
-                                "ip_end_address": "10.20.20.200",
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
                                 "name": "management"
                             },
                             {
-                                "ip_start_address": "10.50.50.150",
-                                "ip_end_address": "10.50.50.199",
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
                                 "name": "blockstore"
                             },
                             {
-                                "ip_start_address": "10.30.30.150",
-                                "ip_end_address": "10.30.30.155",
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
                                 "name": "api"
                             }
                         ]
                     }
                 ],
-                "pxeboot_cidr": "192.168.100.0/24",
+                "pxeboot_cidr": "192.x.x.x/24",
                 "license_file_name": "license.lic",
                 "physnet_VLAN_range_mappings": ["physnet1:1000:1999","physnet2:2000:2020"],
                 "pci_vendor_id": ["8086:10ca","8086:10ed"]
