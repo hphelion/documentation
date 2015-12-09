@@ -20,6 +20,20 @@
           </tbody>
         </tgroup>
       </table></p>
-    
+    <section>
+    The following limitations apply to the Freezer UI and the backup and restore process
+    <ul>
+      
+      <li>
+        Admin GUI for Backup/Restore is supported only if user logs in as "hlm_backup". All other users will see the GUI panel but it the UI will not work. (BURA-216 related)
+        
+      </li><li>If Backup/Restore action fails via the GUI, the user needs to check the Freezer logs to get the details for failure ( BURA -213 )
+        
+      </li><li>Job Status and Job Result on UI and Backend (aka CLI) are not in sync
+        
+      </li><li>For a given "Action" the following Modes are not supported from UI: MongoDB, Microsoft SQL Server, Cinder and Nova
+      </li>
+    </ul>
+    </section>
   </body>
 </topic>
