@@ -278,6 +278,11 @@
     <section id="commands">
       <title>Cluster Commands</title>
       <p>These commands are available from the command line interface.</p>
+      <p>
+        <note type="tip">When executing any command for the first time, include the
+            <codeph>--dry-run</codeph> option. This will help detect potential configuration or
+          environmental issues before making any actual changes.</note>
+      </p>
     </section>
     <section id="use-syntax">
       <title>Use Syntax</title>
