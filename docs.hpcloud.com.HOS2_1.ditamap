@@ -32,6 +32,8 @@
    navtitle="Installation for Entry-scale with Swift" locktitle="yes"/>
   <topicref href="helion/installation/installation_verification.dita"
    navtitle="Installation Verification" locktitle="yes"/>
+  <topicref href="helion/operations/recover_downed_cluster.dita"
+   navtitle="Recovering a Downed Cluster After Power Outage" locktitle="yes"/>
   <topicref href="helion/objectstorage/allocating_disk_drives.dita"
    navtitle="Allocating Disk Drives for Object
    Storage" locktitle="yes"/>

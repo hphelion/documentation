@@ -62,6 +62,11 @@
               <entry>Entry Scale with ESX Install</entry>
               <entry>The contents of the net_conf.json file has been updated (DOCS-2243)</entry>
             </row>
+            <row>
+              <entry>Recover a Downed Node</entry>
+              <entry>Added steps for Vertica database recovery using the new
+                monasca-vertica-recovery.yml playbook (DOCS-2294)</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
