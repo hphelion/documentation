@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sm4_tm1_h5">
+  <title>HPE Helion 2.0 Development Platform: Installation Overview</title>
+  <body>
+    <section>
+      <p>The HPE Helion Development Platform is made up of several services. Each of these services
+        can be installed independently. You do not have to install them in any particular order.</p>
+      <p>Services are installed using the HDP Installer, also known as HDPI. This tool is a plugin
+        for the python-openstackclient (OSC). You will download and set up the HDPI before
+        installing any services.</p>
+      <p>During installation, the HDPI refers to a configuration file named clouds.yaml for the
+        parameters it needs. There is only one clouds.yaml file. Each service has its own section
+        within that file containing parameters specific to that service. The information must be in
+        the clouds.yaml file before you install the service. However, since each service can be
+        installed separately, you can populate the whole file at once, or only one section at a
+        time, as you prefer.</p>
+      <p>During installation, the required files will be downloaded from the Helion Download Network
+        (HDN). Depending on network traffic, this may take up to 90 minutes. This download may also
+        be problematic if your HPE Helion OpenStack lifecycle manager (previously known as the
+        deployer node), is behind significant layers of security. To avoid possible delay,
+        interruption, or just for convenience, you can download the files before beginning the
+        installation process. If the installer finds the files already in the appropriate location,
+        it will not download them again.</p>
+    </section>
+    <section>
+      <title>General Installation Procedure</title>
+      <p>You do not have to install all available services at the same time.</p>
+   <ol>
+        <li>(optional) Download the installation files from the Helion Download Network (HDN) and,
+          if necessary, copy them to the correct location.</li>
+        <li>Ensure all prerequisites are satisfied. Check environmental configuration, gather
+          required information, and verify required connectivity.</li>
+        <li>Create the clouds.yaml file and populate it with the minimum required information.</li>
+        <li>Download and set up the HDPI.</li>
+        <li>Populate the clouds.yaml file with the remaining information required for all services /
+          the next service you intend to install.</li>
+        <li>Using the HDPI, install each service.</li>
+      </ol>
+    </section>
+  </body>
+</topic>

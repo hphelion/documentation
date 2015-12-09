@@ -13,6 +13,8 @@
     <!--<topichead navtitle="Developer Quick Start Trial Guide"><topicref href="2.0/devplatform.ALS-developer-trial-quick-start.dita" navtitle="Quick Start Step 1: Register" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start2.dita" navtitle="Quick Start Step 2: Download Tools" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start3.dita" navtitle="Quick Start Step 3: Create Sandbox" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start4.dita" navtitle="Quick Start Step 4: Create Cluster" locktitle="yes"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start5.dita" locktitle="yes" navtitle="Quick Start Step 5: Windows (optional)"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start6.dita" locktitle="yes" navtitle="Quick Start Step 6: Explore More"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-termination.dita" locktitle="yes" navtitle="Quick Start Termination"/><topicref href="2.0/devplatform.ALS-developer-trial-quick-start-troubleshooting.dita" locktitle="yes" navtitle="Quick Start Troubleshooting"/></topichead>-->
     <topichead navtitle="Installation">
       <!--<topicref href="2.0/installation/devplatform_commercial_install.dita" navtitle="Full Platform Installation - All Services" locktitle="yes"/>-->
+      <topicref href="2.0/installation/devplatform_install_overview.dita"
+        navtitle="Installation Overview" locktitle="yes"/>
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/install_cloudsyaml.dita"
