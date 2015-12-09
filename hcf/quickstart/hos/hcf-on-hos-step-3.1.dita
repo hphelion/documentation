@@ -9,6 +9,20 @@
   </metadata>
  </prolog>
  <conbody>
-  <p></p>
+  <simpletable id="simpletable_rlr_5vk_g5">
+   <strow>
+    <stentry>1. <xref conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
+       <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3.
+        <b><keyword keyref="quickStartHOSstep3" id="quickStartHOSstep3"/></b></p><p>4. <xref
+       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
+       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
+      conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
+    <stentry>
+     <xref href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st">
+      <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+     </xref>
+    </stentry>
+   </strow>
+  </simpletable>
  </conbody>
 </concept>
