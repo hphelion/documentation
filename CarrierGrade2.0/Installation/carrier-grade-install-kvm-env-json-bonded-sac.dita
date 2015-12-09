@@ -69,9 +69,9 @@
                                 "pre-up route delete default"
                             ],
                             "network-address": {
-                                "cidr": "192.168.123.0/24",
-                                "start-address": "192.168.123.100",
-                                "gateway": "192.168.123.1"
+                                "cidr": "192.x.x.x/24",
+                                "start-address": "192.x.x.x",
+                                "gateway": "192.x.x.x"
                             }
                         },
                         {
@@ -79,8 +79,8 @@
                             "type": "vlan",
                             "segment-id": "124",
                             "network-address": {
-                                "cidr": "192.168.124.0/24",
-                                "start-address": "192.168.123.100"
+                                "cidr": "192.x.x.x/24",
+                                "start-address": "192.x.x.x"
                             }
                         },
                         {
@@ -88,8 +88,8 @@
                             "type": "vlan",
                             "segment-id": "125",
                             "network-address": {
-                                "cidr": "192.168.125.0/24",
-                                "start-address": "192.168.125.100"
+                                "cidr": "192.x.x.x/24",
+                                "start-address": "192.x.x.x"
                             }
                         }
                     ]
@@ -135,9 +135,9 @@
                             "type": "vlan",
                             "segment-id": "126",
                             "network-address": {
-                                "cidr": "192.168.126.0/24",
-                                "start-address": "192.168.126.100",
-                                "gateway": "192.168.126.1"
+                                "cidr": "192.x.x.x/24",
+                                "start-address": "192.x.x.x",
+                                "gateway": "192.x.x.x"
                             }
                         }
                     ]
@@ -173,8 +173,8 @@
                             "type": "vlan",
                             "segment-id": "",
                             "network-address": {
-                                "cidr": "192.168.127.0/24",
-                                "start-address": "192.168.127.100"
+                                "cidr": "192.x.x.x/24",
+                                "start-address": "192.x.x.x"
                             }
                         }
                     ]
@@ -320,10 +320,12 @@
     ]
 }
 </codeblock>
-            <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM
-                address range to itself for serving python and debian repositories. Make sure that
-                you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM
-                Host.</p>
+            <p>
+                <note>The Helion Configuration Processor assigns the first address of the CLM
+                    address range to itself for serving python and debian repositories. Make sure
+                    that you set the first IP address of the CLM range for the eth2 (CLM) address of
+                    the KVM Host.</note>
+            </p>
 </section>
     <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
         <li><xref href="CGH-2-install-sacramento.dita#topic10581/conref-env-json">Sacramento
