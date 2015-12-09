@@ -34,7 +34,7 @@
       <sectiondiv outputclass="insideSection"><p>These steps will show you how to add the new
           Compute node to your <codeph>servers.yml</codeph> file and then run the playbooks that
           update your cloud configuration. You will run these playbooks from the lifecycle
-          manager.</p> 
+          manager.</p>
         <ol>
           <li>Log in to your lifecycle manager.</li>
           <li>Checkout the <codeph>site</codeph> branch of your local git so you can begin to make
