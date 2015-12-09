@@ -13,6 +13,16 @@
   <refbody>
     <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
       <desc>
+        <note type="warning">Do not configure any variables other than those specified in the
+            <filepath>overrides.tfvars.sample</filepath> file. Doing this will cause the cluster
+          creation process to fail.<draft-comment author="michaelk">Some values that break cluster
+              creation:<ul id="ul_btq_ryz_g5">
+              <li>ccdb_role_tag</li>
+              <li>container-host-count</li>
+              <li>etc_metrics_server/machines</li>
+              <li>etcd_metrics_server/nats/password</li>
+              <li>uaadb_tag</li>
+            </ul></draft-comment></note>
         <note type="important">All values are required. Except for <codeph>dea_count</codeph>,
           specify all variable values in quotation marks. These values are case-sensitive.</note>
       </desc>
