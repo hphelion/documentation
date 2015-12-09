@@ -25,61 +25,33 @@
                 <p id="intro">This document describes the prerequisite steps to download the installation files
                         required to install HP Helion OpenStack Carrier Grade in a baremetal
                         environment.</p>
-                
-                        <p>Launch the <xref
-                                        href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                                        format="html" scope="external">Helion Distribution Network
-                                        (HDN)</xref>. You must <xref
-                                        href="https://idm.pod1.prod-core.hpwsportal.com/webid/"
-                                        format="html" scope="external">obtain a user account on
-                                        HDN</xref> in order to download these files. </p>
-                        <section id="getinstall">
-                        <p>Click the <b>Downloads</b> tab and locate the following downloads. <ul
-                                        id="ul_dcw_yld_gt">
-                                        <li><b><b id="productShow_appName">Helion Carrier Grade 2.0
-                                                  AVS</b></b>. Installation files for the HP Helion
-                                                OpenStack Carrier Grade Denver deployment. This link
-                                                will download the
-                                                  <codeph>hcg2_kvm_avs.tar.gz</codeph> file. </li>
-                                        <li><b>Helion Carrier Grade 2.0.0 VRS</b>   Installation
-                                                files for the HP Helion OpenStack Carrier Grade
-                                                Tahoe, Memphis, and Sacramento deployments. This
-                                                link will download the
-                                                  <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
-                                                file. </li>
-                                </ul></p>
-                        <p><b>Note:</b> When downloading installation files, always download and
-                                verify the signature file before installing. </p>
-                        <ol>
-                                <li>In a browser, navigate to <xref
-                                                href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                                                format="html" scope="external">Helion Download
-                                                Network(HDN)</xref>. <ul id="ul_lvg_jb2_xs">
-                                                <li>Click <b>Sign In</b> to log in using your
-                                                  account. </li>
-                                                <li>After signing in, click the <b>Downloads</b>
-                                                  link in the menu on the left side of the
-                                                  page.</li>
-                                                <li>On the <b>Downloads</b> page, locate HP Helion
-                                                  OpenStack Carrier Grade and click
-                                                  <b>Download</b>.</li>
-                                        </ul></li>
-                                <li>Download the following files: <ul id="ul_tfk_d2r_f5">
-                                                <li><b>Helion Carrier Grade 2.0.0 AVS</b>.
-                                                  Installation files for HP Helion OpenStack Carrier
-                                                  Grade. This link will download the
-                                                  <codeph>hcg2_kvm_avs.tar.gz</codeph> file. Also
-                                                  download the <b> hcg2_kvm_avs.tar.gz.sha256</b>
-                                                  checksum file and <b>hcg2_kvm_avs.tar.gz.sig</b>
-                                                  fignature file.</li>
-                                                <li><b>Helion Carrier Grade 2.0.0 VRS</b>.
-                                                  Installation files for HP Helion OpenStack Carrier
-                                                  Grade. This link will download the
-                                                  <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
-                                                  file. </li>
-                                        </ul></li>
-                        </ol>
-                </section>
+                <section>In a browser, navigate to <xref
+                                href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+                                format="html" scope="external">Helion Download Network(HDN)</xref>.
+                                <ol id="ul_lvg_jb2_xs">
+                                <li>Click <b>Sign In</b> to log in using your account. </li>
+                                <li>After signing in, click the <b>Downloads</b> link in the menu on
+                                        the left side of the page.</li>
+                                <li>Click the <b>Downloads</b> tab and locate the following
+                                        download. </li>
+                        </ol><ul id="ul_zll_rjv_g5">
+                                <li><b>Helion Carrier Grade 2.0.0 VRS</b> Installation files for the
+                                        HP Helion OpenStack Carrier Grade Tahoe, Memphis, and
+                                        Sacramento deployments. This link will download the
+                                                <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
+                                        file. </li>
+                                <li><b>Helion Carrier Grade 2.0 VRS Checksum</b>. The SHA256
+                                        checksum for Helion Carrier Grade 2.0 VRS. This link will
+                                        download the
+                                                <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz.sha256</codeph>
+                                        file.</li>
+                                <li><b>Helion Carrier Grade 2.0 VRS Signature</b>. The signature
+                                        file for Helion Carrier Grade 2.0 VRS. This link will
+                                        download the
+                                                <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz.sig</codeph>
+                                        file.</li>
+                        </ul><p><b>Note:</b> When downloading installation files, always download
+                                and verify the signature file before installing. </p></section>
                 <!--<section id="verify"><title>Verify the downloaded signature</title><p>After downloading the installation packages, you should verify the signature of the download. You can use the GPG utility, which is already installed on the KVM Host. Signed by the signature file.</p><p>A set of GPG public keys are available on <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html" scope="external">Helion Download Network(HDN)</xref> . If you did not download the public keys in the previous section, click the <b>GPG keys to verify signature files</b> link in HDN to download the <codeph>cg-hos.tar.gz.</codeph> file. </p><ol><li>Copy the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file to the <codeph>/root/cg/</codeph> directory. You wlll need to create this directory:<codeblock>mkdir /root/cg/</codeblock></li><li>Extract the <codeph>GPG-HPCSS-Public-Keys.tar</codeph> file.<codeblock> tar xvf GPG-HPCSS-Public-Keys.tar </codeblock></li><li>Copy the public keys to the KVM Host server, extract the keys from the compressed files. <p>The following keys are included in the download:</p><ul id="ul_uzg_xmq_bt"><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-1.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-2.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-3.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-4.pub</li><li>Hewlett Packard EnterpriseCompanyRSA(HPCodesigningService)-5.pub</li><li>hpPublicKey.pub</li><li>hpPublicKey2048.pub</li></ul></li><li>Execute the following command to import the keys: <codeblock>gpg -\-import "&lt;filename>"</codeblock><p>Where &lt;filename> is the name of the extracted file.</p><p>The keys are then imported into the gpgp key share: <codeblock>gpg -\-import hpPublicKey.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-1.pub 
 gpg -\-import Hewlett Packard EnterpriseCompanyRSA\(HPCodesigningService\)-2.pub 

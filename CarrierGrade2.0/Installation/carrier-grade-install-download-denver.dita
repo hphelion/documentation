@@ -23,25 +23,30 @@
         <body>
                
                 <p conref="carrier-grade-install-download.dita#topic7148cgid/intro"/>
-                <p>Launch the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-                                format="html" scope="external">Helion Distribution Network
-                                (HDN)</xref>. You must <xref
-                                href="https://idm.pod1.prod-core.hpwsportal.com/webid/"
-                                format="html" scope="external">obtain a user account on HDN</xref>
-                        in order to download these files. </p>
-                <section id="getinstall">
-                        <p>Click the <b>Downloads</b> tab and locate the following download. <ul
-                                        id="ul_dcw_yld_gt">
-                                        <li><b><b id="productShow_appName">Helion Carrier Grade 2.0
-                                                  AVS</b></b>. Installation files for the HP Helion
-                                                OpenStack Carrier Grade Denver deployment. This link
-                                                will download the
-                                                  <codeph>hcg2_kvm_avs.tar.gz</codeph> file. </li>
-                                </ul></p>
-                        <p><b>Note:</b> When downloading installation files, always download and
-                                verify the signature file before installing. </p>
-                </section>
-                <section conref="carrier-grade-install-download.dita#topic7148cgid/getinstall"/>
+                <section>In a browser, navigate to <xref
+                                href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+                                format="html" scope="external">Helion Download Network(HDN)</xref>.
+                                <ol id="ul_lvg_jb2_xs">
+                                <li>Click <b>Sign In</b> to log in using your account. </li>
+                                <li>After signing in, click the <b>Downloads</b> link in the menu on
+                                        the left side of the page.</li>
+                                <li>Click the <b>Downloads</b> tab and locate the following
+                                        download. </li>
+                        </ol><ul id="ul_zll_rjv_g5">
+                                <li><b>Helion Carrier Grade 2.0.0 AVS</b> Installation files for the
+                                        HP Helion OpenStack Carrier Grade Tahoe, Memphis, and
+                                        Sacramento deployments. This link will download the
+                                                <codeph>hcg2_kvm_avs.tar.gz.tar.gz</codeph> file. </li>
+                                <li><b>Helion Carrier Grade 2.0 AV Checksum</b>. The SHA256 checksum
+                                        for Helion Carrier Grade 2.0 VRS. This link will download
+                                        the <codeph>hcg2_kvm_avs.tar.gz.sha256</codeph> file.</li>
+                                <li><b>Helion Carrier Grade 2.0 AVS Signature</b>. The signature
+                                        file for Helion Carrier Grade 2.0 VRS. This link will
+                                        download the <codeph>hcg2_kvm_avs.tar.gz.tar.gz.sig</codeph>
+                                        file.</li>
+                        </ul><p><b>Note:</b> When downloading installation files, always download
+                                and verify the signature file before installing. </p></section>
+                <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"/>
                 <!-- <section conref="carrier-grade-install-download.dita#topic7148cgid/checksum"/> -->
                 <section conref="carrier-grade-install-download.dita#topic7148cgid/extract"/>
                 <section id="next-step">
