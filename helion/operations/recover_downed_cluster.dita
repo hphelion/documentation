@@ -57,13 +57,13 @@ stack@helion-cp-c1-m3-mgmt:~$ sudo grep --text 'log sequence number' /var/log/my
           <codeblock>sudo /etc/init.d/mysql bootstrap-pxc
 sudo service mysql restart</codeblock>
         </li>
-
         <li>Log onto the other two controller nodes and run mysql start.
           <codeblock>sudo service mysql start</codeblock>
         </li>
       </ol>
     </section>
-    <section id="vertica"><title>Recovering the Vertica Database</title>
+    <!-- 2.0 Instructions -->
+    <section id="vertica"><title>Recovering the Vertica Database in HPE Helion OpenStack 2.0</title>
       <p>The first step is to check the health of the Vertica databases as the Vertica nodes try to
         rejoin the cluster.</p>
       <p><b>Health Check</b></p>
@@ -114,6 +114,15 @@ grep dbadmin_user_password group_vars/*</codeblock></li>
           IP address of your control plane nodes.
           <codeblock>su dbadmin -c '/opt/vertica/bin/admintools -t restart_node -s &lt;vertica_cluster_ip> -d mon -p &lt;vertica_admin_password>'</codeblock></li>
       </ol>
+    </section>
+    <!-- 2.1 Instructions -->
+    <section id="vertica2.1"><title>Recovering the Vertica Database in HPE Helion OpenStack 2.1</title>
+      <p>In order to recover your Vertica databases, run the following playbook:</p>
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts monasca-vertica-recovery.yml</codeblock>
+      <p>or if you have encryption enabled, use:</p>
+      <codeblock>ansible-playbook -i hosts/verb_hosts monasca-vertica-recovery.yml --ask-vault-pass</codeblock>
+      
     </section>
     <section id="hlm"><title>Restarting the Lifecycle Manager</title>
       <ol>
