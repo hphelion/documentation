@@ -13,10 +13,10 @@
   <refbody>
     <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
       <desc>
-        <note type="warning">Do not configure any variables other than those specified in the
-            <filepath>overrides.tfvars.sample</filepath> file. Doing this will cause the cluster
-          creation process to fail.<draft-comment author="michaelk">Some values that break cluster
-              creation:<ul id="ul_btq_ryz_g5">
+        <note type="warning" id="warning_tfvars">Do not configure any variables other than those
+          specified in the <filepath>overrides.tfvars.sample</filepath> file. Doing this will cause
+          the cluster creation process to fail.<draft-comment author="michaelk">Some values that
+            break cluster creation:<ul id="ul_btq_ryz_g5">
               <li>ccdb_role_tag</li>
               <li>container-host-count</li>
               <li>etc_metrics_server/machines</li>

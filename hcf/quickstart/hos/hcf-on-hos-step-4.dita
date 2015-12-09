@@ -63,9 +63,9 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
       <li>Add the necessary variables to your <filepath>tfvars</filepath> file. For more information
               and examples, see <xref
                 href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">Terraform
-                Variables</xref>.<note type="warning">Do not configure any variables other than
-                those specified in the <filepath>overrides.tfvars.sample</filepath> file. Doing this
-                will cause the cluster creation process to fail.</note></li>
+                Variables</xref>.<note
+                conref="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt/warning_tfvars"
+              /></li>
       <li id="run_terraform_command">Run the following
         command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note>You
         may receive the error message <msgph>Can not find requested image</msgph> if <xref
