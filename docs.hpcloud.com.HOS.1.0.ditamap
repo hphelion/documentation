@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
   <title>HPE Helion</title>
- <!--PDFTITLE "DO NOT GENERATE"-->
+  <!--PDFTITLE "DO NOT GENERATE"-->
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-    <topicref href="commercial/GA1/1.0commercial.index.dita" navtitle="HPE Helion OpenStack 1.0"
+  <topicref href="commercial/GA1/1.0commercial.index.dita" navtitle="HPE Helion OpenStack 1.0"
     locktitle="yes" otherprops="">
     <topicref href="commercial/GA1/1.0commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.0commercial.technical-overview.ga.dita"/>
@@ -31,52 +31,44 @@
         otherprops="object-storage">
         <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita"
           otherprops="scale-out">
-          <topichead navtitle="Scale up or expand" otherprops="expand">
-            <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
-            <!-- commenting out duplicate to allow export to drupal
+          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+          <!-- commenting out duplicate to allow export to drupal
             <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
             -->
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
-            <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"
-            />
-          </topichead>
-          <topichead navtitle="Shrink or scale down" otherprops="shrink">
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"
-            />
-          </topichead>
-          <topichead navtitle="Monitor" otherprops="monitor">
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
-            <topicref
-              href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
-            />
-          </topichead>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
+          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
+          <topicref
+            href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
+
           <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
         </topicref>
       </topicref>
@@ -103,13 +95,6 @@
       <topicref href="commercial/GA1/1.0commerical.services-tripleo-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
-      <!-- Not in 1.0 -->
-      <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita" toc="no"/>
-      <!--set to toc=no later-->
-      <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita" toc="no"/>
-      <!--set to toc=no later-->
-      <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita" toc="no"/>
-      <!--set to toc=no later-->
     </topicref>
     <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
     <!-- Install -->
@@ -138,19 +123,16 @@
         <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
-      <topichead navtitle="HPE Helion Openstack(R) 1.0: Post-Installation Tasks"
-        otherprops="post-install">
+      <topicref href="commercial/GA1/1.0commercial.install-post-install.dita"
+        navtitle="HPE Helion Openstack(R) 1.0: Post-Installation Tasks" otherprops="post-install">
         <topicref href="commercial/GA1/1.0commercial.networking-maskedIP.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
-      </topichead>
-      <topichead navtitle="HPE Helion Openstack(R) 1.1: Backup and Restore" otherprops="backup">
-        <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
-      </topichead>
-      <topichead navtitle="Configuring Your Network Securely" otherprops="network-security">
-        <topicref href="commercial/GA1/1.0commercial.install-GA-security.dita"/>
-      </topichead>
+      </topicref>
+      <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-security.dita"/>
+
     </topicref>
     <!-- Update -->
     <topicref href="commercial/GA1/1.0commercial.update-101-overview.dita" otherprops="update">
@@ -165,7 +147,8 @@
       <topicref href="commercial/GA1/1.0commercial.update-101-troubleshooting.dita"/>
     </topicref>
     <!-- Using Undercloud -->
-    <topichead navtitle="HPE Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard"
+    <topicref href="commercial/GA1/1.0commercial.undercloud-using-horizon.dita"
+      navtitle="HPE Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard"
       otherprops="dashboard">
       <topicref href="commercial/GA1/1.0commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.0commercial.undercloud-resources-overview.dita"/>
@@ -181,29 +164,19 @@
       <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita"/>
       <topicref href="commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita"/>
       <topicref href="commercial/GA1/1.0commercial.undercloud-eon-cli.dita"/>
-    </topichead>
-    <topichead navtitle="HPE Helion Openstack(R) 1.0: System Restore and Recovery"
-      otherprops="restore">
-      <topicref
-        href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
-      <!--commenting out duplicate to allow export to drupal
+    </topicref>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
+    <!--commenting out duplicate to allow export to drupal
       <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
     -->
-    </topichead>
-    <topichead navtitle="HPE Helion Openstack(R) 1.0: Flexible Control Pane"
-      otherprops="control-pane">
-      <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
-      <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
-    </topichead>
+    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
+    <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
     <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" toc="no"/>
     <!--set to toc=no later-->
     <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
-    <topichead navtitle="HPE Helion Openstack(R) 1.0: License Files" otherprops="license">
-      <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
-      <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
-    </topichead>
+    <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
+    <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
   </topicref>
- 
-
 </map>

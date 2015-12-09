@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
   <title>HPE Helion</title>
- <!--PDFTITLE "DO NOT GENERATE"-->
+  <!--PDFTITLE "DO NOT GENERATE"-->
   <topicmeta>
     <copyright>
       <copyryear year="2015"/>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-    <topicref href="commercial/GA1/1.1commercial.index.dita"
+  <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HPE Helion OpenStack 1.1.1 and 1.1" locktitle="yes" otherprops="">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New"
       locktitle="yes"/>
@@ -112,38 +112,38 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes" toc="no"/>
-       
-        <!-- <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
+
+      <!-- <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
         navtitle="Network Security">-->
-        <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
+      <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
         navtitle="Configuring Your Network Securely" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" navtitle="TLS Support"
-          locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
-          navtitle="Configuring Support for Customer-provided Certs" locktitle="yes" toc="no"/>
-      
+      <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" navtitle="TLS Support"
+        locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
+        navtitle="Configuring Support for Customer-provided Certs" locktitle="yes" toc="no"/>
+
       <!-- Install KVM -->
       <!-- Install ESK -->
       <!-- Post Install -->
       <!-- Hight Avail -->
-    
-        <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"
-          navtitle="Virtual Demo Installation"  locktitle="yes"/>
-      
+
+      <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"
+        navtitle="Virtual Demo Installation" locktitle="yes"/>
+
     </topicref>
-     
-      <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita"
-        navtitle="Verify Your Installation" locktitle="yes" otherprops="post-install">
+
+    <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita"
+      navtitle="Verify Your Installation" locktitle="yes" otherprops="post-install">
       <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"
         navtitle="Verification Using Embedded Tests" locktitle="yes"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"
         navtitle="Storage Options" locktitle="yes"/>
-      </topicref>
-    
-    
-      <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
-    
+    </topicref>
+
+
+    <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
+    <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
+
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting"
       locktitle="yes" otherprops="troubleshooting">
       <!--commenting out duplicate to allow export to drupal
@@ -232,7 +232,6 @@
               href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
               navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"/>
           </topicref>
-          <!--<topichead navtitle="Monitoring an Object Storage Cluster">-->
           <topicref
             href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita"
             navtitle="Monitoring an Object Storage (Swift) Cluster" locktitle="yes"
@@ -275,7 +274,6 @@
               href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
               navtitle="Monitoring Disk Drives in Object Storage Using hpssacli" locktitle="yes"/>
           </topicref>
-          <!--</topichead>-->
           <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita"
             navtitle="Using Ringos with Object Storage (Swift) Clusters" locktitle="yes"
             otherprops="ringos">
@@ -460,7 +458,7 @@
       <topicref href="commercial/GA1/1.1commerical.services-focus-overview.dita"
         navtitle="Focus Service Overview" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/1.1commerical.services-dns-overview.dita"
-        navtitle="DNS as a Service (DNSaaS)" locktitle="yes" >
+        navtitle="DNS as a Service (DNSaaS)" locktitle="yes">
         <!--commenting out duplicate to allow export to drupal
         <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
           navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
@@ -475,9 +473,9 @@
         navtitle="Mapping a Back End to a Volume Type" locktitle="yes"/>
       <!-- Installation -->
     </topicref>
-   
-      <topicref href="commercial/GA1/1.1commercial.using.dita" navtitle="Using the Dashboards"  otherprops="dashboards"
-        locktitle="yes">
+
+    <topicref href="commercial/GA1/1.1commercial.using.dita" navtitle="Using the Dashboards"
+      otherprops="dashboards" locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.undercloud-horizon-overview.dita"
         navtitle="Undercloud Horizon Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"
@@ -498,11 +496,11 @@
         navtitle="Working with Virtual Environments" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"
         navtitle="HPE Helion OpenStack Updates and Extensions" locktitle="yes"/>
-      </topicref>
-    
- 
-      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"
-        navtitle="Backup and Restore" otherprops="backup-restore" locktitle="yes">
+    </topicref>
+
+
+    <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"
+      navtitle="Backup and Restore" otherprops="backup-restore" locktitle="yes">
       <topicref
         href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"
         navtitle="Remove or Replace a Failed Overcloud Controller" locktitle="yes"/>
@@ -510,8 +508,8 @@
         navtitle="Recovering after a Power Outage" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"
         navtitle="Disaster Recovery" locktitle="yes"/>
-      </topicref>
-   
+    </topicref>
+
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.related-topics.dita"
       navtitle="Related OpenStack Documentation" locktitle="yes"/>
@@ -526,7 +524,8 @@
         navtitle="Flexible Control Plane Installation" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
     </topicref>
-      <topicref href="commercial/GA1/license-container.dita" navtitle="HPE Helion Openstack 1.1.1 and 1.1: License Files" otherprops="license">
+    <topicref href="commercial/GA1/license-container.dita"
+      navtitle="HPE Helion Openstack 1.1.1 and 1.1: License Files" otherprops="license">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
@@ -539,6 +538,6 @@
     <!-- Files in MD repo Under Revision not in DITA -->
     <!-- 1.0 -->
   </topicref>
- 
+
 
 </map>

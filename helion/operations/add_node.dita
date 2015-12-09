@@ -23,6 +23,7 @@
       </ol> 
     </section>
 
+
     <section  id="prereqs"><title outputclass="headerH">Prerequisites</title>
       <sectiondiv outputclass="insideSection"><p>You should have one or more baremetal servers that
           meet the minimum hardware requirements for a Compute node which are documented in the
