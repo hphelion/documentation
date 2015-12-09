@@ -122,8 +122,10 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 </section>
   <section id="upgrading-a-cluster"><title>Upgrading a cluster</title> <p>To upgrade a cluster:</p>  
     <ol id="ol_axs_cnk_ft"><li>SSH into the Core node in the cluster.</li>  
-      <li>Run this command <codeblock>eval "$(curl -Ls http://bit.ly/1XRoHMV)"</codeblock></li>  
-      <li>Update kato itself <codeblock>kato node upgrade --update-kato </codeblock></li>  
+      <li>Run this command.<codeblock>eval "$(curl -Ls http://bit.ly/1XRoHMV)"</codeblock></li>
+        <li>Reboot. <codeblock>sudo reboot</codeblock></li>
+        <li>SSH back into the Core node.</li>  
+      <li>Update the kato tool itself <codeblock>kato node upgrade --update-kato </codeblock></li>  
       <li>Upgrade the cluster.<codeblock>kato node upgrade</codeblock></li> </ol>  
      <p>This will automatically arrange the nodes in the cluster into an upgrade order (see below)  
       before upgrading the nodes one at a time.</p>  

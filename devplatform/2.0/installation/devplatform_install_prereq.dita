@@ -5,27 +5,33 @@
   <body>
     <section id="prerequisites">
       <title>General Prerequisites</title>
+      <note type="warning">You must satisfy all prerequisites <i>before</i> beginning
+        installation.</note>
       <ul id="ul_plz_psf_xt">
-        <li>
-          <p>The Cinder block storage backend must be configured to use <xref
-              href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
-              scope="external">VSA</xref>, <xref
-              href="http://docs.hpcloud.com/#helion/installation/configure_3par.html" format="html"
-              scope="external">3Par</xref>, or <xref
-              href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html" format="html"
-              scope="external">Ceph</xref>.</p>
-        </li>
+        <li> Ensure that the HPE Helion <tm tmtype="reg">OpenStack</tm> environment you are using meets
+          the following requirements: <ul>
+            <li>The Cinder block storage backend must be configured to use <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_vsa.html" format="html"
+                scope="external">VSA</xref>, <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_3par.html"
+                format="html" scope="external">3Par</xref>, or <xref
+                href="http://docs.hpcloud.com/#helion/installation/configure_ceph.html"
+                format="html" scope="external">Ceph</xref>.</li>
+            <li> If you did not <xref
+                href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
+                format="html" scope="external">create the Service Network </xref>, you <b>must</b>
+              do so before proceeding.</li>
+            <li>The HP Helion Development Platform accesses the public URL for the Identity service
+              endpoint. The <xref href="http://docs.hpcloud.com/#helion/security/tls.html"
+                format="html" scope="external">SSL certificate</xref> installed with your HPE Helion
+              OpenStack environment must be configured for your specific domain/IP before
+              proceeding.</li>
+          </ul></li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
             systems include this as part of their base toolkit. This document is geared toward a
             Linux operating system, but this does not preclude the installer from running on other
             operating systems with appropriate modifications to the command-line statements.</p>
-        </li>
-        <li>
-          <p>If you did not <xref
-              href="http://docs.hpcloud.com/#helion/administration/create_hdp_servicenet.html"
-              format="html" scope="external">create the Service Network </xref>immediately after
-            installing HP Helion <tm tmtype="reg">OpenStack</tm>, you <b>must</b> do so now.</p>
         </li>
         <li>
           <p>For Windows and .NET support, due to licensing requirements, you must create and deploy
@@ -47,52 +53,62 @@
       <p>You will need the following information:</p>
       <dl>
         <dlentry>
-          <dt>Deployer</dt>
-          <dd>IP address of the HPE Helion OpenStack Deployer.</dd>
+          <dt>Lifecycle Manager (deployer node)</dt>
+          <dd>IP address of the HPE Helion OpenStack Deployer. Contact your Administrator if
+            needed.</dd>
         </dlentry>
         <dlentry>
           <dt>Username </dt>
           <dd>The OpenStack username of a cloud admin that has rights to perform a service update
-            for the selected service.</dd>
+            for the selected service. This value is located in the <codeph>~/service.osrc</codeph>
+            file on the lifecycle manager. Contact your Administrator if needed.</dd>
         </dlentry>
         <dlentry>
           <dt>Password</dt>
           <dd>The OpenStack password of a cloud admin that has rights to perform a service update
-            for the selected service.</dd>
+            for the selected service. This value is located in the <codeph>~/service.osrc</codeph>
+            file on the lifecycle manager. Contact your Administrator if needed.</dd>
         </dlentry>
       </dl>
     </section>
 
-      <note>All of the following procedures are performed on the HPE Helion OpenStack Deployer. SSH
-      to the Deployer before attempting any of these procedures.</note>
+      <note>All of the following procedures are performed on the HPE Helion OpenStack lifecycle
+      manager. SSH to the lifecycle manager  before attempting any of these procedures.</note>
     
-    <section><title>Create the <codeph>clouds.yaml</codeph> Configuration File</title>The installer
-      retrieves configuration information from a configuration file located at
-      <xref href="install_cloudsyaml.dita#id_ufp_fdn_vt">  <codeph>/.config/openstack/clouds.yaml</codeph> </xref>Each service has its own section within this
-      file where configuration information is stored.<note type="important">This file <b>must</b>
-        contain at least the<xref href="install_cloudsyaml.dita#id_ufp_fdn_vt"> Platform
-          Configuration </xref>information before the HDPI can be installed. </note></section>
+    <section>
+      <title>Create the <codeph>clouds.yaml</codeph> Configuration File</title>
+      <p>The installer retrieves configuration information from a <xref
+          href="install_cloudsyaml.dita#topic_wzw_r4w_rt/ol_apx_khy_rt">configuration file</xref>
+        named <codeph>clouds.yaml.</codeph>
+      </p>
+      <ol>
+        <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
+        <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
+        <li>Provide the required information for the <xref
+            href="install_cloudsyaml.dita#id_ufp_fdn_vt">Platform Configuration</xref> section. </li></ol>
+        <p>
+        <note>Information for other services must be added before those services can be installed,
+          but that information is not required at this time.</note>
+      </p>
+    
+    </section>
     <section id="shell">
       <title>Set Proxy Shell Variables</title>
       <p>If your network uses a proxy, it may be necessary to set the <codeph>https_proxy</codeph>
         and <codeph>http_proxy</codeph> shell variables.</p>
       <ol>
         <li>To set the shell variables, enter the following commands:
-          <codeblock>export https_proxy={ip address or url of https proxy} 
-export http_proxy={ip address or url of http proxy} </codeblock>Example:
-          <codeblock>export https_proxy=http://proxy.example.com
-export http_proxy=http://proxy.example.com</codeblock></li>
+          <codeblock>export https_proxy={ip address or url of https proxy}</codeblock><codeblock>export http_proxy={ip address or url of http proxy} </codeblock>Example:
+          <codeblock>export https_proxy=http://proxy.example.com</codeblock><codeblock>export http_proxy=http://proxy.example.com</codeblock></li>
         <li> If your network uses a proxy, you must define the proxy exclusion list
             (<codeph>no_proxy</codeph>)<ol>
             <li>Source the keystone RC file.<codeblock>source keystone.osrc</codeblock></li>
             <li>Get the Keystone <b>public</b> endpoint IP
-              address<codeblock>KEYSTONE_IP_PUBLIC=$(openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
-echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC  </codeblock>or
+              address<codeblock>KEYSTONE_IP_PUBLIC=$(openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')</codeblock><codeblock>echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC  </codeblock>or
               fully-qualified domain name, depending on your HPE Helion OpenStack
               deployment.<codeblock>id=$(openstack endpoint list | grep identity | cut -d "|" -f2 | tr -d " ")</codeblock><codeblock>openstack endpoint show $id | grep publicurl | cut -d "|" -f3 | cut -d "/" -f3 | cut -d ":" -f1 </codeblock></li>
             <li>Get the Keystone <b>internal</b> endpoint IP address.
-              <codeblock>KEYSTONE_IP_INTERNAL=$(openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
-echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
+              <codeblock>KEYSTONE_IP_INTERNAL=$(openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')</codeblock><codeblock>echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
               fully-qualified domain name, depending on your HPE Helion OpenStack
               deployment.<codeblock>id=$(openstack endpoint list | grep identity | cut -d "|" -f2 | tr -d " ")</codeblock><codeblock>openstack endpoint show $id | grep internalurl | cut -d "|" -f3 | cut -d "/" -f3 | cut -d ":" -f1 </codeblock></li>
             <li id="proxy">Set the IP address values for <codeph>no_proxy</codeph>. <note
@@ -112,15 +128,12 @@ echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
       <ol id="ol_egn_mr1_tt">
         <li>Source the Keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
         <li>Verify access to the Keystone public endpoint:
-          <codeblock>KEYSTONE_URL_PUBLIC=`openstack endpoint list | grep keystone | grep public | grep -Eo '(http|https)://{1}\S+'`
-wget -t3 --timeout=5 -O/dev/null -q $KEYSTONE_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $KEYSTONE_URL_PUBLIC</codeblock></li>
-        <li>Verify access to the public Sherpa
-          endpoint. If there is no access, see the <xref
+          <codeblock>KEYSTONE_URL_PUBLIC=`openstack endpoint list | grep keystone | grep public | grep -Eo '(http|https)://{1}\S+'`</codeblock><codeblock>wget -t3 --timeout=5 -O/dev/null --no-check-certificate -q $KEYSTONE_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $KEYSTONE_URL_PUBLIC</codeblock></li>
+        <li>Verify access to the public Sherpa endpoint. If there is no access, see the <xref
             href="http://docs.hpcloud.com/#helion/troubleshooting/troubleshooting_sherpa.html"
             format="html" scope="external">Sherpa troubleshooting information</xref>, particularly
           how to set the <codeph>http_proxy</codeph> shell
-          variables.<pre>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+' | sed -e 's/v1$//'`
-wget -t3 --timeout=5 -O/dev/null -q $SHERPA_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $SHERPA_URL_PUBLIC</pre></li>
+          variables.<codeblock>SHERPA_URL_PUBLIC=`openstack endpoint list | grep sherpa | grep public | grep -Eo '(http|https)://{1}\S+' | sed -e 's/v1$//'`</codeblock><pre>wget -t3 --timeout=5 -O/dev/null --no-check-certificate -q $SHERPA_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $SHERPA_URL_PUBLIC</pre></li>
       </ol>
     </section>
   </body>
