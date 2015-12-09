@@ -81,7 +81,7 @@
     <topicref href="CarrierGrade2.0/Installation/carrier-grade-installation-guide.ditamap"
       format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation"/>
     <topicref href="CarrierGrade2.0/carrier-grade-administration.dita" navtitle="Administration"
-      locktitle="yes">
+      locktitle="yes" otherprops="administration">
       <topicref href="CarrierGrade2.0/AdminGuideNew/carrier-grade-admin-guide.dita"
         navtitle="KVM Region Administrator Guide" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/OperationsGuide/Logging/CHG-2-logging-overview.dita"
@@ -107,29 +107,31 @@
         navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/OperationsGuide/CGH-2-User-Overview.dita" navtitle="Operations"
-      locktitle="yes">
+      locktitle="yes" otherprops="operations">
       <topicref href="CarrierGrade2.0/OperationsGuide/carrier-grade-User-guide.ditamap"
         navtitle="User Guide" locktitle="yes" format="ditamap"/>
     </topicref>
     <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting.dita"
-      navtitle="Troubleshooting" locktitle="yes">
+      navtitle="Troubleshooting" locktitle="yes" otherprops="troubleshooting">
       <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting-install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/carrier-grade-license.dita"
-      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes">
+      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"
+      otherprops="opensourcelicense">
       <topicref href="CarrierGrade2.0/carrier-grade-license-osrb.dita"
         navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
         locktitle="yes"/>
       <topicref href="CarrierGrade2.0/carrier-grade-dcn-license-osrb.dita"/>
     </topicref>
     <topicref href="CarrierGrade2.0/carrier-grade-end-user-license.dita"
-      navtitle="Software License Terms" locktitle="yes">
+      navtitle="Software License Terms" locktitle="yes" otherprops="licenseterms">
       <topicref href="CarrierGrade2.0/carrier-grade-eula.dita" toc="yes"
         navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/carrier-grade-dcn-eula.dita"/>
     </topicref>
-    <topichead navtitle="Files in map not TOC" toc="no">
+    <topicref href="CarrierGrade2.0/ListOfFilesMapPlaceholder.dita"
+      navtitle="Files in Map not in TOC" locktitle="yes" toc="no">
       <topicref
         href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"
         toc="no"/>
@@ -145,7 +147,7 @@
       <topicref
         href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita"
         toc="no"/>
-    </topichead>
+    </topicref>
     <!-- hiding for RC0
     <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
       <topicref href="CarrierGrade2.0/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita"/>
