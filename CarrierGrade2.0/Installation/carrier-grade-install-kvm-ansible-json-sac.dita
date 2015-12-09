@@ -43,13 +43,13 @@
                         <row>
                             <entry>ext_dns_ip</entry>
                             <entry>The IP address of the domain server, for example:
-                                    <codeph>10.10.10.25</codeph>. </entry>
+                                <codeph>10.x.x.x</codeph>. </entry>
                         </row>
                         <row>
                             <entry>vsc_dcm_ip</entry>
                             <entry>
                                 <p>The management IP address of VSC VM, for example:
-                                        <codeph>10.10.10.20</codeph>. This address is in the
+                                    <codeph>10.x.x.x</codeph>. This address is in the
                                         <codeph>bof.cfg</codeph> file. </p>
                                 <p>Open the <codeph>bof.cfg</codeph> file and look for the
                                     following:</p>
@@ -62,7 +62,7 @@ _vars.vsc_dcm_ip_subnet}}
                             <entry>vsc_dcm_ip_ha</entry>
                             <entry>
                                 <p>The management IP of <b>HA (High Availability)</b> VSC VM, for
-                                    example: <codeph>10.10.10.20</codeph>. This address is in the
+                                    example: <codeph>10.x.x.x</codeph>. This address is in the
                                         <codeph>bof.cfg</codeph> file. </p>
                                 <p>Open the <codeph>bof.cfg</codeph> file and look for the
                                     following:</p>
@@ -79,12 +79,12 @@ _vars.vsc_dcm_ip_subnet}}
                         <row>
                             <entry>vsc_tul_cidr</entry>
                             <entry>The data management IP address and subnet, for example:
-                                    <codeph>192.168.200.20/24</codeph>.</entry>
+                                <codeph>192.x.x.x/24</codeph>.</entry>
                         </row>
                         <row>
                             <entry>vsc_tul_cidr_ha</entry>
                             <entry>The high availability (HA) data management IP address and subnet,
-                                for example: <codeph>192.168.200.20/24</codeph>.</entry>
+                                for example: <codeph>192.x.x.x/24</codeph>.</entry>
                         </row>
                         <row>
                             <entry>vsc_user_name</entry>
@@ -111,7 +111,7 @@ _vars.vsc_dcm_ip_subnet}}
                             <entry>
                                 <p>The static routes (with /subnet) for subnets reachable through
                                     the management IP ie</p>
-                                <codeblock> vsc_route_mgmt_cidr": ["10.20.20.0/24", "10.1.33.0/24" ]</codeblock>
+                                <codeblock> vsc_route_mgmt_cidr": ["10.x.x.x/24", "10.x.x.x/24" ]</codeblock>
                                 <p>The first address corresponds to the DNS server and the second
                                     corresponds to the CLM Network.</p>
                             </entry>
@@ -171,25 +171,25 @@ _vars.vsc_dcm_ip_subnet}}
             "name": "ansible-vars",
             "properties": {
                 "dns_domain_name": "dcn-two.helion.cg",
-                "ext_dns_ip": "10.1.64.20",
-                "dns_address": "10.1.64.20",
-                "vsc_dcm_ip": "10.200.50.31",
-                "vsc_dcm_ip_ha": "10.200.50.32",
+                "ext_dns_ip": "10.x.x.x",
+                "dns_address": "10.x.x.x",
+                "vsc_dcm_ip": "10.x.x.x",
+                "vsc_dcm_ip_ha": "10.x.x.x",
                 "vsc_dcm_ip_subnet": "24",
-                "vsc_tul_cidr": "192.168.9.31/24",
-		"vsc_tul_cidr_ha": "192.168.9.32/24",
-                "vsc_tul_ip": "192.168.9.31",
-		"vsc_tul_ip_ha": "192.168.9.32",
+                "vsc_tul_cidr": "192.x.x.x/24",
+		"vsc_tul_cidr_ha": "192.x.x.x/24",
+                "vsc_tul_ip": "192.x.x.x",
+		"vsc_tul_ip_ha": "192.x.x.x",
                 "vsc_user_name": "admin",
                 "vsc_user_pass": "admin",
                 "vsc_xmpp_name": "vsc:password@vsd1.dcn-two.helion.cg",
 		"vsc_xmpp_name_ha": "vsc:password@vsd1.dcn-two.helion.cg",
                 "vsc_route_mgmt_cidr": [
-                    "10.1.64.0/18",
-                    "10.200.190.0/24"
+                    "10.x.x.x/18",
+                    "10.x.x.x/24"
                 ],
-                "vsc_route_mgmt_gw": "10.200.50.1",
-                "vsd_address": "10.200.50.21",
+                "vsc_route_mgmt_gw": "10.x.x.x",
+                "vsd_address": "10.x.x.x",
                 "vsd_name": "vsd1",
                 "vsc_image_name": "vsc_singledisk",
                 "vsc_host_name": "vsc",
@@ -197,11 +197,11 @@ _vars.vsc_dcm_ip_subnet}}
                 "vsc_ha_enabled": 1,
 		"vsc_bgp_required": 1,
                 "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",
-                "vsd_gateway": "10.200.50.1",
+                "vsd_gateway": "10.x.x.x",
                 "vsd_netmask": "255.255.255.0",
                 "upstream_ntp_servers": [
-                    "10.1.64.20",
-                    "16.110.135.123"
+                    "10.x.x.x",
+                    "16.x.x.x"
                 ],
                 "compute_virt_type": "kvm",
                 "ssl_cert_file": "ca.crt",
