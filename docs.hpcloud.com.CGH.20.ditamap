@@ -105,10 +105,6 @@
         locktitle="yes"/>
       <topicref href="CarrierGrade2.0/HLMCLI/CGH-2-hlm-cli.dita"
         navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
-      <topicref
-        href="CarrierGrade2.0/OperationsGuide/Baremetal/carrier-grade-configure-5930-switch.dita"
-        navtitle="Configuring 5930 Switch to Support PCI-PT/SR-IOV/Baremetal Ports" locktitle="yes"
-      />
     </topicref>
     <topicref href="CarrierGrade2.0/OperationsGuide/CGH-2-User-Overview-TOC.dita"
       navtitle="Operations" locktitle="yes">

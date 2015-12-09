@@ -44,7 +44,7 @@
         <li>Block Storage (Cinder)</li>
         <li>Orchestration (Heat)</li>
         <li>Ceilometer</li>
-        <li>Computer Operations (Nova)</li></ul> 
+        <li>Compute Operations (Nova)</li></ul> 
   <p>In addition Centralized Logging also processes logs for
             the following HP Helion OpenStack features:</p>
 
