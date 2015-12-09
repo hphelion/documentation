@@ -15,8 +15,8 @@
     </metadata>
   </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM is
-        installed</xref>, the next task in installing the <xref
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM
+        is installed</xref>, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM + ESX
         deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
@@ -40,19 +40,19 @@
         <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
             <codeblock>hlm define -t memphis &lt;cloudname&gt;</codeblock><p>Where::
               <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p><p
-            conref="CGH-2-install-sacramento.dita#topic10581c2is/cloudname"/><p>The command creates the
-              <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory, which contains several JSON
-            template files. </p></li>
+            conref="CGH-2-install-sacramento.dita#topic10581c2is/cloudname"/><p>The command creates
+            the <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory, which contains several
+            JSON template files. </p></li>
       </ol>
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-node-provision-json"
       id="conref-node-provision-json"/>
-    <p>Click here to see a  <xref href="carrier-grade-install-kvm-node-json-mem.dita">sample
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-node-json-mem.dita">sample
         node-provision.json file</xref>.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-pxe-boot"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-json" id="conref-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-def-json" id="def"/>
-    <p>Click here to see a  <xref href="carrier-grade-install-kvm-def-json-mem.dita">a sample
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-def-json-mem.dita">a sample
         definition.json file</xref></p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-env-json" id="env"/>
     <p>To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul
@@ -66,16 +66,16 @@
     <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-mem.dita">sample
         ansible.json file</xref>.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-esx-json" id="esx"/>
-    <p>Click here to see a  <xref href="carrier-grade-install-kvm-esx-json-mem.dita">sample esx.json
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-esx-json-mem.dita">sample esx.json
         file</xref>.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-json" id="ldap"/>
-    <p>Click here to see a  <xref href="carrier-grade-install-kvm-ldap-json-mem.dita">sample
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ldap-json-mem.dita">sample
         ldap.json file</xref>. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-dcn-json" id="dcn"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ccp-dcn-esx-json" id="ccp"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-wr-json" id="wr"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-mem.dita">a sample wr.json
-      file</xref>. </p>
+        file</xref>. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-mach-json" id="mach"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-verify-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-esx-proxy"
@@ -88,14 +88,15 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/providernet-patch"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-config-proc"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hdeploy"/>
+    <p><b>Note:</b> This command also configures the ESX environment.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-keystone" id="ldap3"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vsc-vm"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vrs-g"/>
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="CGH-2-install-infoblox.dita#topic15959c2ii">Installing Infoblox</xref>. Infoblox is
-        an optional component that integrates with the OpenStack Neutron networking service, to
-        provide IP Address Management (IPAM) networking services within OpenStack cloud
+      <p><xref href="CGH-2-install-infoblox.dita#topic15959c2ii">Installing Infoblox</xref>.
+        Infoblox is an optional component that integrates with the OpenStack Neutron networking
+        service, to provide IP Address Management (IPAM) networking services within OpenStack cloud
         platforms.</p>
       <p><xref href="carrier-grade-install-launch-horizon-memphis.dita#topic10581cgilhm">Launching
           the Horizon Interface</xref>. Launch the Horizon interface to load a required security
