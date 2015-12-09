@@ -489,7 +489,7 @@
       <p><b>VLAN Information for Troubleshooting</b></p>
       <p>From your lifecycle manager, run the following command and use this information for your
           <codeph>nic_mappings.yml</codeph> file:
-        <codeblock>sudo lspci -D |grep -i eth</codeblock></p>
+        <codeblock>sudo lspci -D |grep -i net</codeblock></p>
       <p>
         <table frame="all" rowsep="1" colsep="1" id="nic_mappings">
           <tgroup cols="1">
