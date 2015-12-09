@@ -142,7 +142,7 @@
           <topicref href="helion/objectstorage/creating_roles_swift_nodes.dita"
             navtitle="Creating Roles for Swift Nodes" locktitle="yes"/>
           <topicref href="helion/objectstorage/allocating_disk_drives.dita"
-            navtitle="Allocating Disk Drives for Object Storage" locktitle="yes" />
+            navtitle="Allocating Disk Drives for Object Storage" locktitle="yes"/>
 
 
           <topicref href="helion/objectstorage/swift_device_groups.dita"
@@ -385,7 +385,7 @@
       locktitle="yes" otherprops="troubleshooting">
       <topicref href="helion/troubleshooting/troubleshooting_sherpa.dita"
         navtitle="Troubleshooting the Sherpa Service" locktitle="yes"/>
-      <topicref href="helion/troubleshooting/troubleshooting_heat.dita" 
+      <topicref href="helion/troubleshooting/troubleshooting_heat.dita"
         navtitle="Troubleshooting Heat Stack Creation" locktitle="yes" toc="no"/>
       <topicref href="helion/objectstorage/troubleshooting.dita"
         navtitle="Troubleshooting the Object Storage Service" locktitle="yes"
