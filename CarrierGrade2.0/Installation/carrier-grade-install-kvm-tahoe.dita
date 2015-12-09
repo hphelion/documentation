@@ -47,6 +47,7 @@
   </section>
   
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/nic-unlock" id="nic-unlock"/>
+    <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/ssl"/>
   
   <section id="next-step">
       <title>Next Steps</title>

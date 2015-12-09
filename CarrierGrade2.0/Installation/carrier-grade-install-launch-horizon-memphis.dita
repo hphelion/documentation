@@ -16,6 +16,7 @@
   </prolog>
   <body>
     <bodydiv conref="carrier-grade-install-launch-horizon.dita#topic10581cgilh/horizon"/>
+    <section conref="carrier-grade-install-launch-horizon.dita#topic10581cgilh/vmdk"/>
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="carrier-grade-install-kvm-memphis.dita#topic1107cgikm"> Deploying the KVM
