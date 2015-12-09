@@ -69,9 +69,9 @@
                                 "pre-up route delete default"
                             ],
                             "network-address": {
-                                "cidr": "10.30.3.0/24",
-                                "start-address": "10.30.3.100",
-                                "gateway": "10.30.3.1"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
                             }
                         },
                         {
@@ -79,8 +79,8 @@
                             "type": "vlan",
                             "segment-id": "304",
                             "network-address": {
-                                "cidr": "10.30.4.0/24",
-                                "start-address": "10.30.4.100"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x"
                             }
                         },
                         {
@@ -88,8 +88,8 @@
                             "type": "vlan",
                             "segment-id": "74",
                             "network-address": {
-                                "cidr": "172.16.74.0/24",
-                                "start-address": "172.16.74.100"
+                                "cidr": "172.x.x.x/24",
+                                "start-address": "172.x.x.x"
                             }
                         }
                     ]
@@ -135,9 +135,9 @@
                             "type": "vlan",
                             "segment-id": "305",
                             "network-address": {
-                                "cidr": "10.30.5.0/24",
-                                "start-address": "10.30.5.100",
-                                "gateway": "10.30.5.1"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
                             }
                         }
                     ]
@@ -174,8 +174,8 @@
                             "type": "vlan",
                             "segment-id": "",
                             "network-address": {
-                                "cidr": "10.30.6.0/24",
-                                "start-address": "10.30.6.100"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x"
                             }
                         }
                     ]
@@ -320,10 +320,12 @@
         }
     ]
 }</codeblock>
-            <p> NOTE: The Helion Configuration Processor assigns the first address of the CLM
-                address range to itself for serving python and debian repositories. Make sure that
-                you set the first IP address of the CLM range for the eth2 (CLM) address of the KVM
-                Host.</p>
+            <p>
+                <note>The Helion Configuration Processor assigns the first address of the CLM
+                    address range to itself for serving python and debian repositories. Make sure
+                    that you set the first IP address of the CLM range for the eth2 (CLM) address of
+                    the KVM Host.</note>
+            </p>
             <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
                     <li><xref href="CGH-2-install-tahoe.dita#topic10581/env">Tahoe
                             deployment</xref></li>
