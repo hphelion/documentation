@@ -99,9 +99,9 @@ upstream_ntp_servers:
 - 10.x.x.x
 - 16.x.x.x
 ###################################################################################################################################</codeblock></li>
-        <li id="hosts">Check the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter
-          the IP address of the <codeph>vibr0</codeph> interface in the
-            <codeph>hlm_kvm_host</codeph> field, as shown in the following example. </li>
+        <li id="hosts">Edit the <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to enter
+            the IP address of the <codeph>vibr0</codeph> interface in the
+              <codeph>hlm_kvm_host</codeph> field, as shown in the following example. </li>
       </ol>
       <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
@@ -126,7 +126,8 @@ upstream_ntp_servers:
             installation process.</li>
       </ol>
     </section>
-    <section>
+    </bodydiv>
+      <section>
       <title>Configure Networking for the Baremetal Region</title>
       <p>If you are deploying the baremetal region, perform the following tasks:</p>
       <p>
@@ -142,7 +143,7 @@ upstream_ntp_servers:
         </ol>
       </p>
     </section>
-  </bodydiv>
+  
     <section id="next-step">
       <title>Next Step</title>
       <p><xref href="CGH-2-install-sacramento.dita">Installing the Non-KVM
