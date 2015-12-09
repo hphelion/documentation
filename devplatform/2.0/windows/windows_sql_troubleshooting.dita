@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="sqltroubleshooting">
+  <title>Troubleshooting: Workaround for 504 Timeout Error</title>
+  <body>
+ <section> This procedure should be applied when the following error is received when installing a
+            Microsoft SQL 2012/2014 service.
+            <codeblock> [general] Unable to attach broker to cluster: Received a status code 504 Gateway Time-out {
+        "code": 10001,
+        "description": "The request to the service broker timed out: http://192.168.15.123:3000/v2/catalog",
+        "error_code": "CF-ServiceBrokerApiTimeout",
+        "http": {
+          "uri": "http://192.168.15.123:3000/v2/catalog",
+          "method": "GET"
+        }
+      }</codeblock>This
+            procedure will also repair Microsoft SQL nodes which are in a degraded status.</section>
+      
+  <section>    <title>Procedure</title>
+      <ol><li> SSH to the core node.</li>
+        <li>Copy and paste the following code and save it to a file named
+            <codeph>remove_etc_env.sh</codeph><codeblock>appliedProxyPatchMessage="#System Proxies are disabled to ensure the controller can communicate with internal service brokers"
+      nodes=(`kato node list | grep -v -E "mssql|windea" | cut -d' ' -f 1`)
+      for node in "${nodes[@]}"
+      do :
+      ssh stackato@$node /bin/bash &lt;&lt; EOF
+      if ! grep -q "${appliedProxyPatchMessage}" /etc/environment; then
+      sudo sed -e '/_proxy/I s/^#*/#/' -i /etc/environment &amp;&amp;
+      sudo sed -i "/#HTTP_PROXY/i ${appliedProxyPatchMessage}" /etc/environment
+      fi
+      EOF
+      
+      if [[ $? != 0 ]] ; then
+      echo "unable to remove existing proxy settings. exiting"
+      exit 1
+      fi
+      done</codeblock></li>
+      
+      <li>Execute <codeblock>bash remove_etc_env.sh </codeblock></li>
+      <li>If prompted to allow SSH to a new machine, select "Y".</li>
+      <li>Reboot the core node. <codeblock>sudo reboot</codeblock></li>      
+      <li>After the core node comes back up, the issue should be resolved. You can now successfully
+          add the service or the degraded state should be fixed.</li></ol>
+  </section>
+  
+  </body>
+</topic>

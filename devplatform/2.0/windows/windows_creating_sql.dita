@@ -24,16 +24,28 @@
           <note>You must use the 1.3 version (or later) of the ALS cluster management tool for this tutorial.</note>
           </li>
       </ul></section>
-    <section id="create"><title>Create a Microsoft SQL Server service instance</title>
+    <section id="create">
+      <title>Create a Microsoft SQL Server service instance</title>
       <note>If you have already created a Microsoft SQL Server instance, you don't need to create
         another.</note>
-      <p>To create a Microsoft SQL Server service instance, use the <xref format="dita" href="../helion/CLI/ALS_Client_Downloads.dita">Helion ALS Client</xref>. To create a service
-        instance, first connect the Helion ALS client to your ALS cluster using <xref format="dita" type="section" href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-login">helion login</xref>
-        and <xref type="section" format="dita" href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-target">helion target</xref>.</p>
-    <p>The following command creates an instance of a Microsoft SQL Server 2012 service called <b>MSSQL2012Service</b> (the command will request the service plan to use):</p>
-    <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock>
-    <p>The output from this command may look like the following (in this example, the Free service plan is selected):</p>
-      <image placement="break" href="../../../media/windows_sql_create.png"></image></section>
+      <p>To create a Microsoft SQL Server service instance, use the <xref format="dita"
+          href="../helion/CLI/ALS_Client_Downloads.dita">Helion ALS Client</xref>. To create a
+        service instance, first connect the Helion ALS client to your ALS cluster using <xref
+          format="dita" type="section"
+          href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-login"
+          >helion login</xref> and <xref type="section" format="dita"
+          href="../helion/user/reference/client-ref-getting-started.dita#topic2439/command-target"
+          >helion target</xref>.</p>
+      <p>The following command creates an instance of a Microsoft SQL Server 2012 service called
+          <b>MSSQL2012Service</b> (the command will request the service plan to use):</p>
+      <codeblock>helion create-service mssql2012 MSSQL2012Service</codeblock>
+      <p>The output from this command may look like the following (in this example, the Free service
+        plan is selected):</p>
+      <image placement="break" href="../../../media/windows_sql_create.png"/>
+      <note> If the following error is received, <codeph>Unable to attach broker to cluster:
+          Received a status code 504 Gateway Time-out</codeph>, <xref
+          href="windows_sql_troubleshooting.dita">perform this fix</xref>. </note>
+    </section>
     <section id="deploy"><title>Deploy a Helion tunneling application</title>
     <p>Once the service instance is created, in order to connect to the instance, you must first deploy a tunneling application using the <b>helion tunnel</b> command.</p>
       <p>The following command creates a tunneling application to the <b>MSSQL2012Service</b> service in the connected cluster, binds the tunneling application to the requested service, and returns the credentials
