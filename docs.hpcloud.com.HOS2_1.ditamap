@@ -39,5 +39,8 @@
    Storage" locktitle="yes"/>
   <topicref href="helion/troubleshooting/troubleshooting_logging.dita"
    navtitle="Troubleshooting the Centralized Logging Service" locktitle="yes"/>
+  <topicref href="helion/operations/live_migration.dita"
+   navtitle="Live Migration of Instances" locktitle="yes"/>
  </topicref>
+ 
 </map>
