@@ -29,14 +29,6 @@
       </ul>
     </section>
 
-    <section>
-      <title>Download Files</title>
-      <p>Navigate to the <xref scope="external" format="html" href="https://helion.hpwsportal.com/catalog.html#/Home/Show">
-        HPE Helion Download Network (HDN)</xref> and log in. If necessary, create an
-        account first. Select the required package and Download the DNSaaS Installer csu file to
-        your local directory unzip the csu to extract the deployer and cloud image tar ball.</p>
-    </section>
-
     <section id="PrerequisiteCredentials">
       <title>Creating the Prerequisite Credentials</title>
       <p>Target credentials are the credentials of the user and project where the service is to be
@@ -84,6 +76,42 @@ export OS_PASSWORD=password
 export OS_AUTH_URL=http://192.168.245.5:35357/v3
 EOF</codeblock>
     </section>
+    
+    <section id="ProvisionDNSaaSImages">
+      <title>Provision DNSaaS Images</title>
+      <p>You will need to select which way you would like to provision the images for DNSaaS into your Helion instance.</p>
+      <ol>
+        <li>Automatic - Using the Images and Updates extension
+          <ol>
+            <li>Login into Horizon using the DNSaaS credentials created above.</li>
+            <li>Navigate to the <codeph>Update and Extensions panel</codeph>.</li>
+            <li>Click Download and <codeph>Install</codeph>
+              <note>It's best to do this from within the tenant you plan on deploying DNSaaS with,
+                as the images are uploaded as private to the tenant you're logged in with during the
+                time of publication.</note>
+              <p> Now once the state goes into <i>Installed</i>, the images will be pre-uploaded
+                into Glance. The Deployer tarball is uploaded to a swift container called
+                  <codeph>dnsaas-deployer</codeph> for you to download.</p>
+              <p>To download the tarball from swift you can use the Swift client, type the following
+                command: <codeblock>swift download dnsaas-deployer</codeblock></p>
+            </li>
+          </ol>
+        </li>
+        <li>Manual - Download and provision images to your cloud. <p>Navigate to the <xref
+              scope="external" format="html"
+              href="https://helion.hpwsportal.com/catalog.html#/Home/Show"> HPE Helion Download
+              Network (HDN)</xref> and log in. If necessary, create an account first. Select the
+            required package and Download the DNSaaS Installer <i>csu</i> file to your local
+            directory.</p>
+          <p>Unzip the <i>csu</i> to extract the <i>deployer</i> and cloud image tar ball.</p>
+          <note>On Windows, for example, things may be pigeonholed into <codeph>.zip</codeph> is
+              <codeph>Zip</codeph> and <codeph>.csu</codeph> is <codeph>Unknown</codeph>. So
+            renaming the <codeph>.csu</codeph> file to <codeph>.zip</codeph> will possibly make it
+            work with the unzip utility of choice.</note>
+        </li>    
+      </ol>
+    </section>
+    
     <section id="PreparingTheDeployer">
       <title>Prepare the Deployer VM</title>
       <sectiondiv>
@@ -91,13 +119,6 @@ EOF</codeblock>
         <p>You must publish the DNSaaS Cloud Image to the target project/tenant before proceeding to
           the next step. </p><ol>
           <li>Update your environment. <codeblock>$ source dnsaas.osrc</codeblock></li>
-          <li>Create an image. Make a note of the value of the <codeph>owner</codeph> parameter and
-            the <codeph>DNS Cloud Image ID</codeph>
-            value.<codeblock>$ glance image-create --name "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z" \
---file "dnsaas-2.0.0-b.1_cloud-1.0.20151005T152959Z.qcow2" \
---is-public False \
---disk-format qcow2 \
---container-format bare       </codeblock></li>
           <li>Identify the SVC network ID. Make a note of the SVC ID
             value.<codeblock>$ neutron net-show SVC 
 +---------------------------+--------------------------------------+
@@ -189,10 +210,10 @@ $ nano cloudConfig.yml                                           </codeblock></l
           <li>Run the ansible-playbook on the <keyword keyref="kw-hos"/>
             deployer.<codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts platform-pass-through.yml -e pass_through_key=""        </codeblock></li>
-          <li> Copy the contents of the <codeph>pass-through.yml</codeph> file as follows:<ul>
+          <li> Copy the contents of the <codeph>platform-pass-through.yml</codeph> file as follows:<ul>
               <li>Copy <b>from</b>: &lt;<b>HOS</b> deployer&gt;:~/platform-pass-through.yml </li>
-              <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;
-                ~/helion/my_cloud/definition/data/pass-through/platform-pass-through/hos.yml</li>
+              <li>Copy <b>to</b>: &lt;<b>DNSaaS</b> deployer&gt;:
+                ~/helion/my_cloud/definition/data/pass-through/platform-pass-through/platform-pass-through.yml</li>
             </ul>
           </li>
           <li>Commit the changes to git.

@@ -68,21 +68,21 @@
           <xref href="user/1.2index.dita">Application Lifecycle Service User Guide</xref>
           <ul>
             <li>
-              <xref href="user/1.2index.dita#topic1693/quick-start" type="section"  >Quick Start</xref>
+              <xref href="user/1.2index.dita#topic1693u/quick-start" type="section"  >Quick Start</xref>
             </li>
             <li>
               <xref href="CLI/1.2ALS_Client_Downloads.dita">Application Lifecycle Service
                 Client</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/deploying-applications" type="section"  >Deploying
+              <xref href="user/1.2index.dita#topic1693u/deploying-applications" type="section"  >Deploying
                 Applications</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/services" type="section"  >Services</xref>
+              <xref href="user/1.2index.dita#topic1693u/services" type="section"  >Services</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/logging-monitoring" type="section" >Logging &amp;
+              <xref href="user/1.2index.dita#topic1693u/logging-monitoring" type="section" >Logging &amp;
                 Monitoring</xref>
             </li>
             <li>
