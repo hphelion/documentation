@@ -427,9 +427,9 @@
       <p>The PCI bus address can be found using the <codeph>lspci</codeph> command on one of the
         servers. This command can produce a lot of output, so you can use the following command
         which will limit the output to list Ethernet class devices only:</p>
-      <codeblock>sudo lspci -D |grep -i eth</codeblock>
+      <codeblock>sudo lspci -D |grep -i net</codeblock>
       <p>Here is an example output:</p>
-      <codeblock>$ sudo lspci -D |grep -i eth
+      <codeblock>$ sudo lspci -D |grep -i net
 0000:02:00.0 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
 0000:02:00.1 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
 0000:02:00.2 Ethernet controller: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)
