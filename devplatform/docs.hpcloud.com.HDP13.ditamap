@@ -258,6 +258,8 @@
         locktitle="yes"/>
       <topicref href="1.3/windows/windows_custom_buildpacks.dita" navtitle="Custom Buildpacks"
         locktitle="yes" toc="no"/>
+      <topicref href="1.3/windows/windows_sql_troubleshooting.dita"
+        navtitle="MS SQL Troubleshooting" locktitle="yes" toc="no"/>
     </topicref>
     <!--permalink: /helion/devplatform/als/-->
     <topicref href="1.3/devplatform.sysadmin.dita" locktitle="yes"
