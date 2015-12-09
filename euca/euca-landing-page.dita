@@ -17,7 +17,7 @@
  <!--permalink: /eucalyptus/--></p>
 <p>HPE Helion Eucalyptus is open source software for building AWS-compatible hybrid clouds using IT resources that you control. It gives IT the ability to provide the same self-service capabilities users demand without sacrificing control over data security and while keeping cloud costs down. Compatibility with the AWS API enables agile development teams to programmatically self-provision resources using the same tools and processes used with the public cloud.</p>
 <p>See <xref
-        href="http://docs.hpcloud.com/eucalyptus/4.2.0/#release-notes/4.2.0/4.2.0_rn_features.html"
+        href="http://docs.hpcloud.com/eucalyptus/4.2.1/#release-notes/4.2.1/4.2.1_rn_features.html"
         type="section" scope="external" format="html">What's New in HPE Helion Eucalyptus
       4.2</xref>.</p>
 <section id="get-started-with-hp-helion-eucalyptus"> <title>Get Started with HPE Helion Eucalyptus</title>
@@ -29,10 +29,10 @@
             >Documentation</xref>
         </li>
 <li>
-  <xref href="http://support.eucalyptus.com" scope="external" format="html" >Support</xref>
+  <xref href="http://www8.hp.com/us/en/cloud/helion-eucalyptus-support.html" scope="external" format="html" >Support</xref>
 </li>
 <li>
-  <xref href="http://docs.hpcloud.com/eucalyptus/4.2.0/#shared/intro_compatibility_matrix_4.2.html" scope="external" format="html" >Support Matrix</xref>
+  <xref href="http://docs.hpcloud.com/eucalyptus/4.2.1/#shared/intro_compatibility_matrix_4.2.html" scope="external" format="html" >Support Matrix</xref>
 </li>
 </ul>
 </section>
