@@ -25,7 +25,7 @@
                 <p id="intro">This document describes the prerequisite steps to download the installation files
                         required to install HP Helion OpenStack Carrier Grade in a baremetal
                         environment.</p>
-                <section id="getinstall">
+                
                         <p>Launch the <xref
                                         href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
                                         format="html" scope="external">Helion Distribution Network
@@ -33,6 +33,7 @@
                                         href="https://idm.pod1.prod-core.hpwsportal.com/webid/"
                                         format="html" scope="external">obtain a user account on
                                         HDN</xref> in order to download these files. </p>
+                        <section id="getinstall">
                         <p>Click the <b>Downloads</b> tab and locate the following downloads. <ul
                                         id="ul_dcw_yld_gt">
                                         <li><b><b id="productShow_appName">Helion Carrier Grade 2.0
