@@ -32,7 +32,7 @@
         <dlentry>
           <dt><filepath>api <varname>[&lt;endpoint>]</varname></filepath></dt>
           <dd>Set <filepath><keyword keyref="adminUtilCLI"/></filepath> to use the specified
-              <keyword keyref="prodShort"/> configuration store for subsequent operations. If
+              <keyword keyref="prodShort"/> configuration store for subsequent operations. If an
                 <filepath><varname>&lt;endpoint></varname></filepath> is not specified, the current
             endpoint is displayed. For
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
