@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic3076_mpc">
-  <title>HPE Helion Managed Cloud with Helion OpenStack Documentation</title>
+  <title>HPE Helion Managed Private Cloud with Helion OpenStack</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -11,12 +11,13 @@
   <body>
     <p><!--PUBLISHED--><!--./index.md--><!--permalink: /--></p>
     <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-    <p>HPE Helion Managed Cloud with Helion OpenStack provides a dedicated, single tenant, HPE
-      Helion OpenStack 2.0-based managed private cloud, hosted in HPE data centers. This enterprise
-      grade, rapidly-provisioned private cloud service is available to customers in an OpEx model.
-      HPE Helion OpenStack provides an open source and highly-configurable infrastructure as a
-      service (IaaS). The optional HPE Helion Development Platform gives developers a powerful set
-      of tools to migrate traditional applications, build cloud native applications, and deploy both
-      to an open and integrated platform as a service (PaaS) layer.</p>
+    <p>HPE Helion Managed Private Cloud with Helion <tm tmtype="reg">OpenStack</tm> provides a dedicated, single tenant,
+      HPE Helion OpenStack 2.0-based managed private cloud, hosted in HPE data centers. This
+      enterprise grade, rapidly-provisioned private cloud service is available to customers in an
+      OpEx model. HPE Helion OpenStack provides an open source and highly-configurable
+      infrastructure as a service (IaaS). The optional HPE Helion Development Platform gives
+      developers a powerful set of tools to migrate traditional applications, build cloud native
+      applications, and deploy both to an open and integrated platform as a service (PaaS)
+      layer.</p>
   </body>
 </topic>

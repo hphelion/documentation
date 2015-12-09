@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="min_hardware">
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Supported Software</title>
+  <body>
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section id="openstack"><title>OpenStack Version Information</title>
+      <p><keyword keyref="kw-hos-phrase"/> services have been updated to the <xref
+          href="http://www.openstack.org/software/kilo/" scope="external" format="html">OpenStack
+          Kilo</xref> release. See <xref href="kilo_features.dita">OpenStack Kilo Features</xref>
+        for more details.</p>
+    </section>
+
+    <section id="guestos">
+      <title>Guest OS Support</title>
+      <p><keyword keyref="kw-hos-phrase"/> Guest OS support is based on the hypervisor.</p>
+      <ul>
+        <li>For ESX, refer to the <xref
+            href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0"
+            scope="external" format="html">VMware Compatibility Guide</xref>.</li>
+        <li>For KVM, refer to the table below.</li>
+      </ul>
+      <p>A <b>Verified</b> Guest OS has been tested by HPE and appears to function properly as a
+        Nova compute virtual machine on <keyword keyref="kw-hos-phrase"/>.</p>
+      <p>A <b>Certified</b> Guest OS has been officially tested by the operating system vendor, or
+        by HPE under the vendor's authorized program, and will be supported by the operating system
+        vendor as a Nova compute virtual machine on <keyword keyref="kw-hos-phrase"/>.</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_xbd_sbq_yt">
+        <tgroup cols="3">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <thead>
+            <row>
+              <entry>Operating System</entry>
+              <entry>Verified</entry>
+              <entry>Certified</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Windows Server 2008</entry>
+              <entry/>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>Windows Server 2008 R2</entry>
+              <entry/>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>Windows Server 2012</entry>
+              <entry/>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>Windows Server 2012 R2</entry>
+              <entry/>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>CentOS 6.7</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>CentOS 7.1</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>CoreOS - Stable</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Debian 7.9</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Debian 8.2</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>RHEL 6.7</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>RHEL 7.1</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>RHEL Atomic</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>SLES 11 SP4</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>SLES 12</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>Ubuntu 14.04</entry>
+              <entry>Yes</entry>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  </body>
+</topic>

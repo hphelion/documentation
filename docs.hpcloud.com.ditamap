@@ -9,7 +9,7 @@
       <copyrholder>HPE Helion</copyrholder>
     </copyright>
     <prodinfo>
-      <prodname>HPE Helion</prodname>
+      <prodname>HPE Helion Documentation</prodname>
       <vrmlist>
         <vrm version="4.1.0"/>
       </vrmlist>
@@ -20,8 +20,8 @@
   <topicref href="helion/HOS-keywords.xml" format="ditamap"/>
   <topicref href="helion/MPC/home_MPC.dita">
     <topicref href="helion/kilo_features.dita" navtitle="OpenStack Kilo Features" locktitle="yes"/>
-    <topicref href="helion/hardware.dita" navtitle="Hardware and Software Support Matrix"
-      locktitle="yes"/>
+    <topicref href="helion/MPC/supported_openstack_versions.dita"
+      navtitle="Supported Software" locktitle="yes"/>
     <topicref href="helion/eula.dita" navtitle="Software License Terms" locktitle="yes"/>
     <topicref href="helion/3rd-party-license-agreements.dita"
       navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
