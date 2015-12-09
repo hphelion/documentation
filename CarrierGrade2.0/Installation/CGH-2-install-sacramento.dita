@@ -96,13 +96,14 @@
       <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
         following command:</p>
       <codeblock>service vsd status</codeblock>
-      <p>You should see the status as below from VSD VM.</p>
+      <p>You should see the status from the VSD VM similar to the following:</p>
       <p>
         <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"/></p>
     </section>
     <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
-      license file when you purchased DCN. You need to apply that license on the KVM Host. For more
-      information, see <xref href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
+      license file when you purchased DCN. You need to apply that license on the lifecycle manager
+      host. For more information, see <xref
+        href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
     <section id="conref-admin-user">
       <title>Create an OSadmin user for VSD</title>
       <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
@@ -111,9 +112,9 @@
     </section>
     <section id="conref-hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
-      <p>Use the following steps on the KVM Host to log on to the lifecycle manager created in <xref
-          href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the Lifecycle Manager VM
-          and Installation Services</xref>:</p>
+      <p>Use the following steps on the lifecycle manager host to log on to the lifecycle manager
+        created in <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the
+          Lifecycle Manager VM and Installation Services</xref>:</p>
       <ol id="ol_ncd_wff_zt">
         <li>Log into the lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where:
             HLM_VM_IP is the CLM IP of the lifecycle manager. Locate the IP address for the
@@ -133,7 +134,7 @@ Password: cghelion</codeblock>
       <title>Provision the new cloud</title>
       <ol id="ol_kwm_c1k_zt">
         <li>Execute the following command to provision and configure the HPE Helion OpenStack cloud.
-            <codeblock>hlm define -t sacramento &lt;cloudname&gt;</codeblock><p>Where::
+            <codeblock>hlm define -t sacramento &lt;cloudname&gt;</codeblock><p>Where:
               <codeph>&lt;cloudname></codeph> is the name of the cloud to create.</p><p
             id="cloudname">The cloud name can be any combination of up to 40 digits, letters:<ul
               id="ul_lz5_rbf_bt">
@@ -210,7 +211,7 @@ Password: cghelion</codeblock>
         manager:</p>
       <ol id="ol_d5m_dhf_zt">
         <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
-            <systemoutput>/root/cg-hlm/dev-tools/ilopxebootonce.py</systemoutput> to the
+            <codeph>/root/cg-hlm/dev-tools/ilopxebootonce.py</codeph> to the
             <codeph>&lt;cloudname></codeph> directory where you have the
             <codeph>node-provision.json</codeph> file.</li>
         <li>Execute the following script:
@@ -224,7 +225,7 @@ Password: cghelion</codeblock>
       <title>Configuring JSON files</title>
       <p>The process for installing the HP Helion OpenStack Carrier Grade deployments requires
         several JSON files that will be used when deploying the lifecycle manager.</p>
-      <p>The following sections details the files that need to be configured and contain sample JSON
+      <p>The following sections detail the files that need to be configured and contain sample JSON
         files that can be copied and pasted into your environment.</p>
       <p><b>Important:</b> Do not store backup of the JSON files inside your cloud directory or any
         where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create a backup folder
@@ -301,7 +302,7 @@ Password: cghelion</codeblock>
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;/vars</codeph> directory of the lifecycle
         manager.</p>
     </section>
-    <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-sac.dita">a sample
+    <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-sac.dita">sample
         ansible.json file</xref>.</p>
     <section id="conref-esx-json">
       <title>Configure the esx.json file</title>
@@ -471,7 +472,7 @@ Password: cghelion</codeblock>
             directory:<codeblock>cd ~/kenobi-node-configuration </codeblock></li>
           <li>Execute the following
             command:<codeblock>patch -p1 -b &lt; ../knc-cobbler-random.patch </codeblock></li>
-          <li>Chnage to the <codeph>~/cg-hlm/hlm-build</codeph> directory:
+          <li>Change to the <codeph>~/cg-hlm/hlm-build</codeph> directory:
             <codeblock>cd ~/cg-hlm/hlm-build </codeblock></li>
           <li>Execute the following command to integrate the changes into the
             environment:<codeblock>./hlm_prepare-env.sh</codeblock></li>
@@ -487,14 +488,13 @@ Password: cghelion</codeblock>
           Helion OpenStack cloud:
             <codeblock>hlm provision -c &lt;cloudname&gt;          </codeblock><p>Where:
               <codeph>&lt;cloudname></codeph> is the name of the cloud you created. The script takes
-            approximately 15 to 30 minutes.</p><p>This script prepares the bare metal servers for
-            the HPE Helion OpenStack Carrier Grade cloud installation including the hLinux operating
-            system. The script also PXE boots the nodes specified in
-              <codeph>node-provision.json</codeph> file and tracks the PXE boot completion process.
-            The script also creates the <codeph>nodes.json</codeph> file in the directory.
-            </p><p>You can log in to the iLO server management tool for each of the nodes to monitor
-            the boot process. Consult yout iLO documentation for information on how to log into iLO.
-          </p></li>
+            approximately 15 to 30 minutes.</p><p>This script prepares the servers for the HPE
+            Helion OpenStack Carrier Grade cloud installation including the hLinux operating system.
+            The script also PXE boots the nodes specified in <codeph>node-provision.json</codeph>
+            file and tracks the PXE boot completion process. The script also creates the
+              <codeph>nodes.json</codeph> file in the directory. </p><p>You can log in to the iLO
+            server management tool for each of the nodes to monitor the boot process. Consult your
+            iLO documentation for information on how to log into iLO. </p></li>
         <li>Make sure the nodes are booted up using iLO. For example:<p><image
               href="../../media/CGH-2-install-cobbler.png" width="600" id="image_c5k_d4b_kt"
               /></p><p><b>Note:</b> In rare situations, a node might not boot due to an issue with
@@ -505,13 +505,39 @@ Password: cghelion</codeblock>
               >Node fails to boot during HLM provision</xref>. </p>Once the baremetal nodes are
           provisioned, make sure the <codeph>nodes.json</codeph> file is generated to the
             <codeph>var/hlm/clouds/&lt;cloud name&gt;/</codeph> directory. The
-            <codeph>nodes.json</codeph> file will have entries for your environment:<ul
-            id="ul_zyc_b4k_zt">
-            <li>Denver: 3 controllers;</li>
-            <li>Tahoe: 3 controllers, 1 DCN Hosts;</li>
-            <li>Memphis: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
-            <li>Sacramento: 3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</li>
-          </ul></li>
+            <codeph>nodes.json</codeph> file will have entries for your environment:
+          <table
+            frame="all" rowsep="0" colsep="0" id="table_c3c_43z_g5">
+            
+            <tgroup cols="2">
+              <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+              <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+              <thead>
+                <row>
+                  <entry>Deployment</entry>
+                  <entry>Nodes</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Denver</entry>
+                  <entry>3 controllers</entry>
+                </row>
+                <row>
+                  <entry>Tahoe</entry>
+                  <entry>3 controllers; 1 DCN host</entry>
+                </row>
+                <row>
+                  <entry>Memphis</entry>
+                  <entry>3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</entry>
+                </row>
+                <row>
+                  <entry>Sacramento</entry>
+                  <entry>3 controllers, 1 DCN Hosts, 1 VRS-G and the 2 compute proxy nodes.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></li>
         <li>Verify that each node in the <codeph>nodes.json</codeph> file is installed and active.
             <ol id="ol_g1b_cmf_zt">
             <li>Ping proxy node from lifecycle manager with the IP using IP specified in
@@ -525,8 +551,8 @@ Password: cghelion</codeblock>
       <title>Configure the back-end drivers</title>
       <p>Configure the back-end drivers to enable management of the OpenStack Block Storage volumes
         on vCenter-managed data stores and 3PAR and/or VSA storage arrays. The HPE Block Storage
-        (Cinder) service allows you to configure multiple storage back-ends. Use the following steps
-        to configure back-end support:</p>
+        (Cinder) service allows you to configure multiple storage back-ends. </p>
+      <p>Use the following steps to configure back-end support:</p>
       <ol id="ul_btr_l52_xs">
         <li>Change to the <codeph>/cinder/blocks</codeph> directory:
           <codeblock>cd /var/hlm/clouds/&lt;cloudname>/services/cinder/blocks</codeblock> Where
@@ -695,11 +721,12 @@ The cloud &lt;cloudname> was generated successfully.
         <li>Use the following command to deploy the HPE Helion OpenStack cloud:
             <codeblock>hlm deploy –c &lt;cloudname&gt;</codeblock><p>This command takes a
             significant period of time. When this command is complete, the non-KVM cloud
-            installation is complete. Use the following sections to configure the Horizon interface,
-            configure networking, and configure the ESX environment. </p></li>
+            installation is complete. Use the following sections to configure the Horizon interface
+            and configures virtual networking. </p></li>
         <li>Enter <codeph>exit</codeph> to leave the root shell.</li>
       </ol>
     </section>
+    <p><b>Note:</b> This command also configures the ESX environment.</p>
     <section id="conref-ldap-keystone">
       <title>Configure LDAP to enable CLI and use Keystone v3</title>
       <p>By default, the HPE Helion OpenStack Carrier Grade services are configured to use Keystone
@@ -714,8 +741,8 @@ The cloud &lt;cloudname> was generated successfully.
       <p>The installation process creates virtual machines for VSC. Use the following steps to
         verify that the VSC VMs are installed and are operational:</p>
       <ol id="ol_fkv_xjj_1t">
-        <li>SSH to your VSC VM from KVM Host using the DCM IP. The default username and password:
-            <codeph>admin/admin</codeph><p>
+        <li>SSH to your VSC VM from the lifecycle manager host using the DCM IP. The default
+          username and password: <codeph>admin/admin</codeph><p>
             <codeblock>ssh cghelion@&lt;CLM IP of DCN Host&gt;</codeblock>
           </p></li>
         <li>Execute the following command: <codeblock>admin display-config</codeblock></li>
@@ -733,7 +760,7 @@ ping router "management" &lt;vsd IP or domain name>  </codeblock></li>
       <!-- <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/> -->
       <p>Verify that the domain name and DNS server are listed in the
           <codeph>/etc/resolv.conf</codeph> file on all the cloud
-        nodes,.</p><codeblock>cat etc/resolv.conf          </codeblock><p/><image
+        nodes.</p><codeblock>cat etc/resolv.conf          </codeblock><p/><image
         href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
         <alt>Verify VRS-G </alt>
       </image></section>
