@@ -71,8 +71,14 @@ Staging Application Lifecycle Service in Glance/Swift
 Application Lifecycle Service is staged 
 UI installed for application lifecycle service 
 Create service endpoint for service application lifecycle service 
-Completed installing application </codeblock>
-                                </li></ol></li></ol></li></ol></section>
+Completed installing application </codeblock></li></ol></li></ol></li></ol></section><section><title>Next Steps</title><p>If you have completed installation, here are the next steps in working with the Application Lifecycle Service:</p>
+                                    <ul>
+                                        <li><xref href="../devplatform.deploy-ALS.dita">Create a cluster using Horizon.</xref></li>
+                                        <li><xref href="../helion/CLI/cf_mgmt_createcluster.dita">Create a cluster from the command line.</xref></li>
+                                        <li><xref href="../helion/admin/console/console_intro.dita">Log in to the ALS Management console.</xref></li>
+                                        <li><xref href="../helion/user/deploy/deploy_index.dita">Deploy an application.</xref></li>
+                                    </ul>
+                                </section>
         
   </body>
 </topic>
