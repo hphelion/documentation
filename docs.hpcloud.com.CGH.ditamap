@@ -83,32 +83,34 @@
       format="ditamap" navtitle="Installation Guide" locktitle="yes"/>
     <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.dita"
       navtitle="Administrator Guide" locktitle="yes">
-      <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap" format="ditamap"
-        toc="no"/>
+      <topicref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide-map.ditamap"
+        format="ditamap" toc="no"/>
     </topicref>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita" navtitle="API and SDK Reference"
       locktitle="yes"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-backup-restore.dita" toc="yes"
       navtitle="Backup and Restore the HLM Node and MySQL Cluster" locktitle="yes"/>
-    <topichead navtitle=" License Files">
-      <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
-        navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes"/>
+    <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"
+      navtitle="Open Source and Third-Party Software License Agreement" locktitle="yes">
       <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="no"
         navtitle="Software License Terms" locktitle="yes"/>
-    </topichead>
-    <topichead navtitle="Files in map not TOC" toc="no">
+    </topicref>
+    <topicref
+      href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"
+      toc="no">
       <topicref
-        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita" toc="no"/>
+        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita"
+        toc="no"/>
       <topicref
-        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita" toc="no"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita" toc="no"/>
+        href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita"
+        toc="no"/>
       <topicref
         href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
         toc="no"/>
       <topicref
-        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" toc="no"/>
-    </topichead>
+        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita"
+        toc="no"/>
+    </topicref>
     <topicref href="CarrierGrade/2.0/carrier-grade-license.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes" toc="no">
       <topicref href="CarrierGrade/2.0/carrier-grade-20-license-osrb.dita"/>
@@ -116,8 +118,6 @@
     </topicref>
     <topicref href="CarrierGrade/2.0/carrier-grade-end-user-license.dita"
       navtitle="Software License Terms" locktitle="yes" toc="no">
-      <topicref href="CarrierGrade/carrier-grade-eula.dita" toc="yes"
-        navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
       <topicref href="CarrierGrade/2.0/carrier-grade-dcn-eula.dita"/>
     </topicref>
     <!-- hiding for RC0
