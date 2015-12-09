@@ -6,7 +6,7 @@
 
 <topic
     domains="(topic reference topic)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   "
-    id="jow1432757989702" xml:lang="en-us">
+    id="jow1432757989702ID" xml:lang="en-us">
 
 
     <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Using the Identity
@@ -130,8 +130,8 @@
                             <entry>Quotas</entry>
                             <entry>Controls for managing project quotas.</entry>
                             <entry><xref
-                                    href="../Identity/CGH-2-User-Identity-quotas.dita#topic1853c2uiq"
-                                >Managing Project Quotas</xref></entry>
+                                    href="../Identity/CGH-2-User-Identity-projects-quotas.dita#topic1853c2uiq"
+                                    >Managing Project Quotas</xref></entry>
                         </row>
 
 
