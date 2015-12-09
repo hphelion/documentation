@@ -1,20 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="hdp_servicenet">
-  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating the HPE Helion Development Platform Service Net</title>
+  <title><ph conkeyref="HOS-conrefs/product-title"/>Creating the HPE Helion Development Platform
+    Service Net</title>
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
-    <section>Many of the HPE Helion Developer Platform services require the creation of a VM service
-      network in order to access the cloud control plane. This service network is a
-      VLAN-encapsulated provider network which is fully routable to the <keyword keyref="kw-hos"/> MGMT
-      network. <note type="important">Create this network before attempting to install the HPE Helion
-        Developer Platform. </note><ol>
+    <section id="about">
+      <p>Many of the HPE Helion Developer Platform services require the creation of a VM service
+        network in order to access the cloud control plane. This service network is a
+        VLAN-encapsulated provider network which is fully routable to the <keyword keyref="kw-hos"/>
+        MGMT network.</p>
+      <p>You should complete these steps prior to doing your HPE Helion Development Platform
+        installation.</p>
+    </section>
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>These steps assume you have already allocated a VLAN for the Service Net prior to beginning
+        these steps.</p>
+    </section>
+
+    <section id="inputmodel"><title>Specifying Your Service Net VLAN in the Input Model</title>
+      <p>You will need to specify your Service Net in the input model, either during the <xref
+          href="../installation/install_entryscale_kvm.dita#install_kvm/configuration">Configure
+          Your Environment</xref> portion of the installation or you can do it post-installation
+        using the steps below.</p>
+      <ol>
+        <li>Log in to your lifecycle manager.</li>
+        <li>Configure your <codeph>my_cloud </codeph>definition to include the service network. This
+          is used to provide routing from management (and potentially other networks) back to the
+          newly created service net. <ol>
+            <li>Ensure that the service network is routable from the management network and that the
+              service network is defined in
+                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>. <p>Here is an
+                example showing the two new entries you need to make in this file:</p>
+              <codeblock>#
+# Management
+#
+# This is the network group that will be used to for
+# management traffic within the cloud.
+#
+# The interface used by this group will be presented
+# to Neutron as physnet1, and used by provider VLANS
+#
+# In this example this group is also used for ISCSI
+# traffic between VMs and the VSA block storage
+#
+- name: MANAGEMENT
+  hostname-suffix: mgmt
+  hostname: true
+
+  component-endpoints:
+      - default
+
+  routes:
+      - default
+      <b>- SERVICE</b>
+
+  load-balancers:
+      - provider: ip-cluster
+        name: lb
+        components:
+            - default
+        roles:
+            - internal
+            - admin
+
+   tags:
+      - neutron.networks.vlan:
+        provider-physical-network: physnet1
+
+ <b>- name: SERVICE</b></codeblock></li>
+            <li>Ensure that there is a valid definition for the service network in the
+                <codeph>~/helion/my_cloud/definition/data/networks.yml</codeph> file. <p>The
+                  <codeph>cidr</codeph> and <codeph>gateway</codeph> given must match the values
+                provided when the network was created.</p>
+              <p>Here is an example showing the format:</p>
+              <codeblock>- name: SERVICE-NET
+  vlanid: 306 
+  tagged-vlan: true 
+  cidr: 10.1.6.0/24 
+  gateway-ip: 10.1.6.1 
+  network-group: SERVICE</codeblock></li>
+            <li>Ensure that this network is a member of the server-group listed in the
+                <codeph>~/helion/my_cloud/definition/data/server_groups.yml</codeph> file. <p>Here
+                is an example showing this:</p>
+              <codeblock>server-groups: 
+- name: CLOUD 
+  server-groups: 
+     - AZ1
+     - AZ2
+     - AZ3
+  networks: 
+     - EXTERNAL-NET
+     - GUEST-NET 
+     - MANAGEMENT-NET
+     - PXE-NET 
+     <b>- SERVICE-NET</b></codeblock></li>
+            <li>If you made these changes prior to your first run of the configuration processor,
+              then continue with the installation steps as documented. If you are making these
+              changes after your initial run then continue on with the next steps.</li>
+            <li>Commit your configuration to the <xref href="../installation/using_git.dita">local
+                git repo</xref>, as follows:
+              <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+            <li>Run the configuration processor with this command:
+              <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+            <li>Use the playbook below to create a deployment directory:
+              <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+            <li>Run the <codeph>site.yml</codeph> playbook below: <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</codeblock>
+              <p>If you have used an encryption password when running the configuration processor
+                use the command below and enter the encryption password when prompted:
+                <codeblock>ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</codeblock>
+              </p></li>
+          </ol></li>
+      </ol>
+    </section>
+
+    <section id="svcnet"><title>Creating the Neutron Service Net</title>
+      <ol>
         <li>SSH to the lifecycle manager using admin credentials.</li>
         <li>Source the admin credentials: <codeblock>source ~/service.osrc</codeblock></li>
         <li>Configure a Neutron network that will map to an external network for the service net. <ul>
-            <li>For simple configurations, a lifecycle manager playbook has been provided for this purpose.</li>
-            <li>For non-trivial network configurations, any additional routes should be added to
-              the subnet definition using the <codeph>--host-route</codeph> option of the neutron
+            <li>For simple configurations, a lifecycle manager playbook has been provided for this
+              purpose.</li>
+            <li>For non-trivial network configurations, any additional routes should be added to the
+              subnet definition using the <codeph>--host-route</codeph> option of the neutron
               subnet-create command. The <codeph>--host-route</codeph> option can be specified
               multiple times if necessary.
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
@@ -37,89 +150,9 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
 ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_TYPE=vlan -e PROV_PHYS_NET=physnet1 -e PROV_NET_VLAN_ID=100 -e SVC_NET_CIDR=10.55.66.0/24 -e SVC_NET_DEST=192.168.245.1/32 -e SVC_NET_GATEWAY=10.55.66.3</codeblock></li>
           </ul><note>To configure a service network for flat encapsulation, modify the service
             network creation statement: <codeph>-e PROV_NET_TYPE flat</codeph> The subnet creation
-            statement does not change.</note></li><li>Configure your <codeph>my_cloud </codeph>definition to include the service network. This is used
-          to provide routing from management (and potentially other networks) back to the newly
-          created service net. <ol>
-            <li>Ensure that the service network is routable from the management network and that the
-              service network is defined in
-                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph>:
-              <codeblock>#
-# Management
-#
-# This is the network group that will be used to for
-# management traffic within the cloud.
-#
-# The interface used by this group will be presented
-# to Neutron as physnet1, and used by provider VLANS
-#
-# In this example this group is also used for ISCSI
-# traffic between VMs and the VSA block storage
-#
-- name: MANAGEMENT
-  hostname-suffix: mgmt
-  hostname: true
+            statement does not change.</note></li>
+      </ol>
+    </section>
 
-  component-endpoints:
-    - default
-
-  routes:
-    - default
-    <b>- SERVICE</b>
-
-  load-balancers:
-    - provider: ip-cluster
-      name: lb
-      components:
-         - default
-      roles:
-         - internal
-         - admin
-
-  tags:
-    - neutron.networks.vlan:
-        provider-physical-network: physnet1
-
-<b>- name: SERVICE</b></codeblock></li>
-            <li>Ensure that there is a valid definition for the service network in
-                <codeph>~/helion/my_cloud/definition/data/networks.yml</codeph>
-              <note>The <codeph>cidr</codeph> and <codeph>gateway</codeph> given must match the
-                values provided when the network was
-              created.</note><codeblock>- name: SERVICE-NET
-  vlanid: 306 
-  tagged-vlan: true 
-  cidr: 10.1.6.0/24 
-  gateway-ip: 10.1.6.1 
-  network-group: SERVICE</codeblock></li>
-            <li>Ensure that this network is a member of the server-group listed in
-              ~/helion/my_cloud/definition/data/server_groups.yml:
-              <codeblock>server-groups: 
-- name: CLOUD 
-  server-groups: 
-    - AZ1
-    - AZ2
-    - AZ3
-  networks: 
-    - EXTERNAL-NET
-    - GUEST-NET 
-    - MANAGEMENT-NET
-    - PXE-NET 
-    - SERVICE-NET 
-# 
-# Create a group for each availability zone 
-#
-- name: AZ1 
-  server-groups: 
-    - RACK1 
-- name: AZ2 
-  server-groups: 
-    - RACK2 
-- name: AZ3
-  server-groups: <!--missing rack3?--></codeblock></li>
-            <li>Once these changes have been made, the normal mechanisms should be used
-              (configuration-processor-run.yml, ready-deployment.yml, site.yml) to push this change
-              to production. </li>
-          </ol></li>
-    </ol> </section>
-    
   </body>
 </topic>
