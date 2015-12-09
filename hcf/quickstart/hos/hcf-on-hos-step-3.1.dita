@@ -102,10 +102,9 @@
         <uicontrol>Access and Security</uicontrol>
         <uicontrol>API Access</uicontrol>
        </menucascade> and then click <uicontrol>Download OpenStack RC File</uicontrol> on the
-        right.<note>The <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file
-        contains information about the hosted service, including region, tenant, and other
-        information required to create a cluster. This file is pre-configured for your sandbox
-        environment.</note></li>
+        right.<note>The <filepath>openrc.sh</filepath> file contains information about the hosted
+        service, including region, tenant, and other information required to create a cluster. This
+        file is pre-configured for your sandbox environment.</note></li>
       <li id="create_a_key_pair">Create a key pair.<ol id="ol_hlp_1v1_tt">
         <li>Click <menucascade>
           <uicontrol>Project</uicontrol>
