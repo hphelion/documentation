@@ -22,10 +22,10 @@
         </prolog>
         <body>
                 <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cips/prereqs"/>
-                <section id="next-step">
+                <section>
                         <title>Next Step</title>
-                        <p><xref href="CGH-2-install-lifecycle-denver.dita#topic10581c2ild">Deploying
-                                        the lifecycle manager</xref></p>
+                        <p><xref href="carrier-grade-install-download-denver.dita#topic7148cgidd"
+                                        >Download the Installation Packages</xref></p>
                 </section>
         </body>
 </topic>

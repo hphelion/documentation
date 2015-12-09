@@ -24,10 +24,10 @@
                 <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cips/prereqs"/>
                 <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                         id="conref-vmware-workaround"/>
-                <section id="next-step">
+                <section>
                         <title>Next Step</title>
-                        <p><xref href="CGH-2-install-lifecycle-memphis.dita#topic10581c2ilm">Deploying
-                                        the lifecycle manager</xref></p>
+                        <p><xref href="carrier-grade-install-download-memphis.dita#topic7148cgidm"
+                                        >Download the Installation Packages</xref></p>
                 </section>
         </body>
 </topic>

@@ -316,5 +316,11 @@ StrictHostKeyChecking no </codeblock></li>
                </bodydiv>
                 <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware-workaround"
                         id="conref-vmware-workaround"/>
+                <section id="next-step">
+                        <title>Next Step</title>
+                        <p><xref
+                                        href="carrier-grade-install-download-sacramento.dita#topic7148cgids"
+                                        >Download the Installation Packages</xref></p>
+                </section>
         </body>
 </topic>

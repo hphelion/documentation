@@ -139,6 +139,11 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   </entry>
                                                   <entry> </entry>
                                                   </row>
+                                                  <row>
+                                                  <entry>cg-ironic-deploy-images.tar.gz</entry>
+                                                  <entry/>
+                                                  <entry>For Sacramento deployments only</entry>
+                                                  </row>
                                                   </tbody>
                                                 </tgroup>
                                         </table><p id="kvm"><b>KVM Region Installation
@@ -225,6 +230,7 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p>nuage-openvswitch-common_3.2.6-0b008b5_amd64.deb</p>
                                                   <p>nuage-openvswitch-switch_3.2.6-0b008b5_amd64.deb</p>
                                                   <p>nuage-python-openvswitch_3.2.6-0b008b5_all.deb</p>
+                                                  <p>vsc_singledisk.qcow2</p>
                                                   </entry>
                                                   <entry>
                                                   <p>/root/cg/dcn</p>
@@ -249,6 +255,11 @@ Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</cod
                                                   <p><codeph>/var/www/html</codeph>
                                                   </p>
                                                   </entry>
+                                                </row>
+                                                <row>
+                                                  <entry>TEMPL-CPV9.ova</entry>
+                                                  <entry>Any location on any server that can be
+                                                  accessed by the VMware vCenter client.</entry>
                                                 </row>
                                         </tbody>
                                 </tgroup>

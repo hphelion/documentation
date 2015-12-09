@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic7148cgids">
+        <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Prerequisites - Download
+                the Installation Packages </title>
+        <titlealts>
+                <searchtitle>HP Helion OpenStack Carrier Grade Installation
+                        Prerequisites</searchtitle>
+        </titlealts>
+        <prolog>
+                <metadata>
+                        <othermeta name="layout" content="default"/>
+                        <othermeta name="product-version"
+                                content="HP Helion OpenStack Carrier Grade 2.0"/>
+                        <othermeta name="role" content="Storage Administrator"/>
+                        <othermeta name="role" content="Storage Architect"/>
+                        <othermeta name="role" content="Michael B"/>
+                        <othermeta name="product-version1"
+                                content="HP Helion OpenStack Carrier Grade 2.0"/>
+                </metadata>
+        </prolog>
+        <body>
+                <p conref="carrier-grade-install-download.dita#topic7148cgid/intro"/>
+                <p>Launch the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+                        format="html" scope="external">Helion Distribution Network
+                        (HDN)</xref>. You must <xref
+                                href="https://idm.pod1.prod-core.hpwsportal.com/webid/"
+                                format="html" scope="external">obtain a user account on HDN</xref>
+                        in order to download these files. </p>
+                <section>In a browser, navigate to <xref
+                        href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
+                        format="html" scope="external">Helion Download Network(HDN)</xref>.
+                        <ol id="ul_lvg_jb2_xs">
+                                <li>Click <b>Sign In</b> to log in using your account. </li>
+                                <li>After signing in, click the <b>Downloads</b> link in the menu on
+                                        the left side of the page.</li>
+                                <li>Click the <b>Downloads</b> tab and locate the following
+                                        download. </li>
+                        </ol><ul id="ul_zll_rjv_g5">
+                                <li><b>Helion Carrier Grade 2.0.0 VRS</b> Installation files for the
+                                        HP Helion OpenStack Carrier Grade Tahoe, Memphis, and
+                                        Sacramento deployments. This link will download the
+                                        <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz</codeph>
+                                        file. </li>
+                                <li><b>Helion Carrier Grade 2.0 VRS Checksum</b>. The SHA256
+                                        checksum for Helion Carrier Grade 2.0 VRS. This link will
+                                        download the
+                                        <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz.sha256</codeph>
+                                        file.</li>
+                                <li><b>Helion Carrier Grade 2.0 VRS Signature</b>. The signature
+                                        file for Helion Carrier Grade 2.0 VRS. This link will
+                                        download the
+                                        <codeph>hcg2_kvm_esx_ironic_vrs.tar.gz.sig</codeph>
+                                        file.</li>
+                        </ul><p><b>Note:</b> When downloading installation files, always download
+                                and verify the signature file before installing. </p></section>
+                
+                <!-- <section conref="carrier-grade-install-download.dita#topic7148cgid/checksum"/> -->
+                <section conref="carrier-grade-install-download.dita#topic7148cgid/extract"/>
+                <section conref="carrier-grade-install-download.dita#topic7148cgid/dcn-extract"/>
+                <section id="next-step">
+                        <title>Next Step</title>
+                        <p><xref href="CGH-2-install-lifecycle-sacramento.dita#topic10581c2ils">Deploying the
+                                Lifecycle Manager</xref></p>
+                </section>
+        </body>
+</topic>

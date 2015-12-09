@@ -23,11 +23,10 @@
         <body>
                         <bodydiv conref="CGH-install-prereqs-sacramento.dita#topic7148cips/prereqs"
                         />
-                
-                <section id="next-step">
+                <section>
                         <title>Next Step</title>
-                        <p><xref href="CGH-2-install-lifecycle-tahoe.dita#topic10581c2ilt">Deploying
-                                        the lifecycle manager</xref></p>
+                        <p><xref href="carrier-grade-install-download-tahoe.dita#topic7148cgidt"
+                                        >Download the Installation Packages</xref></p>
                 </section>
         </body>
 </topic>
