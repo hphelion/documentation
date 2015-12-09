@@ -11,6 +11,18 @@
       <p>OpenStack endpoints are HTTP (REST) services providing APIs to other OpenStack services on
         the management network. All traffic to OpenStack services coming in on the public endpoints
         are secured using TLS connections.</p>
+      <p>This document has the following sections:</p>
+      <ul>
+        <li><xref href="tls.dita#configure_tls/notes">Notes</xref></li>
+        <li><xref href="tls.dita#configure_tls/selfsigned_cert">Creating a Self-Signed
+            Certificate</xref></li>
+        <li><xref href="tls.dita#configure_tls/install_cert">Installing Your SSL
+          Certificate</xref></li>
+        <li><xref href="tls.dita#configure_tls/renewal">Installing a Renewed Certificate</xref></li>
+        <li><xref href="tls.dita#configure_tls/disable">Disabling TLS</xref></li>
+        <li><xref href="tls.dita#configure_tls/configure_cipher">Configuring the Cipher Suite for
+            Public Endpoints</xref></li>
+      </ul>
     </section>
     <section id="notes"><title>Notes</title>
       <p>All of the <keyword keyref="kw-hos-phrase"/> example cloud models ship with TLS enabled on
@@ -142,6 +154,36 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
             - public
          <b>cert-file: &lt;cert-name></b></codeblock></li>
       </ol>
+      <note>Do not enable TLS on the internal load balancer.</note>
+      <p><b>Definitions</b></p>
+      <dl>
+        <dlentry>
+          <dt>name: extlb</dt>
+          <dd>The external load balancer</dd>
+        </dlentry>
+        <dlentry>
+          <dt>external-name:</dt>
+          <dd>This name will be used in place of the external VIP address. This name can be an FQDN.
+            This will be registered in the public endpoints of the services. As noted above,
+              <codeph>myhelion.test</codeph> should be changed to your FQDN.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>tls-components:</dt>
+          <dd>This list of services will be put behind TLS. Note this is only being done for the
+            load balancer in question, which is the external load balancer. The components in
+            'default' are those services defined under service-components in
+              <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph>. If you want to
+            have a finer granularity, you can replace default with a list of individual components,
+            such as: <codeblock>tls-components: - 'horizon' </codeblock></dd>
+        </dlentry>
+        <dlentry>
+          <dt>cert-file:</dt>
+          <dd>The default <codeph>my-public-cert</codeph> is already part of the playbook but you
+            can specify your own name. When you specify your own you also need to have the
+            certificate copied in <codeph>~/helion/my_cloud/config/tls/certs</codeph> on the
+            lifecycle manager, as noted above.</dd>
+        </dlentry>
+      </dl>
       <p><b>Deploy Your Certificate</b></p>
       <ol>
         <li>Commit your changes to git:
@@ -172,42 +214,45 @@ ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
         to use the "--insecure" flag to avoid "certificate mismatch" errors.</p>
     </section>
 
-    <section id="TLS_termination">
-      <title>Definitions</title>
-      <dl>
-        <dlentry>
-          <dt>name: extlb</dt>
-          <dd>The external load balancer</dd>
-        </dlentry>
-        <dlentry>
-          <dt>external-name:</dt>
-          <dd>This name will be used in place of the external VIP address. This name can be an FQDN.
-            This will be registered in the public endpoints of the services. As noted above,
-              <codeph>myhelion.test</codeph> should be changed to your FQDN.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>tls-components:</dt>
-          <dd>This list of services will be put behind TLS. Note this is only being done for the
-            load balancer in question, which is the external load balancer. The components in
-            'default' are those services defined under service-components in
-              <codeph>~/helion/my_cloud/definition/data/control_plane.yml</codeph>. If you want to
-            have a finer granularity, you can replace default with a list of individual components,
-            such as: <codeblock>tls-components: - 'horizon' </codeblock></dd>
-        </dlentry>
-        <dlentry>
-          <dt>cert-file:</dt>
-          <dd>The default <codeph>my-public-cert</codeph> is already part of the playbook but you
-            can specify your own name. When you specify your own you also need to have the
-            certificate copied in <codeph>~/helion/my_cloud/config/tls/certs</codeph> on the
-            lifecycle manager, as noted above.</dd>
-        </dlentry>
-      </dl>
-      <note>Do not enable TLS on the internal load balancer.</note>
+    <section id="renewal"><title>Installing a Renewed Certificate</title>
+      <p>If you previously installed a certificate that has now expired and need to install your
+        renewed certificate, these steps will show you how.</p>
+      <ol>
+        <li>Log in to the lifecycle manager.</li>
+        <li>Copy the new certificate (containing both public and private keys) to the
+            <codeph>~/helion/my_cloud/config/tls/certs/</codeph> directory.</li>
+        <li>Replace the contents of
+            <codeph>~/helion/hos/ansible/roles/tls-trust/files/frontend_cacert.pem</codeph> with the
+          new CA certificate chain file that you added in the previous step.</li>
+        <li>If your renewed certificate has the same name as your previous certificate then skip to
+          the next step. However, if your renewed certificate has a new name then you will need to
+          update your <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file
+          with the new information. See the <xref href="tls.dita#configure_tls/install_cert"
+            >Installing Your SSL Certificate</xref> section above for more details.</li>
+        <li>Once that is complete you can then deploy your renewed certificate: <ol>
+            <li>Commit your changes to git:
+              <codeblock>cd ~/helion/hos/ansible
+git add -A
+git commit -m "My config or other commit message"</codeblock></li>
+            <li>Run the configuration processor:
+              <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+            <li>Create the deployment directory:
+              <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+            <li>Complete the deployment of your certificate by running the playbooks below. <p>To
+                deploy the new certificate:</p>
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts FND-CLU-deploy.yml</codeblock>
+              <p>To deploy the CA chain:</p>
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
+          </ol>
+        </li>
+      </ol>
     </section>
 
-
-
-    <section><title>Disabling TLS</title>
+    <section id="disable"><title>Disabling TLS</title>
       <p>If you don't want to use TLS, then you should change "tls-components" to "components" in
           <codeph>network_groups.yml</codeph>. Additionally, if you have a
           <codeph>network_groups.yml</codeph> file from a previous installation, you won't have TLS
@@ -215,7 +260,7 @@ ansible-playbook -i hosts/verb_hosts horizon-deploy.yml</codeblock></li>
     </section>
 
     <section id="configure_cipher">
-      <title>Configuring the cipher suite for public endpoints</title>
+      <title>Configuring the Cipher Suite for Public Endpoints</title>
       <p>We have set the default cipher suite to be: <codeph>HIGH:!aNULL:!eNULL:!DES:!3DES</codeph>.
         This is a recommended setting from the <xref
           href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html"
