@@ -3,9 +3,9 @@
 <concept id="concept_s2k_b35_st">
  <title>Quick Start Step 1: <keyword keyref="quickStartHOSstep1"/></title>
  <shortdesc>Deploying an <keyword keyref="prodLong"/> Docker image to <keyword keyref="opnStckLong"
-  /> is the fastest and easiest way to evaluate and to begin working with <keyword
-   keyref="prodShort"/>. This process involves downloading and installing the necessary tools,
-  configuring your sandbox environment, and deploying the Docker image.</shortdesc>
+  /> is the fastest and easiest way to evaluate and to begin working with <keyword keyref="prodShort"
+  />. This process involves downloading and installing the necessary tools, configuring your sandbox
+  environment, and deploying the Docker image.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
