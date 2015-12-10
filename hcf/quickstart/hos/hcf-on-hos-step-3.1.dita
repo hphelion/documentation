@@ -128,9 +128,9 @@
                 you will need to <xref
                   href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run
                   Terraform commands</xref> and to <xref
-                  href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH
-                  into your cluster</xref>. The location of the <codeph>pem</codeph> file is
-                relative to <xref
+                  href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt/connecting_to_your_cluster"
+                    ><codeph>ssh</codeph> into your cluster</xref>. The location of the
+                  <codeph>pem</codeph> file is relative to <xref
                   href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">the
                     <codeph>tfvars</codeph> file in which it is specified</xref>. For convenience,
                 you can place the two files into the same directory.</note></li>

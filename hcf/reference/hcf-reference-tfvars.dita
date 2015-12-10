@@ -81,7 +81,8 @@
           </row>
           <row>
             <entry><codeph>openstack_base_image_id</codeph></entry>
-            <entry>The ID of your Ubuntu 14.04.3 cloud image</entry>
+            <entry>The ID of your Ubuntu 14.04.3 cloud image<note type="tip">To determine the ID of
+                the base image, run the <codeph>nova image-list</codeph> command.</note></entry>
             <entry/>
           </row>
           <row>
@@ -114,7 +115,8 @@
           </row>
           <row>
             <entry><codeph>openstack_network_id</codeph></entry>
-            <entry>The network ID</entry>
+            <entry>The network ID<note type="tip">To determine the network ID , run the
+                  <codeph>neutron net-list</codeph> command.</note></entry>
             <entry/>
           </row>
           <row>

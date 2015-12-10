@@ -19,7 +19,7 @@
          conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
            conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
              conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
-    <stentry><note type="note">Ensure that all tools are added to your <codeph>PATH</codeph>
+    <stentry><note type="important">Ensure that all tools are added to your <codeph>PATH</codeph>
             environment variable. To set the variable on Linux and Mac OS X, <xref
               href="http://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux"
               format="html" scope="external">see this page</xref>. To set it on Windows, <xref
@@ -35,8 +35,8 @@
                 format="html" scope="external">Download <keyword keyref="prodShort"/>
                 <keyword keyref="prodVerLong"/></xref>
             </li>
-          </ul><note type="tip">To decompress <codeph>tar.gz</codeph> files on Windows, you can
-            use a file archiver such as <xref href="http://www.7-zip.org/" format="html"
+          </ul><note type="tip">To decompress <codeph>tar.gz</codeph> files on Windows, you can use
+            a file archiver such as <xref href="http://www.7-zip.org/" format="html"
               scope="external">7zip</xref>.</note><b>Downloading and Installing OpenStack
             Command-Line Interfaces (CLI)</b><p>The Nova CLI allows you to manage OpenStack compute
             resources. The Neutron CLI allows you to manage virtual networking services associated
