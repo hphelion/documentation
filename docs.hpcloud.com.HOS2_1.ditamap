@@ -32,10 +32,34 @@
    navtitle="Installation for Entry-scale with Swift" locktitle="yes"/>
   <topicref href="helion/installation/installation_verification.dita"
    navtitle="Installation Verification" locktitle="yes"/>
+  <topicref href="helion/operations/recover_downed_cluster.dita"
+   navtitle="Recovering a Downed Cluster After Power Outage" locktitle="yes"/>
   <topicref href="helion/objectstorage/allocating_disk_drives.dita"
    navtitle="Allocating Disk Drives for Object
    Storage" locktitle="yes"/>
   <topicref href="helion/troubleshooting/troubleshooting_logging.dita"
    navtitle="Troubleshooting the Centralized Logging Service" locktitle="yes"/>
+  <topicref href="helion/operations/live_migration.dita"
+   navtitle="Live Migration of Instances" locktitle="yes"/>
+ </topicref>
+ <!-- BEGIN - OPERATIONS/BURA -->
+ <topicref href="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data"
+  locktitle="yes">
+  <topicref href="helion/bura/cloud_control_plane_backup.dita" type="topic" format="dita"
+   navtitle="Backing up the Cloud Control Plane" locktitle="yes"/>
+  <topicref href="helion/bura/cloud_control_plane_recovery.dita" type="topic" format="dita"
+   navtitle="Recovering the Cloud Control Plane" locktitle="yes"/>
+  <topicref href="helion/bura/freezer_scheduler.dita" type="topic" format="dita"
+   navtitle="Understanding the Freezer Scheduler" locktitle="yes"/>
+  <topicref href="helion/bura/freezer_agent.dita" type="topic" format="dita"
+   navtitle="Understanding the Freezer Agent" locktitle="yes"/>
+  <topicref href="helion/bura/supported_services.dita" type="topic" format="dita"
+   navtitle="Supported Services and Limitations for Backup" locktitle="yes"/>
+  <topicref href="helion/bura/disable_bura_before_deployment.dita" type="topic" format="dita"
+   navtitle="Disabling Backup/Restore before Deployment" locktitle="yes"/>
+  <topicref href="helion/bura/start_stop_freezer_services.dita" type="topic" format="dita"
+   navtitle="Enabling and Disabling Freezer Services" locktitle="yes"/>
+  <topicref href="helion/bura/troubleshooting.dita"
+   navtitle="Troubleshooting Freezer Services" locktitle="yes"/>
  </topicref>
 </map>
