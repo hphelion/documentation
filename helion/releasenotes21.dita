@@ -18,6 +18,13 @@
         
         <section id="features"><title>Features Available in this Release</title>
             
+            <!--  https://jira.hpcloud.net/browse/DOCS-2316 -->
+            <p id="DOCS-2316"><b>NIC hardware that provides multiple interfaces using a single PCI address is now supported.</b></p>
+            
+            <p><codeph>nic_mappings.yml</codeph> now supports multiport cards. See the 
+                <xref href="input_model.dita#input_model/co_nicmappings">NIC Mappings</xref> section in the Input Model documentation.
+            </p>
+
 
             <!--  https://jira.hpcloud.net/browse/DOCS-2257  -->
             <p id="DOCS-2257"><b>IPv6 access to <keyword keyref="kw-hos"/>  components is blocked</b></p>
