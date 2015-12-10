@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="cue_ops_loadbalancer">
+<title>HPE Helion 2.0 Development Platform: Accessing RabbitMQ via a Load Balancer</title>
+<body>
+  <p>Clustering and load balancing connect multiple nodes to form one single logical broker. Virtual hosts, exchanges, users and permissions are mirrored across all nodes in a cluster. 
+    A client connecting to any node can see all the queues in a cluster. Clustering enables high availability of queues and increases the throughput.</p>
+  <section id="haproxy"><title>HAProxy</title>
+    <p>There are several options for a load balancer solution, including hardware and software. Any type of load balance can be used for a rabbitmq cluster. This document will demonstrate
+      how to use HAproxy.</p>
+    <p><b>Installation</b></p>
+    <p>To set up a load balancer for the rabbitmq cluster, create a VM on the same network as the cluster, install HAProxy, and configure it.</p>
+    <p><b>Create VM</b></p>
+    <p>To create a VM for the load balancer, follow these steps:</p>
+    <ol>
+      <li>Create a security group for this VM. The security group will need to open ports 22, 5672, and 15672:
+      <codeblock>stack@rd-ccp-c0-m1-mgmt:~$ nova secgroup-create haproxy haproxy
++--------------------------------------+---------+-------------+
+| Id                                   | Name    | Description |
++--------------------------------------+---------+-------------+
+| 6e5006f5-1166-4522-be3f-2a0cfe1c5655 | haproxy | haproxy     |
++-------------+-----------+---------+-----------+--------------+
+ 
+stack@env-ccp-c0-m1-mgmt:~$ nova secgroup-add-rule haproxy tcp 22 22 0.0.0.0/0
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 22        | 22      | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+
+ 
+stack@env-ccp-c0-m1-mgmt:~/msgaas$ nova secgroup-add-rule haproxy tcp 5672 5672 0.0.0.0/0
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 5672      | 5672    | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+
+ 
+stack@env-ccp-c0-m1-mgmt:~/msgaas$ nova secgroup-add-rule haproxy tcp 15672 15672 0.0.0.0/0
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 15672     | 15672   | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+</codeblock></li>
+      <li>Create the keypair to SSH into the VM. You can also use an existing keypair if you already have one:
+      <codeblock>nova keypair-add --pub-key my-key.pub my-key</codeblock></li>
+      <li>Create the VM. Make sure you select the same network where the rabbitmq cluster is. For this tutorial, you'll use an <b>Ubuntu 14.04</b> image.
+      <codeblock>stack@env-ccp-c0-m1-mgmt:~/msgaas$ nova boot --poll --nic net-id=39c8768d-edd7-4cbf-b109-33752d241f06 --image 6ac3d39c-5d22-44bb-893f-17f5312ded44 --key-name msgaas-redwood --security-group haproxy --flavor m1.small  steve-cue-haproxy
++--------------------------------------+-----------------------------------------------------+
+| Property                             | Value                                               |
++--------------------------------------+-----------------------------------------------------+
+| OS-EXT-AZ:availability_zone          | nova                                                |
+| OS-EXT-SRV-ATTR:host                 | -                                                   |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                                   |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000021                                   |
+| OS-EXT-STS:power_state               | 0                                                   |
+| OS-EXT-STS:task_state                | scheduling                                          |
+| OS-EXT-STS:vm_state                  | building                                            |
+| OS-SRV-USG:launched_at               | -                                                   |
+| OS-SRV-USG:terminated_at             | -                                                   |
+| accessIPv4                           |                                                     |
+| accessIPv6                           |                                                     |
+| adminPass                            | Z9Zarehu8LfX                                        |
+| config_drive                         |                                                     |
+| created                              | 2015-10-27T21:48:09Z                                |
+| flavor                               | m1.small (2)                                        |
+| hostId                               |                                                     |
+| id                                   | 1b995c26-8e72-417c-9b6a-12066b2a9e1f                |
+| image                                | Ubuntu 14.04 (6ac3d39c-5d22-44bb-893f-17f5312ded44) |
+| key_name                             | my-key                                              |
+| metadata                             | {}                                                  |
+| name                                 | steve-cue-haproxy                                   |
+| os-extended-volumes:volumes_attached | []                                                  |
+| progress                             | 0                                                   |
+| security_groups                      | haproxy                                             |
+| status                               | BUILD                                               |
+| tenant_id                            | 1d2110bc79004439934250748f528c82                    |
+| updated                              | 2015-10-27T21:48:09Z                                |
+| user_id                              | 42ec65af6d2d49a58676ec24321b7524                    |
++--------------------------------------+-----------------------------------------------------+</codeblock></li>
+      <li>Associate a floating IP with the VM:
+      <codeblock>nova floating-ip-associate steve-cue-haproxy 10.241.234.5</codeblock></li>
+      <li>Connect to the VM: 
+      <codeblock>ssh ubuntu@10.241.234.5 -i my-key.pem</codeblock></li>
+    </ol>
+    <p><b>Install HAProxy</b></p>
+    <p>Once the VM has been created and you are connected, follow these steps to install and configure HAProxy:</p>
+    <ol>
+      <li>Elevate to root: <codeph>sudo -i</codeph></li>
+      <li>If your environment uses a proxy, set up your proxy file:
+        <ul>
+          <li>Create a file called <codeph>01proxy</codeph> in <codeph>/etc/apt/apt.conf.d</codeph></li>
+          <li>Add the following: <codeph>Acquire::http::Proxy "http://&lt;proxy-ip&gt;:&lt;proxy-port&gt;";</codeph></li>
+        </ul></li>
+        <li>Update apt source: <codeph>apt-get update</codeph></li>
+        <li>Install haproxy: <codeph>apt-get install haproxy</codeph></li>
+        <li>Edit <codeph>/etc/default/haproxy</codeph>. Set: <codeph>ENABLE=1</codeph></li>
+        <li>Open <codeph>/etc/haproxy/haproxy.cfg</codeph> and append the following to the end. Fill in the IPs of the clusters:
+        <codeblock>...
+listen my-cue-cluster :5672
+    mode tcp
+    retries 3
+    maxconn 2000
+    balance roundrobin
+    option clitcpka
+    timeout client 10m
+    timeout server 10m
+    server cue-cluster-node-1 &lt;cluster-node-1-ip&gt;:5672 check inter 12000 rise 3 fall 3
+    server cue-cluster-node-2 &lt;cluster-node-2-ip&gt;:5672 check inter 12000 rise 3 fall 3
+    server cue-cluster-node-3 &lt;cluster-node-3-ip&gt;:5672 check inter 12000 rise 3 fall 3
+listen my-cue-cluster-management :15672
+    mode tcp
+    retries 3
+    maxconn 2000
+    balance roundrobin
+    option redispatch
+    timeout client 10m
+    timeout server 10m
+    server cue-cluster-node-1 &lt;cluster-node-1-ip&gt;:15672 check inter 12000 rise 3 fall 3
+    server cue-cluster-node-2 &lt;cluster-node-2-ip&gt;:15672 check inter 12000 rise 3 fall 3
+    server cue-cluster-node-3 &lt;cluster-node-3-ip&gt;:15672 check inter 12000 rise 3 fall 3</codeblock></li>
+      <li>Restart HAProxy: <codeph>service haproxy restart</codeph></li>
+    </ol>
+    <p><b>Verify the installation</b></p>
+    <p>After these steps, your HAProxy should be configured and ready to use. You should now be able to reach the RabbitMQ cluster via the floating IP address. 
+      You can also access the RabbitMQ management console by browsing to http://&lt;floating-ip&gt;:15672</p>
+  </section>
+  
+  
+</body>
+</topic>

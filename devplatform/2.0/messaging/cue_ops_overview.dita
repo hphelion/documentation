@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_fvp_3wd_lt">
+  <title> HPE Helion 2.0 Development Platform: Messaging</title>
+  <body>
+    <p>The Cue message broker service for HPE Helion <tm tmtype="reg">OpenStack</tm> simplifies and automates
+      provisioning, management, and administration of message brokers.</p>
+    <p>Cue is designed to provide API, CLI, and UI based management of open source brokers such as
+      RabbitMQ and Kafka. The documentation for IT Ops includes installation, upgrading, broker
+      level availability, and versioning capacity.</p>
+    <ul id="ul_d1c_1xd_lt">
+      <li>Installation</li>
+      <li>Monitoring</li>
+      <li>Reference Architecture</li>
+      <li>Runbooks</li>
+      <li>Best Practices</li>
+      <li>Uninstallation</li>
+    </ul>
+  </body>
+</topic>

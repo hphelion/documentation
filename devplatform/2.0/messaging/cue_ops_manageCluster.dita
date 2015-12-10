@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cue_manageCluster">
+  <title>HPE Helion 2.0 Development Platform: Manage a Cluster from the Command Line</title>
+  <body>
+    <ul><li><xref href="#cue_manageCluster/delete" format="dita">Delete a Cluster</xref></li>
+      <li><xref href="#cue_manageCluster/show" format="dita">Show Details About a
+        Cluster</xref></li>
+      <li><xref href="#cue_manageCluster/list" format="dita">List all Clusters on a Node</xref></li>
+     <!--<li>app dev creats an app to talk using cue; how to automatically create message brokers, if
+        you're using it, just use the cue client instead
+          <p>http://python-cueclient.readthedocs.org/en/latest/command-line.html The
+          python-cueclient can be used as a command line tool for accessing Cue API.</p></li>--></ul>
+    <section id="delete">
+      <title>Delete A Cluster</title>
+      
+      <p>Deletes the specified cluster.</p>
+      <dl>
+        <dlentry>
+          <dt>Syntax</dt>
+          <dd><codeblock>message-broker cluster delete</codeblock></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Required Fields</dt><dd>cluster-id</dd></dlentry><dlentry>
+            <dt>Sample</dt>
+            <dd><codeblock outputclass="language-python">#!/usr/bin/env python
+
+from keystoneclient.auth.identity import v3 as keystone_v3_auth
+from keystoneclient import session as keystone_session
+from cueclient.v1 import client
+
+auth = keystone_v3_auth.Password(
+        auth_url="http://example.com:5000/v3",
+        username="admin",
+        password="password",
+        project_name="admin",
+        project_domain_name="default",
+        user_domain_name="default"
+)
+
+session = keystone_session.Session(auth=auth)
+cue_client = client.Client(session=session)
+
+delete_id = "dc86d96f-6b37-4e2d-9805-4542450f427d"
+
+# Cluster Delete
+delete_response = cue_client.clusters.delete(delete_id)</codeblock></dd>
+          </dlentry>
+      </dl>
+    </section>
+    
+    
+    <section id="show">
+      <title>Show A Cluster</title>
+      <p>Displays information about the specified cluster.</p>
+      <dl>
+        <dlentry>
+          <dt>Syntax</dt>
+          <dd><codeblock>message-broker cluster show</codeblock></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Required Fields</dt><dd>cluster-id</dd></dlentry>
+        <dlentry>
+          <dt>Sample</dt>
+          <dd><codeblock outputclass="language-python">#!/usr/bin/env python
+
+from keystoneclient.auth.identity import v3 as keystone_v3_auth
+from keystoneclient import session as keystone_session
+from cueclient.v1 import client
+
+auth = keystone_v3_auth.Password(
+        auth_url="http://example.com:5000/v3",
+        username="admin",
+        password="password",
+        project_name="admin",
+        project_domain_name="default",
+        user_domain_name="default"
+)
+
+session = keystone_session.Session(auth=auth)
+cue_client = client.Client(session=session)
+
+cluster_id = "0a352f9a-8aa8-411e-9d6d-4e6217d70afd"
+
+# Cluster Show
+show_response = cue_client.clusters.get(cluster_id)</codeblock></dd>
+        </dlentry>
+      </dl>
+    </section>
+   
+    
+    <section id="list">
+      <title>List All Clusters</title>
+      <p>Lists all clusters on the current node.</p>
+      <dl>
+        <dlentry>
+          <dt>Syntax</dt>
+          <dd><codeblock>message-broker cluster list</codeblock></dd>
+        </dlentry>
+        <dlentry>
+          <dt>Required Fields</dt><dd>None</dd></dlentry>
+        <dlentry>
+          <dt>Sample</dt>
+          <dd><codeblock outputclass="language-python">#!/usr/bin/env python
+
+from keystoneclient.auth.identity import v3 as keystone_v3_auth
+from keystoneclient import session as keystone_session
+from cueclient.v1 import client
+
+auth = keystone_v3_auth.Password(
+        auth_url="http://example.com:5000/v3",
+        username="admin",
+        password="password",
+        project_name="admin",
+        project_domain_name="default",
+        user_domain_name="default"
+)
+
+session = keystone_session.Session(auth=auth)
+cue_client = client.Client(session=session)
+
+# Cluster List
+list_response = cue_client.clusters.list()</codeblock></dd>
+        </dlentry>
+      </dl>
+    </section>
+    <p>For more details on working with Cue clusters from the command line, see <xref
+      href="http://python-cueclient.readthedocs.org/en/latest/command-line.html#cluster-create"
+      format="html" scope="external">Cue Command Line Tool</xref>.</p>
+  </body>
+</topic>

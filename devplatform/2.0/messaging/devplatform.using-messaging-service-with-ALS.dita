@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="using_messaging_als">
+  <title>HPE Helion 2.0 Development Platform: Using the Messaging Broker Service with ALS</title>
+  <body>
+    <p><!--going to be two pages here - how do i interface cloudfoundry with cue? dev--></p>
+    <p><!--ops - how do i modify cue or CF so that users can interface with cue?
+note from Min  that Arun is looking into this right now. Cue manages the message brokers; it is not itself a message broker. Right now we support RabbitMQ but it' will be completely different than it used to be. Haven't committed to supporting any other broker right out of the gate, but we will later.--></p>
+    <p>The Messaging Broker Service provides on-demand RabbitMQ clusters and enables automatic access to
+      the RabbitMQ management console. RabbitMQ is also available within ALS as a single-instance,
+      unmanaged service. If your application relies on high message throughput or if you want to
+      move an application from dev/test into production, you should strongly consider using the
+      Messaging Broker Service instead of the RabbitMQ service embedded with ALS.</p>
+    <p>If the HPE Helion <tm tmtype="reg">OpenStack</tm> cloud was configured with three availability
+      zones, the Messaging Broker  Service will automatically deploy the cluster across all three so that
+      the cluster is resilient to server, VM, or availability zone failures.</p>
+    <section id="prerequisites">
+      <title>Prerequisites</title>
+      <p>To use the Messaging Broker Service with ALS, you need to:</p>
+      <ol>
+        <li>
+          <xref href="devplatform.using-the-messaging-service.dita#using_messaging/create" type="section"
+            >Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not
+          already exist. </li>
+        <li>Once a cluster has been created, you can connect an application deployed to ALS with the
+          Messaging Broker Service.</li>
+        <li>To connect, you must create an environment variable in the <i>manifest.yml</i> file of
+          the application you wish to connect to the Messaging Broker Service. This will tell your
+          application how to connect to the cluster using AMQP. The environment variable can be
+          named anything you prefer. We will use <b>MQ_URL</b> in this example.<ol>
+            <li>The connection string and MQ_URL value will look something
+              like:<codeblock><codeph>amqps://username:password@ipaddress:5671/%2f</codeph></codeblock></li>
+            <li>The username and password for a RabbitMQ cluster are the same credentials used to
+              create the cluster.<ul>
+                <li>Alternately, you can add other accounts to the cluster using the RabbitMQ
+                  management console. The RabbitMQ management console is accessible from the Horizon
+                  Management Console.</li>
+              </ul></li>
+            <li> The new environment variable can then be inserted into a block within your
+                <i>manifest.yml</i> file like
+              so:<codeblock>env: 
+  MQ_URL: amqps://username:password@ipaddress:5671/%2f</codeblock></li>
+          </ol></li>
+        <li> You can then connect your application to the cluster by choosing from a long list of
+            <xref href="http://www.rabbitmq.com/devtools.html" scope="external" format="html"
+            >available AMQP client libraries</xref>. Your app will reference and parse the
+            <b>MQ_URL</b> variable to connect to the cluster.</li>
+      </ol>
+    </section>
+    <section id="connecting-to-the-messaging-service-with-php">
+      <title>Connecting to the Messaging Broker Service with PHP</title>
+      <p>This code section shows how to retrieve the connection information for the RabbitMQ cluster
+        from the application's environment variable, <b>MQ_URL</b>. The code then creates a queue,
+        an exchange, posts the message to the queue, reads the message from the queue, and then
+        writes it back out to the user.</p>
+      <codeblock>$url = parse_url(getenv('MQ_URL'));
+$conn = new AMQPConnection($url['host'], $url['port'], $url['user'], $url['pass'], substr($url['path'], 1));
+$ch = $conn-&gt;channel();
+
+// Create a queue
+$queue = 'basic_get_queue';
+$ch-&gt;queue_declare($queue, false, true, false, false);
+
+// Create an exchange
+$exchange = 'amq.direct';
+$ch-&gt;exchange_declare($exchange, 'direct', true, true, false);
+$ch-&gt;queue_bind($queue, $exchange);
+
+// Publish the user's message
+$msg_body = $_POST["message"];
+$msg = new AMQPMessage($msg_body, array('content_type' =&gt; 'text/plain', 'delivery_mode' =&gt; 2));
+$ch-&gt;basic_publish($msg, $exchange);
+
+// Retrieve the message that was sent
+$retrived_msg = $ch-&gt;basic_get($queue);
+$msgContents = $retrived_msg-&gt;body;
+echo $msgContents;
+$ch-&gt;basic_ack($retrived_msg-&gt;delivery_info['delivery_tag']);
+
+$ch-&gt;close();
+$conn-&gt;close();</codeblock>
+      <p>If you're using the Messaging Broker Service instead of the embedded unmanaged RabbitMQ service,
+        you do not need to specify anything other than the environment variables in your
+          <i>manifest.yml</i> file. If you are using the unmanaged RabbitMQ service, you <b>must</b>
+        specify this dependency under <b>Services:</b> in the <i>manifest.yml</i> file.</p>
+    </section>
+  </body>
+</topic>
