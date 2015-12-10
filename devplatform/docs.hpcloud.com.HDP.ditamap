@@ -18,9 +18,9 @@
       <topicref href="2.0/installation/devplatform_install_prereq.dita"
         navtitle="Installation Prerequisites" locktitle="yes"/>
       <topicref href="2.0/installation/install_cloudsyaml.dita"
-        navtitle="Create the clouds.yaml File" locktitle="yes"/>
+        navtitle="Create the clouds.yaml File" locktitle="yes" toc="no"/>
       <topicref href="2.0/installation/devplatform_install_platform.dita"
-        navtitle="Install the HPE Helion Development Platform Service Installer" locktitle="yes"/>
+        navtitle="Set up the HPE Helion Development Platform Installer" locktitle="yes"/>
       <!--<topicref href="2.0/installation/devplatform_upgrade_to_1.3.dita" navtitle="Upgrading ALS from 1.2 to 2.0" locktitle="yes"/>-->
       <!--<topicref href="2.0/helion/admin/server/upgrade.dita" locktitle="yes" navtitle="Upgrade Existing ALS Clusters"/>-->
       <!--<topicref href="2.0/devplatform.troubleshooting.dita" locktitle="yes" navtitle="Installation Troubleshooting"/>-->
@@ -34,7 +34,7 @@
       <topicref href="2.0/installation/devplatform_install_messaging.dita"
         navtitle="Install the Messaging Service" locktitle="yes"/>
       <topicref href="2.0/installation/install_offline.dita"
-        navtitle="Downloading for Offline Installation" locktitle="yes"/>
+        navtitle=" Download Files Before Installation" locktitle="yes"/>
       <topicref href="2.0/installation/install_listOptions.dita" navtitle="no_ListContent"
         locktitle="yes" toc="no"/>
       <topicref href="2.0/installation/install_dbaas_configureAvailabilityZones.dita"
