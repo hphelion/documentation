@@ -15,10 +15,13 @@
         gone down.</p>
       <p>The steps involved are:</p>
       <ol>
-        <li><xref href="add_node.dita#add_node/prereqs">Prerequisites</xref></li>
-        <li><xref href="add_node.dita#add_node/mysql">Recovering the MySQL Database</xref></li>
-        <li><xref href="add_node.dita#add_node/vertica">Recovering the Vertica Database</xref></li>
-        <li><xref href="add_node.dita#add_node/hlm">Restarting the Lifecycle Manager</xref></li>
+        <li><xref href="recover_downed_cluster.dita#add_node/prereqs">Prerequisites</xref></li>
+        <li><xref href="recover_downed_cluster.dita#add_node/mysql">Recovering the MySQL
+            Database</xref></li>
+        <li><xref href="recover_downed_cluster.dita#add_node/vertica">Recovering the Vertica
+            Database</xref></li>
+        <li><xref href="recover_downed_cluster.dita#add_node/hlm">Restarting the Lifecycle
+            Manager</xref></li>
       </ol>
     </section>
 
