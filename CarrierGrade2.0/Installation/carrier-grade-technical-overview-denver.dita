@@ -37,7 +37,7 @@
       <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
         Carrier Grade.</p>
       <p>
-        <image href="../../media/CGH-2-deploy-arch-denver.png" width="600"/></p>
+        <image href="../../media/CGH-2-deploy-arch-denver-v10.png" width="600"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
