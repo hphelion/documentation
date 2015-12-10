@@ -71,11 +71,10 @@
         </dlentry>
       </dl>
     </section>
-
-      <note>All of the following procedures are performed on the HPE Helion OpenStack lifecycle
-      manager. SSH to the lifecycle manager  before attempting any of these procedures.</note>
     <section id="shell">
       <title>Set Proxy Shell Variables</title>
+      <note>All of the following procedures are performed on the HPE Helion OpenStack lifecycle
+        manager. SSH to the lifecycle manager before attempting any of these procedures.</note>
       <p>If your network uses a proxy, it may be necessary to set the <codeph>https_proxy</codeph>
         and <codeph>http_proxy</codeph> shell variables.</p>
       <ol>
@@ -109,6 +108,8 @@
     
     <section>
       <title>Verify Connectivity to Public Endpoints</title>
+      <note>All of the following procedures are performed on the HPE Helion OpenStack lifecycle
+        manager. SSH to the lifecycle manager before attempting any of these procedures.</note>
       <ol id="ol_egn_mr1_tt">
         <li>Source the Keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
         <li>Verify access to the Keystone public endpoint:
