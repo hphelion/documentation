@@ -76,13 +76,16 @@ cf create-org myOrg
 cf target -o myOrg
 cf create-space mySpace -o myOrg
 cf target -o myOrg -s mySpace</codeblock></note></li>
-          </ol><b>To Push a GitHub Application to Your Cluster</b><ol id="ol_idl_1mw_tt">
-            <li>Navigate to the GitHub page of the application and click <uicontrol>Download
-                ZIP</uicontrol>.</li>
-            <li>Decompress the <filepath>zip</filepath> file into a convenient directory.</li>
-            <li>Navigate to the directory that contains your application and its
-                <filepath>yml</filepath> file, and ensure that the <filepath>yml</filepath> file is
-              configured correctly.</li>
+          </ol><b>To Clone a GitHub Application and Push it to Your Cluster</b><ol
+            id="ol_idl_1mw_tt">
+            <li>Navigate to the GitHub page of the application and from the <uicontrol>Choose a
+                clone URL</uicontrol> drop-down list select <uicontrol>HTTPS</uicontrol>.<note>You
+                can also download the application directly from GitHub by clicking
+                  <uicontrol>Download ZIP</uicontrol>.</note></li>
+            <li>Create a directory and clone the application, for
+              example:<codeblock>git clone https://github.com/Apps/myApp.git</codeblock></li>
+            <li>Ensure that the <codeph>yml</codeph> file in the application directory is configured
+              correctly.</li>
             <li>Target the cluster, for
               example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
             <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock><p

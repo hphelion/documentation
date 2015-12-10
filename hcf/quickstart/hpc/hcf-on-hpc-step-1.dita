@@ -25,12 +25,16 @@
         keyref="quickStartHPcloudStep5"/></xref></p>6. <xref
          href="hcf-on-hpc-step-6.dita#concept_m3k_bth_tt" id="quickStartHPcloudStep6_"><keyword keyref="quickStartHPcloudStep6"
      /></xref></stentry>
-    <stentry><b>Registering for a <keyword keyref="pubCloudShort"/> Account</b><p>Ensure that you
-      have an <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
-        keyref="pubCloudLong"/></xref> account and sufficient cloud credit to cover the hosting
-      costs for your sandbox environment.</p><note type="tip">Keep your username and password handy.
-      You will need them to <xref href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st">create a sandbox
-       environment</xref>.</note><xref href="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st">
+    <stentry><b>Prerequisites</b><p>
+      <ul id="ul_tqs_gxh_h5">
+       <li>An <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
+          keyref="pubCloudLong"/></xref> account</li>
+       <li>A minumum of 16GB for the public-facing node and 8 GB for the DEA node, and a 40GB
+        volume</li>
+      </ul>
+     </p><note type="tip">Keep your username and password handy. You will need them to <xref
+       href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st">create a sandbox
+      environment</xref>.</note><xref href="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st">
       <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
      </xref></stentry>
    </strow>

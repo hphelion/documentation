@@ -20,72 +20,60 @@
               conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
               conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
             conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
-    <stentry><b>Downloading <keyword keyref="prodLong"/></b><p>You can use <keyword
-              keyref="prodShort"/> to push Docker images and application code to the server, to
-            start and stop applications, to link <keyword keyref="opnStckShort"/> services to
-            applications, and to perform other application management operations. <keyword
-              keyref="prodShort"/> works on Linux, Mac OS X, and Windows.</p><ul id="ul_cfn_rm1_tt">
-            <li><xref
-                href="https://a248.e.akamai.net/cdn.hpcloudsvc.com/gb0e6744f83898b90eb8ff0a2e16a9529/prodae1/hcf-1.0.0.102_master/hcf-1.0.0.102_master.tar.gz"
-                format="html" scope="external">Download <keyword keyref="prodShort"/>
-                <keyword keyref="prodVerLong"/></xref>
-            </li>
-          </ul><note type="tip">To decompress <filepath>tar.gz</filepath> files on Windows, you can
-            use a file archiver such as <xref href="http://www.7-zip.org/" format="html"
-              scope="external">7zip</xref>.</note><b>Downloading and Installing the Cloud Foundry
-            Command-Line Interface (CLI)</b><p>You can use the Cloud Foundry CLI to deploy and
-            manage your applications. Click the download link appropriate for your operating
-            system:</p><ul id="ul_bp4_fpb_tt">
-            <li>Debian <xref
-                href="https://cli.run.pivotal.io/stable?release=debian32&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x86</xref> | <xref
-                href="https://cli.run.pivotal.io/stable?release=debian64&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x64</xref></li>
-            <li>RedHat <xref
-                href="https://cli.run.pivotal.io/stable?release=redhat32&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x86</xref> | <xref
-                href="https://cli.run.pivotal.io/stable?release=redhat64&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x64</xref></li>
-            <li>Mac OS X <xref
-                href="https://cli.run.pivotal.io/stable?release=macosx64&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x64</xref></li>
-            <li>Windows <xref
-                href="https://cli.run.pivotal.io/stable?release=windows32&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x86</xref> | <xref
-                href="https://cli.run.pivotal.io/stable?release=windows64&amp;version=6.13.0&amp;source=github-rel"
-                format="html" scope="external">x64</xref></li>
-          </ul><note>Ensure that the Cloud Foundry CLI is added to your <codeph>PATH</codeph>
-            environment variable.</note><b>Downloading and Installing the Terraform CLI</b><p>You
-            can use the Terraform 0.6.3 CLI and higher to construct, manage, update, or delete
-              <keyword keyref="prodShort"/> clusters. Click the download link appropriate for your
-            operating system:</p><ul id="ul_d1k_5k1_tt">
-            <li>Linux <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_linux_386.zip"
-                format="zip" scope="external">x86</xref> | <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_linux_amd64.zip"
-                format="zip" scope="external">x64</xref> | <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_linux_arm.zip"
-                format="zip" scope="external">Arm</xref></li>
-            <li>Mac OS X <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_darwin_386.zip"
-                format="zip" scope="external">x86</xref> | <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_darwin_amd64.zip"
-                format="zip" scope="external">x64</xref></li>
-            <li>Windows <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_windows_386.zip"
-                format="zip" scope="external">x86</xref> | <xref
-                href="https://dl.bintray.com/mitchellh/terraform/terraform_0.6.4_windows_amd64.zip"
-                format="zip" scope="external">x64</xref></li>
-          </ul><note>Ensure that Terraform is added to your <codeph>PATH</codeph> environment
-            variable. To set the variable on Linux and Mac OS X, <xref
+    <stentry><note type="important">Ensure that all tools are added to your <codeph>PATH</codeph>
+            environment variable. To set the variable on Linux and Mac OS X, <xref
               href="http://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux"
               format="html" scope="external">see this page</xref>. To set it on Windows, <xref
               href="http://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows"
-              format="html" scope="external">see this page</xref>. For detailed installation
-            instructions, see the <xref
-              href="https://terraform.io/intro/getting-started/install.html" format="html"
-              scope="external">Terraform installation guide</xref>.</note><xref
-            href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st">
+              format="html" scope="external">see this page</xref>.</note><b>Downloading <keyword
+              keyref="prodLong"/></b><p>You can use <keyword keyref="prodShort"/> to push Docker
+            images and application code to the server, to start and stop applications, to link
+              <keyword keyref="opnStckShort"/> services to applications, and to perform other
+            application management operations. <keyword keyref="prodShort"/> works on Linux, Mac OS
+            X, and Windows.</p><ul id="ul_cfn_rm1_tt">
+            <li><xref
+                href="https://helion.hpwsportal.com/catalog.html#/Category/%7B%22categoryId%22%3A10604%7D/Show"
+                format="html" scope="external">Download <keyword keyref="prodShort"/>
+                <keyword keyref="prodVerLong"/></xref>
+            </li>
+          </ul><note type="tip">To decompress <codeph>tar.gz</codeph> files on Windows, you can use
+            a file archiver such as <xref href="http://www.7-zip.org/" format="html"
+              scope="external">7zip</xref>.</note><b>Downloading and Installing the Terraform
+            CLI</b><p>The Terraform CLI allows you to construct, manage, update, or delete <keyword
+              keyref="prodShort"/> clusters. Click the download link appropriate for your operating
+            system:</p><ul id="ul_d1k_5k1_tt">
+            <li>Linux <xref
+                href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_linux_386.zip"
+                format="zip" scope="external">x86</xref> | <xref
+                href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_linux_amd64.zip"
+                format="zip" scope="external">x64</xref></li>
+            <li>Mac OS X <xref
+                href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_darwin_386.zip"
+                format="zip" scope="external">x86</xref> | <xref
+                href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_darwin_amd64.zip"
+                format="zip" scope="external">x64</xref></li>
+            <li>Windows <xref
+                href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_windows_386.zip"
+                format="zip" scope="external">x86</xref> | <xref
+                href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_windows_amd64.zip"
+                format="zip" scope="external">x64</xref></li>
+          </ul><b>Downloading and Installing the Cloud Foundry CLI</b><p>The Cloud Foundry CLI
+            allows you to deploy and manage your applications. Click the download link appropriate
+            for your operating system:</p><ul id="ul_bp4_fpb_tt">
+            <li>Linux <xref
+                href="https://cli.run.pivotal.io/stable?release=linux32-binary&amp;version=6.14.0&amp;source=github-rel"
+                format="html" scope="external">x86</xref> | <xref
+                href="https://cli.run.pivotal.io/stable?release=linux64-binary&amp;version=6.14.0&amp;source=github-rel"
+                format="html" scope="external">x64</xref></li>
+            <li>Mac OS X <xref
+                href="https://cli.run.pivotal.io/stable?release=macosx64-binary&amp;version=6.14.0&amp;source=github-rel"
+                format="html" scope="external">x64</xref></li>
+            <li>Windows <xref
+                href="https://cli.run.pivotal.io/stable?release=windows32-exe&amp;version=6.14.0&amp;source=github-rel"
+                format="html" scope="external">x86</xref> | <xref
+                href="https://cli.run.pivotal.io/stable?release=windows64-exe&amp;version=6.14.0&amp;source=github-rel"
+                format="html" scope="external">x64</xref></li>
+          </ul><xref href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

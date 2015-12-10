@@ -35,12 +35,12 @@
                     <uicontrol>Next</uicontrol>.</li>
                 <li>Enter <uicontrol>Allocation Pools</uicontrol> (for example,
                     <codeph>10.0.0.2,10.0.0.254</codeph>), and click
-                    <uicontrol>Create</uicontrol>.<note type="tip">To find the network ID, click the
-                    name of your network. You will need it to <xref
-                      href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt"
-                      >configure your <codeph>tfvars</codeph> file</xref> and <xref
-                      href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run
-                      terraform commands.</xref></note></li>
+                  <uicontrol>Create</uicontrol>.</li>
+                <li>Click the name of your network and then click <uicontrol>Edit Subnet</uicontrol>
+                  in the <uicontrol>Actions</uicontrol> column of your subnet's row.</li>
+                <li>On the <uicontrol>Edit Subnet</uicontrol> dialog box, click <uicontrol>Subnet
+                    Details</uicontrol>, enter your <uicontrol>DNS Name Servers</uicontrol> and
+                  click <uicontrol>Save</uicontrol>.</li>
               </ol></li>
             <li>Create a router.<ol id="ol_vkh_fr1_tt">
                 <li>On the left panel, click <menucascade>
@@ -80,6 +80,16 @@
                 <li>Ensure that your router is shown connected to your network and the external
                   network.</li>
               </ol></li>
+            <li>To determine your network ID, on the left panel, click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Network</uicontrol>
+                <uicontrol>Networks</uicontrol>
+              </menucascade> and then click the name of your network.<note type="tip">You will need
+                the network ID to <xref
+                  href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">configure
+                  your <codeph>tfvars</codeph> file</xref> and to <xref
+                  href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run
+                  terraform commands.</xref></note></li>
             <li>Ensure that you have at least 16GB of RAM.<p>To view your current limits, click <menucascade>
                   <uicontrol>Project</uicontrol>
                   <uicontrol>Compute</uicontrol>

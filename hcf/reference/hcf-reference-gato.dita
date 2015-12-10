@@ -53,25 +53,6 @@
           <dd>Show a list of commands or help for one command.</dd>
         </dlentry>
         <dlentry>
-          <dt><codeph id="role_example">role</codeph></dt>
-          <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
-            variable to determine the Docker server endpoint. Use the <codeph>--node</codeph>
-            flag to start, stop, or restart a <xref
-              href="hcf-reference-roles.dita#cf_reference_roles"><varname>&lt;role></varname></xref>
-            on a specific node. For example:
-              <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
-              id="ul_blk_nhj_rt">
-              <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><codeph>role
-                    start</codeph></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><codeph>role
-                    stop</codeph></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><codeph>role
-                    restart</codeph></xref></li>
-            </ul></dd>
-        </dlentry>
-      </dl>
-      <dl>
-        <dlentry>
           <dt><codeph>status <varname>[options]</varname></codeph></dt>
           <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster. For example:<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock><dl>
               <dlentry>
@@ -81,6 +62,27 @@
             </dl></dd>
         </dlentry>
       </dl>
+      <draft-comment author="michaelk">
+        <dl>
+          <dlentry>
+            <dt><codeph id="role_example">role</codeph></dt>
+            <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph>
+              environment variable to determine the Docker server endpoint. Use the
+                <codeph>--node</codeph> flag to start, stop, or restart a <xref
+                href="hcf-reference-roles.dita#cf_reference_roles"
+                ><varname>&lt;role></varname></xref> on a specific node. For example:
+                <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
+                id="ul_blk_nhj_rt">
+                <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><codeph>role
+                      start</codeph></xref></li>
+                <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><codeph>role
+                      stop</codeph></xref></li>
+                <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><codeph>role
+                      restart</codeph></xref></li>
+              </ul></dd>
+          </dlentry>
+        </dl>
+      </draft-comment>
     </section>
     <section>
       <title>Command Options</title>
