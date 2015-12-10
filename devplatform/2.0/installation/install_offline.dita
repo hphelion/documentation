@@ -17,13 +17,21 @@
           scope="external">HPE Helion Download Network</xref> (HDN).</li>
       <li>If necessary, create an account, and then log in.</li>
       <li>Click the <b>Download</b> button in the left navigation panel.</li>
-      <li>Click to select the service you wish to download. </li>
+      <li>Click to select the service you wish to download. A complete installation consists of:<ul
+          id="ul_bdc_vtb_h5">
+          <li>HPE Helion Development Platform Installer (HDPI)</li>
+          <li>Application Lifecycle Service (ALS)</li>
+          <li>Database Service</li>
+          <li>Message Broker Service</li>
+          <li>HPE Helion Code Engine</li>
+        </ul></li>
       <li>Click the blue <b>Download</b> button at the top right of the screen to begin the
         download. </li>
-      <li>Follow the installation instructions provided for each service.</li>
+      <li>After you have finished downloading, follow the installation instructions provided for
+        each service.</li>
     </ol>
-    <note type="important">When installing with pre-downloaded files, the HDPI must be launched from
-      the same directory that contains the installation files. If the installer cannot find a
-      required file in the same directory, it will attempt to download the files again. </note>
+    <note type="important">When installing services using pre-downloaded files, the HDPI must be
+      launched from the same directory that contains the installation files. If the installer cannot
+      find a required file in the same directory, it will attempt to download the files again. </note>
   </body>
 </topic>
