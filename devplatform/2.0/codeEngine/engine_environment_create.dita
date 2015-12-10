@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="mf4_fh4_ht">
+    <title>HPE Helion 2.0 Development Platform: Create a New Environment</title>
+    <body>
+        <p>The Environment is a target where the application is deployed. </p>
+    <note>Currently, only Helion Cloud Foundry environments are supported.</note>
+        
+        <p id="create_environment"><ol>
+                <li>Click the <b>Environments</b> tab and then click <b>New Environment</b>.<image
+                        placement="break" href="../../../media/engine_environment_create_new.png"
+                        id="image_bv2_drn_zt"/><image placement="break"
+                        href="../../../media/engine_environment_create.png" id="image_mcq_14y_kt"/><ol>
+                        <li>Provide a descriptive <b>Name</b> for this environment. </li>
+                        <li>Click the <b>Type</b> of environment to create.<ul id="ul_x5b_cny_kt">
+                                <li>CloudFoundry: Deploys the application to a Cloud Foundry
+                                    endpoint. At this time, only Helion Cloud Foundry environments
+                                    are supported.</li>
+                                <li><i>Docker: Builds the application and pushes the image to a
+                                        public or private DockerHub repository.</i></li>
+                                <li><i>Lattice: Deploys the application to a simplified container
+                                        cluster.</i></li>
+                            </ul></li>
+                        <li>Click <b>Next</b>.</li>
+                    </ol></li>
+            <li>Provide the required credentials and then click <b>Connect</b>.<image
+                        placement="break"
+                        href="../../../media/engine_create_environment_credentials.png"
+                        id="image_kds_44y_kt"/>
+     <ol>
+                        <li>Provide a descriptive <b>Name</b> for this Environment.</li>           <li>Select the target <b>Organization</b>. If the target Organization does not
+                    appear in the list, you may have to <xref
+                        href="../helion/user/reference/client-ref-organizations.dita#topic6634/command-create-org"
+                        >create it</xref>.</li>
+                <li>Select the target <b>Space</b>. If the target Space does not appear in the list,
+                    you may have to <xref
+                        href="../helion/user/reference/client-ref-spaces.dita#topic9898/command-create-space"
+                        >create it</xref>.</li>
+         <li>Click <b>Save</b>.</li></ol></li>
+        </ol></p>
+    </body>
+</topic>

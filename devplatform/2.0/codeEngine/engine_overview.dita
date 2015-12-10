@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_cfn_lvq_dt">
+  <title>HPE Helion 2.0 Development Platform: Continuous Integration and Deployment Overview</title>
+  <body>
+    <p>HPE Helion Code Engine is a continuous integration and delivery system designed for small
+      development teams who are interested in building "greenfield" cloud native apps and deploying
+      them with Helion Development Platform. </p>
+    <p>HPE Helion Code Engine leverages Git version control technologies to automate build, test and
+      deploy cycles so that developers can quickly bring their ideas to life and get customer
+      validation.</p>
+    <p>More specifically, unit tests are automated through the most popular testing frameworks for
+      the supported tech stacks and apps can be deployed to any specified environment - testing,
+      staging or production.</p>
+    <p>Continuous integration and development automates processes that traditionally curb agile
+      development in the enterprise. HPE Helion Code engine can catalyse your journey to modern
+      development workflows.</p>
+    <section><title>Highlights</title>
+      <ul>
+        <li>Automates testing through integration with popular testing frameworks.</li>
+        <li>Supports Git version control technologies: Github.com, Github Enterprise, and on-premise
+          Git repositories.</li>
+        <li>Deploy to any specified Helion Development Platform environment: test, staging or
+          production.</li>
+        <li>Supports applications built on Node.js, Java, and Python.</li>
+        <li>Sends notifications to popular collaboration software such as HipChat and Flowdock.</li>
+        <li>Integrates with StormRunner for post-deployment load-testing analysis.</li>
+      </ul> </section>
+  </body>
+</topic>

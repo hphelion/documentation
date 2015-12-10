@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_kdx_zqv_4t">
+  <title>HPE Helion 2.0 Development Platform: Log Files for Continuous Integration</title>
+  <body>
+    
+    <p>Every build, test, deployment and post-deploy event generates log files.  </p>
+<p>To access the logs, click the <b>Projects</b> tab and then click the title of a particular build.
+        <image href="../../../media/engine_logging_buildlist.png" id="image_qmw_bcw_4t"
+        placement="break"/></p><p>Each event - Building, Testing, and Deploying - can be expanded to display the logs associated
+      with that event. Click the arrow icons to expand or collapse each section.<ul
+        id="ul_yhf_qbw_4t">
+        <li>Checking <b>Show Raw Log</b> will strip out the message formatting designed to make the
+          logs easier to understand. Only the raw output is displayed.</li>
+        <li>Checking <b>Dark Background</b> will invert the colors to white text on a black
+          background. This may be easier to read.<image
+            href="../../../media/engine_logging_alerts.png" id="image_d22_ttv_4t"/></li>
+      </ul></p>
+  </body>
+</topic>

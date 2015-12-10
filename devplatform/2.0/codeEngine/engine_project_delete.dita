@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_o4x_zhs_lt">
+  <title>HPE Helion 2.0 Development Platform: Delete a Project</title>
+  <body>
+       <section>
+      <ol id="project_delete">
+        
+        <li>Click the <b>Projects</b> tab.</li>
+        <li>Find the unwanted Project in the list.</li>
+        <li>Click the trash-can icon at the far right of the target project.</li>
+        <li>Click <b>Delete</b> to confirm.</li>
+      </ol></section>
+
+  </body>
+</topic>

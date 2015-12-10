@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rkg_vlg_tt">
+  <title>HPE Helion 2.0 Development Platform: Testing</title>
+  <body>
+    <p>Each of the tech stacks and frameworks has conventions for supporting unit testing. </p>
+    <p>The HPE Helion Code Engine looks for specific files in the root directory of the project. The
+      specific file found will determine how the project is built and tested.</p><note>Only one of these files is
+      expected to exist in the project root directory. The behavior is undefined in the presence of
+      multiple files.</note>
+    
+    <section><title>Java Projects</title><dl>
+        <dlentry>
+          <dt>pom.xml</dt>
+          <dd>Build: <codeph>mvn -Dmaven.test.skip=true package</codeph>
+          </dd>
+          <dd>Test: <codeph>mvn test</codeph></dd>
+        </dlentry>
+        <dlentry>
+          <dt>gradle.build</dt>
+          <dd>Build: <codeph>gradle build -x test</codeph></dd>
+          <dd>Test: <codeph>gradle test</codeph></dd>
+        </dlentry>
+        <dlentry>
+          <dt>gradlew</dt>
+          <dd>Build: <codeph></codeph></dd>
+          <dd>Test: <codeph>gradlew test</codeph></dd>
+        </dlentry>
+      </dl> 
+ </section>
+    <section><title>Python projects</title><dl>
+      <dlentry>
+        <dt>tox.ini</dt>
+        <dd>Build: <codeph>python setup.py install</codeph></dd>
+        <dd>Test: <codeph>tox</codeph></dd>
+      </dlentry><dlentry>
+        <dt>setup.py</dt>
+        <dd>Build: <codeph>python setup.py install</codeph></dd>
+        <dd>Test: <codeph>python setup.py test</codeph></dd>
+      </dlentry>
+    </dl> </section>
+    <section><title>NodeJS Projects</title> <dl>
+      <dlentry>
+        <dt></dt>
+        <dd>Build: <codeph>npm install</codeph></dd>
+        <dd>Test: <codeph>npm test</codeph></dd>
+      </dlentry>
+    </dl></section>
+  </body>
+</topic>

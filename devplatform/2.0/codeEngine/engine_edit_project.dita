@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="projectEdit">
+  <title>HPE Helion 2.0 Development Platform: Change an Existing Project</title>
+  <body>
+    <p>Some elements of an existing project can be changed.</p>
+    <section><title>Edit Project Specifications</title>
+    <ol id="project_edit">
+      
+      <li>Click the <b>Projects</b> tab.</li>
+      <li>Click the target project and then click <b>Edit</b>. <note>The target Repository cannot be
+          changed. If the Repository is wrong, delete this project and create a new one.</note></li>
+      <li>Click <b>Save</b>.</li>
+          </ol>
+  </section>
+    <section id="addmore">
+      <title>Add More Deployment Targets</title>
+      <ol>
+        <li>Select the target build and click <b>Edit</b>.</li>
+        <li>Scroll down and click <b>Add Targets</b>.</li>
+        <li>Specify the environments this build should be deployed to.</li>
+        <li>Click <b>Save</b>.</li>
+      </ol>
+    </section>
+   <section id="changePostDeploy"><title>Create a new Post-deployment Action</title>
+    <p conref="engine_create_postdeploy.dita#createPostDeploy/createpd"/></section>
+    
+    <section><title>Create New Notifications</title>
+      <ol><li>Click the <b>Projects</b> tab.</li>
+        <li>Find the desired Project in the list and then click <b>View Details</b>.</li>
+        <li>Scroll down to <b>Notification Targets </b>and then click <b>New Target</b>. </li>
+        <li>Define the <b>Notification Target</b>:<image
+            href="../../../media/engine_edit_notification.png" id="image_k1l_hhs_lt"
+            placement="break"/><ol><li>Provide a descriptive <b>Name</b> for this Notification.</li>
+            <li conref="engine_create_project.dita#createProject/defineNotifications"/>
+            <li>Click <b>Save</b>.</li>
+          </ol></li>
+        </ol></section>
+    
+  </body>
+</topic>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="task_sw4_1zq_dt">
+    <title>HPE Helion 2.0 Development Platform: Create an Automated Build-Test-Deploy Cycle</title>
+    <body>
+    <p>The true advantage of continuous integration is creating a build-test-deploy cycle which will
+            occur automatically whenever a change is committed.</p>
+        <p>When a pull request is received, developers can <xref
+            href="#task_sw4_1zq_dt/tempdeploy">preview a temporary
+                deployment</xref> before approving the proposed changes. Approving the pull request
+            triggers the normal build-test-deploy cycle.</p>
+    
+    <p>You will need: <ul>
+                <li>An application to deploy.</li>
+                <li>An instance of the Helion Code Engine application installed.</li>
+                <li>The access credentials for a valid target environment.</li>
+                                            </ul></p>
+     <section><title>Overview</title>
+     <p>Projects contain information specifying what will happen each time the application is built:
+                which environment to deploy the application to, which tests to run, who should be
+                notified, and how that notification should be delivered.</p>
+            <p>After the cycle is defined, each build will automatically deploy the app to the
+                target environment, run the specified tests, and send relevant notifications.</p>                                       
+                                            
+                                            </section>
+        <section><title>Steps</title>
+        <ol>
+            <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/environment">Create a New Environment</xref>. This defines the deployment target.</li>
+            <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/project">Create a Project</xref>.
+                    This defines the target code repository and specifies build notifications.</li>
+            <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/post">Create Post-Deployment Actions</xref>. This defines what actions to take, usually
+                    testing, after the build is completed. (optional)</li>
+            <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/commit">Commit a Change</xref>.
+                    Start the whole cycle from your source repo.</li>
+        </ol>
+        </section>
+<section id="environment"><title>Specify an Environment</title>
+    <p conref="engine_environment_create.dita#mf4_fh4_ht/create_environment"/>
+</section>
+        
+        <section id="project"><title>Create a Project</title>
+        <p conref="engine_create_project.dita#createProject/project_create"/></section> 
+    
+        <section id="post"><title>Add Post-Deployment Tasks</title><p conref="engine_create_postdeploy.dita#createPostDeploy/createpd"/></section>
+        <section id="commit">
+            <title>Commit and Build</title>
+           <note>You can also <xref href="engine_create_build.dita">perform a manual build</xref> at any time from the HPE Helion Code Engine. </note> <p>Direct commits to the repository trigger the full automated build-test-deploy cycle. Pull
+                requests, however, need to be approved. If the build runs and the test succeed, a temporary deployment is created where the proposed change can be reviewed.
+                When the pull request is approved, the temporary deployment is deleted and the build
+                is deployed to the specified final environment (staging, test, production, etc.) If
+                the pull request is not approved, the temporary deployment is deleted and the rest
+                of the cycle does not occur.</p>
+            <p id="tempdeploy">The temporary deployments can be accessed in multiple ways. <ul id="ul_f1q_smw_4t">
+                    <li>Notifications contain a link.</li>
+                    <li>The Pull Request contains a link.</li>
+                    <li>Click the <b>Builds</b> tab. Find the build in the list.
+                        In the <b>Result</b> column, click the <b>View</b> link.</li>
+                </ul></p>
+        </section>      
+  
+    </body>
+
+ </topic>

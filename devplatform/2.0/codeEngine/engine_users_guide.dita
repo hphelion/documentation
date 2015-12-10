@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_op3_g5c_dt">
+  <title>HPE Helion 2.0 Development Platform: Code Engine User's Guide</title>
+  <body>
+    
+    <section><title>Environments</title>
+      <ul>
+        <li><xref href="engine_environment_create.dita">Create a New Environment</xref></li>
+      </ul>
+    </section>
+      
+     <section><title>Projects</title>
+     
+            <ul>
+            <li><xref href="engine_create_project.dita#createProject">Create a New Project</xref></li>
+        <li><xref href="engine_edit_project.dita#projectEdit">Change an Existing Project</xref></li>
+            <li><xref href="engine_project_delete.dita#topic_o4x_zhs_lt">Delete a Project</xref></li>
+              <li><xref href="engine_project_invite.dita#inviteUser">Add Users to a
+          Project</xref></li>
+            <li><xref href="engine_edit_project.dita#projectEdit/changePostDeploy">Change Post Deployment Actions</xref></li>
+            </ul>
+     </section> 
+    
+    <section><title>Builds</title>
+            <ul>
+            <li><xref href="engine_create_build.dita#topic_a34_wqb_3t">Create a Manual
+          Build</xref></li>
+              <li><xref href="engine_walkthrough.dita#task_sw4_1zq_dt/tempdeploy">Create a Preview
+            Deployment</xref></li>
+        
+            </ul>
+  </section><section>
+      <title>Testing</title>
+    </section>
+    <ul>
+      <li><xref href="engine_logging.dita">Log Files</xref></li>
+      <li><xref href="engine_testing.dita">Test Conventions</xref></li>
+    </ul>
+    
+  </body>
+</topic>
