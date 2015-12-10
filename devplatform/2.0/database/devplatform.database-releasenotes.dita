@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_release_notes">
+  <title>Database as a Service: 2.0 Release Notes</title>
+  <body>
+    <section><title>No option to reset password on Vertica Preview instance on Horizon</title>
+      <p>Vertica clusters can be accessed via credentials obtained by enabling root, either through Horizon or the Trove CLI. Single node 
+        Vertica instances must have root enabled through the Trove CLI, as this action is not available in Horizon. </p>
+      <p>Example:</p>
+      <codeblock>trove root-enable &lt;instance&gt;</codeblock>
+    </section>
+    <section><title>Searching for log entries returns API KEY ERROR: Missing</title>
+      <p>The current Vertica Management Console release has a known issue where attempting to search
+        for Vertica log entries may result in an API key being requested. As a workaround, it is
+        suggested to access Vertica event data directly through the database's ACTIVE_EVENTS,
+        QUERY_EVENTS and QUERY_REQUESTS tables, as described in <xref
+          href="devplatform.database-vertica.dita#topic_q1p_nnp_tt">Managing a Vertica Preview Cluster from the Management Console</xref>.</p></section>
+    <section><title>"Stack trove in status ROLLBACK_COMPLETE" message when DBaaS installation fails</title>
+    <p>The installation process may display a <codeph>ROLLBACK_COMPLETE</codeph> message when installation fails. This may look like the following:</p>
+    <codeblock>.devplatform)stack@redwood:~$ openstack --os-cloud mycloud hdpi database install --path dbaas-qcow2_2.0.0.31.csu
+dbaas-qcow2_2.0.0.31.csu is already downloaded
+dbaas-qcow2_2.0.0.31.csu is already (installed)
+Disabling SSL Features for databaseervice
+Launching stack...
+Stack trove creating
+Stack trove in status ROLLBACK_COMPLETE
+UI installed for database
+Create service endpoint for service database
+Completed installing database
+(.devplatform)stack@redwood:~$</codeblock></section>
+    <section><title>“mysql cluster 5.5” listed as option in Launch Instance dialog</title>
+    <p>When <b>Launch Instance</b> is selected in the <b>Project->Database->Instances</b> panel in Horizon, a <b>Datastore</b> option of <b>mysql-cluster</b> version <b>5.5</b> is displayed. Selecting this option
+    creates a standard <b>mysql</b> cluster.</p></section>
+  </body>
+</topic>

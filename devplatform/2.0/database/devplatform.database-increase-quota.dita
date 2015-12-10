@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rkw_gmb_f5">
+  <title> HPE Helion 2.0 Development Platform: Increasing Trove Internal Quotas</title>
+  <body>
+    <p>It is possible to exceed the Trove internal quotas when creating new client databases in a
+      tenant. Follow this procedure to increase the Trove quotas for that tenant.<note>You may see
+        the terms HPE Helion OpenStack "deployer" and "lifecycle manager" used interchangeably.
+        These terms refer to the same node in your environment.</note></p>
+      
+<ol><li> Log in to the lifecycle manager for your HPE Helion OpenStack environment with admin
+        privileges.</li><li> Source the <codeph>service.osrc</codeph> file:
+        <pre>source ~/service.osrc</pre></li><li>Obtain the credentials for the Admin
+        tenant.<codeblock>nova credentials</codeblock>The output should look similar to the
+          following:<codeblock>+------------------+--------------------------------------+
+| User Credentials | Value                                |
++------------------+--------------------------------------+
+| domain           | {"id": "default", "name": "Default"} |
+| id               | bb3252a8ea6b3223841783e11bd3e7dc     |
+| name             | admin                                |
++------------------+--------------------------------------+
++-----------+----------------------------------+
+| Token     | Value                            |
++-----------+----------------------------------+
+| expires   | 2015-12-01T04:27:18.160125Z      |<b>
+| id        | 80eaa95d334a443b9b111f7fcca49cae |</b><b>
+| tenant_id | bb3252a8ea6b3223841783e11bd3e7dc |</b>
+| user_id   | bb4472a716b4424840293c30ed558eb  |
++-----------+----------------------------------+</codeblock><ol
+          id="ol_c2w_t4b_f5">
+          <li>Make a note of the <codeph>id</codeph> value in the Token table. You will need it for
+            the value of &lt;AUTH_TOKEN&gt;.</li>
+          <li>Make a note of the <codeph>tenant_id</codeph> value in the Token table. You will need
+            it for the value of &lt;ADMIN_TENANT_ID&gt;.</li>
+        </ol></li><li>Retrieve a list of all available tenants.<codeblock>openstack project list </codeblock>The
+        output should look similar to the
+        following:<codeblock>+----------------------------------+---------------+ 
+|              ID                  |     Name      | 
++----------------------------------+---------------+ 
+| 09d7cee37100437a95a8144a4a7192e6 | services      | 
+| 0fdce261684a4ec8b1b6e81806acbfdb | admin         | 
+| 33693127f9bb42348d959eef7ff8b307 | backup        | 
+| 5becfbcda5a04297bc7a8c7fe5ba17f8 | demo          | 
+| a6315a51d99947ddbed2d1b8b804d194 | swift-monitor | 
+| bf869aef7ce14775a60dcbc0ce77db58 | glance-swift  | 
++----------------------------------+---------------+</codeblock>Make
+        a note of the <codeph>ID</codeph> value of the target tenant. You will need it for the value
+        of &lt;TENANT_ID&gt;. </li><li>Execute the command <codeblock>openstack endpoint list | grep database</codeblock>The output
+        should look similar to the
+        following:<codeblock>+----------------------------------+---------+--------------+---------------+---------+-----------+-------------------------------+
+| ID                               | Region  | Service Name | Service Type  | Enabled | Interface | URL                           |
++----------------------------------+---------+--------------+---------------+---------+-----------+-------------------------------+
+| 022e5ea163e22697a8c04f443ccad119 | region1 | trove        | database      | True    | internal  | http://10.12.111.123:8070     |
+...</codeblock>Make
+        a note of the <codeph>URL</codeph> value. You will need it for the value of
+        &lt;SERVICE_URL&gt;. </li><li>Run the <codeph>curl</codeph> command to update the Trove quota for the target tenant. The
+        command uses the following
+        format:<codeblock>curl -i &lt;SERVICE_URL&gt;:8779/v1.0/&lt;ADMIN_TENANT_ID&gt;/mgmt/quotas/&lt;TENANT_ID&gt; -X PUT -H "X-Auth-Project-Id: &lt;ADMIN_TENANT_ID&gt;" -H "User-Agent: python-troveclient" -H "Content-Type: application/json" -H "Accept: application/json" -H "X-Auth-Token: &lt;AUTH_TOKEN&gt;" -d '{"quotas": {"instances": &lt;INSTANCEQUOTA&gt;, "backups": &lt;BACKUPQUOTA&gt;, "volumes": &lt;VOLUMEQUOTA&gt;}}'</codeblock>Provide
+        values for the &lt;SERVICE_URL&gt;, &lt;ADMIN_TENANT_ID&gt; &lt;TENANT_ID&gt;, and
+        &lt;AUTH_TOKEN&gt; from the values retrieved previously. Provide the updated values for
+        &lt;INSTANCEQUOTA&gt;, &lt;BACKUPQUOTA&gt; and &lt;VOLUMEQUOTA&gt; as appropriate for your
+        environment. For example:
+          <codeblock>curl -i 'https://mycloud.example.com:8779/v1.0/bb3252a8ea6b3223841783e11bd3e7dc/mgmt/quotas/5becfbcda5a04297bc7a8c7fe5ba17f8' -X PUT -H "X-Auth-Project-Id: bb3252a8ea6b3223841783e11bd3e7dc" -H "User-Agent: python-troveclient" -H "Content-Type: application/json" -H "Accept: application/json" -H "X-Auth-Token: 80eaa95d334a443b9b111f7fcca49cae" -d '{"quotas": {"instances": 1000, "backups": 1000, "volumes": 10000}}'</codeblock><note>The
+          port number is not a variable; this value must be 8779.</note></li><li>When the command finishes,
+        you should see output similar to the following, indicating the command has successfully
+        updated the
+        quotas.<codeblock>HTTP/1.1 200 OK 
+Content-Type: application/json 
+Content-Length: 66 
+Date: Tue, 01 Dec 2015 20:09:14 GMT 
+{"quotas":
+{"instances": 1000, "backups": 1000, "volumes": 10000} 
+}</codeblock></li></ol>
+  </body>
+</topic>

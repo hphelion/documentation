@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_q1p_nnp_tt">
+  <title>Managing a Vertica Preview Cluster from the Management Console </title>
+  <body>
+    <p>The Vertica Management Console offers the following features for database administrators and users:</p>
+    <ul><li>Database administrators can use the Management Console to monitor cluster activity and performance,
+      the Activity and Manage sections to view cluster and node specific performance, and configure the cluster through the Settings section.</li>
+      <li>Database users can use the Management Console's database designer to design optimized projections for schemas, and the EXPLAIN features to analyze the details of queries and projections.</li>
+    </ul>
+    <note>The Vertica Management Console is only available for Vertica Preview clusters. It is not available for Vertica Preview instances.</note>
+    <p>To access the Vertica Management Console, in Horizon, select <b>Project</b>, <b>Database</b>, <b>Clusters</b>, and select the cluster in the <b>Cluster Name</b> column. Select the <b>Management Console</b> link in the 
+      <b>Overview</b> tab.</p>
+    <p>In the management console, you can access the various areas of functionality.</p>
+    <image placement="break" href="../../../media/vertica_home.png"></image>
+    <p>The following image shows Cluster View:</p>
+    <image placement="break" href="../../../media/vertica_cluster.png"></image>
+    <p>The following image shows Settings:</p>
+    <image placement="break" href="../../../media/vertica_settings.png"></image>
+    <p>The following image shows Log View:</p>
+    <image placement="break" href="../../../media/vertica_logview.png"></image>
+    
+    <p>For more information on using these features, see the following topics:</p>
+    <ul>
+      <li><xref type="external" format="html"
+          href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/ManagementConsole/MonitoringHPVerticaUsingMC.htm"
+          >Monitoring HP Vertica Using Management Console</xref></li>
+      <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/GettingStartedGuide/UsingDatabaseDeisgner/RunDBDwithMC.htm">Running Database Designer with Management Console</xref></li>
+      <li><xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/AdministratorsGuide/EXPLAIN/ViewingEXPLAINOutputinManagementConsole.htm">Viewing EXPLAIN Output in Management Console</xref></li>
+    </ul>
+    <section id="logs"><title>Viewing Logs</title>
+      <p>Vertica event log information can be accessed via the 
+        <xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/SystemTables/MONITOR/ACTIVE_EVENTS.htm">ACTIVE_EVENTS</xref> 
+        table. Query history can be accessed via the 
+        <xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/SystemTables/MONITOR/QUERY_EVENTS.htm">QUERY_EVENTS</xref> 
+        table and user-issued query requests via the 
+        <xref type="external" format="html" href="https://my.vertica.com/docs/7.1.x/HTML/index.htm#Authoring/SQLReferenceManual/SystemTables/MONITOR/QUERY_REQUESTS.htm">QUERY_REQUESTS</xref> table.</p>
+      
+    </section>
+  </body>
+</topic>

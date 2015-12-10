@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_database_manage_cli">
+  <title>Managing a database from the Command Line</title>
+  <body>
+    <p>This topic describes database management tasks that can be performed on the command line.</p>
+    <ul>
+      <li><xref href="#topic_database_manage_cli/database" format="dita">Working with
+          databases</xref></li>
+      <li><xref href="#topic_database_manage_cli/config" format="dita">Configuration
+        Groups</xref></li>
+      <li><xref href="#topic_database_manage_cli/users" format="dita">Users</xref></li>
+      <li><xref href="#topic_database_manage_cli/metadata" format="dita">Metadata</xref></li>
+      <li><xref href="#topic_database_manage_cli/security" format="dita">Security Groups</xref></li>
+    </ul>
+    <p>For a comprehensive list of Trove commands, see <xref
+        href="http://docs.openstack.org/cli-reference/content/troveclient_commands.html"
+        format="html" scope="external">Database service command line client</xref>.</p>
+    <section id="database"><title>Working with Databases</title>
+      <p>This section describes how to add or remove a database from a database instance. For
+        information on creating a database instance, see <xref
+          href="devplatform.database-create-cli.dita#topic_create_database_cli">Creating a Database
+          Instance from the command line</xref> or <xref
+          href="devplatform.database-create-horizon.dita#topic_create_database_horizon">Creating a
+          database instance from Horizon</xref>. You can also add databases to database instances as part of the instance creation process.</p>
+    <p><b>Adding a database</b></p>
+    <p>The following command creates a database on an instance:</p>
+      <codeblock>trove database-create &lt;instance&gt; &lt;name&gt;
+                             [--character_set &lt;character_set&gt;]
+                             [--collate &lt;collate&gt;]</codeblock>
+    <p><b>Removing a database</b></p>
+    <p>The following command removes a database from a database instance:</p>
+    <codeblock>trove database-delete &lt;instance&gt; &lt;database&gt;</codeblock>
+    </section>
+    <section id="config">
+      <title>Configuration Groups</title>
+      <p>Configuration groups are key-value collections of settings that are applied to databases when they are initialized.</p>
+      <p><b>Valid configuration settings</b></p>
+      <p>Configuration settings that can be applied to each database can be found at these locations:</p>
+      <ul>
+        <li><xref type="external" format="html" href="https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html">MySQL</xref></li>
+        <li><xref type="external" format="html" href="http://redis.io/topics/config">Redis</xref></li>
+        <li><xref href="https://docs.mongodb.org/manual/administration/configuration/" type="external" format="html">MongoDB</xref></li>
+      </ul>
+      <note>Configuration groups are not supported for Vertica Preview.</note>
+      <p><b>List configuration groups</b></p>
+      <p>The following command lists configuration groups:</p>
+      <p><codeblock>trove configuration-list</codeblock></p>
+      <p>This command will produce a result similar to the following:</p>
+      <codeblock>+--------------------------------------+----------------------+--------------+----------------+------------------------+
+| ID                                   | Name                 | Description  | Datastore Name | Datastore Version Name |
++--------------------------------------+----------------------+--------------+----------------+------------------------+
+| 052dc61d-ed5b-4051-956d-14d53c6e4830 | MyMongoDBDebugConfig | Debug Config | mongodb        | 3.0                    |
++--------------------------------------+----------------------+--------------+----------------+------------------------+</codeblock>
+      
+      <p><b>Create a configuration group</b></p>
+      <p>The following command creates a configuration group:</p>
+      <codeblock>trove configuration-create &lt;name&gt; &lt;values&gt; [--datastore &lt;datastore&gt;] [--datastore_version &lt;datastore_version&gt;] [--description &lt;description&gt;]</codeblock>
+      <p>Example:</p>
+      <codeblock>trove configuration-create MyMongoDBDebugConfig '{"systemLog.verbosity":1,"systemLog.traceAllExceptions":true}' --description "Debug Config" --datastore MongoDB</codeblock>
+      <p>To list valid values for <i>datastore</i>, enter the following:</p>
+      <codeblock>trove datastore-list</codeblock>
+      <p>To list valid values for <i>datastore-version</i>, enter the following:</p>
+      <codeblock>trove datastore-version-list &lt;datastore&gt;</codeblock>
+      
+      <p><b>Attach a configuration group to a database</b></p>
+      <p>The following command assigns a configuration group to a database:</p>
+      <codeblock>trove configuration-attach &lt;instance_id&gt; &lt;config_id&gt;</codeblock>
+      <p>Example:</p>
+      <codeblock>trove configuration-attach 35ef6f16-e4ee-463b-b254-5331e5b72d00 052dc61d-ed5b-4051-956d-14d53c6e4830</codeblock>
+      
+      <p><b>Edit a configuration group</b></p>
+      <p>The following command adds or modifies a key-value pair in a configuration group:</p>
+      <codeblock>trove configuration-patch &lt;config_id&gt; &lt;value_pairs&gt;</codeblock>
+      <p>Example: The following example updates a configuration setting in an existing configuration:</p>
+      <codeblock>trove configuration-patch 052dc61d-ed5b-4051-956d-14d53c6e4830 '{"systemLog.verbosity":2}'</codeblock>
+      <p>Example: The following example adds a configuration setting to an existing configuration:</p>
+      <codeblock>trove configuration-patch 052dc61d-ed5b-4051-956d-14d53c6e4830 '{"systemLog.logAppend":true}'</codeblock>
+    </section>
+    
+    <section id="users">
+      <title>Users</title>
+      <p>This section describes how to create and delete user accounts from database instances.</p>
+      
+      <p><b>Create a user</b></p>
+      <p>The following command adds a user to an instance:</p>
+      <codeblock>trove user-create &lt;instance&gt; &lt;name&gt; &lt;password&gt;
+                         [--host &lt;host&gt;]
+                         [--databases &lt;databases&gt; [&lt;databases&gt; ...]]</codeblock>
+      <p>Example: The following example creates a user on a database instance:</p>
+      <codeblock>trove user-create 35ef6f16-e4ee-463b-b254-5331e5b72d00 userOne p@ssw0rd! </codeblock>
+      
+      <p><b>Delete a user</b></p>
+      <p>The following command deletes a user from an instance:</p>
+      <codeblock>trove user-delete [--host &lt;host&gt;] &lt;instance&gt; &lt;name&gt;</codeblock>
+      <p>Example: The following example deletes a user:</p>
+      <codeblock>trove user-delete 35ef6f16-e4ee-463b-b254-5331e5b72d00 MongoDB_sample.userOne</codeblock>
+    </section>
+    
+    <section id="metadata">
+      <title>Metadata</title>
+      <p>This section describes how to add, remove, and modify metadata associated with instances. Instance metadata is a name-value collection that has meaning to the
+      applications using a database instance, but does not affect the functionality of the database itself.</p>
+      
+      <p><b>Add metadata to an instance</b></p>
+      <p>The following command adds metadata to an instance:</p>
+      <codeblock>trove metadata-create &lt;instance_id&gt; &lt;key&gt; &lt;value&gt;</codeblock>
+      
+      <p><b>Remove metadata from an instance</b></p>
+      <p>The following command removes metadata from an instance:</p>
+      <codeblock>trove metadata-delete &lt;instance_id&gt; &lt;key&gt;</codeblock>
+      
+      <p><b>Modify instance metadata</b></p>
+      <p>The following command modifies metadata on an instance:</p>
+      <codeblock>trove metadata-edit &lt;instance_id&gt; &lt;key&gt; &lt;value&gt;</codeblock>
+    </section>
+    
+    <section id="security">
+      <title>Security Groups</title>
+      <p>This section describes how to apply security rules to security groups. Security groups cannot be created through the Trove interface; you must
+        create security groups either through the Horizon interface, or by using Neutron or Nova commands.</p>
+      <p><b>Add a security group rule to an instance</b></p>
+      <p>The following command adds a security group rule to an instance:</p>
+      <codeblock>trove  secgroup-add-rule &lt;security_group&gt; &lt;IP range in CIDR format&gt; </codeblock>
+      <p><b>Delete a security group rule</b></p>
+      <p>The following command deletes a security group rule</p>
+      <codeblock>trove  secgroup-delete-rule &lt;security_group_rule&gt;</codeblock>
+      <p><b>List all security groups</b></p>
+      <p>The following command lists all security groups:</p>
+      <codeblock>trove secgroup-list</codeblock>
+      <p><b>List all rules for a security group</b></p>
+      <p>The following command lists all rules for a security group:</p>
+      <codeblock>trove secgroup-list-rules &lt;security_group&gt;</codeblock>
+      <p><b>Show details of a security group</b></p>
+      <p>The following command shows details for a security group:</p>
+      <codeblock>trove secgroup-show &lt;security_group&gt;</codeblock>
+    </section>
+  </body>
+</topic>

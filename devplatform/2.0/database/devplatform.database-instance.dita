@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="DatabaseService">
+<title>HPE Helion 2.0 Development Platform: Using the Database Service</title>
+<body>
+<p>The database service provides lifecycle services for MySQL, Vertica Preview, Redis, or MongoDB database instances.
+      Lifecycle services include provisioning, configuration, patching, backups, restores, and
+      monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon
+      dashboard.</p>
+<p>These instances can then be utilized by your applications to provide standard datastore/back-end functionality.</p>
+<p>Databases can be either single-instance or clustered. For production environments, clustered
+      instances are recommended.</p>
+  <p>Interacting with the database at the command line is done with the Trove client. You can install the Trove client with the following command:</p>
+  <codeblock>pip install python-troveclient</codeblock>
+  <p>For documentation on the Trove client, see <xref href="http://docs.openstack.org/developer/trove/" format="html" type="external">Trove’s developer documentation</xref>.</p>
+<p>The following topics explain how to create and manage a database:</p>
+<ul>
+  <li><xref href="devplatform.database-create-horizon.dita" format="dita">Create a database instance from Horizon</xref></li>
+  <li><xref href="devplatform.database-create-cli.dita" format="dita">Create a database instance from the command line</xref></li>
+  <li><xref href="devplatform.database-create-cluster-horizon.dita" format="dita">Create a database cluster from Horizon</xref></li>
+  <li><xref href="devplatform.database-create-cluster-cli.dita" format="dita">Create a database cluster from the command line</xref></li>
+  <li><xref href="devplatform.database-attach-ip.dita" format="dita">Attach a Floating IP</xref></li>
+  <li><xref href="devplatform.database-replicate.dita" format="dita">Replicate a database</xref></li>
+  <li><xref href="devplatform.database-backup.dita" format="dita">Create a database backup</xref></li>
+  <li><xref href="devplatform.database-ALS.dita" format="dita">Connect the Database Service with the Application Lifecycle Service</xref></li>
+  
+  
+</ul>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ol>
+<li>Install the <xref href="../installation/devplatform_commercial_install.dita" >HPE Helion Development Platform</xref>. </li>
+<li>
+          <xref href="../installation/devplatform_install_database.dita" type="section" >Configure
+            the database service</xref>.</li>
+</ol>
+</section>
+
+<section id="more"> <title>More Resources</title>
+    <ul>
+      <li>More information on <xref href="http://docs.openstack.org/developer/trove/" scope="external" format="html" >Trove</xref>.</li>
+      <li>More information on <xref href="http://docs.openstack.org/cli-reference/content/troveclient_commands.html" scope="external" format="html" >using the Trove CLI</xref> to create a database instance.</li>
+    </ul>
+</section>
+</body>
+</topic>
