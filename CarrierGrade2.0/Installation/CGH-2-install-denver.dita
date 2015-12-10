@@ -41,8 +41,8 @@
         directory or any where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create
         a backup folder on <codeph>/root/</codeph> directory or on a remote system.
         <!--HCG-681--></p></section>
-    <section id="node-prov">
-      <title>Configure the node-provision.json file</title>
+    <section id="node-prov"> 
+      <title>Edit the node-provision.json file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
         file supplies input values to the hprovision script, later in the installation.</p>
@@ -83,16 +83,15 @@
             </tbody>
           </tgroup>
         </table></p>
-      <p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-        href="carrier-grade-install-kvm-only-json.dita#topic10581cgikoj">Sample JSON File for the HLM
-          Virtual Machine Installation</xref>. </p>
+      <p>Click here to see a <xref
+        href="carrier-grade-install-kvm-only-json.dita#topic10581cgikoj">sample node-provision.json file</xref>. </p>
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-pxe-boot"/>
     <section>
-      <title>Modify the ansible.json file</title>
+      <title>Edit the ansible.json file</title>
       <p>Modify the <codeph>ansible.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
-        directory of the lifecycle manager with values appropriate for your environment. For
-        example: </p>
+        directory of the lifecycle manager with values appropriate for your environment. In the
+        following example, the IP addresses have been masked for security: </p>
       <p>
         <codeblock>{
     "product": {
@@ -104,11 +103,11 @@
             "name": "ansible-vars",
             "properties": {
                 "dns_domain_name": "helion.cg",
-                "dns_address": "10.1.2.44",
-                "ext_dns_ip": "10.1.2.44",
+                "dns_address": "10.x.x.x",
+                "ext_dns_ip": "10.x.x.x",
                 "upstream_ntp_servers": [
-                    "10.1.2.44",
-                    "16.110.135.123",
+                    "10.x.x.x",
+                    "16.x.x.x",
                     "2.debian.pool.ntp.org"
                 ],
                 "ssl_cert_file": "ca.crt",
@@ -122,9 +121,10 @@
       </p>
     </section>
     <section>
-      <title>Modify the ldap.json file</title>
+      <title>Edit the ldap.json file</title>
       <p>Modify the <codeph>ldap.json</codeph> file in the /var/hlm/clouds/&lt;cloudname> directory
-        of the lifecycle manager with values appropriate for your environment. For example: </p>
+        of the lifecycle manager with values appropriate for your environment. In the following
+        example, the IP addresses have been masked for security:  </p>
       <p>
         <codeblock>
     "product": {
@@ -136,7 +136,7 @@
             "name": "ldap-vars",
             "properties": {
                 "ldap_domain_name": "americas",
-                "ldap_url": "10.1.2.44",
+                "ldap_url": "10.x.x.x",
                 "ldap_username": "admin",
                 "ldap_password": "admin",
                 "ldap_domain": "dc=helioncg,dc=local",
@@ -157,9 +157,10 @@
       </p>
     </section>
     <section>
-      <title>Modify the wr.json file</title>
+      <title>Edit the wr.json file</title>
       <p>Modify the <codeph>wr.json</codeph> file in the /var/hlm/clouds/&lt;cloudname> directory of
-        the lifecycle manager with values appropriate for your environment. For example: </p>
+        the lifecycle manager with values appropriate for your environment. In the following
+        example, the IP addresses have been masked for security:  </p>
       <p>
         <codeblock>{
     "product": {
@@ -184,24 +185,24 @@
                         ],
                         "network": [
                             {
-                                "ip_start_address": "10.10.2.51",
-                                "ip_end_address": "10.10.2.99",
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
                                 "name": "CLM"
                             },
                             {
-                                "ip_start_address": "172.16.71.51",
-                                "ip_end_address": "172.16.71.99",
+                                "ip_start_address": "172.x.x.x",
+                                "ip_end_address": "172.x.x.x",
                                 "name": "BLS"
                             },
                             {
-                                "ip_start_address": "10.10.3.51",
-                                "ip_end_address": "10.10.3.99",
+                                "ip_start_address": "10.x.x.x",
+                                "ip_end_address": "10.x.x.x",
                                 "name": "CAN"
                             }
                         ]
                     }
                 ],
-                "pxeboot_cidr": "10.10.8.0/24",
+                "pxeboot_cidr": "10.x.x.x/24",
              "license_file_name": "license.lic",
                 "physnet_VLAN_range_mappings": ["physnet1:1000:1999","physnet2:2000:2020"],
                 "pci_vendor_id": ["8086:10ca","8086:10ed"]
@@ -212,7 +213,7 @@
       </p>
     </section>
     <section id="environment">
-      <title id="env-json">Modify the <codeph>environment.json</codeph> file</title>
+      <title id="env-json">Edit the environment.json file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager.
         Configure the VLANs and network addresses as appropriate for your environment. Set the
@@ -227,6 +228,7 @@
       <p>
         <b>Example:</b>
       </p>
+      <p>In the following example, the IP addresses have been masked for security: </p>
       <p><codeblock>{
     "product": {
         "version": 1
@@ -247,9 +249,9 @@
                             "type": "vlan",
                             "segment-id": "102",
                             "network-address": {
-                                "cidr": "10.10.2.0/24",
-                                "start-address": "10.10.2.100",
-                                "gateway": "10.10.2.1"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
                             }
                         },
                         {
@@ -257,8 +259,8 @@
                             "type": "vlan",
                             "segment-id": "103",
                             "network-address": {
-                                "cidr": "10.10.3.0/24",
-                                "start-address": "10.10.3.100"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x"
                             }
                         },
                         {
@@ -266,8 +268,8 @@
                             "type": "vlan",
                             "segment-id": "71",
                             "network-address": {
-                                "cidr": "172.16.71.0/24",
-                                "start-address": "172.16.71.100"
+                                "cidr": "172.x.x.x/24",
+                                "start-address": "172.x.x.x"
                             }
                         }
                     ]
@@ -281,7 +283,7 @@
         to itself for serving python and debian repositories. Make sure that you set the first IP
         address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
     </section>
-    <section id="def-json"><title>Modify the <codeph>definition.json</codeph></title>
+    <section id="def-json"><title>Edit the definition.json file</title>
         <p>Modify the <codeph>definition.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
         directory of the lifecycle manager: </p>
       <ol>

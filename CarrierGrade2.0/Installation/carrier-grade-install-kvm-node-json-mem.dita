@@ -14,8 +14,8 @@
     </metadata>
 </prolog>
 <body>
-    <p>The process for installing the memphis and sacramento deployments requires several JSON file
-            that will be used when deploying the HP Helion OpenStack.</p>
+    <p>The process for installing the Memphis and Tahoe deployments requires several JSON file that
+            will be used when deploying the HP Helion OpenStack.</p>
         <section conref="carrier-grade-install-kvm-node-json-sac.dita#topic10581cgiknj/fields"/>
 <section id="sample-node-provisionjson-file">
             <title>Sample node-provision.json file</title>

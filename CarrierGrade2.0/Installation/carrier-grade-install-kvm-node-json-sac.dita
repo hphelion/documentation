@@ -14,8 +14,8 @@
     </metadata>
 </prolog>
 <body>
-    <p>The process for installing the memphis and sacramento deployments requires several JSON file
-            that will be used when deploying the HP Helion OpenStack.</p>
+    <p>The process for installing the Sacramento deployments requires several JSON file that will be
+            used when deploying the HP Helion OpenStack.</p>
     <section id="fields">
 <p>The <codeph>/var/hlm/clouds/node-provision.json</codeph> file contains the following fields:</p>
 <table>
