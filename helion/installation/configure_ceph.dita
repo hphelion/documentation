@@ -39,6 +39,11 @@
       <p>While executing the <codeph>site.yml</codeph> playbook with the <codeph>--limit</codeph>
         option, it is also expected to include the Ceph Monitor nodes in the list of restricted
         nodes if the cloud is deployed with a Ceph cluster.</p>
+      <p>We include steps below to configure Ceph as your Glance backend. This replaces Swift which
+        is the default backend option in HPE Helion OpenStack. So if you have any pre-existing
+        images in your Glance repo you will want to download them locally prior to configuring Ceph
+        as your backend. Once the Ceph configuration is complete you will then need to re-upload
+        those to your Glance repo in order for those images to work.</p>
     </section>
     <section id="config_files">
       <title>Edit Your Ceph Environment Input Files</title>
@@ -405,7 +410,10 @@ rbd_store_chunk_size = 8</codeblock></li>
               <li>In the same file, comment out the following references to Swift:
                 <codeblock>stores = {{ glance_stores }}
 default_store = {{ glance_default_store }}</codeblock></li>
-            </ol></li>
+            </ol><note type="important">If you have pre-existing images in your Glance repo you will
+              need to download those images locally prior to configuring Ceph as your Glance
+              backend. After you have finished the Ceph configuration then you will need to re-add
+              those images again.</note></li>
           <li>Copy the corresponding keyring files to the controller nodes: <ol>
               <li>Log in to the controller nodes as a user with sudo access and run the following
                 commands: <p>For Ceph as your volume backend:
