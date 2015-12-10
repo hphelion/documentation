@@ -26,7 +26,7 @@
       <p>HP Helion OpenStack Carrier Grade has been verified to work up to the following maximum
         system configuration:</p>
       <ul>
-        <li>up to 50 compute nodes</li>
+        <li>up to 50 compute nodes in the KVM region</li>
         <li>up to 160 virtual machine instances* can be configured</li>
         <li>up to four network interface cards per compute node</li>
         <li>maximum eight AVP vNICs per guest</li>
