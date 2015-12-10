@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_m3k_bth_tt">
+ <title>Quick Start Step 6: <keyword keyref="quickStartHPcloudStep6"/></title>
+ <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
+    on <keyword keyref="pubCloudLong"/>.</shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+   <simpletable>
+     <strow>
+       <stentry>1. <xref conref="cfr_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
+              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
+              <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
+       <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
+            and troubleshoot your cluster, you can connect to it using SSH and then run <keyword
+              keyref="adminUtil"/> commands. To connect, specify the IP address of your <keyword
+              keyref="prodShort"/> core and the location of your RSA private key, for
+            example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><note
+            type="note">For more information, see the <xref
+              href="../../reference/cfr_reference_gato.dita#reference_cd3_bs3_rt"
+            />.</note><b>Terminating Instances and Security Groups from the Command Line</b><p>To
+            terminate your instance and its security groups, run the following command and enter
+              <userinput>yes</userinput> when prompted:</p><note type="important"
+            id="delete_cluster">This action will delete all of your managed infrastructure and it
+            cannot be undone. For more information, see the Terraform documentation on <xref
+              href="https://terraform.io/docs/commands/destroy.html" format="html" scope="external"
+              >Command:
+            Destroy</xref>.</note><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
+            type="note">For more information, see <xref
+              href="../../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt">Terraform
+              Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security
+            groups associated with it.</p><note type="tip">If the <filepath>destroy</filepath>
+            process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
+            the command again.</note><b>To Terminate Instances and Security Groups from <keyword
+              keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
+            instances or security groups is not recommended. Use the following steps only if you run
+            into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
+            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
+                  ><keyword keyref="pubCloudShort"/></xref>.</li>
+            <li>Click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Instances</uicontrol>
+              </menucascade>.</li>
+            <li>Click the checkbox next to your instance, for example
+                <uicontrol>hcf-core</uicontrol>.</li>
+            <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
+            <li>Click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Access and Security</uicontrol>
+              </menucascade>.</li>
+            <li>Click the checkbox next to your security group, for example
+                <uicontrol>hcf-container-host</uicontrol>.</li>
+            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
+          </ol></stentry>
+     </strow>
+   </simpletable>
+ </conbody>
+</concept>
