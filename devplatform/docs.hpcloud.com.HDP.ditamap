@@ -34,7 +34,7 @@
       <topicref href="2.0/installation/devplatform_install_messaging.dita"
         navtitle="Install the Messaging Service" locktitle="yes"/>
       <topicref href="2.0/installation/install_offline.dita"
-        navtitle=" Download Files Before Installation" locktitle="yes"/>
+        navtitle=" Download Files Before Installation" locktitle="yes" toc="no"/>
       <topicref href="2.0/installation/install_listOptions.dita" navtitle="no_ListContent"
         locktitle="yes" toc="no"/>
       <topicref href="2.0/installation/install_dbaas_configureAvailabilityZones.dita"
