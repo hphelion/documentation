@@ -29,33 +29,6 @@
               conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
             conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
     <stentry><b>To Deploy a Docker Image</b><ol id="ol_p2k_vx1_tt">
-      <li id="authenticate_with_openrc_sh">Add the variables from the <codeph>openrc.sh</codeph> file <xref
-                href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st/download_config_file">that you have
-                downloaded earlier</xref> to your terminal session.<ul id="ul_ptr_bwp_tt">
-                <li>On a Linux machine, navigate to the directory that contains the
-                    <codeph>sh</codeph> file and <codeph>source</codeph> the file, for
-                    example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>When
-                    prompted, enter your OpenStack password.</p></li>
-                <li>On a Windows machine, add the variables from the <codeph>sh</codeph> file at
-                  the command prompt one by one, or add the commands to a batch file, for
-                  example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
-set OS_USERNAME=myUsername
-set OS_PASSWORD=myPassword123
-set OS_TENANT_ID=12345678901234
-set OS_TENANT_NAME=MyCluster
-set OS_REGION_NAME=region-a.geo-1</codeblock></li>
-              </ul><note type="tip">When you close your terminal session, your variables will be
-                discarded. To prevent this, you can do the following: <ul id="ul_myk_1xp_tt">
-                  <li>On a Linux machine, add the variables to your <codeph>~/.bashrc</codeph>
-                    file and run the <codeph>source ~/.bashrc</codeph> command.</li>
-                  <li>On a Windows machine, click <menucascade>
-                      <uicontrol>Control Panel</uicontrol>
-                      <uicontrol>System</uicontrol>
-                      <uicontrol>Advanced system settings</uicontrol>
-                      <uicontrol>Environment Variables</uicontrol>
-                    </menucascade> and add the variables to your <uicontrol>System
-                      variables.</uicontrol></li>
-                </ul></note></li>
       <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
       <li>Navigate to the <keyword keyref="prodShort"/> directory and make a copy of the
         <codeph>overrides.tfvars.sample</codeph> file, for example

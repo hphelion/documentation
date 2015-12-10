@@ -18,50 +18,31 @@
        conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
     <stentry>
-          <b>To Create and Source an <codeph>openrc</codeph> File</b><note>You can obtain the values
-            of the following variables from your <keyword keyref="opnStckLong"/> administrator or by
-            using the Horizon web console. For more information and examples, see <xref
-              href="../../reference/hcf-reference-openrc-sh.dita#hcf-reference-openrc-sh">OpenStack
-              Variables</xref></note><ul id="ul_dfg_vlb_h5">
+          <b>To Create an <codeph>openrc</codeph> File and Load Its Variables</b><ul
+            id="ul_dfg_vlb_h5">
             <li>On Linux or Mac OS X:<ol id="ol_c21_hlb_h5">
-                <li>Name the file <codeph>openrc.sh</codeph> and add variables to the file, for
-                  example:<codeblock>export OS_AUTH_URL="http://region.locale.service.example.com:35357/v.2.0/"
-
-export OS_TENANT_ID="12345678901234"
-export OS_TENANT_NAME="12345678901234-Project"
-
-export OS_USERNAME="myUsername"
-
-echo "Please enter your OpenStack password: "
-read -sr OS_PASSWORD_INPUT
-export OS_PASSWORD="$OS_PASSWORD_INPUT"
-
-export OS_REGION_NAME="myRegionName"
-if [ -z "$OS_REGION_NAME" ]; then unset OS_REGION_NAME; fi</codeblock></li>
-                <li>Navigate to the directory that contains the <codeph>openrc.sh</codeph> file and
-                  run the <codeph>source openrc.sh</codeph> command. When prompted, enter your
-                  OpenStack password.</li>
-                <li>(Optional) To prevent the variables from being discarded when you close your
-                  terminal session, add the variables to your <codeph>~/.bashrc</codeph> file and
-                  run the <codeph>source ~/.bashrc</codeph> command.</li>
+                <li>Name the file <codeph>openrc.sh</codeph> and add variables to the file. <note
+                    id="get_variables">You can obtain the values of the following variables <xref
+                      href="hcf-on-hos-step-3.1.dita#hcf-on-hos-step-3.1/download_config_file">from
+                      the Horizon web console</xref>. For more information and examples, see <xref
+                      href="../../reference/hcf-reference-openrc-sh.dita#hcf-reference-openrc-sh"
+                      >OpenStack Variables</xref>.</note></li>
+                <li id="source_openrc.sh">Navigate to the directory that contains the
+                    <codeph>openrc.sh</codeph> file and run the <codeph>source openrc.sh</codeph>
+                  command. <p>When prompted, enter your OpenStack password.</p></li>
+                <li id="addvars_openrc.sh">(Optional) To prevent the variables from being discarded
+                  when you close your terminal session, add the variables to your
+                    <codeph>~/.bashrc</codeph> file and run the <codeph>source ~/.bashrc</codeph>
+                  command.</li>
               </ol></li>
             <li>On Windows:<ol id="ol_a22_1mb_h5">
-                <li>Name the file <codeph>openrc.bat</codeph> and add variables to the file, for
-                  example:<codeblock>set OS_AUTH_URL=http://region.locale.service.example.com:35357/v.2.0/
-
-set OS_TENANT_ID=12345678901234
-set OS_TENANT_NAME=12345678901234-Project
-
-set OS_USERNAME=myUsername
-
-set /p OS_PASSWORD_INPUT=Please enter your OpenStack password: 
-set OS_PASSWORD=%OS_PASSWORD_INPUT%
-
-set OS_REGION_NAME=myRegionName<draft-comment author="michaelk">If the variable is empty, then unset the variable.</draft-comment></codeblock></li>
-                <li>Navigate to the directory that contains the <codeph>openrc.bat</codeph> file and
-                  run the file. When prompted, enter your OpenStack password.</li>
-                <li>(Optional) To prevent the variables from being discarded when you close your
-                  terminal session, click <menucascade>
+                <li>Name the file <codeph>openrc.bat</codeph> and add variables to the file.<note
+                    conref="#hcf-on-hos-step-3.2/get_variables"/></li>
+                <li id="run_openrc.bat">Navigate to the directory that contains the
+                    <codeph>openrc.bat</codeph> file and run the file. <p>When prompted, enter your
+                    OpenStack password.</p></li>
+                <li id="addvars_openrc.bat">(Optional) To prevent the variables from being discarded
+                  when you close your terminal session, click <menucascade>
                     <uicontrol>Control Panel</uicontrol>
                     <uicontrol>System</uicontrol>
                     <uicontrol>Advanced system settings</uicontrol>

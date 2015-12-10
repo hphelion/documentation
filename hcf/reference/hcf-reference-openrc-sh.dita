@@ -13,5 +13,82 @@
     </metadata>
   </prolog>
   <refbody>
+    <table frame="all" rowsep="1" colsep="1" id="table_fjz_c3c_rt">
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+        <thead>
+          <row>
+            <entry>Variable</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><codeph>OS_AUTH_URL</codeph></entry>
+            <entry>The address of the Identity API served through keystone</entry>
+          </row>
+          <row>
+            <entry><codeph>OS_PASSWORD</codeph></entry>
+            <entry>Your <keyword keyref="opnStckShort"/> password</entry>
+          </row>
+          <row>
+            <entry><codeph>OS_PROJECT_NAME</codeph></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><codeph>OS_REGION_NAME</codeph></entry>
+            <entry>The name of a region in a multi-region <keyword keyref="opnStckShort"/>
+                configuration<note type="important">Do not leave this variable blank. Unset it if it
+                is empty.</note></entry>
+          </row>
+          <row>
+            <entry><codeph>OS_TENANT_NAME</codeph></entry>
+            <entry>The name of yourtenant</entry>
+          </row>
+          <row>
+            <entry><codeph>OS_TENANT_ID</codeph></entry>
+            <entry>The ID of the entity that owns <keyword keyref="opnStckShort"/> resources</entry>
+          </row>
+          <row>
+            <entry><codeph>OS_USERNAME</codeph></entry>
+            <entry>Your <keyword keyref="opnStckShort"/> username</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <example>
+      <title>A sample <codeph>openrc.sh</codeph> file</title>
+      <codeblock>export OS_AUTH_URL=http://198.51.100.0:5000/v2.0
+
+export OS_TENANT_ID=a12345678b9c0d12ef3g45h678i90123
+export OS_TENANT_NAME="myTenant"
+export OS_PROJECT_NAME="myProject"
+
+export OS_USERNAME="myUsername"
+
+echo "Please enter your OpenStack password: "
+read -sr OS_PASSWORD_INPUT
+export OS_PASSWORD=$OS_PASSWORD_INPUT
+
+export OS_REGION_NAME="myRegionName"
+if [ -z "$OS_REGION_NAME" ]; then unset OS_REGION_NAME; fi</codeblock>
+    </example>
+    <example>
+      <title>A sample <codeph>openrc.bat</codeph> file</title>
+      <codeblock id="openrc.bat">set OS_AUTH_URL=http://198.51.100.0:5000/v2.0
+
+set OS_TENANT_ID=a12345678b9c0d12ef3g45h678i90123
+set OS_TENANT_NAME=myTenant
+set OS_PROJECT_NAME=myProject
+
+set OS_USERNAME=myUsername
+
+set /p OS_PASSWORD_INPUT=Please enter your OpenStack password: 
+set OS_PASSWORD=%OS_PASSWORD_INPUT%
+
+set OS_REGION_NAME=myRegionName<draft-comment author="michaelk">If the variable is empty, then unset the variable.</draft-comment></codeblock>
+    </example>
   </refbody>
 </reference>

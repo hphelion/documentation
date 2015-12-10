@@ -20,7 +20,8 @@
         keyref="prodShort"/> uses <xref href="https://www.consul.io/" format="html" scope="external"
         >Consul</xref> for centralized configuration storage that runs on each instance.</p>
     <note>For detailed descriptions of the components of <keyword keyref="prodLong"/>, see <xref
-        href="reference/hcf-reference-roles.dita#cf_reference_roles">Available Roles</xref>. </note>
+        href="reference/hcf-reference-roles.dita#cf_reference_roles"><keyword keyref="prodShort"/>
+        Roles</xref>. </note>
     <p>The following sections will help you get started with exploring <keyword keyref="prodShort"/>
       and pushing your first apps.</p>
     <ul id="ul_nlv_fct_5t">
