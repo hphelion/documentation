@@ -23,19 +23,19 @@
     <stentry>
           <b>Using the Horizon Web Console</b><p>The Horizon web console offers a visual user
             interface for configuring <keyword keyref="opnStckShort"/> for <keyword
-              keyref="prodShort"/>.</p>In this workflow, it is not necessary to run Neutron and Nova
-          command-line interface (CLI) commands and Horizon can also automatically generate your
-            <codeph>openrc.sh</codeph> file. <xref
-            href="hcf-on-hos-step-3.1.dita#hcf-on-hos-step-3.1">
-            <image href="../../media/NextButton.png" placement="break" id="image_tq4_m41_h5"/>
-          </xref><p><b>Using the Command Line</b></p><p>To exercise more control and to view more
-            detailed system messages you can use CLI tools to configure <keyword
-              keyref="opnStckShort"/> for <keyword keyref="prodShort"/>.</p>In this workflow, you
-          must run Neutron and Nova CLI commands and you must also create your own
-            <codeph>openrc.sh</codeph> file.<xref
-            href="hcf-on-hos-step-3.2.dita#hcf-on-hos-step-3.2">
-            <image href="../../media/NextButton.png" placement="break" id="image_scz_dp1_h5"/>
-          </xref></stentry>
+              keyref="prodShort"/>. In this workflow, it is not necessary to run Neutron and Nova
+            command-line interface (CLI) commands and Horizon can also automatically generate your
+              <codeph>openrc.sh</codeph> file.</p><p><xref
+              href="hcf-on-hos-step-3.1.dita#hcf-on-hos-step-3.1">
+              <image href="../../media/NextButton.png" placement="break" id="image_tq4_m41_h5"/>
+            </xref></p><p><b>Using the Command Line</b></p><p>To exercise more control and to view
+            more detailed system messages you can use CLI tools to configure <keyword
+              keyref="opnStckShort"/> for <keyword keyref="prodShort"/>. In this workflow, you must
+            run Neutron and Nova CLI commands and you must also create your own
+              <codeph>openrc.sh</codeph> file.</p><p><xref
+              href="hcf-on-hos-step-3.2.dita#hcf-on-hos-step-3.2">
+              <image href="../../media/NextButton.png" placement="break" id="image_scz_dp1_h5"/>
+            </xref></p></stentry>
    </strow>
   </simpletable>
  </conbody>
