@@ -26,6 +26,13 @@
             </p>
 
 
+            <!--  https://jira.hpcloud.net/browse/DOCS-2321 -->
+            <p id="DOCS-2321"><b>Backup and Restore GUI added to Horizon</b></p>
+            
+            <p>A cloud operator or administrator can schedule backups and perform restores via a GUI in Horizon. For more information,
+                see the section on <xref href="bura/bura_overview.dita#bura_overview">Backing Up and Restoring Your Data</xref></p>
+            
+
             <!--  https://jira.hpcloud.net/browse/DOCS-2257  -->
             <p id="DOCS-2257"><b>IPv6 access to <keyword keyref="kw-hos"/>  components is blocked</b></p>
             
@@ -80,7 +87,7 @@
             </p>
             
             
-            <p><b>Freezer UI</b></p>            
+        <!--
             <p><b>OVSvApp over VxLAN</b></p>
             <p><b>Ceph Multi-network support</b></p>
             <p><b>hLinux: security updates via Top of Tree</b></p>
@@ -88,7 +95,7 @@
             <p><b>~100 patches</b></p>
             <p><b>Includes all fixes in HOS V2.0.1 hotfix</b></p>
             <p><b>Will include HLX-755 “Softlockup affecting multipath”</b></p>
-            <p><b>kernel update => managed reboots</b></p>
+            <p><b>kernel update => managed reboots</b></p>-->
             
         </section>
         
