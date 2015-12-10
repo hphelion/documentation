@@ -2,7 +2,7 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic4797cgikejm">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample enviroment.json File for
-        Unbonded Memphis and Tahoe</title>
+        Memphis and Tahoe</title>
 <prolog>
     <metadata>
         <othermeta name="layout" content="default"/>
@@ -43,9 +43,9 @@
                             "type": "vlan",
                             "segment-id": "203",
                             "network-address": {
-                                "cidr": "10.20.3.0/24",
-                                "start-address": "10.20.3.120",
-                                "gateway": "10.20.3.1"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
                             }
                         },
                         {
@@ -53,8 +53,8 @@
                             "type": "vlan",
                             "segment-id": "204",
                             "network-address": {
-                                "cidr": "10.20.4.0/24",
-                                "start-address": "10.20.4.120"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x"
                             }
                         },
                         {
@@ -62,8 +62,8 @@
                             "type": "vlan",
                             "segment-id": "73",
                             "network-address": {
-                                "cidr": "172.16.73.0/24",
-                                "start-address": "172.16.73.120"
+                                "cidr": "172.x.x.x/24",
+                                "start-address": "172.x.x.x"
                             }
                         }
                     ]
@@ -88,9 +88,9 @@
                             "type": "vlan",
                             "segment-id": "205",
                             "network-address": {
-                                "cidr": "10.20.5.0/24",
-                                "start-address": "10.20.5.120",
-                                "gateway": "10.20.5.1"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
                             }
                         }
                     ]
@@ -99,16 +99,16 @@
                     "name": "INTF1",
                     "ethernet-port-map": {
                         "interface-ports": [ "eth1" ]
-                   },
+                    },
                     "logical-network-map": [
                         {
                             "name": "tenant",
                             "type": "vlan",
                             "segment-id": "",
                             "network-address": {
-                                "cidr": "10.20.6.0/24",
-                                "start-address": "10.20.6.120",
-                                "gateway": "10.20.6.1"
+                                "cidr": "10.x.x.x/24",
+                                "start-address": "10.x.x.x",
+                                "gateway": "10.x.x.x"
                             }
 
                         }
@@ -137,7 +137,7 @@
                         "interface-ports": [ "eth1" ]
                     },
                     "logical-network-map": [
-                       {
+                        {
                             "name": "tenant",
                             "ref": "dcn-INTF1-tenant"
                         }
@@ -146,7 +146,8 @@
             ]
         }
     ]
-}</codeblock>
+}
+</codeblock>
     
     
     <p> NOTE: The configuration processor assigns the first address of the CLM address range to itself for serving python 

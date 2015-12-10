@@ -49,25 +49,21 @@
     <p>Click here to see a <xref href="carrier-grade-install-kvm-def-json-mem.dita">a sample
         definition.json file</xref></p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-env-json" id="env"/>
-    <p>To see a sample <codeph>environment.json</codeph> file, see one of the following: <ul
-        id="ul_eln_vcl_25">
-        <li><xref href="carrier-grade-install-kvm-env-json-mem.dita">For an Unbonded NIC
-            Environment</xref></li>
-        <li><xref href="carrier-grade-install-kvm-env-json-bonded-mem.dita">For a Bonded NIC
-            Environment</xref></li>
-      </ul></p>
+    <p>Cliher her to see <xref href="carrier-grade-install-kvm-env-json-mem.dita">sample environment.json file</xref>. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ansible-json" id="ans"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-ansible-json-mem.dita">sample
         ansible.json file</xref>.</p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-json" id="ldap"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-ldap-json-mem.dita">sample
         ldap.json file</xref>. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-dcn-json" id="dcn"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ccp-dcn-esx-json" id="ccp"/>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ccp-dcn-esx-json" id="ccp"></section>
+    <p>Click here to see a <xref
+        href="carrier-grade-install-kvm-ccp-json-mem.dita#topic10581cgiccpjm">sample
+        ccp-dcn-esx.json file</xref>. </p>
+    
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-wr-json" id="wr"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-wr-json-mem.dita">a sample wr.json
         file</xref>. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-mach-json" id="mach"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-verify-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/cobbler"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-create-cloud"/>
@@ -75,7 +71,9 @@
       <title>Configure the back-end drivers</title>
       <p>Configure the back-end drivers to enable management of the OpenStack Block Storage volumes
         on HPE StoreVirtual VSA and/or HPE StoreServ (3PAR) storage arrays. The HPE Block Storage
-        (Cinder) service allows you to configure multiple storage back-ends. </p>
+        (Cinder) service allows you to configure multiple storage back-ends. A sample file provides
+        all the variables needed to use VSA and/or 3PAR attached to the KVM region. You need to edit
+        this file for your environment and save as <codeph>cinder_conf</codeph>.</p>
       <p>Use the following steps to configure back-end support:</p>
       <ol id="ul_btr_l52_xs">
         <li>Change to the <codeph>/cinder/blocks</codeph> directory:
@@ -83,9 +81,7 @@
             <codeph>&lt;cloudname></codeph> is the name you assigned to the cloud. The directory
           contains several sample Cinder configuration files that you can edit, depending upon which
           storage method(s) you are using.</li>
-        <li>Depending upon the type of storage you are using, edit the
-            <codeph>cinder_conf.multiBackendSample</codeph> file. This sample file provides all the
-          variables needed to use VSA and/or 3PAR attached to the KVM region.<p>Use the
+        <li>Edit the <codeph>cinder_conf.multiBackendSample</codeph> file. <p>Use the
               <codeph>enabled_backends</codeph> variable to list each of the back-ends you are
             using.
             <!--You must specify at least one back-end for the non-KVM region and one or more for the KVM region.--></p><table
@@ -115,15 +111,15 @@
               </tbody>
             </tgroup>
           </table><p>You can use either 3PAR and VSA in the KVM region or select both if you have
-            respective storage arrays </p><p>Note: The HP 3PAR Web Services API server must be
-            enabled and running on the HP 3PAR storage system. For more information, see the
+            respective storage arrays </p><p><b>Note:</b> The HP 3PAR Web Services API server must
+            be enabled and running on the HP 3PAR storage system. For more information, see the
             OpenStack documentation at: <xref
               href="http://docs.openstack.org/liberty/config-reference/content/enable-hp-3par-fibre-channel.html"
               format="html" scope="external">Enable the HP 3PAR Fibre Channel and iSCSI
-              drivers</xref>.</p><p id="storage">A typical <codeph>cinder_conf</codeph> that enables
-            all three back ends appears similar to the following
+              drivers</xref>.</p><p id="storage">A typical configuration file that enables both VSA
+            and 3PAR back-ends appears similar to the following
           example:</p><codeblock>[DEFAULT]
-enabled_backends=vmdk, hp3par, hplefthand
+enabled_backends=hp3par, hplefthand
 ...                                
           
 [hp3par]

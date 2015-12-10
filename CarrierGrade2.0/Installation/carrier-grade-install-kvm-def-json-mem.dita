@@ -20,8 +20,8 @@
     <p>The following represents a sample <codeph>definition.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname&gt;</codeph> directory of the lifecycle manager. The IP
         addresses are masked for security purposes. Use values appropriate for your environment.</p>
-<codeblock>// {
-"cloud": {
+<codeblock>{
+  "cloud": {
     "environment": "environment.json",
     "name": "tb2tahoe",
     "network-config": ".hos/lnet-control-data.json",
@@ -54,8 +54,7 @@
   "product": {
     "version": 1
   }
-}
-~</codeblock>
+}</codeblock>
         </section>
     <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
       <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/def">Tahoe
