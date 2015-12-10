@@ -3,11 +3,16 @@
 <topic id="topic_mhg_f2n_vt">
   <title>Full clouds.yaml Sample File</title>
   <body>
-    <p>For information on what each variable value is, which fields are required, and where to find
-      values for many of the parameters, see the full <xref
-        href="../install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml documentation</xref>. This
-      file serves only as a visual example of what a complete cloud file should look like when all
-      the sections are together.</p>
+    <p>For information on what each parameter is, which parameters are required, and where to find
+      values for each parameters, see the complete <xref
+        href="../install_cloudsyaml.dita#topic_wzw_r4w_rt">clouds.yaml documentation</xref> or the
+      installation documentation for each service.</p>
+    <p>This sample file serves only as a visual example of what a complete
+        <codeph>clouds.yaml</codeph> file should look like when all the sections are together,
+      including proper indentation. </p>
+    <p>The first section (<xref href="cloud_platform.dita">Platform Configuration</xref>) is
+      required by the HDPI and the Application Lifecycle Service. The Application Lifecycle Service
+      does not require an additional section. The Message Broker service has two sections.</p>
     <p>
       <codeblock outputclass="codesquish" conref="cloud_platform.dita#cloudPlatform/cloudplatform"/>
       <codeblock outputclass="codesquish" conref="cloud_messaging.dita#cloudMessaging/cloudmsgaas"/>

@@ -3,9 +3,14 @@
 <topic id="cloudMessaging">
   <title>HPE Helion 2.0 Development Platform: Messaging Broker Service Configuration</title>
   <body>
-    
-    <section>This additional section of the clouds.yaml file is required only if the Messaging
-      Broker Service is installed.
+    <section><p>If you are installing the Message Broker service, add and populate the <codeph>messaging</codeph>
+        and <codeph>msgaas</codeph> sections of the <codeph>clouds.yml</codeph> file as described
+        below. All fields are required unless otherwise indicated.</p>
+      <p>
+        <note type="important">This section begins indented two spaces; look at the <xref
+            href="fullFile.dita">complete file</xref> to see how all the sections fit
+          together.</note>
+      </p>
       <codeblock id="cloudmsgaas">  messaging:
     deployer_cloud: "msgaas"
     deployer_ntp_servers: NTP servers, can be the same as the one used by HOS

@@ -54,8 +54,8 @@
       <dl>
         <dlentry>
           <dt>Lifecycle Manager (deployer node)</dt>
-          <dd>IP address of the HPE Helion OpenStack Deployer. Contact your Administrator if
-            needed.</dd>
+          <dd>IP address of the HPE Helion OpenStack lifecycle manager (previously known as the
+            deployer node). Contact your Administrator if needed.</dd>
         </dlentry>
         <dlentry>
           <dt>Username </dt>
@@ -74,24 +74,6 @@
 
       <note>All of the following procedures are performed on the HPE Helion OpenStack lifecycle
       manager. SSH to the lifecycle manager  before attempting any of these procedures.</note>
-    
-    <section>
-      <title>Create the <codeph>clouds.yaml</codeph> Configuration File</title>
-      <p>The installer retrieves configuration information from a <xref
-          href="install_cloudsyaml.dita#topic_wzw_r4w_rt/ol_apx_khy_rt">configuration file</xref>
-        named <codeph>clouds.yaml.</codeph>
-      </p>
-      <ol>
-        <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
-        <li>Create a plaintext file called <codeph>clouds.yaml</codeph> in that directory.</li>
-        <li>Provide the required information for the <xref
-            href="install_cloudsyaml.dita#id_ufp_fdn_vt">Platform Configuration</xref> section. </li></ol>
-        <p>
-        <note>Information for other services must be added before those services can be installed,
-          but that information is not required at this time.</note>
-      </p>
-    
-    </section>
     <section id="shell">
       <title>Set Proxy Shell Variables</title>
       <p>If your network uses a proxy, it may be necessary to set the <codeph>https_proxy</codeph>
@@ -107,29 +89,31 @@
               address<codeblock>KEYSTONE_IP_PUBLIC=$(openstack endpoint list | grep keystone | grep public | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')</codeblock><codeblock>echo 'KEYSTONE PUBLIC IP: ' $KEYSTONE_IP_PUBLIC  </codeblock>or
               fully-qualified domain name, depending on your HPE Helion OpenStack
               deployment.<codeblock>id=$(openstack endpoint list | grep identity | cut -d "|" -f2 | tr -d " ")</codeblock><codeblock>openstack endpoint show $id | grep publicurl | cut -d "|" -f3 | cut -d "/" -f3 | cut -d ":" -f1 </codeblock></li>
-            <li>Get the Keystone <b>internal</b> endpoint IP address.
-              <codeblock>KEYSTONE_IP_INTERNAL=$(openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')</codeblock><codeblock>echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
+            <li>Get the Keystone <b>internal</b> endpoint IP
+              address<codeblock>KEYSTONE_IP_INTERNAL=$(openstack endpoint list | grep keystone | grep internal | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')</codeblock><codeblock>echo 'KEYSTONE INTERNAL IP: ' $KEYSTONE_IP_INTERNAL </codeblock>or
               fully-qualified domain name, depending on your HPE Helion OpenStack
               deployment.<codeblock>id=$(openstack endpoint list | grep identity | cut -d "|" -f2 | tr -d " ")</codeblock><codeblock>openstack endpoint show $id | grep internalurl | cut -d "|" -f3 | cut -d "/" -f3 | cut -d ":" -f1 </codeblock></li>
             <li id="proxy">Set the IP address values for <codeph>no_proxy</codeph>. <note
                 type="important">Ensure that each and every Keystone AUTH_URL IP is included in the
                 no-proxy
               list.</note><codeblock>export no_proxy=localhost,127.0.0.1,$KEYSTONE_IP_PUBLIC,$KEYSTONE_IP_INTERNAL </codeblock></li> </ol></li>
-        <li>If your HPE Helion OpenStack deployment is behind a firewall, verify that the <xref href="http://docs.hpcloud.com/#helion/operations/accessing_sherpa.html" format="html" scope="external" >Sherpa
-          proxy shell variables</xref> have been set. If these variables have not been set, either set them
-          or follow the <xref href="install_offline.dita">offline installation instructions</xref>
-          to acquire the packages without using the Sherpa service.</li>
+        <li>If your HPE Helion OpenStack deployment is behind a firewall, verify that the <xref
+            href="http://docs.hpcloud.com/#helion/operations/accessing_sherpa.html" format="html"
+            scope="external">Sherpa proxy shell variables</xref> have been set. If these variables
+          have not been set, either set them or follow the <xref href="install_offline.dita"
+            >download instructions</xref> to acquire the packages without using the Sherpa
+          service.</li>
          
       </ol>
     </section>
     
     <section>
-      <title>Verify Connectivity</title>
+      <title>Verify Connectivity to Public Endpoints</title>
       <ol id="ol_egn_mr1_tt">
         <li>Source the Keystone RC file. <codeblock>source keystone.osrc</codeblock></li>
         <li>Verify access to the Keystone public endpoint:
           <codeblock>KEYSTONE_URL_PUBLIC=`openstack endpoint list | grep keystone | grep public | grep -Eo '(http|https)://{1}\S+'`</codeblock><codeblock>wget -t3 --timeout=5 -O/dev/null --no-check-certificate -q $KEYSTONE_URL_PUBLIC &amp;&amp; echo exists OK || echo ERROR cannot reach $KEYSTONE_URL_PUBLIC</codeblock></li>
-        <li>Verify access to the public Sherpa endpoint. If there is no access, see the <xref
+        <li>Verify access to the Sherpa public endpoint. If there is no access, see the <xref
             href="http://docs.hpcloud.com/#helion/troubleshooting/troubleshooting_sherpa.html"
             format="html" scope="external">Sherpa troubleshooting information</xref>, particularly
           how to set the <codeph>http_proxy</codeph> shell

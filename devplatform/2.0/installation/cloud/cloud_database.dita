@@ -2,10 +2,17 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudDatabase">
   <title>Database Configuration</title>
-  <body>
+    <body>
+ 
     <section>
-      <p>This additional section is required only if the Database Service is
-                installed.<codeblock id="cloudDB">  database:
+      <p>If you are installing the Database service, add and populate the <codeph>database</codeph>
+                section of the <codeph>clouds.yml</codeph> file as described below. All fields are
+                required unless otherwise indicated.</p>
+            <p>
+                <note type="important">This section begins indented two spaces; look at the <xref
+                        href="fullFile.dita">complete file</xref> to see how all the sections fit
+                    together.</note>
+                <codeblock id="cloudDB">  database:
     trove_enable_ssl: False
     ephemeral_ca_cert: /home/stack/ca/cacert.pem  
     external_network: 
@@ -26,7 +33,8 @@
     project_id: 
     control_plane_database_volume_type: VOLTYPE_HERE
     guest_instance_volume_type: VOLTYPE_HERE
-    disable_rollback: true</codeblock></p>
+    disable_rollback: true</codeblock>
+            </p>
       <dl>
         <dlentry><dt>trove_enable_ssl</dt><dd>This variable defines whether SSL is used internally by Trove. HPE Helion OpenStack 2.0
             implements SSL using HAProxy, so in installations of version 2.0 or later, this value

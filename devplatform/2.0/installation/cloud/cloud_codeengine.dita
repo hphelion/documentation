@@ -3,11 +3,14 @@
 <topic id="cloudCodeEngine">
   <title>HPE Helion Code Engine</title>
   <body>
-    <section>A complete clouds.yaml file is <xref href="fullFile.dita#topic_mhg_f2n_vt">available
-        here</xref> for reference.</section>
-    <section><p>If you are deploying Helion Code Engine, append the <codeph>helionce</codeph>
-        section to the <codeph>clouds.yml</codeph> file as described
-      below:</p><codeblock id="cloudengine">helionce:
+    <section><p>If you are installing Helion Code Engine, add and populate the <codeph>helionce</codeph> section
+        of the <codeph>clouds.yml</codeph> file as described below. All fields are required unless
+        otherwise indicated.</p>
+      <p>
+        <note type="important">This section begins indented two spaces; look at the <xref
+            href="fullFile.dita">complete file</xref> to see how all the sections fit
+          together.</note>
+      </p><codeblock id="cloudengine">  helionce:
     deployer_key: helionce-shared
     deployer_flavor: 3
     deployer_ntp_servers: ntpservers

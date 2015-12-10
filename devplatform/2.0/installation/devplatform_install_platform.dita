@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_gly_xmh_ts">
-  <title>HPE Helion 2.0 Development Platform: Install the Service Installer</title>
+  <title>HPE Helion 2.0 Development Platform: Set up the Service Installer</title>
   <body>
     <section><p>The installation procedure has changed significantly since the last release. The HDP Installer
         2.0, also known as HDPI, is a plugin for the python-openstackclient (OSC). It is able to
@@ -16,36 +16,50 @@
     <section id="pre-installing-the-hp-helion-development-platform">
       <title>Install the HPE Helion Development Platform Installation Client</title>
       <ol>
-        <li>Using your preferred web browser, navigate to <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show"
-          format="html" scope="external">HPE Helion Download Network</xref> (HDN) and  create an account if you haven't done so already.</li>
+        <li>Using your preferred web browser, navigate to <xref
+            href="https://helion.hpwsportal.com/catalog.html#/Home/Show" format="html"
+            scope="external">HPE Helion Download Network</xref> (HDN) and create an account if you
+          haven't done so already.</li>
         <li>Click the <b>HPE Helion Development Platform</b> download package.<image
             placement="break" href="../../../media/hdp_download.png" id="image_aqj_crq_yt"/></li>
         <li>From the list of options, click <b>HPE Helion Development Platform 2.0</b>. </li>
-        <li>Click the blue <b>Download</b> button in the upper right hand corner.</li>
-        <li>The best option is to download directly to the HPE Helion OpenStack Deployer. If you can
-          not download directly to the HPE Helion OpenStack deployer, copy all the downloaded
-          packages to a USB stick or external hard drive and then copy the files onto the physical
-          machine hosting the HPE Helion OpenStack Deployer. Make sure there is enough space; the
-          file sizes can be significant.</li>
-        <li>SSH to the HPE Helion OpenStack Deployer. </li>
-        
-        <li>Create and source the Virtual Environment. In this example,
-            <codeph>&lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt;</codeph> is the name
-          of the installer. This process creates a directory under<codeph> /opt </codeph>which is
-          owned by root. This directory requires <codeph>sudo</codeph> permissions to create, so the
-          owner of that folder needs to be changed to whatever the user will log in as; in this
-          example, the value is <i>stack</i>. <note>The directory name <b>must exactly</b> match the
-            name of the installer (&lt;dev_platform_installer-devplat_installer-#.#.#&gt;) or HDPI
-            commands will fail. Do not rename the directory. Do not include the file
-            extension.</note><codeblock>sudo mkdir -p /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#.gz>
-sudo tar -C /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#&gt; -xzf &lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt;
-sudo chown stack.stack /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt; 
-source /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt;/bin/activate</codeblock></li>
-        <li>Test the installation by retrieving a list of installable files.
-            <codeblock>openstack hdpi --os-cloud mycloud list</codeblock><note>If further
-            troubleshooting information is required, add the <codeph>--debug</codeph> option to the
-            previous command.</note></li>
+        <li>Click the blue <b>Download</b> button in the upper right hand corner.<note type="tip"
+            >The easiest option is to download directly to the physical machine hosting the HPE
+            Helion OpenStack lifecycle manager. If you can not download directly to that location,
+            download the files to portable storage media and then copy the files onto the lifecycle
+            manager. When downloading or copying, make sure there is enough space; the file sizes
+            can be significant.</note></li>
+        <li>Create the clouds.yaml configuration file. <ol id="ol_ox4_khb_h5">
+            <li> Create this directory: <codeblock>mkdir -p ~/.config/openstack/</codeblock></li>
+            <li>Create a plaintext file named <codeph>clouds.yaml</codeph> in that directory.</li>
+          </ol></li>
+        <li>Provide the required information for the<xref href="cloud/cloud_platform.dita"> Platform
+            Configuration</xref> section of the <codeph>clouds.yaml</codeph> file. If you prefer,
+          you may fully populate the clouds.yaml file at this time for all services you intend to
+          install, but it is not required.</li>
+        <li>SSH to the HPE Helion OpenStack lifecycle manager (previously known as the deployer
+          node). </li>
+        <li>Create the virtual environment.<note> In this example,
+              <codeph>&lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt;</codeph> is the name
+            of the installation package.</note><ol id="ol_qbn_w3b_h5">
+            <li>Create the directory. The directory name <b>must exactly</b> match the name of the
+              installation package (&lt;dev_platform_installer-devplat_installer-#.#.#&gt;). Do not
+              rename the directory later. Do not include the file extension in the directory
+              name.<codeblock>sudo mkdir -p /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#></codeblock></li>
+            <li>Uncompress the installation package into the directory.
+              <codeblock>sudo tar -C /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#&gt; -xzf &lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt;</codeblock></li>
+            <li>This process creates a directory under<codeph> /opt </codeph>which is owned by root.
+              The owner needs to be changed so that non-admin users can perform service
+              installations. In this example, the user login is <i>stack</i>.
+              <codeblock>sudo chown stack.stack /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt; </codeblock></li>
+            </ol></li><li>Source the virtual
+              environment.<codeblock>source /opt/stack/venv/&lt;dev_platform_installer-devplat_installer-#.#.#.gz&gt;/bin/activate</codeblock></li>
+          
+        <li>Test the installer by retrieving a list of installable files.
+          <codeblock>openstack hdpi --os-cloud mycloud list</codeblock></li>
       </ol>
+      <note type="tip">If troubleshooting is necessary, include the <codeph>--debug</codeph> option
+        in the command to generate highly-detailed output.</note>
     </section>
   </body>
 </topic>

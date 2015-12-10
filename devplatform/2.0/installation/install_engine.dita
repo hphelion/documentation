@@ -8,8 +8,8 @@
       <ul>
         <li>The HDP Installer 2.0, also known as HDPI, must already <xref
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-        <li>A properly configured <xref href="install_cloudsyaml.dita#id_xnd_3dn_vt">clouds.yaml
-          </xref>file.</li>
+        <li>Populate the <xref href="cloud/cloud_codeengine.dita">Code Engine</xref> section of the
+            <codeph>clouds.yaml</codeph> file.</li>
         <li>HPE Helion OpenStack 2.0 installation must be completed. You must know the location of
           its <codeph>services.osrc</codeph> file, which contains configuration information.</li>
         <li>You must know the NTP server and DNS server IP addresses.</li>
@@ -22,8 +22,7 @@
     
     <section><title>Installation</title>
       <ol>
-        <li>SSH into the HP Helion OpenStack Deployer. (This is the same location where the HDPI has
-          been installed.)</li>
+        <li>SSH into the HP Helion OpenStack lifecycle manager. </li>
         <li>Upload an SSH keypair to Nova to be used by the HPE Helion Code Engine Deployer.
             <note>The name of the key you are creating in Nova (<codeph>helionce-shared</codeph>)
             must match the value of the <codeph>deployer_key</codeph> value in the <xref

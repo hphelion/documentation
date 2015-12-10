@@ -2,15 +2,16 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="cloudPlatform">
   <title>Platform Configuration</title>
-  <body>
+  <body><section>A complete <codeph>clouds.yaml </codeph>file is <xref href="fullFile.dita"
+        >available here</xref> for reference.</section>
     <section>
-      <p>These sections in the clouds.yaml file are the absolute minimum required. Installing each
-        service will require adding sections to the file, which is documented in the installation
-        for that service. A complete clouds.yaml file is <xref href="fullFile.dita#topic_mhg_f2n_vt"
-          >available here</xref> for reference.</p>
-        
-        <note>This basic information is also  the minimum required for listing the content from HDN,
-        which is used as a test to determine if the HDPI was installed correctly.</note>
+      <p>Populating this section of the <codeph>clouds.yaml </codeph>file is required for the HDPI
+        and the Application Lifecycle Service. Installing the other services requires additional
+        sections as documented in the installation procedure for that service. All fields are
+        required unless otherwise indicated.<note type="important">This section begins at the left
+          margin. All other sections begin indented two spaces; look at the <xref
+            href="fullFile.dita">complete file</xref> to see how all the sections fit
+          together.</note></p>
       
       <codeblock id="cloudplatform">clouds:
   mycloud:

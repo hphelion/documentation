@@ -8,9 +8,8 @@
       <ul id="ul_p2s_flz_wt">
         <li>The HDP Installer 2.0, also known as HDPI, must already <xref
             href="devplatform_install_platform.dita#topic_gly_xmh_ts">be installed</xref>.</li>
-        <li>A properly configured <xref href="install_cloudsyaml.dita#topic_wzw_r4w_rt"
-            >clouds.yaml</xref> file. Note that there is no specific sub-section in the clouds.yaml
-          file for the Application Lifecycle Service.</li>
+        <li>There is no additional section in the <codeph>clouds.yaml</codeph> file for the
+                    Application Lifecycle Service.</li>
       </ul>
     </section>
       <section>
