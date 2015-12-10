@@ -67,13 +67,14 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-verify-json"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/cobbler"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-create-cloud"/>
-    <section id="conref-back-end">
+    <section id="conref-back-end-no-esx">
       <title>Configure the back-end drivers</title>
       <p>Configure the back-end drivers to enable management of the OpenStack Block Storage volumes
         on HPE StoreVirtual VSA and/or HPE StoreServ (3PAR) storage arrays. The HPE Block Storage
         (Cinder) service allows you to configure multiple storage back-ends. A sample file provides
         all the variables needed to use VSA and/or 3PAR attached to the KVM region. You need to edit
-        this file for your environment and save as <codeph>cinder_conf</codeph>.</p>
+        this file for your environment and save as <codeph>cinder_conf</codeph>.
+        <!--Section shared with Denver--></p>
       <p>Use the following steps to configure back-end support:</p>
       <ol id="ul_btr_l52_xs">
         <li>Change to the <codeph>/cinder/blocks</codeph> directory:

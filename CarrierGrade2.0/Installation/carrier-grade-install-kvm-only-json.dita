@@ -78,53 +78,53 @@
         </table>
         <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
             <p>The following represents a sample <codeph>node-provision.json</codeph> file. Use values appropriate for your environment.</p>
-            <codeblock>                [
-                {
-                "name": "ccn1",
-                "pxe_mac_address": "d0:bf:9c:f1:85:00",
-                "pxe_interface": "auto",
-                "pm_type": "ipmilan",
-                "pm_ip": "10.1.x.x",
-                "pm_user": "cghelion",
-                "pm_pass": "cghelion#",
-                "failure_zone": "fz1",
-                "node_group": "CCN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                },
-                {
-                "name": "ccn2",
-                "pxe_mac_address": "5c:b9:01:7a: 00: 00",
-                "pxe_interface": "auto",
-                "pm_type": "ipmilan",
-                "pm_ip": "10.1.x.x",
-                "pm_user": "cghelion",
-                "pm_pass": "cghelion#",
-                "failure_zone": "fz2",
-                "node_group": "CCN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                },
-                {
-                "name": "ccn3",
-                "pxe_mac_address": "5c:b9:01:7a: 00: 00",
-                "pxe_interface": "auto",
-                "pm_type": "ipmilan",
-                "pm_ip": "10.1.x.x",
-                "pm_user": "cghelion",
-                "pm_pass": "cghelion#",
-                "failure_zone": "fz3",
-                "node_group": "CCN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                }
-                ]            </codeblock>
+            <codeblock>[
+    {
+        "name": "ccn1",
+        "pxe_mac_address": "5c:b9:01:7a:24:80",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.x.x.x",
+        "pm_user": "cghelion",
+        "pm_pass": "airborne",
+        "failure_zone": "fz1",
+        "node_group": "CCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    },
+    {
+        "name": "ccn2",
+        "pxe_mac_address": "5c:b9:01:7a:34:20",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.x.x.x",
+        "pm_user": "cghelion",
+        "pm_pass": "airborne",
+        "failure_zone": "fz2",
+        "node_group": "CCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    },
+    {
+        "name": "ccn3",
+        "pxe_mac_address": "d0:bf:9c:f1:85:90",
+        "pxe_interface": "auto",
+        "pm_type": "ipmilan",
+        "pm_ip": "10.x.x.x",
+        "pm_user": "cghelion",
+        "pm_pass": "airborne",
+        "failure_zone": "fz3",
+        "node_group": "CCN-001-001",
+        "vendor": "HP",
+        "model": "DL680",
+        "os_partition_size": "20",
+        "data_partition_size": "80"
+    }
+]</codeblock>
             <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
                     <li><xref href="CGH-2-install-denver.dita#topic10581c2id/node-prov">Denver
                             deployment</xref></li>

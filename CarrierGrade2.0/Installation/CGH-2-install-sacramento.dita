@@ -15,12 +15,13 @@
     </metadata>
   </prolog>
   <body>
-    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM is
-        installed</xref>, the next task in installing the <xref
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM
+        is installed</xref>, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM + ESX
         deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
       Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
-      proxy. </p>
+      proxy.
+      <!--Most sections here are shared with the other install docs; use care when editing--></p>
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions. If you are installing a different deployment, disregard these instructions. </p>
@@ -497,10 +498,8 @@ Password: cghelion</codeblock>
               >Node fails to boot during HLM provision</xref>. </p>Once the baremetal nodes are
           provisioned, make sure the <codeph>nodes.json</codeph> file is generated to the
             <codeph>var/hlm/clouds/&lt;cloud name&gt;/</codeph> directory. The
-            <codeph>nodes.json</codeph> file will have entries for your environment:
-          <table
-            frame="all" rowsep="0" colsep="0" id="table_c3c_43z_g5">
-            
+            <codeph>nodes.json</codeph> file will have entries for your environment: <table
+            frame="all" rowsep="1" colsep="1" id="table_c3c_43z_g5">
             <tgroup cols="2">
               <colspec colname="c1" colnum="1" colwidth="1.0*"/>
               <colspec colname="c2" colnum="2" colwidth="1.0*"/>
@@ -546,7 +545,8 @@ Password: cghelion</codeblock>
         (Cinder) service allows you to configure multiple storage back-ends. A sample file provides
         all the variables needed to use ESX in the non-KVM region and HPE StoreVirtual VSA and/or
         HPE StoreServ (3PAR) attched to the KVM region. You need to edit this file for your
-        environment and save as <codeph>cinder_conf</codeph>.</p>
+        environment and save as <codeph>cinder_conf</codeph>.
+        <!--Section shared with Memphis only--></p>
       <p>Use the following steps to configure back-end support:</p>
       <ol id="ul_btr_l52_xs">
         <li>Change to the <codeph>/cinder/blocks</codeph> directory:

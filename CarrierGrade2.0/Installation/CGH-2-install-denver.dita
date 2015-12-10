@@ -335,7 +335,8 @@
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/cobbler"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-create-cloud"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-back-end" id="storage"/>
+    <section conref="CGH-2-install-tahoe.dita#topic10581c2it/conref-back-end-no-esx"/>
+    
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/providernet-patch"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-config-proc"/>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hdeploy"/>
