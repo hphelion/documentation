@@ -45,8 +45,8 @@ openstack --os-cloud mycloud hdpi messaging install <i>&lt;filename></i></codebl
 | als                        | wscatalog.2800 | 2.0.0.548 | available  |
 | database                   | wscatalog.2762 | 2.0.0.32  | available  |
 | database                   | wscatalog.2803 | 2.0.0.37  | available  |
-| messaging                  | wscatalog.2761 | 1.0.0     | available  |<b>
-| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |</b>
+| messaging                  | wscatalog.2761 | 1.0.0     | available  |<ph outputclass="codehighlight">
+| messaging                  | wscatalog.2796 | 1.0.0.165 | available  |</ph>
 +----------------------------+----------------+-----------+------------+</pre></li>
                 <li>Find the<b> ID number</b> of the most recent version of the service (the highest
                   ID number for that service).</li>
@@ -179,7 +179,7 @@ openstack-operations | preinstall | Create Virtual IPs necessary for load-balanc
 openstack-operations | preinstall | Set Nova Quotas --------------------- 1.77s
 -------------------------------------------------------------------------------
 Total: ----------------------------------------------------------------- 27.45s
-localhost                  : ok=20   changed=14  <b> unreachable=0 </b>  <b> failed=0 </b></codeblock></li>
+localhost                  : ok=20   changed=14   <ph outputclass="codehighlight">unreachable=0    failed=0</ph> </codeblock></li>
             <li>Configure the Input Model for TLS Support in Cue API (Optional).<note>If using
                 name-based TLS, skip this step, otherwise the deployment model <xref href="#topic_t3w_fnh_ts/TLS">customization</xref> performed previously must have included the TLS
                 configuration step.</note><ol>
@@ -194,7 +194,8 @@ stack@messaging-deployer:~/helion/hos/ansible$ git commit -a -m "Configured Depl
             <li>Run the Config Processor Playbook
                   <codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost config-processor-run.yml </codeblock><p><note>If
                   you have performed a full installation previously, you <b>must</b> remove the Cue
-                  user and service from Keystone <b>before</b> running this playbook again. <ul id="ul_rsf_tfs_wt">
+                  user and service from Keystone <b>before</b> running this playbook again. <ul
+                    id="ul_rsf_tfs_wt">
                     <li> SSH into the HPE Helion OpenStack lifecycle manager (deployer node), source
                       the keystone.osrc file, and then execute these
                       commands:<codeblock>openstack service delete cue
@@ -213,7 +214,7 @@ config-processor | configure | Copy ansible hosts file for cloud deployment (ver
 config-processor | add-localhost | Add localhost group ------------------ 0.17s
 -------------------------------------------------------------------------------
 Total: ------------------------------------------------------------------ 7.99s
-localhost                  : ok=21   changed=14   <b>unreachable=0  </b>  <b>failed=0  </b>      </codeblock></li>
+localhost                  : ok=21   changed=14   <ph outputclass="codehighlight">unreachable=0    failed=0 </ph>       </codeblock></li>
             <li>Run the Ready Deployment
                 Playbook<codeblock>stack@messaging-deployer:~/helion/hos/ansible$ ansible-playbook -i hosts/localhost ready-deployment.yml </codeblock><p>Successful
                 output should look similar to the following. <note>Ignore the TASK/msg message at
@@ -232,7 +233,7 @@ config-processor | configure | Copy ansible hosts file for cloud deployment (ver
 config-processor | configure | Copy hosts.hf for osconfig playbooks ----- 0.22s
 -------------------------------------------------------------------------------
 Total: ------------------------------------------------------------------ 5.96s
-localhost                  : ok=20   changed=11   <b>unreachable=0 </b>   <b>failed=0   </b>
+localhost                  : ok=20   changed=11   <ph outputclass="codehighlight">unreachable=0    failed=0</ph>
 
 TASK: [git-operations | ready-deployment-tree-help | Tell the user what to expect] ***
 ok: [localhost] => {
@@ -259,7 +260,7 @@ openstack-operations | create_port | Create instance ports ------------- 13.97s
 openstack-operations | create_security_groups | Create other security groups rules (e.g. 112 protcol) --- 9.33s
 -------------------------------------------------------------------------------
 Total: ---------------------------------------------------------------- 471.97s
-localhost                  : ok=35   changed=19   <b>unreachable=0</b>    <b>failed=0</b></codeblock></li>
+localhost                  : ok=35   changed=19   <ph outputclass="codehighlight">unreachable=0    failed=0</ph></codeblock></li>
             <li>Run the Site Playbook <note type="caution">Unlike all the previous ansible plays,
                 the inventory file supplied to this play is <codeph>hosts/verb_hosts</codeph> and
                 not <codeph>hosts/localhost</codeph></note><note>This step takes approximately 10 to
@@ -280,10 +281,10 @@ logging-producer | configure | Include default log files for centralized logging
 Install keepalived package ---------------------------------------------- 9.21s
 -------------------------------------------------------------------------------
 Total: ---------------------------------------------------------------- 611.95s
-msgaas-msgaas-ccp-c1-m1-mgmt : ok=377  changed=190  unreachable=0    failed=0   
-msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  unreachable=0    failed=0   
-msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  unreachable=0    failed=0   
-localhost                  : ok=34   changed=15   unreachable=0    failed=0   </codeblock></li>
+msgaas-msgaas-ccp-c1-m1-mgmt : ok=377  changed=190  <ph outputclass="codehighlight">unreachable=0    failed=0 </ph>  
+msgaas-msgaas-ccp-c1-m2-mgmt : ok=381  changed=194  <ph outputclass="codehighlight">unreachable=0    failed=0</ph>   
+msgaas-msgaas-ccp-c1-m3-mgmt : ok=382  changed=196  <ph outputclass="codehighlight">unreachable=0    failed=0</ph>   
+localhost                  : ok=34   changed=15   <ph outputclass="codehighlight">unreachable=0    failed=0</ph>   </codeblock></li>
           </ol></li></ol></section>
     <section>
       <title>Finding the IP address for nodes in a name-based installation</title>
