@@ -9,7 +9,7 @@
                 you must follow these steps to perform backups: <ol>
                     <li>Define what you want to backup.</li>
                     <li>Define a mode for that backup. The following modes are available: <ul>
-                            <li>FS (filesystem) (default)</li>
+                            <li>FS (filesystem) (default) </li>
                             <li>MySQL</li>
                             <li>SQL Server</li>
                             <li>Mongo</li>
