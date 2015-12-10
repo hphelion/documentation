@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic10581cgikoj">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample JSON File Installing
-        the Denver Topology</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Sample node-provision.json
+        File for Denver</title>
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
@@ -18,9 +18,8 @@
             <!--UNDER REVISION-->
             <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
             <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
-        <p>The process for installing <xref href="carrier-grade-install-non-kvm.dita#topic10581cgink">the
-                non-KVM region</xref> deployment requires a JSON file that will be used when
-            deploying the HP Helion OpenStack.</p>
+        <p>The process for installing the Denver deployment requires a JSON file that will be used
+            when deploying the HP Helion OpenStack.</p>
         <p>The <codeph>node-provision.json</codeph> file contains the following fields:</p>
         <table>
             <tgroup cols="2">
@@ -126,8 +125,10 @@
                 "data_partition_size": "80"
                 }
                 ]            </codeblock>
-            <p>Return to <xref href="carrier-grade-install-non-kvm.dita#topic10581cgink">the non-KVM
-                    region</xref>.</p>
+            <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
+                    <li><xref href="CGH-2-install-denver.dita#topic10581c2id/node-prov">Denver
+                            deployment</xref></li>
+                </ul></p>
         </section>
     </body>
 </topic>

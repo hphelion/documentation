@@ -41,8 +41,8 @@
         directory or any where inside the <codeph>/var/hlm/clouds</codeph> directory. You can create
         a backup folder on <codeph>/root/</codeph> directory or on a remote system.
         <!--HCG-681--></p></section>
-    <section id="node-prov">
-      <title>Configure the node-provision.json file</title>
+    <section id="node-prov"> 
+      <title>Edit the node-provision.json file</title>
       <p>Modify the <codeph>node-provision.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager. This
         file supplies input values to the hprovision script, later in the installation.</p>
@@ -88,7 +88,7 @@
     </section>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-pxe-boot"/>
     <section>
-      <title>Modify the ansible.json file</title>
+      <title>Edit the ansible.json file</title>
       <p>Modify the <codeph>ansible.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
         directory of the lifecycle manager with values appropriate for your environment. In the
         following example, the IP addresses have been masked for security: </p>
@@ -121,7 +121,7 @@
       </p>
     </section>
     <section>
-      <title>Modify the ldap.json file</title>
+      <title>Edit the ldap.json file</title>
       <p>Modify the <codeph>ldap.json</codeph> file in the /var/hlm/clouds/&lt;cloudname> directory
         of the lifecycle manager with values appropriate for your environment. In the following
         example, the IP addresses have been masked for security:  </p>
@@ -157,7 +157,7 @@
       </p>
     </section>
     <section>
-      <title>Modify the wr.json file</title>
+      <title>Edit the wr.json file</title>
       <p>Modify the <codeph>wr.json</codeph> file in the /var/hlm/clouds/&lt;cloudname> directory of
         the lifecycle manager with values appropriate for your environment. In the following
         example, the IP addresses have been masked for security:  </p>
@@ -213,7 +213,7 @@
       </p>
     </section>
     <section id="environment">
-      <title id="env-json">Modify the <codeph>environment.json</codeph> file</title>
+      <title id="env-json">Edit the environment.json file</title>
       <p>Modify the <codeph>environment.json</codeph> file in the
           <codeph>/var/hlm/clouds/&lt;cloudname></codeph> directory of the lifecycle manager.
         Configure the VLANs and network addresses as appropriate for your environment. Set the
@@ -283,7 +283,7 @@
         to itself for serving python and debian repositories. Make sure that you set the first IP
         address of the CLM range for the eth2 (CLM) address of the HLM host.</p>
     </section>
-    <section id="def-json"><title>Modify the <codeph>definition.json</codeph></title>
+    <section id="def-json"><title>Edit the definition.json file</title>
         <p>Modify the <codeph>definition.json</codeph> file in the /var/hlm/clouds/&lt;cloudname>
         directory of the lifecycle manager: </p>
       <ol>
