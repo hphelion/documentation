@@ -114,9 +114,8 @@
     </section>
     <section id="conref-hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
-      <p>Use the following steps on the lifecycle manager host to log on to the lifecycle manager
-        created in <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">Bootstrapping the
-          Lifecycle Manager VM and Installation Services</xref>:</p>
+      <p>Use the following steps on the lifecycle manager host to log on to the lifecycle
+        manager:</p>
       <ol id="ol_ncd_wff_zt">
         <li>Log into the lifecycle manager. <codeblock>ssh &lt;HLM_VM_IP></codeblock><p>where:
             HLM_VM_IP is the CLM IP of the lifecycle manager. Locate the IP address for the
