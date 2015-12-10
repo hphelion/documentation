@@ -33,13 +33,14 @@
       <p>You will need to power on all of the control planes before bootstrapping the MySQL cluster.
         To bootstrap a downed MySQL cluster, you will need to discover the last node to go down and
         run bootstrap on that node. Since the cluster didn't go down cleanly, you will need to SSH
-        into each control node and run the following commands to find the node with the highest
-        sequence number. When you find the node with the highest sequence number, you will need to
-        run the bootstrap on that node. </p>
+        into each node that has the MySQL role and run the following commands to find the node with
+        the highest sequence number. When you find the node with the highest sequence number, you
+        will need to run the bootstrap on that node. </p>
       <ol>
-        <li>SSH into each controller node and use the commands below to get the log sequence number: <codeblock>sudo /usr/bin/mysqld_safe --wsrep-recover
+        <li>SSH into each node that has the MySQL role and use the commands below to get the log
+          sequence number: <codeblock>sudo /usr/bin/mysqld_safe --wsrep-recover
 sudo grep --text 'log sequence number' /var/log/mysql/error.log | tail -1</codeblock>
-          <p>Here is an example showing the output from a three controller node cluster:</p>
+          <p>Here is an example showing the output from a three node MySQL cluster:</p>
           <note type="important">In this example, two nodes have the same sequence number which
             means you can run the bootstrap on either node but you can only run the bootstrap
             command once and only on one node.</note>
@@ -56,12 +57,13 @@ stack@helion-cp-c1-m3-mgmt:~$ sudo grep --text 'log sequence number' /var/log/my
 151119 14:53:22 Percona XtraDB (http://www.percona.com) 5.5.41-37.0 started; log sequence number 165252407 
 151119 14:53:23 InnoDB: Shutdown completed; log sequence number 165252407 </codeblock>
         </li>
-        <li>SSH into the node with the highest sequence and bootstrap the cluster.
+        <li>SSH into only one node with the highest or equal to the highest sequence and bootstrap
+          the cluster.
           <codeblock>sudo /etc/init.d/mysql bootstrap-pxc
 sudo service mysql restart</codeblock>
         </li>
 
-        <li>Log onto the other two controller nodes and run mysql start.
+        <li>Log in to the other two controller nodes and run mysql start.
           <codeblock>sudo service mysql start</codeblock>
         </li>
       </ol>
@@ -73,7 +75,7 @@ sudo service mysql restart</codeblock>
       <p>These are the steps to check the health status of the database and should be run after all
         of your control plane nodes are up and running.</p>
       <ol>
-        <li>Log in to any of the control plane nodes and change to the root user by using
+        <li>Log in to any of the nodes with the vertica role and change to the root user by using
             <codeph>sudo su</codeph>.</li>
         <li>Check the status of the database using this command: <codeblock>su dbadmin -c '/opt/vertica/bin/admintools -t view_cluster -d mon'</codeblock>
           <p>You should see an output that looks like this below if it's up:
@@ -92,7 +94,7 @@ mon  | ALL  | UP</codeblock></p></li>
         the recovery steps.</p>
       <p>To shut an initializing node down, follow these steps:</p>
       <ol>
-        <li>Log in to any of the control plane nodes and change to the root user by using
+        <li>Log in to any of the nodes with the vertica role and change to the root user by using
             <codeph>sudo su</codeph>.</li>
         <li>Shut down the node using the command below. Note that the IP address you use here is
           going to be the IP address of the node that shows the database in an initializing state:
@@ -104,7 +106,7 @@ mon  | ALL  | UP</codeblock></p></li>
         <li>Locate the Vertica admin password from the lifecycle manager node:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 grep dbadmin_user_password group_vars/*</codeblock></li>
-        <li>Log in to any of the control plane nodes and change to the root user by using
+        <li>Log in to any of the nodes with the vertica role and change to the root user by using
             <codeph>sudo su</codeph>.</li>
         <li>Restart the Vertica database using the command below. Specify your Vertica admin
           password in the command:
@@ -114,20 +116,20 @@ grep dbadmin_user_password group_vars/*</codeblock></li>
         <li>If the output shows that your nodes are now <codeph>Up</codeph> then you are good to go.
           If they do not show in an <codeph>Up status then continue to the next step.</codeph></li>
         <li>Force a restart of each node. Replace the IP address in the command below to match the
-          IP address of your control plane nodes.
+          IP address of the nodes with the vertica role.
           <codeblock>su dbadmin -c '/opt/vertica/bin/admintools -t restart_node -s &lt;vertica_cluster_ip> -d mon -p &lt;vertica_admin_password>'</codeblock></li>
       </ol>
     </section>
     <section id="hlm"><title>Restarting the Lifecycle Manager</title>
       <ol>
-        <li>Log into the lifecycle manager and execute the hlm-start playbook for the 3 controller
-          nodes. <codeblock>cd ~/scratch/ansible/next/hos/ansible
+        <li>Log in to the lifecycle manager and execute the hlm-start playbook for the nodes with
+          the lifecycle manager role. <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=&lt;host_var name&gt;</codeblock>
           <p>Here is an example using the above command using the example in the previous step.</p>
           <codeblock>ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit=helion-cp-c1-m1-mgmt,helion-cp-c1-m2-mgmt,helion-cp-c1-m3-mgmt</codeblock>
         </li>
-        <li>Now run the hlm-start playbook for all nodes. When this playbook completes, all services
-          should be started.
+        <li>Now run the hlm-start playbook for all nodes with the lifecycle manager role. When this
+          playbook completes, all services should be started.
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-start.yml</codeblock>
         </li>
