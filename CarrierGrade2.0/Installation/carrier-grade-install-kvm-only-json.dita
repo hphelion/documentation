@@ -79,8 +79,7 @@
         </table>
         <section id="sample-node-provisionjson-file"> <title>Sample node-provision.json file</title>
             <p>The following represents a sample <codeph>node-provision.json</codeph> file. Use values appropriate for your environment.</p>
-            <codeblock>
-                [
+            <codeblock>                [
                 {
                 "name": "ccn1",
                 "pxe_mac_address": "d0:bf:9c:f1:85:00",
@@ -125,58 +124,8 @@
                 "model": "DL680",
                 "os_partition_size": "20",
                 "data_partition_size": "80"
-                },
-                {
-                "name": "dcn1",
-                "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
-                "pxe_interface": "auto",
-                "pm_type": "ipmilan",
-                "pm_ip": "10.1.x.x",
-                "pm_user": "cghelion",
-                "pm_pass": "cghelion#",
-                "failure_zone": "fz1",
-                "node_group": "DCN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                },
-                {
-                "name": "dcn2",
-                "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
-                "pxe_interface": "auto",
-                "pm_type": "ipmilan",
-                "pm_ip": "10.1.x.x",
-                "pm_user": "cghelion",
-                "pm_pass": "cghelion#",
-                "failure_zone": "fz2",
-                "node_group": "DCN-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
-                },
-                {
-                "name": "vrg1",
-                "pxe_mac_address": "d0:bf:9c:c0: 00: 00",
-                "pxe_interface": "auto",
-                "pm_type": "ipmilan",
-                "pm_ip": "10.1.x.x",
-                "pm_user": "cghelion",
-                "pm_pass": "cghelion#",
-                "failure_zone": "fz1",
-                "node_group": "VRG-001-001",
-                "vendor": "HP",
-                "model": "DL680",
-                "os_partition_size": "20",
-                "data_partition_size": "80"
                 }
-                ]
-                
-                
-            
-            
-            </codeblock>
+                ]            </codeblock>
             <p>Return to <xref href="carrier-grade-install-non-kvm.dita#topic10581cgink">the non-KVM
                     region</xref>.</p>
         </section>
