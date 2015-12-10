@@ -2,9 +2,10 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_phl_shc_rt">
   <title>Terraform Variables</title>
-  <shortdesc>You can configure the following values in your <filepath>tfvars</filepath> file using
-    the <filepath>overrides.tfvars.sample</filepath> file included with <keyword keyref="prodLong"/>
-    as a guide.</shortdesc>
+  <shortdesc>You must configure a number of Terraform variables in order to create a <keyword
+      keyref="prodShort"/> cluster. You can configure the values of these variables in your
+      <filepath>tfvars</filepath> file using the <filepath>overrides.tfvars.sample</filepath> file
+    included with <keyword keyref="prodLong"/> as an example.</shortdesc>
   <prolog>
     <metadata>
       <othermeta name="author" content="Michael Khmelnitsky"/>

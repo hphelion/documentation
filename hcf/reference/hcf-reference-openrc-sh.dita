@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="hcf-reference-openrc-sh">
+  <title>OpenStack Variables</title>
+  <shortdesc>You must configure a number of OpenStack variables in order to run Neutron and Nova
+    command-line interface (CLI) commands to create your sandbox environment. You can create and
+    configure an <filepath>openrc.sh</filepath> file by obtaining the values of these variables from
+    your <keyword keyref="opnStckLong"/> administrator or by using the Horizon web
+    console.</shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="author" content="Michael Khmelnitsky"/>
+    </metadata>
+  </prolog>
+  <refbody>
+  </refbody>
+</reference>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="cf_reference_roles">
-  <title>Available Roles</title>
+  <title><keyword keyref="prodShort"/> Roles</title>
   <shortdesc>
     <draft-comment author="michaelk">
       <ul id="ul_x1f_2bn_g5">
