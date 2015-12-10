@@ -34,7 +34,13 @@
         and listens on an external network. A vulnerability in that process can lead to remote root
         compromise of the Network Service Nodes. If this is a concern customers should consider
         using a VPN solution other than the Neutron plugin-based VPNaaS and/or deploying additional
-        protection mechanisms.</p>
+        protection mechanisms.
+      </p>
+      <note type="important">When the controller node (or network node) running the ipsec process from 
+        Openswan is rebooted, the ipsec process will fail to start by default. To restart the VPNaaS 
+        service, execute the following command after the system reboot.
+        <codeblock>sudo service ipsec start
+sudo service neutron-vpn-agent restart</codeblock></note>
     </section>
     
     <section id="Configuration">
