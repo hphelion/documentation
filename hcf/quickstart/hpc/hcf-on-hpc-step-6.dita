@@ -12,11 +12,11 @@
  <conbody>
    <simpletable>
      <strow>
-       <stentry>1. <xref conref="cfr_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
-              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
-              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
-              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
+       <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
        <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
             and troubleshoot your cluster, you can connect to it using SSH and then run <keyword

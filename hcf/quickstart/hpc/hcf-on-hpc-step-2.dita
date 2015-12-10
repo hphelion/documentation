@@ -13,13 +13,13 @@
  <conbody>
   <simpletable>
    <strow>
-    <stentry>1. <xref href="cfr_step_1.dita#concept_s2k_b35_st" id="quickStartHPcloudStep1_"
+    <stentry>1. <xref href="hcf-on-hpc-step-1.dita#concept_s2k_b35_st" id="quickStartHPcloudStep1_"
               ><keyword keyref="quickStartHPcloudStep1"/></xref><p>2. <b><keyword
                 keyref="quickStartHPcloudStep2" id="quickStartHPcloudStep2"/></b></p><p>3. <xref
-              conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-              conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
-              conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
-            conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
+            conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Downloading <keyword keyref="prodLong"/></b><p>You can use <keyword
               keyref="prodShort"/> to push Docker images and application code to the server, to
             start and stop applications, to link <keyword keyref="opnStckShort"/> services to
@@ -85,7 +85,7 @@
             instructions, see the <xref
               href="https://terraform.io/intro/getting-started/install.html" format="html"
               scope="external">Terraform installation guide</xref>.</note><xref
-            href="cfr_step_3.dita#concept_kpg_fhz_st">
+            href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

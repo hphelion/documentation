@@ -12,18 +12,18 @@
  <conbody>
   <simpletable>
    <strow>
-    <stentry>1. <xref conref="cfr_step_2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-              <xref conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+    <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
                 <b><keyword keyref="quickStartHPcloudStep3" id="quickStartHPcloudStep3"
             /></b></p><p>4. <xref
-              conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
-              conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
-            conref="cfr_step_1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
+            conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry>
           <b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
             <li>Log into the <xref href="https://horizon.hpcloud.com/" format="html"
                 scope="external"><keyword keyref="pubCloudShort"/></xref> with the username and
-              password that you created <xref href="cfr_step_1.dita#concept_s2k_b35_st">during
+              password that you created <xref href="hcf-on-hpc-step-1.dita#concept_s2k_b35_st">during
                 registration</xref>.</li>
             <li id="create_a_network">Create a network.<ol id="ol_xvb_qyp_tt">
                 <li>On the left panel, click <menucascade>
@@ -43,7 +43,7 @@
                     name of your network. You will need it to <xref
                       href="../../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt"
                       >configure your <filepath>tfvars</filepath> file</xref> and <xref
-                      href="cfr_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run terraform
+                      href="hcf-on-hpc-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run terraform
                       commands.</xref></note></li>
               </ol></li>
             <li>Create a router.<ol id="ol_vkh_fr1_tt">
@@ -130,14 +130,14 @@
                     <filepath>pem</filepath> file in a convenient location.</li>
               </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
                 that you will need to <xref
-                  href="cfr_step_4.dita#concept_pqc_jhz_st/run_terraform_command">run Terraform
+                  href="hcf-on-hpc-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run Terraform
                   commands</xref> and to <xref
-                  href="cfr_step_6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH into your
+                  href="hcf-on-hpc-step-6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH into your
                   cluster</xref>. The location of the <filepath>pem</filepath> file is relative to
                   <xref href="../../reference/cfr_reference_tf_vars.dita#reference_phl_shc_rt">the
                     <filepath>tfvars</filepath> file in which it is specified</xref>. For
                 convenience, you can place the two files into the same directory.</note></li>
-          </ol><xref href="cfr_step_4.dita#concept_pqc_jhz_st">
+          </ol><xref href="hcf-on-hpc-step-4.dita#concept_pqc_jhz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref>
         </stentry>
