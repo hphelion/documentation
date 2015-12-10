@@ -41,13 +41,17 @@
           file on any of the controller nodes in the non-KVM region. The CAN IP address contains
           port <codeph>5000</codeph>. </p>
         <p>For example:</p>
-        <codeblock>root@B53NEW-CCP-T2-M1-NETCLM:~# cat /root/stackrc
-        export OS_PASSWORD=admin
-        export OS_USERNAME=admin
-        export OS_TENANT_NAME=admin
-        #export OS_AUTH_URL=http://10.x.x.x:35357/v2.0
-        export OS_AUTH_URL=https://10.x.x.x:5000/v2.0
-        export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt </codeblock>
+        <codeblock>export OS_PASSWORD=qekuTPcc26Ig
+export OS_USERNAME=admin
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=https://10.20.4.120:5000/v2.0
+export OS_CACERT=/etc/stunnel/ssl/hlm/certs/ca.crt
+export OS_REGION_NAME=tahoe
+unset OS_PROJECT_DOMAIN_NAME
+unset OS_PROJECT_NAME
+unset OS_USER_DOMAIN_ID
+unset OS_IDENTITY_API_VERSION
+unset OS_AUTH_VERSION</codeblock>
         <p>In this case, the CAN IP address is located in the
             <codeph>OS_AUTH_URL=https://10.x.x.x:5000/v2.0</codeph> line. You would log in using
             <codeph>https://10.x.x.x</codeph>.</p>
