@@ -19,6 +19,7 @@
          <topicref href="hcf/quickstart/hos/hcf-on-hos-step-6.dita"/>
       </topicref>
       <topicref href="hcf/reference/hcf-reference.dita" otherprops="reference">
+         <topicref href="hcf/reference/hcf-reference-openrc-sh.dita"/>
          <topicref href="hcf/reference/hcf-reference-tfvars.dita"/>
          <topicref href="hcf/reference/hcf-reference-gato.dita"/>
          <topicref href="hcf/reference/hcf-reference-roles.dita"/>

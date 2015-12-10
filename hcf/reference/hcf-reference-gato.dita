@@ -38,7 +38,7 @@
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
         </dlentry>
         <dlentry>
-          <dt><filepath id="config_get_example">config</codeph></dt>
+          <dt><codeph id="config_get_example">config</codeph></dt>
           <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components. For
               example:<codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><ul
               id="ul_x4n_dtj_rt">
@@ -53,7 +53,7 @@
           <dd>Show a list of commands or help for one command.</dd>
         </dlentry>
         <dlentry>
-          <dt><filepath id="role_example">role</codeph></dt>
+          <dt><codeph id="role_example">role</codeph></dt>
           <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
             variable to determine the Docker server endpoint. Use the <codeph>--node</codeph>
             flag to start, stop, or restart a <xref

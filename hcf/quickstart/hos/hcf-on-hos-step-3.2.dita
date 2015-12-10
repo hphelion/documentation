@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="hcf-on-hos-step-3.2">
- <title>To Create a Sandbox Environment From the Command Line</title>
+ <title>Using the Command Line</title>
  <shortdesc></shortdesc>
  <prolog>
   <metadata>
@@ -57,7 +57,7 @@ set OS_USERNAME=myUsername
 set /p OS_PASSWORD_INPUT=Please enter your OpenStack password: 
 set OS_PASSWORD=%OS_PASSWORD_INPUT
 
-set OS_REGION_NAME=myRegionName</codeblock></li>
+set OS_REGION_NAME=myRegionName<draft-comment author="michaelk">If the variable is empty, then unset the variable.</draft-comment></codeblock></li>
                 <li>Navigate to the directory that contains the <codeph>openrc.bat</codeph> file and
                   run the file. When prompted, enter your OpenStack password.</li>
                 <li>(Optional) To prevent the variables from being discarded when you close your
@@ -70,19 +70,11 @@ set OS_REGION_NAME=myRegionName</codeblock></li>
                     variables.</uicontrol></li>
               </ol></li>
           </ul><b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
-            <li>Log into the <xref href="https://horizon.hpcloud.com/" format="html"
-                scope="external"><keyword keyref="opnStckShort"/></xref> with the username and
-              password that you created <xref href="hcf-on-hos-step-1.dita#concept_s2k_b35_st"
-                >during registration</xref>.</li>
-            <li id="create_a_network">Create a network.<ol id="ol_xvb_qyp_tt">
-                <li>On the left panel, click <menucascade>
-                    <uicontrol>Project</uicontrol>
-                    <uicontrol>Network</uicontrol>
-                    <uicontrol>Networks</uicontrol>
-                  </menucascade> and then click <uicontrol>Create Network</uicontrol> on the
-                  right.</li>
-                <li>Enter a <uicontrol>Network Name</uicontrol> and click
-                    <uicontrol>Next</uicontrol>.</li>
+            <li id="create_a_network">Use an existing network or create a network.<ol
+                id="ol_xvb_qyp_tt">
+                <li>Create and name a network, for
+                  example:<codeblock>neutron net-create myNetwork</codeblock></li>
+                <li>Create a subnet </li>
                 <li>Enter a <uicontrol>Subnet Name</uicontrol>, a <uicontrol>Network
                     Address</uicontrol> (for example, <codeph>10.0.0.0/24</codeph>), and click
                     <uicontrol>Next</uicontrol>.</li>
