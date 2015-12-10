@@ -35,7 +35,7 @@
                 format="html" scope="external">Download <keyword keyref="prodShort"/>
                 <keyword keyref="prodVerLong"/></xref>
             </li>
-          </ul><note type="tip">To decompress <filepath>tar.gz</filepath> files on Windows, you can
+          </ul><note type="tip">To decompress <codeph>tar.gz</codeph> files on Windows, you can
             use a file archiver such as <xref href="http://www.7-zip.org/" format="html"
               scope="external">7zip</xref>.</note><b>Downloading and Installing OpenStack
             Command-Line Interfaces (CLI)</b><p>The Nova CLI allows you to manage OpenStack compute

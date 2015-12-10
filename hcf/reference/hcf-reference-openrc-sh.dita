@@ -4,7 +4,7 @@
   <title>OpenStack Variables</title>
   <shortdesc>You must configure a number of OpenStack variables in order to run Neutron and Nova
     command-line interface (CLI) commands to create your sandbox environment. You can create and
-    configure an <filepath>openrc.sh</filepath> file by obtaining the values of these variables from
+    configure an <codeph>openrc.sh</codeph> file by obtaining the values of these variables from
     your <keyword keyref="opnStckLong"/> administrator or by using the Horizon web
     console.</shortdesc>
   <prolog>

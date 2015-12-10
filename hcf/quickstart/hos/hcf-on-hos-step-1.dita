@@ -34,7 +34,7 @@
                   Terraform commands this system</xref>) and the ability to access and log into the
                   <keyword keyref="opnStckShort"/> keystone endpoint (you will <xref
                   href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/authenticate_with_openrc_sh"
-                  >authenticate with an <filepath>openrc.sh</filepath> file</xref>)</li>
+                  >authenticate with an <codeph>openrc.sh</codeph> file</xref>)</li>
               <li>A network with a floating IP pool and visibility to <codeph>ext-net</codeph> (the
         public Internet)</li>
             </ul></p><xref href="hcf-on-hos-step-2.dita#concept_ikh_xgz_st">

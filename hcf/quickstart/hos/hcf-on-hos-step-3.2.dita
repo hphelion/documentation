@@ -18,7 +18,7 @@
        conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
     <stentry>
-          <b>To Create and Source an <filepath>openrc</filepath> File</b><note>You can obtain the
+          <b>To Create and Source an <codeph>openrc</codeph> File</b><note>You can obtain the
             values of the following variables from your <keyword keyref="opnStckLong"/>
             administrator or by using the Horizon web console. For more information and examples,
             see <xref href="../../reference/hcf-reference-openrc-sh.dita#hcf-reference-openrc-sh"
@@ -39,11 +39,11 @@ export OS_PASSWORD="$OS_PASSWORD_INPUT"
 export OS_REGION_NAME="myRegionName"
 if [ -z "$OS_REGION_NAME" ]; then unset OS_REGION_NAME; fi</codeblock></li>
                 <li>Navigate to the directory that contains the <codeph>openrc.sh</codeph> file and
-                  run the <codeph>source openrc.sh</codeph> command.<p>When prompted, enter your
-                    OpenStack password.</p></li>
+                  run the <codeph>source openrc.sh</codeph> command. When prompted, enter your
+                  OpenStack password.</li>
                 <li>(Optional) To prevent the variables from being discarded when you close your
-                  terminal session, add the variables to your <filepath>~/.bashrc</filepath> file
-                  and run the <filepath>source ~/.bashrc</filepath> command.</li>
+                  terminal session, add the variables to your <codeph>~/.bashrc</codeph> file
+                  and run the <codeph>source ~/.bashrc</codeph> command.</li>
               </ol></li>
             <li>On Windows:<ol id="ol_a22_1mb_h5">
                 <li>Name the file <codeph>openrc.bat</codeph> and add variables to the file, for
@@ -59,7 +59,7 @@ set OS_PASSWORD=%OS_PASSWORD_INPUT
 
 set OS_REGION_NAME=myRegionName</codeblock></li>
                 <li>Navigate to the directory that contains the <codeph>openrc.bat</codeph> file and
-                  run the file.<p>When prompted, enter your OpenStack password.</p></li>
+                  run the file. When prompted, enter your OpenStack password.</li>
                 <li>(Optional) To prevent the variables from being discarded when you close your
                   terminal session, click <menucascade>
                     <uicontrol>Control Panel</uicontrol>
@@ -91,7 +91,7 @@ set OS_REGION_NAME=myRegionName</codeblock></li>
                     <uicontrol>Create</uicontrol>.<note type="tip">To find the network ID, click the
                     name of your network. You will need it to <xref
                       href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt"
-                      >configure your <filepath>tfvars</filepath> file</xref> and <xref
+                      >configure your <codeph>tfvars</codeph> file</xref> and <xref
                       href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run
                       terraform commands.</xref></note></li>
               </ol></li>
@@ -155,14 +155,14 @@ set OS_REGION_NAME=myRegionName</codeblock></li>
               </ol></li>
           </ol><b id="download_config_file">To Download the Configuration File and Key Pair</b><ol
             id="ol_gy1_f1q_tt">
-            <li>To download the <filepath>sh</filepath> configuration file, click <menucascade>
+            <li>To download the <codeph>sh</codeph> configuration file, click <menucascade>
                 <uicontrol>Project</uicontrol>
                 <uicontrol>Compute</uicontrol>
                 <uicontrol>Access and Security</uicontrol>
                 <uicontrol>API Access</uicontrol>
               </menucascade> and then click <uicontrol>Download OpenStack RC File</uicontrol> on the
                 right.<note>The
-                  <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file
+                  <codeph><varname>&lt;number></varname>-Project-openrc.sh</codeph> file
                 contains information about the hosted service, including region, tenant, and other
                 information required to create a cluster. This file is pre-configured for your
                 sandbox environment.</note></li>
@@ -176,16 +176,16 @@ set OS_REGION_NAME=myRegionName</codeblock></li>
                   right.</li>
                 <li>Enter a key pair name and click <uicontrol>Create Key Pair</uicontrol>.</li>
                 <li>If the key pair does not download automatically, click the link and save the
-                    <filepath>pem</filepath> file in a convenient location.</li>
-              </ol><note type="tip">The <filepath>pem</filepath> file contains the RSA private key
+                    <codeph>pem</codeph> file in a convenient location.</li>
+              </ol><note type="tip">The <codeph>pem</codeph> file contains the RSA private key
                 that you will need to <xref
                   href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run
                   Terraform commands</xref> and to <xref
                   href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt/connecting_to_your_cluster">SSH
-                  into your cluster</xref>. The location of the <filepath>pem</filepath> file is
+                  into your cluster</xref>. The location of the <codeph>pem</codeph> file is
                 relative to <xref
                   href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">the
-                    <filepath>tfvars</filepath> file in which it is specified</xref>. For
+                    <codeph>tfvars</codeph> file in which it is specified</xref>. For
                 convenience, you can place the two files into the same directory.</note></li>
           </ol><xref href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>

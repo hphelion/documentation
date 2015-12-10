@@ -4,7 +4,7 @@
   <title>Terraform Variables</title>
   <shortdesc>You must configure a number of Terraform variables in order to create a <keyword
       keyref="prodShort"/> cluster. You can configure the values of these variables in your
-      <filepath>tfvars</filepath> file using the <filepath>overrides.tfvars.sample</filepath> file
+      <codeph>tfvars</codeph> file using the <codeph>overrides.tfvars.sample</codeph> file
     included with <keyword keyref="prodLong"/> as an example.</shortdesc>
   <prolog>
     <metadata>
@@ -63,8 +63,8 @@
           </row>
           <row>
             <entry><codeph>key_file</codeph></entry>
-            <entry>The location and name of the private key <filepath>pem</filepath> file associated
-              with your key pair, relative to your <filepath>tfvars</filepath> file.<note type="tip"
+            <entry>The location and name of the private key <codeph>pem</codeph> file associated
+              with your key pair, relative to your <codeph>tfvars</codeph> file.<note type="tip"
                 >For convenience, you can place the two files into the same
               directory.</note></entry>
             <entry/>
