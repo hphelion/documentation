@@ -5,10 +5,10 @@
   <body>
     <p conkeyref="HOS-conrefs/applies-to"/>
     <section>
-      <p>For <keyword keyref="kw-hos-phrase"/> versions, you must have three controller nodes. Therefore,
-        adding or removing nodes is not an option. However, if you need to repair or replace a
-        controller node, you may do so by following the steps outlined here. Note that to run any
-        playbooks whatsoever for cloud maintenance, you will always run from the lifecycle
+      <p>For <keyword keyref="kw-hos-phrase"/> versions, you must have three controller nodes.
+        Therefore, adding or removing nodes is not an option. However, if you need to repair or
+        replace a controller node, you may do so by following the steps outlined here. Note that to
+        run any playbooks whatsoever for cloud maintenance, you will always run from the lifecycle
         manager.</p>
     </section>
     <section id="notes"><title>Notes</title>
@@ -20,6 +20,24 @@
         running.</p>
     </section>
     <section id="steps"><title>Procedure for Replacing a Controller Node</title>
+      <p><b>Additional Instructions for a Shared Lifecycle Manager/Controller Node</b></p>
+      <p>If the controller node you need to replace was also being used as your lifecycle manager
+        then use these steps below. If this is not a shared controller then skip to the next
+        section.</p>
+      <ol>
+        <li>Ensuring that you use the same version of HPE Helion OpenStack that you previously had
+          loaded on your lifecycle manager, you will need to download and install the lifecycle
+          management software using the instructions from the installation guide: <ol>
+            <li><xref href="../installation/install_entryscale_kvm.dita#install_kvm/setup_deployer"
+                >Set up the Lifecycle-manager</xref></li>
+          </ol></li>
+        <li>Then you will want to restore your data using the <xref
+            href="../bura/cloud_control_plane_recovery.dita#topic_tb4_lqy_qt/deployer">Deployer
+            Disaster Recovery</xref> instructions.</li>
+        <li>Once that is complete you can continue on to the <xref
+            href="replace_controller.dita#topic_ijj_45j_nt/image">Image the new node</xref>
+          steps.</li>
+      </ol>
       <p><b>Update your model with replacement server information</b></p>
       <ol>
         <li> Update your cloud model (<codeph>servers.yml</codeph>) with the new
@@ -42,7 +60,9 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
           <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock>
         </li>
       </ol>
-      <b>Image the new node</b>
+    </section>
+    <section id="image">
+      <p><b>Image the new node</b></p>
       <ol>
         <li>Log onto the node that is running the lifecycle manager. Remove the broken control plane
           node from cobbler by running sudo cobbler system remove --name &lt;server-id>. Here's an

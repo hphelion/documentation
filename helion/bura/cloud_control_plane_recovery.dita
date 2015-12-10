@@ -222,7 +222,7 @@ ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</codeblock></li>
             </ol>
           </p></li>
       </ul></section>
-    <section><title>Deployer disaster recovery</title><p>Everything is still running (CCNs and CPNs)
+    <section id="deployer"><title>Deployer disaster recovery</title><p>Everything is still running (CCNs and CPNs)
         but you lost the lifecycle manager.</p><ul>
         <li><b>Restore from a Swift backup</b>
           <ol>

@@ -26,7 +26,7 @@
         <li><xref href="install_entryscale_kvm.dita#install_kvm/provision">Provision Your Baremetal
             Nodes</xref></li>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/config_processor">Run the
-            configuration processor</xref></li>
+            Configuration Processor</xref></li>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/security">Configure TLS</xref></li>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/deploy">Deploy the Cloud</xref></li>
         <li><xref href="install_entryscale_kvm.dita#install_kvm/configure_backend">Configure a Block
