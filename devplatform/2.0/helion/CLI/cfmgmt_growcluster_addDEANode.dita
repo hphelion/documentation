@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cfmgmt_growcluster_add_dea">
+  <title><i>cf-mgmt</i> Tool Example: Add a DEA Node to an Existing Cluster</title>
+  <body>
+    <p>This example demonstrates how to add a DEA node to a cluster that already exists. </p>
+    <p>
+      <note>This sample creates five DEAs. Ensure you have enough disk space to do so.</note>
+    </p> <section>
+      <title>Prerequisites</title>
+      <ul><li>The host for the examples needs to be able to reach your HPE Helion OpenStack environment.</li>
+        <li><xref href="devplatform_downloadRCFile.dita#topic_rmk_gnx_ft">Download</xref> the RC
+          configuration file. </li>
+        <li><xref
+          href="ALS_Client_Downloads.dita#topic843/hp-helion-als-cluster-management-tool-cf-mgmt"
+          >Download</xref> the version of the cluster management (cf-mgmt) tool appropriate for
+          your operating system.</li></ul>
+    </section>
+<section>    <ol id="ol_ccd_l1b_dt">
+      <li>
+          <xref href="http://clients.als.hpcloud.com/1.3/config/bootstrap.yml" format="html"
+            scope="external">Download</xref> the latest <i>bootstrap.yml</i> file and save it in a
+          location where the <i>cf-mgmt </i>tool can access it. </li>
+  <li>Rename <i>bootstrap.yml</i> to <i>bootstrap_dea.yml</i></li>
+        <li>Open and configure the <i>bootstrap_dea.yml </i>file to match your environment. Ensure
+          the values for image names, image sizes and availability zones ("az") are valid for your
+          current configuration. Here is an
+            example:<codeblock>file version: 1.2 
+constructor-image-name: HPE Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282
+constructor-flavor: standard.xsmall 
+seed-node-image-name: HPE Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+core-flavor: standard.medium 
+cluster-title: &lt;My Cluster Title&gt;
+cluster-prefix: &lt;My Cluster Prefix&gt; 
+dea-count: 5
+dea-flavor: standard.medium 
+az: &lt;My Availability Zone&gt; </codeblock><note>The
+            default values create Lucid64 DEAs. To add Windows DEAs instead, provide a valid Windows
+            image name and specify the stack parameter: <codeph>--stack
+          "win2012r2"</codeph></note></li>
+      <li> Run the following command, inserting the correct values as appropriate.<ul>
+            <li>This example will work for the <tm tmtype="reg">Windows</tm> operating
+              system.<codeblock>cf-mgmt.exe ^ 
+  --os-auth-url &lt;OpenStack authentication URL&gt; ^
+  --os-username &lt;username&gt; ^
+  --os-password &lt;password&gt; ^
+  --os-tenant-id &lt;id&gt; ^
+  --os-tenant-name "&lt;tenant-name&gt;" ^ 
+  --os-region-name "&lt;region-name&gt;" ^ 
+ add-role dea ^
+  --keypair-name &lt;keypair name&gt; ^
+  --load bootstrap_dea.yml   </codeblock></li>
+            <li>This example will work on Mac OSX or Linux:
+              <codeblock>source <i>&lt;path to openstackrc file></i> 
+cf-mgmt.exe \ 
+ add-role dea \
+  --keypair-name &lt;keypair name&gt; \
+  --load bootstrap_dea.yml </codeblock></li>
+          </ul></li>
+    </ol>
+</section>
+    <section><title>Related Links</title>
+      <sl>
+        <sli><xref href="cfmgmt_createcluster_starter.dita">Create A Starter Cluster</xref></sli>
+        <sli><xref href="cfmgmt_growcluster_addservice.dita" >Add A Service to an Existing Cluster</xref></sli>
+        <sli><xref href="ALS_Client_Reference.dita">ALS Cluster Management Tool Reference</xref></sli>
+      </sl> </section> 
+  </body>
+
+</topic>

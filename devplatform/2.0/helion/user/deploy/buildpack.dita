@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3370">
+<title>HPE Helion 2.0 Development Platform: Buildpacks</title>
+<body>
+<p>
+<xref href="https://devcenter.heroku.com/articles/buildpacks" scope="external" format="html" >Buildpacks</xref> are
+bundles of detection and configuration scripts which set up containers
+to run applications.</p>
+<p>Application deployment is done primarily using buildpacks, and the syntax for specifying which buildpack to use has changed. Instead of using a BUILDPACK_URL environment variable, set the buildpack's Git URL in a  <b>buildpack</b>  key at the top level of <i>manifest.yml</i>.</p>
+<p>Buildpacks are the recommended method for deploying applications to Application Lifecycle Service. Buildpacks replace the built-in frameworks used in previous versions.</p>
+<section id="built-in-buildpacks"> <title>Built-In Buildpacks</title>
+<p>Application Lifecycle Service will cycle through the <i>detect</i> scripts of the built-in buildpacks prior to staging to match the code you are pushing. For most applications using the built-in buildpacks, no additional ALS configuration is required.</p>
+</section>
+<section id="legacy-buildpack"> <title>Legacy Buildpack</title>
+<p>The legacy buildpack is a special meta-buildpack for deploying applications configured for Cloud Foundry v1 without the need for extensive reconfiguration.</p>
+<p>To use the Legacy buildpack: specify the <b>framework</b> type for your application (e.g. php,
+play, rails3, sinatra, java_web, java_ee, etc.). You can optionally
+set a specific <b>runtime</b> as well. For example:</p>
+<codeblock>name: bottle-py3
+framework:
+  type: python
+  runtime: python32</codeblock>
+<p>
+  <note type="restriction"> When using the Legacy buildpack, config-defined environment variable
+          values can only be updated by re-pushing the entire application with the new settings.
+          Changes to variables made in the Management Console will be overwritten by the original
+          ones defined at push when the application is restarted. To modify custom environment
+          variables, re-push the application after changing the values in
+            <filepath>manifest.yml</filepath>. </note>
+      </p>
+</section>
+<section id="custom-buildpacks"> <title>Custom Buildpacks</title>
+<p>To specify the exact buildpack to use for deploying your application,
+set a top-level <codeph>buildpack:</codeph> key in <i>manifest.yml</i> to the URL of the buildpack's Git repository. For example:</p>
+<codeblock>name: myrubyapp
+memory: 256MB
+buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git</codeblock>
+<p>You can use a specific branch by specifying it at the end of the URL using the following format:</p>
+<codeblock>buildpack: https://github.com/hpcloud/stackato-buildpack-ruby.git#branchname</codeblock>
+<p>There are hundreds of buildpacks available on Github. Searching Github for the term "buildpack" and the name of the language or framework you wish to deploy may provide you with a working solution, or at least the starting point for your own custom buildpack.</p>
+<p>
+        <note type="caution">Not all Heroku buildpacks work with ALS due to environmental differences such as
+          relying on the presence of certain executables or libraries in Heroku-specific locations.
+          Examine and test any buildpack carefully before using it in production deployments.</note>
+      </p>
+      <note type="notice">Using <i>config_vars</i> in a buildpack's <i>bin/release</i> to set environment
+        variables has been deprecated. Use a shell script in <i>$HOME/.profile.d</i> instead.</note>
+</section>
+<section id="procfile"> <title>Procfile</title>
+<p>Buildpacks will usually contain a <b>default_process_type</b> setting with the command used to start the application process. If your application needs a custom command to start the process, create a Procfile in the base directory of your application.</p>
+<p>The Procfile should contain a single line defining the <b>web:</b> <b>
+<i>process</i>
+</b> for the application defined. For example:</p>
+<codeblock>web: bundle exec rails server -p $PORT</codeblock>
+<p>ALS does not support multiple process types in the Procfile. To launch a <i>worker</i> process, create a separate app with an empty URL ( <b>url: [ ]</b> ) in <i>manifest.yml</i>.</p>
+</section>
+</body>
+</topic>

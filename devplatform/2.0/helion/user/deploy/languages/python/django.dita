@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3654">
+<title>HPE Helion 2.0 Development Platform: Deploying Django applications</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Your app needs a top-level <i>wsgi.py</i> file with a global variable named
+<codeph>application</codeph> that refers to your Django WSGI
+application. The file should already exist in the Django project,
+although a copy of it needs to be in the root directory in order for
+Application Lifecycle Service to recognize it.</p>
+<codeblock>django-admin.py startproject dj14
+cd dj14
+cp dj14/wsgi.py wsgi.py</codeblock>
+<p>Typically, the <i>wsgi.py</i> file is just three lines of code:</p>
+<codeblock>import os
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()</codeblock>
+<p>Your project must also have a <i>requirements.txt</i> file containing at
+least the <codeph>django</codeph> project:</p>
+<codeblock>cat requirements.txt
+django==1.4
+mysql-python</codeblock>
+<section id="configuring-database"> <title>Configuring the Database</title>
+  <p>See <xref href="../../../services/data-services.dita#user_data_services/using-external-databases" type="section">Using Configured Database Services</xref> for more information on connecting with database services.</p>
+<ol>
+<li> You must modify the <codeph>DATABASES</codeph> variable of your project's <i>settings.py</i> as
+          shown below to detect the database service provisioned by Helion:<codeblock>import urlparse
+DATABASES = {}
+if 'DATABASE_URL' in os.environ:
+        url = urlparse.urlparse(os.environ['DATABASE_URL'])
+        DATABASES['default'] = {
+                'NAME': url.path[1:],
+                'USER': url.username,
+                'PASSWORD': url.password,
+                'HOST': url.hostname,
+                'PORT': url.port,
+                }
+        if url.scheme == 'postgres':
+                DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+        elif url.scheme == 'mysql':
+                DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
+else:
+        DATABASES['default'] = {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'dev.db',
+                'USER': '',
+                'PASSWORD': '',
+                'HOST': '', # Set to empty string for localhost.
+                'PORT': '', # Set to empty string for default.
+                }</codeblock><p>
+            <note> In the future, this may be automatically written to <i>local_settings.py</i>
+              (similar to ep.io and others)</note>
+          </p></li>
+<li> Then add a new dependency to
+          <i>requirements.txt</i>:<codeblock>echo 'mysql-python' &gt;&gt; requirements.txt</codeblock></li>
+</ol>
+</section>
+<section id="initializing-database"> <title>Initializing database</title>
+<p>Run the <codeph>syncdb</codeph> command to initialize the database
+tables:</p>
+<codeblock>helion run &lt;appname&gt; python manage.py syncdb</codeblock>
+<p>If you use a data migration library such as
+<xref href="http://south.aeracode.org/" scope="external" format="html" >South</xref>, also run:</p>
+<codeblock>helion run &lt;appname&gt; python manage.py migrate</codeblock>
+</section>
+<section id="configuring-static-media"> <title>Configuring static media</title>
+<p>There are various ways to serve static files for a Django application. While Option #1 is the most recommended for production deployments, option #3 is the simplest for non-production/development/test/QA deployments.</p>
+<ol>
+<li>Directly serve static files with uWSGI. See <xref href="python_index.dita">
+<i>Serving static files with uWSGI</i>
+</xref> for details. or:</li>
+<li>Use <codeph>django.contrib.staticfiles</codeph>, which is
+included by default in recent versions of Django. Read the <xref href="https://docs.djangoproject.com/en/1.8/howto/static-files/" scope="external" format="html" >Django
+documentation</xref>
+to understand the steps involved, or take a look at <xref href="https://github.com/hpcloud/stackato-samples/commit/59ec0791" scope="external" format="html" >this
+commit</xref>
+in the django-gtd sample app. or:</li>
+<li>Set <codeph>DEBUG=True</codeph> in settings.py. This is not
+recommended for production applications.</li>
+</ol>
+</section>
+<section id="configuring-project-location"> <title>Configuring project location</title>
+<p>Your project's <i>settings.py</i> may not always reside at the root directory. Furthermore, you may want to extend <codeph>sys.path</codeph> to point to certain project sub-directories.</p>
+<p>To persist such environment changes (across wsgi.py, settings.py, manage.py, etc.), add the following to manifest.yml:</p>
+<codeblock>env:
+  DJANGO_SETTINGS_MODULE: myproject.settings
+  PYTHONPATH: myproject</codeblock>
+<p>This assumes that your Django project lives under the <i>myproject/</i> sub-directory.</p>
+</section>
+</body>
+</topic>

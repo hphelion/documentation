@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="server_index">
+<title>HPE Helion 2.0 Development Platform: Server Configuration</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>This page covers the initial setup and configuration of the Application Lifecycle Service
+Server in a virtual machine under control of a hypervisor running on a
+virtualization host.</p>
+<section id="accessing-server-via-the-command-line"> <title>Accessing Server via the Command Line</title>
+<p>The Application Lifecycle Service server initially has one user account. The default login information is:</p>
+<ul>
+<li>Username: stackato</li>
+<li>Password: stackato</li>
+</ul>
+<p>Unless you've already created a primary admin user in the Management Console. If so, the password of the default Helion account is changed to match that of the first user created in the Management Console, and you'll need to use that password instead.</p>
+<p>
+        <note type="warning">If the Application Lifecycle Service server is running on a publicly-routable network, the password should be changed as soon as possible.</note>
+      </p>
+<p>
+        <note type="tip">If the cluster was created using the Horizon Management Console Panel or Application
+          Lifecycle Service Installer CLI, you must log in with your SSH key you selected during
+          cluster creation.</note>
+      </p>
+<p>Command access to the Application Lifecycle Service server is available in several ways:</p>
+<ul>
+<li>
+  <p>Over the hypervisor's <xref href="../../user/reference/glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref>.</p>
+</li>
+<li>
+  <p>The <xref href="../../user/reference/client-ref.dita">Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
+
+<codeblock>helion target helion@helion-xxxx.local
+helion ssh api</codeblock>
+</li>
+<li>
+<p>The familiar <codeph>ssh</codeph> command:</p>
+
+<codeblock>ssh helion@helion-xxxx.local</codeblock>
+</li>
+</ul>
+<p>On the server, the control command for Application Lifecycle Service is called
+<codeph>kato</codeph>. It is used for configuration and node
+management procedures such as start, stop, role specialization, and
+status checks. For a complete list of options, see the <xref href="../reference/kato-ref.dita" >Kato Command Reference</xref>.</p>
+</section>
+<section id="common-operations"> <title>Common Operations</title>
+<p>Instructions for common operations on the Application Lifecycle Service VM can be found here:</p>
+<ul>
+<li>
+          <xref href="operations.dita">Common Server Operations</xref>
+          <ul>
+            <li>
+              <xref
+                href="operations.dita#server_operations/server-status"
+                type="section">Server Status</xref>
+              <ul>
+                <li>
+                  <xref
+                    href="operations.dita#server_operations/starting-and-stopping-roles"
+                    type="section">Starting and Stopping Roles</xref>
+                </li>
+                <li>
+                  <xref
+                    href="operations.dita#server_operations/system-shutdown"
+                    type="section">System Shutdown</xref>
+                </li>
+              </ul></li>
+            <li>
+              <xref
+                href="operations.dita#server_operations/setting-the-time-zone"
+                type="section">Setting the Time Zone</xref>
+            </li>
+            <li>
+              <xref
+                href="operations.dita#server_operations/resetting-the-vm"
+                type="section">Resetting the VM</xref>
+            </li>
+            <li>
+              <xref
+                href="operations.dita#server_operations/monitoring-the-application-lifecycle-service-server"
+                type="section">Monitoring The Application Lifecycle Service Server</xref>
+              <ul>
+                <li>
+                  <xref
+                    href="operations.dita#server_operations/management-console"
+                    type="section">Management Console</xref>
+                </li>
+       
+                <li>
+                  <xref
+                    href="operations.dita#server_operations/creating-an-admin-user"
+                    type="section">Creating an Admin User</xref>
+                </li>
+                <li>
+                  <xref
+                    href="operations.dita#server_operations/system-monitoring-with-nagios"
+                    type="section">System Monitoring with Nagios</xref>
+                </li>
+              </ul></li>
+            <li>
+              <xref
+                href="operations.dita#server_operations/server-backup-import-and-export"
+                type="section">Server Backup, Import, and Export</xref>
+            </li>
+          </ul></li>
+</ul>
+</section>
+<section id="detailed-configuration"> <title>Detailed Configuration</title>
+<p>To continue configuring the Application Lifecycle Service server, see:</p>
+<ul>
+        <li>
+          <xref
+            href="configuration.dita#topic31232/changing-the-password"
+            type="section">Changing the Password</xref>
+        </li>
+        <li>
+          <xref
+            href="configuration.dita#topic31232/network-setup"
+            type="section">Network Setup</xref>
+          <ul id="ul_zpp_vql_ns">
+            <li>
+              <xref
+                href="configuration.dita#topic31232/server-config-hostname"
+                type="section">Changing the Hostname</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/changing-ip-addresses"
+                type="section">Changing IP Addresses</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/setting-a-static-ip"
+                type="section">Setting a Static IP</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/server-config-etc-hosts"       type="section">Modifying /etc/hosts</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/server-config-dns"
+                type="section">DNS</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/dynamic-dns"
+                type="section">Dynamic DNS</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/alternate-dns-techniques"
+                type="section">Alternate DNS Techniques</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/adding-dns-nameservers"
+                type="section">Adding DNS Nameservers</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/tcp-udp-port-configuration"
+                type="section">TCP/UDP Port Configuration</xref>
+            </li>
+            <li>
+              <xref
+                href="https_and_ssl.dita#topic_gwr_qgd_ws/http-proxy"
+                type="section">HTTP Proxy</xref>
+            </li>
+            <li>
+              <xref
+                href="https_and_ssl.dita#topic_gwr_qgd_ws/staging-cache-app-http-proxy"
+                type="section">Staging Cache &amp; App HTTP Proxy</xref>
+            </li>
+            <li><xref
+                href="configuration.dita#topic31232/vm-filesystem-setup"
+                type="section">VM Filesystem Setup</xref>
+            </li>
+            <li>
+              <xref
+                href="configuration.dita#topic31232/helion-data-services-vs-high-availability-databases"
+                type="section">Application Lifecycle Service Data Services vs. High Availability
+                Databases</xref>
+            </li>
+            <li>
+              <xref
+                href="https_and_ssl.dita"
+                type="section">HTTPS &amp; SSL Configuration</xref>
+              <ul id="ul_hrp_vql_ns">
+                <li>
+                  <xref
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/using-your-own-ssl-certificate"
+                    type="section">Using your own SSL certificate</xref>
+                </li>
+                <li>
+                  <xref
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/adding-custom-ssl-certs-sni"
+                    type="section">Adding Custom SSL Certs</xref>
+                </li>
+                <li>
+                  <xref
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/ca-certificate-chaining"
+                    type="section">CA Certificate Chaining</xref>
+                </li>
+                <li>
+                  <xref
+                    href="https_and_ssl.dita#topic_gwr_qgd_ws/generating-a-self-signed-ssl-certificate"
+                    type="section">Generating a self-signed SSL certificate</xref>
+                </li>
+              </ul>
+              <xref
+                href="configuration.dita#topic31232/quota-definitions"
+                type="section">Quota Definitions</xref>
+              <ul id="ul_nsp_vql_ns">
+                <li>
+                  <xref
+                    href="configuration.dita#topic31232/sudo"
+                    type="section">sudo</xref>
+                </li>
+                <li>
+                  <xref
+                    href="configuration.dita#topic31232/allowed-repositories"
+                    type="section">Allowed Repositories</xref>
+                </li>
+              </ul></li>
+          </ul></li>
+</ul>
+</section>
+</body>
+</topic>

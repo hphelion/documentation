@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2651">
+<title>HPE Helion 2.0 Development Platform: Log Drain Examples</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Detailed instructions on how to use drains with third party log analysis
+software or services.</p>
+<ul>
+<li>
+<xref type="section" href="#topic2651/logging-examples-papertrail">Papertrail</xref>
+</li>
+<li>
+<xref type="section" href="#topic2651/logging-examples-splunk">Splunk</xref>
+</li>
+<li>
+<xref type="section" href="#topic2651/logging-examples-logstash">Logstash</xref>
+</li>
+<li>
+        <xref type="section" href="#topic2651/hello-world-custom-drain">Hello World Custom Drain
+          Example</xref>
+      </li>
+</ul>
+<p>
+      <note>Do not forward both application and system logs to the same destination.</note>
+    </p>
+<section id="logging-examples-papertrail">
+      <title>Papertrail</title>
+      <ol>
+        <li>
+          <xref href="https://papertrailapp.com/plans" scope="external" format="html">Create an
+            account for Papertrail</xref>
+        </li>
+        <li> In the Dashboard screen, click <i>Add Systems</i>. <image
+            href="../../../../../media/ppt1.png" id="image_gtf_x1c_ms" placement="break"/>
+        </li>
+        <li> In the Setup Systems screen under <i>Other log methods</i>, click <i>Alternatives</i>.
+            <image href="../../../../../media/ppt2.png" placement="break" id="image_ith_fbc_ms"/>
+        </li>
+        <li> Choose option C: <i>My system's hostname changes</i> and give it a suitable name.
+            <image href="../../../../../media/ppt3.png" placement="break" id="image_xrc_fbc_ms"/>
+        </li>
+        <li> Note down the <b>port number</b>. You need this later on. <image
+            href="../../../../../media/ppt4.png" placement="break" id="image_urv_2bc_ms"/>
+        </li>
+        <li> Enable system logging (via udp) by executing the following kato command:</li>
+      </ol>
+      <p>
+        <codeph>kato log drain add drain-name udp://logs.papertrailapp.com:port#</codeph>
+      </p>
+      <p>
+        <note>Papertrail requires systail log lines to have <codeph>&lt;13&gt;l</codeph> at the
+          beginning of each line. Make sure the drain you are forwarding is formatted this way (see
+          example in <i><xref href="../server/logging.dita#topic11928/saving-custom-log-formats"
+              >Saving Custom Log Formats</xref></i> ).</note>
+      </p>
+    </section>
+<section id="logging-examples-splunk"> <title>Splunk</title>
+<ol>
+<li>Set up a  <xref href="http://www.splunk.com/download" scope="external" format="html">Splunk
+            Server</xref>.</li>
+<li>In the Welcome screen, click <b>Add data</b>.
+  <image href="../../../../../media/splunk1.png" placement="break"/>
+</li>
+<li> Under <b>Choose a Data Source</b>, click <b>From a TCP port</b> (or UDP)<image
+            href="../../../../../media/splunk2.png" placement="break" id="image_g11_dbc_ms"/>
+        </li>
+<li> In the <b>Add New Source</b> screen:<ul>
+            <li>Select a TCP/UDP port greater than <b>9999</b>
+            </li>
+            <li>Give it a suitable <b>Source name</b>.</li>
+            <li>Set sourcetype to <b>Manual</b>
+            </li>
+            <li>Leave Source Type <b>empty</b>
+              <image href="../../../../../media/splunk3.png" placement="break"/>
+            </li>
+          </ul></li>
+<li> Enable system logging by executing <b>one</b> of the following kato
+          commands:<codeblock>kato log drain add drain-name splunk-server-address:port#
+
+kato log drain add drain-name tcp://splunk-server-address:port#</codeblock></li>
+</ol>
+<p>Splunk supports JSON format without further configuration. Enable system JSON logging by executing the following kato command:</p>
+<codeblock>kato log drain add --format json drain-name tcp://splunk-server-address:port#</codeblock>
+</section>
+<section id="logging-examples-logstash"> <title>Logstash</title>
+<ol>
+<li> Download and install <xref href="http://www.elasticsearch.org/overview/logstash/download/"
+            scope="external" format="html">Logstash</xref>.</li>
+<li> Configure Logstash to add a UDP or TCP listener on the port of your choosing. For example, for
+          a UDP listener on port 10000, add the following to the <i>logstash.conf</i>
+          file:<codeblock>input { 
+   udp { 
+      port =&gt; '10000' 
+   } 
+} </codeblock></li>
+<li> Enable system logging (via udp) by executing the following kato
+          command:<codeblock>kato log drain add *drain-name* udp://logstash-server-address:*port#* </codeblock></li>
+</ol>
+</section>
+<section id="hello-world-custom-drain"> <title>Hello World Custom Drain</title>
+<p>The command below starts a drain target server on a node and pipes it to a local file:</p>
+<codeblock>nc -lk 0.0.0.0 10000 &gt; log-output.txt</codeblock>
+<p>As long as that nc command runs, this will funnel logs from all drains, targeting it into the file log-output.txt</p>
+<p>Enable system logging by executing <b>one</b> of the following kato commands:</p>
+<codeblock>kato log drain add drain-name udp://server-address:port#
+kato log drain add drain-name tcp://server-address:port#</codeblock>
+</section>
+</body>
+</topic>

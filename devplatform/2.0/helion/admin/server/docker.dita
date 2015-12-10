@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7767">
+<title>HPE Helion 2.0 Development Platform: Docker and Fence</title>
+<titlealts>
+<searchtitle>HPE Helion 2.0 Development Platform: Docker and Fence</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+    <p>Application Lifecycle Service's <xref
+        href="../reference/architecture.dita#topic4407/architecture-droplet-execution-agents"
+        type="section">DEA role</xref> runs Linux containers to isolate user applications during
+      staging and at runtime. Management of these application containers is handled by the
+        <i>fence</i> process, which in turn uses <xref href="http://docs.docker.io/en/latest/"
+        scope="external" format="html">Docker</xref> to create and destroy Linux containers on
+      demand.</p>
+    <p>Once Docker has been set up and configured, see the documentation on<xref
+        href="../../user/deploy/languages/docker_apps.dita#topic_l4n_y3n_xs">deploying Docker
+        apps</xref>.</p>
+    <ul>
+      <li><xref type="section" href="#topic7767/appdeploy">Docker Apps and Deployment
+          Permission</xref></li>
+      <li><xref type="section" href="#topic7767/storagelimits">Docker Image Storage Limits</xref></li>
+      <li><xref type="section" href="#topic7767/modifying-or-updating-the-container-image">Modifying
+          or Updating the Container Image</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic7767/admin-hooks">Admin Hooks</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic7767/creating-a-docker-registry">Creating a Docker
+          Registry</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic7767/docker-privileged-containers">Privileged
+          Containers</xref>
+      </li>
+    </ul>
+    <section id="appdeploy">
+      <title>Docker Apps and Deployment Permission</title>
+      <p>Docker Apps are web applications that can be pushed using ALS in the same way as regular
+        "staged" web applications.  Administrators can control which users have this ability, which
+        images are allowed, and how much space is allocated on the Controller nodes for storing
+        images.</p>
+      <p>Since arbitrary Docker images could potentially expose a root user and other escalated
+        privileges, you should restrict the ability to push Docker images to:</p>
+      <ul id="ol_ggv_ybg_qs">
+        <li>a trusted group of users in an Organization with <codeph>sudo</codeph> permissions
+          enabled</li>
+        <li>a trusted list of Docker images, namespaces, or registry servers</li>
+        <li>a trusted group deploying from a trusted list</li>
+      </ul>
+      <p>The <xref href="../console/console_index.dita">Settings</xref> view in the web management console exposes
+        these settings, but you can also set them using the <xref
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-config">kato config</xref>
+        command. The following settings are available in the <codeph>cloud_controller_ng</codeph>
+        group:</p>
+      <dl>
+        <dlentry>
+          <dt>docker_apps/require_sudo</dt>
+          <dd>Boolean (default TRUE) Limits Docker image deployment to Organizations with
+              <codeph>sudo</codeph> permissions enabled in the Quota Plan.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>docker_apps/allow_any_registry</dt>
+          <dd><note type="warning">Allowing any user to deploy Docker images without restrictions is
+              not recommended. Docker image deployment should be limited to either a trusted group
+              of users, trusted image sources, or both.</note>Boolean (default TRUE) Let users
+            deploy Docker images from <b>any</b> registry server. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>docker_apps/allowed_registries</dt>
+          <dd>List (default empty) A list of servers, namespaces, or images that users are allowed
+            to deploy. Entries are specified in the standard format accepted by the
+              <codeph>docker</codeph> client, for example,
+              <codeph>user:pass@domain.com:port/namespace/repo:tag</codeph>. Credentials specified
+            in the Allowed Docker Registries list are used as defaults when the user requests a
+            matching image name without credentials. <note>If the registry credentials contain the
+              '@' or ':' characters, <xref
+                href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters"
+                format="html" scope="external">URL encode</xref> the username or password strings as
+              needed.</note></dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="storagelimits">
+      <title>Docker Image Storage Limits</title>
+      <p>ALS  fetches images from the Docker Hub or the specified repository and keeps copies in a
+        local registry server on the controller so that subsequent deployments using any of the
+        downloaded layers can be done more quickly. A <codeph>cron</codeph> job runs periodically to
+        keep the local registry server from growing too large. The size limit is defined in the
+        following setting in <codeph>kato config</codeph>:</p>
+      <dl>
+        <dlentry>
+          <dt>cloud_controller_ng docker_apps/storage_limit_mb</dt>
+          <dd>Int (default 10240) Size limit of the cloud controller's local Docker registry server.
+            This value should be adjusted based on the disk space available on the cloud controller
+              node(s).</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="modifying-or-updating-the-container-image">
+      <title>Modifying or Updating the Container Image</title>
+      <p>Application containers are created from a base Docker image (a template used to create
+        Linux containers). Admins can create new images to add specific software required by
+        applications or update operating system packages.</p>
+      <p>See also <xref href="../best-practices/best_practices_index.dita#topic16169/upgrade-docker"
+          type="section">Upgrade the Docker Image</xref> to modify the Docker base image
+          <b>without</b> changing <i>kato config</i>.</p>
+      <p>To create a new base image for Application Lifecycle Service to use for application
+        containers, perform the following steps <b>on all nodes running the DEA role</b>:</p>
+      <ol>
+        <li> Start with an empty working
+          directory:<codeblock>mkdir ~/newimg
+cd ~/newimg</codeblock></li>
+        <li> Check which image Application Lifecycle Service is currently using as an app container
+          template:<codeblock>kato config get fence docker/images
+helion/stack/alsek</codeblock></li>
+        <li> Create a <xref href="http://docs.docker.com/reference/builder/" scope="external"
+            format="html">Dockerfile</xref> which inherits the current Docker image and then runs an
+          update or installation command. For example:<codeblock>FROM helion/stack-alsek:kato-patched
+RUN apt-get -y install libgraphite2-dev</codeblock><ul>
+            <li>
+              <xref href="http://docs.docker.com/reference/builder#from" type="section"
+                scope="external" format="html">FROM</xref>: inherits the environment and installed
+              software from the latest patched version of the app image.</li>
+            <li>
+              <xref href="http://docs.docker.com/reference/builder#run" type="section"
+                scope="external" format="html">RUN</xref>: specifies arbitrary commands to run
+              before saving the image.</li>
+            <li>
+              <xref href="http://docs.docker.com/reference/builder#add" type="section"
+                scope="external" format="html">ADD</xref>: could be used to copy files into the
+              image. </li>
+          </ul></li>
+        <li> Build the image. Set the maintainer's name and an image
+            name:<codeblock>sudo docker build -rm -t exampleco/newimg . </codeblock><note>If the new
+            image is simply an updated version of the default base image, you can tag the image
+            <codeblock>helion/stack-alsek:latest</codeblock> as described in the <xref
+              type="section"
+              href="../best-practices/best_practices_index.dita#topic16169/bestpractices-ubuntu-security">Ubuntu
+              Security Updates</xref>, and skip the following step.</note></li><li>Configure Application Lifecycle Service to use the new image. This step only needs to be done
+          once, as the configuration change is shared with all
+          nodes.<codeblock>kato config set fence docker/images exampleco/newimg
+WARNING: Assumed type string
+exampleco/newimg</codeblock></li>
+      </ol>
+    </section>
+    <section id="admin-hooks"><title>Admin Hooks</title><p>If an administrator wants to run
+        arbitrary commands in all application containers, global admin hooks can be set to run
+        immediately after corresponding user-specified deployment hooks (pre-staging, post-staging,
+        pre-running) set in application <xref href="../../user/deploy/manifestyml.dita"
+          >manifest.yml</xref> files.</p><p>These hooks must be:</p><ul>
+        <li>plain bash scripts with the executable bit set (<codeph>chmod +x</codeph>)</li>
+        <li>named <i>pre-staging</i>, <i>post-staging</i>, or <i>pre-running</i>
+        </li>
+        <li>installed in <i>/etc/helion/hooks</i> within the Docker image</li>
+      </ul><p>For example, a pre-running admin hook might look like
+        this:</p><codeblock>#!/bin/sh
+export PRE_RUN_DATE=`date`
+export EXAMPLECO_KEY="3A0fwPwUftDu0FEzmhN8yJkvM1vS6A"
+if [ -z "$NEW_RELIC_LICENSE_KEY" ]; then
+  echo "setting default New Relic key"
+  export NEW_RELIC_LICENSE_KEY="bdb9b44e8n4411d8bf39870f1919927d79cr0f1r"
+fi
+export HELION_HOOK_ENV=PRE_RUN_DATE,EXAMPLECO_KEY
+sudo /usr/sbin/nrsysmond-config --set license_key=$NEW_RELIC_LICENSE_KEY
+sudo /etc/init.d/newrelic-sysmond start</codeblock><note>
+        The <codeph>HELION_HOOK_ENV</codeph> environment variable is needed to expose the specified
+        variables in <codeph>helion ssh</codeph> sessions, in the application container's crontab,
+        and in PHP applications using the Legacy buildpack. </note><p>The Dockerfile for creating
+        the image (see <xref type="section"
+          href="#topic7767/modifying-or-updating-the-container-image">Modifying or Updating the
+          Container Image</xref> ) would use the ADD directive to put a local <i>hooks</i> directory
+        in the Docker image's <i>/etc/helion/</i>
+        directory:</p><codeblock>FROM helion/stack-alsek
+ADD hooks /etc/helion/hooks</codeblock><p>The
+        pre-running hook example above would require the addition of
+          <codeph>newrelic-sysmond</codeph> to the Docker image. A Dockerfile enabling that might
+        look like
+        this:</p><codeblock>FROM helion/stack-alsek
+
+RUN echo deb http://apt.newrelic.com/debian/ newrelic non-free &gt;&gt; /etc/apt/sources.list.d/newrelic.list
+RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
+RUN apt-get update
+RUN apt-get install newrelic-sysmond
+# The nrsysmond scripts are run with sudo
+RUN echo "HELION ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" &gt;&gt; /etc/sudoers
+RUN echo "HELION ALL= NOPASSWD: /usr/sbin/nrsysmond-config" &gt;&gt; /etc/sudoers
+
+ADD hooks /etc/helion/hooks </codeblock>
+      </section><section id="creating-a-docker-registry"><title>Creating a Docker Registry </title><p>The steps
+        above will work with smaller clusters or micro clouds where the creation of Docker images on
+        each DEA can be done manually. On larger clusters, you should set up a <xref
+          href="https://registry.hub.docker.com/_/registry/" scope="external" format="html">Docker
+          registry</xref> as a central repository for the base image. This registry server can also
+        be used for <xref href="../../user/deploy/languages/docker_apps.dita">deploying Docker
+          apps</xref>. </p> Consult the Docker site documentation for guidelines on <xref
+        href="https://docs.docker.com/registry/deploying/#making-dockers-official-registry-image-production-ready"
+        format="html" scope="external">making Docker's official registry image production
+        ready</xref>. <p>If you do not want to set up your own private Docker registry server, you
+        can push your images to the <xref href="https://registry.hub.docker.com/" format="html"
+          scope="external">Docker Hub Registry</xref> instead. Private repositories are
+        available.</p></section>
+    <section>To use the local registry server as the source for the base image set up at
+        <i>registry.example.com:5000</i>: <ol id="ol_vrd_yzf_qs">
+        <li> Push the newly built Docker image to the
+            registry:<codeblock>sudo docker push registry.example.com:5000/exampleco/newimg</codeblock><note>The
+              <i>helion/stack/alsek</i> and <i>helion/base images</i> (approximately 1.9GB) are
+            pushed to the registry in addition to the new image. Make sure you have sufficient disk
+            space available on the VM. </note></li>
+        <li> On <b>each</b> DEA node, pull the new image from the
+          registry:<codeblock>sudo docker pull registry.example.com:5000/exampleco/newimg</codeblock></li>
+        <li> Configure Application Lifecycle Service to use the new image. This step only needs to
+          be done once, as the configuration change is shared with all nodes.
+          <codeblock>kato config set fence docker/images                                               
+> '["registry.example.com:5000/exampleco/newimg","helion/stack-alsek","helion/stack/alsek"]'                                                    
+WARNING: Assumed type struct                                            
+- registry.example.com:5000/exampleco/newimg                         
+- helion/stack-alsek                                                      
+- helion/stack/alsek                          </codeblock></li>
+      </ol> The <xref href="../best-practices/best_practices_index.dita#topic16169/upgrade-docker"
+        type="section">Upgrade the Docker Image</xref> documentation explains how to modify the
+      Docker base image without changing <i>kato config</i>. </section>
+       <section id="docker-privileged-containers">
+      <title>Privileged Containers</title>
+      <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to
+        any devices on the (virtual) host.</p>
+      <p>This is a barrier to certain operations such as mounting disk partitions via NFS, so an
+        option exists to change Docker container creation to "privileged":</p>
+      <codeblock>kato config set dea_ng docker/privileged true </codeblock>
+      <p>This <xref
+          href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration"
+          type="section" scope="external" format="html">container privilege elevation</xref> would
+        normally be used in conjunction with <i>sudo</i> container access in the quota.</p>
+      <codeblock>helion quota configure --allow-sudo </codeblock>
+      <note type="warning">Every application running under this configuration has the potential to
+        become root on the host. These changes compromise the isolation between application
+        containers and host and should only be made when <b>all</b> users of the system are
+        completely trusted with admin-level privileges. </note>
+    </section>
+  </body>
+</topic>

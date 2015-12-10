@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1398">
+<title>HPE Helion 2.0 Development Platform: Remote Debugging</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Different languages have different tools and protocols for remote
+debugging, but most require a connection between the running application
+code and the debugging tool or IDE on a port and protocol other than
+standard HTTP(S).</p>
+<p>Application Lifecycle Service makes this possible through the <xref href="../services/port-service.dita">Harbor port service</xref>, and the
+  <xref href="../reference/client-ref-management.dita#topic50918/command-push" type="section"><i>push</i></xref> command has
+a <codeph>-d</codeph> option to set up port forwarding for a remote
+debugging session automatically.</p>
+<section id="helion-debug-command"> <title>HELION_DEBUG_COMMAND</title>
+<p>The command-line client can automatically start a local debugger client or IDE instance with connection information for a newly pushed application.</p>
+<p>When the <codeph>-d</codeph> debugging option is given to
+  <xref href="../reference/client-ref-management.dita#topic50918/command-push" type="section"   >
+<i>push</i>
+</xref> command,
+the client looks for a HELION_DEBUG_COMMAND environment variable. If
+present, the command specified in that variable is run after the push
+completes as child process in the foreground (i.e. blocking the parent
+<codeph>helion</codeph> process) in the local application source
+directory.</p>
+<p>Special <codeph>%HOST%</codeph> and <codeph>%PORT%</codeph> variables can be used in this command, which
+are replaced with the hostname or IP address and port number of the new
+Harbor debugging service.</p>
+</section>
+</body>
+</topic>

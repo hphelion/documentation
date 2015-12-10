@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6634">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Organizations</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/user/reference/client-ref-organizations.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/client-ref/organizations/--></p>
+<ul>
+<li>
+<xref type="section" href="#topic6634/command-create-org">helion create-org</xref>: Create a new organization.</li>
+<li>
+<xref type="section" href="#topic6634/delete-org">helion command-delete-org</xref>: Delete the named organization</li>
+<li>
+<xref type="section" href="#topic6634/command-link-user-org">helion link-user-org</xref>: Add the specified user to the named organization in various roles.</li>
+<li>
+<xref type="section" href="#topic6634/command-org">helion org</xref>: Show the named organization's information.</li>
+<li>
+<xref type="section" href="#topic6634/command-orgs">helion orgs</xref>: List the available organizations.</li>
+<li>
+<xref type="section" href="#topic6634/command-org-users">helion org-users</xref>: Show the users for the organization by role. </li>
+<li>
+<xref type="section" href="#topic6634/command-quota-org">helion quota-org</xref>: Set the quotas for the current or named organization.</li>
+<li>
+<xref type="section" href="#topic6634/command-rename-org">helion rename-org</xref>: Rename the named organization.</li>
+<li>
+                <xref href="#topic6634/command-switch-org" format="dita">helion switch-org</xref>:
+                Switch the current organization to the named organization.</li>
+<li>
+<xref type="section" href="#topic6634/command-unlink-user-org">helion unlink-user-org</xref>: Remove the specified user from the named organization, in various roles.</li>
+<li>
+<xref type="section" href="#topic6634/command-update-org">helion update-org</xref>: Change one or more attributes of an organization in a single call.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-create-org"> <title>helion create-org &lt;<i>name</i>&gt;</title>
+<p>Create a new organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--add-self</entry>
+<entry>Add yourself to the new organization, as developer. Done by
+default.</entry>
+</row>
+<row>
+<entry>--default</entry>
+<entry>Make the organization the default for users without explicit organization. The previous default organization is automatically reset.</entry>
+</row>
+<row>
+<entry>--no-activate</entry>
+<entry>Complementary alias of --activate.</entry>
+</row>
+<row>
+<entry>--quota</entry>
+<entry>The named quota of the new organization. Default is the target's
+choice.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="delete-org"> <title>helion delete-org &lt;<i>name</i>&gt;</title>
+<p>Delete the named organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--recursive, -r</entry>
+<entry>Remove all subordinate parts and relations.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-link-user-org"> <title>helion link-user-org &lt;<i>user</i>&gt; &lt;<i>organization</i>&gt;</title>
+<p>Add the specified user to the named organization in various roles.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--billing</entry>
+    <entry>Affect the billing manager role</entry>
+    </row>
+<row>
+<entry>--manager</entry>
+    <entry>Affect the manager role</entry>
+    </row>
+<row>
+<entry>--target</entry>
+    <entry>The once-off target to use for the current operation.</entry>
+    </row>
+<row>
+<entry>--token</entry>
+    <entry>The once-off authentication token to use for the current
+    operation.</entry>
+    </row>
+<row>
+<entry>--token-file</entry>
+    <entry>Path to an existing and readable file containing the targets and
+    authorization tokens.</entry>
+    </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-org"> <title>helion org &lt;<i>name</i>&gt;</title>
+<p>Show the named organization's information.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--full</entry>
+<entry>Show more details.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-orgs"> <title>helion orgs</title>
+<p>List the available organizations.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--full</entry>
+<entry>Show more details.</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-org-users"> <title>helion org-users</title>
+<p>Show the users for the organization by role.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-quota-org"> <title>helion quota-org &lt;<i>name</i>&gt; &lt;<i>quota</i>&gt;</title>
+<p>Set the quotas for the current or named organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-rename-org"> <title>helion rename-org &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title>
+<p>Rename the named organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-switch-org"> <title>helion switch-org &lt;<i>name</i>&gt; {command-switch-org}</title>
+<p>Switch the current organization to the named organization. This invalidates the current space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unlink-user-org"> <title>helion unlink-user-org &lt;<i>user</i>&gt; &lt;<i>organization</i>&gt;</title>
+<p>Remove the specified user from the named organization in various roles.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--billing</entry>
+<entry>Affect the billing manager role</entry>
+</row>
+<row>
+<entry>--manager</entry>
+<entry>Affect the manager role</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-org"> <title>helion update-org</title>
+<p>Change one or more attributes of an organization in a single call.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--newname</entry>
+<entry>A new name to give to the space.</entry>
+</row>
+<row>
+<entry>--no-default</entry>
+<entry>Make the current space no longer the default for users without explicit spaces.</entry>
+</row>
+<row>
+<entry>--organization</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

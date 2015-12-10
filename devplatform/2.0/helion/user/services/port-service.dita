@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7511">
+<title>HPE Helion 2.0 Development Platform: Port Service (Harbor)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog><body>
+  <p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed
+      to Application Lifecycle Service (unless <xref
+        href="../deploy/manifestyml.dita#topic20922/web" type="section">processes: web:</xref> is
+      set to Null "\~").</p>
+<p>If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.</p>
+<ul>
+<li>
+<xref type="section" href="#topic7511/requesting-a-port">Requesting a Port</xref>
+</li>
+<li>
+<xref type="section" href="#topic7511/port-service-env-vars">Harbor Environment Variables</xref>
+</li>
+<li>
+<xref type="section" href="#topic7511/setting-the-port-protocols">Setting the Port Protocols</xref>
+</li>
+<li>
+<xref type="section" href="#topic7511/multiple-application-instances">Multiple Application Instances</xref>
+</li>
+<li>
+<xref type="section" href="#topic7511/https-via-harbor">HTTPS via Harbor</xref>
+</li>
+<li>
+<xref type="section" href="#topic7511/https-container-proxy">HTTPS Container Proxy</xref>
+</li>
+<li>
+<xref type="section" href="#topic7511/multiple-ssl-certificates">Multiple SSL Certificates</xref>
+</li>
+</ul>
+<section id="requesting-a-port"> <title>Requesting a Port</title>
+<p>Additional ports are provisioned like any other data service. To request a port with the Helion command-line client:</p>
+<codeblock>helion create-service harbor debug-port</codeblock>
+<p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref
+          href="../deploy/manifestyml.dita#topic20922/services"><b>services</b></xref> block. For
+        example:</p>
+<codeblock>name: port-test
+memory: 256
+services:
+  my-port: harbor</codeblock>
+<p>This creates a TCP port tunnel which the application can access on the
+host and port specified in the \$HELION_SERVICES environment
+variable.</p>
+<p>The example above might create the following "my-port" object in
+\$HELION_SERVICES:</p>
+<codeblock>{
+  "my-port": {
+    "hostname": "192.168.68.111",
+    "host": "192.168.68.111",
+    "port": 30134,
+    "name": "cf7f868a-8b7b-4ac8-ab4d-9fd87efb7c09",
+    "node_id": "harbor_node_1",
+    "int_port": 4100,
+    "ext_hostname": "ports.example.com",
+    "ext_host": "15.185.104.122"
+  }
+}</codeblock>
+<p>This provides the following information:</p>
+<ul>
+<li>
+<b>hostname</b>: The internal hostname (if configured) of the node
+providing the service (i.e. the Harbor node). If none is configured
+by the admin, this will show the internal IP address.</li>
+<li>
+<b>host</b>: The internal IP address of the Harbor node.</li>
+<li>
+<b>port</b>: The external port number exposed by the service.
+Connections from external clients and other internal applications
+(those not directly bound to the service) will connect with this
+port number.</li>
+<li>
+<b>name</b>: The service instance ID (Application Lifecycle Service internal refer).</li>
+<li>
+<b>node_id</b>: The Harbor node ID (Application Lifecycle Service internal).</li>
+<li>
+<b>int_port</b>: The port on the application container which forwards
+to Harbor (see also <xref type="section" href="#topic7511/port-service-env-vars">Harbor Environment Variables</xref>). Application(s) bound to the
+service should connect to this port.</li>
+</ul>
+<p>Access to the port from outside of the Application Lifecycle Service system/cluster may or
+may not be exposed, depending on how the Harbor service is configured by
+the Admin. If Harbor is set up to allow public port access, the
+following two settings will also be shown:</p>
+<ul>
+<li>
+<b>ext_hostname</b>: The public hostname (if configured) exposing the
+port.</li>
+<li>
+<b>ext_host</b>: The public IP address exposing the port.</li>
+</ul>
+<p>
+        <note type="tip">To remotely check the settings and credentials of any Application Lifecycle Service
+          service, use the <xref
+            href="../reference/client-ref-services.dita">
+            <b>helion service</b>
+          </xref> command.</note>
+      </p>
+</section>
+<section id="port-service-env-vars"> <title>Harbor Environment Variables</title>
+<p>If there is only one Harbor service, the <b>HELION_HARBOR</b> environment variable can be used to get the internal port
+number.</p>
+<p>If there is more than one Harbor service, <b>HELION_HARBOR</b> is not available. Instead, a custom
+<b>HELION_HARBOR_&lt;SERVICE_NAME&gt;</b> environment
+variable will be created for each harbor service (service name
+upper-cased with hyphens replaced by underscores).</p>
+<p>For example, if your <i>manifest.yml</i> file configures the following
+services:</p>
+<codeblock>services:
+  udp-port: harbor
+  tcp-port: harbor</codeblock>
+<p>Two environment variables would be created:
+<codeph>HELION_HARBOR_UDP_PORT</codeph> and
+<codeph>HELION_HARBOR_TCP_PORT</codeph>.</p>
+<p>This naming scheme can be used in conjunction with the
+<b>HELION_APP_NAME_UPCASE</b> environment variable. For
+example, in an app with the following harbor services defined:</p>
+<codeblock>services:
+  udp-${name}: harbor
+  tcp-${name}: harbor</codeblock>
+<p>The Harbor port number for the UDP service could be accessed within the
+container with a construct such as:</p>
+<codeblock>UDP_SERVICE_NAME=HELION_HARBOR_UDP_${HELION_APP_NAME_UPCASE}
+UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}</codeblock>
+<p>
+        <note>To use declarations like these in <xref
+            href="../deploy/manifestyml.dita#topic20922/hooks"><i>hooks</i></xref>, put them in a
+          separate bash script. Brace expansion and grouping cannot be used directly in YAML
+          files.</note>
+      </p>
+</section>
+<section id="setting-the-port-protocols"> <title>Setting the Port Protocols</title>
+<p>Harbor supports both the TCP and UDP protocols. When you provision a service with Harbor it will create a TCP enabled port by default. If you want to have a UDP port provisioned instead, you simply prefix your
+service name with udp, for example:</p>
+<codeblock>helion create-service harbor udp-debug-port</codeblock>
+<p>If you have an application that requires both TCP <b>and</b> UDP, you can prefix your service name with either <i>multi-</i> or <i>both-</i> .
+For example:</p>
+<codeblock>helion create-service harbor both-debug-port</codeblock>
+<p>Harbor will then create UDP and TCP proxies for your application so that applications like DNS can use both protocols on the same provisioned port.</p>
+</section>
+<section id="multiple-application-instances"> <title>Multiple Application Instances</title>
+<p>Harbor recognizes when you have multiple instances of your app running and will update the available app backends accordingly.</p>
+<ul>
+<li>For TCP connections it will round-robin between your available
+backends on each new connection, in a similar fashion to the router
+component.</li>
+<li>For UDP this is not the case, as it is a stateless protocol. For
+multiple UDP backends harbor will use a FIFO queue, that is the
+first app instance available becomes the primary backend, and any
+added later are queued.</li>
+</ul>
+</section>
+<section id="https-via-harbor"> <title>HTTPS via Harbor</title>
+<p>SSL termination of HTTPS to applications hosted on Application Lifecycle Service normally
+happens at the Router.</p>
+<p>There is currently no mechanism for users to add SSL certificates for their own applications to the Router, but you can expose an external HTTPS interface via the Harbor port service which uses your SSL certificates.</p>
+<p>To do this, upload the SSL certificate(s) and key(s) along with your application, and expose your application server directly on the TCP port provided by Harbor.</p>
+<p>For example, an application running through the port service might have a URL such as: <i>https://harbor-node.helion.com:35048/</i>
+</p>
+<p>You can set up aliases to this URL using DNS, but the explicit port
+specification must always be added.</p>
+      <note>
+        <ul id="ul_fv1_n1z_ns">
+          <li>When using this approach, the hostname / IP address of the app will be the one
+            provided by the Harbor node the client will connect using the Harbor-assigned port
+            number, <b>not</b> 443.</li>
+          <li>Using Harbor in this way does <b>not</b> take advantage of any load balancing set up
+            for regular web traffic through the Routers and Load Balancer.</li>
+          <li>If you have multiple instances of your app routing through a Harbor TCP port,
+            connections will be distributed via round-robin.</li>
+        </ul>
+      </note>
+</section>
+<section id="https-container-proxy"> <title>HTTPS Container Proxy</title>
+<p>If you are using a framework such as Python or Perl which sets up uWSGI
+(or any other framework that provides its own intermediate web server)
+Harbor can provision an HTTPS server in the app container that forwards
+HTTPS requests to the framework's HTTP server. To do this, add the
+suffix <b>https</b> to the name of your Harbor service. For example:</p>
+<codeblock>name: harbor-test-app
+services:
+  custom-cert-https: harbor</codeblock>
+<p>Put your server certificate and key (named <i>harbor.crt</i> and <i>harbor.key</i>
+respectively) in a folder called <i>certs</i> in the application's root
+directory. For example:</p>
+<codeblock>app_root
+    certs
+    harbor.crt
+    harbor.key
+    ...</codeblock>
+<p>Alternatively, use a standalone or buildpack setup which provisions its
+own intermediate web server instead.</p>
+</section>
+<section id="multiple-ssl-certificates"> <title>Multiple SSL Certificates</title>
+<p>If your application uses multiple SSL certificates, use the following
+naming scheme:</p>
+<ul>
+<li>
+<i>harbor service name</i>.key</li>
+<li>
+<i>harbor service name</i>.crt</li>
+</ul>
+<p>For example:</p>
+<codeblock>app_root
+    certs
+        harbor-https-custom-1.crt
+        harbor-https-custom-2.key
+    ...</codeblock>
+<p>The proxy will look for these certs before reverting to <codeph>harbor.crt</codeph> and <codeph>harbor.key</codeph>.</p>
+</section></body>
+</topic>

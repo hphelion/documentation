@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4009">
+<title>HPE Helion 2.0 Development Platform: Harbor TCP/UDP Port Service</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Net Ops Engineer"/>
+<othermeta name="role" content="NOC Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic4009/architecture">Architecture</xref>
+</li>
+<li>
+<xref type="section" href="#topic4009/requirements-setup">Requirements &amp; Setup</xref>
+</li>
+<li>
+<xref type="section" href="#topic4009/troubleshooting">Troubleshooting</xref>
+</li>
+</ul>
+<p>The standard router in Application Lifecycle Service is designed for HTTP(S) traffic only. If
+      user applications require other protocols, consider setting up Harbor.</p>
+<p>The Harbor service provisions ports to user applications. Information on using the Harbor port
+      service with deployed applications is in the <xref
+        href="../../user/services/port-service.dita">Port Service (Harbor)
+      documentation</xref>.</p>
+<section id="architecture"> <title>Architecture</title>
+<p>A Harbor node is designed to sit on the edge of the cluster network
+(i.e. with a publicly routable network interface) in a similar fashion
+to the router component. This allows it to effectively proxy external
+and internal traffic from your app to the outside world and vice versa.</p>
+<p>Unlike the router component which normally only requires 80/HTTP and
+443/HTTPS ports to be externally visible, a Harbor node will
+automatically provision ports from a pre-configured range.</p>
+<p>The Harbor node learns about new routes for each provisioned service from the DEAs. When an
+        application instance bound to a Harbor service on a DEA is terminated (stopped, failed, or
+        scaled down), Harbor will also drop that instance from its list of backends available for
+        the externally facing port.</p>
+</section>
+<section id="requirements-setup"> <title>Requirements &amp; Setup</title>
+  <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="cluster_index.dita#admin_cluster_index/data-services-nodes" type="section" >data service roles</xref>.
+For example:</p>
+<codeblock>kato node attach -e harbor CORE_IP</codeblock>
+<p>The node must be routable both externally by connecting clients, and the
+internal DEA nodes must be contactable by the Harbor node. You must also
+make allowances for any firewall rules so that the provisioned port
+range used by Harbor is open to the external network.</p>
+<p>The default range for these ports is '35000 - 40000', however you can
+view the current port range on the Harbor node by entering:</p>
+<codeblock>kato config get harbor_node port_range</codeblock>
+<p>For each new service provisioned, Harbor will chose a random unassigned
+port from this range. This range can be set in the Management Console's
+  <xref href="../console/customize.dita#topic5029/console-settings" type="section"  >Settings</xref> section, or by
+using the <codeph>kato config set ...</codeph> command.</p>
+<p>A Harbor node can run standalone, or on the same node as your router. This may be the preferred option if you wish to use the same DNS name for Harbor and Router services. Otherwise, create a new DNS entry for the Harbor node so that consumers of the port do not have to address it by its external IP.</p>
+<p>If you are setting a different IP / DNS name for this port you should
+update the node config so that it provides these external connection
+details to the users service credentials.</p>
+<p>To set the externally routable hostname:</p>
+<codeblock>kato config set harbor_node hostname_external ext-services.example.com</codeblock>
+<p>To set the externally routable IP:</p>
+<codeblock>kato config set harbor_node host_external 192.0.43.10</codeblock>
+</section>
+<section id="troubleshooting"> <title>Troubleshooting</title>
+<p>If you have problems with the Harbor service, first check the status using the <codeph><xref
+            href="../reference/kato-ref.dita#topic39432/kato-command-ref-status">kato
+            status</xref></codeph> command.</p>
+<p>The Harbor service can be safely restarted; any ports and routes
+provisioned are automatically added and the backends are re-validated on
+startup:</p>
+<codeblock>kato restart harbor</codeblock>
+<p>Check the log files for errors and warnings. Four Harbor log files can
+be found in the <i>/s/logs/</i> directory:</p>
+<ul>
+<li>harbor_gateway.log</li>
+<li>harbor_node.log</li>
+<li>harbor_proxy_connector.log</li>
+<li>harbor_redis.log</li>
+</ul>
+<p>No Application Lifecycle Service processes should conflict with the default Harbor port range. However, in systems with additional custom processes running,
+other processes may assume control of a port within Harbor's port range.
+This condition which will show up in <i>harbor_proxy_connector.log</i>.</p>
+<p>You can avoid these conflicts by setting the Harbor port range to avoid
+conflicting processes. To resolve an accidental conflict, change the
+port used by the conflicting application and restart. Any user
+application using the port in conflict should be restarted to force
+Harbor to re-listen on that port.</p>
+</section>
+</body>
+</topic>

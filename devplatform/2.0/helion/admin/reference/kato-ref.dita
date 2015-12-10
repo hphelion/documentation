@@ -1,0 +1,3529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic39432">
+<title>HPE Helion 2.0 Development Platform: Kato Command Reference</title>
+
+<body>
+<p>Kato is the Application Lifecycle Service command line administration utility.</p>
+<section id="usage"> <title>Syntax</title>
+<codeblock>kato <b>command</b> [--help] [arguments] [command-options]</codeblock>
+</section>
+<section id="kato-command-ref-list"> <title>Command List</title>
+<p>
+<b>Config</b>: Manipulates configuration values of Helion components.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-config">config</xref>
+</li>
+</ul>
+<p>
+<b>Data</b>: Import, export, or repair Helion system data</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-data-export">data export</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-data-import">data import</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-data-repair-routes">data repair</xref>
+</li>
+</ul>
+<p>
+<b>Debug</b>: Commands for debugging Helion internals.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-debug-configwatch">debug configwatch</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-debug-redis">debug redis</xref>
+</li>
+</ul>
+<p>
+<b>History</b>: Display the kato commands that have been run</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-history">history</xref>
+</li>
+</ul>
+<p>
+<b>Info</b>: Display information about this node or cluster, including assigned and available roles.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-info">info</xref>
+</li>
+</ul>
+<p>
+<b>Inspect</b>: Detect common problems with your installation.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-inspect">inspect</xref>
+</li>
+</ul>
+<p>
+<b>License</b>: Set the license in use for this microcloud or cluster.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-license">license</xref> </li>
+</ul>
+<p>
+<b>Logging</b>: Logging utilities.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-log-stream">log</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-log-drain-add">log drain</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-log-stream">log stream</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-log-tail">log tail</xref>
+</li>
+</ul>
+<p>
+<b>Node</b>: Node management</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-attach">node attach</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-availabilityzone">node availabilityzone</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-detach">node detach</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-list">node list</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-migrate">node migrate</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-placementzones-add">node placementzones</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-remove">node remove</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-rename">node rename</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-reset">node reset</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-retire">node retire</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-setup-core">node setup</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-update">node update</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-upgrade">node upgrade</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-node-version">node version</xref>
+</li>
+</ul>
+<p>
+<b>OP</b>: Various operational commands</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-custom_ssl_cert">op custom_ssl_cert</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-defer">op defer</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-dhcp">op dhcp</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-generate_service_tokens">op generate_service_tokens</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-import_from_yaml_file">op import_from_yaml_file</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-import_from_yaml_files">op import_from_yaml_files</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-max_client_upload">op max_client_upload</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-regenerate">op regenerate</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-remap_hosts">op remap_hosts</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-run_deferred">op run_deferred</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-set_timezone">op set_timezone</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-static_ip">op static_ip</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-update_hostsfile">op update_hostsfile</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-op-upstream_proxy">op upstream_proxy</xref>
+</li>
+</ul>
+<p>
+<b>Patch</b>: Update a cluster with post-release fixes.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-patch">patch</xref> </li>
+</ul>
+<p>
+<b>Process</b>: Start, stop, or restart individual processes. Generally not required.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-process-list">process list</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-process-ready">process ready</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-process-restart">process restart</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-process-start">process start</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-process-stop">process stop</xref>
+</li>
+</ul>
+<p>
+<b>Relocate</b>: Move containers, application droplets, or services to a new mount point</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-relocate">relocate</xref> </li>
+</ul>
+<p>
+<b>Report</b>: Generate a report that can be sent to technical support.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-report">report</xref> </li>
+</ul>
+<p>
+<b>Restart</b>: Restart the service or individual roles.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-restart">restart</xref>
+</li>
+</ul>
+<p>
+<b>Role</b>: Management of node roles</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-role-add">role add</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-role-info">role info</xref>
+</li>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-role-remove">role remove</xref>
+</li>
+</ul>
+<p>
+<b>Shell</b>: Interactive shell for kato</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-shell">shell</xref> </li>
+</ul>
+<p>
+<b>Start</b>: Start the ALS or start individual roles.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-start">start</xref> </li>
+</ul>
+<p>
+<b>Status</b>: List configured roles and their current status across the cluster.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-status">status</xref> </li>
+</ul>
+<p>
+<b>Stop</b>: Stop the service or individual roles.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-stop">stop</xref> </li>
+</ul>
+<p>
+<b>Version</b>: Display the version of ALS currently in use.</p>
+<ul>
+<li>
+<xref type="section" href="#topic39432/kato-command-ref-version">version</xref> </li>
+</ul>
+</section>
+<section id="kato-command-ref-details"> <title>Command Usage Details</title>
+</section>
+<section id="kato-command-ref-config"> <title>Config</title>
+<p>Manipulate configuration values of service components.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<p>
+<b>config</b> <b>get</b> [<b>options</b>] &lt;<i>component</i>&gt; <i>&lt;key-path&gt;</i>
+</p>
+<p>
+<b>config</b> <b>set</b> [<b>options</b>] &lt;<i>component</i>&gt;  <i>&lt;key-path&gt;</i> &lt;<i>value</i>&gt;</p>
+<p>
+<b>config</b> <b>del</b> [<b>options</b>] &lt;<i>component</i>&gt; <i>&lt;key-path&gt;</i>
+</p>
+<p>
+<b>config</b> <b>push</b> [<b>options</b>] &lt;<i>component</i>&gt; <i>&lt;key-path&gt;</i> &lt;<i>value</i>&gt;</p>
+<p>
+<b>config</b> <b>pop</b> [<b>options</b>] &lt;<i>component</i>&gt; <i>&lt;key-path&gt;</i> &lt;<i>value</i>&gt;</p>
+<ul>
+<li>&lt;<i>value</i>&gt;: If value is not given for <i>set</i>, then it is read from STDIN.</li>
+<li>&lt;<i>component</i>&gt;: Can be <b>cluster</b>, <b>local</b> or the name of a process.</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>For <varname>set</varname>, use JSON format when setting config key values. For <varname>get</varname>, use JSON format when displaying output.</entry>
+  </row>
+<row>
+    <entry>-y --yaml</entry>
+    <entry>Use YAML format when retrieving or setting config key values. YAML is the default output format.</entry>
+  </row>
+<row>
+    <entry>-f --flat</entry>
+    <entry>Use a flat output format. <varname/>
+</entry>
+  </row>
+<row>
+    <entry>--force</entry>
+    <entry>Force updating value to different type</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-data-export"> <title>Data Export</title>
+<p>Export system data to or from clusters/nodes. </p>
+      <p>If no options are specified, includes <b>all</b> data except <i>resources</i> and
+          <i>aok-config</i>.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>data export --only-this-node [options] &lt;filename&gt;
+
+data export --cluster [options] &lt;filename&gt;
+
+data export --manual [options] &lt;filename&gt;</codeblock>
+<ul>
+<li>&lt;<i>filename</i>&gt;: The name of the file that the export will be written to.</li>
+<li>
+<b>--cluster</b>:  Affect the entire cluster </li>
+<li>
+<b>--only-this-node</b>: Only affect this node</li>
+<li>
+<b>--manual</b>: Import/export ONLY the roles specified on the command line</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Display help information</entry>
+  </row>
+<row>
+    <entry>--force</entry>
+    <entry>Force import/export of specified roles even if they are not enabled. This command requires --manual and implies --only-this-node</entry>
+  </row>
+<row>
+    <entry>--remote</entry>
+    <entry>Remote import/export (internal use only)</entry>
+  </row>
+<row>
+    <entry>--base-dir base-dir&gt;</entry>
+    <entry>Base directory for extracting temporary files </entry>
+  </row>
+<row>
+    <entry>--only-users-orgs</entry>
+    <entry>Include ONLY the portions related to users and organizations (parts of main-db, aok-db, aok-config, db-encryption-key, license) </entry>
+  </row>
+<row>
+    <entry>--droplets</entry>
+    <entry>Include droplets (uploaded apps) in the export</entry>
+  </row>
+<row>
+    <entry>--exclude-droplets</entry>
+    <entry>Do not include droplets (uploaded apps) in the export  </entry>
+  </row>
+<row>
+    <entry>--packages</entry>
+    <entry>Include app packages in the export </entry>
+  </row>
+<row>
+    <entry>--exclude-packages</entry>
+    <entry>Do not include app packages </entry>
+  </row>
+<row>
+    <entry>--resources</entry>
+    <entry>Include the upload cache</entry>
+  </row>
+<row>
+    <entry>--exclude-resources</entry>
+    <entry>Do not include the upload cache (default)</entry>
+  </row>
+<row>
+    <entry>--license</entry>
+    <entry>Include the service license</entry>
+  </row>
+<row>
+    <entry>--exclude-license</entry>
+    <entry>Do not include the service license</entry>
+  </row>
+<row>
+    <entry>--db-encryption-key</entry>
+    <entry>Include the key used to encrypt the service DB (recommended) </entry>
+  </row>
+<row>
+    <entry>--exclude-db-encryption-key</entry>
+    <entry>Do not include the database encryption key</entry>
+  </row>
+<row>
+    <entry>--main-db</entry>
+    <entry>Include the cloud controller's main database</entry>
+  </row>
+<row>
+    <entry>--exclude-main-db</entry>
+    <entry>Do not include the cloud controller's main database </entry>
+  </row>
+<row>
+    <entry>--aok-db</entry>
+    <entry>Include AOK's database</entry>
+  </row>
+<row>
+    <entry>--exclude-aok-db</entry>
+    <entry>Do not include AOK's database </entry>
+  </row>
+<row>
+    <entry>--aok-config</entry>
+    <entry>Include AOK's configuration</entry>
+  </row>
+<row>
+    <entry>--exclude-aok-config</entry>
+    <entry>Do not include AOK's configuration (default)</entry>
+  </row>
+<row>
+    <entry>--helion-rest-db</entry>
+    <entry>Include the Rest's database</entry>
+  </row>
+<row>
+    <entry>--exclude-helion-rest-db</entry>
+    <entry>Do not include the Rest's database</entry>
+  </row>
+<row>
+    <entry>--filesystem</entry>
+    <entry>Include the filesystem service</entry>
+  </row>
+<row>
+    <entry>--exclude-filesystem</entry>
+    <entry>Do not include the filesystem service</entry>
+  </row>
+<row>
+    <entry>--exclude-filesystem-data</entry>
+    <entry>Do not include the filesystem service's user data</entry>
+  </row>
+<row>
+    <entry>--exclude-filesystem-user-creation</entry>
+    <entry>Do not include the filesystem service's user creation/quota </entry>
+  </row>
+<row>
+    <entry>--harbor</entry>
+    <entry>Include the harbor service </entry>
+  </row>
+<row>
+    <entry>--exclude-harbor</entry>
+    <entry>Do not include the harbor service </entry>
+  </row>
+<row>
+    <entry>--exclude-harbor-data</entry>
+    <entry>Do not include the harbor service's user data</entry>
+  </row>
+<row>
+    <entry>--exclude-harbor-metadata</entry>
+    <entry>Do not include the harbor service's metadata </entry>
+  </row>
+<row>
+    <entry>--mysql</entry>
+    <entry>Include the MySQL service </entry>
+  </row>
+<row>
+    <entry>--exclude-mysql</entry>
+    <entry>Do not include the MySQL service</entry>
+  </row>
+<row>
+    <entry>--exclude-mysql-data</entry>
+    <entry>Do not include the MySQL service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-mysql-metadata</entry>
+    <entry>Do not include the MySQL service's metadata </entry>
+  </row>
+<row>
+    <entry>--postgresql</entry>
+    <entry>Include the PostgreSQL service</entry>
+  </row>
+<row>
+    <entry>--exclude-postgresql</entry>
+    <entry>Do not include the PostgreSQL service</entry>
+  </row>
+<row>
+    <entry>--exclude-postgresql-data</entry>
+    <entry>Do not include the PostgreSQL service's data </entry>
+  </row>
+<row>
+    <entry>--exclude-postgresql-metadata</entry>
+    <entry>Do not include the PostgreSQL service's metadata </entry>
+  </row>
+<row>
+    <entry>--mongodb</entry>
+    <entry>Include the MongoDB service</entry>
+  </row>
+<row>
+    <entry>--exclude-mongodb</entry>
+    <entry>Do not include the MongoDB service</entry>
+  </row>
+<row>
+    <entry>--exclude-mongodb-data</entry>
+    <entry>Do not include the MongoDB service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-mongodb-metadata</entry>
+    <entry>Do not include the MongoDB service's metadata </entry>
+  </row>
+<row>
+    <entry>--memcached</entry>
+    <entry>Include the memcached service</entry>
+  </row>
+<row>
+    <entry>--exclude-memcached</entry>
+    <entry>Do not include the memcached service</entry>
+  </row>
+<row>
+    <entry>--exclude-memcached-data</entry>
+    <entry>Do not include the memcached service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-memcached-metadata</entry>
+    <entry>Do not include the memcached service's metadata </entry>
+  </row>
+<row>
+    <entry>--redis</entry>
+    <entry>Include the Redis service</entry>
+  </row>
+<row>
+    <entry>--exclude-redis</entry>
+    <entry>Do not include the Redis service </entry>
+  </row>
+<row>
+    <entry>--exclude-redis-data</entry>
+    <entry>Do not include the Redis service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-redis-metadata</entry>
+    <entry>Do not include the Redis service's metadata</entry>
+  </row>
+<row>
+    <entry>--rabbit</entry>
+    <entry>Include the RabbitMQ service (Messaging)</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit</entry>
+    <entry>Do not include the RabbitMQ service </entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit-data</entry>
+    <entry>Do not include the RabbitMQ service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit-metadata</entry>
+    <entry>Do not include the RabbitMQ service's metadata </entry>
+  </row>
+<row>
+    <entry>--rabbit3</entry>
+    <entry>Include the RabbitMQ service</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit3</entry>
+    <entry>Do not include the RabbitMQ service</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit3-data</entry>
+    <entry>Do not include the RabbitMQ service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit3-metadata</entry>
+    <entry>Do not include the RabbitMQ service's metadata </entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-data-import"> <title>Data Import</title>
+<p>Import system data to or from clusters/nodes. </p>
+      <p>If no options are specified, includes <b>all</b> data except <i>resources</i> and
+          <i>aok-config</i>.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>data import --only-this-node [options] &lt;source&gt;
+data  import --cluster [options] &lt;source&gt;
+data import --manual [options] &lt;source&gt;</codeblock>
+<ul>
+<li>&lt;<i>source</i>&gt;:    The hostname or a filename to import from.</li>
+<li>
+<b>--cluster</b>:  Affect the entire cluster </li>
+<li>
+<b>--only-this-node</b>: Only affect this node</li>
+<li>
+<b>--manual</b>: Import/export ONLY the roles specified on the command line</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--fix-app-paths</entry>
+    <entry>Rewrite /app and /app/app paths in manifest.yml</entry>
+  </row>
+<row>
+    <entry>--force</entry>
+    <entry>Force import/export of specified roles even if they are not enabled Requires --manual and implies --only-this-node</entry>
+  </row>
+<row>
+    <entry>--remote</entry>
+    <entry>Remote import/export (internal use only)</entry>
+  </row>
+<row>
+    <entry>--base-dir base-dir&gt;</entry>
+    <entry>Base directory for extracting temporary files </entry>
+  </row>
+<row>
+    <entry>--timeout seconds&gt;</entry>
+    <entry>Override staging timeout default for legacy import</entry>
+  </row>
+<row>
+    <entry>--legacy</entry>
+    <entry>Treat import as a legacy services import (internal use only)</entry>
+  </row>
+<row>
+    <entry>--droplets</entry>
+    <entry>Include droplets (uploaded apps) in the export</entry>
+  </row>
+<row>
+    <entry>--exclude-droplets</entry>
+    <entry>Do not include droplets (uploaded apps) in the export  </entry>
+  </row>
+<row>
+    <entry>--packages</entry>
+    <entry>Include app packages in the export </entry>
+  </row>
+<row>
+    <entry>--exclude-packages</entry>
+    <entry>Do not include app packages </entry>
+  </row>
+<row>
+    <entry>--resources</entry>
+    <entry>Include the upload cache</entry>
+  </row>
+<row>
+    <entry>--exclude-resources</entry>
+    <entry>Do not include the upload cache (default)</entry>
+  </row>
+<row>
+    <entry>--license</entry>
+    <entry>Include the service license</entry>
+  </row>
+<row>
+    <entry>--exclude-license</entry>
+    <entry>Do not include the service license</entry>
+  </row>
+<row>
+    <entry>--db-encryption-key</entry>
+    <entry>Include the key used to encrypt the service DB (recommended) </entry>
+  </row>
+<row>
+    <entry>--exclude-db-encryption-key</entry>
+    <entry>Do not include the database encryption key</entry>
+  </row>
+<row>
+    <entry>--main-db</entry>
+    <entry>Include the cloud controller's main database</entry>
+  </row>
+<row>
+    <entry>--exclude-main-db</entry>
+    <entry>Do not include the cloud controller's main database </entry>
+  </row>
+<row>
+    <entry>--aok-db</entry>
+    <entry>Include AOK's database</entry>
+  </row>
+<row>
+    <entry>--exclude-aok-db</entry>
+    <entry>Do not include AOK's database </entry>
+  </row>
+<row>
+    <entry>--aok-config</entry>
+    <entry>Include AOK's configuration</entry>
+  </row>
+<row>
+    <entry>--exclude-aok-config</entry>
+    <entry>Do not include AOK's configuration (default)</entry>
+  </row>
+<row>
+    <entry>--helion-rest-db</entry>
+    <entry>Include the Rest's database</entry>
+  </row>
+<row>
+    <entry>--exclude-helion-rest-db</entry>
+    <entry>Do not include the Rest's database</entry>
+  </row>
+<row>
+    <entry>--filesystem</entry>
+    <entry>Include the filesystem service</entry>
+  </row>
+<row>
+    <entry>--exclude-filesystem</entry>
+    <entry>Do not include the filesystem service</entry>
+  </row>
+<row>
+    <entry>--exclude-filesystem-data</entry>
+    <entry>Do not include the filesystem service's user data</entry>
+  </row>
+<row>
+    <entry>--exclude-filesystem-user-creation</entry>
+    <entry>Do not include the filesystem service's user creation/quota </entry>
+  </row>
+<row>
+    <entry>--harbor</entry>
+    <entry>Include the harbor service </entry>
+  </row>
+<row>
+    <entry>--exclude-harbor</entry>
+    <entry>Do not include the harbor service </entry>
+  </row>
+<row>
+    <entry>--exclude-harbor-data</entry>
+    <entry>Do not include the harbor service's user data</entry>
+  </row>
+<row>
+    <entry>--exclude-harbor-metadata</entry>
+    <entry>Do not include the harbor service's metadata </entry>
+  </row>
+<row>
+    <entry>--mysql</entry>
+    <entry>Include the MySQL service </entry>
+  </row>
+<row>
+    <entry>--exclude-mysql</entry>
+    <entry>Do not include the MySQL service</entry>
+  </row>
+<row>
+    <entry>--exclude-mysql-data</entry>
+    <entry>Do not include the MySQL service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-mysql-metadata</entry>
+    <entry>Do not include the MySQL service's metadata </entry>
+  </row>
+<row>
+    <entry>--postgresql</entry>
+    <entry>Include the PostgreSQL service</entry>
+  </row>
+<row>
+    <entry>--exclude-postgresql</entry>
+    <entry>Do not include the PostgreSQL service</entry>
+  </row>
+<row>
+    <entry>--exclude-postgresql-data</entry>
+    <entry>Do not include the PostgreSQL service's data </entry>
+  </row>
+<row>
+    <entry>--exclude-postgresql-metadata</entry>
+    <entry>Do not include the PostgreSQL service's metadata </entry>
+  </row>
+<row>
+    <entry>--mongodb</entry>
+    <entry>Include the MongoDB service</entry>
+  </row>
+<row>
+    <entry>--exclude-mongodb</entry>
+    <entry>Do not include the MongoDB service</entry>
+  </row>
+<row>
+    <entry>--exclude-mongodb-data</entry>
+    <entry>Do not include the MongoDB service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-mongodb-metadata</entry>
+    <entry>Do not include the MongoDB service's metadata </entry>
+  </row>
+<row>
+    <entry>--memcached</entry>
+    <entry>Include the memcached service</entry>
+  </row>
+<row>
+    <entry>--exclude-memcached</entry>
+    <entry>Do not include the memcached service</entry>
+  </row>
+<row>
+    <entry>--exclude-memcached-data</entry>
+    <entry>Do not include the memcached service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-memcached-metadata</entry>
+    <entry>Do not include the memcached service's metadata </entry>
+  </row>
+<row>
+    <entry>--redis</entry>
+    <entry>Include the Redis service</entry>
+  </row>
+<row>
+    <entry>--exclude-redis</entry>
+    <entry>Do not include the Redis service </entry>
+  </row>
+<row>
+    <entry>--exclude-redis-data</entry>
+    <entry>Do not include the Redis service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-redis-metadata</entry>
+    <entry>Do not include the Redis service's metadata</entry>
+  </row>
+<row>
+    <entry>--rabbit</entry>
+    <entry>Include the RabbitMQ service (Messaging)</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit</entry>
+    <entry>Do not include the RabbitMQ service </entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit-data</entry>
+    <entry>Do not include the RabbitMQ service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit-metadata</entry>
+    <entry>Do not include the RabbitMQ service's metadata </entry>
+  </row>
+<row>
+    <entry>--rabbit3</entry>
+    <entry>Include the RabbitMQ service</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit3</entry>
+    <entry>Do not include the RabbitMQ service</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit3-data</entry>
+    <entry>Do not include the RabbitMQ service's data</entry>
+  </row>
+<row>
+    <entry>--exclude-rabbit3-metadata</entry>
+    <entry>Do not include the RabbitMQ service's metadata </entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-data-repair-routes"> <title>Data Repair</title>
+<p>Detects and fixes issues in the cloud controller database routes:
+  - Fix leading dots
+  - Fix duplicate prefix</p>
+<p>After a legacy import, some apps ended up having routes with a leading '.' character,  which is invalid. These routes were not present in the source cluster.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>data repair routes [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n  --dry-run</entry>
+    <entry>Display problematic routes, but don't change anything </entry>
+  </row>
+<row>
+    <entry>-y --no-prompt</entry>
+    <entry>Convert all with no user prompting</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Be verbose. (display maximum information output)</entry>
+  </row>
+<row>
+    <entry>-q --quiet</entry>
+    <entry>Be quiet. (display minimum or no information output)</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-debug-configwatch"> <title>Debug Configwatch</title>
+<p>Watch changes to cluster configuration.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>debug configwatch [options] [&lt;process-name&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-d  --dump-tree</entry>
+    <entry>Dump the config tree seen since starting</entry>
+  </row>
+<row>
+    <entry>-s  --no-value</entry>
+    <entry>Do not print the value of path</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-debug-redis"> <title>Debug Redis</title>
+<p>Connects to the Redis server used for cluster config via redis-cli</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>debug redis</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<p>None.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-history"> <title>History</title>
+<p>Displays the kato commands that have been run.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>history [--help] [-n &lt;node-IP&gt;*] [--json]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n  --node node-IP&gt;</entry>
+    <entry>Get command history from a specific cluster node</entry>
+  </row>
+<row>
+    <entry>-j --json</entry>
+    <entry>Output as JSON</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-info"> <title>Info</title>
+<p>Display information about this node or cluster, including assigned and available roles.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>info [--help] [-n &lt;node-IP&gt;] [--json] [--yaml]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n  --node node-IP&gt;</entry>
+    <entry>Display info from a specific cluster node</entry>
+  </row>
+<row>
+    <entry>-j --json</entry>
+    <entry>Output as JSON</entry>
+  </row>
+<row>
+    <entry>-y --yaml</entry>
+    <entry>Output as YAML</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-inspect"> <title>Inspect</title>
+<p>Detect common problems with your installation.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>inspect [options]
+
+inspect [options] all
+
+inspect [options] group &lt;group-name&gt;
+
+inspect [options] tests &lt;test-name&gt;
+
+inspect [options] list</codeblock>
+<p>To run all tests, enter:</p>
+<codeblock>kato inspect</codeblock>
+<p>To run a specific group of tests, enter:</p>
+<codeblock>kato inspect group &lt;name of group&gt;</codeblock>
+<p>To run specific tests, enter:</p>
+<codeblock>kato inspect tests &lt;testname1&gt; &lt;testname2&gt; &lt;testname3&gt;</codeblock>
+<p>To list all available tests, enter:</p>
+<codeblock>kato inspect list</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-v  --verbose</entry>
+    <entry>Verbose (maximum) output</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-license"> <title>License</title>
+<p>Set the service license in use for this microcloud or cluster.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>license set [options] &lt;value&gt;
+
+license enable
+
+license disable</codeblock>
+<ul>
+<li>&lt;<i>value</i>&gt;: The license to use; if not given then it is read from STDIN</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-drain-add"> <title>Log Drain Add</title>
+<p>Add a new log drain.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>log drain add [options] &lt;name&gt; &lt;uri&gt; [&lt;param&gt;...]</codeblock>
+<p>
+  <b>Examples</b>
+</p>
+<p>Add a drain to receive system logs</p>
+<codeblock>kato log drain add system_splunk udp://logs.splunk.com:1234/</codeblock>
+<p>Add a drain to forward all application and system logs as json</p>
+<codeblock>kato log drain add -f json -p apptail,systail app_sys_splunk \
+udp://logs.splunk.com:1235/</codeblock>
+<p>Add a drain with a custom or named format,</p>
+<codeblock>kato log drain add -f ": " system_splunk_2 \
+  udp://logs.splunk.com:1236/
+kato log drain add -f systail-syslog system_splunk_2 \
+  udp://logs.splunk.com:1236/</codeblock>
+<p>Pass custom parameters to a drain</p>
+<codeblock>kato log drain add mydrain redis://localhost:6379 key=logdata </codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-f --format format&gt; </entry>
+    <entry>Set the message format</entry>
+  </row>
+<row>
+    <entry>-p  --prefix  prefix&gt;</entry>
+    <entry>Message key prefix; possible values: systail, event, apptail (comma-separated, no spaces)</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-drain-delete"> <title>Log Drain Delete</title>
+<p>Delete a specified drain.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>log drain delete [options] &lt;name&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-drain-list"> <title>Log Drain List</title>
+<p>List all log drains.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>log drain list [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-y  --yaml</entry>
+    <entry>Output as YAML</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>Output as JSON</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-drain-status"> <title>Log Drain Status</title>
+<p>Show the status of all or specified log drains. If no options are passed, all drains are
+        shown.</p>
+<codeblock>log drain status [options] [&lt;drain1&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n  --not-running</entry>
+    <entry>Show only drains that are not running</entry>
+  </row>
+<row>
+    <entry>-y  --yaml</entry>
+    <entry>Output as YAML</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>Output as JSON</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-stream"> <title>Log Stream</title>
+<p>Define a log stream.</p>
+<codeblock>log stream [options] &lt;key&gt;...</codeblock>
+<ul>
+<li>&lt;<i>key</i>&gt;: Logyard stream key prefix (ex: <i>systail.dea</i>)</li>
+</ul>
+<p>
+  <b>Examples</b>
+</p>
+<p>Stream cloud events</p>
+<codeblock>kato log stream event</codeblock>
+<p>Stream DEA and app log stream</p>
+<codeblock>kato log stream systail.dea systail.stager apptail</codeblock>
+<p>Stream system logs (Note this is equivalent to <i>kato log tail</i>.)</p>
+<codeblock>kato log stream systail</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--no-color</entry>
+    <entry>Turn off color</entry>
+  </row>
+<row>
+    <entry>--raw</entry>
+    <entry>Show unformatted logs, including logyard INFO records (which are skipped by default)</entry>
+  </row>
+<row>
+    <entry>--json</entry>
+    <entry>Display the original JSON</entry>
+  </row>
+<row>
+    <entry>--time</entry>
+    <entry>Show timestamp</entry>
+  </row>
+<row>
+    <entry>-n  --node node-IP&gt;</entry>
+    <entry>Only show logs from the specified cluster node</entry>
+  </row>
+<row>
+    <entry>-l  --local</entry>
+    <entry>Only show logs from the current node</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-log-tail"> <title>Log Tail</title>
+<p> Create a stream that displays changes to the specified component in real time.</p>
+      <p><b>Syntax</b>
+      </p>
+<codeblock>log tail [options] [&lt;component&gt;...]</codeblock>
+<ul>
+<li>&lt;<i>component</i>&gt;: A process name, role name or role group name.</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--no-color</entry>
+    <entry>Turn off color</entry>
+  </row>
+<row>
+    <entry>--raw</entry>
+    <entry>Show unformatted logs, including logyard INFO records (which are skipped by default)</entry>
+  </row>
+<row>
+    <entry>--json</entry>
+    <entry>Display the original JSON</entry>
+  </row>
+<row>
+    <entry>--time</entry>
+    <entry>Show timestamp</entry>
+  </row>
+<row>
+    <entry>-n  --node node-IP&gt;</entry>
+    <entry>Only show logs from the specified cluster node</entry>
+  </row>
+<row>
+    <entry>-l  --local</entry>
+    <entry>Only show logs from the current node</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-attach"> <title>Node Attach</title>
+<p>Attach a node to a specified ALS core node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node attach [options] &lt;core-ip&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-e  --enable roles&gt;</entry>
+    <entry>Enable the specified roles (comma-separated list, no spaces)</entry>
+  </row>
+<row>
+    <entry>-s  --no-start</entry>
+    <entry>Do not auto start processes</entry>
+  </row>
+<row>
+    <entry>-v  --verbose</entry>
+    <entry>Show process information when starting/stopping roles</entry>
+  </row>
+<row>
+    <entry>-f  --force</entry>
+    <entry>Forces this node to attach to a core node, ignoring any version mismatches</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-availabilityzone"> <title>Node Availability Zone</title>
+<p>Gets/sets the availability zone on a node.</p>
+<codeblock>node availabilityzone [options] [&lt;zone&gt;]</codeblock>
+<p>
+  <b>Syntax</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-id&gt; </entry>
+    <entry>Sets the availability zone on the specified DEA node. If unspecified, local node is used.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-detach"> <title>Node Detach</title>
+<p>Detaches this node from an ALS core node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node detach [options]</codeblock>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-s --start</entry>
+    <entry>Automatically start processes after detaching</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information when starting/stopping roles</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-list"> <title>Node List</title>
+<p>List all nodes known to this cluster.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node list [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-y  --yaml</entry>
+    <entry>Display output as YAML</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>Display output as JSON</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-migrate"> <title>Node Migrate</title>
+<p>Migrate the node configuration from old node to a new node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node migrate &lt;old-node-IP&gt; &lt;new-node-IP&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-r --no-restart</entry>
+    <entry>Do not restart roles after migration</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-placementzones-add"> <title>Node Placement Zones</title>
+<p>Adds a DEA zone to the current node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node placementzones add [options] &lt;zone&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-id&gt; </entry>
+    <entry>Add a zone on the specified DEA node. If unspecified, local node is used.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-placementzones-list"> <title>Node Placement Zones List</title>
+<p>Lists the DEA zones on the specified node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node placementzones list [options]</codeblock>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-id&gt; </entry>
+    <entry>Add a zone on the specified DEA node. If unspecified, local node is used.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-placementzones-remove"> <title>Node Placement Zones Remove</title>
+<p>Removes a DEA zone from the specified node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node placementzones remove [options] &lt;zone&gt;*</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-id&gt; </entry>
+    <entry>Removes the placement zone from the specified DEA node. If unspecified, the local node is used.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-remove"> <title>Node Remove</title>
+<p>Remove the node(s) from the cluster</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node remove [--skip-detach] &lt;node-IP&gt;...</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-s --skip-detach</entry>
+    <entry>Skips updating the removed nodes config via detaching the node. Use this option ONLY if the node has already been destroyed.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-rename"> <title>Node Rename</title>
+<p>Rename a node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node rename [options] &lt;hostname&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-s --skip-remap-hosts</entry>
+    <entry>Skip the remapping of existing app URLS to the new domain.</entry>
+  </row>
+<row>
+    <entry>-l --skip-ssl-regeneration</entry>
+    <entry>Skip regenerating the SSL keys.</entry>
+  </row>
+<row>
+    <entry>--no-restart</entry>
+    <entry>Do not restart roles.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information when restarting roles.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-reset"> <title>Node Reset</title>
+<p>Reset the ALS VM to its default configuration.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node reset docker
+
+node reset services
+
+node reset --help</codeblock>
+<ul>
+<li>
+<i>docker</i>: removes all Docker containers and deletes all but the ALS release images; not meant for general use.</li>
+<li>
+<i>services</i>: removes all service data; not meant for general use.</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+      <note><codeph>node reset factory</codeph> is no longer a supported operation.</note>
+</section>
+<section id="kato-command-ref-node-retire"> <title>Node Retire</title>
+<p>Gracefully retires a DEA node from the cluster. New instances of the apps are started on other available DEAs before the retiring DEA is shut down.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node retire [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node &lt;node-id&gt;</entry>
+    <entry>Retire the specified DEA node; if unspecified, the local node is used.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-setup-core"> <title>Node Setup Core</title>
+<p>Configure the core node of your ALS cluster.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node setup core [&lt;endpoint&gt;]
+
+node setup core --help</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-setup-firstuser"> <title>Node Setup Firstuser</title>
+<p>First user setup.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node setup firstuser [options] &lt;email&gt; &lt;org&gt;</codeblock>
+<ul>
+<li>
+<i>&lt;email&gt;</i>: First user's email address.</li>
+<li>
+<i>&lt;org&gt;</i>: First user's Organization.</li>
+</ul>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-p --password password&gt;</entry>
+    <entry>First user's password. If your UNIX password has not been updated, then your UNIX password will be updated to this. Will be prompted for if not given.</entry>
+  </row>
+<row>
+    <entry>-u --username username&gt;</entry>
+    <entry>First user's username. If not specified, defaults to the first user's email address.</entry>
+  </row>
+<row>
+    <entry>-s --space space&gt;</entry>
+    <entry>First user's initial space. If not specified, user will NOT initially be assigned to a space.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-setup-load_balancer"> <title>Node Setup Load Balancer</title>
+<p>Configure this node as a HTTP/S load balancer.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node setup load_balancer [&lt;IP&gt;...] [--force]
+
+node setup load_balancer --help</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-setup-micro"> <title>Node Setup Micro</title>
+<p>Configure this instance as a micro cloud.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node setup micro [options] [&lt;role&gt;...]
+
+node setup micro --help</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-d --delete </entry>
+    <entry>Delete old configuration and re-initialize everything.</entry>
+  </row>
+<row>
+    <entry>-s --no-start</entry>
+    <entry>Do not auto start processes.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-update"> <title>Node Update</title>
+<p>Update IP references in config.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node update [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-upgrade"> <title>Node Upgrade</title>
+<p>Upgrade the installation to the latest available version, preserving deployed applications, config, services, and other state.</p>
+<p>Will operate on current node by default; upgrade can be done for the entire cluster at once (with --cluster) or for a specific node (with --node).</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node upgrade [options]
+
+node upgrade --run-command &lt;command&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry> -j --json</entry>
+    <entry>Display output in JSON.</entry>
+  </row>
+<row>
+    <entry>-n --node <varname/>
+</entry>
+    <entry>Targets the provided node.</entry>
+  </row>
+<row>
+    <entry>-u --update-kato</entry>
+    <entry>Updates kato node upgrade to the latest codebase.</entry>
+  </row>
+<row>
+    <entry>-v --version &lt;<varname>version</varname>&gt;</entry>
+    <entry>The version to upgrade to. If unspecified, the latest version is used.</entry>
+  </row>
+<row>
+    <entry>--force</entry>
+    <entry>Forces an upgrade to run.</entry>
+  </row>
+<row>
+    <entry>--prepare</entry>
+    <entry>Prepare the core node for an upgrade.</entry>
+  </row>
+<row>
+    <entry>--resume</entry>
+    <entry>Resumes an upgrade process, used internally by Kato and should only be called manually when requested.</entry>
+  </row>
+<row>
+    <entry>--role-order &lt;<varname>role-order</varname>&gt;</entry>
+    <entry>Comma separated list of roles defining the order that roles should be upgraded in a cluster.</entry>
+  </row>
+<row>
+    <entry>--skip-confirmation</entry>
+    <entry>Skips initial confirmation of upgrade.</entry>
+  </row>
+<row>
+    <entry>--status</entry>
+    <entry>Shows the status of upgrades on a node.</entry>
+  </row>
+<row>
+    <entry>--development</entry>
+    <entry>Run a development upgrade (internal use only).</entry>
+  </row>
+<row>
+    <entry>--cache-ip &lt;<varname>cache-ip</varname>&gt;</entry>
+    <entry>The IP of the node to act as a cache for all nodes in the cluster during upgrade.</entry>
+  </row>
+<row>
+    <entry>--download-only</entry>
+    <entry>Downloads the files required to perform an upgrade without starting an upgrade. When using this option, --cache-ip must be specified.</entry>
+  </row>
+<row>
+    <entry>--cluster</entry>
+    <entry>Unused parameter for backwards compatibility.</entry>
+  </row>
+<row>
+    <entry>--offline</entry>
+    <entry>Upgrade while offline. This option requires that the upgrade content was downloaded previously.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-node-version"> <title>Node Version</title>
+<p>Retrieves the version number from the specified node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>node version [options] [&lt;node-IP&gt;]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-custom_ssl_cert"> <title>OP Custom SSL Cert</title>
+<p>Configuration of custom SSL certificates to be used in conjunction with router2g and deployed applications.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op custom_ssl_cert install [options] &lt;key-path&gt; &lt;cert-path&gt; &lt;domain&gt;
+
+op custom_ssl_cert remove &lt;domain&gt;
+
+op custom_ssl_cert list</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--wildcard-subdomains</entry>
+    <entry>Wildcard SSL certificate.</entry>
+  </row>
+<row>
+    <entry>--update</entry>
+    <entry>Update an existing SSL certificate.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-defer"> <title>OP Defer</title>
+<p>Defer a kato command to be run by <i>op run_deferred</i> when the system is rebooted and supervisor has started. Commands are saved to the <i>/home/helion/.kato-deferred</i> YAML file.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op defer (&lt;command&gt; | --reset) [--run-as-root] [--post-start]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--run-as-root</entry>
+    <entry>Run deferred command as root</entry>
+  </row>
+<row>
+    <entry>--reset</entry>
+    <entry>Clear list of deferred commands</entry>
+  </row>
+<row>
+    <entry>--post-start</entry>
+    <entry>Run the deferred command after all processes managed by kato have started.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-dhcp"> <title>OP DHCP</title>
+<p>Configure this node's networking to use DHCP.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op dhcp</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="kato-command-ref-op-generate_service_tokens"> <title>OP Generate Service Tokens</title>
+<p>Generates auth tokens for services.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op generate_service_tokens</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-import_from_yaml_file"> <title>OP Import from YAML File</title>
+<p>Import the YAML configuration for a single process, deleting and replacing all prior configuration for that process.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op import_from_yaml_file [--upgrade] [--new-key-file=&lt;file&gt;] &lt;process&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--new-key-file=&lt;file&gt;</entry>
+    <entry>Override config with a specific YAML file.</entry>
+  </row>
+<row>
+    <entry>--upgrade</entry>
+    <entry>Merge the new configuration rather than deleting and replacing.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-import_from_yaml_files"> <title>OP Import from YAML Files</title>
+<p>Import configuration from YAML files for all processes, deleting and replacing prior configuration.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op import_from_yaml_files [--upgrade] [--new-key-file=&lt;file&gt;]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--new-key-file=&lt;file&gt;</entry>
+    <entry>Override config with a specific YAML file.</entry>
+  </row>
+<row>
+    <entry>--upgrade</entry>
+    <entry>Merge the new configuration rather than deleting and replacing.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-max_client_upload"> <title>OP Max Client Upload</title>
+<p>Set the maximum upload size in MB from ALS clients.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op max_client_upload &lt;max-size&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-regenerate"> <title>OP Regenerate</title>
+<p>Regenerate the configuration for various processes and components.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op regenerate all [--no-restart] [--no-prompt]
+
+op regenerate authorized_keys [--frontend] [--dea]
+
+op regenerate cloud-controller-bulk-api-auth [--no-prompt]
+
+op regenerate cloud-controller-client-auth [--no-prompt]
+
+op regenerate cloud-controller-db-encryption-key [--no-prompt]
+
+op regenerate cloud-controller-staging-auth [--no-prompt]
+
+op regenerate mysql [--no-prompt]
+
+op regenerate postgresql [--no-restart] [--no-prompt]
+
+op regenerate ssh_keys [--no-prompt]
+
+op regenerate ssl_cert [--no-prompt]
+
+op regenerate helion-rest-auth [--no-prompt]
+
+op regenerate helion-router-auth [--no-prompt]
+
+op regenerate token-signing-secret [--no-prompt]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-y --no-prompt</entry>
+    <entry>Regenerate all with no user prompting</entry>
+  </row>
+<row>
+    <entry>-r --no-restart</entry>
+    <entry>Do not restart processes after regeneration.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-remap_hosts"> <title>OP Remap Hosts</title>
+<p>Change the fully qualified basename (i.e. the default shared domain) in the URLs of hosted applications. Used when renaming the system or migrating user applications to a new system.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op remap_hosts &lt;old-hostname&gt; &lt;new-hostname&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-run_deferred"> <title>OP Run Deferred</title>
+<p>Runs deferred commands saved with 'kato defer'.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op run_deferred [--post-start]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--post-start</entry>
+    <entry>Run the deferred command after all processes managed by kato have started.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-set_timezone"> <title>OP Set Timezone</title>
+<p>Change the default system timezone for the host machine.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op set_timezone [--timezone &lt;TZ&gt;]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-static_ip"> <title>OP Static IP</title>
+<p>Configures this node to use a static IP. Interactively prompts for inputs if they are not specified as options.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op static_ip [--interface=&lt;if&gt;] [--ip=&lt;ip&gt;] [--netmask=&lt;netmask&gt;] [--gateway=&lt;gateway&gt;] [--dns-nameservers=&lt;dnsname&gt;] [--dns-search-domains=&lt;dnssearch&gt;] [--restart-network] [--no-restart]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--interface= &lt;if&gt;</entry>
+    <entry>Network interface to configure (e.g. eth0)</entry>
+  </row>
+<row>
+    <entry>--ip= &lt;ip&gt;</entry>
+    <entry>Host IP address</entry>
+  </row>
+<row>
+    <entry>--netmask= &lt;netmask&gt;</entry>
+    <entry>Network netmask (e.g. 255.255.255.0)</entry>
+  </row>
+<row>
+    <entry>--gateway= &lt;gateway&gt;</entry>
+    <entry>Network gateway (IP address)</entry>
+  </row>
+<row>
+    <entry>--dns-nameservers= &lt;ips&gt;</entry>
+    <entry>Optional list of DNS names servers (e.g. 10.0.0.252, 10.0.0.253)</entry>
+  </row>
+<row>
+    <entry>--dns-search-domains= &lt;domains&gt;</entry>
+    <entry>Optional list of DNS search domains (e.g. example.com, example.org)</entry>
+  </row>
+<row>
+    <entry>--restart-network</entry>
+    <entry>Restart networking.</entry>
+  </row>
+<row>
+    <entry>--no-restart</entry>
+    <entry>Do not restart processes.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-update_hostsfile"> <title>OP Update Hostsfile</title>
+<p>Updates the /etc/hosts file with the endpoint URI mapped to the cloud controller's internal IP.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op update_hostsfile</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-op-upstream_proxy"> <title>OP Upstream Proxy</title>
+<p>Configure ALS to use an external or upstream proxy server for staging and deployed apps.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>op upstream_proxy set &lt;proxy-address&gt; [options]
+
+op upstream_proxy delete</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>--no-proxy no_proxy&gt; </entry>
+    <entry>Comma-separated list of domain names that should bypass the proxy.</entry>
+  </row>
+<row>
+    <entry>-p --pass pass&gt;&gt;</entry>
+    <entry>Proxy password.</entry>
+  </row>
+<row>
+    <entry>-u --user user&gt;</entry>
+    <entry>Proxy username.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-patch"> <title>Patch</title>
+<p>Update an ALS cluster with post-release fixes.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>patch status [options]
+
+patch install [--node &lt;nodeip&gt;] [options]
+
+patch install [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
+
+patch reset [--node &lt;nodeip&gt;] [options]
+
+patch update [--node &lt;nodeip&gt; | --local]
+
+patch mark [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
+
+patch reinstall [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;
+
+patch revert [--node &lt;nodeip&gt;] [options]
+
+patch revert [--node &lt;nodeip&gt;] [options] &lt;patchname&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-a --all</entry>
+    <entry>Show status for all patches.</entry>
+  </row>
+<row>
+    <entry>-d --notinstalled</entry>
+    <entry>Manually mark patch as not installed.</entry>
+  </row>
+<row>
+    <entry>-i --installed</entry>
+    <entry>Manually mark patch as installed.</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>Return JSON (for 'status').</entry>
+  </row>
+<row>
+    <entry>-l --local</entry>
+    <entry>Affect this node only. If not specified, command operates on entire cluster.</entry>
+  </row>
+<row>
+    <entry>-m --manifest manifest&gt;</entry>
+    <entry>Specify a custom manifest file.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Only affect the specified cluster node.</entry>
+  </row>
+<row>
+    <entry>-q --quiet</entry>
+    <entry>Be quieter (output less information).</entry>
+  </row>
+<row>
+    <entry>-r --no-restart</entry>
+    <entry>Don't restart any roles during patching.</entry>
+  </row>
+<row>
+    <entry>-s --single</entry>
+    <entry>Remotely install single patch (internal use only).</entry>
+  </row>
+<row>
+    <entry>--to-patch-id patch-id&gt;</entry>
+    <entry>Specify the id of the patch to patch the cluster up to. Patches above this ID will not be applied.</entry>
+  </row>
+<row>
+    <entry>-u --force-update</entry>
+    <entry>Force a new manifest to be downloaded.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-process-list"> <title>Process List</title>
+<p>Lists configured processes and their current running status.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>process list [options] [&lt;process&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-c --cluster</entry>
+    <entry> Include process status for all cluster nodes.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Get status for a specific cluster node only. Defaults to local node.</entry>
+  </row>
+<row>
+    <entry>-y  --yaml</entry>
+    <entry>Display output as YAML</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>Display output as JSON</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-process-ready"> <title>Process Ready</title>
+<p>Check the status of a process.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>process ready [options] &lt;process&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-b --block seconds&gt;</entry>
+    <entry>Block until ready. The maximum block time is set in <varname>seconds</varname>. If <varname>seconds</varname> is set to 0, then it will be blocked forever.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Check the process on a specific cluster node only.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-process-restart"> <title>Process Restart</title>
+<p>Restart a process.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>process restart [options] [&lt;process&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-c --cluster</entry>
+    <entry>Restarts process on all nodes in the cluster.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Restart process on a specific cluster node only.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-process-start"> <title>Process Start</title>
+<p>Start a process.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>process start [options] [&lt;process&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Start the process on a specific cluster node only.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-process-stop"> <title>Process Stop</title>
+<p>Stop a process.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>process stop [options] [&lt;process&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Stop the process on a specific cluster node only.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-relocate"> <title>Relocate</title>
+<p>Move containers, application droplets, or services to a new mount point or filesystem
+          location.<note>This command stops all roles and does <b>not</b> restart them after
+          execution. This behavior permits performing multiple sequential <codeph>relocate</codeph>
+          commands.</note></p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>relocate [options] containers &lt;new_location&gt;
+
+relocate [options] droplets &lt;new_location&gt;
+
+relocate [options] services &lt;new_location&gt;</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-report"> <title>Report</title>
+<p>Generate a report that can be sent to technical support.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>report
+
+report --node &lt;node-IP&gt;
+
+report --cluster
+
+report --help</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-c --cluster</entry>
+    <entry>Gather report information from the entire cluster into one tarball.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Gather report information from a specific cluster node only.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-restart"> <title>Restart</title>
+<p>Restart a node or individual roles.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>restart [options] [&lt;role&gt;...]
+
+restart --help</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Restart a specific cluster node.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-role-add"> <title>Role Add</title>
+<p>Enable roles on a node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>role add --help
+
+role add [-v] [--node &lt;node-IP&gt;] [--no-start] &lt;role&gt;...
+
+role add [-v] [--node &lt;node-IP&gt;*] [--no-start] --all
+
+role add [-v] [--node &lt;node-IP&gt;*] [--no-start] --all-but &lt;role&gt;...
+
+role add [-v] [--node &lt;node-IP&gt;*] --only &lt;role&gt;...</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-a --all</entry>
+    <entry>Enable all available roles.</entry>
+  </row>
+<row>
+    <entry>-b --all-but</entry>
+    <entry>Enable all available roles except those listed.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Add a role on a specific cluster node.</entry>
+  </row>
+<row>
+    <entry>-o --only</entry>
+    <entry>Enable only these roles; disable all others.</entry>
+  </row>
+<row>
+    <entry>-s --no-start</entry>
+    <entry>Do not start processes.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-role-info"> <title>Role Info</title>
+<p>Display info on roles.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>role info --help
+
+role info [&lt;role&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-role-remove"> <title>Role Remove</title>
+<p>Disable roles on a node.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>role remove --help
+
+role remove [-v] [--node &lt;node-IP&gt;] &lt;role&gt;...
+
+role remove [-v] [--node &lt;node-IP&gt;] --all
+
+role remove [-v] [--node &lt;node-IP&gt;] --all-but &lt;role&gt;...</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-a --all</entry>
+    <entry>Disable all available roles.</entry>
+  </row>
+<row>
+    <entry>-b --all-but</entry>
+    <entry>Disable all available roles except those listed.</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Remove a role on a specific cluster node.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-shell"> <title>Shell</title>
+<p>Interactive shell for kato.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>shell [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-start"> <title>Start</title>
+<p>Start nodes or individual roles.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>start [options] [&lt;role&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n --node node-IP&gt;</entry>
+    <entry>Start a specific cluster node.</entry>
+  </row>
+<row>
+    <entry>-e --ephemeral</entry>
+    <entry>Try not to regenerate/modify any config items.</entry>
+  </row>
+<row>
+    <entry>-v --verbose</entry>
+    <entry>Show process information.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-status"> <title>Status</title>
+<p>List configured roles and their current status across the cluster.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>status [options]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-a  --all</entry>
+    <entry>Show all roles, including roles not currently configured on this cluster.</entry>
+  </row>
+<row>
+    <entry>-y  --yaml</entry>
+    <entry>Display output as YAML</entry>
+  </row>
+<row>
+    <entry>-j  --json</entry>
+    <entry>Display output as JSON</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-stop"> <title>Stop</title>
+<p>Stop service or individual roles.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>stop [options] [&lt;rolename1&gt; &lt;rolename2&gt;...]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+<row>
+    <entry>-n  --node node-IP&gt;</entry>
+    <entry>Stop a specific node</entry>
+  </row>
+<row>
+    <entry>-v  --verbose</entry>
+    <entry>Display process information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="kato-command-ref-version"> <title>Version</title>
+<p>Display the version of ALS currently in use.</p>
+<p>
+  <b>Syntax</b>
+</p>
+<codeblock>version [-h]</codeblock>
+<p>
+  <b>Options</b>
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>-h  --help</entry>
+    <entry>Show help information</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

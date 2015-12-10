@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4060">
+<title>HPE Helion 2.0 Development Platform: User-Provided Services</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>User-provided service instances allow you connect applications running
+on Application Lifecycle Service to specified external data services, without hard coding the
+credentials into the application. The service instance provides the
+connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="data-services.dita#user_data_services/configuring-helion-data-services" >built-in data services</xref>.</p>
+<p>Think of user-provided services as a credentials database for your Application Lifecycle Service application space. You provide the connection information and ALS stores it in a <xref type="section" href="#topic4060/using">
+<i>JSON object</i>
+</xref> which can then be bound any applications in the space.</p>
+<section id="creating"> <title>Creating</title>
+<p>User-provided service instances will typically be used to connect
+applications hosted on Application Lifecycle Service to existing external database hosts or clusters. For example, to connect an app to an externally-hosted PostgreSQL database:</p>
+<codeblock>helion create-service user-provided prod-db-int
+Which credentials to use for connections [hostname, port, password]: host, port, database, user, pass
+host: dbhost1.example.com
+port: 5432
+database: prod-django-321
+user: ro-web
+pass: vsTLP2gs
+Creating new service ... OK</codeblock>
+<p>The parameter names provided in the first step will become the keys in
+the JSON object exposed to the application later.</p>
+</section>
+<section id="binding"> <title>Binding</title>
+<p>Once the service instance has been created it can be bound to
+applications, just like any other service:</p>
+<codeblock>helion bind-service prod-db-int django-cms
+Binding prod-db-int to scaling-demo ...
+Stopping Application [django-cms] ... OK
+Starting Application [django-cms] ...
+OK
+http://django-cms.helion.example.com/ deployed</codeblock>
+</section>
+<section id="using"> <title>Using</title>
+<p>The <codeph>helion service</codeph> command will show the
+credentials:</p>
+<codeblock>helion service prod-db-int
+
+prod-db-int
++--------------+------------------------------+
+| What         | Value                        |
++--------------+------------------------------+
+| Type         | user-provided                |
+| Space        | example::example-dev         |
+|              |                              |
+| Credentials  |                              |
+| - database   | prod-django-321              |
+| - host       | dbhost1.example.com          |
+| - pass       | vsTLP2gs                     |
+| - port       | 5432                         |
+| - user       | ro-web                       |
+|              |                              |
+| Applications | django-cms                   |
++--------------+------------------------------+</codeblock>
+  <p>The <xref href="data-services.dita#user_data_services/vcap-services" type="section"   >
+<i>VCAP_SERVICES</i>
+</xref>
+variables will expose the connection information within the application
+container. The parameter names you provided when setting up the service
+instance become the keys in the <codeph>prod-db-int</codeph> JSON
+object:</p>
+<codeblock>django-cms$ echo VCAP_SERVICES \|json
+{
+  "prod-db-int": {
+    "database": "prod-django-321",
+    "host": "dbhost1.example.com",
+    "pass": "vsTLP2gs",
+    "port": "5432",
+    "user": "ro-web"
+  }
+}</codeblock>
+  <p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../deploy/deploy_index.dita#user_deploy_index/languages" type="section"   >Language Specific Deployment</xref> documentation for examples.</p>
+<p>Buildpacks that auto-configure applications for system-provided services can also do so for user-provided services. For example, the <xref href="https://github.com/cloudfoundry/java-buildpack" scope="external" format="html" >java buildpack</xref> will configure applications to connect to a database if the service has a name or tag with <i>postgres</i>, <i>mariadb</i>, or <i>mysql</i> in it. Check the buildpack's documentation or code to see exactly what it supports.</p>
+</section>
+<section id="user-provided-URL-env"> <title>Other Environment Variables</title>
+<p>User-provided service instances do not set <b>DATABASE_URL</b> or 
+database-specific URL environment variables.</p>
+  <p>If your application uses variables in URL format, you can add them manually to the application with the <xref href="../reference/client-ref-management.dita#topic50918/command-set-env" type="section"   >
+<i>set-env</i>
+</xref> command. For example:</p>
+<codeblock>helion set-env appname MYSQL_URL mysql:
+dbuser:pass@10.0.0.55:3306/dbname </codeblock>
+<p>These variables can be created whether or not user-provided service instances have been created.</p>
+</section>
+</body>
+</topic>

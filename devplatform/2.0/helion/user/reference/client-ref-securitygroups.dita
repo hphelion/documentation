@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5620">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Security Groups</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic5620/command-bind-security-group">helion bind-security-group</xref>: Bind the named security group to the current space, the specified space, or the running and staging phases. </li>
+<li>
+<xref type="section" href="#topic5620/command-create-security-group">helion create-security-group</xref>: Create a new security group.</li>
+<li>
+<xref type="section" href="#topic5620/command-delete-security-group">helion delete-security-group</xref>: Delete the named security group.</li>
+<li>
+<xref type="section" href="#topic5620/command-security-group">helion security-group</xref>: Show the details of the named security group.</li>
+<li>
+<xref type="section" href="#topic5620/command-security-groups">helion security-groups</xref>: Show all known security groups or just those assigned to the running and staging phases.</li>
+<li>
+<xref type="section" href="#topic5620/command-unbind-security-group">helion unbind-security-group</xref>: Drop the named security group from the current space, the specified space, or the running and staging phases.</li>
+<li>
+<xref type="section" href="#topic5620/command-update-security-group">helion update-security-group</xref>: Modify the named security group.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-bind-security-group"> <title>helion bind-security-group &lt;<i>security_group</i>&gt;</title>
+<p>Bind the named security group to the current space, the specified space, or the running and staging phases.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--organization, -o</entry>
+    <entry>The name of the parent organization to use as context. Defaults to the current organization. A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.</entry>
+  </row>
+<row>
+    <entry>--running</entry>
+    <entry>Switch operation to work on the security groups for running applications.</entry>
+  </row>
+<row>
+    <entry>--space</entry>
+    <entry>The name of the space to use as context. Defaults to the current space. A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.</entry>
+  </row>
+<row>
+    <entry>--staging</entry>
+    <entry>Switch operation to work on the security groups for staging applications.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-create-security-group"> <title>helion create-security-group &lt;<i>security_group</i>&gt; &lt;<i>rules</i>&gt;</title>
+<p>Create a new security group.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-delete-security-group"> <title>helion delete-security-group  &lt;<i>security_group</i>&gt;</title>
+<p>Delete the named security group.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-security-group"> <title>helion security-group &lt;<i>security_group</i>&gt;</title>
+<p>Show the details of the named security group.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--json</entry>
+    <entry>Print raw json as output, not human-formatted data.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-security-groups"> <title>helion security-groups</title>
+<p>Show all known security groups or just those assigned to the running and staging phases.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--running</entry>
+<entry>Switch operation to work on the security groups for running applications.</entry>
+</row>
+<row>
+<entry>--staging</entry>
+<entry>Switch operation to work on the security groups for staging applications.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unbind-security-group"> <title>helion unbind-security-group  &lt;<i>security_group</i>&gt;</title>
+<p>Drop the named security group from the current space, the specified space, or the running and staging phases.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--organization, -o</entry>
+    <entry>The name of the parent organization to use as context. Defaults to the current organization. A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.</entry>
+  </row>
+<row>
+    <entry>--running</entry>
+    <entry>Switch operation to work on the security groups for running applications.</entry>
+  </row>
+<row>
+    <entry>--space</entry>
+    <entry>The name of the space to use as context. Defaults to the current space. A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.</entry>
+  </row>
+<row>
+    <entry>--staging</entry>
+    <entry>Switch operation to work on the security groups for staging applications.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-security-group"> <title>helion update-security-group  &lt;<i>security_group</i>&gt; &lt;<i>rules</i>&gt;</title>
+<p>Modify the named security group by replacing the old set of rules with a new set.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

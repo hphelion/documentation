@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7566">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Space Quotas</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic7566/command-create-space-quota">helion create-space-quota</xref>: Create a new space quota. </li>
+<li>
+<xref type="section" href="#topic7566/command-delete-space-quota">helion delete-space-quota</xref>: Delete the named space quota. </li>
+<li>
+<xref type="section" href="#topic7566/command-rename-space-quota">helion rename-space-quota</xref>: Rename the named space quota.</li>
+<li>
+<xref type="section" href="#topic7566/command-set-space-quota">helion set-space-quota</xref>: Assign the specified space quota to the current or specified space</li>
+<li>
+<xref type="section" href="#topic7566/command-space-quota">helion space-quota</xref>: Show the details of the named space quota. </li>
+<li>
+<xref type="section" href="#topic7566/command-space-quotas">helion space-quotas</xref>: List the space quotas owned by the current, specified, or all organizations.</li>
+<li>
+<xref type="section" href="#topic7566/command-unset-space-quota">helion unset-space-quota</xref>: Drop the space quota from the current or specified space.</li>
+<li>
+<xref type="section" href="#topic7566/command-update-space-quota">helion update-space-quota</xref>: Modify the named space quota.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-create-space-quota"> <title>helion create-space-quota  <i>&lt;name&gt;</i>
+</title>
+<p>Create a new space quota. It will be owned by the current or specified organization.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--instance-mem, -i</entry>
+<entry>Amount of memory application instances can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.
+Also accepts -1 and "unlimited" for unlimited memory.
+</entry>
+   </row>
+<row>
+<entry>--mem, -m</entry>
+<entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.</entry>
+</row>
+<row>
+<entry>--no-paid-services-allowed</entry>
+<entry>Complementary alias of --paid-services-allowed.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</entry>
+</row>
+<row>
+<entry>--routes, -r</entry>
+<entry>Limit for the number of routes in the quota.</entry>
+</row>
+<row>
+<entry>--services, -s</entry>
+<entry>Limit for the number of services in the quota.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-delete-space-quota"> <title>helion delete-space-quota  <i>&lt;name&gt;</i>
+</title>
+<p>Delete the named space quota.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-rename-space-quota"> <title>helion rename-space-quota  <i>&lt;name&gt;</i>  <i>&lt;newname&gt;</i>
+</title>
+<p>Rename the named space quota.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-set-space-quota"> <title>helion set-space-quota  <i>&lt;name&gt;</i>
+</title>
+<p>Assign the specified space quota to the current or specified space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--organization, -o</entry>
+    <entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</entry>
+  </row>
+<row>
+<entry>--space</entry>
+<entry>The name of the space to use as context.
+Defaults to the current space.
+A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-space-quota"> <title>helion space-quota  <i>&lt;name&gt;</i>
+</title>
+<p>Show the details of the named space quota. If not specified it will be asked for interactively (menu).</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--json</entry>
+    <entry>Print raw json as output, not human-formatted data.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-space-quotas"> <title>helion space-quotas</title>
+<p>List the space quotas owned by the current, specified, or all organizations.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--all</entry>
+<entry>Show all space quotas instead.</entry>
+</row>
+<row>
+<entry>--full</entry>
+<entry>Show all information about the space-quota.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-unset-space-quota"> <title>helion unset-space-quota</title>
+<p>Drop the space quota from the current or specified space.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--organization, -o</entry>
+    <entry>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</entry>
+  </row>
+<row>
+<entry>--space</entry>
+<entry>The name of the space to use as context.
+Defaults to the current space.
+A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-space-quota"> <title>helion update-space-quota  <i>&lt;name&gt;</i>
+</title>
+<p>Modify the named space quota.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--instance-mem, -i</entry>
+<entry>Amount of memory application instances can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.
+Also accepts -1 and "unlimited" for unlimited memory.
+</entry>
+   </row>
+<row>
+<entry>--mem, -m</entry>
+<entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.</entry>
+</row>
+<row>
+<entry>--no-paid-services-allowed</entry>
+<entry>Complementary alias of --paid-services-allowed.</entry>
+</row>
+<row>
+<entry>--routes, -r</entry>
+<entry>Limit for the number of routes in the quota.</entry>
+</row>
+<row>
+<entry>--services, -s</entry>
+<entry>Limit for the number of services in the quota.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

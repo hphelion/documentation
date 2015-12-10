@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_a4c_11b_dt">
+  <title><i>cf-mgmt</i> Tool Example: Create a Starter Cluster</title>
+  <body>
+   
+            <p>The following is an example on how to create a small starter cluster with a core node
+      and one DEA.</p>
+    <p>You can create any number of identical clusters using the same bootstrap file. However, each
+      configuration requires its own file. For example, if you need five medium and five small
+      clusters, you would need two bootstrap files; one to create five identical medium clusters,
+      and one to create five small.</p>
+    <section>
+      <title>Prerequisites</title>
+      <ul><li>The host for the examples needs to be able to reach your HPE Helion OpenStack environment.</li>
+        <li><xref href="devplatform_downloadRCFile.dita#topic_rmk_gnx_ft">Download</xref> the RC
+          configuration file. </li>
+        <li><xref
+            href="ALS_Client_Downloads.dita#topic843/hp-helion-als-cluster-management-tool-cf-mgmt"
+            >Download</xref> the version of the cluster management (cf-mgmt) tool appropriate for
+          your operating system.</li></ul>
+    </section>
+
+     <section>  <ol>
+        <li>
+          <xref href="http://clients.als.hpcloud.com/1.3/config/bootstrap.yml" format="html"
+            scope="external">Download</xref> the latest <i>bootstrap.yml</i> and save it in a
+          location where the <i>cf-mgmt </i>tool can access it.</li><li> Open and configure the <i>bootstrap.yml </i>file to match your environment. Ensure the values
+          for image names, image sizes and availability zones ("az") are valid for your current
+          configuration. Here is an
+          example:<codeblock>constructor-image-name: HPE Helion Development Platform - Application Lifecycle Service Installer 1.2.0.282 
+constructor-flavor: standard.xsmall 
+seed-node-image-name: HPE Helion Development Platform - Application Lifecycle Service Seed Node 1.2.0.282 
+core-flavor: standard.medium 
+cluster-title: &lt;My Cluster Title&gt; 
+cluster-prefix: &lt;My Cluster Prefix&gt;
+dea-count: 1 
+dea-flavor: standard.large
+az: &lt;My Availability Zones&gt;</codeblock></li>
+        <li>Run the following installer command, inserting the correct values as appropriate.
+            <note><sl><sli>The first time, execute the installer command with the <codeph>--dry-run</codeph>
+            option included. This will help detect potential configuration or environmental issues
+            before performing an actual installation.</sli>
+              <sli>If you are using self-signed certificates, insert the
+                  <codeph>--skip-ssl-validation</codeph> option before the
+                  <codeph>create-cluster</codeph> command.</sli>
+              <sli>For more details about commands and options, see the complete <xref
+                  href="ALS_Client_Reference.dita#topic13234">cf-mgmt tool reference</xref>.</sli></sl></note><ul>
+            <li> This example will work for the <tm tmtype="reg">Windows</tm> operating
+              system.<codeblock> cf-mgmt.exe ^
+        --os-auth-url &lt;OpenStack authentication URL&gt; ^
+        --os-username &lt;username&gt; ^
+        --os-password &lt;password&gt; ^
+        --os-tenant-id &lt;id&gt; ^
+        --os-tenant-name "&lt;tenant-name&gt;" ^
+        --os-region-name "&lt;region-name&gt;" ^
+ create-cluster ^
+        --keypair-name &lt;keypair name&gt; ^
+        --admin-email &lt;admin email&gt; ^
+        --admin-password &lt;admin password&gt; ^
+        --load bootstrap.yml</codeblock></li>
+            <li>This example will work on Mac OSX or Linux:
+              <codeblock>source &lt;path to openstackrc file&gt;
+cf-mgmt create-cluster \
+   --keypair-name &lt;name of keypair&gt; \
+   --admin-email &lt;your login&gt; \
+   --admin-password &lt;your password&gt; \
+   --load bootstrap.yml</codeblock></li>
+          </ul></li></ol>
+    </section>
+ 
+    <section><title>Related Links</title>
+      <sl>
+        <sli><xref href="cfmgmt_growcluster_addservice.dita" >Add A Service to an Existing Cluster</xref></sli>
+        <sli><xref href="cfmgmt_growcluster_addDEANode.dita">Add a DEA Node to an Existing Cluster</xref></sli>
+        <sli><xref href="ALS_Client_Reference.dita">ALS Cluster Management Tool Reference</xref></sli>
+      </sl> </section> 
+ </body>  
+</topic>

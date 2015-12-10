@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6051">
+<title>HPE Helion 2.0 Development Platform: Known Issues</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Please keep up to date with the latest Known Issues, FAQs and announcements in our <xref href="https://community.dev.hp.com/t5/Helion-Developer-Network/bd-p/cloud" scope="external" format="html" >Helion Developer Network forums</xref>.</p>
+<section id="13"><title>1.3</title>
+  <dl><dlentry>
+    <dt>UTM Gateways</dt>
+    <dd>UTM gateways may interfere with upgrades, patches, or normal application staging if they are
+            configured to inspect all HTTP(S) traffic between ALS nodes and upstream package
+            repositories. <xref href="../cluster/cluster_index.dita#admin_cluster_index/utm">See the full
+              documentation</xref> for a detailed explanation and suggested solutions. </dd>
+  </dlentry></dl>
+
+</section>
+  
+  <section id="11"> <title>1.1</title>
+</section>
+<section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title>
+<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS
+        IP address. Run <xref href="kato-ref.dita#topic39432/kato-command-ref-node-migrate">kato
+          node migrate</xref> or <xref
+          href="kato-ref.dita#topic39432/kato-command-ref-op-static_ip">kato op static ip</xref>
+        on the Core node, then <xref
+          href="kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
+        the new MBUS IP.</p>
+</section>
+
+<section id="php-55-repositories"> <title>PHP 5.5 Repositories</title>
+<p>PHP 5.5 in contained in the default Docker image. This version is more recent than the one available in the standard Ubuntu repositories.</p>
+<p>To get updates for PHP 5.5 or add additional modules (globally or as user-defined requirements for applications), a third-party package repository must be added to the Allowed Repos list.</p>
+<p>Administrators can add the <xref href="https://launchpad.net/~ondrej/+archive/php5" scope="external" format="html" >PPA for PHP 5.5</xref> or import from a  repository supporting compatible packages via kato:</p>
+<codeblock>kato config push cloud_controller_ng allowed_repos \
+"deb http://ppa.launchpad.net/ondrej/php5/ubuntu precise main"</codeblock>
+</section>
+<section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title>
+<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load
+        lists of users to and from CSV files, are non-functional in the current release. The <xref
+          href="kato-ref.dita#topic39432/kato-command-ref-data-import">kato data import</xref>
+        and <xref
+          href="kato-ref.dita#topic39432/kato-command-ref-data-export"
+          type="section" >kato data export</xref> commands are still available for
+        migrating users from one ALS installation to another.</p>
+</section>
+<section id="kato-node-reset-factory-with-nopasswd"> <title>Kato node reset factory with NOPASSWD</title>
+<p>The kato <b>node reset factory</b> command will not work if <b>NOPASSWD</b> has been set for the admin account in <i>/etc/sudoers</i>. To work around this, revert the change to <i>/etc/sudoers</i> before resetting or start over with a new ALS VM.</p>
+</section>
+<section id="cloud-events-not-gathering-logs-from-some-processes"> <title>Cloud Events not gathering logs from some processes</title>
+<p>Certain processes noted below use non-standard logging formats and are therefore not included in the Cloud Events log stream. So, for example, they will not appear in the Cloud Events view in the Horizon Console.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Process</b>
+</entry>
+<entry>
+<b>Log Location</b>
+</entry>
+</row>
+<row>
+    <entry>router2g </entry>
+    <entry>(ALS router). Manually inspect */s/logs/router2g.log* on Router nodes.</entry>
+  </row>
+<row>
+    <entry>stackato\_rest</entry>
+    <entry>(ALS-specific web service); manually inspect /s/logs/stackato_rest.log on Controller nodes.</entry>
+  </row>
+<row>
+    <entry>harbor_proxy_connector</entry>
+    <entry>(Harbor); manually inspect /s/logs/harbor_proxy_connector.log on Harbor nodes.</entry>
+  </row>
+<row>
+    <entry>cc_upload_server</entry>
+    <entry>(CC upload server); manually inspect /s/logs/cloud_controller_upload_server.log on Controller nodes.</entry>
+  </row>
+<row>
+    <entry>stackato-tty.log</entry>
+    <entry>(ALS TTY console); manually inspect /s/logs/stackato-tty.log on all nodes.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="101-and-previous"> <title>1.01 and previous</title>
+</section>
+<section id="buildpack-config-vars-deprecated"> <title>Buildpack config_vars Deprecated</title>
+<p>Buildpacks used to rely on the <codeph>config_vars</codeph> feature of <i>bin/release</i> to set environment variables, but this has been deprecated by Heroku.</p>
+<p>The replacement mechanism is to <xref href="https://devcenter.heroku.com/articles/profiled" scope="external" format="html" >create a shell script in \$HOME/.profile.d</xref> to
+set environment variables. This mechanism is fully supported by the Application Lifecycle Service and is used by all of the built-in buildpacks.</p>
+</section>
+<section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title>
+  <p>When using the <xref href="../../user/deploy/buildpack.dita#topic3370/legacy-buildpack"
+          >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i>
+        cannot be updated without re-pushing the application with new settings. Changes to variables
+        made in the Management Console will be overwritten by the original ones defined at push when
+        the application is restarted.</p>
+<p>To modify custom environment variables, re-push the application after changing the values in <i>manifest.yml</i>.</p>
+</section>
+<section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
+<p>With Application Lifecycle Service set in <i>Maintenance Mode</i>, all <codeph>_gateway</codeph>
+        processes will report the following error once per minute:</p>
+<codeblock>Failed registering with cloud controller, status=503</codeblock>
+<p>This is normal, and can be safely ignored. The service nodes will
+reconnect once the Controller is taken out of Maintenance Mode.</p>
+</section>
+<section id="nodes-with-fatal-or-perpetually-starting-processes"> <title>Nodes with FATAL or perpetually STARTING processes</title>
+<p>If the Core node of an Application Lifecycle Service cluster is offline for more than 90
+seconds, <codeph>kato status</codeph> will show processes on other
+nodes (systail, apptail, router and others) in a FATAL or (hung)
+STARTING state. These processes will not automatically reconnect to the
+Core node.</p>
+<p>To correct this, run <codeph>kato start</codeph> (for FATAL
+processes) or <codeph>kato restart</codeph> (for STARTING
+processes) on all affected nodes.</p>
+</section>
+<section id="avoiding-app-reliance-on-ip-addresses"> <title>Avoiding App Reliance on IP Addresses</title>
+<p>Cluster configurations make use of private IP addresses for identifying
+the various cluster nodes. Best practice is to avoid the literal use of
+these addresses wherever possible, as these addresses are subject to
+change with cluster configuration.</p>
+<p>If the VM instance can locally resolve a hostname rather than an IP
+address, it's generally best practice to use the hostname.</p>
+<p>If not, Application Lifecycle Service provides various <xref
+          href="../../user/reference/environment.dita#topic7631">environment</xref> variables so
+        that applications do not need to hardcode them at install time. Some examples are
+          <codeph>VCAP_SERVICES</codeph> and <codeph>DATABASE_URL</codeph>. We strongly encourage
+        their use.</p>
+<p>A known issue is that some applications have install procedures that
+can't be configured to make use of these variables. If the server that's
+providing the app's database (mysql_gateway/node for example) gets
+moved to another location, the only way for the app to become aware of
+the new credentials is by restaging the app as noted below. A restart
+is <b>not</b> sufficient.</p>
+<p>Choose one of the following sets of commands according to need:</p>
+<codeblock>helion delete -n
+helion push -n</codeblock>
+<p>or:</p>
+<codeblock>helion delete -n
+helion update -n</codeblock>
+<p>Another possible workaround in such cases is to write a script that will pull the credentials from <codeph>VCAP_SERVICES</codeph>, update the app's configuration as needed, and then add this script to the pre-running hooks.</p>
+</section>
+</body>
+</topic>

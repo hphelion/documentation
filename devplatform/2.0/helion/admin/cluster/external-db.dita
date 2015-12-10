@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4533">
+<title>HPE Helion 2.0 Development Platform: External Data Services</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Net Ops Engineer"/>
+<othermeta name="role" content="NOC Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic4533/general-principles">General Principles</xref>
+</li>
+<li>
+<xref type="section" href="#topic4533/mysql">MySQL</xref>
+</li>
+<li>
+<xref type="section" href="#topic4533/postgresql">PostgreSQL</xref>
+</li>
+<li>
+<xref type="section" href="#topic4533/troubleshooting">Troubleshooting</xref>
+</li>
+</ul>
+<p>Application Lifecycle Service comes with several data services that can be enabled on an Application Lifecycle Service cluster. However, for implementations where high
+availability or high performance databases are required, it's advisable
+to configure Application Lifecycle Service to connect to an externally maintained database or
+data service.</p>
+<p>External data services can be configured at the discretion of the
+administrator or service provider, but in many cases they can be set up
+so that Application Lifecycle Service can allocate databases in the same way it does for the
+built-in databases.</p>
+<section id="general-principles"> <title>General Principles</title>
+<p>Any application running on Application Lifecycle Service can connect to an external database
+directly as long as the instance can route to the IP address and port of
+the database server. Database connections can be hard coded in the
+application without needing to make any changes to Application Lifecycle Service
+configuration.</p>
+<p>To automatically provision databases for applications on these external
+servers, Application Lifecycle Service must have access to an administrator account on the
+database server with permissions to create users and databases. The
+credentials for this account, along with the hostname and port of the
+database server, are set in the Application Lifecycle Service configuration (via <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
+<i>kato
+config</i>
+</xref>).</p>
+</section>
+<section id="mysql"> <title>MySQL</title>
+<p>The MySQL server must be set up to allow connections over the network
+(rather than just on 'localhost'). Make sure the 'bind-address' is set
+to the host's IP address (or '0.0.0.0').</p>
+<p>Enter the <codeph>mysql</codeph> shell and grant the root user
+privileges on all tables. For example:</p>
+<codeblock>$ GRANT ALL PRIVILEGES ON *.* TO 'root'@'10.5.120.%' IDENTIFIED BY
+'&lt;PASSWORD&gt;'
+WITH GRANT OPTION;
+$ FLUSH PRIVILEGES;</codeblock>
+<p>The <codeph>10.5.120.%</codeph> portion above should be in relation
+to the Application Lifecycle Service <codeph>mysql_node</codeph> IP address. For
+increased security you can create a special 'helion' user with the
+same privileges as the 'root' user as an alternative option.</p>
+<p>Once the user is configured to accept connections from Application Lifecycle Service and to
+create users and databases, change the configuration for 'mysql_node'
+in Application Lifecycle Service. For example:</p>
+<codeblock>$ kato config set mysql_node mysql/host 10.5.120.101
+$ kato config set mysql_node mysql/pass yourpassword
+$ kato config set mysql_node mysql/port 3306
+$ kato config set mysql_node mysql/user root</codeblock>
+<p>Once these have been set, restart mysql:</p>
+<codeblock>$ kato restart mysql</codeblock>
+</section>
+<section id="postgresql"> <title>PostgreSQL</title>
+<p>Make sure the PostgreSQL database server (version 9.1 or later) will
+accept connections over the network. Edit <i>postgresql.conf</i> make sure
+the 'listen_addresses' is uncommented and set to the networked
+interface IP. For example:</p>
+<codeblock>listen_addresses = 'localhost, 10.5.120.102'</codeblock>
+<p>Edit <i>pg_hba.conf</i> and make sure a line exists that allows all Application Lifecycle Service
+instances to connect to it. For example:</p>
+<codeblock>host    all   all       10.5.120.0/23   md5</codeblock>
+<p>Restart PostgreSQL.</p>
+<p>Using the default 'postgres' user (or another account with the same
+superuser privileges), change the configuration for 'postgresql_node'
+in Application Lifecycle Service. For example:</p>
+<codeblock>$ kato config set postgresql_node postgresql/host 10.5.120.102
+$ kato config set postgresql_node postgresql/pass yourpassword
+$ kato config set postgresql_node postgresql/port 5432
+$ kato config set postgresql_node postgresql/user postgres</codeblock>
+<p>Once these have been set, restart the postgresql_node process:</p>
+<codeblock>$ kato restart postgresql_node</codeblock>
+</section>
+<section id="troubleshooting"> <title>Troubleshooting</title>
+<p>The <codeph>psql</codeph> and <codeph>mysql</codeph> clients
+are available at the command line on the Application Lifecycle Service VM. Log in to the Core
+node (i.e. the one running the Cloud Controller) and test the database
+connection directly with the appropriate client. For example:</p>
+<codeblock>$ mysql -u helion -p mypassword -h 10.5.120.101
+mysql&gt; show databases;
+...</codeblock>
+<p>If the basic client connection works, test database creation using the
+<codeph>helion create-service ...</codeph> command:</p>
+<codeblock>$ helion create-service mysql
+Creating Service [mysql-24901]: OK</codeblock>
+<p>If there are problems, check the corresponding logs on the database
+server. These are generally found in <i>/var/log/postgresql</i> and
+<i>/var/log/mysql</i>.</p>
+<p>Logs from Application Lifecycle Service can be viewed with <codeph>kato log tail</codeph>:</p>
+<codeblock>$ kato log tail postgresql_node</codeblock>
+</section>
+</body>
+</topic>

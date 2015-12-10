@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3706">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Authentication Tokens</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic3706/command-create-service-auth-token">helion create-service-auth-token</xref>: Create a new service authentication token.</li>
+<li>
+<xref type="section" href="#topic3706/command-delete-service-auth-token">helion delete-service-auth-token</xref>: Delete the specified service authentication token</li>
+<li>
+<xref type="section" href="#topic3706/command-service-auth-tokens">helion service-auth-tokens</xref>:Show all service authentication tokens knowns to the target. </li>
+<li>
+<xref type="section" href="#topic3706/command-update-service-auth-token">helion update-service-auth-token</xref>: Update the specified service authentication token.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-create-service-auth-token"> <title>helion create-service-auth-token &lt;<i>label</i>&gt; &lt;<i>provider</i>&gt;</title>
+<p>Create a new service authentication token.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--auth-token</entry>
+<entry>Value of the new token.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-delete-service-auth-token"> <title>helion delete-service-auth-token &lt;<i>label</i>&gt;</title>
+<p>Delete the specified service authentication token.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation..</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-service-auth-tokens"> <title>helion service-auth-tokens</title>
+<p>Show all service authentication tokens known to the target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--json</entry>
+<entry>Print raw json as output, not human-formatted data.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-service-auth-token"> <title>helion update-service-auth-token &lt;<i>label</i>&gt;</title>
+<p>Update the specified service authentication token.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--auth-token</entry>
+<entry>New value of the specified token.</entry>
+</row>
+<row>
+<entry>--organization, -o</entry>
+<entry>The once-off organization to use for the current operation.</entry>
+</row>
+<row>
+<entry>--space</entry>
+<entry>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <varname>--space-guid</varname>.</entry>
+</row>
+<row>
+<entry>--space-guid</entry>
+<entry>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <varname>--space</varname>.</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

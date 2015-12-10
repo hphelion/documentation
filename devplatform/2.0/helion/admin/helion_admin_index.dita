@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2276">
+<title>HPE Helion 2.0 Development Platform: Application Lifecycle Service Admin Guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Application Lifecycle Service is our cloud application framework for creating a multi-language,
+      secure and private Platform-as-a-Service (PaaS). This guide covers how to set it up and how to
+      configure it for your end users.</p>
+<section id="wizard-based-cluster-creation"> <title>Wizard-Based Cluster Creation</title>
+<p>You can easily create and access Application Lifecycle Service clusters from the <xref
+          href="../../devplatform.deploy-ALS.dita">Horizon Dashboard</xref>. </p>
+</section>
+<section id="management-console"> <title>Helion Development Platform Management Console</title>
+<ul>
+<li>
+<xref href="../user/console/console_index.dita" >Management Console</xref>
+</li>
+<li>
+<xref href="console/app-store.dita">Sample Applications </xref></li>
+</ul>
+</section>
+<section id="server-configuration"> <title>Advanced/Manual Server Configuration</title>
+<p>This section covers advanced configuration settings that allow you to modify default cluster component behavior.</p>
+<ul>
+<li>
+          <xref href="server/server_index.dita">Server Configuration</xref>
+          <ul>
+            <li>
+              <xref href="server/server_index.dita#server_index/accessing-server-via-the-command-line" type="section"
+                >Accessing Server via the Command Line</xref>
+            </li>
+            <li>
+              <xref href="server/server_index.dita#server_index/common-operations" type="section"  >Common Operations</xref>
+            </li>
+            <li>
+              <xref href="server/server_index.dita#server_index/detailed-configuration" type="section"  >Detailed
+                Configuration</xref>
+            </li>
+          </ul></li>
+<li>
+          <xref href="server/router.dita">Router</xref>
+          <ul>
+            <li>
+              <xref href="server/router.dita#topic3030/settings" type="section"  >Settings</xref>
+            </li>
+            <li>
+              <xref href="server/router.dita#topic3030/websockets" type="section"  >WebSockets</xref>
+            </li>
+            <li>
+              <xref href="server/router.dita#topic3030/router-spdy" type="section"  >SPDY</xref>
+            </li>
+          </ul></li>
+<li>
+          <xref href="server/docker.dita">Docker &amp; Fence</xref>
+          <ul>
+            <li>
+              <xref href="server/docker.dita#topic7767/modifying-or-updating-the-container-image" type="section"  >Modifying
+                or Updating the Container Image</xref>
+            </li>
+            <li>
+              <xref href="server/docker.dita#topic7767/admin-hooks" type="section"  >Admin Hooks</xref>
+            </li>
+            <li>
+              <xref href="server/docker.dita#topic7767/creating-a-docker-registry" type="section"  >Creating a
+                Docker Registry</xref>
+            </li>
+          </ul></li>
+<li>
+          <xref href="server/logging.dita">Log Streams</xref>
+          <ul>
+            <li>
+              <xref href="server/logging.dita#topic11928/logyard" type="section"  >Logyard</xref>
+            </li>
+            <li>
+              <xref href="server/logging.dita#topic11928/drains" type="section"  >Drains</xref>
+            </li>
+            <li>
+              <xref href="server/logging.dita#topic11928/configuration" type="section"  >Configuration</xref>
+            </li>
+            <li>
+              <xref href="server/logging.dita#topic11928/debugging-logyard" type="section"  >Debugging
+                Logyard</xref></li>
+            <li>
+              <xref
+                href="best-practices/logging-examples.dita#topic2651/hello-world-custom-drain"
+                >Hello World Custom Drain Sample</xref>
+            </li>
+          </ul></li>
+<li>
+          <xref href="server/aok.dita">AOK Authentication Server</xref>
+          <ul>
+            <li>
+              <xref href="server/aok.dita#topic8359/web" type="section"  >End User Login</xref>
+            </li>
+            <li>
+              <xref href="server/aok.dita#topic8359/strategies" type="section"  >Strategies</xref>
+            </li>
+            <li>
+              <xref href="server/aok.dita#topic8359/configuration" type="section"  >Configuration</xref>
+            </li>
+            <li>
+              <xref href="server/aok.dita#topic8359/user-management" type="section"  >User Management</xref>
+            </li>
+            <li>
+              <xref href="server/aok.dita#topic8359/first-admin-user-setup" type="section"  >First Admin User
+                Setup</xref>
+            </li>
+            <li>
+              <xref href="server/aok.dita#topic8359/regular-ldap-user-setup" type="section"  >Regular LDAP User
+                Setup</xref>
+            </li>
+          </ul></li>
+</ul>
+</section>
+<section id="cluster-configuration"> <title>Advanced/Manual Cluster Configuration</title>
+<p>This section provides information on how to set up a standalone cluster and modify default cluster level settings.</p>
+<ul>
+<li>
+          <xref href="cluster/cluster_index.dita">Cluster Setup</xref>
+          <ul>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/roles" type="section"  >Roles</xref>
+            </li>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/preparing-the-core-node" type="section"  >Preparing the
+                Core Node</xref>
+            </li>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/attaching-nodes-and-enabling-roles" type="section"  
+                >Attaching Nodes and Enabling Roles</xref>
+            </li>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/example-clusters" type="section"  >Example Clusters</xref>
+            </li>
+            <li>
+              <xref
+                href="cluster/cluster_index.dita#admin_cluster_index/roles-requiring-persistent-or-shared-storage"
+                >Roles Requiring Persistent or Shared Storage</xref>
+            </li>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/port-configuration" type="section"  >Port
+                Configuration</xref>
+            </li>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/multiple-controllers" type="section"  >Multiple
+                Controllers</xref>
+            </li>
+            <li>
+              <xref href="cluster/cluster_index.dita#admin_cluster_index/load-balancer-and-multiple-routers" type="section"  >Load
+                Balancer and Multiple Routers</xref>
+            </li>
+          </ul></li>
+<li>
+          <xref href="cluster/external-db.dita">External Data Services</xref>
+          <ul>
+            <li>
+              <xref href="cluster/external-db.dita#topic4533/general-principles" type="section"  >General
+                Principles</xref>
+            </li>
+            <li>
+              <xref href="cluster/external-db.dita#topic4533/mysql" type="section"  >MySQL</xref>
+            </li>
+            <li>
+              <xref href="cluster/external-db.dita#topic4533/postgresql" type="section"  >PostgreSQL</xref>
+            </li>
+            <li>
+              <xref href="cluster/external-db.dita#topic4533/troubleshooting" type="section"  
+                >Troubleshooting</xref>
+            </li>
+            <li><xref href="reference/add-service.dita">Adding System Services</xref>
+            </li>
+          </ul></li>
+<li>
+          <xref href="cluster/harbor.dita">Harbor: TCP/UDP Port Service</xref>
+          <ul>
+            <li>
+              <xref href="cluster/harbor.dita#topic4009/architecture" type="section"  >Architecture</xref>
+            </li>
+            <li>
+              <xref href="cluster/harbor.dita#topic4009/requirements-setup" type="section"  >Requirements &amp;
+                Setup</xref>
+            </li>
+            <li>
+              <xref href="cluster/harbor.dita#topic4009/troubleshooting" type="section"  >Troubleshooting</xref>
+            </li>
+          </ul></li>
+</ul>
+</section>
+<section id="best-practices"> <title>Best Practices</title>
+<ul>
+<li>
+          <xref href="best-practices/best_practices_index.dita">Best Practices</xref>
+          <ul>
+            <li>
+              <xref href="best-practices/best_practices_index.dita#topic16169/applying-updates" type="section"  >Applying
+                Updates</xref>
+            </li>
+            <li>
+              <xref href="best-practices/best_practices_index.dita#topic16169/bestpractices-migration" type="section"  >Backup &amp;
+                Migration</xref>
+            </li>
+            <li>
+              <xref href="best-practices/best_practices_index.dita#topic16169/upgrade" type="section"  >Upgrading</xref>
+            </li>
+            <li>
+              <xref href="best-practices/best_practices_index.dita#topic16169/bestpractices-persistent-storage" type="section"  >Persistent Storage</xref>
+            </li>
+          </ul></li>
+</ul>
+</section>
+<section id="reference"> <title>Reference</title>
+<ul>
+<li>
+<xref href="reference/kato-ref.dita" >Kato Command Reference</xref>
+</li>
+<li>
+          <xref href="../user/reference/client-ref.dita">ALS Client Command Reference</xref>
+        </li>
+<li>
+<xref href="../user/deploy/orgs-spaces.dita" >Managing Groups, Users &amp; Limits</xref>
+</li>
+<li>
+<xref href="reference/architecture.dita" >Architectural Design</xref>
+</li>
+<li>
+<xref href="../user/reference/glossary.dita" >Glossary</xref>
+</li>
+<li>
+<xref href="reference/reference_troubleshoot.dita" >Troubleshooting</xref>
+</li>
+</ul>
+</section>
+</body>
+</topic>

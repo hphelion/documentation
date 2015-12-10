@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3572">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Buildpacks</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+<xref type="section" href="#topic3572/command-buildpacks">helion buildpacks</xref>: Show all buildpacks known to the target in the order they are checked in during auto-detection.</li>
+<li>
+<xref type="section" href="#topic3572/command-create-buildpack">helion create-buildpack</xref>: Add a buildpack to the target.</li>
+<li>
+<xref type="section" href="#topic3572/command-delete-buildpack">helion delete-buildpack</xref>: Remove the specified buildpack from the target.</li>
+<li>
+<xref type="section" href="#topic3572/command-rename-buildpack">helion rename-buildpack</xref>: Change the name of the specified buildpack.</li>
+<li>
+<xref type="section" href="#topic3572/command-update-buildpack">helion update-buildpack</xref>: Change the information known about the specified buildpack.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-buildpacks"> <title>helion buildpacks</title>
+<p>Show all buildpacks known to the target in the order they are checked in during auto-detection.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--json</entry>
+    <entry>Print raw json as output, not human-formatted data.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-create-buildpack"> <title>helion create-buildpack &lt;<i>name</i>&gt; &lt;<i>zip</i>&gt;</title>
+<p>Add a buildpack to the target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--disable</entry>
+    <entry>Disable the buildpack, preventing its use.</entry>
+  </row>
+<row>
+    <entry>--enable</entry>
+    <entry>Enable use of the buildpack.</entry>
+  </row>
+<row>
+    <entry>--lock</entry>
+    <entry>Lock the buildpack against modification.</entry>
+  </row>
+<row>
+    <entry>--position, -p</entry>
+    <entry>Location of the buildpack in the sequence used to check them during auto-detection.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--unlock</entry>
+    <entry>Unlock the buildpack, allow changes again.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-delete-buildpack"> <title>helion delete-buildpack &lt;<i>name</i>&gt;</title>
+<p>Remove the specified buildpack from the target.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-rename-buildpack"> <title>helion rename-buildpack &lt;<i>name</i>&gt; &lt;<i>newname</i>&gt;</title>
+<p>Change the name of the specified buildpack.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="command-update-buildpack"> <title>helion update-buildpack &lt;<i>name</i>&gt;</title>
+<p>Change the information known about the specified buildpack.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Option</b>
+</entry>
+<entry>
+<b>Description</b>
+</entry>
+</row>
+<row>
+    <entry>--disable</entry>
+    <entry>Disable the buildpack, preventing its use.</entry>
+  </row>
+<row>
+    <entry>--enable</entry>
+    <entry>Enable use of the buildpack.</entry>
+  </row>
+<row>
+    <entry>--lock</entry>
+    <entry>Lock the buildpack against modification.</entry>
+  </row>
+<row>
+    <entry>--position, -p</entry>
+    <entry>Location of the buildpack in the sequence used to check them during auto-detection.</entry>
+  </row>
+<row>
+<entry>--target</entry>
+<entry>The once-off target to use for the current operation.</entry>
+</row>
+<row>
+<entry>--token</entry>
+<entry>The once-off authentication token to use for the current
+operation.</entry>
+</row>
+<row>
+<entry>--token-file</entry>
+<entry>Path to an existing and readable file containing the targets and
+authorization tokens.</entry>
+</row>
+<row>
+    <entry>--unlock</entry>
+    <entry>Unlock the buildpack, allow changes again.</entry>
+  </row>
+<row>
+    <entry>--zip</entry>
+    <entry>Path or url of the new zip file containing the implementation of the buildpack. Accepts the path to a local directory as well, which will become the zip file to upload.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

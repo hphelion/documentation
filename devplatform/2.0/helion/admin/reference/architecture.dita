@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4407">
+<title>HPE Helion 2.0 Development Platform: Architectural Design</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Net Ops Engineer"/>
+<othermeta name="role" content="NOC Engineer"/>
+<othermeta name="role" content="Network Architect"/>
+<othermeta name="role" content="Application Architect"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+        <xref type="section" href="#topic4407/architecture-roles">Roles</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic4407/architecture-base">Base</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-primary">Primary</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-cloud-controller">Cloud
+              Controller</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-router">Router</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-droplet-execution-agents">Droplet
+              Execution Agents</xref>
+          </li>
+        </ul></li>
+<li>
+        <xref type="section" href="#topic4407/architecture-service-roles">Service Roles</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic4407/architecture-databases">Databases</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-other-data-services">Other data
+              services</xref>
+          </li>
+        </ul></li>
+<li>
+<xref type="section" href="#topic4407/architecture-role-groups">Role Groups</xref>
+</li>
+</ul>
+  <p>The Application Lifecycle Service VM is a stand-alone <xref href="../../user/reference/glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
+Agents (DEAs, or worker nodes), or specific database services.</p>
+<p>
+      <image href="../../../../../media/helion-architecture-diagram.png"/>
+    </p>
+<section id="architecture-roles"> <title>Roles</title>
+</section>
+<section id="architecture-base"> <title>Base</title>
+<p>The Base role comprises several processes that are necessary for any node to function as part of an Application Lifecycle Service cluster, and is mostly responsible for communicating with the primary node and forwarding log information.</p>
+<p>This role cannot be disabled on any node.</p>
+</section>
+<section id="architecture-primary"> <title>Primary</title>
+<p>The Primary role is a mandatory part of a Core node (or micro cloud) and runs a number of critical system processes, including the Cloud Controller, Health Manager, and Router.</p>
+<p>The Health Manager keeps track of the apps on each DEA and provides feedback on the number currently running. It works in conjunction with the Cloud Controller and must be run on the same VM.</p>
+<p>In a cluster setup, all nodes performing other roles are attached to the MBUS IP of the Core
+        node. Every cluster must include exactly one Primary role. <note>The Router role must be run
+          along with the Primary even if there are other Routers in the cluster and even if the node
+          is not exposed to the internet.</note></p>
+</section>
+<section id="architecture-cloud-controller"> <title>Cloud Controller</title>
+<p>The Controller manages most of the operations of an Application Lifecycle Service system. It hosts the Management Console, provides the API endpoint for client access, manages the cloud_controller_ng process, provisions services, dispatches applications for staging and deployment, and (with the Health Manager) tracks the availability of DEA nodes. The Cloud Controller allocates instances of an application across available DEA nodes, prioritizing eligible nodes that are running the fewest instances of that app already. This maintains an even distribution of instances of an app across the pool.</p>
+  <p>In a cluster setup, the Controller role must run on the <xref href="../cluster/cluster_index.dita#admin_cluster_index/set-up-the-core-node" type="section"   >Core node</xref> that all other VM's in the cluster connect to.</p>
+  <p>A single Controller is sufficient for small and mid-sized clusters, but <xref href="../cluster/cluster_index.dita#admin_cluster_index/multiple-controllers" type="section"   >multiple Controllers</xref> can be configured if necessary for larger implementations.</p>
+</section>
+<section id="architecture-router"> <title>Router</title>
+<p>The router directs incoming network traffic to the appropriate
+application.</p>
+<p>For smaller configurations, the router can be run on the same Application Lifecycle Service VM as the other components.</p>
+  <p>When additional DEAs are in use and traffic increases, additional routers can be added to handle the load. This will require a <xref href="../cluster/cluster_index.dita#admin_cluster_index/load-balancer-and-multiple-routers" type="section"   >load balancer</xref> to be available
+in the cluster.</p>
+</section>
+<section id="architecture-droplet-execution-agents"> <title>Droplet Execution Agents</title>
+<p>The Droplet Execution Agent (DEA) role in Application Lifecycle Service is responsible for
+staging applications and running application instances within Linux
+containers. In an Application Lifecycle Service cluster, there will typically be a number of
+nodes running the DEA role, which in turn each host multiple user
+application instances.</p>
+<p>The DEA role is comprised of a number of processes:</p>
+  
+  <dl>
+    <dlentry>
+      <dt>dea_ng</dt>
+      <dd>Master process for staging and starting application instances and then reporting their state via NATS to the Health Manager.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>dir_server</dt>
+      <dd>Handles requests for directories/files and responds with an HTTP URL.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>fence</dt>
+      <dd>Responsible for the management of application containers using Docker.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>apptail</dt>
+      <dd>Streams application logs via Logyard to various log drains.</dd>
+    </dlentry>
+  </dl>
+<p>The Docker image used for the containers can be <xref href="../server/docker.dita">customized</xref> by admins.</p>
+</section>
+<section id="architecture-service-roles"> <title>Service Roles</title>
+<p>Application Lifecycle Service nodes can also be assigned roles for data services. The data services can be run separately on their own nodes or grouped together.</p>
+</section>
+<section id="architecture-databases"> <title>Databases</title>
+<ul>
+<li>mysql</li>
+<li>postgresql</li>
+<li>redis</li>
+</ul>
+</section>
+<section id="architecture-other-data-services"> <title>Other data services</title>
+<ul>
+<li>filesystem ( Persistent filesystem service )</li>
+<li>rabbit ( RabbitMQ message queue service )</li>
+<li>memcached</li>
+<li>Harbor ( Ports service )</li>
+</ul>
+</section>
+<section id="architecture-role-groups"> <title>Role Groups</title>
+<p>Role groups represent a set of roles. For example the <b>data-services</b>
+group provides all databases plus RabbitMQ and the filesystem service:</p>
+<codeblock>kato role add data-services</codeblock>
+<p>Additional groups can be defined by administrators in
+<i>/s/etc/kato/role_groups.yml</i>.</p>
+</section>
+</body>
+</topic>

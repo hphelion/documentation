@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="user_filesystem">
+<title>HPE Helion 2.0 Development Platform: Persistent File System</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+    <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>The file system of application containers are ephemeral. Any application
+data or files stored locally within these containers is lost when the
+instance is stopped or restarted. To solve this, Application Lifecycle Service provides a filesystem type of service that can be shared between application instances,
+and even between applications deployed to the same space.</p>
+<p>A persistent file system service allows apps to do the following:</p>
+<ul>
+<li>Share files across multiple instances of an app</li>
+<li>Store files that persist if an app is removed (providing the service is not deleted) or if the server is restarted.</li>
+<li>Conserve space on filesystems allocated within the VM instance by referencing the persistent filesystem instead.</li>
+</ul>
+<section id="creating-a-persistent-file-system"> <title>Creating A Persistent File System</title>
+<p>A filesystem service can be configured in your <i>manifest.yml</i> file:</p>
+<codeblock>services:
+    mydata: filesystem</codeblock>
+<p>You can also use the <codeph>helion create-service</codeph>
+command:</p>
+<codeblock>helion create-service filesystem mydata
+    Creating Service: OK
+
+    helion services
+
+    =========== Provisioned Services ============
+
+    +----------------+------------+
+    | Name           | Service    |
+    +----------------+------------+
+    | mydata         | filesystem |
+    +----------------+------------+</codeblock>
+</section>
+<section id="using-a-persistent-file-system"> <title>Using A Persistent File System</title>
+<p>
+        <note> File system service is available during pre-staging and shouldn't need to be
+          reconfigured when the application starts.</note>
+      </p>
+<p>The filesystem service creates a path which your app can use to store
+and read files.</p>
+<p>If there is only one filesystem service, the
+<codeph>HELION_FILESYSTEM</codeph> environment variable can be
+used to get the path.</p>
+<p>If there is more than one filesystem service,
+<codeph>HELION_FILESYSTEM</codeph> is not available. Instead, a
+custom environment variable <codeph>HELION_FILESYSTEM_*</codeph>
+will be created based on the name of each filesystem service (with
+hyphens replaced by underscores).</p>
+<p>For example, if your <i>manifest.yml</i> file configures the following
+services:</p>
+<codeblock>services:
+    my-data: filesystem
+    plugins: filesystem</codeblock>
+<p>Two environment variables would be created:
+<codeph>HELION_FILESYSTEM_MY_DATA</codeph> and
+<codeph>HELION_FILESYSTEM_PLUGINS</codeph>.</p>
+<p>This naming scheme can be used in conjunction with the
+<codeph>HELION_APP_NAME_UPCASE</codeph> environment variable. For
+example, in an app with the following filesystem service defined:</p>
+<codeblock>services:
+  ${name}-foo: filesystem
+  ${name}-bar: filesystem</codeblock>
+<p>The filesystem mount point for the "foo" filesystem service can be
+accessed within the container using constructs such as:</p>
+<codeblock>FOO=HELION_FILESYSTEM_${HELION_APP_NAME_UPCASE}_FOO
+mkdir ${!FOO}/myapp</codeblock>
+<p>
+        <note>To use declarations like these in <xref
+            href="../deploy/manifestyml.dita#topic20922/hooks"
+            type="section">
+            <i>hooks</i>
+          </xref>, put them in a separate bash script. Brace expansion and grouping cannot be used
+          directly in YAML files.</note>
+      </p>
+<p>
+<!-- Does this also apply for VCAP services? if so should be rewritten perhaps. 
+Alternatively, `STACKAT0_SERVICES` contains
+information for all services:
+
+    {
+        "plugins": {
+            "dir": "/home/helion/fs/plugins"
+                },
+                "my-data": {
+                        "dir": "/home/helion/fs/my-data"
+                },
+                "mydb": {
+                        "name": "db76e25bc8fc142858653a6cb8c643204",
+                        "hostname": "192.168.0.112",
+                        "host": "192.168.0.112",
+                        "port": 3306,
+                        "user": "u7Fjl8hdb4iNu",
+                        "username": "u7Fjl8hdb4iNu",
+                        "password": "p4XQAhZr8xfHg"
+                }
+        }
+-->
+Since the <xref href="../reference/environment.dita">
+<i>environment
+variables</i>
+</xref> are
+available during the staging process, it is possible to make use of them
+in the <xref href="../deploy/manifestyml.dita" >
+<i>manifest.yml</i>
+</xref> file to
+configure a filesystem service and create a symlink to it for use by the
+app. (see example below)</p>
+</section>
+<section id="example-of-using-a-persistent-file-system"> <title>Example of Using A Persistent File System</title>
+<p>
+        <note> When linking the file system service to the application, using <i>symlinks</i> is
+          strongly recommended.</note>
+      </p>
+<p>We will go through how we customized our WordPress installation to use
+the persistent file system. Before you begin, find out where all the
+user generated contents are saved. You may have to make modifications to
+this general approach if your application stores user generated content
+in more than one location. In WordPress, they are stored in wp-content
+folder.</p>
+<p>We need to add the following to our manifest.yml:</p>
+<codeblock>services:
+    fs-wp: filesystem
+hooks:
+    post-staging:
+    # create wp-content in the shared filesystem
+    - mkdir -p "$HELION_FILESYSTEM"/wp-content
+
+    # migrate existing wp-content data into the shared filesystem
+    - mv wp-content/* "$HELION_FILESYSTEM"/wp-content
+
+    # remove unused wp-content directories
+    - rm -rf wp-content
+
+    # link to wp-content folder in the shared filesystem
+    - ln -s "$HELION_FILESYSTEM"/wp-content wp-content</codeblock>
+      <note> When moving files onto the mounted filesystem with a <codeph>mv</codeph> hook, you may
+        see an error message similar
+          to:<codeblock>mv: failed to preserve ownership for... Permission denied</codeblock><p>This
+          is a misleading warning, as the files <b>will</b> actually be moved with the correct
+          permissions and ownership.</p></note>
+</section>
+</body>
+</topic>

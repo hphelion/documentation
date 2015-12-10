@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1388">
+<title>HPE Helion 2.0 Development Platform: Application Lifecycle Service Documentation</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+    <p>The <b>Application Lifecycle Service (ALS)</b> is a &lt;tm tmtype="tm"&gt;Cloud
+      Foundry&lt;/tm&gt; -based, managed runtime environment for applications. It is polyglot
+      Platform-as-a-Service (PaaS) software. Whether you run it in your own data center using the
+      hypervisor of your choice or on your favorite cloud hosting provider, it provides the backbone
+      for your private or public PaaS.</p>
+    <section id="admin-guide">
+      <title>ALS Admin Guide</title>
+      <p>Documentation intended for system operators in charge of setting up, configuring, and
+        maintaining the platform.</p>
+      <ul>
+        <li>
+          <xref href="admin/helion_admin_index.dita">Application Lifecycle Service Admin Guide</xref>
+          <ul>
+            <li>
+              <xref href="admin/helion_admin_index.dita#topic2276/wizard-based-cluster-creation" type="section"  >Wizard-Based
+                Cluster Creation</xref>
+            </li>
+            <li>
+              <xref href="admin/helion_admin_index.dita#topic2276/management-console" type="section"  >Management
+                Console</xref>
+            </li>
+            <li>
+              <xref href="admin/helion_admin_index.dita#topic2276/server-configuration" type="section"  >Server
+                Configuration</xref>
+            </li>
+            <li>
+              <xref href="admin/helion_admin_index.dita#topic2276/cluster-configuration" type="section"  >Cluster
+                Configuration</xref>
+            </li>
+            <li>
+              <xref href="admin/helion_admin_index.dita#topic2276/best-practices" type="section"  >Best Practices</xref>
+            </li>
+            <li>
+              <xref href="admin/helion_admin_index.dita#topic2276/reference" type="section"  >Reference</xref>
+            </li>
+          </ul></li>
+      </ul>
+    </section>
+    <section id="user-guide">
+      <title>ALS User Guide</title>
+      <p>Documentation intended for developers and other end users who will be using a platform set
+        up and maintained by others.</p>
+      <ul>
+        <li>
+          <xref href="user/helion_user_index.dita">Application Lifecycle Service User Guide</xref>
+          <ul>
+            <li>
+              <xref href="user/helion_user_index.dita#topic1693/quick-start" type="section"  >Quick Start</xref>
+            </li>
+            <li>
+              <xref href="CLI/ALS_Client_Downloads.dita">Application Lifecycle Service
+                Client</xref>
+            </li>
+            <li>
+              <xref href="user/helion_user_index.dita#topic1693/deploying-applications" type="section"  >Deploying
+                Applications</xref>
+            </li>
+            <li>
+              <xref href="user/helion_user_index.dita#topic1693/services" type="section"  >Services</xref>
+            </li>
+            <li>
+              <xref href="user/helion_user_index.dita#topic1693/logging-monitoring" type="section" >Logging &amp;
+                Monitoring</xref>
+            </li>
+            <li>
+              <xref href="user/helion_user_index.dita#topic1693/management-console" type="section" >Management Console</xref>
+            </li>
+          </ul></li>
+      </ul>
+    </section>
+    <section id="reference">
+      <title>Reference</title>
+      <ul>
+        <li>
+          <xref href="CLI/ALS_Client_Downloads.dita">ALS Cluster Management Tool</xref>
+        </li>
+        <li>
+          <xref href="user/reference/client-ref.dita">ALS Command-Line Client Reference</xref>
+        </li>
+        <li>
+          <xref href="admin/reference/kato-ref.dita"><i>kato</i> Command Reference</xref>
+        </li>
+        <li>
+          <xref href="user/deploy/manifestyml.dita"><i>manifest.yml</i> Reference</xref>
+        </li>
+        <li>
+          <xref href="user/reference/environment.dita">Environment Variables</xref>
+        </li>
+        <li>
+          <xref href="user/reference/glossary.dita">Glossary</xref>
+        </li>
+        <li>
+          <xref href="user/reference/reference_troubleshoot.dita">Troubleshooting</xref>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

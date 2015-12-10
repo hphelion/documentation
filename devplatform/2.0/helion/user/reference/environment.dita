@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7631">
+<title>HPE Helion 2.0 Development Platform: Environment Variables</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Application Lifecycle Service exposes a number of predefined <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man7/environ.7.html" scope="external" format="html" >environment variables</xref> during runtime, including hook processing, cron jobs and ssh commands.</p>
+<p>Some environment variables are also available during application <xref type="section" href="#topic7631/staging">staging</xref>.</p>
+<p>You can set your own environment variables:</p>
+<ul>
+<li>in an <codeph>env</codeph> block in <xref href="../deploy/manifestyml.dita">
+          <i>manifest.yml</i>
+        </xref>,</li>
+<li>via the application's Details page in the <xref href="../../admin/console/customize.dita">Management
+Console</xref>, or</li>
+  <li>using the <xref href="../reference/client-ref-management.dita#topic50918/command-env-add" type="section"   >env-add</xref>
+command.</li>
+
+</ul>
+    <note>To see a complete list of environment variables in an Application Lifecycle Service
+      application container, deploy the <xref href="https://github.com/Stackato-Apps/node-env"
+        scope="external" format="html">node-env</xref> sample.</note>
+<section id="database-url"> <title>DATABASE_URL</title>
+<p>Contains an access URL for a database service. If more than one type of database is present, <codeph>DATABASE_URL</codeph> will not be available. Instead, use the <xref href="../services/data-services.dita#user_data_services/database-specific-urls" type="section"   >Database-Specific URL</xref> variables.</p>
+<p>Example:</p>
+<codeblock>mysql://u93Mm8XmGXQ9R:p8LwNeQXMrNzi@192.168.0.112:3306/d0a60c0be931f4982bbef153f993237bc</codeblock>
+</section>
+<section id="memcache-url"> <title>MEMCACHED_URL</title>
+<p>Location of and credentials for the bound <b>Memcached</b> service, if there is (only) one.</p>
+</section>
+<section id="mysql-url"> <title>MYSQL_URL</title>
+<p>Location of and credentials for the bound <b>MySQL</b> service, if there is (only) one.</p>
+</section>
+<section id="postgresql-url"> <title>POSTGRESQL_URL</title>
+<p>Location of and credentials for the bound <b>PostgreSQL</b> service, if there is (only) one.</p>
+</section>
+<section id="redis-url"> <title>REDIS_URL</title>
+<p>Location of and credentials for the bound <b>Redis</b> service, if there is (only) one.</p>
+</section>
+<section id="rabbitmq-url"> <title>RABBITMQ_URL</title>
+<p>Location of and credentials for the bound <b>RabbitMQ</b> service, if there is (only) one.</p>
+</section>
+<section id="home"> <title>HOME</title>
+<p>Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to <i>/home/helion/app/</i> by default.</p>
+</section>
+<section id="http-proxy"> <title>HTTP_PROXY</title>
+<p>A variable recognized by many web applications to direct them to a proxy HTTP server.</p>
+</section>
+<section id="memory-limit"> <title>MEMORY_LIMIT</title>
+<p>The amount of memory allocated to the application container.</p>
+</section>
+<section id="path"> <title>PATH</title>
+<p>A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.</p>
+</section>
+<section id="pip-opts"> <title>PIP_OPTS</title>
+  <p>Custom/alternate <xref href="glossary.dita#topic6187/term-pip" type="section"   >PIP</xref> repo location.</p>
+<p>Example:</p>
+<codeblock>env:
+      PIP_OPTS: "--extra-index-url=http://company.com/inhouse-pypi-mirror"</codeblock>
+</section>
+<section id="port"> <title>PORT</title>
+<p>Application Lifecycle Service alternative for VCAP_APP_PORT.</p>
+</section>
+<section id="processes-web"> <title>PROCESSES_WEB</title>
+<p>This variable contains the default start command that would be used when <xref href="../deploy/manifestyml.dita" >
+<i>manifest.yml</i>
+</xref> doesn't override it. It is provided so that users can specify a wrapper around the default command.
+For example:</p>
+<codeblock>processes:
+   web: newrelic\_wrapper \$PROCESSES\_WEB</codeblock>
+<p>Note that <codeph>PROCESSES_WEB</codeph> may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.</p>
+</section>
+<section id="pypm-opts"> <title>PYPM_OPTS</title>
+  <p>Custom/alternate <xref href="glossary.dita#topic6187/term-pypm" type="section"   >PyPM</xref> repo location. Repo mirroring is an undocumented feature. Example:</p>
+  <p>Custom/alternate <xref href="glossary.dita#topic6187/term-pypm">PyPM</xref> repo location.
+        Repo mirroring is an undocumented feature. Example:</p>
+<codeblock>env:
+    PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"</codeblock>
+</section>
+<section id="helion-app-env"> <title>HELION_APP_ENV</title>
+<p><note>Subject to change.</note> Contains a list of all environment variables set with <xref
+          href="client-ref-management.dita#topic50918/command-env-add">env-add</xref> or through
+        the <xref href="../deploy/manifestyml.dita">manifest.yml</xref> file.</p>
+</section>
+<section id="helion-app-name"> <title>HELION_APP_NAME</title>
+<p>Contains the application name as specified during application push (or in <i>manifest.yml</i>). Available during staging as well as in the application instance.</p>
+</section>
+<section id="helion-app-name-upcase"> <title>HELION_APP_NAME_UPCASE</title>
+<p>Contains the same value as HELION_APP_NAME transformed to uppercase, with dashes replaced by underscores. For example if HELION_APP_NAME is "php-info", then HELION_APP_NAME_UPCASE will be "PHP_INFO".</p>
+  <p>This makes it possible to access the environment variables for <xref href="../services/port-service.dita#topic7511/port-service-env-vars" type="section"   >
+<i>harbor</i>
+  </xref> and <xref href="../services/filesystem.dita"><i>filesystem</i></xref> services.</p>
+</section>
+<section id="helion-app-root"> <title>HELION_APP_ROOT</title>
+<p>This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.</p>
+<p>The <xref type="section" href="#topic7631/home">HOME</xref> environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where <i>manifest.yml</i> and all the application files live.</p>
+</section>
+<section id="helion-document-root"> <title>HELION_DOCUMENT_ROOT</title>
+<p>This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/helion/app).</p>
+</section>
+<section id="helion-filesystem"> <title>HELION_FILESYSTEM</title>
+<p>If the app uses a single <codeph>filesystem</codeph> service, then the local mount point is stored in this variable. If there is more than one <codeph>filesystem</codeph> service, <codeph>HELION_FILESYSTEM</codeph> is not available. Instead, a custom environment variable <codeph>HELION_FILESYSTEM_*</codeph> will be created based on the name of each filesystem service (with hyphens replaced by underscores).</p>
+<p>For example, if your <i>manifest.yml</i> file configures the following services:</p>
+<codeblock>   services:
+      my-data: filesystem
+      plugins: filesystem</codeblock>
+<p>Two environment variables would be created:
+    <codeph>HELION_FILESYSTEM_MY_DATA</codeph> and
+    <codeph>HELION_FILESYSTEM_PLUGINS</codeph>.</p>
+</section>
+<section id="helion-target"> <title>HELION_TARGET</title>
+<p>Can be set in the local shell to specify the API endpoint target for the <codeph>helion</codeph> client. When set, the <codeph>helion target</codeph> command is ignored until the variable is explicitly unset. Can be overridden with the <codeph>--target</codeph> option.</p>
+</section>
+<section id="helion-uwsgi"> <title>HELION_UWSGI</title>
+<p>Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in <xref href="../deploy/manifestyml.dita" >
+<i>manifest.yml</i>
+</xref>:</p>
+<codeblock>   processes:
+      web: $HELION_UWSGI --another-uwsgi-option</codeblock>
+</section>
+<section id="vcap-app-host"> <title>VCAP_APP_HOST</title>
+<p>This variable contains the IP address of the host that the application is running on.</p>
+</section>
+<section id="vcap-app-port"> <title>VCAP_APP_PORT</title>
+<p>This variable contains the port that the application will be exposed on.</p>
+</section>
+<section id="vcap-application"> <title>VCAP_APPLICATION</title>
+<p>This variable contains all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)</p>
+</section>
+<section id="vcap-services"> <title>VCAP_SERVICES</title>
+  <p>Contains connection details, credentials, and meta data for services bound to the application. See <xref href="../services/data-services.dita#user_data_services/vcap-services" type="section"   >VCAP_SERVICES</xref>.</p>
+</section>
+<section id="staging"> <title>Staging Variables</title>
+<p><note> Service instance variables (VCAP_SERVICES) can change between staging and running. Do not
+          save values from these variables to config files during staging as the hard-coded values
+          may no longer be applicable after staging.</note>The following environment variables are
+        available during application staging and can be used in buildpacks or staging hooks:</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<b>Name</b>
+</entry>
+<entry>
+<b>Purpose</b>
+</entry>
+</row>
+<row>
+    <entry>BUILDPACK_CACHE</entry>
+    <entry>Filesystem location the buildpack uses to store assets during the build.</entry>
+  </row>
+<row>
+    <entry>http_proxy and https_proxy</entry>
+    <entry>The proxy host:port of the DEA running the staging container.</entry>
+  </row>
+<row>
+    <entry>HOME</entry>
+    <entry>As above, but containing a different filesystem path during staging</entry>
+  </row>
+<row>
+    <entry>STAGING_TIMEOUT</entry>
+    <entry>Time limit for staging to complete.</entry>
+  </row>
+<row>
+    <entry>USER</entry>
+    <entry>Will always be <varname>helion</varname>.</entry>
+  </row>
+<row>
+    <entry>MEMORY_LIMIT</entry>
+    <entry>The amount of memory allocated to the application container.</entry>
+  </row>
+<row>
+    <entry>HELION_APP_NAME</entry>
+    <entry>Contains the application name as specified during application push (or in manifest.yml).</entry>
+  </row>
+<row>
+    <entry>HELION_APP_NAME_UPCASE</entry>
+    <entry>Contains the same value as HELION_APP_NAME but transformed to uppercase. Dashes are replaced by underscores.</entry>
+  </row>
+<row>
+    <entry>HELION_APP_ROOT</entry>
+    <entry>This is the "root" directory from the ALS point of view. It contains the app-specific HOME directory (app/), the log file directory (logs/) and various scripts.</entry>
+  </row>
+<row>
+    <entry>HELION_LOG_FILES</entry>
+    <entry>A colon-separated list of log files to be included in the application log stream. You can add up to five additional files to the default list by modifying this variable.</entry>
+  </row>
+<row>
+    <entry>HELION_SERVICES</entry>
+    <entry>Contains connection details and credentials for services bound to the application. For filesystem services, it contains the local mount point.</entry>
+  </row>
+<row>
+    <entry>VCAP_APPLICATION</entry>
+    <entry>This variable contains all relevant application details: Instance ID, App Name, App Uris, Users/Groups, etc.</entry>
+  </row>
+<row>
+    <entry>VCAP_SERVICES</entry>
+    <entry>Contains connection details, credentials, and meta data for services bound to the application.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2514">
+<title>HPE Helion 2.0 Development Platform: Memcached Service</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+    <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Memcached is an in-memory key-value store used for caching by many web
+applications and frameworks. It is available in Application Lifecycle Service as a service
+which can be shared by application instances.</p>
+<section id="using-the-service"> <title>Using the Service</title>
+    <p>As with other <xref href="data-services.dita#user_data_services">data services</xref>, the
+                location and port of the memcached service is exposed to the application via
+                environment variables: MEMCACHED_URL or VCAP_SERVICES.</p>
+<p>The easiest way to connect an application to a Memcached service is to
+use the MEMCACHE_URL environment variable. It contains the location and
+port of the service created for the application. For example:</p>
+<codeblock>MEMCACHE_URL=10.13.0.6:11000</codeblock>
+<p>Using MEMCACHED_URL will only work if <codeph>sasl_enabled</codeph> is set to
+                    <codeph>False</codeph> in the memcached_node configuration (default). To enable
+                SASL for Memcached, an Application Lifecycle Service administrator can run the
+                following commands on the Cloud Controller:</p>
+<codeblock>kato config set memcached_node sasl_enabled true
+kato restart memcached</codeblock>
+    <p>With SASL enabled, applications must parse the <xref
+                    href="data-services.dita#user_data_services/vcap-services"
+                    ><i>VCAP_SERVICES</i></xref> environment variables to extract the
+                    <codeph>name</codeph>, <codeph>user</codeph>, and <codeph>password</codeph>
+                strings from the memcached <codeph>credentials</codeph> list. Using SASL with
+                Memcached requires client libraries/modules in the application which support
+                authentication via SASL.</p>
+<note type="warning">Running Memcached <b>without</b> SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.</note>
+</section>
+<section id="django-example-using-memcached"> <title>Django Example using Memcached</title>
+<p>The <xref href="https://github.com/Stackato-Apps/django-gtd" scope="external" format="html" >Django GTD</xref> sample
+application uses the simpler VCAP_SERVICES method for connecting to the
+Memcached service without authentication.</p>
+<p>The relevant configuration in this example:</p>
+<ol>
+<li> specifies the location of memcache using the MEMCACHED_URL in
+                    <i>settings.py</i>:<codeblock>CACHES = {
+    'default': {
+    'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+    'LOCATION': os.getenv('MEMCACHED_URL'),
+    }
+}</codeblock></li>
+<li> adds the cache to middleware
+                    classes:<codeblock>MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+    ...
+)</codeblock></li>
+<li> adds the python-memcached module and a memcached service in
+                    <i>manifest.yml</i>:<codeblock>requirements:
+    pip:
+    - python-memcached
+    ...
+services:
+    memcached-gtd: memcached
+    ...</codeblock></li>
+</ol>
+</section>
+</body>
+</topic>

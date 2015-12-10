@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5727">
+<title>HPE Helion 2.0 Development Platform: ALS Command Reference: Quotas</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+<othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<ul>
+<li>
+        <xref href="#topic5727/command-quota-configure" format="dita">helion quota configure</xref>:
+        Reconfigure the named quota plan.</li>
+<li>
+        <xref href="#topic5727/command-quota-create" format="dita">helion quota create</xref>:
+        Create a new quota plan.</li>
+<li>
+<xref type="section" href="#topic5727/command-quota-delete">helion quota delete</xref>: Delete the named quota plan</li>
+<li>
+<xref type="section" href="#topic5727/command-quota-list">helion quota list</xref>: List the available quota plans. </li>
+<li>
+<xref type="section" href="#topic5727/command-quota-rename">helion quota rename</xref>: Rename the named quota plan.</li>
+<li>
+<xref type="section" href="#topic5727/command-quota-show">helion quota show</xref>: Show the details of the named quota plan.</li>
+<li>
+<xref type="section" href="#topic5727/command-quotas">helion quotas</xref>: List the available quota plans.</li>
+</ul>
+<section id="syntax"> <title>Syntax</title>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+<section id="command-quota-configure"> <title>helion quota configure &lt;<i>name</i>&gt;</title>
+<p>Reconfigure the named quota definition. </p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="3.65*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--allow-sudo</entry>
+              <entry>Applications can use sudo in their container.</entry>
+            </row>
+            <row>
+              <entry>--droplets</entry>
+              <entry> Limit for the number of droplets per application that are stored (older
+                droplets that exceed this quota are removed and their associated versions can no
+                longer be restored).</entry>
+            </row>
+            <row>
+              <entry>--mem</entry>
+              <entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the
+                convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes
+                are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be
+                specified as fractions.</entry>
+            </row>
+            <row>
+              <entry>--no-allow-sudo</entry>
+              <entry>Complementary alias of --allow-sudo.</entry>
+            </row>
+            <row>
+              <entry>--no-paid-services-allowed</entry>
+              <entry>Complementary alias of --paid-services-allowed.</entry>
+            </row>
+            <row>
+              <entry>--paid-services-allowed</entry>
+              <entry>Applications can use non-free services.</entry>
+            </row>
+            <row>
+              <entry>--routes</entry>
+              <entry>Limit for the number of routes in the quota.</entry>
+            </row>
+            <row>
+              <entry>--services</entry>
+              <entry>Limit for the number of services in the quota.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--no-trial-db-allowed, --trial-db-allowed</entry>
+              <entry>Applications can  / cannot use trial databases. Trial databases were available
+                with HPE Helion Development Platform 1.0 only.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-quota-create"> <title>helion quota create &lt;<i>name</i>&gt;</title>
+<p>Create a new quota definition.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="4.13*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--allow-sudo</entry>
+              <entry>Applications can use sudo in their container.</entry>
+            </row>
+            <row>
+              <entry>--droplets</entry>
+              <entry> Limit for the number of droplets per application that are stored (older
+                droplets that exceed this quota are removed and their associated versions can no
+                longer be restored). </entry>
+            </row>
+            <row>
+              <entry>--mem</entry>
+              <entry>Amount of memory applications can use. Use the suffices 'M' and 'G' for the
+                convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes
+                are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be
+                specified as fractions.</entry>
+            </row>
+            <row>
+              <entry>--no-allow-sudo</entry>
+              <entry>Complementary alias of --allow-sudo.</entry>
+            </row>
+            <row>
+              <entry>--no-paid-services-allowed</entry>
+              <entry>Complementary alias of --paid-services-allowed.</entry>
+            </row>
+            <row>
+              <entry>--paid-services-allowed</entry>
+              <entry>Applications can use non-free services.</entry>
+            </row>
+            <row>
+              <entry>--routes</entry>
+              <entry>Limit for the number of routes in the quota.</entry>
+            </row>
+            <row>
+              <entry>--services</entry>
+              <entry>Limit for the number of services in the quota.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+            <row>
+              <entry>--no-trial-db-allowed, --trial-db-allowed</entry>
+              <entry>Applications can  / cannot use trial databases. Trial databases were available
+                with HPE Helion Development Platform 1.0 only.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-quota-delete"> <title>helion quota delete &lt;<i>name</i>&gt;</title>
+<p>Delete the named quota definition.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.9*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-quota-list"> <title>helion quota list</title>
+<p>List the available quota definitions.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.94*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--json</entry>
+              <entry>Print raw json as output, not human-formatted data.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-quota-rename"> <title>helion quota rename &lt;<i>name</i>&gt; &lt;<i>NewName</i>&gt;</title>
+<p>Rename the named quota definition.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="6.69*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-quota-show"> <title>helion quota show &lt;<i>name</i>&gt;</title>
+<p>Show the details of the named quota definition. If not specified it will be asked for interactively (menu).</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="6.41*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--json</entry>
+              <entry>Print raw json as output, not human-formatted data.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+<section id="command-quotas"> <title>helion quotas</title>
+<p>List the available quota definitions.</p>
+<table>
+<tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="5.9*"/>
+          <tbody>
+            <row>
+              <entry>
+                <b>Option</b>
+              </entry>
+              <entry>
+                <b>Description</b>
+              </entry>
+            </row>
+            <row>
+              <entry>--json</entry>
+              <entry>Print raw json as output, not human-formatted data.</entry>
+            </row>
+            <row>
+              <entry>--target</entry>
+              <entry>The once-off target to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token</entry>
+              <entry>The once-off authentication token to use for the current operation.</entry>
+            </row>
+            <row>
+              <entry>--token-file</entry>
+              <entry>Path to an existing and readable file containing the targets and authorization
+                tokens.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table>
+</section>
+</body>
+</topic>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="server_operations">
+  <title>HPE Helion 2.0 Development Platform: Common Server Operations</title>
+  <body>
+    <ul>
+      <li>
+        <xref type="section" href="#server_operations/server-status">Server Status</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/starting-and-stopping-roles">Starting and Stopping
+          Roles</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/system-shutdown">System Shutdown</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/setting-the-time-zone">Setting the Time Zone</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/resetting-the-vm">Resetting the VM</xref>
+      </li>
+      <li>
+        <xref href="#server_operations/monitoring-the-application-lifecycle-service-server" format="dita"
+          >Monitoring The Application Lifecycle Service Server</xref></li>
+      <li>
+        <xref type="section" href="#server_operations/management-console">Management Console</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/creating-an-admin-user">Creating an Admin User</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/system-monitoring-with-nagios">System Monitoring with
+          Nagios</xref>
+      </li>
+      <li>
+        <xref type="section" href="#server_operations/server-backup-import-and-export">Server Backup,
+          Import, and Export</xref>
+      </li>
+    </ul>
+    <section id="server-status">
+      <title>Server Status</title>
+      <p>To check the status of Application Lifecycle Service:</p>
+      <codeblock>kato status</codeblock>
+      <p>This will list all the roles configured to run on the VM, and whether they are running,
+        stopped, or starting.</p>
+      <p>Roles are logical groups of processes (see <xref
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-role-info">kato role
+          info</xref>) which can be inspected individually with <xref
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-process-list" type="section"
+          >kato process ...</xref> commands.</p>
+      <p>In particular, the <xref
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-process-ready">kato process
+          ready</xref> command is useful for determining if the system is in a state to receive
+          <xref href="configuration.dita#topic31232">configuration commands</xref>. For example, to
+        check that all processes for the configured roles are ready:</p>
+      <codeblock>kato process ready all</codeblock>
+    </section>
+    <section id="starting-and-stopping-roles">
+      <title>Starting and Stopping Roles</title>
+      <p>To control the Application Lifecycle Service roles, use the <i>kato</i> start, stop and
+        restart commands.</p>
+      <p>Without any further options specified, the operation applies to all Application Lifecycle
+        Service roles.</p>
+      <codeblock>kato stop</codeblock>
+      <p> To start, stop or restart individual roles, specify them after the desired command:</p>
+      <codeblock>kato stop mysql</codeblock>
+    </section>
+    <section id="system-shutdown">
+      <title>System Shutdown</title>
+      <p>To safely shut down the VM, run the <i>shutdown</i> command as root:</p>
+      <codeblock>sudo shutdown -h now</codeblock>
+    </section>
+    <section id="setting-the-time-zone">
+      <title>Setting the Time Zone</title>
+      <p>At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set
+        this to your local time zone, use the <codeph>kato op set_timezone</codeph> command. When
+        run without arguments, the command will prompt for time zone selection, but the time zone
+        can be set non-interactively with the <codeph>--timezone</codeph> option. For example:</p>
+      <codeblock>kato op set_timezone --timezone America/Chicago</codeblock>
+      <p>You can also use the <codeph>tzselect</codeph> command to find the appropriate time zone
+        string for your location.</p>
+    </section>
+    <section id="resetting-the-vm">
+      <title>Resetting the VM</title>
+      <p>To return an Application Lifecycle Service VM to its original "out-of-the-box"
+        configuration, use the <xref
+          href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section">
+          <i>kato node reset</i>
+        </xref> command. </p>
+      <note>The <codeph>kato node reset factory</codeph> option is no longer supported.</note>
+      <ul>
+        <li>
+          <p>
+            <codeph>kato node reset soft</codeph>: Resets only configuration and data, but leaves
+            first boot (naming) or other state info. You would normally run this together with the
+              <xref href="../reference/kato-ref.dita#topic39432/kato-command-ref-node-attach"
+              type="section">
+              <i>kato node setup</i>
+            </xref> command. For example:</p>
+          <codeblock>kato node reset soft
+kato node setup micro</codeblock>
+        </li>
+      </ul>
+    </section>
+    <section id="monitoring-the-application-lifecycle-service-server">
+      <title>Monitoring The Application Lifecycle Service Server</title>
+    </section>
+    <section id="management-console">
+      <title>Management Console</title>
+      <p>The <xref href="../../user/console/console_index.dita#topic8844"><i>Management Console</i>
+        </xref>has a Settings page that allows an administrator to monitor the server component and
+        services, and restart or stop services as necessary.</p>
+    </section>
+
+    <section id="creating-an-admin-user">
+      <title>Creating an Admin User</title>
+      <p>The easiest way to add admin users to Application Lifecycle Service is via the Management
+        Console under <xref href="../console/console_index.dita#topic13823/users">Users</xref>. The
+        Management Console will prompt to create the initial admin user the first time you use
+        it.</p>
+      <p>If you do not have access to the Management Console, create a user by logging in to the
+        micro cloud or Core node controller via SSH or through the VM <xref
+          href="../../user/reference/glossary.dita#topic6187/term-tty-console" type="section">tty
+          console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
+      <codeblock>helion target api.helion-xxxx.local
+helion register superuser@example.net</codeblock>
+      <p>Grant administrative privileges using <i>kato config</i>:</p>
+      <codeblock>kato config push cloud_controller_ng admins superuser@example.net</codeblock>
+      <p>Subsequent new users can be added remotely with the Helion client by an admin user.</p>
+    </section>
+    <section id="system-monitoring-with-nagios">
+      <title>System Monitoring with Nagios</title>
+      <p>If Nagios is installed on your server nodes, you can use it to monitor and report resource
+        utilization. See the <xref href="../best-practices/best_practices_index.dita#topic16169"
+          >Best Practices documentation</xref> for details.</p>
+    </section>
+    <section id="server-backup-import-and-export">
+      <title>Server Backup, Import, and Export</title>
+      <p>The import and export functionality can be used to do regular backups, or to move the
+        Application Lifecycle Service configuration from one server to another. It is also a means
+        of upgrading the Application Lifecycle Service VM without having to install everything from
+        the ground up.</p>
+      <p>Please see the <xref
+          href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration">Best
+          Practices</xref> documentation for details on how to <xref
+          href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration"
+          >export</xref> and <xref
+          href="../best-practices/best_practices_index.dita#topic16169/bestpractices-migration"
+          >migrate.</xref>
+      </p>
+    </section>
+  </body>
+</topic>

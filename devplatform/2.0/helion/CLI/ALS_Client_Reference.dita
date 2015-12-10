@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13234">
+<title>HPE Helion 2.0 Development Platform: ALS Cluster Management Tool Reference</title>
+
+<body>
+    <p>The ALS command-line interface client (<codeph>cf-mgmt.exe</codeph>) provides an option for
+      executing commands that construct, manage, update, or delete ALS clusters. Use the command
+      line when the Horizon management console is unavailable or when direct access is preferred.
+        <note>When creating clusters that support Keystone v3, you will need to <xref
+          href="cfmgmt_configure_keystonev3.dita#topic_j5v_bsb_rt">modify the configuration
+          file</xref> first.</note></p>
+    <ul>
+      <li>
+        <xref type="section" href="#topic13234/global">Global Options</xref>
+      </li>
+      <li><xref type="section" href="#topic13234/debug">Debug Command</xref></li>
+      <li><xref href="#topic13234/update-the-cf-mgmt-tool" format="dita"/></li>
+      <li>
+        <xref type="section" href="#topic13234/commands">Cluster Commands</xref>
+        <ul id="ul_j43_nzl_ms">
+          <li>
+            <xref type="section" href="#topic13234/create">Create a Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/delete">Delete a Cluster</xref>
+          </li>
+          <li><xref type="section" href="#topic13234/list">List Clusters in a Tenant</xref></li>
+          <li><xref type="section" href="#topic13234/show">Display Detailed Cluster Information</xref></li>
+          <li><xref type="section" href="#topic13234/addrole">Add a Role to an Existing
+              Cluster</xref>
+          </li>
+          <li><xref type="section" href="#topic13234/removerole">Remove a Role from an Existing
+              Cluster</xref></li>
+          <li><xref type="section" href="#topic13234/addservice">Add a Service to an Existing
+              Cluster</xref></li>
+          <li><xref type="section" href="#topic13234/removeservice">Remove a Service from an
+              Existing Cluster</xref>
+          </li>
+        </ul></li>
+    </ul>
+    <section id="configuration-values">
+      <title>Configuration Values</title>
+      <p>There are three ways to pass configuration values into ALS:</p>
+      <ul>
+        <li>Direct entry through the <codeph>cf-mgmt</codeph> tool</li>
+        <li>Defined in an <xref href="../user/reference/environment.dita">environment
+            variable</xref></li>
+        <li>Recorded in a <xref href="#topic13234/downloadfile" format="dita">configuration
+            file</xref>
+        </li>
+      </ul>
+    </section>
+    <section id="downloadfile">
+      <title>Configuration Files</title>
+      <p>ALS maintains separate configuration files, so configuration values must be included in the
+        appropriate file.<note>When creating clusters that support Keystone v3, you will need to
+            <xref href="cfmgmt_configure_keystonev3.dita#topic_j5v_bsb_rt">modify the configuration
+            file</xref> first.</note></p>
+      <p>One configuration file contains the values for the global variables. The global
+        configuration file is located in the home directory and is named <i>cf-mgmt.yml</i>. </p>
+      <ul id="ul_jsn_n5b_ys">
+        <li>Global level <b>commands</b> create, delete, and add entire clusters. </li>
+        <li>Global level <b>configurations</b> manage tenants, users, versions, and other system
+          information on single or multiple clusters.</li>
+      </ul>
+      <p>The other configuration files, specified by the <b>--load</b> option, includes the values
+        that should be passed as arguments to a specific command. </p>
+    </section>
+    <section id="global">
+      <title>Global Options</title>
+      <p>These variables affect the entire cluster; they are <b>global</b> in scope. These
+        environment variables are configured to work with the <tm tmtype="reg">OpenStack</tm> Python
+        tools to enable faster integration. If you are using Keystone v3 authentication, <xref
+          href="#topic13234/table_jr1_sld_d5">additional parameters</xref> are required.</p>
+      <codeblock>cf-mgmt <b>[global options]</b> command [command options] [arguments...] </codeblock>
+      <table frame="all" rowsep="1" colsep="1" id="table_h1y_kld_d5">
+      <tgroup cols="4">
+          <colspec colname="c1" colnum="1"/>
+          <colspec colname="c2" colnum="2"/>
+          <colspec colname="c3" colnum="3"/>
+          <colspec colname="c4" colnum="4"/>
+          <thead>
+            <row>
+              <entry>Option</entry>
+              <entry>Description</entry>
+              <entry>Environment Variable</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--debug [--debug option --debug option]</entry>
+              <entry>Enables additional debug information. Valid options are: general, cpi, shell,
+                kato, timing, all</entry>
+              <entry>$CFMGMT_DEBUG</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--dry-run</entry>
+              <entry>Simulate the command with provided flags.</entry>
+              <entry>N/A</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--os-password</entry>
+              <entry>OpenStack password</entry>
+              <entry>$OS_PASSWORD</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--os-auth-url</entry>
+              <entry>OpenStack authentication URL</entry>
+              <entry>$OS_AUTH_URL</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--os-username</entry>
+              <entry>OpenStack user name</entry>
+              <entry>$OS_USERNAME </entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry> --disable-connection-reuse</entry>
+              <entry>Disable connection reuse</entry>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry>--os-cacert</entry>
+              <entry>OpenStack CA certificate</entry>
+              <entry>$OS_CACERT</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--os-region-name</entry>
+              <entry>OpenStack region</entry>
+              <entry>$OS_REGION_NAME</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--os-tenant-name</entry>
+              <entry>OpenStack tenant name</entry>
+              <entry>$OS_TENANT_NAME</entry>
+              <entry>Yes, if <codeph>tenant-id</codeph> is not defined. Keystone v2 only.</entry>
+            </row>
+            <row>
+              <entry>--os-tenant-id</entry>
+              <entry>OpenStack tenant ID</entry>
+              <entry>$OS_TENANT_ID</entry>
+              <entry>Yes, if <codeph>tenant-name</codeph> is not defined. Keystone v2 only.</entry>
+            </row>
+            <row>
+              <entry>--env &lt;user home directory&gt;.cf-mgmt.yml'</entry>
+              <entry>The default location for the configuration file is the user home directory. </entry>
+              <entry>n/a</entry>
+              <entry>Enter a new file path to change the location of the configuration file.</entry>
+            </row>
+            <row>
+              <entry>--skip-ssl-validation </entry>
+              <entry>Skip SSL validation process</entry>
+              <entry>n/a</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--version, -v</entry>
+              <entry>Displays the version of the client.</entry>
+              <entry>n/a</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--help, -h</entry>
+              <entry>Displays help.</entry>
+              <entry>n/a</entry>
+              <entry>No</entry>
+            </row>
+                    </tbody>
+        </tgroup>
+      </table>
+      <p>The following parameters are required if you are using Keystone v3 authentication. They are not required for Keystone v2.</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_jr1_sld_d5">
+              <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="140.25pt"/>
+          <colspec colname="c2" colnum="2" colwidth="167.25pt"/>
+          <colspec colname="c3" colnum="3" colwidth="181.5pt"/>
+          <colspec colname="c4" colnum="4" colwidth="204pt"/>
+          <thead>
+            <row>
+              <entry>Option</entry>
+              <entry>Description</entry>
+              <entry>Environment Variable</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--os-default-domain "default"</entry>
+              <entry>OpenStack Default Domain ID</entry>
+              <entry>$OS_DEFAULT_DOMAIN_ID</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-user-domain-name</p>
+              </entry>
+              <entry>OpenStack User Domain Name</entry>
+              <entry>$OS_USER_DOMAIN_NAME</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-user-domain-id </p>
+              </entry>
+              <entry>OpenStack User Domain ID</entry>
+              <entry>$OS_USER_DOMAIN_ID</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-project-name </p>
+              </entry>
+              <entry>OpenStack Project Name</entry>
+              <entry>$OS_PROJECT_NAME</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-project-id </p>
+              </entry>
+              <entry>OpenStack Project ID</entry>
+              <entry>$OS_PROJECT_ID</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-project-domain-name</p>
+              </entry>
+              <entry>OpenStack Project Domain Name</entry>
+              <entry>$OS_PROJECT_DOMAIN_NAME</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-project-domain-id</p>
+              </entry>
+              <entry>OpenStack Project Domain ID</entry>
+              <entry> $OS_PROJECT_DOMAIN_ID</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-domain-name</p>
+              </entry>
+              <entry>OpenStack Domain Name</entry>
+              <entry> $OS_DOMAIN_NAME</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+            <row>
+              <entry>
+                <p>--os-domain-id</p>
+              </entry>
+              <entry>OpenStack Domain ID</entry>
+              <entry> $OS_DOMAIN_ID</entry>
+              <entry>Yes, if using Keystone v3 authentication.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></section><section id="debug">
+      <title>Debugging</title>
+      <p><b>Syntax</b>: <codeph>--debug [option] [option]</codeph></p>
+      <p>This command provides debug information and can be very helpful when creating clusters. </p>
+      <p>The options are <codeph>general</codeph>, <codeph>cpi</codeph>, <codeph>shell</codeph>,
+          <codeph>kato</codeph>, <codeph>timing</codeph>, <codeph>all</codeph>.</p>
+      <p>CPI stands for Cloud Provider Instance and will return information on HPE Helion <tm
+          tmtype="reg">OpenStack</tm>.</p>
+      <p>Example: <codeblock>cf-mgmt --debug all cc</codeblock></p>
+    </section>
+    <section id="commands">
+      <title>Cluster Commands</title>
+      <p>These commands are available from the command line interface.</p>
+      <p>
+        <note type="tip">When executing any command for the first time, include the
+            <codeph>--dry-run</codeph> option. This will help detect potential configuration or
+          environmental issues before making any actual changes.</note>
+      </p>
+    </section>
+    <section id="use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>command</b> [command options] [arguments...] </codeblock>
+    </section>
+    <section id="command-options">
+      <title>Command Options</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="109.5pt"/>
+          <colspec colname="col2" colwidth="445.5pt"/>
+          <thead>
+            <row>
+              <entry>Command</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>create-cluster, cc</entry>
+              <entry>Creates a cluster</entry>
+            </row>
+            <row>
+              <entry>delete-cluster, dc</entry>
+              <entry>Deletes a cluster</entry>
+            </row>
+            <row>
+              <entry>list-clusters, lc</entry>
+              <entry>Lists clusters within a tenant. </entry>
+            </row>
+            <row>
+              <entry>show-cluster, sc </entry>
+              <entry>Display detailed cluster information.</entry>
+            </row>
+            <row>
+              <entry>add-service, as</entry>
+              <entry>Add services to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>add-role, ar</entry>
+              <entry>Add node of the specified role to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>remove service, rs</entry>
+              <entry>Remove services from an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>remove role, rr</entry>
+              <entry>Remove node of the specified role from an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>update, up</entry>
+              <entry>Update to the most recent version of <i>cf-mgmt</i></entry>
+            </row>
+            <row>
+              <entry>help, h</entry>
+              <entry>Displays a list of available commands or help for a command.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="create">
+      <title>Create a Cluster</title>
+      <p>This command creates a cluster. (<i>create-cluster</i>).</p>
+      <codeblock>cf-mgmt [global options] <b>create-cluster</b> [command options] [arguments...] </codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help create-cluster</codeblock>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="1.9*"/>
+          <colspec colname="newCol3" colwidth="1.45*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--load </entry>
+              <entry>Load flags from the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--save</entry>
+              <entry>Save flags to the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--admin-email</entry>
+              <entry>Email address for the Cloud Foundry admin user</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--admin-password</entry>
+              <entry>Password for the Cloud Foundry admin user</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--admin-org 'org1'</entry>
+              <entry>Organization the Cloud Foundry admin user is part of</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--cluster-title</entry>
+              <entry>Title of the Cloud Foundry cluster</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--cluster-prefix</entry>
+              <entry>Prefix to affix to cluster instance names.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--dea-count '0'</entry>
+              <entry>Number of DEAs nodes in the cluster.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--services</entry>
+              <entry>The list of services enabled for the cluster</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--services-on-core 'false'</entry>
+              <entry>Should services be enabled on core nodes? True/False</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--az</entry>
+              <entry>Availability zone for the cluster</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--core-flavor</entry>
+              <entry>Flavor name of core nodes in the cluster</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--dea-flavor</entry>
+              <entry>Flavor name for DEA nodes</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--service-flavor</entry>
+              <entry>Flavor name for service nodes in the cluster</entry>
+              <entry>Required only if <codeph>services</codeph> and
+                  <codeph>services-on-core</codeph> are used.</entry>
+            </row>
+            <row>
+              <entry>--router-flavor</entry>
+              <entry>Flavor name for Router nodes in the cluster.</entry>
+              <entry>Required only if <codeph>router-count</codeph> is used.</entry>
+            </row>
+            <row>
+              <entry>--router-count '0'</entry>
+              <entry>Number of Router nodes in the cluster</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--seed-node-image-id</entry>
+              <entry>ID of the seed node image.</entry>
+              <entry>Required only if <codeph>seed-node-image-name</codeph> is undefined. Optional
+                if <codeph>seed-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--seed-node-image-name</entry>
+              <entry>Name of the seed node image.</entry>
+              <entry>Required only if <codeph>seed-node-image-id</codeph> is undefined. Optional if
+                  <codeph>seed-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--database-instance-id</entry>
+              <entry>Database instance id</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--database-flavor</entry>
+              <entry>Flavor name of database</entry>
+              <entry>Required only if <codeph>database-volume-size</codeph> is used.</entry>
+            </row>
+            <row>
+              <entry>--database-volume-size '0'</entry>
+              <entry>Database volume size</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--core-volume-size '0'</entry>
+              <entry>Size of block storage volume to add (in GB) for the core machine.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--mountpoint '/block_storage'</entry>
+              <entry>Mountpoint of added block storage (defaults to /block_storage)</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for the cluster creation to occur; the default value
+                specifies an infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-corenode-wait-duration '10m'</entry>
+              <entry>Maximum time to wait for the core node to come up on cluster creation; defaults
+                to 10 minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--subnet-id</entry>
+              <entry>ID of the subnet for the Constructor VM, the cluster created by create-cluster,
+                and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <codeph>network-id</codeph>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--subnet-name</entry>
+              <entry>Name of the subnet for the Constructor VM, the cluster created by
+                create-cluster and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <codeph>network-name</codeph>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name</entry>
+              <entry>Name of the network for the created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--dns-suffix</entry>
+              <entry>DNS suffix of the host machine.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--core-floating-ip</entry>
+              <entry>Fixed Floating IP for the core machine. A Floating IP is one that is publicly
+                available. When assigned to a machine, it becomes a Fixed IP.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--upstream-proxy </entry>
+              <entry>Upstream proxy. (Protocol://hostname:port. For example:<codeph>
+                  http://proxy.comp.net:8080</codeph>)</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--http-proxy</entry>
+              <entry>HTTP proxy.(Protocol://hostname:port. For example:<codeph>
+                  http://proxy.comp.net:8080</codeph>)</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--https-proxy</entry>
+              <entry>HTTPS proxy. (Protocol://hostname:port. For example:<codeph>
+                  http://proxy.comp.net:8080</codeph>)</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--ftp-proxy</entry>
+              <entry>FTP proxy. (Protocol://hostname:port. For example:
+                  <codeph>ftp://proxy.comp.net:8080</codeph>)</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--service-volume-size '0'</entry>
+              <entry>Size of block storage volume to add (in GB) for the service.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name </entry>
+              <entry>Name of the image of the constructor server</entry>
+              <entry>Required only if <codeph>constructor-image-id</codeph> is undefined. Optional
+                if <codeph>constructor-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server</entry>
+              <entry>Required only if <codeph>constructor-image-name</codeph> is undefined. Optional
+                if <codeph>constructor-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name for the constructor server</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor virtual machine to come up. The default is
+                10 minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--keep-constructor </entry>
+              <entry>Keep the constructor virtual machine up and running after command
+                completion.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--no-rollback </entry>
+              <entry>Do not rollback in the event of a failure.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="delete">
+      <title>Delete a Cluster</title>
+      <p>This command deletes a cluster (<i>delete-cluster</i>).</p>
+    </section>
+    <section id="delete-cluster-use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>delete-cluster</b> [command options] [arguments...] </codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help delete-cluster</codeblock>
+    </section>
+    <section id="delete-cluster-command-options">
+      <title>Command Options</title>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="1.9*"/>
+          <colspec colname="newCol3" colwidth="1.45*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--load</entry>
+              <entry>Load flags from the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--save </entry>
+              <entry>Save flags to the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--cluster-prefix</entry>
+              <entry>Prefix to affix to cluster instance names.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name</entry>
+              <entry>Name of the image of the constructor server</entry>
+              <entry>Required only if <codeph>constructor-image-id</codeph> is undefined. Optional
+                if <codeph>constructor-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server</entry>
+              <entry>Required only if <codeph>constructor-image-name</codeph> is undefined. Optional
+                if <codeph>constructor-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name of the constructor server</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '4m'</entry>
+              <entry>Maximum time to wait for cluster deletion to occur. Default wait time is 4
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--subnet-name</entry>
+              <entry>Name of the subnet for the Constructor VM, the cluster created by
+                create-cluster and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <codeph>network-name</codeph>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--subnet-id</entry>
+              <entry>ID of the subnet for the Constructor VM, the cluster created by create-cluster
+                and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <codeph>network-id</codeph>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default wait time is
+                10 minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> --no-prompt </entry>
+              <entry>On deleting the cluster, do not prompt.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> --delete-database </entry>
+              <entry>On deleting the cluster, also delete the cluster databases.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> --delete-volume </entry>
+              <entry>On deleting the cluster, also delete the cluster volumes </entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="list">
+      <title>List Clusters</title><p>Lists all clusters that exist on a single tenant. (<i>list-clusters</i>)</p>
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>list-clusters</b> [arguments...] </codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help list-clusters</codeblock>      <table>
+        <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="2.43*"/>
+          <colspec colname="newCol3" colwidth="1.63*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>-h</entry>
+              <entry>Shows a list of commands or help for one command.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  <section id="show">
+    <title>Show Details</title><p>Displays detailed information about the target cluster. (<i>show-cluster</i>)</p>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt help show-cluster</codeblock>
+    <table>
+      <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="2.47*"/>
+          <colspec colname="newCol3" colwidth="1.59*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> --cluster-prefix </entry>
+              <entry>Prefix to affix to cluster instance names.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>-h</entry>
+              <entry>Shows a list of commands or help for one command.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+    </table>
+  </section>
+    <section id="addrole">
+      <title>Add Roles to an Existing Cluster</title>
+      <p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>). </p>
+      <p>
+        <note>Adding a role will create one or more additional nodes in the cluster as part of the
+          process.</note>
+      </p>
+    </section>
+    <section id="add-role-use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>add-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
+      <p>For help with this command within the command-line interface, enter</p>
+      <codeblock>cf-mgmt add-role --help</codeblock>
+    </section>
+    <section id="subcommands">
+      <title>Subcommands</title>
+      <codeblock>cf-mgmt [global options] add-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="7.33*"/>
+          <thead>
+            <row>
+              <entry>Subcommand</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>dea</entry>
+              <entry>Add DEA nodes to an existing cluster.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="sub-command-options">
+      <title>Sub-Command Options</title>
+      <codeblock>cf-mgmt [global options] add-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="2.13*"/>
+          <colspec colname="newCol3" colwidth="1.56*"/>
+          <thead>
+            <row>
+              <entry>Options (with default input)</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--load</entry>
+              <entry>Load flags from the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--save</entry>
+              <entry>Save flag values to the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--cluster-prefix</entry>
+              <entry>Prefix to affix to cluster instance names.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--count '1'</entry>
+              <entry>Number of nodes in the cluster</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--seed-node-image-name</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>seed-node-image-id</codeph> is undefined. Optional if
+                  <codeph>seed-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--seed-node-image-id</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>seed-node-image-name</codeph> is undefined. Optional
+                if <codeph>seed-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--flavor</entry>
+              <entry>Flavor name of the instance in the cluster.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for addition of node or service to cluster; defaults to an
+                infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name reference to use when creating a constructor server</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--subnet-name</entry>
+              <entry>Name of the subnet for the Constructor VM, the cluster created by
+                create-cluster and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <codeph>network-name</codeph>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--subnet-id</entry>
+              <entry>ID of the subnet for the Constructor VM, the cluster created by create-cluster
+                and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <codeph>network-id</codeph>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--az</entry>
+              <entry>Availability zone for the created node.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--stack 'lucid64'</entry>
+              <entry>Stack indicates the platform to use when adding DEAs. Valid values are lucid64
+                or win2012r2. Default is lucid64</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="addservice">
+      <title>Add Services to an Existing Cluster</title>
+      <p>This command adds services to an existing cluster (<i>add-service</i>).</p>
+    </section>
+    <section id="add-service-use-syntax">
+      <title>Use Syntax</title>
+      <codeblock>cf-mgmt [global options] <b>add-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
+      <p>For help with each subcommand, enter</p>
+      <codeblock>cf-mgmt add-service <b>[subcommand]</b> --help</codeblock>
+    </section>
+    <section id="add-service-subcommands">
+      <title>Subcommands</title>
+      <codeblock>cf-mgmt [global options] add-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="119.25pt"/>
+          <colspec colname="col2" colwidth="445.5pt"/>
+          <thead>
+            <row>
+              <entry>Subcommand</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>mysql</entry>
+              <entry>Add a MySQL service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>filesystem</entry>
+              <entry>Add a filesystem service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>memcached</entry>
+              <entry>Add a memcached service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>redis </entry>
+              <entry>Add a redis service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>postgresql</entry>
+              <entry>Add a postgresql service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>rabbit</entry>
+              <entry>Add a RabbitMQ service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>mongodb</entry>
+              <entry>Add a MongoDB service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>mssql2012</entry>
+              <entry>Add a Microsoft SQL 2012 service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>mssql2014 </entry>
+              <entry>Add a Microsoft SQL 2014 service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>harbor</entry>
+              <entry>Add a Harbor service to an existing cluster.</entry>
+            </row>
+            <row>
+              <entry>help, h</entry>
+              <entry>Shows a list of commands or help for one command.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="subcommand-options">
+      <title>Subcommand Options</title>
+      <p>Each subcommand in the Add-Service command has these following options available. The
+          <varname>mysql</varname> subcommand has <xref href="#topic13234/mysqlcommand"
+          format="dita">additional options</xref>.</p>
+      <codeblock>cf-mgmt [global options] add-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="2.13*"/>
+          <colspec colname="newCol3" colwidth="1.56*"/>
+          <thead>
+            <row>
+              <entry>Subcommand Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--load</entry>
+              <entry>Load flags from the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--save</entry>
+              <entry>Save flag values to the specified file</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--cluster-prefix</entry>
+              <entry>Prefix to affix to cluster instance names.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--seed-node-image-name</entry>
+              <entry>The seed node image name.</entry>
+              <entry>Required only if <codeph>seed-node-image-id</codeph> is undefined. Optional if
+                  <codeph>seed-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--seed-node-image-id</entry>
+              <entry>The seed node image ID.</entry>
+              <entry>Required only if <codeph>seed-node-image-name</codeph> is undefined. Optional
+                if <codeph>seed-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--flavor</entry>
+              <entry>Flavor name of this instance in the cluster.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-id</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-name</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for addition of node or service to cluster; defaults to an
+                infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name reference to use when creating a constructor server.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--subnet-name</entry>
+              <entry>Name of the subnet for the Constructor VM, the cluster created by
+                create-cluster and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <varname>network-name</varname>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--subnet-id</entry>
+              <entry>ID of the subnet for the Constructor VM, the cluster created by create-cluster
+                and the DEA nodes added by add-role dea.</entry>
+              <entry>Deprecated in favor of <varname>network-id</varname>. Avoid use.</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--service-volume-size '0'</entry>
+              <entry>Size of block storage volume to add (in GB) for the service.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--mountpoint '/block_storage'</entry>
+              <entry>Mount point of added block storage (defaults to /block_storage)</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--az</entry>
+              <entry>Availability zone for the created node.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> --keep-constructor </entry>
+              <entry>Keep the constructor VM up and running after command completion.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--no-rollback </entry>
+              <entry>Do not rollback in the event of a failure.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>The <varname>mysql</varname> subcommand has additional options.</p>
+      <table id="mysqlcommand">
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="newCol3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>MySQL Subcommand Options</entry>
+              <entry>Description</entry>
+              <entry>Required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>--database-instance-id</entry>
+              <entry>Database instance id</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--database-flavor</entry>
+              <entry>Flavor name of database</entry>
+              <entry>Required only if <codeph>database-volume-size </codeph>is used.</entry>
+            </row>
+            <row>
+              <entry>--database-volume-size '0'</entry>
+              <entry>Database volume size</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="update-the-cf-mgmt-tool">
+      <title>Update the <codeph>cf-mgmt </codeph>Tool</title>
+      <p>This command checks for and downloads the latest version of the
+          <varname>cf-mgmt.exe</varname> tool.</p>
+      <p>There are no arguments for this command. Passing the <codeph>Help</codeph> option will
+        generate an empty list.</p>
+      <codeblock>cf-mgmt <b>update</b></codeblock>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colwidth="1*"/>
+          <colspec colname="col2" colwidth="6.41*"/>
+          <thead>
+            <row>
+              <entry>Command Options</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>-h</entry>
+              <entry>Shows a list of commands or help for one command.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  
+  <section id="removeservice">
+      <title>Remove Services from an Existing Cluster</title>
+      <p>This command removes services from an existing cluster (<i>add-service</i>).</p>
+    </section>
+  <section id="remove-service-use-syntax">
+    <title>Use Syntax</title>
+    <codeblock>cf-mgmt [global options] <b>remove-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
+    <p>For help with each subcommand, enter</p>
+    <codeblock>cf-mgmt remove-service <b>[subcommand]</b> --help</codeblock>
+  </section>
+  <section id="remove-service-subcommands">
+    <title>Subcommands</title>
+    <codeblock>cf-mgmt [global options] remove-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="col1" colwidth="119.25pt"/>
+        <colspec colname="col2" colwidth="445.5pt"/>
+        <thead>
+          <row>
+            <entry>Subcommand</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>mysql</entry>
+            <entry>Remove a MySQL service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>filesystem</entry>
+            <entry>Remove a filesystem service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>memcached</entry>
+            <entry>Remove a memcached service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>redis </entry>
+            <entry>Remove a redis service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>postgresql</entry>
+            <entry>Remove a postgresql service from an existing cluster.</entry>
+          </row>
+            <row>
+              <entry>harbor</entry>
+              <entry>Remove a Harbor service from an existing cluster.</entry>
+            </row>
+          <row>
+            <entry>rabbit</entry>
+            <entry>Remove a RabbitMQ service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>mongodb</entry>
+            <entry>Remove a MongoDB service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>mssql2012</entry>
+            <entry>Remove a Microsoft SQL 2012 service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>mssql2014 </entry>
+            <entry>Remove a Microsoft SQL 2014 service from an existing cluster.</entry>
+          </row>
+          <row>
+            <entry>help, h</entry>
+            <entry>Shows a list of commands or help for one command.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+  <section id="remove-subcommand-options">
+    <title>Subcommand Options</title>
+    <p>Each subcommand in the Remove-Service command has these following options available. The
+          <varname>mysql</varname> subcommand has <xref href="#topic13234/remove-mysqlcommand"
+          format="dita">additional options</xref>.</p>
+    <codeblock>cf-mgmt [global options] remove-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="col1" colwidth="1*"/>
+        <colspec colname="col2" colwidth="2.13*"/>
+        <colspec colname="newCol3" colwidth="1.56*"/>
+        <thead>
+          <row>
+            <entry>Subcommand Options</entry>
+            <entry>Description</entry>
+            <entry>Required</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>--load</entry>
+            <entry>Load flags from the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--save</entry>
+            <entry>Save flag values to the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--cluster-prefix</entry>
+            <entry>Prefix to affix to cluster instance names.</entry>
+            <entry>Yes</entry>
+          </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-id</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-name</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name reference to use when creating a constructor server.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for addition of node or service to cluster; defaults to an
+                infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-id</entry>
+              <entry>ID of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-name </entry>
+              <entry>Name of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--private-key</entry>
+              <entry>The private key file needed to connect to cluster nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--delete-instance</entry>
+              <entry>Delete the server instance.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--keep-constructor </entry>
+              <entry>Keep the constructor VM up and running after command completion.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--backup-to-volume</entry>
+              <entry>Create a service backup to the volume previously attached.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--delete-volume</entry>
+              <entry>On deleting the cluster also include deleting the cluster volumes</entry>
+              <entry>No</entry>
+            </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>The <varname>mysql</varname> subcommand has additional options.</p>
+    <table id="remove-mysqlcommand">
+      <tgroup cols="3">
+        <colspec colname="col1"/>
+        <colspec colname="col2"/>
+        <colspec colname="newCol3" colwidth="1*"/>
+        <thead>
+          <row>
+            <entry>MySQL Subcommand Options</entry>
+            <entry>Description</entry>
+            <entry>Required</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>--delete-database</entry>
+            <entry>On deleting the cluster, also delete the database.</entry>
+            <entry>No</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section> 
+  
+  <section id="removerole">
+    <title>Remove Roles From an Existing Cluster</title>
+  </section>
+  <section id="remove-role-use-syntax">
+    <title>Use Syntax</title>
+    <codeblock>cf-mgmt [global options] <b>remove-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
+    <p>For help with this command within the command-line interface, enter</p>
+    <codeblock>cf-mgmt remove-role --help</codeblock>
+  </section>
+  <section id="remove-role-subcommands">
+    <title>Subcommands</title>
+    <codeblock>cf-mgmt [global options] remove-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="col1" colwidth="1*"/>
+        <colspec colname="col2" colwidth="7.33*"/>
+        <thead>
+          <row>
+            <entry>Subcommand</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>dea</entry>
+            <entry>Remove DEA nodes from an existing cluster.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+  <section id="remove-role-sub-command-options">
+    <title>Sub-Command Options</title>
+    <codeblock>cf-mgmt [global options] remove-role [subcommand] <b>[subcommand options]</b> [arguments...]</codeblock>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="col1" colwidth="1*"/>
+        <colspec colname="col2" colwidth="2.13*"/>
+        <colspec colname="newCol3" colwidth="1.56*"/>
+        <thead>
+          <row>
+            <entry>Options (with default input)</entry>
+            <entry>Description</entry>
+            <entry>Required</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>--load</entry>
+            <entry>Load flags from the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--save</entry>
+            <entry>Save flag values to the specified file</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--cluster-prefix</entry>
+            <entry>Prefix to affix to cluster instance names.</entry>
+            <entry>Yes</entry>
+          </row>
+            <row>
+              <entry>--keypair-name</entry>
+              <entry>The name of the key pair on instances</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-name</entry>
+              <entry>Name of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-id</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-id</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--constructor-image-id</entry>
+              <entry>ID of the image of the constructor server.</entry>
+              <entry>Required only if <codeph>constructor-node-image-name</codeph> is undefined.
+                Optional if <codeph>constructor-node-image-name</codeph> is defined.</entry>
+            </row>
+            <row>
+              <entry>--max-cluster-wait-duration '-1'</entry>
+              <entry>Maximum time to wait for addition of node or service to cluster; defaults to an
+                infinite wait.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--constructor-flavor</entry>
+              <entry>Flavor name reference to use when creating a constructor server</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>--network-id</entry>
+              <entry>ID of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--network-name </entry>
+              <entry>Name of the network for the created nodes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-name </entry>
+              <entry>Name of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--external-network-id</entry>
+              <entry>ID of the external network for the public created nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--max-constructor-wait-duration '10m'</entry>
+              <entry>Duration to wait for the constructor machine to come up. Default is 10
+                minutes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--keep-constructor </entry>
+              <entry>Keep the constructor VM up and running after command completion.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--private-key </entry>
+              <entry>The private key file needed to connect to cluster nodes.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>--delete-instance </entry>
+              <entry>Delete the server instance.</entry>
+              <entry>No</entry>
+            </row>
+          <row>
+            <entry>--role-instance [--role-instance option --role-instance option</entry>
+            <entry>The instance number of the role to be removed from the cluster.</entry>
+            <entry>No</entry>
+          </row>
+          <row>
+            <entry>--stack 'lucid64'</entry>
+            <entry>Stack indicates the platform to use when adding DEAs. Valid values are lucid64
+              or win2012r2. Default is lucid64</entry>
+            <entry>No</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+   </body>
+</topic>

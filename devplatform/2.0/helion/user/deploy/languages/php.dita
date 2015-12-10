@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5845">
+<title>HPE Helion 2.0 Development Platform: Developing In PHP</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Whether you're deploying an application to the HPE Helion Development Platform, a
+Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
+advantage of HPE Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
+to enable successful development are available in PHP.</p>
+  <p>Deployable <xref href="../../../../devplatform.appdev.dita#topic2457/PHP">sample
+        applications</xref> are available in this language.</p>
+<section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
+<p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
+applications to this platform is as easy as adding details to a YAML configuration file and using
+a console application to push the application to ALS.
+At its simplest form, the configuration file <i>manifest.yml</i>, which is located at the root of a project, 
+would look like:</p>
+<codeblock>name: php-web-app
+framework:
+    type: php</codeblock>
+<p>This will set the ALS framework type for a PHP web application.</p>
+<p>To create a worker non-http application set the web process to <b>null</b> (~) and specify
+the command to <b>run</b>. For example:</p>
+<codeblock>name: php-app
+framework: php
+command:php worker.php
+processes: 
+   web: ~</codeblock>
+<p>Management of the deployed application and its services happens through a web application or
+a console application. To learn more see the <xref href="../manifestyml.dita" >manifest.yml</xref> reference.</p>
+</section>
+<section id="deployment"> <title>Deployment</title>
+<p>You will need at least two files to deploy a PHP app on Application Lifecycle Service:
+<i>index.php</i>, and <i>manifest.yml</i>.</p>
+<p>The <i>manifest.yml</i> must specify <b>php</b> as the framework type:</p>
+<codeblock>framework:
+type: php</codeblock>
+<p>For more information, see the <xref href="../manifestyml.dita" >manifest.yml</xref> reference.</p>
+</section>
+<section id="application-url"> <title>Application URL</title>
+<p>Some applications require the user to specify the APP_URL. Below is an
+example on how to obtain the correct urls:</p>
+<codeblock>$appinfo = getenv("VCAP_APPLICATION");
+$appinfo_json = json_decode($appinfo,true);
+$admin = $appinfo_json['uris'][0];</codeblock>
+</section>
+<section id="worker-applications"> <title>Worker Applications</title>
+<p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
+the Health Manager.</p>
+<p>To deploy worker applications, you need to use the
+  <xref href="../manifestyml.dita#topic20922/command" type="section"   >
+<i>command</i>
+</xref> key and set the
+  <xref href="../manifestyml.dita#topic20922/web" type="section"   >
+<i>processes: web</i>
+</xref>
+key to Null ("\~").</p>
+</section>
+<section id="example"> <title>Example</title>
+<codeblock>name: php-app
+framework: php
+command: php worker.php
+processes:
+  web: ~</codeblock>
+</section>
+<section id="database-services"> <title>Database Services</title>
+</section>
+<section id="database-url"> <title>
+  DATABASE_URL
+</title>
+<p>Authentication details for your configured database services can be
+found in the <b>$_SERVER</b> variable, under 
+<b>DATABASE_URL</b>. Here is a sample for retrieving the correct credentials:</p>
+<codeblock>  &lt;?php
+    $url_parts = parse_url($_SERVER['DATABASE_URL']);
+    $db_name = substr( $url_parts['path'], 1 );
+    $db_connection_string = $url_parts['host'] . ':' . $url_parts['port'];
+
+    // ** MySQL settings from resource descriptor ** //
+    echo $db_name;
+    echo $url_parts['user'];
+    echo $url_parts['pass'];
+    echo $url_parts['host'];
+    echo $url_parts['port'];
+?&gt;</codeblock>
+</section>
+<section id="vcap-services"> <title>
+  VCAP_SERVICES
+</title>
+<codeblock>  &lt;?php
+    $services = getenv("VCAP_SERVICES");
+    $services_json = json_decode($services,true);
+    $mysql_config = $services_json["mysql"][0]["credentials"];
+
+    // ** MySQL settings from resource descriptor ** //
+    echo $mysql_config["name"];
+    echo $mysql_config["user"];
+    echo $mysql_config["password"];
+    echo $mysql_config["hostname"];
+    echo $mysql_config["port"];
+    );
+?&gt;</codeblock>
+</section>
+<section id="php-ini"> <title>PHP.ini</title>
+<p>Additional PHP ini files will be loaded from the <codeph>$HELION_APP_ROOT/apache/php/</codeph> directory.</p>
+</section>
+<section id="document-root-access"> <title>Document Root Access</title>
+<p>If your document root (the location of the main <i>index.php</i> file) is the
+main application directory, the information stored in 
+<i>manifest.yml</i> is exposed to the browser.</p>
+<p>To prevent exposing this information, you can use an <i>.htaccess</i> file in
+the document root directory with the following rule:</p>
+<codeblock>&lt;filesmatch "^(manifest)\.yml$"&gt;
+  order allow,deny
+  deny from all
+&lt;/filesmatch&gt;</codeblock>
+<p>Alternatively, move your application into a subdirectory (e.g. move
+<i>index.php</i> to <i>www/index.php</i>) and explicitly set your document-root in
+<i>manifest.yml</i>:</p>
+<codeblock>framework:
+document-root: www</codeblock>
+<p>Using the <i>.htaccess</i> file will generate an "HTTP 403 Forbidden" error
+if a user tries to access the denied files. Changing the document-root
+will generate an "HTTP 404 Not Found" error instead.</p>
+<p>These techniques can be use to hide other files in your application
+source tree which you do not want exposed to end users.</p>
+</section>
+<section id="server-name-server-port"> <title>SERVER_NAME &amp; SERVER_PORT</title>
+<p>Application Lifecycle Service serves web applications port 80 and/or 443 at the router, but
+within the application container Apache will be running on a different
+port. PHP will report this internal IP address and port in the
+SERVER_ADDR and SERVER_PORT Apache environment variables respectively.</p>
+<p>If your application makes use of these variables, you may need to adjust
+them by using an <xref href="http://httpd.apache.org/docs/current/howto/htaccess.html" scope="external" format="html" >.htaccess file</xref> to set
+one or more
+<xref href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewriterule" type="section"  format="html" >RewriteRule</xref>
+directives to correct the server name or port in URLs.</p>
+</section>
+<section id="persistent-sessions-php"> <title>Persistent Sessions (PHP)</title>
+<p>One of the issues with managing a PHP application running multiple
+instances is dealing with user sessions.</p>
+  <p>If your application uses a <xref href="../../services/filesystem.dita"><i>shared filesystem
+            service</i></xref>, you can store user sessions there. The following <i>manifest.yml</i>
+        snippet creates a persistent filesystem service, creates a directory for sessions, and
+        writes a PHP config file to set the path to the session directory:</p>
+<codeblock>  services:
+  ${name}-fs: filesystem
+hooks:
+  post-staging:
+  - mkdir -p "$HELION_FILESYSTEM"/sessions
+  - echo "session.save_path = $HELION_FILESYSTEM/sessions" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini</codeblock>
+<p>For better performance, use a <xref href="../../services/memcached.dita">
+<i>Memcached</i>
+</xref> service for
+session storage instead:</p>
+<codeblock>  services:
+  ${name}-cache: memcached
+hooks:
+  post-staging:
+  - echo "session.save_handler = memcached" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini
+  - echo "session.save_path = $MEMCACHED_URL" &gt;&gt; "HELIONO_APP_ROOT"/apache/php/sessions.ini</codeblock>
+</section>
+</body>
+</topic>

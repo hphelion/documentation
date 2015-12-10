@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1184">
+<title>HPE Helion 2.0 Development Platform: Catalyst</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HPE Helion Development Platform"/>
+  <othermeta name="product-version" content="HPE Helion Development Platform 2.0"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+</metadata>
+</prolog>
+<body>
+<p>Catalyst is a framework for building web applications, which will run on
+Application Lifecycle Service. To learn more about Catalyst, see the <xref href="https://metacpan.org/module/Catalyst" scope="external" format="html" >Catalyst
+documentation</xref>. Also, take a look
+at the Application Lifecycle Service sample apps listed below to see some working code
+examples.</p>
+<section id="home-directory"> <title>Home Directory</title>
+<p>Catalyst makes different assumptions on its Home directory depending on
+whether or not it is installed in @INC. It makes this distinction based
+on the presence of a <i>Makefile.PL</i> or <i>BUILD.PL</i> file in the app
+directory, so it is important to have one even if all prerequisites are
+installed via <i>requirements.txt</i>.</p>
+<p>Alternatively, the Home directory can be <xref href="https://metacpan.org/module/Catalyst#Home" type="section" scope="external" format="html" >set
+explicitly</xref> with environment
+variables. For example, you could set CATALYST_HOME in <i>manifest.yml</i>:</p>
+<codeblock>env:
+  CATALYST_HOME: $HOME</codeblock>
+</section>
+<section id="examples"> <title>Examples</title>
+<ul>
+<li>
+<xref href="https://github.com/Stackato-Apps/catalyst-tut2" scope="external" format="html" >Catalyst Tutorial
+2</xref>: Sample
+application from chapter 2 of the Catalyst-Manual.</li>
+<li>
+<xref href="https://github.com/Stackato-Apps/catalyst-tut3" scope="external" format="html" >Catalyst Tutorial
+3</xref>: Another Catalyst
+tutorial.</li>
+<li>
+<xref href="https://github.com/Stackato-Apps/catalyst-welcome" scope="external" format="html" >Catalyst Hello
+World</xref>: A simple
+Catalyst example.</li>
+</ul>
+</section>
+</body>
+</topic>
