@@ -55,7 +55,7 @@ set OS_TENANT_NAME=12345678901234-Project
 set OS_USERNAME=myUsername
 
 set /p OS_PASSWORD_INPUT=Please enter your OpenStack password: 
-set OS_PASSWORD=%OS_PASSWORD_INPUT
+set OS_PASSWORD=%OS_PASSWORD_INPUT%
 
 set OS_REGION_NAME=myRegionName<draft-comment author="michaelk">If the variable is empty, then unset the variable.</draft-comment></codeblock></li>
                 <li>Navigate to the directory that contains the <codeph>openrc.bat</codeph> file and
