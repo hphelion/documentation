@@ -36,8 +36,8 @@
             type="note">For more information, see <xref
               href="../../reference/hcf-reference-tfvars.dita">Terraform
               Variables</xref>.</note><p>Terraform cleanly terminates the instance and the security
-            groups associated with it.</p><note type="tip">If the <filepath>destroy</filepath>
-            process enters a loop, delete the <filepath>terraform.tfstate</filepath> file and run
+            groups associated with it.</p><note type="tip">If the <codeph>destroy</codeph>
+            process enters a loop, delete the <codeph>terraform.tfstate</codeph> file and run
             the command again.</note><b>To Terminate Instances and Security Groups from <keyword
               keyref="pubCloudShort"/></b><p>Using <keyword keyref="pubCloudShort"/> to terminate
             instances or security groups is not recommended. Use the following steps only if you run

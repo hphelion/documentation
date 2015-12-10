@@ -14,7 +14,7 @@
     <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
         href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
         format="html" scope="external">Droplet Execution Agent</xref>. For detailed instructions on
-      using the <filepath>cf push</filepath> command and deploying applications, see the Cloud
+      using the <codeph>cf push</codeph> command and deploying applications, see the Cloud
       Foundry documentation on <xref
         href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
         scope="external">deploying an application</xref>.</note>
@@ -56,7 +56,7 @@
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
-                skip SSL validation, add the <filepath>--skip-ssl-validation</filepath> option to
+                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to
                 your command. If you cannot connect to your cluster, ensure that your connection has
                 no proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
@@ -95,9 +95,9 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
                 application, formatted using the xip.io wildcard DNS, for
                 example:<codeblock><b>urls:</b> myAppName.203.0.113.0.xip.io</codeblock></p><note
                 type="tip">You will need this URL to access the application using a web browser. You
-                can also run the <filepath>cf apps</filepath> command to see detailed information
+                can also run the <codeph>cf apps</codeph> command to see detailed information
                 about your application.</note><note>If you experience a problem, run the
-                  <filepath>cf delete <varname>&lt;appName></varname></filepath> command, make the
+                  <codeph>cf delete <varname>&lt;appName></varname></codeph> command, make the
                 necessary adjustments, and then push the application again. For detailed
                 instructions, see the Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
                   <li><xref
