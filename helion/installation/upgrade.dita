@@ -115,9 +115,44 @@ ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit &lt;compute node></co
     </section>
 
     <section id="esx"><title>Further ESX Model Upgrade Instructions</title>
-      <p/>
+      <p>Once you have completed the initial upgrade instructions here are the additional steps that
+        must be completed:</p>
+      <ol>
+        <li>The new cluster import can be performed directly with the command below on the already
+          activated DC:
+          <codeblock>eon cluster-import --vcenter-id &lt;vcenter-id> --cluster-name &lt;cluster-name> --cluster-moid &lt;MOID of cluster></codeblock></li>
+        <li>If the cluster activation is on a new DC, follow the steps below before performing the
+          cluster-import: <ol>
+            <li>Get the new <codeph>net-conf.json</codeph> template using the following command:
+              <codeblock>eon get-network-info-template -filename net-conf.json</codeblock></li>
+            <li>Edit the <codeph>net-conf.json</codeph> file with your lifecycle manager and
+              Management network details.</li>
+            <li>Uncomment the data network parameters and provide the Data network details. Change
+              the <codeph>data_interface_order</codeph> to <codeph>eth2</codeph>. <p>Example:</p>
+              <codeblock>"data_interface_order" = eth2</codeblock></li>
+            <li>In the Trunk network, change the <codeph>trunk_interface_order</codeph> to
+                <codeph>eth3</codeph>. <p>Example:</p>
+              <codeblock>"trunk_interface_order" = eth3</codeblock></li>
+            <li>Edit the template name and SSH key parameters as needed and save the
+                <codeph>net-conf.json</codeph> file.</li>
+            <li>Now set these values on the new Data center. This will create new dvSwitches as per
+              the <codeph>net-conf.json</codeph> file for the new DC:
+              <codeblock>eon set-network-info --vcenter-id &lt;vcenter-id>  --datacenter-name &lt;New DC name> --config-json net_conf.json</codeblock></li>
+            <li>Perform the cluster activation on this new DC with the following command:
+              <codeblock>eon cluster-import --vcenter-id &lt;vcenter-id> --cluster-name &lt;cluster-name> --cluster-moid &lt;MOID of cluster></codeblock></li>
+            <li>Activate the imported cluster:
+              <codeblock>eon cluster-activate --vcenter-id &lt;vcenter-id>  --cluster-moid &lt;MOID of cluster></codeblock></li>
+            <li>Run the configuration processor:
+              <codeblock>cd ~/hellion/hos/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+            <li>Run the ready deployment playbook:
+              <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+            <li>Run the site.yml playbook for the ESX proxy Compute nodes and the OVSvAPPs:
+              <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts site.yml --limit '*esx-ovsvapp:*esx-compute'</codeblock></li>
+          </ol></li>
+      </ol>
     </section>
-
-
   </body>
 </topic>
