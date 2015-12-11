@@ -485,7 +485,7 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
           <li>Modify the template (json file) as per your
               environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
               example:<codeblock>vi net_conf.json</codeblock></p>
-<!-- THESE STEPS ARE SPECIFIC TO HOS 2.1 -->
+<!-- THESE STEPS ARE SPECIFIC TO HOS 2.1 / DOCS-2328-->
             <ul>
               <li>For your lifecycle manager network, change the <codeph>vlan_type</codeph> to one
                 of the following values: <codeph>vlan</codeph>, <codeph>trunk</codeph>, or
