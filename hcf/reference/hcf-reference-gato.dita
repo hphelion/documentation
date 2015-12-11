@@ -30,7 +30,7 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt>api</dt>
+          <dt><codeph>api</codeph></dt>
           <dd>Set <codeph><keyword keyref="adminUtilCLI"/></codeph> to use the specified <keyword
               keyref="prodShort"/> configuration store for subsequent operations. If an
                 <codeph><varname>&lt;endpoint></varname></codeph> is not specified, the current
@@ -55,15 +55,13 @@
       <dl>
         <dlentry>
           <dt><codeph>api <varname>[&lt;endpoint>]</varname></codeph></dt>
-          <dd>
-            <codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock>
-          </dd>
+          <dd>Example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
         </dlentry>
         <dlentry>
           <dt><codeph id="config_get_example">config get</codeph>
             <codeph><varname>[options]</varname>
               <varname>&lt;key-path></varname></codeph></dt>
-          <dd>Look up the current and default values of a configuration.<codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><dl>
+          <dd>Look up the current and default values of a configuration.<p>Example:</p><codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><dl>
               <dlentry>
                 <dt><codeph>--json</codeph>, <codeph>-j</codeph></dt>
                 <dd>Output key-value pairs in JSON format.</dd>
@@ -76,7 +74,8 @@
               <varname>&lt;key-path></varname>
               <varname>&lt;value></varname></codeph></dt>
           <dd>Set <codeph><varname>&lt;key-path></varname></codeph> to
-                <codeph><varname>&lt;value></varname></codeph> in the configuration store.<codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><dl>
+                <codeph><varname>&lt;value></varname></codeph> in the configuration
+              store.<p>Examples:</p><codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><dl>
               <dlentry>
                 <dt><codeph>--role</codeph>, <codeph>-r</codeph></dt>
                 <dd>Set a specific <xref href="hcf-reference-roles.dita#cf_reference_roles"
@@ -98,7 +97,7 @@
               <dlentry>
                 <dt><codeph>--all</codeph></dt>
                 <dd>Show the status of every individual
-                  process.<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock></dd>
+                  process.<p>Example:</p><codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock></dd>
               </dlentry>
             </dl>
           </dd>
