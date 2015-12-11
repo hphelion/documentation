@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_m3k_bth_tt">
+<concept id="concept_m3k_bth">
  <title>Quick Start Step 6: <keyword keyref="quickStartHPcloudStep6"/></title>
  <shortdesc>You can easily take down your <keyword keyref="prodLong"/> instances and security groups
     on <keyword keyref="pubCloudLong"/>.</shortdesc>
@@ -12,11 +12,11 @@
  <conbody>
    <simpletable>
      <strow>
-       <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6.
+       <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep3_"/></p><p>4.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep4_"/></p><p>5.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep5_"/></p>6.
               <b><keyword keyref="quickStartHPcloudStep6"/></b></stentry>
        <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer
             and troubleshoot your cluster, you can connect to it using <codeph>ssh</codeph> and then

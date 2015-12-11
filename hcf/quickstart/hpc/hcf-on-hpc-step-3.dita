@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_kpg_fhz_st">
+<concept id="concept_kpg_fhz">
  <title>Quick Start Step 3: <keyword keyref="quickStartHPcloudStep3"/></title>
  <shortdesc>During this step you will log into <keyword keyref="pubCloudLong"/> and use the web
     console to create a sandbox environment.</shortdesc>
@@ -12,13 +12,13 @@
  <conbody>
   <simpletable>
    <strow>
-    <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+    <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep2_"/></p><p>3.
                 <b><keyword keyref="quickStartHPcloudStep3" id="quickStartHPcloudStep3"
             /></b></p><p>4. <xref
-              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
-              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
-            conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep4_"/></p><p>5. <xref
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep5_"/></p>6. <xref
+            conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep6_"/></stentry>
     <stentry>
           <b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
             <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"

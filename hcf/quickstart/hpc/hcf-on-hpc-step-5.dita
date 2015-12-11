@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_cw2_thz_st">
+<concept id="concept_cw2_thz">
  <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
  <shortdesc>The following examples describe a typical process of pushing an application using the
     Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
@@ -20,12 +20,12 @@
         scope="external">deploying an application</xref>.</note>
   <simpletable>
    <strow>
-    <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
-              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
+    <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep3_"/></p><p>4.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep4_"/></p><p>5.
                 <b><keyword keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6.
-            <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+            <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Sample Applications</b><p>The following sample applications will get your started
             with the <codeph>cf push</codeph> workflow:<dl>
               <dlentry>

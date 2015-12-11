@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_ikh_xgz_st">
+<concept id="concept_ikh_xgz">
  <title>Quick Start Step 2: <keyword keyref="quickStartHPcloudStep2"/></title>
  <shortdesc>During this step you will download and install the tools necessary for creating a
     cluster and pushing applications to your sandbox environment. The download links and
@@ -13,13 +13,13 @@
  <conbody>
   <simpletable>
    <strow>
-    <stentry>1. <xref href="hcf-on-hpc-step-1.dita#concept_s2k_b35_st" id="quickStartHPcloudStep1_"
+    <stentry>1. <xref href="hcf-on-hpc-step-1.dita#concept_s2k_b35" id="quickStartHPcloudStep1_"
               ><keyword keyref="quickStartHPcloudStep1"/></xref><p>2. <b><keyword
                 keyref="quickStartHPcloudStep2" id="quickStartHPcloudStep2"/></b></p><p>3. <xref
-              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4. <xref
-              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5. <xref
-              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep5_"/></p>6. <xref
-            conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep3_"/></p><p>4. <xref
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep4_"/></p><p>5. <xref
+              conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep5_"/></p>6. <xref
+            conref="hcf-on-hpc-step-1.dita#concept_s2k_b35/quickStartHPcloudStep6_"/></stentry>
     <stentry><note type="important">Ensure that all tools are added to your <codeph>PATH</codeph>
             environment variable. To set the variable on Linux and Mac OS X, <xref
               href="http://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux"
