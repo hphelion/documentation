@@ -493,7 +493,7 @@ hp3par_snapshot_expiration=72</codeblock>
             <p><b>Mellanox CX-3 NICs limitations</b></p>
             <ul id="ul_rzl_ccw_c5">
                 <li>
-                    <p>Mellanox is supported for use with AVS vSwitch
+                    <p>Mellanox is supported for use in the AVS vSwitch
                         only.<!--Per Vlad and Shantanu email--></p>
                 </li>
                 <li>
