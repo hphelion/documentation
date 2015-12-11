@@ -30,27 +30,26 @@
               <dlentry>
                 <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
                     scope="external">go-env</xref> (Go)</dt>
-                <dd>A simple Go application to display environment variables</dd>
+                <dd>A simple Go application to display environment
+                  variables<codeblock>git clone https://github.com/Stackato-Apps/go-env.git</codeblock></dd>
               </dlentry>
               <dlentry>
                 <dt><xref href="https://github.com/Stackato-Apps/node-env" format="html"
                     scope="external">node-env</xref> (Node.js)</dt>
-                <dd>A simple demo that prints the server's environment variables</dd>
-              </dlentry>
-              <dlentry>
-                <dt><xref href="https://github.com/hpcloud/cf-demo-dashboard" format="html"
-                    scope="external">cf-demo-dashboard</xref> (Ruby)</dt>
-                <dd>Github stats widget for dashing</dd>
+                <dd>A simple demo that prints the server's environment variables
+                  <codeblock>git clone https://github.com/Stackato-Apps/node-env.git</codeblock></dd>
               </dlentry>
               <dlentry>
                 <dt><xref href="https://github.com/Stackato-Apps/phpinfo" format="html"
                     scope="external">phpinfo</xref> (PHP)</dt>
-                <dd>Outputs information about PHP's configuration</dd>
+                <dd>Outputs information about PHP's
+                  configuration<codeblock>git clone https://github.com/Stackato-Apps/phpinfo.git</codeblock></dd>
               </dlentry>
               <dlentry>
                 <dt><xref href="https://github.com/hpcloud/python-env" format="html"
                     scope="external">python-env</xref> (Python)</dt>
-                <dd>A simple Python app to show environment variables</dd>
+                <dd>A simple Python app to show environment
+                  variables<codeblock>git clone -b CF https://github.com/hpcloud/python-env.git</codeblock></dd>
               </dlentry>
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
@@ -89,8 +88,9 @@ cf target -o myOrg -s mySpc</codeblock></note></li>
               example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
             <li>Log into the cluster:<codeblock>cf login</codeblock><p
                 conref="#concept_cw2_thz_st/user_pass"/></li>
-            <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed to the cluster. At the end of the process, Cloud Foundry displays
-                the URL of the application, formatted using the xip.io wildcard DNS, for
+            <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed
+                to the cluster. At the end of the process, Cloud Foundry displays the URL of the
+                application, formatted using the xip.io wildcard DNS, for
                 example:<codeblock><b>urls:</b> myApp.203.0.113.0.xip.io</codeblock></p><note
                 type="tip">You will need this URL to access the application using a web browser. You
                 can also run the <codeph>cf apps</codeph> command to see detailed information about
