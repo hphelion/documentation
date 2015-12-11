@@ -148,8 +148,7 @@
           <topicref href="helion/objectstorage/swift_device_groups.dita"
             navtitle="Swift Requirements for Device Group Drives" locktitle="yes"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita"
-            navtitle="Creating a Proxy, Account, and Container Cluster for Object Storage"
-            locktitle="yes"/>
+            navtitle="Creating a Swift Proxy, Account, and Container Cluster" locktitle="yes"/>
           <topicref href="helion/objectstorage/creating_object_server_resource.dita"
             navtitle="Creating Object Server Resource Nodes" locktitle="yes"/>
           <topicref href="helion/objectstorage/allocating_network.dita"
@@ -285,7 +284,7 @@
         <topicref href="helion/objectstorage/add_new_node.dita"
           navtitle="Adding a Swift Object Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/add_new_pac_node.dita"
-          navtitle="Adding a Proxy, Account, Container (PAC) Node" locktitle="yes"/>
+          navtitle="Adding a Swift Proxy, Account, Container (PAC) Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"
           navtitle="Replacing Drives in a Swift Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/replacing_swift_node.dita"
