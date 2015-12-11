@@ -163,9 +163,13 @@ option routers 10.20.94.209;   ###TUL network Gateway####
 }
 ######## config file end</codeblock></li>
                     <li>Restart the DHCP service:<codeblock>service dhcpd restart</codeblock></li>
-                    <li>Copy the VRSvApp template files, <codeph>VRS_3.2.4-135_10062015.ovf</codeph>
-                        and <codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph> to the DocumentRoot
-                            (<codeph>/var/www/html</codeph> is the default location).</li>
+                    <li>Copy the following VRSvApp template files to the DocumentRoot of the
+                        toolbox VM (<codeph>/var/www/html</codeph> is the default location): <ul
+                            id="ul_dks_ndj_h5">
+                            <li><codeph>VRS_3.2.4-135_10062015.ovf</codeph></li>
+                            <li><codeph>VRS_3.2.4-135_10062015-disk1.vmdk</codeph>
+                            </li>
+                        </ul></li>
                     <li>Check Apache server and make sure it’s running and restart if
                         needed:<codeblock>Service httpd restart</codeblock></li>
                 </ol>

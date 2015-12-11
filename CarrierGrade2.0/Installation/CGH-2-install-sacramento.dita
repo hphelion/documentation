@@ -25,9 +25,9 @@
     <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
       region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
       instructions. If you are installing a different deployment, disregard these instructions. </p>
-    <section id="conref-network"><title>HPE Distributed Cloud Networking
-        Requirements</title><p>Before starting the HPE Helion OpenStack Carrier Grade installation,
-        the HPE Distributed Cloud Networking components must be fully installed and
+    <section id="conref-network"><title>Set up the Environment for HPE Distributed Cloud Networking
+        </title><p>Before starting the HPE Helion OpenStack Carrier Grade installation, the HPE
+        Distributed Cloud Networking components must be fully installed and
           functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud Networking
         (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
         documentation for details. </p><p>For a quick overview of the DCN components, see the
@@ -55,8 +55,32 @@
       /></p>Make sure that reverse DNS resolution <b>is not enabled</b> the for xmpp Host
           record:<p><image href="../../media/CGH-2-install-DNS-config-example.png" width="400"
           id="image_ugq_rvz_jt"/></p></section>
+    <section id="conref-vapp">
+      <title>Deploy the VRSvApp</title>
+      <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
+          href="CGH-2-install-vsvapp.dita#topic10581c2iv">Deploying the VRS vApp</xref></p>
+    </section>
+    <section id="conref-vsd">
+      <title>Verify VSD is running</title>
+      <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
+        following command:</p>
+      <codeblock>service vsd status</codeblock>
+      <p>You should see the status from the VSD VM similar to the following:</p>
+      <p>
+        <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"/></p>
+    </section>
+    <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
+      license file when you purchased DCN. You need to apply that license on the lifecycle manager
+      host. For more information, see <xref
+        href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
+    <section id="conref-admin-user">
+      <title>Create an OSadmin user for VSD</title>
+      <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581cgivu">Create an
+          OSadmin User for VSD</xref>.</p>
+    </section>
     <section id="conref-esx">
-      <title>ESXi requirements</title>
+      <title>Set up the environment for ESX</title>
       <p>ESX should be deployed before starting the cloud deployment. For more information, refer to
         the VMware product documentation.</p>
       <p>In production cloud deployments:</p>
@@ -87,30 +111,6 @@
       <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
         information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581cgivs">Deploying
           the VMware vSphere Distributed Switch</xref>. </p>
-    </section>
-    <section id="conref-vapp">
-      <title>Deploy the VRSvApp</title>
-      <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
-          href="CGH-2-install-vsvapp.dita#topic10581c2iv">Deploying the VRS vApp</xref></p>
-    </section>
-    <section id="conref-vsd">
-      <title>Verify VSD is running</title>
-      <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
-        following command:</p>
-      <codeblock>service vsd status</codeblock>
-      <p>You should see the status from the VSD VM similar to the following:</p>
-      <p>
-        <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"/></p>
-    </section>
-    <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
-      license file when you purchased DCN. You need to apply that license on the lifecycle manager
-      host. For more information, see <xref
-        href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
-    <section id="conref-admin-user">
-      <title>Create an OSadmin user for VSD</title>
-      <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
-        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581cgivu">Create an
-          OSadmin User for VSD</xref>.</p>
     </section>
     <section id="conref-hos-install">
       <title>Launch the HPE Helion OpenStack cloud</title>
