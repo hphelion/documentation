@@ -29,7 +29,7 @@
       <li><xref href="hcf-whats-new.dita#concept_uvz_1cx_tt"/></li>
       <li><xref href="hcf-release-notes.dita#cfr_relnotes"/></li>
       <li><xref href="hcf-agreements.dita#cfr_tp_licensing"/></li>
-      <li><b>Quick-Start Guides</b><ul id="ul_qyw_xn3_h5">
+      <li>Quick-Start Guides<ul id="ul_qyw_xn3_h5">
           <li><b>Deploying to <keyword keyref="pubCloudLong"/></b><ul id="ul_im1_yn3_h5">
               <li><xref href="quickstart/hpc/hcf-on-hpc-step-1.dita#concept_s2k_b35_st"/></li>
               <li><xref href="quickstart/hpc/hcf-on-hpc-step-2.dita#concept_ikh_xgz_st"/></li>
