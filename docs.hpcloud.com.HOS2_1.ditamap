@@ -42,6 +42,9 @@
    navtitle="Troubleshooting the Centralized Logging Service" locktitle="yes"/>
   <topicref href="helion/operations/live_migration.dita"
    navtitle="Live Migration of Instances" locktitle="yes"/>
+  <topicref href="helion/3rd-party-license-agreements_21.dita" navtitle="Third-party Licensing"
+   locktitle="yes"/>
+  <topicref href="helion/eula_21.dita" navtitle="End User License Agreement" locktitle="yes"/>
  </topicref>
  <!-- BEGIN - OPERATIONS/BURA -->
  <topicref href="helion/bura/bura_overview.dita" navtitle="Backing Up and Restoring Your Data"

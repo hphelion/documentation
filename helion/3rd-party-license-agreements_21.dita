@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="osrbhos21">
+<title>HPE Helion <tm tmtype="reg">OpenStack</tm> 2.1: Open Source and Third-Party Software License
+    Agreements</title>
+
+<body>
+<p>The Open Source and Third-Party Software License Agreements for HPE Helion OpenStack are available as a PDF download.</p>
+<p>
+  <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HOS_OSRB_2.1.pdf" scope="external" format="pdf">Download the PDF document.</xref>
+</p>
+  <p>You can download the open source libraries included with Vertica at <xref
+        href="https://my.vertica.com/licenses/" format="html" scope="external"
+        >https://my.vertica.com/licenses/</xref>. You can obtain source code for other components
+      where HPE has an obligation to or, in its sole discretion, chooses to make the source code for
+      such components available under the applicable open source software license. Instructions on
+      how to obtain the source code are in the PDF.</p>
+</body>
+</topic>
