@@ -93,7 +93,8 @@ ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
             the node by running the following command for each of the
           instances:</p><codeblock>nova stop &lt;instance-uuid&gt;</codeblock></li>
         <li>Stop all services on the controller node:
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-stop.yml --limit &lt;controller node></codeblock>
+          <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-stop.yml --limit &lt;controller node></codeblock>
         </li>
         <li>Reboot the compute node: <note type="caution">Execute on the compute node itself (not
             the lifecycle manager).</note><codeblock>reboot</codeblock>The operating system cleanly
