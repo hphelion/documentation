@@ -234,7 +234,18 @@ ansible-playbook -i hosts/verb_hosts nova-start.yml --limit hlm002-cp1-c1-m3-mgm
 <codeblock>
 /sbin/sgdisk --zap-all -- /dev/sdb    
 </codeblock>
+ 
+            <!--  https://jira.hpcloud.net/browse/DOCS-2311 -->
+            <p id="DOCS-2311"><b>Failure to restart VPNaaS due to ipsec issue after re-boot</b></p>
             
+            <p> When the controller node (or network node) running ipsec process from Openswan is 
+                rebooted, it is observed that the ipsec process fails to start by default. In such an instance, 
+                to get VPNaaS working, the following commands need to be executed after the system reboot.
+             </p>
+<codeblock>
+sudo service ipsec start
+sudo service neutron-vpn-agent restart
+</codeblock>
             
         </section>
         
