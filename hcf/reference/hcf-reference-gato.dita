@@ -30,14 +30,15 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt><codeph>api</codeph></dt>
+          <dt><xref href="#reference_cd3_bs3_rt/api" format="dita"><codeph>api</codeph></xref></dt>
           <dd>Set <codeph><keyword keyref="adminUtilCLI"/></codeph> to use the specified <keyword
               keyref="prodShort"/> configuration store for subsequent operations. If an
                 <codeph><varname>&lt;endpoint></varname></codeph> is not specified, the current
             endpoint is displayed.</dd>
         </dlentry>
         <dlentry>
-          <dt><codeph>config</codeph></dt>
+          <dt><xref href="#reference_cd3_bs3_rt/config_get" format="dita"
+              ><codeph>config</codeph></xref></dt>
           <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components.</dd>
         </dlentry>
         <dlentry>
@@ -45,7 +46,8 @@
           <dd>Show a list of commands or help for one command.</dd>
         </dlentry>
         <dlentry>
-          <dt><codeph>status</codeph></dt>
+          <dt><xref href="#reference_cd3_bs3_rt/status" format="dita"
+            ><codeph>status</codeph></xref></dt>
           <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster.</dd>
         </dlentry>
       </dl>
@@ -54,11 +56,11 @@
       <title>Command Usage Details and Examples</title>
       <dl>
         <dlentry>
-          <dt><codeph>api <varname>[&lt;endpoint>]</varname></codeph></dt>
+          <dt><codeph id="api">api <varname>[&lt;endpoint>]</varname></codeph></dt>
           <dd>Example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
         </dlentry>
         <dlentry>
-          <dt><codeph id="config_get_example">config get</codeph>
+          <dt><codeph id="config_get">config get</codeph>
             <codeph><varname>[options]</varname>
               <varname>&lt;key-path></varname></codeph></dt>
           <dd>Look up the current and default values of a configuration. Example:<codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><dl>
@@ -69,7 +71,7 @@
             </dl></dd>
         </dlentry>
         <dlentry>
-          <dt><codeph>config set</codeph>
+          <dt><codeph id="config_set">config set</codeph>
             <codeph><varname>[options]</varname>
               <varname>&lt;key-path></varname>
               <varname>&lt;value></varname></codeph></dt>
@@ -90,7 +92,7 @@
             </dl></dd>
         </dlentry>
         <dlentry>
-          <dt><codeph>status <varname>[options]</varname></codeph></dt>
+          <dt><codeph id="status">status <varname>[options]</varname></codeph></dt>
           <dd>
             <dl>
               <dlentry>
