@@ -92,6 +92,9 @@ ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
           host then the nova scheduler will choose a node for you.<p>OR</p><p>Stop the instances on
             the node by running the following command for each of the
           instances:</p><codeblock>nova stop &lt;instance-uuid&gt;</codeblock></li>
+        <li>Stop all services on the controller node:
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-stop.yml --limit &lt;controller node></codeblock>
+        </li>
         <li>Reboot the compute node: <note type="caution">Execute on the compute node itself (not
             the lifecycle manager).</note><codeblock>reboot</codeblock>The operating system cleanly
           shuts down services and then automatically reboots. If you want to be very thorough, run
@@ -113,10 +116,30 @@ ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit &lt;compute node></co
 
       </ol>
     </section>
-
+<section id="rebootControllers"><title>Rebooting Controller Nodes</title> In order to reboot the
+      controller nodes, you must first retrieve a list of nodes in your cloud running control plane
+      services. <b>TODO: Either put info here or point to existing section on this</b>. After
+      retrieving this list, to begin reboot of the controller nodes, make sure that you are in the
+      correct directory for running HLM playbooks:
+      <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock> then carry out the following
+      operations in turn on each controller node: 
+      <ol> <li>Stop all services on the controller node:
+      <codeblock>ansible-playbook -i hosts/verb_hosts hlm-stop.yml --limit &lt;controller node></codeblock>
+     </li><li> Reboot the controller node, e.g. run the following command on the controller itself:
+      <codeblock>sudo reboot</codeblock> Note that the lifecycle manager may be located on a
+      controller node. In that case, you must return to the Ansible playbook directory after the
+      reboot: <codeblock>cd ~/scratch/ansible/next/hos/ansible</codeblock> 
+     </li><li>Wait for the controller node to become ssh-able and allow an additional minimum of five minutes
+          for the controller node to settle. Start all services on the controller node:
+          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit &lt;controller node></codeblock>
+        </li><li>When above start operation has completed successfully, you may proceed onto the next
+       controller node.     </li></ol> <note>It is important that you do begin the reboot procedure for a new
+        controller node until the reboot of the previous controller node has been completed
+        successfully (i.e. the hlm-start playbook has completed without error). </note>
+    </section>
     <section id="esx"><title>Further ESX Model Upgrade Instructions</title>
-      <p>Once you have completed the initial upgrade instructions here are the additional steps that
-        must be completed:</p>
+      <p>Once you have completed the initial upgrade instructions, you must follow these additional
+        steps for ESX deployments:</p>
       <ol>
         <li>The new cluster import can be performed directly with the command below on the already
           activated DC:
