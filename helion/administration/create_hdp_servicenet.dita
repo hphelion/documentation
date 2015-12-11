@@ -80,7 +80,9 @@
   cidr: 10.1.6.0/24 
   gateway-ip: 10.1.6.1 
   network-group: SERVICE</codeblock></li>
-            <li>Ensure that this network is a member of the server-group listed in the
+            <li>[OPTIONAL] - If your cloud deployment utilizes the
+                <codeph>servers_groups.yml</codeph> file in your configuration files, ensure that
+              this network is a member of the server-group listed in the
                 <codeph>~/helion/my_cloud/definition/data/server_groups.yml</codeph> file. <p>Here
                 is an example showing this:</p>
               <codeblock>server-groups: 
@@ -147,7 +149,7 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml \
                 <sli>SVC Net VLAN = 100</sli>
               </sl> the playbook command for creating the service network would be:
               <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_TYPE=vlan -e PROV_PHYS_NET=physnet1 -e PROV_NET_VLAN_ID=100 -e SVC_NET_CIDR=10.55.66.0/24 -e SVC_NET_DEST=192.168.245.1/32 -e SVC_NET_GATEWAY=10.55.66.3</codeblock></li>
+ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_TYPE=vlan -e PROV_PHYS_NET=physnet1 -e PROV_NET_VLAN_ID=100 -e SVC_NET_CIDR=10.55.66.0/24 -e SVC_NET_DEST=192.168.245.1/24 -e SVC_NET_GATEWAY=10.55.66.3 -e SVC_ALLOCATION_START=10.55.66.1 -e SVC_ALLOCATION_END=10.55.66.252</codeblock></li>
           </ul><note>To configure a service network for flat encapsulation, modify the service
             network creation statement: <codeph>-e PROV_NET_TYPE flat</codeph> The subnet creation
             statement does not change.</note></li>
