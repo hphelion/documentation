@@ -166,7 +166,9 @@
                         </li>
                         <li>
                             <p>Mellanox CX-3 NICs (Supported for use with AVS vSwitch only.)
-                                <!--Per Vlad and Shantanu email--></p>
+                                <!--Per Vlad and Shantanu email-->See <xref
+                                    href="#topic6108cgrn/mellanox" format="dita">additional
+                                    caveats</xref> below.</p>
                         </li>
                     </ul>
                     <note>
@@ -490,10 +492,10 @@ hp3par_snapshot_expiration=72</codeblock>
                     </p>
                 </li>
             </ul>
-            <p><b>Mellanox CX-3 NICs limitations</b></p>
+            <p id="mellanox"><b>Mellanox CX-3 NICs limitations</b></p>
             <ul id="ul_rzl_ccw_c5">
                 <li>
-                    <p>Mellanox is supported for use in the AVS vSwitch
+                    <p>Mellanox CX-3 NIC is supported for use in the AVS vSwitch
                         only.<!--Per Vlad and Shantanu email--></p>
                 </li>
                 <li>
@@ -505,6 +507,8 @@ hp3par_snapshot_expiration=72</codeblock>
                 <li>
                     <p>Jumbo frames are not supported on Mellanox NICs.</p>
                 </li>
+                <li>SR-IOV, PCI-PassThrough are not supported Mellanox NICs.
+                    <!--Per Vlad, Sanjib, Shantanu email--></li>
             </ul>
             <p><b>Installation does not fully utilize disks greater than two terabytes</b></p>
             <p>HP Helion OpenStack Carrier Grade in the KVM region can be installed on disks greater
