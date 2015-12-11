@@ -148,8 +148,7 @@
           <topicref href="helion/objectstorage/swift_device_groups.dita"
             navtitle="Swift Requirements for Device Group Drives" locktitle="yes"/>
           <topicref href="helion/objectstorage/creating_pac_cluster.dita"
-            navtitle="Creating a Proxy, Account, and Container Cluster for Object Storage"
-            locktitle="yes"/>
+            navtitle="Creating a Swift Proxy, Account, and Container Cluster" locktitle="yes"/>
           <topicref href="helion/objectstorage/creating_object_server_resource.dita"
             navtitle="Creating Object Server Resource Nodes" locktitle="yes"/>
           <topicref href="helion/objectstorage/allocating_network.dita"
