@@ -18,7 +18,10 @@
       <p>You may also install HPE Helion OpenStack 2.1 as a full install. Those instructions are
         found in the installation guide.</p>
     </section>
-    <section>
+    <section id="prereqs"><title>Prerequisites</title>
+      <p>These steps assume you have an installed and working HPE Helion OpenStack 2.0 cloud.</p>
+    </section>
+    <section id="upgradesteps"><title>Upgrade Instructions</title>
       <ol>
         <li>To begin the upgrade process, log in to the lifecycle manager node as the user you
           created during the HPE Helion OpenStack 2.0 deployment, and mount the install media at
@@ -32,7 +35,8 @@
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Run the ready deployment playbook:
-          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+          <codeblock>cd ~/helion/hos/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
         <li>Run the upgrade playbook:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
