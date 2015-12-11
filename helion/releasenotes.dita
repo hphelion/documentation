@@ -331,9 +331,10 @@
       <ul>
         <li>Only one Swift zone is supported.</li>
       </ul>
+      
       <!-- https://jira.hpcloud.net/browse/DOCS-2143 -->
-      <p id="DOCS-2143"><b>Rsync Requests are Blocked by the Firewall on Systems with a Dedicated
-          Swift Network</b></p>
+      <p id="DOCS-2143"><b>Rsync Requests are Blocked by the Firewall on Systems with a Dedicated Swift
+        Network</b></p>
       <p>When a dedicated network is used for the Swift backend network traffic, requests by the
         Swift replication process to rsync are blocked by the firewall. To resolve this issue, add
         the <codeph>swift-rsync</codeph> service to the <codeph>component-endpoints</codeph> in the
@@ -383,7 +384,9 @@
 monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       <p>This is due to an issue where the monasca-agent is attempting to authenticate when it's
         token has expired. These can be ignored.</p>
-      <p><b>Issue: The 'Cinderlm diagnostics monitor' alarm alerts with an 'UNDETERMINED'
+      
+      <!--https://jira.hpcloud.net/browse/DOCS-1832-->
+      <p id="DOCS-1832"><b>Issue: The 'Cinderlm diagnostics monitor' alarm alerts with an 'UNDETERMINED'
         state</b></p>
       <p>This alert is not always reported but may occur after the system has been running for some
         time.</p>
@@ -392,6 +395,7 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
         other Cinder related alarms are alerting then follow the mitigation steps described in the
           <xref href="operations/alarms.dita#alarmdefinitions/blockstorage">Service Alarm
           Definitions</xref> section.</p>
+      
       <p id="cinderlm"><b>Issue: The 'Swiftlm-scan' alarm sticks</b></p>
       <p>The <codeph>swiftlm-scan</codeph> monitor alarm may be triggered. However, once triggered,
         the alarm does not automatically return to the normal state even if the condition that
@@ -403,9 +407,11 @@ monascaclient.exc(exc.py:60) | exception: Authentication failed.</codeblock>
       </p>
       <p>If the command output reports that the metrics are being reported then the system is fine
         and the alarm can be ignored.</p>
+      
+      
       <!--https://jira.hpcloud.net/browse/DOCS-2056-->
-      <p id="DOCS-2056"><b>The Threshold Engine is not deployed properly if you use a single Control
-          Plane node</b></p>
+      <p id="DOCS-2056"><b>The Threshold Engine is not deployed properly if you use a single Control Plane
+        node</b></p>
       <p>If you are using a cloud model that has a single control plane (controller) node, as
         specified by having the <codeph>member-count</codeph> value in your
           <codeph>control_plane.yml</codeph> set to <codeph>1</codeph> for your control-planes, then
@@ -434,6 +440,9 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <codeblock>cd ~/scratch/ansible/next/hos/ansible 
 ansible-playbook -i hosts/verb_hosts site.yml</codeblock></li>
       </ol>
+      
+      
+      
       <!-- OPS CONSOLE -->
       <p><b>Operations Console (Ops Console)</b></p> The Operations Console has the following
       limitations (listed below by menu option in the console): <ul id="ul_wv1_d45_tt">
@@ -643,8 +652,7 @@ cinder --version</codeblock></li>
       <p><b>Cannot open Launch Instance from Volume on Horizon Dashboard</b></p>
       <p>User cannot open the Launch Instance wizard from a newly created bootable volume’s actions
         dropdown on the Volumes Page. </p><p>The workaround is to refresh the page.</p>
-      <p><b>Launch Instance form in Horizon not populated when choosing volumes</b>
-      </p>
+      <p><b>Launch Instance form in Horizon not populated when choosing volumes</b></p>
       <p>When using the Launch Instance action in the Volumes table, the Launch Instance Wizard form
         doesn't get pre-populated with the Volumes option selected, nor does it select the given
         Volume. The workaround is to select an available bootable volume by selecting the Volume
@@ -697,11 +705,13 @@ cinder --version</codeblock></li>
           <codeblock>vga=788 console=ttyS0,9600 earlyprintk=serial,ttyS0,9600</codeblock>
         </li>
       </ol>
+      
       <!--https://jira.hpcloud.net/browse/DOCS-1902-->
-      <p id="DOCS-1902"><b>Softlockup is observed when attempting to remove many LUNs
-          simultaneously</b></p>
+      <p id="DOCS-1902"><b>Softlockup is observed when attempting to remove many LUNs simultaneously</b></p>
+      
       <p>If many multipath LUNs are detached from a compute host in rapid succession a softlockup
         and RCU (read-copy-update) stall may be observed in the kernel log file as follows:</p>
+      
       <codeblock>Oct  7 12:48:52 hlm kernel: [31164.262063]  rport-0:0-2: blocked FC remote port time out: removing target and saving binding
 Oct  7 12:48:52 hlm kernel: [31164.262859]  rport-0:0-0: blocked FC remote port time out: removing target and saving binding
 Oct  7 12:49:09 hlm kernel: [31181.132369] BUG: soft lockup - CPU#23 stuck for 22s! [systemd-udevd:554]
@@ -720,10 +730,15 @@ Oct  7 12:49:09 hlm kernel: [31181.133114] CPU: 23 PID: 554 Comm: systemd-udevd 
 Oct  7 12:49:09 hlm kernel: [31181.133115] Hardware name: HPE ProLiant BL460c Gen9, BIOS I36 05/06/2015
 Oct  7 12:49:09 hlm kernel: [31181.133117] task: ffff883fcf0262c0 ti: ffff883f979ca000 task.ti: ffff883f979ca000
 Oct  7 12:49:09 hlm kernel: [31181.133118] RIP: 0010:[&lt;ffffffff81514f5b>]  [&lt;ffffffff81514f5b>] _raw_spin_trylock+0xb/0x40</codeblock>
+      
       <p>The associated stack from the softlockup will show the instruction point either holding or
         attempting to acquire a spinlock. After all the LUNs have successfully detached and the
         devices have been flushed, the messages will subside. It is recommended that you include a
         delay when detaching multiple LUNs to avoid the softlockup and RCU stall messages.</p>
+      
+      
+      
+      
       <!-- NETWORKING -->
       <p id="IPv6Traffic"><b>Blocking IPv6 Traffic</b></p>
       <p>The <keyword keyref="kw-hos-phrase"/> release includes firewall rules to prevent
