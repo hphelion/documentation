@@ -181,6 +181,23 @@ ansible-playbook -i hosts/verb_hosts nova-start.yml --limit hlm002-cp1-c1-m3-mgm
             <!--  https://jira.hpcloud.net/browse/DOCS-2269 -->
             <p id="DOCS-2269"><b>Multipath attach over iSCSI is not supported for 3PAR backend storage</b></p>
             
+            
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2329 -->
+            <p id="DOCS-2329"><b>Ceph logs on monitor nodes are not being pushed to kibana for centralized logging</b></p>
+
+            <p>Logs from monitor nodes cannot be pushed to Kibana due to a lack of read permissions on the files. 
+                
+                As a workaround, you can execute a cron job that will run every thirty minutes and will fixup the permissions 
+                so that the logs can be copied.  Execute <codeph>crontab -e</codeph> and add the following line 
+                (replacing &lt;ceph-clustername&gt; with the actual name of Ceph cluster): 
+            </p>
+<codeblock>
+*/30 * * * * chmod 0644 /var/log/ceph/&lt;ceph-clustername>.log    
+</codeblock>
+    
+            
+            
         </section>
         
     </body>
