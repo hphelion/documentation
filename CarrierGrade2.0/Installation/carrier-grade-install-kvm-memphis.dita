@@ -16,7 +16,6 @@
 <body>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/intro"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/controller-0"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-license"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-cloud"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/unlock"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/kvm-esx-unlock"/>

@@ -47,6 +47,8 @@
                 navtitle="Download the Installation Packages" locktitle="yes"/>
             <topicref href="CGH-2-install-lifecycle-tahoe.dita"
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-dcn-tahoe.dita" navtitle="Configuring the DCN Components"
+                locktitle="yes"/>
             <topicref href="CGH-2-install-tahoe.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-launch-horizon-tahoe.dita"
@@ -66,6 +68,10 @@
                 navtitle="Download the Installation Packages" locktitle="yes"/>
             <topicref href="CGH-2-install-lifecycle-memphis.dita"
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-dcn-memphis.dita"
+                navtitle="Configuring the DCN Components" locktitle="yes"/>
+            <topicref href="CGH-2-install-esx-memphis.dita"
+                navtitle="Configuring the ESX Components" locktitle="yes"/>
             <topicref href="CGH-2-install-memphis.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes"/>
             <topicref href="carrier-grade-install-launch-horizon-memphis.dita"
@@ -101,6 +107,10 @@
             </topicref>
             <topicref href="CGH-2-install-lifecycle-sacramento.dita"
                 navtitle="Deploying the Lifecycle Manager" locktitle="yes"/>
+            <topicref href="CGH-2-install-dcn-sacramento.dita"
+                navtitle="Configuring the DCN Components" locktitle="yes"/>
+            <topicref href="CGH-2-install-esx-sacramento.dita"
+                navtitle="Configuring the ESX Components" locktitle="yes"/>
             <topicref href="CGH-2-install-sacramento.dita" navtitle="Deploying the Non-KVM Region"
                 locktitle="yes">
                 <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
@@ -140,7 +150,6 @@
                 navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
             <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>
             <topicref href="carrier-grade-install-kvm-ccp-json.dita" toc="no"/>
-            <topicref href="carrier-grade-install-hcfgproc-output.dita" toc="no"/>
             <topicref href="carrier-grade-install-vsphere-switch.dita" toc="no"/>
             <topicref href="carrier-grade-install-esx-proxy.dita" toc="no"/>
             <topicref href="CGH-2-install-vsvapp.dita"

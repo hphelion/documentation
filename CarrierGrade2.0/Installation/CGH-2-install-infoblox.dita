@@ -35,7 +35,7 @@
           <li>Click <b>File</b>, then <b>Deploy OVF Template</b>.</li>
           <li>In the <b>Deploy OVF Template</b> wizard, browse to the location of the your template
             file. You should have received a template file when you purchased Infoblox.</li>
-          <li>Click <b>Next</b> and complete the wizard:</li>
+          <li>Click <b>Next</b> and complete the wizard.</li>
           <li>Review the details for the installation and click <b>Finish</b>.</li>
         </ol></p>
     </section>
@@ -180,9 +180,9 @@
       <title id="Infoblox-HCG2.0integration-Applypatch">Deploy the Infoblox Plug-Ins </title>
       <p>An Infoblox plug-in needs to be installed on the KVM Host. For the Sacramento deployment,
         the plug in also needs to be installed on the baremetal controller.</p>
-      <p><b>To deploy the plug-in on the KVM Host:</b></p>
+      <p><b>To deploy the plug-in on the lifecycle manager host:</b></p>
       <ol id="ul_ovd_rfz_5t">
-        <li>Log into the KVM Host.</li>
+        <li>Log into the lifecycle manager host.</li>
         <li>Copy the <codeph>infoblox.tar.gz</codeph> patch to:
             <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph>.</li>
         <li>Change to the <codeph>/var/hlm/clouds/&lt;cloudname>/plugins</codeph> directory.<p>Where

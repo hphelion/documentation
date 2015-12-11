@@ -35,8 +35,8 @@
             href="../bura/cloud_control_plane_recovery.dita#topic_tb4_lqy_qt/deployer">Deployer
             Disaster Recovery</xref> instructions.</li>
         <li>Once that is complete you can continue on to the <xref
-            href="replace_controller.dita#topic_ijj_45j_nt/image">Image the new node</xref>
-          steps.</li>
+            href="replace_controller.dita#topic_ijj_45j_nt/image">Image the new node</xref> steps,
+          starting on step #5.</li>
       </ol>
       <p><b>Update your model with replacement server information</b></p>
       <ol>

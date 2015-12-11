@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581c2vsd">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring the DCN Components
+    in a Sacramento Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM
+        is installed</xref>, the next task is to configure the HPE Distributed Cloud Networking
+      (DCN) components.
+      <!--Most sections here are shared with the other install docs; use care when editing--></p>
+    <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
+      region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
+      instructions. If you are installing a different deployment, disregard these instructions. </p>
+    <bodydiv id="dcn">
+    <section id="conref-network"><title>Set up the Environment for HPE Distributed Cloud Networking
+        </title><p>Before starting the HPE Helion OpenStack Carrier Grade installation, the HPE
+        Distributed Cloud Networking components must be fully installed and
+          functioning:</p><p><b>DCN Requirements</b></p><p>HPE Helion Distributed Cloud Networking
+        (DCN) must be deployed before starting the cloud deployment. Please refer to DCN
+        documentation for details. </p><p>For a quick overview of the DCN components, see the
+        appropriate <xref href="carrier-grade-technical-overview.dita#topic3485cgto">Deployment
+          Architecture Reference</xref></p><p>In production cloud deployments:</p><ul
+        id="ul_hnw_pry_zs">
+        <li>DCN should be deployed in HA mode (with 2 VSCs, 2 VRS-Gs).</li>
+        <li>VSD should be deployed in HA mode (3+1 VSDs). </li>
+        <li>VSD should be assigned a DCM IP accessible for cloud deployment. Refer to the <xref
+            href="carrier-grade-technical-overview.dita#topic3485cgto">architecture
+          diagram</xref>.</li>
+        <li>Verify that the IP address and domain name of VSD can be accessed using PING and DIG
+          commands. </li>
+        <li>Make sure all the VSD services are in PASS state.</li>
+        <li><xref href="#topic10581c2is/conref-vsd-license" format="dita">Apply the VSD
+            license</xref> based on single or clustered VSD setup. </li>
+        <li><xref href="#topic10581c2is/conref-admin-user" format="dita">Create the required VSD
+            users</xref>.</li>
+      </ul><p>Optionally, you can integrate LDAP into the DCN environment.</p><p><b>DNS
+          Configuration</b></p><p>Configure appropriate entries for VSD into DNS so that the SRV
+        record for <codeph>_xmpp-client</codeph> resolves. This is required for DCN Cloud. Refer to
+        the DCN documentation examples of <codeph>BIND</codeph> commands and instructions for
+        testing the DNS configuration, such as shown in the following example:</p><p><image
+          href="../../media/CGH-2-install-DNS-config.png" width="400" id="image_eyr_z5z_jt"
+      /></p>Make sure that reverse DNS resolution <b>is not enabled</b> the for xmpp Host
+          record:<p><image href="../../media/CGH-2-install-DNS-config-example.png" width="400"
+          id="image_ugq_rvz_jt"/></p></section>
+    <section id="conref-vapp">
+      <title>Deploy the VRSvApp</title>
+      <p>The VRSvApp you obtained from DCN must be installed. For more information, see <xref
+          href="CGH-2-install-vsvapp.dita#topic10581c2iv">Deploying the VRS vApp</xref></p>
+    </section>
+    <section id="conref-vsd">
+      <title>Verify VSD is running</title>
+      <p>Make sure the VSD node is installed by logging into the VSD VM using SSH and running the
+        following command:</p>
+      <codeblock>service vsd status</codeblock>
+      <p>You should see the status from the VSD VM similar to the following:</p>
+      <p>
+        <image href="../../media/CGH-install-virsh-vsd.png" width="400" id="image_gbd_x2f_zt"/></p>
+    </section>
+    <section id="conref-vsd-license"><title>Apply the VSD License</title>You should have recevied a
+      license file when you purchased DCN. You need to apply that license on the lifecycle manager
+      host. For more information, see <xref
+        href="carrier-grade-install-vsd-license.dita#topic10581cgivl"/>.</section>
+    <section id="conref-admin-user">
+      <title>Create an OSadmin user for VSD</title>
+      <p>You must create an administrative user called OSadmin and add it to CMS Group. For more
+        information, see <xref href="carrier-grade-install-vsd-user.dita#topic10581cgivu">Create an
+          OSadmin User for VSD</xref>.</p>
+    </section>
+    </bodydiv>
+      <section id="next-step">
+      <title>Next Step</title>
+      <p><xref href="CGH-2-install-esx-sacramento.dita#topic10581c2esx">Configure the ESX
+          components</xref></p>
+    </section>
+    
+  </body>
+</topic>

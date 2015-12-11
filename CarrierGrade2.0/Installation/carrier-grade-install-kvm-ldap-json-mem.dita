@@ -37,7 +37,7 @@
             "name": "ldap-vars",
             "properties": {
                 "ldap_domain_name": "americas",
-                "ldap_url": "10.1.2.44",
+                "ldap_url": "10.x.x.x",
                 "ldap_username": "admin",
                 "ldap_password": "admin",
                 "ldap_domain": "dc=helioncg,dc=local",
@@ -54,8 +54,7 @@
             }
         }
     ]
-}
-</codeblock>
+}</codeblock>
         </section>
         <p>Return to installing the non-KVM region for the:<ul id="ul_wnl_v4f_b5">
                 <li><xref href="CGH-2-install-tahoe.dita#topic10581c2it/ldap">Tahoe
