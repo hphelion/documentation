@@ -192,9 +192,14 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
           <li>Remove the node from
             Cobbler:<codeblock>sudo cobbler system remove --name=swobj4
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</codeblock></li>
-          <li>If the node was a SWPAC node, run the <codeph>hlm-deploy.yml</codeph>
-            playbook:<codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock></li>
+          <li>The final step will depend on what type of Swift node you are removing. <p>If the node
+              was a SWPAC node, run the <codeph>hlm-deploy.yml</codeph> playbook:</p>
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts hlm-deploy.yml</codeblock>
+            <p>If the node was a SWOBJ node, run the <codeph>swift-deploy.yml</codeph> playbook:</p>
+            <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock>
+          </li>
           <li>Wait until replication has finished. For more details, see <xref
               href="safe_rebalance_deploy_ring.dita"/>.</li>
           <li>You may need to continue to rebalance the rings. For instructions, see <b>Final
