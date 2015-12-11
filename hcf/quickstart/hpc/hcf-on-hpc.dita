@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="cfr_hos_quickstart">
- <title>Deploying to <keyword keyref="opnStckLong"/></title>
+<concept id="cfr_pubcloud_quickstart">
+ <title>Deploying to <keyword keyref="pubCloudLong"/></title>
  <shortdesc>This section describes the process of deploying <keyword keyref="prodLong"/> to <keyword
-   keyref="opnStckLong"/>.</shortdesc>
+   keyref="pubCloudLong"/>.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
- <conbody>
-  <p></p>
- </conbody>
+ <conbody/>
 </concept>

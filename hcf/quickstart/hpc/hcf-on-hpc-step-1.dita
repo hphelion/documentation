@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_s2k_b35_st">
+ <title>Quick Start Step 1: <keyword keyref="quickStartHPcloudStep1"/></title>
+ <shortdesc>Deploying an <keyword keyref="prodLong"/> Docker image to <keyword keyref="pubCloudLong"
+  /> is the fastest and easiest way to evaluate and to begin working with <keyword
+   keyref="prodShort"/>. This process involves downloading and installing the necessary tools,
+  configuring your sandbox environment, and deploying the Docker image.</shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <simpletable>
+   <strow>
+    <stentry>1. <b><keyword keyref="quickStartHPcloudStep1"/></b>
+     <p>2. <xref href="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st" id="quickStartHPcloudStep2_"><keyword
+        keyref="quickStartHPcloudStep2"/></xref></p><p>3. <xref
+       href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st" id="quickStartHPcloudStep3_"><keyword
+        keyref="quickStartHPcloudStep3"/></xref></p><p>4. <xref
+       href="hcf-on-hpc-step-4.dita#concept_pqc_jhz_st" id="quickStartHPcloudStep4_"><keyword
+        keyref="quickStartHPcloudStep4"/></xref></p><p>5. <xref
+       href="hcf-on-hpc-step-5.dita#concept_cw2_thz_st" id="quickStartHPcloudStep5_"><keyword
+        keyref="quickStartHPcloudStep5"/></xref></p>6. <xref
+         href="hcf-on-hpc-step-6.dita#concept_m3k_bth_tt" id="quickStartHPcloudStep6_"><keyword keyref="quickStartHPcloudStep6"
+     /></xref></stentry>
+    <stentry><b>Prerequisites</b><p>
+      <ul id="ul_tqs_gxh_h5">
+       <li>An <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
+          keyref="pubCloudLong"/></xref> account</li>
+       <li>A minumum of 16GB for the public-facing node and 8 GB for the DEA node, and a 40GB
+        volume</li>
+      </ul>
+     </p><note type="tip">Keep your username and password handy. You will need them to <xref
+       href="hcf-on-hpc-step-3.dita#concept_kpg_fhz_st">create a sandbox
+      environment</xref>.</note><xref href="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st">
+      <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+     </xref></stentry>
+   </strow>
+  </simpletable>
+ </conbody>
+</concept>

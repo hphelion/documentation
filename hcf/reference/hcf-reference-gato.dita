@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_cd3_bs3_rt">
-  <title><keyword keyref="adminUtil"/> Command Reference</title>
+  <title><keyword keyref="adminUtil"/> Commands</title>
   <shortdesc/>
   <prolog>
     <metadata>
@@ -9,19 +9,19 @@
     </metadata>
   </prolog>
   <refbody>
-    <section><filepath><keyword keyref="adminUtilCLI"/></filepath> is the <keyword keyref="prodLong"
-      /> command-line interface (CLI) administration utility. To run <filepath><keyword
-          keyref="adminUtilCLI"/></filepath> commands you must <codeph>ssh</codeph> into any
+    <section><codeph><keyword keyref="adminUtilCLI"/></codeph> is the <keyword keyref="prodLong"
+      /> command-line interface (CLI) administration utility. To run <codeph><keyword
+          keyref="adminUtilCLI"/></codeph> commands you must <codeph>ssh</codeph> into any
         <keyword keyref="prodShort"/> node.</section>
     <section>
       <title>Global Options</title>
       <dl>
         <dlentry>
-          <dt><filepath>--help</filepath>, <filepath>-h</filepath></dt>
+          <dt><codeph>--help</codeph>, <codeph>-h</codeph></dt>
           <dd>Show the help.</dd>
         </dlentry>
         <dlentry>
-          <dt><filepath>--version</filepath>, <filepath>-v</filepath></dt>
+          <dt><codeph>--version</codeph>, <codeph>-v</codeph></dt>
           <dd>Print the version.</dd>
         </dlentry>
       </dl>
@@ -30,86 +30,88 @@
       <title>Commands</title>
       <dl>
         <dlentry>
-          <dt><filepath>api <varname>[&lt;endpoint>]</varname></filepath></dt>
-          <dd>Set <filepath><keyword keyref="adminUtilCLI"/></filepath> to use the specified
-              <keyword keyref="prodShort"/> configuration store for subsequent operations. If
-                <filepath><varname>&lt;endpoint></varname></filepath> is not specified, the current
+          <dt><codeph>api <varname>[&lt;endpoint>]</varname></codeph></dt>
+          <dd>Set <codeph><keyword keyref="adminUtilCLI"/></codeph> to use the specified
+              <keyword keyref="prodShort"/> configuration store for subsequent operations. If an
+                <codeph><varname>&lt;endpoint></varname></codeph> is not specified, the current
             endpoint is displayed. For
             example:<codeblock>$ <keyword keyref="adminUtilCLI"/> api http://hcf-consul-server.hcf:8501</codeblock></dd>
         </dlentry>
         <dlentry>
-          <dt><filepath id="config_get_example">config</filepath></dt>
+          <dt><codeph id="config_get_example">config</codeph></dt>
           <dd>Manipulate the configuration values of <keyword keyref="prodShort"/> components. For
               example:<codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><ul
               id="ul_x4n_dtj_rt">
-              <li><xref href="#reference_cd3_bs3_rt/config_get" format="dita"><filepath>config
-                    get</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/config_set" format="dita"><filepath>config
-                    set</filepath></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/config_get" format="dita"><codeph>config
+                    get</codeph></xref></li>
+              <li><xref href="#reference_cd3_bs3_rt/config_set" format="dita"><codeph>config
+                    set</codeph></xref></li>
             </ul></dd>
         </dlentry>
         <dlentry>
-          <dt><filepath>help</filepath></dt>
+          <dt><codeph>help</codeph></dt>
           <dd>Show a list of commands or help for one command.</dd>
         </dlentry>
         <dlentry>
-          <dt><filepath id="role_example">role</filepath></dt>
-          <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph> environment
-            variable to determine the Docker server endpoint. Use the <filepath>--node</filepath>
-            flag to start, stop, or restart a <xref
-              href="hcf-reference-roles.dita#cf_reference_roles"><varname>&lt;role></varname></xref>
-            on a specific node. For example:
-              <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
-              id="ul_blk_nhj_rt">
-              <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><filepath>role
-                    start</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><filepath>role
-                    stop</filepath></xref></li>
-              <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><filepath>role
-                    restart</filepath></xref></li>
-            </ul></dd>
-        </dlentry>
-      </dl>
-      <dl>
-        <dlentry>
-          <dt><filepath>status <varname>[options]</varname></filepath></dt>
+          <dt><codeph>status <varname>[options]</varname></codeph></dt>
           <dd>Retrieve the status of a <keyword keyref="prodShort"/> cluster. For example:<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock><dl>
               <dlentry>
-                <dt><filepath>--all</filepath>, <filepath>-a</filepath></dt>
+                <dt><codeph>--all</codeph>, <codeph>-a</codeph></dt>
                 <dd>Show the status of every individual process.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
       </dl>
+      <draft-comment author="michaelk">
+        <dl>
+          <dlentry>
+            <dt><codeph id="role_example">role</codeph></dt>
+            <dd>Manage role containers. By default, uses the <codeph>$DOCKER_HOST</codeph>
+              environment variable to determine the Docker server endpoint. Use the
+                <codeph>--node</codeph> flag to start, stop, or restart a <xref
+                href="hcf-reference-roles.dita#cf_reference_roles"
+                ><varname>&lt;role></varname></xref> on a specific node. For example:
+                <codeblock>$ <keyword keyref="adminUtilCLI"/> role start consul</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role stop stats</codeblock><codeblock>$ <keyword keyref="adminUtilCLI"/> role restart uaa</codeblock><ul
+                id="ul_blk_nhj_rt">
+                <li><xref href="#reference_cd3_bs3_rt/role_start" format="dita"><codeph>role
+                      start</codeph></xref></li>
+                <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><codeph>role
+                      stop</codeph></xref></li>
+                <li><xref href="#reference_cd3_bs3_rt/role_stop_restart" format="dita"><codeph>role
+                      restart</codeph></xref></li>
+              </ul></dd>
+          </dlentry>
+        </dl>
+      </draft-comment>
     </section>
     <section>
       <title>Command Options</title>
       <dl>
         <dlentry id="config_get">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config get
-              <varname>[options]</varname></filepath></dt>
+          <dt><codeph><keyword keyref="adminUtilCLI"/> config get
+              <varname>[options]</varname></codeph></dt>
           <dd>Look up the current and default values of a configuration.<dl>
               <dlentry>
-                <dt><filepath>--json</filepath>, <filepath>-j</filepath></dt>
+                <dt><codeph>--json</codeph>, <codeph>-j</codeph></dt>
                 <dd>Output key-value pairs in JSON format.</dd>
               </dlentry>
             </dl></dd>
         </dlentry>
         <dlentry id="config_set">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> config set
-              <varname>[options]</varname></filepath></dt>
-          <dd>Set <filepath><varname>&lt;key-path></varname></filepath> to
-                <filepath><varname>&lt;value></varname></filepath> in the configuration store.<dl>
+          <dt><codeph><keyword keyref="adminUtilCLI"/> config set
+              <varname>[options]</varname></codeph></dt>
+          <dd>Set <codeph><varname>&lt;key-path></varname></codeph> to
+                <codeph><varname>&lt;value></varname></codeph> in the configuration store.<dl>
               <dlentry>
-                <dt><filepath>--role</filepath>, <filepath>-r</filepath></dt>
+                <dt><codeph>--role</codeph>, <codeph>-r</codeph></dt>
                 <dd>Set a specific <xref href="hcf-reference-roles.dita#cf_reference_roles"
                     >&lt;role></xref>'s configuration.</dd>
               </dlentry>
               <dlentry>
-                <dt><filepath>--file</filepath>, <filepath>-f</filepath></dt>
-                <dd>Read the <filepath><varname>&lt;value></varname></filepath>.
-                      <filepath><varname>&lt;value></varname></filepath> becomes either a filename
-                  to read the value from or a dash (<filepath>-</filepath>) for
+                <dt><codeph>--file</codeph>, <codeph>-f</codeph></dt>
+                <dd>Read the <codeph><varname>&lt;value></varname></codeph>.
+                      <codeph><varname>&lt;value></varname></codeph> becomes either a filename
+                  to read the value from or a dash (<codeph>-</codeph>) for
                     <codeph>stdin</codeph>.</dd>
               </dlentry>
             </dl></dd>
@@ -117,12 +119,12 @@
       </dl>
       <dl>
         <dlentry id="role_start">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role start
-              <varname>[options]</varname></filepath></dt>
+          <dt><codeph><keyword keyref="adminUtilCLI"/> role start
+              <varname>[options]</varname></codeph></dt>
           <dd>Start the <xref href="hcf-reference-roles.dita#cf_reference_roles"
                 ><varname>&lt;role></varname></xref>.<dl>
               <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
+                <dt><codeph>--node</codeph>, <codeph>-n</codeph></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
                   schemes: <codeph>tcp://</codeph>
                   <codeph>unix://</codeph>
@@ -132,12 +134,12 @@
             </dl></dd>
         </dlentry>
         <dlentry id="role_stop_restart">
-          <dt><filepath><keyword keyref="adminUtilCLI"/> role stop|restart
-                <varname>[options]</varname></filepath></dt>
+          <dt><codeph><keyword keyref="adminUtilCLI"/> role stop|restart
+                <varname>[options]</varname></codeph></dt>
           <dd>Stop or restart the <xref href="hcf-reference-roles.dita#cf_reference_roles"
                 ><varname>&lt;role></varname></xref>.<dl>
               <dlentry>
-                <dt><filepath>--node</filepath>, <filepath>-n</filepath></dt>
+                <dt><codeph>--node</codeph>, <codeph>-n</codeph></dt>
                 <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
                   schemes: <codeph>tcp://</codeph>
                   <codeph>unix://</codeph>
@@ -145,7 +147,7 @@
                   <codeph>https://</codeph></dd>
               </dlentry>
               <dlentry>
-                <dt><filepath>--timeout</filepath>, <filepath>-t "0"</filepath></dt>
+                <dt><codeph>--timeout</codeph>, <codeph>-t "0"</codeph></dt>
                 <dd>Set the number of seconds to wait before killing the container.</dd>
               </dlentry>
             </dl></dd>

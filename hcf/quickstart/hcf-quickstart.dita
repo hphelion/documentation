@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="cfr_hos_quickstart">
- <title>Deploying to <keyword keyref="opnStckLong"/></title>
+<concept id="hcf-quickstart">
+ <title>Quick-Start Guides</title>
  <shortdesc>This section describes the process of deploying <keyword keyref="prodLong"/> to <keyword
-   keyref="opnStckLong"/>.</shortdesc>
+   keyref="pubCloudLong"/> and <keyword keyref="opnStckLong"/>.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>

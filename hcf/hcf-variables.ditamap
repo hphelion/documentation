@@ -16,6 +16,20 @@
          </keywords>
       </topicmeta>
    </keydef>
+   <keydef keys="pubCloudLong">
+      <topicmeta>
+         <keywords>
+            <keyword>HPE Helion Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="pubCloudShort">
+      <topicmeta>
+         <keywords>
+            <keyword>Helion Public Cloud</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
    <keydef keys="opnStckLong">
       <topicmeta>
          <keywords>
@@ -69,6 +83,48 @@
       <topicmeta>
          <keywords>
             <keyword>gato</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep1">
+      <topicmeta>
+         <keywords>
+            <keyword>Assessing Requirements</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep2">
+      <topicmeta>
+         <keywords>
+            <keyword>Downloading and Installing Tools</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep3">
+      <topicmeta>
+         <keywords>
+            <keyword>Creating a Sandbox Environment</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep4">
+      <topicmeta>
+         <keywords>
+            <keyword>Creating a Cluster</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep5">
+      <topicmeta>
+         <keywords>
+            <keyword>Pushing Sample Applications</keyword>
+         </keywords>
+      </topicmeta>
+   </keydef>
+   <keydef keys="quickStartHPcloudStep6">
+      <topicmeta>
+         <keywords>
+            <keyword>Troubleshooting Your Cluster</keyword>
          </keywords>
       </topicmeta>
    </keydef>

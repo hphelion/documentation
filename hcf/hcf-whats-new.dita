@@ -27,10 +27,10 @@
        scope="external">HPE Helion Stackato</xref> or with the <xref
        href="http://devdocspjaytb3moy.devcloud.acquia-sites.com/hdp" format="html" scope="external"
        >HPE Helion Development Platform</xref> before, <keyword keyref="prodShort"/> will allow you
-      to work with <filepath><keyword keyref="adminUtilCLI"/></filepath>, a new command-line
+      to work with <codeph><keyword keyref="adminUtilCLI"/></codeph>, a new command-line
       administration utility that shares some functionality with Kato. For more information, see the
        <xref href="reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/>.<draft-comment
-       author="michaelk"><filepath><keyword keyref="adminUtilCLI"/></filepath> communicates with
+       author="michaelk"><codeph><keyword keyref="adminUtilCLI"/></codeph> communicates with
         <xref href="https://www.consul.io/" format="html" scope="external">Consul</xref> instead of
        Cloud Controller and runs within the Docker overlay Virtual Extensible LAN
        (VXLAN).</draft-comment></dd>

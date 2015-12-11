@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="concept_cw2_thz_st">
- <title>Quick Start Step 5: <keyword keyref="quickStartHOSstep5"/></title>
+ <title>Quick Start Step 5: <keyword keyref="quickStartHPcloudStep5"/></title>
  <shortdesc>The following examples describe a typical process of pushing an application using the
-  Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
-  />.</shortdesc>
+    Cloud Foundry CLI to a Droplet Execution Agent (DEA) running on <keyword keyref="prodLong"
+    />.</shortdesc>
  <prolog>
   <metadata>
    <othermeta name="author" content="Michael Khmelnitsky"/>
   </metadata>
  </prolog>
  <conbody>
-  <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
-    href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html" format="html"
-    scope="external">Droplet Execution Agent</xref>. For detailed instructions on using the
-    <codeph>cf push</codeph> command and deploying applications, see the Cloud Foundry
-   documentation on <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
-    format="html" scope="external">deploying an application</xref>.</note>
-  <simpletable id="simpletable_cmb_xvk_g5">
+    <note type="tip">For more information, see the Cloud Foundry documentation on the <xref
+        href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html"
+        format="html" scope="external">Droplet Execution Agent</xref>. For detailed instructions on
+      using the <codeph>cf push</codeph> command and deploying applications, see the Cloud
+      Foundry documentation on <xref
+        href="http://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html" format="html"
+        scope="external">deploying an application</xref>.</note>
+  <simpletable>
    <strow>
-     <stentry>1. <xref conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
-       <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
-         conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <xref
-           conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <b><keyword
-        keyref="quickStartHOSstep5" id="quickStartHOSstep5"/></b></p>6. <xref
-          conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
+    <stentry>1. <xref conref="hcf-on-hpc-step-2.dita#concept_ikh_xgz_st/quickStartHPcloudStep1_"/><p>2.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep2_"/></p><p>3.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep3_"/></p><p>4.
+              <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep4_"/></p><p>5.
+                <b><keyword keyref="quickStartHPcloudStep5" id="quickStartHPcloudStep5"/></b></p>6.
+            <xref conref="hcf-on-hpc-step-1.dita#concept_s2k_b35_st/quickStartHPcloudStep6_"/></stentry>
     <stentry><b>Sample Applications</b><p>The following sample applications will get your started
             with the <codeph>cf push</codeph> workflow:<dl>
               <dlentry>
@@ -55,26 +56,26 @@
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
-                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to your
-                command. If you cannot connect to your cluster, ensure that your connection has no
-                proxy settings.</note></li>
+                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to
+                your command. If you cannot connect to your cluster, ensure that your connection has
+                no proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
                 cluster:<codeblock>cf login</codeblock><p id="user_pass">When prompted, enter your
                 username (email) and password.</p></li>
-            <li>Create and target an organization, for
-              example:<codeblock>cf create-org myOrg
-cf target -o myOrg</codeblock></li>
-            <li>Create a space, attach it to your organization, and target it, for
-                example:<codeblock>cf create-space mySpc -o myOrg
-cf target -o myOrg -s mySpc</codeblock><note
+            <li>Create and target an
+              organization:<codeblock>cf create-org <varname>&lt;organization></varname>
+cf target -o <varname>&lt;organization></varname></codeblock></li>
+            <li>Create a space, attach it to your organization, and target
+                it:<codeblock>cf create-space <varname>&lt;space></varname> -o <varname>&lt;organization></varname>
+cf target -o <varname>&lt;organization></varname> -s <varname>&lt;space></varname></codeblock><note
                 type="tip">To save time, you can add all of the commands to a batch file or shell
                 script, for
                 example:<codeblock>cf api http://api.203.0.113.0.xip.io --skip-ssl-validation
 cf login
 cf create-org myOrg
 cf target -o myOrg
-cf create-space mySpc -o myOrg
-cf target -o myOrg -s mySpc</codeblock></note></li>
+cf create-space mySpace -o myOrg
+cf target -o myOrg -s mySpace</codeblock></note></li>
           </ol><b>To Clone a GitHub Application and Push it to Your Cluster</b><ol
             id="ol_idl_1mw_tt">
             <li>Navigate to the GitHub page of the application and from the <uicontrol>Choose a
@@ -87,17 +88,18 @@ cf target -o myOrg -s mySpc</codeblock></note></li>
               correctly.</li>
             <li>Target the cluster, for
               example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
-            <li>Log into the cluster:<codeblock>cf login</codeblock><p
+            <li>Ensure that you are logged into the cluster:<codeblock>cf login</codeblock><p
                 conref="#concept_cw2_thz_st/user_pass"/></li>
-            <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed to the cluster. At the end of the process, Cloud Foundry displays
-                the URL of the application, formatted using the xip.io wildcard DNS, for
-                example:<codeblock><b>urls:</b> myApp.203.0.113.0.xip.io</codeblock></p><note
+            <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed
+                to the cluster. At the end of the process, Cloud Foundry displays the URL of the
+                application, formatted using the xip.io wildcard DNS, for
+                example:<codeblock><b>urls:</b> myAppName.203.0.113.0.xip.io</codeblock></p><note
                 type="tip">You will need this URL to access the application using a web browser. You
-                can also run the <codeph>cf apps</codeph> command to see detailed information about
-                your application.</note><note>If you experience a problem, run the <codeph>cf delete
-                    <varname>&lt;appName></varname></codeph> command, make the necessary
-                adjustments, and then push the application again. For detailed instructions, see the
-                Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
+                can also run the <codeph>cf apps</codeph> command to see detailed information
+                about your application.</note><note>If you experience a problem, run the
+                  <codeph>cf delete <varname>&lt;appName></varname></codeph> command, make the
+                necessary adjustments, and then push the application again. For detailed
+                instructions, see the Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
                   <li><xref
                       href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
                       format="html" scope="external">Deploying an Application</xref></li>
@@ -109,7 +111,7 @@ cf target -o myOrg -s mySpc</codeblock></note></li>
                       format="html" scope="external">Troubleshooting Application Deployment and
                       Health</xref></li>
                 </ul></note></li>
-          </ol><xref href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt">
+          </ol><xref href="hcf-on-hpc-step-6.dita#concept_m3k_bth_tt">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

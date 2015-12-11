@@ -22,89 +22,82 @@
   <simpletable id="simpletable_nbc_wvk_g5">
    <strow>
      <stentry>1. <xref conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
-       <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3. <xref
-         conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep3_"/></p><p>4. <b><keyword
-        keyref="quickStartHOSstep4" id="quickStartHOSstep4"/></b></p><p>5. <xref
-          conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
+              <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"
+            /></p><p>3. <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep3_"
+            /></p><p>4. <b><keyword keyref="quickStartHOSstep4" id="quickStartHOSstep4"
+            /></b></p><p>5. <xref
+              conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
             conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
     <stentry><b>To Deploy a Docker Image</b><ol id="ol_p2k_vx1_tt">
-      <li>Add the variables from the
-        <filepath><varname>&lt;number></varname>-Project-openrc.sh</filepath> file <xref
-          href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st/download_config_file">that you have downloaded
-        earlier</xref> to your terminal session.<ul id="ul_ptr_bwp_tt">
-        <li>On a Linux machine, navigate to the directory that contains the <filepath>sh</filepath>
-         file and <filepath>source</filepath> the file, for
-          example:<codeblock>source 12345678901234-Project-openrc.sh</codeblock><p>When prompted,
-          enter your OpenStack password.</p></li>
-        <li>On a Windows machine, add the variables from the <filepath>sh</filepath> file at the
-         command prompt one by one, or add the commands to a batch file, for
-         example:<codeblock>set OS_AUTH_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
-set OS_USERNAME=myUsername
-set OS_PASSWORD=myPassword123
-set OS_TENANT_ID=12345678901234
-set OS_TENANT_NAME=MyCluster
-set OS_REGION_NAME=region-a.geo-1</codeblock></li>
-       </ul><note type="tip">When you close your terminal session, your variables will be discarded.
-        To prevent this, you can do the following: <ul id="ul_myk_1xp_tt">
-         <li>On a Linux machine, add the variables to your <filepath>~/.bashrc</filepath> file and
-          run the <filepath>source ~/.bashrc</filepath> command.</li>
-         <li>On a Windows machine, click <menucascade>
-           <uicontrol>Control Panel</uicontrol>
-           <uicontrol>System</uicontrol>
-           <uicontrol>Advanced system settings</uicontrol>
-           <uicontrol>Environment Variables</uicontrol>
-          </menucascade> and add the variables to your <uicontrol>System variables.</uicontrol></li>
-        </ul></note></li>
-      <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
-      <li>Navigate to the <keyword keyref="prodShort"/> directory and make a copy of the
-        <filepath>overrides.tfvars.sample</filepath> file, for example
-        <filepath>myVars.tfvars</filepath>.<note>The <filepath>tfvars</filepath> file contains the
-        keys and credentials for your cluster.</note></li>
-      <li>Add the necessary variables to your <filepath>tfvars</filepath> file. For more information
-              and examples, see <xref
+            <li>Decompress the <keyword keyref="prodShort"/> file into a convenient directory.</li>
+            <li>Navigate to the <keyword keyref="prodShort"/> directory and make a copy of the
+                <codeph>overrides.tfvars.sample</codeph> file, for example
+                <codeph>myVars.tfvars</codeph>.<note>The <codeph>tfvars</codeph> file contains the
+                keys and credentials for your cluster.</note></li>
+            <li>Add variables to your <codeph>tfvars</codeph> file. For more information and
+              examples, see <xref
                 href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">Terraform
-                Variables</xref>.<note
-                conref="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt/warning_tfvars"
-              /></li>
-      <li id="run_terraform_command">Run the following
-                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
-                conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/important_terraform"/><note>You
+                Variables</xref>.<note type="warning">Use only the following variables to deploy
+                  <keyword keyref="prodShort"/> on <keyword keyref="pubCloudShort"/>:<ul
+                  id="ul_mbm_vp3_h5">
+                  <li><codeph>openstack_base_image_id</codeph></li>
+                  <li><codeph>openstack_flavor_id.core</codeph></li>
+                  <li><codeph>openstack_flavor_id.dea</codeph></li>
+                  <li><codeph>openstack_availability_zone</codeph></li>
+                  <li><codeph>openstack_keypair</codeph></li>
+                  <li><codeph>openstack_network_id</codeph></li>
+                  <li><codeph>openstack_network_name</codeph></li>
+                  <li><codeph>openstack_floating_ip_pool</codeph></li>
+                  <li><codeph>dns_server</codeph></li>
+                  <li><codeph>key_file</codeph></li>
+                  <li><codeph>cluster_admin_username</codeph></li>
+                  <li><codeph>cluster_admin_password</codeph></li>
+                  <li><codeph>dea_count</codeph></li>
+                  <li><codeph>http_proxy</codeph></li>
+                  <li><codeph>https_proxy</codeph></li>
+                  <li><codeph>no_proxy</codeph></li>
+                </ul></note></li>
+            <li id="run_terraform_command">Run the following
+                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note>You
                 may receive the error message <msgph>Can not find requested image</msgph> if <xref
                   href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st">the various settings of your
                   sandbox environment</xref> are not configured consistently on US East or US
                 West.</note><note type="tip">To improve console output on Windows, add the
-                  <filepath>-no-color</filepath> flag to your command. For more information, see the
+                  <codeph>-no-color</codeph> flag to your command. For more information, see the
                 Terraform documentation on <xref
                   href="https://terraform.io/docs/commands/apply.html" format="html"
                   scope="external">Command: Apply</xref>.</note></li>
-     </ol><p>Terraform creates the necessary security groups and instances, installs Docker,
-      installs the Docker images required to run <keyword keyref="prodShort"/>, and saves the state
-      of your infrastructure to <filepath>terraform.tfstate</filepath>.</p><note type="tip">At the
-      end of the process, Terraform displays the URL of the <keyword keyref="prodShort"/> core,
-      formatted using the xip.io wildcard DNS, for
-      example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will need this
-      URL to use the Cloud Foundry CLI. You can also run the <filepath>terraform show</filepath>
-      command to see detailed information about the core.</note>If the cluster creation process
-     fails, run the following command to clean up created resources before attempting to create a
-     new cluster:<note conref="hcf-on-hos-step-6.dita#concept_m3k_bth_tt/delete_cluster"
-      /><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><b>Exploring
-      the <keyword keyref="prodShort"/> Core</b><p>After the <keyword keyref="prodShort"/> Docker
-      image is deployed as an instance on <keyword keyref="opnStckShort"/>, you can view the
-      instance and its security groups:</p><ul id="ul_rqs_v43_tt">
-      <li>To view the instance, click <menucascade>
-        <uicontrol>Project</uicontrol>
-        <uicontrol>Compute</uicontrol>
-        <uicontrol>Instances</uicontrol>
-       </menucascade>.</li>
-      <li>To view the security group, click <menucascade>
-        <uicontrol>Project</uicontrol>
-        <uicontrol>Computer</uicontrol>
-        <uicontrol>Access and Security</uicontrol>
-       </menucascade>.</li>
-     </ul><p>Ensure that the required security group is available, for example
-       <uicontrol>hcf-container-host</uicontrol>.</p><xref href="hcf-on-hos-step-5.dita#concept_cw2_thz_st">
-      <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
-     </xref></stentry>
+          </ol><p>Terraform creates the necessary security groups and instances, installs Docker,
+            installs the Docker images required to run <keyword keyref="prodShort"/>, and saves the
+            state of your infrastructure to <codeph>terraform.tfstate</codeph>.</p><note type="tip"
+            >At the end of the process, Terraform displays the URL of the <keyword
+              keyref="prodShort"/> core, formatted using the xip.io wildcard DNS, for
+            example:<codeblock>api_endpoint = http://api.203.0.113.0.xip.io</codeblock>You will need
+            this URL to use the Cloud Foundry CLI. You can also run the <codeph>terraform
+              show</codeph> command to see detailed information about the core.</note>If the cluster
+          creation process fails, run the following command to clean up created resources before
+          attempting to create a new cluster:<note
+            conref="hcf-on-hos-step-6.dita#concept_m3k_bth_tt/delete_cluster"
+            /><codeblock>terraform destroy -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><b>Exploring
+            the <keyword keyref="prodShort"/> Public-Facing Node</b><p>After the <keyword
+              keyref="prodShort"/> Docker image is deployed as an instance on <keyword
+              keyref="opnStckShort"/>, you can view the instance and its security groups:</p><ul
+            id="ul_rqs_v43_tt">
+            <li>To view the instance, click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Compute</uicontrol>
+                <uicontrol>Instances</uicontrol>
+              </menucascade>.</li>
+            <li>To view the security group, click <menucascade>
+                <uicontrol>Project</uicontrol>
+                <uicontrol>Computer</uicontrol>
+                <uicontrol>Access and Security</uicontrol>
+              </menucascade>.</li>
+          </ul><p>Ensure that the required security group is available, for example
+              <uicontrol>hcf-container-host</uicontrol>.</p><xref
+            href="hcf-on-hos-step-5.dita#concept_cw2_thz_st">
+            <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+          </xref></stentry>
    </strow>
   </simpletable>
  </conbody>

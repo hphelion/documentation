@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="hcf-on-hos-step-3.2">
+ <title>Using the Command Line</title>
+ <shortdesc></shortdesc>
+ <prolog>
+  <metadata>
+   <othermeta name="author" content="Michael Khmelnitsky"/>
+  </metadata>
+ </prolog>
+ <conbody>
+  <simpletable id="simpletable_rlr_5vk_g5">
+   <strow>
+    <stentry>1. <xref conref="hcf-on-hos-step-2.dita#concept_ikh_xgz_st/quickStartHOSstep1_"/><p>2.
+       <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep2_"/></p><p>3.
+        <b><keyword keyref="quickStartHOSstep3" id="quickStartHOSstep3"/></b></p><p>4. <xref
+       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep4_"/></p><p>5. <xref
+       conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <xref
+      conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
+    <stentry>
+          <b>To Create an <codeph>openrc</codeph> File and Load Its Variables</b><ul
+            id="ul_dfg_vlb_h5">
+            <li>On Linux or Mac OS X:<ol id="ol_c21_hlb_h5">
+                <li>Name the file <codeph>openrc.sh</codeph> and add variables to the file. <note
+                    id="get_variables">You can obtain the values of the following variables <xref
+                      href="hcf-on-hos-step-3.1.dita#hcf-on-hos-step-3.1/download_config_file">from
+                      the Horizon web console</xref>. For more information and examples, see <xref
+                      href="../../reference/hcf-reference-openrc-sh.dita#hcf-reference-openrc-sh"
+                      >OpenStack Variables</xref>.</note></li>
+                <li id="source_openrc.sh">Navigate to the directory that contains the
+                    <codeph>openrc.sh</codeph> file and run the <codeph>source openrc.sh</codeph>
+                  command. <p>When prompted, enter your OpenStack password.</p></li>
+                <li id="addvars_openrc.sh">(Optional) To prevent the variables from being discarded
+                  when you close your terminal session, add the variables to your
+                    <codeph>~/.bashrc</codeph> file and run the <codeph>source ~/.bashrc</codeph>
+                  command.</li>
+              </ol></li>
+            <li>On Windows:<ol id="ol_a22_1mb_h5">
+                <li>Name the file <codeph>openrc.bat</codeph> and add variables to the file.<note
+                    conref="#hcf-on-hos-step-3.2/get_variables"/></li>
+                <li id="run_openrc.bat">Navigate to the directory that contains the
+                    <codeph>openrc.bat</codeph> file and run the file. <p>When prompted, enter your
+                    OpenStack password.</p></li>
+                <li id="addvars_openrc.bat">(Optional) To prevent the variables from being discarded
+                  when you close your terminal session, click <menucascade>
+                    <uicontrol>Control Panel</uicontrol>
+                    <uicontrol>System</uicontrol>
+                    <uicontrol>Advanced system settings</uicontrol>
+                    <uicontrol>Environment Variables</uicontrol>
+                  </menucascade> and add the variables to your <uicontrol>System
+                    variables.</uicontrol></li>
+              </ol></li>
+          </ul><b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
+            <li id="create_a_network">Create a network.<note>You can also use an existing
+                network.</note><ol id="ol_xvb_qyp_tt">
+                <li>Create and name a network, for
+                  example:<codeblock>neutron net-create myNetwork</codeblock></li>
+                <li>Create and name a subnet, add a DNS name server to your network, and define an
+                  allocation pool, for
+                  example:<codeblock>neutron subnet-create --name mySubnet --dns-nameserver ns1.example.com --allocation-pool "start=10.0.0.2,end=10.0.0.254" myNetwork 10.0.0.0/24</codeblock></li>
+              </ol></li>
+            <li>Create a router.<ol id="ol_vkh_fr1_tt">
+                <li>Create and name a router, for
+                  example:<codeblock>neutron router-create myRouter</codeblock></li>
+                <li>Connect your router to the external network
+                  (Ext-Net):<codeblock>neutron router-gateway-set myRouter ext-net</codeblock></li>
+              </ol></li>
+            <li>Create an interface and associate it with your router and subnet, for
+              example:<codeblock>neutron router-interface-add myRouter mySubnet</codeblock></li>
+            <li>Create a key pair and write the key file, for
+                example:<codeblock>nova keypair-add myKeypair > myKeyFile.pem</codeblock><note
+                type="tip">The <codeph>pem</codeph> file contains the RSA private key that you will
+                need to <xref href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command"
+                  >run Terraform commands</xref> and to <xref
+                  href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt/connecting_to_your_cluster"
+                    ><codeph>ssh</codeph> into your cluster</xref>.</note></li>
+            <li>Determine your network ID:<codeblock>neutron net-list</codeblock><note type="tip"
+                >You will need the network ID to <xref
+                  href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">configure
+                  your <codeph>tfvars</codeph> file</xref> and to <xref
+                  href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st/run_terraform_command">run
+                  terraform commands.</xref></note></li>
+            <li>Ensure that your tenant has at least 16GB of RAM
+                available:<codeblock>nova quota-show</codeblock><note>A <codeph>-1</codeph> value
+                indicates an unlimited resource quota.</note></li>
+          </ol><xref href="hcf-on-hos-step-4.dita#concept_pqc_jhz_st">
+            <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+          </xref>
+        </stentry>
+   </strow>
+  </simpletable>
+ </conbody>
+</concept>
