@@ -5,10 +5,11 @@
     with ESX</title>
   <body>
     <note type="attention">Hyperlinks intermittently do not work in the Google Chrome browser. <xref
-      href="http://docs.hpcloud.com/helion/installation/install_entryscale_esx.html" scope="external" format="html">Click
-      here</xref> for a frameless version of this page where the links should work.</note>
-    <p>This document describes the procedure for the deployment of an ESX cloud using input model and
-      adding more ESX hosts to an already activated cluster.</p>
+        href="http://docs.hpcloud.com/helion/installation/install_entryscale_esx.html"
+        scope="external" format="html">Click here</xref> for a frameless version of this page where
+      the links should work.</note>
+    <p>This document describes the procedure for the deployment of an ESX cloud using input model
+      and adding more ESX hosts to an already activated cluster.</p>
     <p> It contains the following topics:<ul id="ul_wrs_dwq_lt">
         <li><xref href="#install_esx/prereqs" format="dita">Prerequisites</xref></li>
         <li><xref href="#install_esx/deployCloud" format="dita">Deploy ESX Cloud</xref></li>
@@ -97,7 +98,7 @@
 mechanism_drivers = ovsvapp, openvswitch, l2population
 [agent]
 enable_distributed_routing = False</codeblock></li>--></p></li>
-        <li id="optional-eon">(<b>Optional</b>) To enable centralised logging for EON service, do
+        <li id="optional-eon">(<b>Optional</b>) To enable centralized logging for EON service, do
           the following:<ol id="ol_ykv_czv_st">
             <li>Change your directory to
               <codeblock>~/helion/my_cloud/config/logging/vars</codeblock></li>
@@ -220,7 +221,8 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
               <li>vCenter Username - the admin privilege username for the vCenter.</li>
               <li>vCenter Password - the password for the above username.</li>
               <li>vCenter Port - the vCenter server port. By default it is 443. <note
-                type="important">Please do not change the vCenter Port unless you are certain it is required to do so.</note></li>
+                  type="important">Please do not change the vCenter Port unless you are certain it
+                  is required to do so.</note></li>
             </ul></p><p><b>Sample
             Output:</b><codeblock><codeph># eon vcenter-add --name vc01 --ip-address 10.1.200.41 --username administrator@vsphere.local --password password --port 443</codeph>
 +------------+--------------------------------------+
@@ -262,12 +264,14 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
       </ol></section>
     <section id="register-network"><b>Register ESX Cloud Network Configuration</b>
       <p>This involves getting a sample network information template. Fill the details of the
-        template and use that template to register the cloud network configuration for the vCenter.</p>
+        template and use that template to register the cloud network configuration for the
+        vCenter.</p>
       <p>
         <ol>
           <li>Execute the following command to get the network information
               template:<codeblock><codeph># eon get-network-info-template --filename &lt;<b>NETWORK_CONF_FILENAME</b>></codeph></codeblock><p>For
-              example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample file of <codeph>net_conf.json</codeph> is shown
+              example:<codeblock># eon get-network-info-template --filename net_conf.json</codeblock></p><p>Sample
+              file of <codeph>net_conf.json</codeph> is shown
               below:<codeblock>{
     "network": {
         # Deployer Network details
@@ -480,7 +484,35 @@ ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
 }</codeblock></p></li>
           <li>Modify the template (json file) as per your
               environment.<codeblock>vi &lt;<b>NETWORK_CONF_FILENAME</b>></codeblock><p>For
-              example:<codeblock>vi net_conf.json</codeblock></p></li>
+              example:<codeblock>vi net_conf.json</codeblock></p>
+            <ul>
+              <li>For your lifecycle manager network, change the <codeph>vlan_type</codeph> to one
+                of the following values: <codeph>vlan</codeph>, <codeph>trunk</codeph>, or
+                  <codeph>none</codeph>. Based on this value specified the
+                  <codeph>deployer_PG</codeph> will be created.</li>
+              <li>Change the <codeph>ip_range</codeph> value to include your
+                  <codeph>start_address</codeph> and <codeph>end_address</codeph> values for your
+                lifecycle manager network.</li>
+              <li>For the Management network, specify your VLAN ID in the following field:
+                <codeblock>mgmt_vlan</codeblock></li>
+              <li>Also you will need to specify your VLAN type in the following field: <codeblock>vlan_type</codeblock>
+                <p>The values accepted for this field are <codeph>vlan</codeph>,
+                    <codeph>trunk</codeph>, or <codeph>none</codeph>. Based on the value specified
+                  the <codeph>Mgmt_PG</codeph> will be created.</p></li>
+            </ul>
+            <p>All of these parameters will be hashed out by default since the example input model
+              carries the GUEST network over MGMT. If you have a separate GUEST network as part of
+              your input model then you will need to uncomment the <codeph>data_network</codeph>
+              fields and provide the proper details.</p>
+            <p>The new parameters added for <codeph>data_network</codeph> are specified below.</p>
+            <p>For your VLAN ID/ranges for the GUEST network:</p>
+            <codeblock>data_vlan = ""</codeblock>
+            <p>For your VLAN type for the GUEST network:</p>
+            <codeblock>vlan_type = ""</codeblock>
+            <p>The values accepted by this field are <codeph>vlan</codeph>, <codeph>trunk</codeph>,
+              or <codeph>none</codeph>. Based on the value specified the <codeph>data_PG</codeph>
+              will be created.</p></li>
+
           <li>Use the template to register Cloud Network Configuration. This sets the network
             information for a vCenter which is used to deploy and configure compute proxy and
             OVSvAPP VMs during the cluster activation.
