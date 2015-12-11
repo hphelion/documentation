@@ -132,7 +132,17 @@
             <p>A workaround is no longer required to get the Threshold Engine to run when there is only a single Control Plane node. 
                 See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/>
                 <xref href="releasenotes.dita#release_notes/DOCS-2056">here</xref></p>       
-        
+ 
+ 
+            <!--https://jira.hpcloud.net/browse/DOCS-2286-->
+            <p id="DOCS-2286"><b>The 'Cinderlm diagnostics monitor' alarm no longer alerts with an 'UNDETERMINED'
+                state</b></p>
+            
+            <p>
+                See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/>
+                <xref href="releasenotes.dita#release_notes/DOCS-1832">here</xref>   
+            </p>
+ 
         </section>
 
 
