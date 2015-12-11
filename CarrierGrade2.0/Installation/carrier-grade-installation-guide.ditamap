@@ -15,9 +15,10 @@
             </vrmlist>
         </prodinfo>
     </topicmeta>
-    <topicref href="carrier-grade-install-overview.dita" navtitle="Installation" locktitle="yes">
+    <topicref href="carrier-grade-install-overview.dita" navtitle="Installation" locktitle="yes"
+        otherprops="install-overview">
         <topicref href="carrier-grade-install-overview-denver.dita"
-            navtitle="Deploying the Denver Template" locktitle="yes">
+            navtitle="Deploying the Denver Template" locktitle="yes" otherprops="deploy-denver">
             <topicref href="carrier-grade-technical-overview-denver.dita"
                 navtitle="Technical Overview" locktitle="yes"/>
             <topicref href="carrier-grade-support-matrix-denver.dita" navtitle="Support Matrix"
@@ -36,7 +37,7 @@
                 navtitle="Deploying the KVM Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-overview-tahoe.dita"
-            navtitle="Deploying the Tahoe Template" locktitle="yes">
+            navtitle="Deploying the Tahoe Template" locktitle="yes" otherprops="deploy-tahoe">
             <topicref href="carrier-grade-technical-overview-tahoe.dita"
                 navtitle="Technical Overview" locktitle="yes"/>
             <topicref href="carrier-grade-support-matrix-tahoe.dita" navtitle="Support Matrix"
@@ -57,7 +58,7 @@
                 navtitle="Deploying the KVM Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-overview-memphis.dita"
-            navtitle="Deploying the Memphis Template" locktitle="yes">
+            navtitle="Deploying the Memphis Template" locktitle="yes" otherprops="deploy-memphis">
             <topicref href="carrier-grade-technical-overview-memphis.dita"
                 navtitle="Technical Overview" locktitle="yes"/>
             <topicref href="carrier-grade-support-matrix-memphis.dita" navtitle="Support Matrix"
@@ -80,9 +81,10 @@
                 navtitle="Deploying the KVM Region" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-overview-sacramento.dita"
-            navtitle="Deploying the Sacramento Template" locktitle="yes">
+            navtitle="Deploying the Sacramento Template" locktitle="yes"
+            otherprops="deploy-sacramento">
             <topicref href="carrier-grade-technical-overview-sacramento.dita"
-                navtitle="Technical Overview" locktitle="yes">
+                navtitle="Technical Overview" locktitle="yes" otherprops="tech-overview">
                 <topicref href="carrier-grade-technical-overview-intf.dita"/>
             </topicref>
             <topicref href="carrier-grade-technical-specs.dita" navtitle="Technical Specifications"
@@ -90,7 +92,8 @@
             <topicref href="carrier-grade-support-matrix-sacramento.dita" navtitle="Support Matrix"
                 locktitle="yes"/>
             <topicref href="CGH-install-prereqs-sacramento.dita"
-                navtitle="Installation Prerequisites" locktitle="yes">
+                navtitle="Installation Prerequisites" locktitle="yes"
+                otherprops="installation-prereqs">
                 <topicref href="carrier-grade-install-network-prepare.dita" toc="no"
                     navtitle="Preparing the Network for Installation"/>
                 <topicref href="carrier-grade-install-NTP.dita" toc="no" navtitle="Configuring NTP"/>
@@ -101,7 +104,8 @@
                 <topicref href="carrier-grade-install-prereqs.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-download-sacramento.dita"
-                navtitle="Download the Installation Packages" locktitle="yes">
+                navtitle="Download the Installation Packages" locktitle="yes"
+                otherprops="install-packages">
                 <topicref href="carrier-grade-install-download.dita"
                     navtitle="Download the Installation Packages Conrefs" locktitle="yes" toc="no"/>
             </topicref>
@@ -112,24 +116,24 @@
             <topicref href="CGH-2-install-esx-sacramento.dita"
                 navtitle="Configuring the ESX Components" locktitle="yes"/>
             <topicref href="CGH-2-install-sacramento.dita" navtitle="Deploying the Non-KVM Region"
-                locktitle="yes">
+                locktitle="yes" otherprops="deploy-nonkvm">
                 <topicref href="CGH-2-install-infoblox.dita" toc="no"/>
             </topicref>
             <topicref href="carrier-grade-install-launch-horizon.dita"
                 navtitle="Launching the Horizon Interface" locktitle="yes"/>
             <topicref href="carrier-grade-install-kvm-sacramento.dita"
-                navtitle="Deploying the KVM Region" locktitle="yes">
+                navtitle="Deploying the KVM Region" locktitle="yes" otherprops="deploy-kvm-region">
                 <topicref href="carrier-grade-install-kvm-network-interface.dita" toc="no"/>
             </topicref>
             <topicref
-                href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes.dita"
+                href="../OperationsGuide/Baremetal/carrier-grade-provision-baremetal-nodes-import.dita"
                 navtitle="Provision Baremetal Nodes for the Sacramento Deployment" locktitle="yes"/>
             <topicref
                 href="../OperationsGuide/Baremetal/carrier-grade-baremetal-best-practices.dita"
                 navtitle="Baremetal Region Best Practices" locktitle="yes"/>
         </topicref>
         <topicref href="carrier-grade-install-post.dita" navtitle="Post-Installation Tasks"
-            locktitle="yes">
+            locktitle="yes" otherprops="post-installation">
             <topicref href="carrier-grade-install-ldap-verify.dita"
                 navtitle="Verifying the LDAP Deployment" locktitle="yes" toc="yes"/>
             <topicref href="carrier-grade-install-verify-vsc.dita" navtitle="Verifying the VSC VMs"
@@ -141,11 +145,11 @@
         <topicref href="CGH-2-install-pci-pass.dita" navtitle="Configuring PCI-Passthrough"
             locktitle="yes"/>
         <topicref href="carrier-grade-install-config-dcn.dita"
-            navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes">
+            navtitle="Configuring Your Cloud with DCN VSD" locktitle="yes" otherprops="config-dcn">
             <topicref href="../OperationsGuide/Dashboard/CGH-2-User-Dasboard-VSD.dita" toc="no"/>
         </topicref>
-        <topicref href="../carrier-grade-placeholder.dita" navtitle="Linked files not in TOC"
-            locktitle="yes" toc="no">
+        <topicref href="../carrier-grade-reference-files.dita" navtitle="Reference files"
+            locktitle="yes" toc="no" otherprops="reference-files">
             <topicref href="carrier-grade-install-non-kvm.dita"
                 navtitle="Deploying the Non-KVM Region" locktitle="yes" toc="no"/>
             <topicref href="carrier-grade-install-kvm-machine-json-bonded.dita" toc="no"/>

@@ -79,9 +79,9 @@
         navtitle="Applying Customer-Specific Branding (optional)" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/Installation/carrier-grade-installation-guide.ditamap"
-      format="ditamap" navtitle="Installation" locktitle="yes"/>
+      format="ditamap" navtitle="Installation" locktitle="yes" otherprops="installation-guide"/>
     <topicref href="CarrierGrade2.0/carrier-grade-administration.dita" navtitle="Administration"
-      locktitle="yes">
+      locktitle="yes" otherprops="admin-guide">
       <topicref href="CarrierGrade2.0/AdminGuideNew/carrier-grade-admin-guide.dita"
         navtitle="KVM Region Administrator Guide" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/OperationsGuide/Logging/CHG-2-logging-overview.dita"
@@ -107,9 +107,9 @@
         navtitle="Lifecycle Manager CLI Reference" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/OperationsGuide/CGH-2-User-Overview-TOC.dita"
-      navtitle="Operations" locktitle="yes">
+      navtitle="Operations" locktitle="yes" otherprops="operations-guide">
       <topicref href="CarrierGrade2.0/OperationsGuide/carrier-grade-User-guide.ditamap"
-        navtitle="User Guide" locktitle="yes" format="ditamap"/>
+        navtitle="Operations Guide" locktitle="yes" format="ditamap"/>
     </topicref>
     <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting.dita"
       navtitle="Troubleshooting" locktitle="yes">

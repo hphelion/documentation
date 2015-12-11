@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107cgpbn">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Provision Baremetal Nodes
+    for the Sacramento Deployment</title>
+<prolog>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+  </metadata>
+</prolog>
+<body>
+  <bodydiv id="all">
+  <!-- https://etherpad.hpcloud.net/p/CGHOS2_0_Ironic_Standalone_PhysicalSetup -->
+    <p>If you are installing the <codeph>sacramento</codeph> template, which includes the KVM
+      region, the baremetal region, ESX storage, and uses HPE DCN VRS networking, follow these
+      instructions to provision baremetal nodes. </p>
+    <section>
+      <title>Change Ironic configuration file permissions on baremetal nodes</title>
+      <p>The Ironic configuration files contain credentials that could be abused, potentially
+        exposing customer data.</p>
+      <p>By default, the Ironic configuration files are protected using a chmod permissions of
+          <codeph>600</codeph> or <codeph>700</codeph>. We strongly recommend that you change the
+        permissions to <codeph>400</codeph>. </p>
+      <ol id="ol_eml_5qz_25">
+        <li>Log in to the Baremetal controller.<pre>ssh cghelion@&lt;BM_Controller_IP&gt;</pre></li>
+        <li>Execute the following command to change the permission on the ironic-api configuration
+          file:<codeblock>chmod 400 /etc/ironic/ironic-api.conf</codeblock></li>
+        <li>Execute the following command to change the permission on the ironic-conductor
+          configuration file:<codeblock>chmod 400 /etc/ironic/ironic-conductor.conf</codeblock></li>
+      </ol>
+    </section>
+    <section>
+      <title>Provision Baremetal Nodes</title>
+      <p>
+        <ol id="ol_bns_j1f_xt">
+          
+          <li>Execute the following commands to create a switch
+              entry:<codeblock>neutron switch-create --host &lt;switch ip&gt; --username &lt;username&gt; --password &lt;password&gt; --type s5930 --id aa:bb:cc:dd:ee:ff</codeblock><p>Where:
+                <ul id="ul_osf_bjh_f5">
+                <li><codeph>&lt;switch ip> </codeph> is the IP Address of the switch.</li>
+                <li><codeph>id</codeph> is the MAC address of the switch being created</li>
+              </ul></p></li>
+          <li>Execute the following commands to create a new
+            flavor:<codeblock>nova flavor-create baremetal auto 4096 80 2
+nova flavor-key baremetal set "capabilities:boot_option"="local" 
+nova flavor-key baremetal set "capabilities:boot_mode"="bios"</codeblock></li>
+          <li>Register the Ironic node using the <codeph>pxe_ipmitool</codeph>,
+              <codeph>agent_ipmitool</codeph>, or <codeph>agent_ilo</codeph> drivers. Use one of the
+            three methods to register Ironic. For HP servers, <codeph>agent_ipmitool</codeph> and
+              <codeph>agent_ilo</codeph> are supported.<ul id="ul_g2k_gsh_f5">
+              <li><b>agent_ipmitool driver</b><p>Execute the following commands to register the
+                  Ironic
+                node:</p><codeblock>ironic node-create -d agent_ipmitool -i ipmi_address=&lt;&lt;ip>> -i ipmi_username=&lt;user> -i ipmi_password=&lt;password> -i ipmi_terminal_port=&lt;terminal_port> -p cpus=&lt;cpus> -p memory_mb=&lt;memory> -p local_gb=&lt;disk_space> -i deploy_kernel=&lt;glance_deploy_kernel_id> -i deploy_ramdisk=&lt;glance deploy ram disk id> i cpu_arch=&lt;cpu_arch></codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+              <li><b>agent_ilo driver</b><p>Execute the following commands to register the Ironic
+                  node:</p><codeblock>ironic node-create -d agent_ilo -i ilo_address==&lt;&lt;ip&gt;&gt; -i ilo_username=&lt;user&gt; -i ilo_password=&lt;pass&gt; -p cpus=&lt;cpus&gt; -p memory_mb=&lt;memory&gt; -p local_gb=&lt;disk_space&gt; -i ilo_deploy_iso=&lt;glance deploy iso image&gt; -i cpu_arch=&lt;cpu_arch&gt;</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+              <li><b>pxe_ipmitool driver</b><p>Execute the following commands to register the Ironic
+                  node:</p><codeblock>ironic node-create -d ilo_ipa -i ipmi_address=&lt;&lt;ip&gt;&gt; -i ipmi_username=&lt;&lt;user&gt; -i ipmi_password=&lt;&lt;password&gt; -i ipmi_terminal_port=9091 -p cpus=2 -p memory_mb=4096 -p local_gb=80 -i deploy_kernel=&lt;&lt;glance_deploy_kernel_id&gt;> -i deploy_ramdisk=&lt;&lt;glance_deploy_ramdisk_id&gt;&gt;  -i cpu_arch=amd64</codeblock><codeblock>ironic node-update &lt;&lt;node_id&gt;&gt; add properties/capabilities="boot_mode:bios,boot_option:local"</codeblock></li>
+            </ul></li>  
+              <li>Execute the following command to register the port for the baremetal
+            node:<codeblock>ironic port-create -a &lt;&lt;node_mac_id&gt;&gt; --local-link-connection switch_id="&lt;&lt;switch_id&gt;&gt;" --local-link-connection port_id="&lt;&lt;switch_port&gt;&gt;" --local-link-connection switch_info="ToR" -n &lt;&lt;node_id&gt;&gt;</codeblock></li>
+          <li>Execute the following commands to create a tenant
+            network:<codeblock>neutron net-create tenant-network
+neutron subnet-create --name tenant-subnet --gateway &lt;ip-address> --allocation-pool start=&lt;ip-address>,end=&lt;ip-address> tenant-network &lt;ip-address/prefix></codeblock></li>
+          <li>Execute the following command to Provision the baremetal node:
+                <codeblock>nova boot --nic net-id=&lt;&lt;tenant network id&gt;&gt; --image &lt;&lt;glance image id&gt;&gt; --flavor baremetal --key-name &lt;keypair-name&gt;</codeblock><p>Where:<ul
+                id="ul_x5n_t3r_zt">
+                <li><codeph>&lt;tenant network id></codeph> is the UUID of the tenant network </li>
+                <li><codeph>&lt;image></codeph> is the name or ID of image (see 'nova
+                  image-list')</li>
+                <li><codeph>&lt;flavor></codeph> is the name or ID of flavor (see 'nova
+                  flavor-list')</li>
+                <li><codeph>&lt;keypair-name></codeph> is the name of the key pair to use</li>
+              </ul></p><codeblock>nova image-list
++--------------------------------------+-----------+--------+--------+
+| ID                                   | Name      | Status | Server |
++--------------------------------------+-----------+--------+--------+
+| ca797ded-5fa0-4ef2-8635              | hoscg-2.0 | ACTIVE |        |
+| 2394d02e-2f58-4b85-b9e4              | hoscg-2.0 | ACTIVE |        |
++--------------------------------------+-----------+--------+--------+</codeblock><p> </p></li>
+        </ol>
+      </p></section>
+        <section>
+      <title>View System Details</title>
+      <ol id="ol_yz4_452_xt">
+        <li>SSH into the provisioned node::
+          <codeblock>ssh &lt;instance_username>@&lt;instance_ip> -i &lt;nova_key_pair.pem></codeblock></li>
+        <li>View the active servers:<codeblock>nova list</codeblock><p>The output should appear
+            similar to the
+            following:<codeblock>+--------------------------------------+-------+--------+------------+-------------+----------------------------+
+| ID                                   | Name  | Status | Task State | Power State | Networks                   |
++--------------------------------------+-------+--------+------------+-------------+----------------------------+
+| 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a | test1 | ACTIVE | -          | Running     | tenant-network=192.68.9.54 |
++--------------------------------------+-------+--------+------------+-------------+----------------------------+</codeblock></p></li>
+        <li>View details about the
+            server:<codeblock>nova show 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+--------------------------------------+-------------------------------------------------------------------+
+| Property                             | Value                                                             |
++--------------------------------------+-------------------------------------------------------------------+
+| OS-EXT-AZ:availability_zone          | nova                                                              |
+| OS-EXT-SRV-ATTR:host                 | BMCLOUD-RCP02-T1-M1-NETCLM                                        |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | 5564213e-1e39-465b-be2e-5933c43650a0                              |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000013                                                 |
+| OS-EXT-STS:power_state               | 1                                                                 |
+| OS-EXT-STS:task_state                | -                                                                 |
+| OS-EXT-STS:vm_state                  | active                                                            |
+| OS-SRV-USG:launched_at               | 2015-10-16T15:40:21.000000                                        |
+| OS-SRV-USG:terminated_at             | -                                                                 |
+| accessIPv4                           |                                                                   |
+| accessIPv6                           |                                                                   |
+| config_drive                         |                                                                   |
+| created                              | 2015-10-16T15:34:21Z                                              |
+| flavor                               | baremetal (6)                                                     |
+| hostId                               | dde2258e0d29285416349bfb26c71c23915a510b24681675f32005c1          |
+| id                                   | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a                              |
+| image                                | ubuntu-14.04.02-amd64-disk (4b6b5bbe-39c8-4398-b2e6-1854496ef28f) |
+| key_name                             | -                                                                 |
+| metadata                             | {}                                                                |
+| name                                 | test1                                                             |
+| os-extended-volumes:volumes_attached | []                                                                |
+| progress                             | 0                                                                 |
+| security_groups                      | default                                                           |
+| status                               | ACTIVE                                                            |
+| tenant-network network               | 192.68.9.54                                                       |
+| tenant_id                            | c288a2816237465c8ea6efc16dc05b88                                  |
+| updated                              | 2015-10-16T15:40:21Z                                              |
+| user_id                              | 2c34ae0b4cbd47a193a597bf5248c2db                                  |
++--------------------------------------+-------------------------------------------------------------------+</codeblock></p></li>
+        <li>View details about the network
+            <codeblock>neutron net-show tenant-network</codeblock><p>The output should appear
+            similar to the
+            following:<codeblock>+---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | 2c4f260c-507a-47a7-a0f4-7faebfe312b0 |
+| mtu                       | 0                                    |
+| name                      | tenant-network                       |
+| provider:network_type     | vlan                                 |
+| provider:physical_network | physnet1                             |
+| provider:segmentation_id  | 102                                  |
+| router:external           | False                                |
+| shared                    | True                                 |
+| status                    | ACTIVE                               |
+| subnets                   | 6a952e6b-903f-41db-b31d-62dc52c65dd0 |
+| tenant_id                 | c288a2816237465c8ea6efc16dc05b88     |
++---------------------------+--------------------------------------+</codeblock></p></li>
+        <li>View detailed information about a
+            node:<codeblock>ironic node-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+------------------------+--------------------------------------------------------------------------+
+| Property               | Value                                                                    |
++------------------------+--------------------------------------------------------------------------+
+| target_power_state     | None                                                                     |
+| extra                  | {}                                                                       |
+| last_error             | None                                                                     |
+| updated_at             | 2015-10-19T05:19:14+00:00                                                |
+| maintenance_reason     | None                                                                     |
+| provision_state        | active                                                                   |
+| uuid                   | 5564213e-1e39-465b-be2e-5933c43650a0                                     |
+| console_enabled        | False                                                                    |
+| target_provision_state | None                                                                     |
+| maintenance            | False                                                                    |
+| inspection_started_at  | None                                                                     |
+| inspection_finished_at | None                                                                     |
+| power_state            | power on                                                                 |
+| driver                 | pxe_ipmitool                                                             |
+| reservation            | None                                                                     |
+| properties             | {u'memory_mb': 8192, u'local_gb': 40, u'cpus': 8, u'capabilities':       |
+|                        | u'boot_mode:bios,boot_option:local'}                                     |
+| instance_uuid          | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a                                     |
+| name                   | None                                                                     |
+| driver_info            | {u'ipmi_terminal_port': 9091, u'ipmi_username': u'admin',           |
+|                        | u'deploy_kernel': u'8c21423c-eedf-4f9d-84c5-25e03f35fd76',               |
+|                        | u'ipmi_address': u'10.1.67.60', u'deploy_ramdisk': u'93de142f-62a3-4a7e- |
+|                        | 8b94-2145c860523a', u'ipmi_password': u'******'}                         |
+| created_at             | 2015-10-16T04:10:30+00:00                                                |
+| driver_internal_info   | {u'clean_steps': None, u'agent_url': u'http://10.243.176.45:9999',       |
+|                        | u'root_uuid_or_disk_id': u'0x00000000', u'is_whole_disk_image': True,    |
+|                        | u'agent_last_heartbeat': 1445009962}                                     |
+| chassis_uuid           |                                                                          |
+| instance_info          | {u'root_gb': u'40', u'deploy_key': u'9BLPWR1PDTX3S5IYPNMP9FGZ9WFFIAJD',  |
+|                        | u'image_source': u'4b6b5bbe-39c8-4398-b2e6-1854496ef28f', u'swap_mb':    |
+|                        | u'0', u'capabilities': u'{"boot_option": "local"}'}                      |
++------------------------+--------------------------------------------------------------------------+</codeblock></p></li>
+        <li>View detailed information about a
+            port:<codeblock>ironic port-show 0142fb06-a425-4b6d-a41e-481a5b54b8a2</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+-----------------------+----------------------------------------------------------------------+
+| Property              | Value                                                                |
++-----------------------+----------------------------------------------------------------------+
+| local_link_connection | {u'switch_info': u'ToR', u'port_id': u'Ten-GigabitEthernet1/0/12:2', |
+|                       | u'switch_id': u'aa:bb:cc:dd:ee:ff'}                                  |
+| node_uuid             | 5564213e-1e39-465b-be2e-5933c43650a0                                 |
+| uuid                  | 0142fb06-a425-4b6d-a41e-481a5b54b8a2                                 |
+| extra                 | {u'vif_port_id': u'ce2014de-cf35-44a4-9255-2975c99b7f1c'}            |
+| pxe_enabled           | True                                                                 |
+| created_at            | 2015-10-16T13:41:48+00:00                                            |
+| updated_at            | 2015-10-16T15:40:03+00:00                                            |
+| address               | f0:92:1c:05:5b:60                                                    |
+| portgroup_uuid        |                                                                      |
++-----------------------+----------------------------------------------------------------------+
+[R2N6640S1FTC]display current-configuration interface Ten-GigabitEthernet1/0/12:
+2
+#
+interface Ten-GigabitEthernet1/0/12:2
+port link-mode bridge
+description CUST-5564213e-1e39-465b-be2e-5933c43650a0-host
+port access vlan 102
+stp edged-port
+#
+return</codeblock></p></li>
+        <li>View detailed information about an
+            instance:<codeblock>glance image-list</codeblock><p>The output should appear similar to
+            the
+            following:<codeblock>+--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
+| ID                                   | Name                       | Disk Format | Container Format | Size      | Status |
++--------------------------------------+----------------------------+-------------+------------------+-----------+--------+
+| 93de142f-62a3-4a7e-8b94-2145c860523a | deploy-initrd              | ari         | ari              | 227564499 | active |
+| 8c21423c-eedf-4f9d-84c5-25e03f35fd76 | deploy-kernel              | aki         | aki              | 3204496   | active |
+| 4b6b5bbe-39c8-4398-b2e6-1854496ef28f | ubuntu-14.04.02-amd64-disk | qcow2       | bare             | 372047872 | active |
++--------------------------------------+----------------------------+-------------+------------------+-----------+--------+</codeblock></p></li>
+        <li>View detailed information about a
+            hypervisor:<codeblock>nova hypervisor-show 5564213e-1e39-465b-be2e-5933c43650a0</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+-------------------------+--------------------------------------+
+| Property                | Value                                |
++-------------------------+--------------------------------------+
+| cpu_info                |                                      |
+| current_workload        | 0                                    |
+| disk_available_least    | 0                                    |
+| free_disk_gb            | 0                                    |
+| free_ram_mb             | 0                                    |
+| host_ip                 | 192.168.102.8                        |
+| hypervisor_hostname     | 5564213e-1e39-465b-be2e-5933c43650a0 |
+| hypervisor_type         | ironic                               |
+| hypervisor_version      | 1                                    |
+| id                      | 4                                    |
+| local_gb                | 40                                   |
+| local_gb_used           | 40                                   |
+| memory_mb               | 8192                                 |
+| memory_mb_used          | 8192                                 |
+| running_vms             | 1                                    |
+| service_disabled_reason | -                                    |
+| service_host            | BMCLOUD-RCP02-T1-M1-NETCLM           |
+| service_id              | 19                                   |
+| state                   | up                                   |
+| status                  | enabled                              |
+| vcpus                   | 8                                    |
+| vcpus_used              | 8                                    |
++-------------------------+--------------------------------------+</codeblock></p></li>
+        <li>View a list of all running services.<codeblock>nova service-list</codeblock><p>
+            <codeblock>+----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
+| Id | Binary           | Host                       | Zone     | Status  | State | Updated_at                 | Disabled Reason |
++----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+
+| 1  | nova-cert        | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:46.000000 | -               |
+| 4  | nova-conductor   | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:41.000000 | -               |
+| 13 | nova-scheduler   | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:43.000000 | -               |
+| 16 | nova-consoleauth | BMCLOUD-RCP02-T1-M1-NETCLM | internal | enabled | up    | 2015-10-19T05:39:47.000000 | -               |
+| 19 | nova-compute     | BMCLOUD-RCP02-T1-M1-NETCLM | nova     | enabled | up    | 2015-10-19T05:39:41.000000 | -               |
++----+------------------+----------------------------+----------+---------+-------+----------------------------+-----------------+</codeblock>
+          </p></li>
+        <li>View information of a given port.
+            <codeblock>neutron port-show ce2014de-cf35-44a4-9255-2975c99b7f1c</codeblock><p>The
+            output should appear similar to the
+            following:<codeblock>+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                 | Value                                                                                                                                                                                                              |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                                                                                                                                                               |
+| allowed_address_pairs |                                                                                                                                                                                                                    |
+| binding:host_id       | 5564213e-1e39-465b-be2e-5933c43650a0                                                                                                                                                                               |
+| binding:profile       | {"local_link_information": [{"switch_info": "ToR", "port_id": "Ten-GigabitEthernet1/0/12:2", "switch_id": "aa:bb:cc:dd:ee:ff"}]}                                                                                   |
+| binding:vif_details   | {"port_filter": false}                                                                                                                                                                                             |
+| binding:vif_type      | hp-ironic                                                                                                                                                                                                          |
+| binding:vnic_type     | baremetal                                                                                                                                                                                                          |
+| commit                | False                                                                                                                                                                                                              |
+| device_id             | 1b9f1f2b-4bcb-4363-bcf4-49d6a550460a                                                                                                                                                                               |
+| device_owner          | baremetal:none                                                                                                                                                                                                     |
+| extra_dhcp_opts       |                                                                                                                                                                                                                    |
+| fixed_ips             | {"subnet_id": "6a952e6b-903f-41db-b31d-62dc52c65dd0", "ip_address": "192.68.9.54"}                                                                                                                                 |
+| id                    | ce2014de-cf35-44a4-9255-2975c99b7f1c                                                                                                                                                                               |
+| mac_address           | f0:92:1c:05:5b:60                                                                                                                                                                                                  |
+| name                  |                                                                                                                                                                                                                    |
+| network_id            | 2c4f260c-507a-47a7-a0f4-7faebfe312b0                                                                                                                                                                               |
+| security_groups       | 50a66dab-7b87-45bd-96e3-f90b988e541f                                                                                                                                                                               |
+| status                | ACTIVE                                                                                                                                                                                                             |
+| switch:hardware_id    | 5564213e-1e39-465b-be2e-5933c43650a0                                                                                                                                                                               |
+| switch:ports          | {"name": "ToR", "hardware_id": "5564213e-1e39-465b-be2e-5933c43650a0", "switch_id": "aa:bb:cc:dd:ee:ff", "port": "Ten-GigabitEthernet1/0/12:2", "mac_address": null, "id": "9e98b38d-22f8-4d45-bbc2-972eb709ee30"} |
+| tenant_id             | c288a2816237465c8ea6efc16dc05b88                                                                                                                                                                                   |
+| trunked               | False                                                                                                                                                                                                              |
++-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</codeblock></p></li>
+      </ol>
+    </section>
+  </bodydiv>
+  </body>
+</topic>

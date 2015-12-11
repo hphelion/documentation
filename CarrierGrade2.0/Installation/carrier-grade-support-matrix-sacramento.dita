@@ -243,7 +243,9 @@
       
         <ul id="ul_lwc_ltz_jt">
           <li><b>KVM region NICs.</b> The following NICs have been verified for PXE booting of KVM
-          region servers: <ul id="ul_sdq_q1f_qs">
+          region servers:
+            <!--Admin Guide has list of supported NICs; check there to make the same--><ul
+            id="ul_sdq_q1f_qs">
             <li>Emulex 10G </li>
             <li>Intel 82599 </li>
           </ul><p><b>Important:</b> Using the correct NICs is essential to proper installation of HP
