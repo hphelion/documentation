@@ -11,6 +11,8 @@
             <ul>
                 <li><xref href="releasenotes21.dita#release-notes-21/features">Features Available in this
                     Release</xref></li>
+                <li><xref href="releasenotes21.dita#release-notes-21/issues_fixed">Issues Fixed in this
+                    Release</xref></li>
                 <li><xref href="releasenotes21.dita#release-notes-21/known_issues">Known Issues in this
                     Release</xref></li>
             </ul>
@@ -32,6 +34,37 @@
             <p>A cloud operator or administrator can schedule backups and perform restores via a GUI in Horizon. For more information,
                 see the section on <xref href="bura/bura_overview.dita#bura_overview">Backing Up and Restoring Your Data</xref></p>
             
+            <!--  https://jira.hpcloud.net/browse/DOCS-2331 -->
+            <p id="DOCS-2331"><b>OVSvApp Install on VXLAN backed Tenant Networks</b></p>
+            
+            <p><keyword keyref="kw-hos-phrase-21"/> can automatically install OVSvApp agents on tenant networks that are backed by VXLAN.</p>
+
+       
+
+            
+            
+        <!--
+
+            <p><b>Ceph Multi-network support</b></p>
+            <p><b>hLinux: security updates via Top of Tree</b></p>
+            <p><b>Mid-scale support</b></p>
+            <p><b>~100 patches</b></p>
+            <p><b>Includes all fixes in HOS V2.0.1 hotfix</b></p>
+
+            <p><b>kernel update => managed reboots</b></p>-->
+            
+        </section>
+
+
+
+        <section id="issues_fixed">
+            <title>Issues Fixed in this Release</title>
+            
+            <!-- https://jira.hpcloud.net/browse/DOCS-2327 -->
+            <p id="DOCS-2327"><b>The softlockup issue when attempting to remove many LUNs simultaneously has been fixed.</b></p>
+            
+            <p>See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/>
+                <xref href="releasenotes.dita#release_notes/DOCS-1902">here</xref></p>
 
             <!--  https://jira.hpcloud.net/browse/DOCS-2257  -->
             <p id="DOCS-2257"><b>IPv6 access to <keyword keyref="kw-hos"/>  components is blocked</b></p>
@@ -53,9 +86,25 @@
                 <codeblock>net.ipv6.conf.all.disable_ipv6 = 1
                     net.ipv6.conf.default.disable_ipv6 = 1
                     net.ipv6.conf.lo.disable_ipv6 = 1</codeblock>
-               you should  remove these lines and then either reboot or run the following command as root:
+                you should  remove these lines and then either reboot or run the following command as root:
                 <codeblock># sysctl -p</codeblock>
             </p>
+            
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2252 -->
+            <p id="DOCS-2252"><b>Rsync requests are no longer blocked by the firewall on systems with a dedicated Swift
+                network</b></p>
+            
+            <p>In <keyword keyref="kw-hos-phrase-20"/>, it was necessary to add the <codeph>swift-rsync</codeph> 
+                service to the <codeph>component-endpoints</codeph> in the
+                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file. This is not required in <keyword keyref="kw-hos-phrase-21"/>
+                and can be removed if you are upgrading from <keyword keyref="kw-hos-phrase-20"/>.
+            </p>
+            
+            <p>See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/> 
+                <xref href="releasenotes.dita#release_notes/DOCS-2143">here</xref>.</p>
+            
+            
             
             <!--  https://jira.hpcloud.net/browse/DOCS-2053 -->
             <p id="DOCS-2053"><b>The behavior associated with the <codeph>curator_num_of_indicies_to_keep</codeph> configuration variable has changed in <keyword keyref="kw-hos-phrase-21"/>.</b></p>
@@ -73,38 +122,37 @@
             <p>This functionality differs significantly from <keyword keyref="kw-hos"/> <keyword keyref="kw-hos-version-20"/> where indices were deleted based on size rather than age
                 when the high watermark disk space was exceeded. In addition, <keyword keyref="kw-hos-phrase-20"/> did not strictly 
                 enforce the <codeph>curator_num_of_indicies_to_keep</codeph> configuration value if the high watermark disk space was not exceeded
-                so more indices than that number    were allowed to exist.
-            </p>
-            
-            <!--  https://jira.hpcloud.net/browse/DOCS-2252 -->
-            <p id="DOCS-2252"><b>Rsync requests are no longer blocked by the firewall on systems with a dedicated Swift
-                network</b></p>
-            
-                <p>In <keyword keyref="kw-hos-phrase-20"/>, it was necessary to add the <codeph>swift-rsync</codeph> 
-                service to the <codeph>component-endpoints</codeph> in the
-                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file. This is not required in <keyword keyref="kw-hos-phrase-21"/>
-                and can be removed if you are upgrading from <keyword keyref="kw-hos-phrase-20"/>.
+                so more indices than that number were allowed to exist.
             </p>
             
             
-        <!--
-            <p><b>OVSvApp over VxLAN</b></p>
-            <p><b>Ceph Multi-network support</b></p>
-            <p><b>hLinux: security updates via Top of Tree</b></p>
-            <p><b>Mid-scale support</b></p>
-            <p><b>~100 patches</b></p>
-            <p><b>Includes all fixes in HOS V2.0.1 hotfix</b></p>
-            <p><b>Will include HLX-755 “Softlockup affecting multipath”</b></p>
-            <p><b>kernel update => managed reboots</b></p>-->
+            <!-- https://jira.hpcloud.net/browse/DOCS-2323 -->
+            <p id="DOCS-2323"><b>Threshold Engine is correctly deployed when there is a single Control Plane node.</b></p>
             
+            <p>A workaround is no longer required to get the Threshold Engine to run when there is only a single Control Plane node. 
+                See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/>
+                <xref href="releasenotes.dita#release_notes/DOCS-2056">here</xref></p>       
+ 
+ 
+            <!--https://jira.hpcloud.net/browse/DOCS-2286-->
+            <p id="DOCS-2286"><b>The 'Cinderlm diagnostics monitor' alarm no longer alerts with an 'UNDETERMINED'
+                state</b></p>
+            
+            <p>
+                See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/>
+                <xref href="releasenotes.dita#release_notes/DOCS-1832">here</xref>   
+            </p>
+ 
         </section>
-        
+
+
+
         <section id="known_issues">
             <title>Known Issues in this Release</title>
             
             <!--  https://jira.hpcloud.net/browse/DOCS-2052  -->
             <p id="DOCS-2052"><b>Changes to Alarm Definition in Centralized Logging 
-                may require existing alarms to be deleted and recreated on an upgrade from 
+                may require existing alarms to be deleted and recreated on upgrade from 
                 <keyword keyref="kw-hos-version-20"/> to <keyword keyref="kw-hos-version-21"/></b></p>   
             
             <p>
@@ -159,6 +207,51 @@ ansible-playbook -i hosts/verb_hosts nova-start.yml --limit hlm002-cp1-c1-m3-mgm
 
             <!--  https://jira.hpcloud.net/browse/DOCS-2269 -->
             <p id="DOCS-2269"><b>Multipath attach over iSCSI is not supported for 3PAR backend storage</b></p>
+            
+            <p><keyword keyref="kw-hos-phrase-21"/> does not support Multipath attach over iSCSI for 3PAR backend storage.</p>
+            
+            
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2329 -->
+            <p id="DOCS-2329"><b>Ceph logs on monitor nodes are not being pushed to Kibana for centralized logging</b></p>
+
+            <p>Logs from monitor nodes cannot be pushed to Kibana due to a lack of read permissions on the files. 
+                
+                As a workaround, you can execute a cron job that will run every thirty minutes and will fixup the permissions 
+                so that the logs can be copied.  Execute <codeph>crontab -e</codeph> and add the following line 
+                (replacing &lt;ceph-clustername&gt; with the actual name of Ceph cluster): 
+            </p>
+<codeblock>
+*/30 * * * * chmod 0644 /var/log/ceph/&lt;ceph-clustername>.log    
+</codeblock>
+    
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2330 -->
+            <p id="DOCS-2330"><b>wipe_disks.yml can fail on Ceph nodes</b></p>
+            
+            <p>Running the playbook <codeph>wipe_disks.yml</codeph> can fail on Ceph nodes. As a workaround, you can 
+                <codeph>ssh</codeph> to the target node and run:</p>
+<codeblock>
+/sbin/sgdisk --zap-all -- /dev/sdb    
+</codeblock>
+ 
+            <!--  https://jira.hpcloud.net/browse/DOCS-2311 -->
+            <p id="DOCS-2311"><b>Failure to restart VPNaaS due to ipsec issue after re-boot</b></p>
+            
+            <p> When the controller node (or network node) running ipsec process from Openswan is 
+                rebooted, it is observed that the ipsec process fails to start by default. In such an instance, 
+                to get VPNaaS working, the following commands need to be executed after the system reboot.
+             </p>
+<codeblock>
+sudo service ipsec start
+sudo service neutron-vpn-agent restart
+</codeblock>
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2281 -->
+            <p id="DOCS-2281"><b>InstanceResourceQuota in Nova not supported</b></p> 
+            
+            <p><keyword keyref="kw-hos-phrase-21"/> does not support InstanceResourceQuota in Nova.</p>
+            
             
         </section>
         
