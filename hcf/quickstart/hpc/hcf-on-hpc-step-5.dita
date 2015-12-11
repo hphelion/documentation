@@ -52,6 +52,14 @@
                 <dd>A simple Python app to show environment
                   variables<codeblock>git clone https://github.com/hpcloud/python-env.git</codeblock></dd>
               </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/sinatra-env" format="html"
+                    scope="external">sinatra-env (Ruby)</xref></dt>
+                <dd>This is a simple Sinatra Ruby
+                    application<codeblock>git clone https://github.com/Stackato-Apps/sinatra-env.git</codeblock><note>After
+                    you push the application, append <codeph>/get</codeph> to its endpoint
+                    URL.</note></dd>
+              </dlentry>
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
@@ -119,3 +127,4 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
   </simpletable>
  </conbody>
 </concept>
+<?oxy_options track_changes="on"?>

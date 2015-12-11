@@ -48,8 +48,17 @@
               <dlentry>
                 <dt><xref href="https://github.com/hpcloud/python-env" format="html"
                     scope="external">python-env</xref> (Python)</dt>
-                <dd>A simple Python app to show environment
-                  variables<codeblock>git clone -b CF https://github.com/hpcloud/python-env.git</codeblock></dd>
+                <dd>A simple Python app to show environment variables<note>Clone the
+                      <codeph>CF</codeph> branch of the
+                  application.</note><codeblock>git clone -b CF https://github.com/hpcloud/python-env.git</codeblock></dd>
+              </dlentry>
+              <dlentry>
+                <dt><xref href="https://github.com/Stackato-Apps/sinatra-env" format="html"
+                    scope="external">sinatra-env (Ruby)</xref></dt>
+                <dd>This is a simple Sinatra Ruby application<note>Clone the <codeph>CF</codeph>
+                    branch of the application. After you push the application, append
+                      <codeph>/get</codeph> to its endpoint
+                  URL.</note><codeblock>git clone -b CF https://github.com/Stackato-Apps/sinatra-env.git</codeblock></dd>
               </dlentry>
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
