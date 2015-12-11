@@ -80,10 +80,11 @@
   cidr: 10.1.6.0/24 
   gateway-ip: 10.1.6.1 
   network-group: SERVICE</codeblock></li>
-            <li>If your cloud deployment utilizes the <codeph>servers_groups.yml</codeph> file in
-              your configuration files, ensure that this network is a member of the server-group
-              listed in the <codeph>~/helion/my_cloud/definition/data/server_groups.yml</codeph>
-              file. <p>Here is an example showing this:</p>
+            <li>[OPTIONAL] - If your cloud deployment utilizes the
+                <codeph>servers_groups.yml</codeph> file in your configuration files, ensure that
+              this network is a member of the server-group listed in the
+                <codeph>~/helion/my_cloud/definition/data/server_groups.yml</codeph> file. <p>Here
+                is an example showing this:</p>
               <codeblock>server-groups: 
 - name: CLOUD 
   server-groups: 
