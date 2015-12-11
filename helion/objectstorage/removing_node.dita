@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_ndn_4bg_pt">
+<topic id="remove_swift_node">
   <title><ph conkeyref="HOS-conrefs/product-title"/>Removing a Swift Node</title>
   <body>
-    <p>You can use this process when you want to remove one or more nodes permanently from the Swift
-      system. This process has three phases:</p>
-    <p>
-      <ul id="ul_vs4_rcg_pt">
+    <p conkeyref="HOS-conrefs/applies-to"/>
+    <section id="about">
+      <p>You can use this process when you want to remove one or more Swift nodes permanently.</p>
+      <p>This process has three phases:</p>
+      <ul>
         <li>Removing the node's drives from the rings - move data off the node and store it on the
           remaining nodes.</li>
         <li>Disabling Swift on the node - prevent the node from participating in the Swift
@@ -14,8 +15,9 @@
         <li>Removing the node from the input model - the node is removed completely from the
           system.</li>
       </ul>
-    </p>
-    <section>
+    </section>
+
+    <section id="steps">
       <title>To Remove a Node's Drive from the Rings</title>
       <p>To remove a node's drives from the rings, change the role of the server that is being
         removed so that it uses that disk model that does not include Swift drives. Then a new ring
@@ -47,14 +49,16 @@
 - name: SWOBJ-DRAINING-ROLE
   interface-model: INTERFACE_SET_SWOBJ
   disk-model: SWOBJ-DRAINING-DISKS</codeblock></li>
-          <li>Add the new role to the <codeph>server-role</codeph> attribute of either the cluster or resources item (depending on context). For example, for a Swift object server, the original <codeph>server-role</codeph> attribute looks like:
-            <codeblock>resources:
+          <li>Add the new role to the <codeph>server-role</codeph> attribute of either the cluster
+            or resources item (depending on context). For example, for a Swift object server, the
+            original <codeph>server-role</codeph> attribute looks like: <codeblock>resources:
   - name: swobj
     ...
     server-role: SWOBJ-ROLE
     ...</codeblock>
-          <p>Change this to a list containing the original <codeph>SWOBJ-ROLE</codeph> and the new <codeph>SWOBJ-DRAINING-ROLE</codeph> as follows:
-            <codeblock>resources:
+            <p>Change this to a list containing the original <codeph>SWOBJ-ROLE</codeph> and the new
+                <codeph>SWOBJ-DRAINING-ROLE</codeph> as follows:
+              <codeblock>resources:
   - name: swobj
     ...
     server-role:
@@ -112,6 +116,14 @@ git commit -a -m "&lt;commit message>"</codeblock></li>
           <li>Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Validate the changes you've made to the configuration files using the playbook below
+            before proceeding further: <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml --limit SWF*</codeblock>
+            <p>If any errors occur, correct them in your configuration files and repeat steps 5-7
+              again until no more errors occur before going to the next step.</p>
+            <p>For more details on how to interpret and resolve errors, see <xref
+                href="interpreting_swift_validate_input_model.dita">Interpreting Swift Input Model
+                Validation Errors</xref></p></li>
           <li>Create a deployment
             directory:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
@@ -166,6 +178,14 @@ git commit -a -m "&lt;commit message>"</codeblock></li>
           <li>Run the configuration
             processor:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+          <li>Validate the changes you've made to the configuration files using the playbook below
+            before proceeding further: <codeblock>cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts _swift-validate-input-model.yml --limit SWF*</codeblock>
+            <p>If any errors occur, correct them in your configuration files and repeat steps 3-5
+              again until no more errors occur before going to the next step.</p>
+            <p>For more details on how to interpret and resolve errors, see <xref
+                href="interpreting_swift_validate_input_model.dita">Interpreting Swift Input Model
+                Validation Errors</xref></p></li>
           <li>Create a deployment
             directory:<codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
