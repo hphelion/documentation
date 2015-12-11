@@ -11,6 +11,8 @@
             <ul>
                 <li><xref href="releasenotes21.dita#release-notes-21/features">Features Available in this
                     Release</xref></li>
+                <li><xref href="releasenotes21.dita#release-notes-21/issues_fixed">Issues Fixed in this
+                    Release</xref></li>
                 <li><xref href="releasenotes21.dita#release-notes-21/known_issues">Known Issues in this
                     Release</xref></li>
             </ul>
@@ -76,15 +78,7 @@
                 so more indices than that number    were allowed to exist.
             </p>
             
-            <!--  https://jira.hpcloud.net/browse/DOCS-2252 -->
-            <p id="DOCS-2252"><b>Rsync requests are no longer blocked by the firewall on systems with a dedicated Swift
-                network</b></p>
-            
-                <p>In <keyword keyref="kw-hos-phrase-20"/>, it was necessary to add the <codeph>swift-rsync</codeph> 
-                service to the <codeph>component-endpoints</codeph> in the
-                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file. This is not required in <keyword keyref="kw-hos-phrase-21"/>
-                and can be removed if you are upgrading from <keyword keyref="kw-hos-phrase-20"/>.
-            </p>
+
             
             
         <!--
@@ -98,7 +92,34 @@
             <p><b>kernel update => managed reboots</b></p>-->
             
         </section>
-        
+
+
+
+        <section id="issues_fixed">
+            <title>Issues Fixed in this Release</title>
+            
+            <!-- https://jira.hpcloud.net/browse/DOCS-2327 -->
+            <p id="DOCS-2327"><b>The softlockup issue when attempting to remove many LUNs simultaneously has been fixed.</b></p>
+            
+            <p>See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/>
+                <xref href="releasenotes.dita#release_notes/DOCS-1902">here</xref></p>
+
+            <!--  https://jira.hpcloud.net/browse/DOCS-2252 -->
+            <p id="DOCS-2252"><b>Rsync requests are no longer blocked by the firewall on systems with a dedicated Swift
+                network</b></p>
+            
+            <p>In <keyword keyref="kw-hos-phrase-20"/>, it was necessary to add the <codeph>swift-rsync</codeph> 
+                service to the <codeph>component-endpoints</codeph> in the
+                <codeph>~/helion/my_cloud/definition/data/network_groups.yml</codeph> file. This is not required in <keyword keyref="kw-hos-phrase-21"/>
+                and can be removed if you are upgrading from <keyword keyref="kw-hos-phrase-20"/>.
+            </p>
+            
+            <p>See the corresponding release note for <keyword keyref="kw-hos-phrase-20"/> 
+                <xref href="releasenotes.dita#release_notes/DOCS-2143">here</xref>.</p>
+        </section>
+
+
+
         <section id="known_issues">
             <title>Known Issues in this Release</title>
             
