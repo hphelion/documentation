@@ -208,7 +208,7 @@ ansible-playbook -i hosts/verb_hosts nova-start.yml --limit hlm002-cp1-c1-m3-mgm
             <!--  https://jira.hpcloud.net/browse/DOCS-2269 -->
             <p id="DOCS-2269"><b>Multipath attach over iSCSI is not supported for 3PAR backend storage</b></p>
             
-            <p>Multipath attach over iSCSI is not supported for 3PAR backend storage.</p>
+            <p><keyword keyref="kw-hos-phrase-21"/> does not support Multipath attach over iSCSI for 3PAR backend storage.</p>
             
             
             
@@ -246,6 +246,12 @@ ansible-playbook -i hosts/verb_hosts nova-start.yml --limit hlm002-cp1-c1-m3-mgm
 sudo service ipsec start
 sudo service neutron-vpn-agent restart
 </codeblock>
+            
+            <!--  https://jira.hpcloud.net/browse/DOCS-2281 -->
+            <p id="DOCS-2281"><b>InstanceResourceQuota in Nova not supported</b></p> 
+            
+            <p><keyword keyref="kw-hos-phrase-21"/> does not support InstanceResourceQuota in Nova.</p>
+            
             
         </section>
         
