@@ -88,8 +88,8 @@
       <title>Command Options</title>
       <dl>
         <dlentry id="config_get">
-          <dt><codeph><keyword keyref="adminUtilCLI"/> config get
-              <varname>[options]</varname></codeph></dt>
+          <dt><codeph><keyword keyref="adminUtilCLI"/> config get <varname>[options]</varname>
+              <varname>&lt;key-path></varname></codeph></dt>
           <dd>Look up the current and default values of a configuration.<dl>
               <dlentry>
                 <dt><codeph>--json</codeph>, <codeph>-j</codeph></dt>
@@ -98,8 +98,9 @@
             </dl></dd>
         </dlentry>
         <dlentry id="config_set">
-          <dt><codeph><keyword keyref="adminUtilCLI"/> config set
-              <varname>[options]</varname></codeph></dt>
+          <dt><codeph><keyword keyref="adminUtilCLI"/> config set <varname>[options]</varname>
+              <varname>&lt;key-path></varname>
+              <varname>&lt;value></varname></codeph></dt>
           <dd>Set <codeph><varname>&lt;key-path></varname></codeph> to
                 <codeph><varname>&lt;value></varname></codeph> in the configuration store.<dl>
               <dlentry>
