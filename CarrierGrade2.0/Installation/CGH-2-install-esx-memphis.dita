@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581c2esxm">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring the ESX Components
+    in a Memphis Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After the HP DCN components are configured, the next task in installing the Sacramento
+      deployment is to configure the ESX components.
+      <!--Most sections here are shared with the other install docs; use care when editing--></p>
+    <bodydiv conref="CGH-2-install-esx-sacramento.dita#topic10581c2esx/esx"/>
+    <section id="next-step"><title>Next Step</title><xref
+        href="CGH-2-install-memphis.dita#topic10581c2im">
+        <p><xref href="CGH-2-install-memphis.dita#topic10581c2im">Installing the Non-KVM
+            Region</xref></p>
+      </xref></section>
+  </body>
+</topic>

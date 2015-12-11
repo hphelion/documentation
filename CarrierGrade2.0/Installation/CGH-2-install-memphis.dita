@@ -2,8 +2,8 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
 <topic xml:lang="en-us" id="topic10581c2im">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Memphis KVM
-    Region Cloud</title>
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Deploying the Non-KVM Region
+    Cloud in a Memphis Deployment</title>
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
@@ -17,22 +17,8 @@
   <body>
     <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager VM
         is installed</xref>, the next task in installing the <xref
-        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">KVM + ESX
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
-      Cloud Networking (DCN) components. You must install the VMware ESX<tm tmtype="reg"/> compute
-      proxy. </p>
-    <p>If you are installing the <codeph>memphis</codeph> template, which includes the KVM region,
-      ESX storage, and uses HPE DCN VRS networking, follow these instructions. If you are installing
-      a different deployment, disregard these instructions. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-network"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-esx"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vmware" id="conref-vmware"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vapp" id="conref-vapp"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vsd" id="conref-vsd"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vsd-license"
-      id="conref-vsd-license"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-admin-user"
-      id="conref-admin-user"/>
+        href="carrier-grade-install-overview.dita#topic1925cgio/install-option">Memphos
+        deployment</xref> is to deploy the HP Helion OpenStack cloud. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hos-install"/>
     <section id="conref-provision">
       <title>Provision the new cloud</title>

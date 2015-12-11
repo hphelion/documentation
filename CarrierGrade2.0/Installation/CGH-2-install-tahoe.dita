@@ -18,15 +18,7 @@
     <p>After the <xref href="carrier-grade-install-hlm-vm.dita#topic10581cgihv">lifecycle manager is
         installed</xref>, the next task in installing the <xref
         href="carrier-grade-install-overview.dita#topic1925cgio/install-option">Tahoe
-        deployment</xref> is to deploy the HP Helion OpenStack cloud and install the HPE Distributed
-      Cloud Networking (DCN) components. </p>
-    <p>If you are installing the Tahoe deployment, which includes the KVM region and uses HPE DCN
-      VRS networking, follow these instructions. If you are installing a different deployment,
-      disregard these instructions. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-network"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vsd"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-vsd-license"/>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-admin-user"/>
+        deployment</xref> is to deploy the HP Helion OpenStack cloud. </p>
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-hos-install"/>
     <section id="conref-provision">
       <title>Provision the new cloud</title>
@@ -56,7 +48,7 @@
     <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ldap-json" id="ldap"/>
     <p>Click here to see a <xref href="carrier-grade-install-kvm-ldap-json-mem.dita">sample
         ldap.json file</xref>. </p>
-    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ccp-dcn-esx-json" id="ccp"></section>
+    <section conref="CGH-2-install-sacramento.dita#topic10581c2is/conref-ccp-dcn-esx-json" id="ccp"/>
     <p>Click here to see a <xref
         href="carrier-grade-install-kvm-ccp-json-mem.dita#topic10581cgiccpjm">sample
         ccp-dcn-esx.json file</xref>. </p>

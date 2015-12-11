@@ -146,8 +146,8 @@ upstream_ntp_servers:
   
     <section id="next-step">
       <title>Next Step</title>
-      <p><xref href="CGH-2-install-sacramento.dita">Installing the Non-KVM
-          Region</xref></p>
+      <p><xref href="CGH-2-install-dcn-sacramento.dita#topic10581c2vsd">Configuring the DCN
+          Components</xref></p>
     </section>
   </body>
 </topic>

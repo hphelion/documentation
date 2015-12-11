@@ -20,7 +20,6 @@
       <p>The process for installing the KVM region involves the following tasks:<ul
           id="ul_fj4_mct_g5">
           <li><xref href="#topic1107cgiks/controller-0" format="dita"/></li>
-          <li><xref href="#topic1107cgiks/install-license" format="dita"/></li>
           <li><xref href="#topic1107cgiks/install-cloud" format="dita"/></li>
           <li><xref href="#topic1107cgiks/unlock" format="dita"/></li>
           <li><xref href="#topic1107cgiks/ssl" format="dita"/></li>

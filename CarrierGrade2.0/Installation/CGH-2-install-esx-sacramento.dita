@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic10581c2esx">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 2.0: Configuring the ESX Components
+    in a Sacramento Deployment</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion OpenStack Carrier Grade 2.0"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Michael B"/>
+      <othermeta name="product-version1" content="HP Helion OpenStack Carrier Grade 2.0"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>After the HP DCN components are configured, the next task in installing the Sacramento
+      deployment is to configure the ESX components.
+      <!--Most sections here are shared with the other install docs; use care when editing--></p>
+    <bodydiv id="esx">
+    <section id="conref-esx">
+      <title>Set up the environment for ESX</title>
+      <p>ESX should be deployed before starting the cloud deployment. For more information, refer to
+        the VMware product documentation.</p>
+      <p>In production cloud deployments:</p>
+      <ul id="ul_ejv_35y_zs">
+        <li>ESX Cluster is installed and functional with external storage connected to all the hosts
+          that are part of ESX cluster</li>
+        <li>ESX Cluster with two (2) or more hosts installed with ESXi 5.5 U2 and above</li>
+        <li>ESX Cluster should have HA, DRS &amp; Vmotion Enabled</li>
+        <li>ESX Cluster should have Shared Storage</li>
+        <li>vCenter is working with the supported versions. One vCenter is
+          supported<!-- with HCG 2.0 Build#9-->.</li>
+        <li>The CLM and TUL networks must be available to all ESX hosts VMNICs</li>
+      </ul>
+      <p><b>ESX Network Configuration Requriements</b></p>
+      <p>In production cloud deployments, you will need to create the following three (3) port
+        groups.</p>
+      <ul id="ul_mdl_r5y_zs">
+        <li>Cloud Lab Management (CLM VLAN)</li>
+        <li>DVRS Datapath (TUL VLAN)</li>
+        <li>Trunk Network (All VLANS)</li>
+      </ul>
+      <p>The names are case sensitive.</p>
+      <p>In the VMware vCenter client, the port group list should appear as follows:</p>
+      <p><image href="../../media/CGH-install-ESX-ports.png" id="image_os2_2vy_zs"/></p>
+    </section>
+    <section id="conref-vmware">
+      <title>Deploy the VMware vSphere Distributed Switch</title>
+      <p>The VMware vSphere Distributed Switch you obtained from VMware must be installed. For more
+        information, see <xref href="carrier-grade-install-vsphere-switch.dita#topic10581cgivs">Deploying
+          the VMware vSphere Distributed Switch</xref>. </p>
+    </section>
+    </bodydiv>
+    <section id="next-step">
+      <title>Next Step</title>
+      <p>Installing the Non-KVM Region</p>
+    </section>
+  </body>
+</topic>
