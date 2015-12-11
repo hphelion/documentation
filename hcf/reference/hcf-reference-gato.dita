@@ -61,7 +61,7 @@
           <dt><codeph id="config_get_example">config get</codeph>
             <codeph><varname>[options]</varname>
               <varname>&lt;key-path></varname></codeph></dt>
-          <dd>Look up the current and default values of a configuration.<p>Example:</p><codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><dl>
+          <dd>Look up the current and default values of a configuration. Example:<codeblock>$ <keyword keyref="adminUtilCLI"/> config get --json nats.user</codeblock><dl>
               <dlentry>
                 <dt><codeph>--json</codeph>, <codeph>-j</codeph></dt>
                 <dd>Output key-value pairs in JSON format.</dd>
@@ -74,8 +74,7 @@
               <varname>&lt;key-path></varname>
               <varname>&lt;value></varname></codeph></dt>
           <dd>Set <codeph><varname>&lt;key-path></varname></codeph> to
-                <codeph><varname>&lt;value></varname></codeph> in the configuration
-              store.<p>Examples:</p><codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><dl>
+                <codeph><varname>&lt;value></varname></codeph> in the configuration store. Examples:<codeblock>$ <keyword keyref="adminUtilCLI"/> config set -f key.name myValue.txt</codeblock><codeblock>$ echo "myValue" | <keyword keyref="adminUtilCLI"/> config set -f key.name -</codeblock><dl>
               <dlentry>
                 <dt><codeph>--role</codeph>, <codeph>-r</codeph></dt>
                 <dd>Set a specific <xref href="hcf-reference-roles.dita#cf_reference_roles"
@@ -96,8 +95,8 @@
             <dl>
               <dlentry>
                 <dt><codeph>--all</codeph></dt>
-                <dd>Show the status of every individual
-                  process.<p>Example:</p><codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock></dd>
+                <dd>Show the status of every individual process.
+                  Example:<codeblock>$ <keyword keyref="adminUtilCLI"/> status --all</codeblock></dd>
               </dlentry>
             </dl>
           </dd>
