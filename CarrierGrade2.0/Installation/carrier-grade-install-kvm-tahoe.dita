@@ -16,9 +16,34 @@
 
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/intro"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/controller-0"/>
-  <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-license"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/install-cloud"/>
   <section conref="carrier-grade-install-kvm-sacramento.dita#topic1107cgiks/unlock"/>
+    <section id="kvm-esx-unlock">
+      <title>For a Non-Bonded Environment</title>
+      <ol id="ol_y3f_w2j_h5">
+        <li>After the controller-1 and the compute nodes come up successfully after PXE boot,
+          execute the following commands from controller-0 to unlock the compute nodes.<ol
+            id="ol_p42_d35_lt">
+            <li>Create the Infra interface:
+              <codeblock>system host-if-add –V &lt;bls/infra VLAN ID&gt; –nt &lt;network_type> &lt;host-name or ID> &lt;interface_name> &lt;interface_type> &lt;port or interfaces></codeblock></li>
+            <li>Configure the VRS interface:
+                <codeblock>system host-if-modify &lt;host-name or ID> -n &lt;interface_name> -nt &lt;network_type> --ipv4-mode=static eth-x </codeblock><p>Where
+                  <codeph>eth-x</codeph> is the interface on which untagged TUL is
+              presented.</p></li>
+            <li>Configure<codeblock>system host-if-modify 3 &lt;host-name or ID> -nt data-vrs --ipv4-mode=pool --ipv4-pool=vrspool</codeblock></li>
+            <li>Update the host:
+                <codeblock> system host-update &lt;host-name or ID> vsc_controllers=&lt;ipv4/ipv6_address>,&lt;ipv4/ipv6_address> </codeblock><p>Enter
+                the IP address of the VSC controllers</p></li>
+            <li>Unlock the host: <codeblock>system host-unlock &lt;host-name or ID></codeblock></li>
+          </ol><p><b>Example
+          commands:</b></p><codeblock>system host-if-add -V 73 -nt infra 3 infra vlan pxeboot0
+system host-if-modify 3 -n vrs -nt data-vrs --ipv4-mode=static eth2
+system host-if-modify 3 vrs -nt data-vrs --ipv4-mode=pool --ipv4-pool=vrspool
+system host-update 3 vsc_controllers=10.20.6.31,10.20.6.32
+system host-unlock 3</codeblock></li>
+      </ol>
+    </section>
+  
   <section id="kvm-unlock"><title>For a Non-Bonded Environment</title>
     <ol>
       <li>Create the Infra interface. See <xref
