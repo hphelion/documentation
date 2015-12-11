@@ -41,7 +41,7 @@
       <topicref href="devplatform/1.1devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin "/>
       <!--permalink: /helion/devplatform/1.1/workbook/database/java/-->
-      <topicref href="devplatform/1.2devplatform.javacodesamples.dita" navtitle="Java Code Samples"
+      <topicref href="devplatform/1.1devplatform.javacodesamples.dita" navtitle="Java Code Samples"
         locktitle="yes" otherprops="java">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample "/>
@@ -50,7 +50,7 @@
         <topicref href="devplatform/workbook/messaging/1.1messaging.java.dita" locktitle="yes"
           navtitle="Java RabbitMQ Messaging Sample "/>
       </topicref>
-      <topicref href="devplatform/1.2devplatform.nodecodesamples.dita" navtitle="Node Code Samples"
+      <topicref href="devplatform/1.1devplatform.nodecodesamples.dita" navtitle="Node Code Samples"
         locktitle="yes" otherprops="node">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.node.dita" locktitle="yes"
           navtitle="Node Hello World Sample "/>
@@ -59,7 +59,7 @@
         <topicref href="devplatform/workbook/messaging/1.1messaging.node.dita" locktitle="yes"
           navtitle="Node RabbitMQ Messaging Sample "/>
       </topicref>
-      <topicref href="devplatform/1.2devplatform.phpcodesamples.dita" navtitle="PHP Code Samples"
+      <topicref href="devplatform/1.1devplatform.phpcodesamples.dita" navtitle="PHP Code Samples"
         locktitle="yes" otherprops="php">
         <topicref href="devplatform/workbook/helloworld/1.1helloworld.php.dita" locktitle="yes"
           navtitle="PHP Hello World Sample "/>
@@ -197,7 +197,7 @@
         <topicref href="devplatform/helion/admin/reference/1.1kato-ref.dita" locktitle="yes"
           navtitle="Kato Command Reference "/>
       </topicref>
-      <topicref href="devplatform/1.2devplatform.managementconsole.dita"
+      <topicref href="devplatform/1.1devplatform.managementconsole.dita"
         navtitle="ALS Management Console" locktitle="yes" otherprops="als-console">
         <topicref href="devplatform/helion/admin/console/1.1index.dita" locktitle="yes"
           navtitle="Management Console (Admin View) "/>
