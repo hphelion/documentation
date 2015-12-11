@@ -117,42 +117,44 @@
             </dl></dd>
         </dlentry>
       </dl>
-      <dl>
-        <dlentry id="role_start">
-          <dt><codeph><keyword keyref="adminUtilCLI"/> role start
-              <varname>[options]</varname></codeph></dt>
-          <dd>Start the <xref href="hcf-reference-roles.dita#cf_reference_roles"
-                ><varname>&lt;role></varname></xref>.<dl>
-              <dlentry>
-                <dt><codeph>--node</codeph>, <codeph>-n</codeph></dt>
-                <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
-                  schemes: <codeph>tcp://</codeph>
-                  <codeph>unix://</codeph>
-                  <codeph>http://</codeph>
-                  <codeph>https://</codeph></dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-        <dlentry id="role_stop_restart">
-          <dt><codeph><keyword keyref="adminUtilCLI"/> role stop|restart
+      <draft-comment author="michaelk">
+        <dl>
+          <dlentry id="role_start">
+            <dt><codeph><keyword keyref="adminUtilCLI"/> role start
                 <varname>[options]</varname></codeph></dt>
-          <dd>Stop or restart the <xref href="hcf-reference-roles.dita#cf_reference_roles"
-                ><varname>&lt;role></varname></xref>.<dl>
-              <dlentry>
-                <dt><codeph>--node</codeph>, <codeph>-n</codeph></dt>
-                <dd>Set the Docker server endpoint. Schemes and port number are required. Supported
-                  schemes: <codeph>tcp://</codeph>
-                  <codeph>unix://</codeph>
-                  <codeph>http://</codeph>
-                  <codeph>https://</codeph></dd>
-              </dlentry>
-              <dlentry>
-                <dt><codeph>--timeout</codeph>, <codeph>-t "0"</codeph></dt>
-                <dd>Set the number of seconds to wait before killing the container.</dd>
-              </dlentry>
-            </dl></dd>
-        </dlentry>
-      </dl>
+            <dd>Start the <xref href="hcf-reference-roles.dita#cf_reference_roles"
+                  ><varname>&lt;role></varname></xref>.<dl>
+                <dlentry>
+                  <dt><codeph>--node</codeph>, <codeph>-n</codeph></dt>
+                  <dd>Set the Docker server endpoint. Schemes and port number are required.
+                    Supported schemes: <codeph>tcp://</codeph>
+                    <codeph>unix://</codeph>
+                    <codeph>http://</codeph>
+                    <codeph>https://</codeph></dd>
+                </dlentry>
+              </dl></dd>
+          </dlentry>
+          <dlentry id="role_stop_restart">
+            <dt><codeph><keyword keyref="adminUtilCLI"/> role stop|restart
+                  <varname>[options]</varname></codeph></dt>
+            <dd>Stop or restart the <xref href="hcf-reference-roles.dita#cf_reference_roles"
+                  ><varname>&lt;role></varname></xref>.<dl>
+                <dlentry>
+                  <dt><codeph>--node</codeph>, <codeph>-n</codeph></dt>
+                  <dd>Set the Docker server endpoint. Schemes and port number are required.
+                    Supported schemes: <codeph>tcp://</codeph>
+                    <codeph>unix://</codeph>
+                    <codeph>http://</codeph>
+                    <codeph>https://</codeph></dd>
+                </dlentry>
+                <dlentry>
+                  <dt><codeph>--timeout</codeph>, <codeph>-t "0"</codeph></dt>
+                  <dd>Set the number of seconds to wait before killing the container.</dd>
+                </dlentry>
+              </dl></dd>
+          </dlentry>
+        </dl>
+      </draft-comment>
     </section>
   </refbody>
 </reference>
