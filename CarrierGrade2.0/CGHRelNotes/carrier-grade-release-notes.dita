@@ -165,7 +165,8 @@
                             <p>PCI Pass-through and SR-IOV support</p>
                         </li>
                         <li>
-                            <p>Mellanox CX-3 NICs</p>
+                            <p>Mellanox CX-3 NICs (Supported for use with AVS vSwitch only.)
+                                <!--Per Vlad and Shantanu email--></p>
                         </li>
                     </ul>
                     <note>
@@ -489,8 +490,12 @@ hp3par_snapshot_expiration=72</codeblock>
                     </p>
                 </li>
             </ul>
-            <p><b>Mellanox limitations</b></p>
+            <p><b>Mellanox CX-3 NICs limitations</b></p>
             <ul id="ul_rzl_ccw_c5">
+                <li>
+                    <p>Mellanox is supported for use with AVS vSwitch
+                        only.<!--Per Vlad and Shantanu email--></p>
+                </li>
                 <li>
                     <p>For a Mellanox CX3, all ports must be used ether for data interfaces, or for
                         non-data interfaces. It is not possible to use some ports for data
