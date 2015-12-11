@@ -71,9 +71,13 @@
           KVM region is installed. </p><ul id="ul_fxd_x4c_b5">
             <li>Install <xref href="CGH-2-install-lifecycle-memphis.dita">the Lifecycle
               Manager</xref>.</li>
-            <li>Install the <xref href="CGH-2-install-memphis.dita">HPE Helion
-              OpenStack cloud</xref>. These components will be installed into what is called the
-              <i>Non-KVM region</i>.</li>
+            <li><xref href="CGH-2-install-dcn-memphis.dita#topic10581c2vsdm">Configure the DCN
+                components</xref>.  You wi;ill configure the DCN networking.</li>
+            <li><xref href="CGH-2-install-esx-memphis.dita#topic10581c2esxm">Configure the ESX
+                components</xref>. You will also install the VMware ESX compute proxy.</li>
+            <li>Install the <xref href="CGH-2-install-memphis.dita">HPE Helion OpenStack
+                cloud</xref>. These components will be installed into what is called the <i>non-KVM
+                region</i>.</li>
             <li>Launch the <xref href="carrier-grade-install-launch-horizon.dita#topic10581cgilh">Helion
               user interface</xref>.</li>
             <li>Install the <xref href="carrier-grade-install-kvm-memphis.dita">carrier grade cloud</xref>. 
