@@ -5,48 +5,57 @@
   <body>
 
 
-        <section>
-      <title>Performing the Upgrade from HPE Helion OpenStack 2.0 to 2.1</title>HPE Helion OpenStack
-      2.0 shipped with example configuration files, and you were able to modify them to suit your
-      needs. </section>
-        <section><note type="caution">The configuration you specified will remain unchanged through the upgrade
-          process; <b>however</b>, if you made any configuration changes by passing parameters to any
-          Ansible playbooks using the -e option, you should find the affected files and make the
-          required changes directly in the files in <b>helion/my_cloud</b> and commit them to the git
-          repository so that those changes are tracked and applied during the upgrade process.
-          Otherwise they will not be applied.</note></section>
-        <section>You may also install HPE Helion OpenStack 2.1 as a full install. Those instructions
-      are found in the installation guide.</section>
-        <section>To begin the upgrade process, log in to the lifecyce manager node as the user you
+    <section id="about">
+      <title>Performing the Upgrade from HPE Helion OpenStack 2.0 to 2.1</title>
+      <p>HPE Helion OpenStack 2.0 shipped with example configuration files, and you were able to
+        modify them to suit your needs.</p>
+      <note type="caution">The configuration you specified will remain unchanged through the upgrade
+        process; <b>however</b>, if you made any configuration changes by passing parameters to any
+        Ansible playbooks using the -e option, you should find the affected files and make the
+        required changes directly in the files in <b>helion/my_cloud</b> and commit them to the git
+        repository so that those changes are tracked and applied during the upgrade process.
+        Otherwise they will not be applied.</note>
+      <p>You may also install HPE Helion OpenStack 2.1 as a full install. Those instructions are
+        found in the installation guide.</p>
+    </section>
+    <section>
+      <ol>
+        <li>To begin the upgrade process, log in to the lifecycle manager node as the user you
           created during the HPE Helion OpenStack 2.0 deployment, and mount the install media at
-          <b>/media/cdrom</b>; for example:
-          <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151009-hlm.2015-11-13T07:32:19_caf1ffc.iso /media/cdrom  </codeblock>
-          Unpack the following
-          tarball:<codeblock>tar faxv /media/cdrom/hos/hos-2.0.1-20151113T062512Z.tar</codeblock>
-          Run the included initialization script to update the deployer:
-          <codeblock>~/hos-2.0.1/hos-init.bash</codeblock> Run the configuration processor:
+            <codeph>/media/cdrom</codeph>; for example:
+          <codeblock>sudo mount hLinux-cattleprod-amd64-blaster-netinst-20151009-hlm.2015-11-13T07:32:19_caf1ffc.iso /media/cdrom</codeblock></li>
+        <li>Unpack the following
+          tarball:<codeblock>tar faxv /media/cdrom/hos/hos-2.0.1-20151113T062512Z.tar</codeblock></li>
+        <li>Run the included initialization script to update the deployer:
+          <codeblock>~/hos-2.0.1/hos-init.bash</codeblock></li>
+        <li>Run the configuration processor:
           <codeblock>cd ~/helion/hos/ansible
-ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock>
-          Run the ready deployment playbook:
-          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock> Run the
-          upgrade playbook:
+ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
+        <li>Run the ready deployment playbook:
+          <codeblock>ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>Run the upgrade playbook:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
-ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock>
-        </section>
-    <section id="rebooting"><title>Rebooting Your Nodes</title>To complete the upgrade and for Linux for HPE Helion
-      updates to take effect, you must reboot all your nodes. The instructions for rebooting
-      controller, compute, and storage nodes are found below. </section>
-    
+ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
+      </ol>
+    </section>
+    <section id="rebooting"><title>Rebooting Your Nodes</title>To complete the upgrade and for Linux
+      for HPE Helion updates to take effect, you must reboot all your nodes. The instructions for
+      rebooting controller, compute, and storage nodes are found below. </section>
+
     <section id="rebootCompute"><title>Rebooting Compute Nodes</title>
-     <p>To reboot a compute node the following operations will need to be performed:</p>
-      <ul><li>Disable provisioning of the node to take the node offline to prevent further instances being scheduled to the node during the reboot.
-      </li><li>Identify instances that exist on the compute node, and then either: <ul>
+      <p>To reboot a compute node the following operations will need to be performed:</p>
+      <ul>
+        <li>Disable provisioning of the node to take the node offline to prevent further instances
+          being scheduled to the node during the reboot. </li>
+        <li>Identify instances that exist on the compute node, and then either: <ul>
             <li>Live migrate the instances off the node before actioning the reboot. OR </li>
             <li>Stop the instances</li>
           </ul>
-        </li><li>Reboot the node
-      </li><li>Restart the Nova services </li><li>Restart any instances stopped above</li></ul>
-      
+        </li>
+        <li>Reboot the node </li>
+        <li>Restart the Nova services </li>
+        <li>Restart any instances stopped above</li>
+      </ul>
       <ol>
         <li>Disable provisioning:
           <codeblock>nova service-disable --reason "&lt;describe reason>" &lt;node name> nova-compute</codeblock>If
@@ -85,10 +94,10 @@ ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit &lt;compute node></co
         </li>
         <li> Restart any instances you stopped.<codeblock>nova start &lt;instance-uuid></codeblock>
         </li>
-        
-      </ol>
-    </section>          
-    
 
-      </body>
-    </topic>
+      </ol>
+    </section>
+
+
+  </body>
+</topic>
