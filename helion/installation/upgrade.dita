@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="ugradeto21">
+<topic id="upgradeto21">
   <title>Upgrade</title>
   <body>
 
@@ -31,15 +31,27 @@
           tarball:<codeblock>tar faxv /media/cdrom/hos/hos-2.0.1-20151113T062512Z.tar</codeblock></li>
         <li>Run the included initialization script to update the deployer:
           <codeblock>~/hos-2.0.1/hos-init.bash</codeblock></li>
+        <li>If you have made any made any changes to your configuration files, ensure that you
+          commit them to your local git:
+          <codeblock>cd ~/helion
+git add –A
+git commit –m "My changes"</codeblock></li>
         <li>Run the configuration processor:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</codeblock></li>
         <li>Run the ready deployment playbook:
           <codeblock>cd ~/helion/hos/ansible
 ansible-playbook -i hosts/localhost ready-deployment.yml</codeblock></li>
+        <li>[ESX MODEL] - If you are using the Entry-scale with ESX model you will need to uncomment
+          the EON upgrade step from the the yaml file below: <codeblock>cd  ~/scratch/ansible/next/hos/ansible/_hlm-service-upgrade.yml</codeblock>
+          <p>The line to uncomment is:</p>
+          <codeblock>eon-upgrade.yml</codeblock></li>
         <li>Run the upgrade playbook:
           <codeblock>cd ~/scratch/ansible/next/hos/ansible
 ansible-playbook -i hosts/verb_hosts hlm-upgrade.yml</codeblock></li>
+        <li>[ESX MODEL] - Once the upgrade is complete, skip to the <xref
+            href="upgrade.dita#upgradeto21/esx">Further ESX Model Upgrade Instructions</xref>
+          section.</li>
       </ol>
     </section>
     <section id="rebooting"><title>Rebooting Your Nodes</title>To complete the upgrade and for Linux
@@ -100,6 +112,10 @@ ansible-playbook -i hosts/verb_hosts hlm-start.yml --limit &lt;compute node></co
         </li>
 
       </ol>
+    </section>
+
+    <section id="esx"><title>Further ESX Model Upgrade Instructions</title>
+      <p/>
     </section>
 
 
