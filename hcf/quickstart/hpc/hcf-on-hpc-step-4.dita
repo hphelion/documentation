@@ -62,10 +62,22 @@ set OS_REGION_NAME=region-a.geo-1</codeblock></li>
                 <codeph>overrides.tfvars.sample</codeph> file, for example
                 <codeph>myVars.tfvars</codeph>.<note>The <codeph>tfvars</codeph> file
                 contains the keys and credentials for your cluster.</note></li>
-            <li>Add the necessary variables to your <codeph>tfvars</codeph> file. For more
-              information and examples, see <xref
-                href="../../reference/hcf-reference-tfvars.dita">Terraform
-                Variables</xref>.</li>
+            <li>Add variables to your <codeph>tfvars</codeph> file. For more information and
+              examples, see <xref
+                href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">Terraform
+                Variables</xref>.<note type="warning">Use only the following variables to deploy
+                  <keyword keyref="prodShort"/> on <keyword keyref="pubCloudShort"/>:<ul
+                  id="ul_mbm_vp3_h5">
+                  <li><codeph>openstack_availability_zone</codeph></li>
+                  <li><codeph>openstack_keypair</codeph></li>
+                  <li><codeph>openstack_network_id</codeph></li>
+                  <li><codeph>openstack_network_name</codeph></li>
+                  <li><codeph>key_file</codeph></li>
+                  <li><codeph>openstack_region</codeph></li>
+                  <li><codeph>cluster_admin_username</codeph></li>
+                  <li><codeph>cluster_admin_password</codeph></li>
+                  <li><codeph>dea_count</codeph></li>
+                </ul></note></li>
             <li id="run_terraform_command">Run the following
                 command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note>You
                 may receive the error message <msgph>Can not find requested image</msgph> if <xref

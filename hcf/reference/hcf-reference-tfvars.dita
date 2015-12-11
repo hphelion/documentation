@@ -48,18 +48,21 @@
           <row>
             <entry><codeph>dns_server</codeph></entry>
             <entry>The DNS server of your local environment</entry>
-            <entry>The default value is <codeph>8.8.8.8</codeph>. If your local environment does not
-              have a DNS server, remove this variable.</entry>
+            <entry><note type="warning">This is a <keyword keyref="opnStckShort"/>-only
+                variable.</note>The default value is <codeph>8.8.8.8</codeph>. If your local
+              environment does not have a DNS server, remove this variable.</entry>
           </row>
           <row>
             <entry><codeph>http_proxy</codeph></entry>
             <entry>The address of your HTTP proxy</entry>
-            <entry>If you do not use a proxy, leave the value blank.</entry>
+            <entry><note type="warning">This is a <keyword keyref="opnStckShort"/>-only
+                variable.</note>If you do not use a proxy, leave the value blank.</entry>
           </row>
           <row>
             <entry><codeph>https_proxy</codeph></entry>
             <entry>The address of your HTTPS proxy</entry>
-            <entry>If you do not use a proxy, leave the value blank.</entry>
+            <entry><note type="warning">This is a <keyword keyref="opnStckShort"/>-only
+                variable.</note>If you do not use a proxy, leave the value blank.</entry>
           </row>
           <row>
             <entry><codeph>key_file</codeph></entry>
@@ -71,24 +74,35 @@
           <row>
             <entry><codeph>no_proxy</codeph></entry>
             <entry>The addresses for which a proxy should not be used</entry>
-            <entry/>
+            <entry>
+              <note type="warning">This is a <keyword keyref="opnStckShort"/>-only variable.</note>
+            </entry>
           </row>
           <row>
             <entry><codeph>openstack_availability_zone</codeph></entry>
             <entry>The unique regional location on which the deployment is launched</entry>
-            <entry>The default value is <codeph>nova</codeph>.</entry>
+            <entry>
+              <ul id="ul_gkj_zp3_h5">
+                <li>The default value for <keyword keyref="opnStckShort"/> is
+                  <codeph>nova</codeph>.</li>
+                <li>The default value for <keyword keyref="pubCloudShort"/> is
+                  <codeph>az1</codeph>.</li>
+              </ul>
+            </entry>
           </row>
           <row>
             <entry><codeph>openstack_base_image_id</codeph></entry>
             <entry>The ID of your Ubuntu 14.04.3 cloud image</entry>
-            <entry>To determine the ID of the base image, run the <codeph>nova image-list</codeph>
-              command.</entry>
+            <entry><note type="warning">This is a <keyword keyref="opnStckShort"/>-only
+                variable.</note>To determine the ID of the base image, run the <codeph>nova
+                image-list</codeph> command.</entry>
           </row>
           <row>
             <entry><codeph>openstack_flavor_id.core</codeph></entry>
             <entry morerows="1">The OpenStack flavor, a virtual hardware template that defines the
               specifications of the specified node</entry>
-            <entry><ul id="ul_j5w_4hh_h5">
+            <entry morerows="1"><note type="warning">These are <keyword keyref="opnStckShort"/>-only
+                variables.</note><ul id="ul_j5w_4hh_h5">
                 <li><codeph>4</codeph> (larger than or equals to 8 GB)</li>
                 <li><codeph>3</codeph> (larger than or equals to 4 GB)</li>
               </ul>For more information about flavors, see the <xref
@@ -100,13 +114,13 @@
           </row>
           <row>
             <entry><codeph>openstack_flavor_id.dea</codeph></entry>
-            <entry/>
           </row>
           <row>
             <entry><codeph>openstack_floating_ip_pool</codeph></entry>
             <entry>The external network from whose subnet floating IP addresses are
               allocated</entry>
-            <entry>The default value is <codeph>ext-net</codeph>.</entry>
+            <entry><note type="warning">This is a <keyword keyref="opnStckShort"/>-only
+                variable.</note>The default value is <codeph>ext-net</codeph>.</entry>
           </row>
           <row>
             <entry><codeph>openstack_keypair</codeph></entry>
@@ -124,11 +138,17 @@
             <entry>The name of your network</entry>
             <entry/>
           </row>
+          <row>
+            <entry><codeph>openstack_region</codeph></entry>
+            <entry>The region of your tenant</entry>
+            <entry><note type="warning">This is a <keyword keyref="pubCloudShort"/>-only
+                variable.</note>The default value is <codeph>us-east</codeph></entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
     <example>
-      <title>A sample <codeph>.tfvars</codeph> file</title>
+      <title>A sample <codeph>.tfvars</codeph> file for <keyword keyref="opnStckShort"/></title>
       <codeblock>openstack_base_image_id = "123ab3cd-1a23-1a23-ab12-1234a567b890"
 
 openstack_flavor_id.core = "4"
@@ -151,6 +171,18 @@ http_proxy = "http://myProxy.example.com:8080"
 https_proxy = "https://myProxy.example.com:443"
 
 no_proxy = "198.51.100.0,.example.com"</codeblock>
+    </example>
+    <example>
+      <title>A sample <codeph>.tfvars</codeph> file</title>
+      <codeblock>openstack_availability_zone = "az1"
+openstack_keypair = "myKeyPair"
+openstack_network_id = "123a1ab1-12a1-123a-1a12-a1234a123a12"
+openstack_network_name = "myNetwork"
+openstack_region = "us-west"
+cluster_admin_username = "myClusterUsername"
+cluster_admin_password = "myClusterPassword123"
+key_file = "myKeyFile.pem"
+dea_count = 1</codeblock>
     </example>
   </refbody>
 </reference>
