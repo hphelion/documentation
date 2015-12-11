@@ -80,7 +80,7 @@
           <codeph>my-public-cert</codeph>:</p>
       <ol>
         <li>Create a Certificate Signing Request (CSR) with a defined subject:
-          <codeblock>openssl req -nodes -days 365 -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
+          <codeblock>openssl req -nodes -newkey rsa:2048 -keyout my-public-cert.key -out my-public-cert.csr -text \
 -subj '/C=US/O=Helion Test Certificate/CN=your.domain.com/emailAddress=test@ficticious.org/'</codeblock>
         </li>
         <li>Create a file containing v3 extensions Ensure that the DNS entry matches any CN entry
@@ -91,7 +91,7 @@ subjectAltName=DNS:your.domain.com,DNS:10.0.0.1, IP:10.0.0.1
 *EOF*</codeblock>
         </li>
         <li>Self-sign your certificate
-          <codeblock>openssl x509 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -text -out my-public-cert.crt</codeblock>
+          <codeblock>openssl x509 –days 365 -extfile v3_ext.cnf -extensions v3_req -in my-public-cert.csr -signkey my-public-cert.key -req -text -out my-public-cert.crt</codeblock>
         </li>
         <li>You will need to combine the contents of the <codeph>my-public-cert.key</codeph> and
             <codeph>my-public-cert.crt</codeph> files into a single file prior to copying that file
