@@ -62,6 +62,8 @@
             <li>Ensure that you are logged into the desired
                 cluster:<codeblock>cf login</codeblock><p id="user_pass">When prompted, enter your
                 username (email) and password.</p></li>
+            <li>Set the proxy environment for your applications, for
+              example:<codeblock>cf set-staging-environment-variable-group \{\"http_proxy\":\"http://proxy.example.com:8080\",\"https_proxy\":\"http://proxy.example.com:8080\",\"HTTP_PROXY\":\"http://proxy.example.com:8080\",\"HTTPS_PROXY\":\"http://proxy.example.com:8080\"\}</codeblock><codeblock>cf set-running-environment-variable-group \{\"http_proxy\":\"http://proxy.example.com:8080\",\"https_proxy\":\"http://proxy.example.com:8080\",\"HTTP_PROXY\":\"http://proxy.example.com:8080\",\"HTTPS_PROXY\":\"http://proxy.example.com:8080\"\}</codeblock></li>
             <li>Create and target an
               organization:<codeblock>cf create-org <varname>&lt;organization></varname>
 cf target -o <varname>&lt;organization></varname></codeblock></li>
