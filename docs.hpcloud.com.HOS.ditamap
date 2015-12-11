@@ -284,7 +284,7 @@
         <topicref href="helion/objectstorage/add_new_node.dita"
           navtitle="Adding a Swift Object Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/add_new_pac_node.dita"
-          navtitle="Adding a Proxy, Account, Container (PAC) Node" locktitle="yes"/>
+          navtitle="Adding a Swift Proxy, Account, Container (PAC) Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/replacing_drives_swift_node.dita"
           navtitle="Replacing Drives in a Swift Node" locktitle="yes"/>
         <topicref href="helion/objectstorage/replacing_swift_node.dita"
