@@ -153,6 +153,28 @@ ansible-playbook -i hosts/verb_hosts neutron-svc-net-configure.yml -e PROV_NET_T
           </ul><note>To configure a service network for flat encapsulation, modify the service
             network creation statement: <codeph>-e PROV_NET_TYPE flat</codeph> The subnet creation
             statement does not change.</note></li>
+        <li>By default the subnet associated with your Service network will not have a DNS
+          nameserver associated with it. If you want to associate one or more DNS nameservers with
+          this network you can use the command line tool: <ol>
+            <li>From the lifecycle manager, source the <codeph>service.osrc</codeph> file for admin
+              creds: <codeblock>source ~/service.osrc</codeblock></li>
+            <li>List out your networks: <codeblock>neutron net-list</codeblock>
+              <p>Example showing a SVC network:</p>
+              <codeblock>$ neutron net-list
++--------------------------------------+------+-----------------------------------------------------+
+| id                                   | name | subnets                                             |
++--------------------------------------+------+-----------------------------------------------------+
+| 7fa9e5c1-2f2b-484f-896e-caa17b50629f | SVC  | 735e71e1-4554-4f4b-839f-bd5beb1fa85a 10.13.189.0/24 |
++--------------------------------------+------+-----------------------------------------------------+
+            </codeblock></li>
+            <li>Using the ID of the subnet in the previous command, use the <codeph>neutron
+                subnet-update</codeph> command to add one or more DNS nameservers: <codeblock>neutron subnet-update --dns-nameserver &lt;nameserver IP or hostname> &lt;subnet ID></codeblock>
+              <p>An example, using the subnet ID from the previous step:</p>
+              <codeblock>neutron subnet-update --dns-nameserver my.dns.server 735e71e1-4554-4f4b-839f-bd5beb1fa85a</codeblock></li>
+            <li>You can then confirm that it was added by using the <codeph>neutron
+                subnet-show</codeph> command:
+              <codeblock>neutron subnet-show &lt;subnet ID></codeblock></li>
+          </ol></li>
       </ol>
     </section>
 
