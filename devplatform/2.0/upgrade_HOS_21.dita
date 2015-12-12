@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_f2m_l1q_h5">
+  <title>HPE Helion 2.0 Development Platform: Upgrading HPE Helion <tm tmtype="reg">OpenStack</tm> to
+    Version 2.1</title>
+  <body>
+    <p>When upgrading HPE Helion OpenStack from version 2.0 to 2.1, shutting down the VMs that run
+      the control plane will also stop the services that make up the HPE Helion Development
+      Platform. Follow these procedures to bring each service back online.</p>
+    
+    <section><title>Application Lifecycle Service</title></section>
+    <section><title>Database Service</title></section>
+    <section><title>DNS Service</title><ol><li>SSH into the HPE Helion OpenStack lifecycle manager. <codeblock>ssh stack@&lt;dnsaas-deployer-ip></codeblock></li>
+     <li>Navigate to the <codeph>anisble</codeph> directory.
+          <codeblock>cd scratch/ansible/next/hos/ansible/</codeblock></li>
+      <li>Run the following playbooks in this order.
+          <codeblock>ansible-playbook -i hosts/verb_hosts designate-stop.yml
+ansible-playbook -i hosts/verb_hosts FND-CLU-start.yml
+ansible-playbook -i hosts/verb_hosts rabbitmq-start.yml
+ansible-playbook -i hosts/verb_hosts percona-bootstrap.yml
+ansible-playbook -i hosts/verb_hosts designate-start.yml</codeblock></li></ol></section>
+    <p>The first <codeph>designate-stop</codeph> playbook stops a designate component which
+      automatically restarts before the databases become available again. Once the other playbooks
+      have been run, that component is safely restarted. </p>
+    <section><title>Database Service</title></section>
+    <section><title>Messaging Service</title></section>
+    <section><title>HPE Helion Code Engine</title></section>
+  </body>
+</topic>
