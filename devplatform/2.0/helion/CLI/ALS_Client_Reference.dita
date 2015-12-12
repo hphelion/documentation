@@ -1103,7 +1103,14 @@
   
   <section id="removeservice">
       <title>Remove Services from an Existing Cluster</title>
-      <p>This command removes services from an existing cluster (<i>add-service</i>).</p>
+      <p>This command removes services from an existing cluster (<i>remove-service</i>).<note
+          type="restriction">Private keys with passcodes are not supported by the cf-mgmt tool.
+          Attempting to run (for
+          example):<codeblock>cf-mgmt remove-service mysql --private-key foo.pem</codeblock>will
+          result in the error <codeph>foo.pem does not contain a valid PKCS1 private key</codeph>.
+          To work around this, ssh in to the node itself, run <codeph>kato node detach</codeph>, and
+          then delete the service using one of the OpenStack tools: the nova client, openstack
+          client, or the Horizon UI.</note></p>
     </section>
   <section id="remove-service-use-syntax">
     <title>Use Syntax</title>
@@ -1315,6 +1322,13 @@
   
   <section id="removerole">
     <title>Remove Roles From an Existing Cluster</title>
+      <note type="restriction"> Private keys with passcodes are not supported by the cf-mgmt tool.
+        Attempting to run (for example):<p>
+          <codeblock>cf-mgmt remove-role dea --private-key foo.pem</codeblock>
+        </p><p>will result in the error <codeph>foo.pem does not contain a valid PKCS1 private
+            key</codeph>. To work around this, ssh in to the node itself, run <codeph>kato node
+            detach</codeph>, and then delete the role using one of the OpenStack tools: the nova
+          client, openstack client, or the Horizon UI.</p></note>
   </section>
   <section id="remove-role-use-syntax">
     <title>Use Syntax</title>

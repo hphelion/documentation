@@ -85,18 +85,24 @@ ansible-playbook -i hosts/verb_hosts monasca-rebuild-pretasks.yml</codeblock></l
         <li>Log into the 2 original controller nodes as "dbadmin" and run the following command:
           <codeblock>ssh-keygen -f "/home/dbadmin/.ssh/known_hosts" -R {{ip_of_node_to_replace}}</codeblock></li>
         <li>Run osconfig on the replacement controller node. For example:
-          <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml  -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
+          <codeblock>ansible-playbook -i hosts/verb_hosts osconfig-run.yml -e rebuild=True --limit=&lt;controller-hostname></codeblock>
         </li>
         <li> If the controller being replaced is the first server running the swift-proxy service
           (see <xref href="../objectstorage/first_proxy_server.dita">Identifying the First Proxy
             Server</xref>) you need to restore the Swift Ring Builder files to the
           /etc/swiftlm/builder_dir directory. See <xref
             href="../objectstorage/recovering_builder_file.dita#topic_gbz_13t_mt">Recovering Builder
-            Files</xref> for details. <p/></li>
+            Files</xref> for details.</li>
+        <!-- DOCS-2306
         <li>Run swift-deploy across all controllers using:
           <codeblock>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</codeblock></li>
-        <li> Run hlm-deploy on the replacement controller
-          <codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e rebuild=True --limit=hlm-cp1-c1-m2-mgmt</codeblock>
+          -->
+        <li> Run the hlm-deploy playbook on the replacement controller. If the node being replaced
+          is also the first Swift proxy node then you only need the <codeph>--limit</codeph> switch,
+          otherwise specify the hostname of your first Swift proxy usingt the format below:<codeblock>ansible-playbook -i hosts/verb_hosts hlm-deploy.yml -e rebuild=True --limit=&lt;controller-hostname>,&lt;first-proxy-hostname></codeblock>
+          <p>See <xref href="../objectstorage/first_proxy_server.dita">Identifying the First Swift
+              Proxy Server</xref> for more details on how to determine which node is your first
+            Swift proxy node.</p>
         </li>
       </ol>
       <!--
