@@ -462,6 +462,8 @@ hp3par_snapshot_expiration=72</codeblock>
                     <p>SR-IOV and PCI passthrough cannot both be used on the same provider
                         network.</p>
                 </li>
+                <li>SR-IOV is not supported on Mellanox NICs.
+                    <!--Per Vlad, Sanjib, Shantanu email--></li>
             </ul>
             <p><b>Interface or interface consolidation limitations</b></p>
             <ul id="ul_qzl_ccw_c5">
@@ -507,7 +509,7 @@ hp3par_snapshot_expiration=72</codeblock>
                 <li>
                     <p>Jumbo frames are not supported on Mellanox NICs.</p>
                 </li>
-                <li>SR-IOV, PCI-PassThrough are not supported Mellanox NICs.
+                <li>SR-IOV, PCI-PassThrough are not supported on Mellanox NICs.
                     <!--Per Vlad, Sanjib, Shantanu email--></li>
             </ul>
             <p><b>Installation does not fully utilize disks greater than two terabytes</b></p>

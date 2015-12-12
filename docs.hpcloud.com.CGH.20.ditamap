@@ -112,27 +112,28 @@
         navtitle="Operations Guide" locktitle="yes" format="ditamap"/>
     </topicref>
     <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting.dita"
-      navtitle="Troubleshooting" locktitle="yes">
+      navtitle="Troubleshooting" locktitle="yes" otherprops="troubleshooting">
       <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting-install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/Troubleshooting/CGH-2-troubleshooting-noGwayl.dita"
         navtitle="Set NoGway For Multi-NIC Subnets" locktitle="yes"/>
     </topicref>
     <topicref href="CarrierGrade2.0/carrier-grade-license.dita"
-      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes">
+      navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"
+      otherprops="software-license-agreements">
       <topicref href="CarrierGrade2.0/carrier-grade-license-osrb.dita"
         navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
         locktitle="yes"/>
       <topicref href="CarrierGrade2.0/carrier-grade-dcn-license-osrb.dita"/>
     </topicref>
     <topicref href="CarrierGrade2.0/carrier-grade-end-user-license.dita"
-      navtitle="Software License Terms" locktitle="yes">
+      navtitle="Software License Terms" locktitle="yes" otherprops="software-license-terms">
       <topicref href="CarrierGrade2.0/carrier-grade-eula.dita" toc="yes"
         navtitle="HP Helion OpenStack Carrier Grade: Software License Terms" locktitle="yes"/>
       <topicref href="CarrierGrade2.0/carrier-grade-dcn-eula.dita"/>
     </topicref>
-    <topicref href="CarrierGrade2.0/carrier-grade-admin-placeholder.dita"
-      navtitle="Linked files not in TOC" locktitle="yes" toc="no">
+    <topicref href="CarrierGrade2.0/carrier-grade-admin-placeholder.dita" navtitle="Reference Files"
+      locktitle="yes" toc="no" otherprops="reference">
       <topicref
         href="CarrierGrade2.0/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"
         toc="no"/>
