@@ -38,20 +38,28 @@
           </ul><note type="tip">To decompress <codeph>tar.gz</codeph> files on Windows, you can use
             a file archiver such as <xref href="http://www.7-zip.org/" format="html"
               scope="external">7zip</xref>.</note><b>Downloading and Installing OpenStack
-            Command-Line Interfaces (CLI)</b><p>The Nova CLI allows you to manage OpenStack compute
-            resources. The Neutron CLI allows you to manage virtual networking services associated
-            with compute resources. Follow the instructions for your operating system:</p><p>On
-            Linux, install the CLIs from a package appropriate for your
-            system:</p><codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-novaclient</codeblock><codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-neutronclient</codeblock><note>For
-            SUSE Linux Enterprise Server, add the Open Build Service respository before installing
-            the tools using the following
-            command:<codeblock>zypper addrepo -f obs://Cloud:OpenStack:Kilo/SLE_12 Kilo</codeblock></note><p>On
-            Mac OS X or Windows, download and install <xref href="https://www.python.org/downloads/"
-              format="html" scope="external">Python 2.7 or later</xref> and then run the following
-            commands:<codeblock>pip install python-novaclient</codeblock><codeblock>pip install python-neutronclient</codeblock></p><b>Downloading
-            and Installing the Terraform CLI</b><p>The Terraform CLI allows you to construct,
-            manage, update, or delete <keyword keyref="prodShort"/> clusters. Click the download
-            link appropriate for your operating system:</p><ul id="ul_d1k_5k1_tt">
+            Command-Line Interfaces (CLI)</b><p>Ensure that the <codeph>nova</codeph> and
+              <codeph>neutron</codeph> CLIs are installed. For more information, see the <xref
+              href="http://docs.openstack.org/user-guide/common/cli_install_openstack_command_line_clients.html"
+              format="html" scope="external">OpenStack documentation</xref>.</p><draft-comment
+            author="michaelk">
+            <p>The Nova CLI allows you to manage OpenStack compute resources. The Neutron CLI allows
+              you to manage virtual networking services associated with compute resources. Follow
+              the instructions for your operating system:</p>
+            <p>On Linux, install the CLIs from a package appropriate for your system:</p>
+            <codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-novaclient</codeblock>
+            <codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-neutronclient</codeblock>
+            <note>For SUSE Linux Enterprise Server, add the Open Build Service respository before
+              installing the tools using the following
+              command:<codeblock>zypper addrepo -f obs://Cloud:OpenStack:Kilo/SLE_12 Kilo</codeblock></note>
+            <p>On Mac OS X or Windows, download and install <xref
+                href="https://www.python.org/downloads/" format="html" scope="external">Python 2.7
+                or later</xref> and then run the following
+              commands:<codeblock>pip install python-novaclient</codeblock><codeblock>pip install python-neutronclient</codeblock></p>
+          </draft-comment><b>Downloading and Installing the Terraform CLI</b><p>The Terraform CLI
+            allows you to construct, manage, update, or delete <keyword keyref="prodShort"/>
+            clusters. Click the download link appropriate for your operating system:</p><ul
+            id="ul_d1k_5k1_tt">
             <li>Linux <xref
                 href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_linux_386.zip"
                 format="zip" scope="external">x86</xref> | <xref

@@ -19,8 +19,7 @@
               <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6.
             <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
         <stentry><b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
-            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
-                  ><keyword keyref="opnStckShort"/></xref>.</li>
+            <li>Log into <keyword keyref="opnStckShort"/>.</li>
             <li id="create_a_network">Create a network.<ol id="ol_xvb_qyp_tt">
                 <li>On the left panel, click <menucascade>
                     <uicontrol>Project</uicontrol>

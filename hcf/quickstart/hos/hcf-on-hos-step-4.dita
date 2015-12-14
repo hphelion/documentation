@@ -58,13 +58,9 @@
                   <li><codeph>no_proxy</codeph></li>
                 </ul></note></li>
             <li id="run_terraform_command">Run the following
-                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note>You
-                may receive the error message <msgph>Can not find requested image</msgph> if <xref
-                  href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st">the various settings of your
-                  sandbox environment</xref> are not configured consistently on US East or US
-                West.</note><note type="tip">To improve console output on Windows, add the
-                  <codeph>-no-color</codeph> flag to your command. For more information, see the
-                Terraform documentation on <xref
+                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
+                type="tip">To improve console output on Windows, add the <codeph>-no-color</codeph>
+                flag to your command. For more information, see the Terraform documentation on <xref
                   href="https://terraform.io/docs/commands/apply.html" format="html"
                   scope="external">Command: Apply</xref>.</note></li>
           </ol><p>Terraform creates the necessary security groups and instances, installs Docker,

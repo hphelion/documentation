@@ -28,41 +28,28 @@
     <stentry><b>Sample Applications</b><p>The following sample applications will get your started
             with the <codeph>cf push</codeph> workflow:<dl>
               <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
-                    scope="external">go-env</xref> (Go)</dt>
-                <dd>A simple Go application to display environment
-                  variables<codeblock>git clone https://github.com/Stackato-Apps/go-env.git</codeblock></dd>
+                <dt>??? (Go)</dt>
+                <dd>Description</dd>
               </dlentry>
               <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/node-env" format="html"
-                    scope="external">node-env</xref> (Node.js)</dt>
-                <dd>A simple demo that prints the server's environment variables
-                  <codeblock>git clone https://github.com/Stackato-Apps/node-env.git</codeblock></dd>
+                <dt>??? (Node.js)</dt>
+                <dd>Description</dd>
               </dlentry>
               <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/phpinfo" format="html"
-                    scope="external">phpinfo</xref> (PHP)</dt>
-                <dd>Outputs information about PHP's
-                  configuration<codeblock>git clone https://github.com/Stackato-Apps/phpinfo.git</codeblock></dd>
+                <dt>??? (PHP)</dt>
+                <dd>Description</dd>
               </dlentry>
               <dlentry>
-                <dt><xref href="https://github.com/hpcloud/python-env" format="html"
-                    scope="external">python-env</xref> (Python)</dt>
-                <dd>A simple Python app to show environment variables<note>Clone the
-                      <codeph>CF</codeph> branch of the
-                  application.</note><codeblock>git clone -b CF https://github.com/hpcloud/python-env.git</codeblock></dd>
+                <dt>??? (Python)</dt>
+                <dd>Description</dd>
               </dlentry>
               <dlentry>
-                <dt><xref href="https://github.com/Stackato-Apps/sinatra-env" format="html"
-                    scope="external">sinatra-env (Ruby)</xref></dt>
-                <dd>This is a simple Sinatra Ruby application<note>Clone the <codeph>CF</codeph>
-                    branch of the application. After you push the application, append
-                      <codeph>/get</codeph> to its endpoint
-                  URL.</note><codeblock>git clone -b CF https://github.com/Stackato-Apps/sinatra-env.git</codeblock></dd>
+                <dt>??? (Ruby)</dt>
+                <dd>Description</dd>
               </dlentry>
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
-                example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
+                example:<codeblock id="target_cluster">cf api https://api.203.0.113.0.xip.io</codeblock><note>To
                 skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to your
                 command. If you cannot connect to your cluster, ensure that your connection has no
                 proxy settings.</note></li>
@@ -84,41 +71,48 @@ cf target -o myOrg
 cf create-space mySpc -o myOrg
 cf target -o myOrg -s mySpc</codeblock></note></li>
           </ol><b>To Clone a GitHub Application and Push it to Your Cluster</b><ol
-            id="ol_idl_1mw_tt">
-            <li>Navigate to the GitHub page of the application and from the <uicontrol>Choose a
-                clone URL</uicontrol> drop-down list select <uicontrol>HTTPS</uicontrol>.<note>You
-                can also download the application directly from GitHub by clicking
-                  <uicontrol>Download ZIP</uicontrol>.</note></li>
-            <li>Create a directory and clone the application, for
-              example:<codeblock>git clone https://github.com/Apps/myApp.git</codeblock></li>
-            <li>Ensure that the <codeph>yml</codeph> file in the application directory is configured
-              correctly.</li>
-            <li>Target the cluster, for
-              example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
-            <li>Log into the cluster:<codeblock>cf login</codeblock><p
-                conref="#concept_cw2_thz_st/user_pass"/></li>
-            <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed
-                to the cluster. At the end of the process, Cloud Foundry displays the URL of the
-                application, formatted using the xip.io wildcard DNS, for
-                example:<codeblock><b>urls:</b> myApp.203.0.113.0.xip.io</codeblock></p><note
-                type="tip">You will need this URL to access the application using a web browser. You
-                can also run the <codeph>cf apps</codeph> command to see detailed information about
-                your application.</note><note>If you experience a problem, run the <codeph>cf delete
-                    <varname>&lt;appName></varname></codeph> command, make the necessary
-                adjustments, and then push the application again. For detailed instructions, see the
-                Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
-                  <li><xref
-                      href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
-                      format="html" scope="external">Deploying an Application</xref></li>
-                  <li><xref href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html"
-                      format="html" scope="external">Deploying with Application
-                    Manifests</xref></li>
-                  <li><xref
-                      href="https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html"
-                      format="html" scope="external">Troubleshooting Application Deployment and
-                      Health</xref></li>
-                </ul></note></li>
-          </ol><xref href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt">
+            id="ol_y5q_swp_h5">
+            <li>Clone the sample application from GitHub.</li>
+            <li><xref href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
+                format="html" scope="external">Deploying an Application</xref></li>
+          </ol><draft-comment author="michaelk">
+            <ol id="ol_gw2_mwp_h5">
+              <li>Navigate to the GitHub page of the application and from the <uicontrol>Choose a
+                  clone URL</uicontrol> drop-down list select <uicontrol>HTTPS</uicontrol>.<note>You
+                  can also download the application directly from GitHub by clicking
+                    <uicontrol>Download ZIP</uicontrol>.</note></li>
+              <li>Create a directory and clone the application, for
+                example:<codeblock>git clone https://github.com/Apps/myApp.git</codeblock></li>
+              <li>Ensure that the <codeph>yml</codeph> file in the application directory is
+                configured correctly.</li>
+              <li>Target the cluster, for
+                example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
+              <li>Log into the cluster:<codeblock>cf login</codeblock><p
+                  conref="#concept_cw2_thz_st/user_pass"/></li>
+              <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed
+                  to the cluster. At the end of the process, Cloud Foundry displays the URL of the
+                  application, formatted using the xip.io wildcard DNS, for
+                  example:<codeblock><b>urls:</b> myApp.203.0.113.0.xip.io</codeblock></p><note
+                  type="tip">You will need this URL to access the application using a web browser.
+                  You can also run the <codeph>cf apps</codeph> command to see detailed information
+                  about your application.</note><note>If you experience a problem, run the
+                    <codeph>cf delete <varname>&lt;appName></varname></codeph> command, make the
+                  necessary adjustments, and then push the application again. For detailed
+                  instructions, see the Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
+                    <li><xref
+                        href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
+                        format="html" scope="external">Deploying an Application</xref></li>
+                    <li><xref
+                        href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html"
+                        format="html" scope="external">Deploying with Application
+                      Manifests</xref></li>
+                    <li><xref
+                        href="https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html"
+                        format="html" scope="external">Troubleshooting Application Deployment and
+                        Health</xref></li>
+                  </ul></note></li>
+            </ol>
+          </draft-comment><xref href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt">
             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
           </xref></stentry>
    </strow>

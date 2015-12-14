@@ -1,0 +1,389 @@
+diff --git a/hcf/quickstart/hos/hcf-on-hos-step-2.dita b/hcf/quickstart/hos/hcf-on-hos-step-2.dita
+index 9bccd3a..7336711 100644
+--- a/hcf/quickstart/hos/hcf-on-hos-step-2.dita
++++ b/hcf/quickstart/hos/hcf-on-hos-step-2.dita
+@@ -38,20 +38,28 @@
+           </ul><note type="tip">To decompress <codeph>tar.gz</codeph> files on Windows, you can use
+             a file archiver such as <xref href="http://www.7-zip.org/" format="html"
+               scope="external">7zip</xref>.</note><b>Downloading and Installing OpenStack
+-            Command-Line Interfaces (CLI)</b><p>The Nova CLI allows you to manage OpenStack compute
+-            resources. The Neutron CLI allows you to manage virtual networking services associated
+-            with compute resources. Follow the instructions for your operating system:</p><p>On
+-            Linux, install the CLIs from a package appropriate for your
+-            system:</p><codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-novaclient</codeblock><codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-neutronclient</codeblock><note>For
+-            SUSE Linux Enterprise Server, add the Open Build Service respository before installing
+-            the tools using the following
+-            command:<codeblock>zypper addrepo -f obs://Cloud:OpenStack:Kilo/SLE_12 Kilo</codeblock></note><p>On
+-            Mac OS X or Windows, download and install <xref href="https://www.python.org/downloads/"
+-              format="html" scope="external">Python 2.7 or later</xref> and then run the following
+-            commands:<codeblock>pip install python-novaclient</codeblock><codeblock>pip install python-neutronclient</codeblock></p><b>Downloading
+-            and Installing the Terraform CLI</b><p>The Terraform CLI allows you to construct,
+-            manage, update, or delete <keyword keyref="prodShort"/> clusters. Click the download
+-            link appropriate for your operating system:</p><ul id="ul_d1k_5k1_tt">
++            Command-Line Interfaces (CLI)</b><p>Ensure that the <codeph>nova</codeph> and
++              <codeph>neutron</codeph> CLIs are installed. For more information, see the <xref
++              href="http://docs.openstack.org/user-guide/common/cli_install_openstack_command_line_clients.html"
++              format="html" scope="external">OpenStack documentation</xref>.</p><draft-comment
++            author="michaelk">
++            <p>The Nova CLI allows you to manage OpenStack compute resources. The Neutron CLI allows
++              you to manage virtual networking services associated with compute resources. Follow
++              the instructions for your operating system:</p>
++            <p>On Linux, install the CLIs from a package appropriate for your system:</p>
++            <codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-novaclient</codeblock>
++            <codeblock><varname>&lt;yum|apt-get|zypper></varname> install python-neutronclient</codeblock>
++            <note>For SUSE Linux Enterprise Server, add the Open Build Service respository before
++              installing the tools using the following
++              command:<codeblock>zypper addrepo -f obs://Cloud:OpenStack:Kilo/SLE_12 Kilo</codeblock></note>
++            <p>On Mac OS X or Windows, download and install <xref
++                href="https://www.python.org/downloads/" format="html" scope="external">Python 2.7
++                or later</xref> and then run the following
++              commands:<codeblock>pip install python-novaclient</codeblock><codeblock>pip install python-neutronclient</codeblock></p>
++          </draft-comment><b>Downloading and Installing the Terraform CLI</b><p>The Terraform CLI
++            allows you to construct, manage, update, or delete <keyword keyref="prodShort"/>
++            clusters. Click the download link appropriate for your operating system:</p><ul
++            id="ul_d1k_5k1_tt">
+             <li>Linux <xref
+                 href="https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_linux_386.zip"
+                 format="zip" scope="external">x86</xref> | <xref
+diff --git a/hcf/quickstart/hos/hcf-on-hos-step-3.1.dita b/hcf/quickstart/hos/hcf-on-hos-step-3.1.dita
+index 9fcce77..d076576 100644
+--- a/hcf/quickstart/hos/hcf-on-hos-step-3.1.dita
++++ b/hcf/quickstart/hos/hcf-on-hos-step-3.1.dita
+@@ -19,8 +19,7 @@
+               <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6.
+             <xref conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep6_"/></stentry>
+         <stentry><b>To Create a Sandbox Environment</b><ol id="ol_ur4_yq1_tt">
+-            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
+-                  ><keyword keyref="opnStckShort"/></xref>.</li>
++            <li>Log into <keyword keyref="opnStckShort"/>.</li>
+             <li id="create_a_network">Create a network.<ol id="ol_xvb_qyp_tt">
+                 <li>On the left panel, click <menucascade>
+                     <uicontrol>Project</uicontrol>
+diff --git a/hcf/quickstart/hos/hcf-on-hos-step-4.dita b/hcf/quickstart/hos/hcf-on-hos-step-4.dita
+index 2e690b7..50b5655 100644
+--- a/hcf/quickstart/hos/hcf-on-hos-step-4.dita
++++ b/hcf/quickstart/hos/hcf-on-hos-step-4.dita
+@@ -58,13 +58,9 @@
+                   <li><codeph>no_proxy</codeph></li>
+                 </ul></note></li>
+             <li id="run_terraform_command">Run the following
+-                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note>You
+-                may receive the error message <msgph>Can not find requested image</msgph> if <xref
+-                  href="hcf-on-hos-step-3.dita#concept_kpg_fhz_st">the various settings of your
+-                  sandbox environment</xref> are not configured consistently on US East or US
+-                West.</note><note type="tip">To improve console output on Windows, add the
+-                  <codeph>-no-color</codeph> flag to your command. For more information, see the
+-                Terraform documentation on <xref
++                command:<codeblock>terraform apply -var-file=<varname>&lt;myVariables></varname>.tfvars</codeblock><note
++                type="tip">To improve console output on Windows, add the <codeph>-no-color</codeph>
++                flag to your command. For more information, see the Terraform documentation on <xref
+                   href="https://terraform.io/docs/commands/apply.html" format="html"
+                   scope="external">Command: Apply</xref>.</note></li>
+           </ol><p>Terraform creates the necessary security groups and instances, installs Docker,
+diff --git a/hcf/quickstart/hos/hcf-on-hos-step-5.dita b/hcf/quickstart/hos/hcf-on-hos-step-5.dita
+index ca6e8a2..4791b71 100644
+--- a/hcf/quickstart/hos/hcf-on-hos-step-5.dita
++++ b/hcf/quickstart/hos/hcf-on-hos-step-5.dita
+@@ -28,41 +28,28 @@
+     <stentry><b>Sample Applications</b><p>The following sample applications will get your started
+             with the <codeph>cf push</codeph> workflow:<dl>
+               <dlentry>
+-                <dt><xref href="https://github.com/Stackato-Apps/go-env" format="html"
+-                    scope="external">go-env</xref> (Go)</dt>
+-                <dd>A simple Go application to display environment
+-                  variables<codeblock>git clone https://github.com/Stackato-Apps/go-env.git</codeblock></dd>
++                <dt>??? (Go)</dt>
++                <dd>Description</dd>
+               </dlentry>
+               <dlentry>
+-                <dt><xref href="https://github.com/Stackato-Apps/node-env" format="html"
+-                    scope="external">node-env</xref> (Node.js)</dt>
+-                <dd>A simple demo that prints the server's environment variables
+-                  <codeblock>git clone https://github.com/Stackato-Apps/node-env.git</codeblock></dd>
++                <dt>??? (Node.js)</dt>
++                <dd>Description</dd>
+               </dlentry>
+               <dlentry>
+-                <dt><xref href="https://github.com/Stackato-Apps/phpinfo" format="html"
+-                    scope="external">phpinfo</xref> (PHP)</dt>
+-                <dd>Outputs information about PHP's
+-                  configuration<codeblock>git clone https://github.com/Stackato-Apps/phpinfo.git</codeblock></dd>
++                <dt>??? (PHP)</dt>
++                <dd>Description</dd>
+               </dlentry>
+               <dlentry>
+-                <dt><xref href="https://github.com/hpcloud/python-env" format="html"
+-                    scope="external">python-env</xref> (Python)</dt>
+-                <dd>A simple Python app to show environment variables<note>Clone the
+-                      <codeph>CF</codeph> branch of the
+-                  application.</note><codeblock>git clone -b CF https://github.com/hpcloud/python-env.git</codeblock></dd>
++                <dt>??? (Python)</dt>
++                <dd>Description</dd>
+               </dlentry>
+               <dlentry>
+-                <dt><xref href="https://github.com/Stackato-Apps/sinatra-env" format="html"
+-                    scope="external">sinatra-env (Ruby)</xref></dt>
+-                <dd>This is a simple Sinatra Ruby application<note>Clone the <codeph>CF</codeph>
+-                    branch of the application. After you push the application, append
+-                      <codeph>/get</codeph> to its endpoint
+-                  URL.</note><codeblock>git clone -b CF https://github.com/Stackato-Apps/sinatra-env.git</codeblock></dd>
++                <dt>??? (Ruby)</dt>
++                <dd>Description</dd>
+               </dlentry>
+             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
+             <li>Ensure that you are targeting the desired cluster, for
+-                example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
++                example:<codeblock id="target_cluster">cf api https://api.203.0.113.0.xip.io</codeblock><note>To
+                 skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to your
+                 command. If you cannot connect to your cluster, ensure that your connection has no
+                 proxy settings.</note></li>
+@@ -84,41 +71,48 @@ cf target -o myOrg
+ cf create-space mySpc -o myOrg
+ cf target -o myOrg -s mySpc</codeblock></note></li>
+           </ol><b>To Clone a GitHub Application and Push it to Your Cluster</b><ol
+-            id="ol_idl_1mw_tt">
+-            <li>Navigate to the GitHub page of the application and from the <uicontrol>Choose a
+-                clone URL</uicontrol> drop-down list select <uicontrol>HTTPS</uicontrol>.<note>You
+-                can also download the application directly from GitHub by clicking
+-                  <uicontrol>Download ZIP</uicontrol>.</note></li>
+-            <li>Create a directory and clone the application, for
+-              example:<codeblock>git clone https://github.com/Apps/myApp.git</codeblock></li>
+-            <li>Ensure that the <codeph>yml</codeph> file in the application directory is configured
+-              correctly.</li>
+-            <li>Target the cluster, for
+-              example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
+-            <li>Log into the cluster:<codeblock>cf login</codeblock><p
+-                conref="#concept_cw2_thz_st/user_pass"/></li>
+-            <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed
+-                to the cluster. At the end of the process, Cloud Foundry displays the URL of the
+-                application, formatted using the xip.io wildcard DNS, for
+-                example:<codeblock><b>urls:</b> myApp.203.0.113.0.xip.io</codeblock></p><note
+-                type="tip">You will need this URL to access the application using a web browser. You
+-                can also run the <codeph>cf apps</codeph> command to see detailed information about
+-                your application.</note><note>If you experience a problem, run the <codeph>cf delete
+-                    <varname>&lt;appName></varname></codeph> command, make the necessary
+-                adjustments, and then push the application again. For detailed instructions, see the
+-                Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
+-                  <li><xref
+-                      href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
+-                      format="html" scope="external">Deploying an Application</xref></li>
+-                  <li><xref href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html"
+-                      format="html" scope="external">Deploying with Application
+-                    Manifests</xref></li>
+-                  <li><xref
+-                      href="https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html"
+-                      format="html" scope="external">Troubleshooting Application Deployment and
+-                      Health</xref></li>
+-                </ul></note></li>
+-          </ol><xref href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt">
++            id="ol_y5q_swp_h5">
++            <li>Clone the sample application from GitHub.</li>
++            <li><xref href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
++                format="html" scope="external">Deploying an Application</xref></li>
++          </ol><draft-comment author="michaelk">
++            <ol id="ol_gw2_mwp_h5">
++              <li>Navigate to the GitHub page of the application and from the <uicontrol>Choose a
++                  clone URL</uicontrol> drop-down list select <uicontrol>HTTPS</uicontrol>.<note>You
++                  can also download the application directly from GitHub by clicking
++                    <uicontrol>Download ZIP</uicontrol>.</note></li>
++              <li>Create a directory and clone the application, for
++                example:<codeblock>git clone https://github.com/Apps/myApp.git</codeblock></li>
++              <li>Ensure that the <codeph>yml</codeph> file in the application directory is
++                configured correctly.</li>
++              <li>Target the cluster, for
++                example:<codeblock conref="#concept_cw2_thz_st/target_cluster"/></li>
++              <li>Log into the cluster:<codeblock>cf login</codeblock><p
++                  conref="#concept_cw2_thz_st/user_pass"/></li>
++              <li>Push the application:<codeblock>cf push</codeblock><p>Your application is deployed
++                  to the cluster. At the end of the process, Cloud Foundry displays the URL of the
++                  application, formatted using the xip.io wildcard DNS, for
++                  example:<codeblock><b>urls:</b> myApp.203.0.113.0.xip.io</codeblock></p><note
++                  type="tip">You will need this URL to access the application using a web browser.
++                  You can also run the <codeph>cf apps</codeph> command to see detailed information
++                  about your application.</note><note>If you experience a problem, run the
++                    <codeph>cf delete <varname>&lt;appName></varname></codeph> command, make the
++                  necessary adjustments, and then push the application again. For detailed
++                  instructions, see the Cloud Foundry documentation:<ul id="ul_yyr_c5w_tt">
++                    <li><xref
++                        href="https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html"
++                        format="html" scope="external">Deploying an Application</xref></li>
++                    <li><xref
++                        href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html"
++                        format="html" scope="external">Deploying with Application
++                      Manifests</xref></li>
++                    <li><xref
++                        href="https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html"
++                        format="html" scope="external">Troubleshooting Application Deployment and
++                        Health</xref></li>
++                  </ul></note></li>
++            </ol>
++          </draft-comment><xref href="hcf-on-hos-step-6.dita#concept_m3k_bth_tt">
+             <image href="../../media/NextButton.png" id="image_gqc_sgp_js" placement="break"/>
+           </xref></stentry>
+    </strow>
+diff --git a/hcf/quickstart/hos/hcf-on-hos-step-6.dita b/hcf/quickstart/hos/hcf-on-hos-step-6.dita
+index 5fa605c..534cf87 100644
+--- a/hcf/quickstart/hos/hcf-on-hos-step-6.dita
++++ b/hcf/quickstart/hos/hcf-on-hos-step-6.dita
+@@ -19,46 +19,47 @@
+         conref="hcf-on-hos-step-1.dita#concept_s2k_b35_st/quickStartHOSstep5_"/></p>6. <b><keyword
+        keyref="quickStartHOSstep6"/></b></stentry>
+     <stentry><b id="connecting_to_your_cluster">Connecting to Your Cluster</b><p>To administer and
+-      troubleshoot your cluster, you can connect to it using <codeph>ssh</codeph> and then run
+-        <codeph><keyword keyref="adminUtilCLI"/></codeph> commands. To connect, specify the IP
+-      address of your <keyword keyref="prodShort"/> core and the location of your RSA private key,
+-      for example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><p>For
+-      more information, see <xref
+-       href="../../reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"/>.</p><b>Terminating
+-      Instances and Security Groups from the Command Line</b><note type="warning"
+-      id="delete_cluster">This action will delete all of your managed infrastructure and it cannot
+-      be undone. For more information, see the Terraform documentation on <xref
+-       href="https://terraform.io/docs/commands/destroy.html" format="html" scope="external"
+-       >Command: Destroy</xref>.</note><p>To terminate your instance and its security groups, run
+-      the following command and enter <userinput>yes</userinput> when prompted, for
+-      example:</p><codeblock>terraform destroy -var-file=myVariables.tfvars</codeblock><p>For more
+-      information, see <xref href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt"
+-       >Terraform Variables</xref>.</p><p>Terraform cleanly terminates the instance and the security
+-      groups associated with it.</p><note type="tip">If the <codeph>destroy</codeph> process enters
+-      a loop, delete the <codeph>terraform.tfstate</codeph> file and run the command
+-      again.</note><b>To Terminate Instances and Security Groups from <keyword keyref="opnStckShort"
+-      /></b><p>Using <keyword keyref="opnStckShort"/> to terminate instances or security groups is
+-      not recommended. Use the following steps only if you run into difficulties with
+-      Terraform.</p><ol id="ol_zqt_ld3_tt">
+-      <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"><keyword
+-         keyref="opnStckShort"/></xref>.</li>
+-      <li>Click <menucascade>
+-        <uicontrol>Project</uicontrol>
+-        <uicontrol>Compute</uicontrol>
+-        <uicontrol>Instances</uicontrol>
+-       </menucascade>.</li>
+-      <li>Click the checkbox next to your instance, for example
+-       <uicontrol>hcf-core</uicontrol>.</li>
+-      <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
+-      <li>Click <menucascade>
+-        <uicontrol>Project</uicontrol>
+-        <uicontrol>Compute</uicontrol>
+-        <uicontrol>Access and Security</uicontrol>
+-       </menucascade>.</li>
+-      <li>Click the checkbox next to your security group, for example
+-        <uicontrol>hcf-container-host</uicontrol>.</li>
+-      <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
+-     </ol></stentry>
++            troubleshoot your cluster, you can connect to it using <codeph>ssh</codeph> and then run
++                <codeph><keyword keyref="adminUtilCLI"/></codeph> commands. To connect, specify the
++            IP address of your <keyword keyref="prodShort"/> core and the location of your RSA
++            private key, for
++            example:<codeblock>ssh ubuntu@203.0.113.0 -i ~/.ssh/myPrivateKey.pem</codeblock></p><p>For
++            more information, see <xref
++              href="../../reference/hcf-reference-gato.dita#reference_cd3_bs3_rt"
++            />.</p><b>Terminating Instances and Security Groups from the Command Line</b><note
++            type="warning" id="delete_cluster">This action will delete all of your managed
++            infrastructure and it cannot be undone. For more information, see the Terraform
++            documentation on <xref href="https://terraform.io/docs/commands/destroy.html"
++              format="html" scope="external">Command: Destroy</xref>.</note><p>To terminate your
++            instance and its security groups, run the following command and enter
++              <userinput>yes</userinput> when prompted, for
++            example:</p><codeblock>terraform destroy -var-file=myVariables.tfvars</codeblock><p>For
++            more information, see <xref
++              href="../../reference/hcf-reference-tfvars.dita#reference_phl_shc_rt">Terraform
++              Variables</xref>.</p><p>Terraform cleanly terminates the instance and the security
++            groups associated with it.</p><b>To Terminate Instances and Security Groups from
++              <keyword keyref="opnStckShort"/></b><p>Using <keyword keyref="opnStckShort"/> to
++            terminate instances or security groups is not recommended. Use the following steps only
++            if you run into difficulties with Terraform.</p><ol id="ol_zqt_ld3_tt">
++            <li>Log into <xref href="https://horizon.hpcloud.com/" format="html" scope="external"
++                  ><keyword keyref="opnStckShort"/></xref>.</li>
++            <li>Click <menucascade>
++                <uicontrol>Project</uicontrol>
++                <uicontrol>Compute</uicontrol>
++                <uicontrol>Instances</uicontrol>
++              </menucascade>.</li>
++            <li>Click the checkbox next to your instance, for example
++                <uicontrol>hcf-core</uicontrol>.</li>
++            <li>Click <uicontrol>Terminate Instances</uicontrol>.</li>
++            <li>Click <menucascade>
++                <uicontrol>Project</uicontrol>
++                <uicontrol>Compute</uicontrol>
++                <uicontrol>Access and Security</uicontrol>
++              </menucascade>.</li>
++            <li>Click the checkbox next to your security group, for example
++                <uicontrol>hcf-container-host</uicontrol>.</li>
++            <li>Click <uicontrol>Delete Security Groups</uicontrol>.</li>
++          </ol></stentry>
+    </strow>
+   </simpletable>
+  </conbody>
+diff --git a/hcf/quickstart/hpc/hcf-on-hpc-step-5.dita b/hcf/quickstart/hpc/hcf-on-hpc-step-5.dita
+index 27bb12f..caf0c07 100644
+--- a/hcf/quickstart/hpc/hcf-on-hpc-step-5.dita
++++ b/hcf/quickstart/hpc/hcf-on-hpc-step-5.dita
+@@ -63,9 +63,9 @@
+             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
+             <li>Ensure that you are targeting the desired cluster, for
+                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
+-                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to
+-                your command. If you cannot connect to your cluster, ensure that your connection has
+-                no proxy settings.</note></li>
++                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to your
++                command. If you cannot connect to your cluster, ensure that your connection has no
++                proxy settings.</note></li>
+             <li>Ensure that you are logged into the desired
+                 cluster:<codeblock>cf login</codeblock><p id="user_pass">When prompted, enter your
+                 username (email) and password.</p></li>
+@@ -127,4 +127,3 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
+   </simpletable>
+  </conbody>
+ </concept>
+-<?oxy_options track_changes="on"?>
+\ No newline at end of file
+diff --git a/hcf/reference/hcf-reference-roles.dita b/hcf/reference/hcf-reference-roles.dita
+index ef7607e..0006028 100644
+--- a/hcf/reference/hcf-reference-roles.dita
++++ b/hcf/reference/hcf-reference-roles.dita
+@@ -60,8 +60,10 @@
+             <entry><codeph>clock_global</codeph><draft-comment author="michaelk">process (job) =
+                 cloud_controller_clock</draft-comment></entry>
+             <entry>The Cloud Controller clock periodically schedules Cloud Controller clean-up tasks
+-              for application usage events, audit events, failed jobs, and so on. <note>Only one
+-                clock instance is necessary.</note></entry>
++              for application usage events, audit events, failed jobs, and so on. <draft-comment
++                author="michaelk">
++                <note>Only one clock instance is necessary.</note>
++              </draft-comment></entry>
+           </row>
+           <row>
+             <entry><codeph>consul</codeph></entry>
+@@ -84,7 +86,9 @@
+           <row>
+             <entry><codeph>ha_proxy</codeph></entry>
+             <entry>The HAProxy server provides the ability to terminate SSL in front of routers.
+-                <note>Each HAProxy instance should point to multiple routers.</note></entry>
++                <draft-comment author="michaelk">
++                <note>Each HAProxy instance should point to multiple routers.</note>
++              </draft-comment></entry>
+           </row>
+           <row>
+             <entry><codeph>hm9000</codeph></entry>
+@@ -106,16 +110,18 @@
+           </row>
+           <row>
+             <entry><codeph>postgres</codeph></entry>
+-            <entry>The Postgres server provides a single-instance Postgres database that can be used
+-              with the Cloud Controller or with UAA. </entry>
++            <entry>The PostgresSQL server provides a single-instance PostgresSQL database that can
++              be used with the Cloud Controller or with UAA. </entry>
+           </row>
+           <row>
+             <entry><codeph>router</codeph><draft-comment author="michaelk">process (job) =
+                 gorouter</draft-comment></entry>
+             <entry>The Router maintains a list of live routes for applications running on each DEA,
+               load-balancing requests based on their host headers between each application instance
+-              registered for a specific route.<note>The Router must be behind a load balancer that
+-                can terminate SSL connections.</note></entry>
++              registered for a specific route.<draft-comment author="michaelk">
++                <note>The Router must be behind a load balancer that can terminate SSL
++                  connections.</note>
++              </draft-comment></entry>
+           </row>
+           <row>
+             <entry><codeph>runner</codeph><draft-comment author="michaelk">process (job) =

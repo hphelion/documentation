@@ -63,9 +63,9 @@
             </dl></p><b>To Prepare for Pushing Your First Application</b><ol id="ol_zdy_p53_tt">
             <li>Ensure that you are targeting the desired cluster, for
                 example:<codeblock id="target_cluster">cf api http://api.203.0.113.0.xip.io</codeblock><note>To
-                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to
-                your command. If you cannot connect to your cluster, ensure that your connection has
-                no proxy settings.</note></li>
+                skip SSL validation, add the <codeph>--skip-ssl-validation</codeph> option to your
+                command. If you cannot connect to your cluster, ensure that your connection has no
+                proxy settings.</note></li>
             <li>Ensure that you are logged into the desired
                 cluster:<codeblock>cf login</codeblock><p id="user_pass">When prompted, enter your
                 username (email) and password.</p></li>
@@ -127,4 +127,3 @@ cf target -o myOrg -s mySpace</codeblock></note></li>
   </simpletable>
  </conbody>
 </concept>
-<?oxy_options track_changes="on"?>

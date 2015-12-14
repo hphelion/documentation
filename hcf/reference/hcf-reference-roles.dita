@@ -60,8 +60,10 @@
             <entry><codeph>clock_global</codeph><draft-comment author="michaelk">process (job) =
                 cloud_controller_clock</draft-comment></entry>
             <entry>The Cloud Controller clock periodically schedules Cloud Controller clean-up tasks
-              for application usage events, audit events, failed jobs, and so on. <note>Only one
-                clock instance is necessary.</note></entry>
+              for application usage events, audit events, failed jobs, and so on. <draft-comment
+                author="michaelk">
+                <note>Only one clock instance is necessary.</note>
+              </draft-comment></entry>
           </row>
           <row>
             <entry><codeph>consul</codeph></entry>
@@ -84,7 +86,9 @@
           <row>
             <entry><codeph>ha_proxy</codeph></entry>
             <entry>The HAProxy server provides the ability to terminate SSL in front of routers.
-                <note>Each HAProxy instance should point to multiple routers.</note></entry>
+                <draft-comment author="michaelk">
+                <note>Each HAProxy instance should point to multiple routers.</note>
+              </draft-comment></entry>
           </row>
           <row>
             <entry><codeph>hm9000</codeph></entry>
@@ -106,16 +110,18 @@
           </row>
           <row>
             <entry><codeph>postgres</codeph></entry>
-            <entry>The Postgres server provides a single-instance Postgres database that can be used
-              with the Cloud Controller or with UAA. </entry>
+            <entry>The PostgresSQL server provides a single-instance PostgresSQL database that can
+              be used with the Cloud Controller or with UAA. </entry>
           </row>
           <row>
             <entry><codeph>router</codeph><draft-comment author="michaelk">process (job) =
                 gorouter</draft-comment></entry>
             <entry>The Router maintains a list of live routes for applications running on each DEA,
               load-balancing requests based on their host headers between each application instance
-              registered for a specific route.<note>The Router must be behind a load balancer that
-                can terminate SSL connections.</note></entry>
+              registered for a specific route.<draft-comment author="michaelk">
+                <note>The Router must be behind a load balancer that can terminate SSL
+                  connections.</note>
+              </draft-comment></entry>
           </row>
           <row>
             <entry><codeph>runner</codeph><draft-comment author="michaelk">process (job) =
