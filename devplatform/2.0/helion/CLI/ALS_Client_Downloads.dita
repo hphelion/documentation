@@ -8,13 +8,13 @@
 <p>Click the download link that is appropriate for your operating system.</p>
     <ul> 
     <li> 
-      <xref href="helion-2.0.1-win32-ix86.zip" scope="external" format="html"><tm tmtype="reg">Windows</tm></xref> 
+      <xref href="http://clients.als.hpcloud.com/helion-2.0.1-win32-ix86.zip" scope="external" format="html"><tm tmtype="reg">Windows</tm></xref> 
       </li> 
      <li> 
-       <xref href="helion-2.0.1-linux-glibc2.3-x86_64.zip" scope="external" format="html">Linux x64</xref> 
+       <xref href="http://clients.als.hpcloud.com/helion-2.0.1-linux-glibc2.3-x86_64.zip" scope="external" format="html">Linux x64</xref> 
       </li> 
     <li> 
-      <xref href="helion-2.0.1-macosx10.5-i386-x86_64.zip" scope="external" format="html"><tm tmtype="reg">Mac OS</tm></xref> 
+      <xref href="http://clients.als.hpcloud.com/helion-2.0.1-macosx10.5-i386-x86_64.zip" scope="external" format="html"><tm tmtype="reg">Mac OS</tm></xref> 
        </li> 
     </ul> 
   
