@@ -121,7 +121,7 @@
     <topicref href="CarrierGrade2.0/carrier-grade-license.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"
       otherprops="software-license-agreements">
-      <topicref href="CarrierGrade2.0/carrier-grade-license-osrb.dita"
+      <topicref href="CarrierGrade2.0/carrier-grade-20-license-osrb.dita"
         navtitle="HP Helion OpenStack Carrier Grade: Open Source and Third-Party Software License Agreement"
         locktitle="yes"/>
       <topicref href="CarrierGrade2.0/carrier-grade-dcn-license-osrb.dita"/>
