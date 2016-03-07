@@ -26,7 +26,7 @@
                         </ul></li>
                 </ol></p>
         </section>
-        <section><title>Basic Configuration</title>
+        <section><title>Basic Configuration</title> 
             <p>There are several mandatory arguments to execute a backup: <ul>
                     <li>Action (backup by default)</li>
                     <li>Mode (fs by default)</li>
